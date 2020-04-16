@@ -50,7 +50,7 @@ clock set 14:00:00 16 April 2020
 	!DICA: desabilitar esse recurso resolve o problema de travamento de comandos
 	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255)
 	!para desbloquear ou parar o comando você preciona: Ctrl+Shift+6 ou espera a liberação do terminal
-	!DICA: o comando: no, e usado para desabilitar ou remover configurações
+	!DICA: o comando: no, e usado para desabilitar ou remover configurações feitas
 	no ip domain-lookup
   
 	!Configuração do banner da mensagem do dia
@@ -85,9 +85,9 @@ clock set 14:00:00 16 April 2020
 		login local
 		
 		!Habilitando senha de acesso do Tipo-7 Password
-		!DICA: em porta console não temos a opção de criar senhas do Tipo-5
+		!DICA: na porta console não temos a opção de criar senhas do Tipo-5
 		!OBSERVAÇÃO: porta console e considerada porta física não remota ou virtual
-		!OBSERVAÇÃO: esse recurso só será utilizado, caso não exista usuários locais
+		!OBSERVAÇÃO: esse recurso só será utilizado caso não exista usuários locais
 		password vaamonde@pti
 		
 		!Sincronizando as mensagens de logs na tela
@@ -96,10 +96,10 @@ clock set 14:00:00 16 April 2020
 		
 		!Habilitando o tempo de inatividade de uso do console
 		!DICA: configuração de minutos e segundos
-		!OBSERVAÇÃO: não e recomendo deixar o tempo muito curto e nem muito longo
+		!OBSERVAÇÃO: não recomendo deixar o tempo muito curto e nem muito longo
 		exec-timeout 5 30
 		
-		!Saindo de todos os níveis e voltando para o modo EXEC Privilégiado
+		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 		!DICA: você pode utilizar as teclas de atalho: Ctrl+C ou Ctrl+Z
 		!DICA: o comando: exit sai nível por nível, o comando: end sai de todos os níveis
 		!OBSERVAÇÃO: os dois comandos são utilizados em scripts
@@ -107,7 +107,7 @@ clock set 14:00:00 16 April 2020
 
 !Salvando as confgurações da memória RAM para a memória NVRAM
 !DICA: no Cisco IOS temos vários tipos de memórias: RAM, NVRAM, Flash, etc.
-!DICA: você pode utilizar o comando: write, indicado para scripts
+!DICA: você pode utilizar o comando: write, indicado para criação de scripts
 copy running-config startup-config
 	
 !Visualizando as confgurações da memória RAM e NVRAM
