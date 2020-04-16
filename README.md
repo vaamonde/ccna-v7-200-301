@@ -16,7 +16,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 =================================================================================================
 
-**Links de vídeos de apoio para o Curso:**
+## **Links de vídeos de apoio para o Curso:**
 
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
 Conhecendo o Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
@@ -24,7 +24,7 @@ Topologias Lógica e Física no Cisco Packet Tracer: https://www.youtube.com/wat
 
 =================================================================================================
 
-**Primeira Aula-001: Criação do cenário Básico no Cisco Packet Tracer**
+## **Primeira Aula-001: Criação do cenário Básico no Cisco Packet Tracer**
 
 Nessa primeira aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
