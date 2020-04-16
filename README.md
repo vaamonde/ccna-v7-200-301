@@ -8,7 +8,7 @@ http://ww.facebook.com/boraparapratica<br>
 http://www.youtube.com/boraparapratica<br>
 http://www.aulaead.com/
 
-=========================================================================================================
+=================================================================================================
 
 #Links de vídeos de apoio para o Curso:
 
@@ -16,7 +16,7 @@ Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/w
 Conhecendo o Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
 Topologias Lógica e Física no Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
 
-=========================================================================================================
+=================================================================================================
 
 #Primeira Aula-001: Criação do cenário Básico no Cisco Packet Tracer
 
