@@ -1,12 +1,18 @@
 # Curso GRÁTIS Laboratório Prático da NOVA Certificação Cisco CCNA V7 200-301
 
+💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos gratuitos para o Canal, acessando o link de doação: https://pag.ae/bjlSJcH
+
+
 Série de vídeos do Curso GRÁTIS de Laboratórios Cisco CCNA V7 200-301.
 
 Robson Vaamonde<br>
-http://www.facebook.com/procedimentosemti<br>
-http://ww.facebook.com/boraparapratica<br>
-http://www.youtube.com/boraparapratica<br>
-http://www.aulaead.com/
+Procedimentos em TI: http://procedimentosemti.com.br
+Bora para Prática: http://boraparapratica.com.br
+Robson Vaamonde: http://vaamonde.com.br
+Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+Facebook Bora para Prática: https://www.facebook.com/boraparapratica
+Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 
 =================================================================================================
 
