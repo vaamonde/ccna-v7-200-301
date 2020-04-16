@@ -2,6 +2,11 @@
 switch>
 
 !Acessando o modo EXEC Privilégiado #
+!DICA: utilizar sempre a tecla TAB para auto-completar o comando
+!DICA: se tiver dúvida do comando, utilizar o caracter: ? (interrogação)
+!EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
+!DICA: se você está estudando para o CCNA, recomendo digitar os comandos completos, não abreviados
+!EXEMPLO: enable = en | show running-config = sh runn | interface fastethernet0/0 int = fa0/0
 enable
 
 !Configuração de Data/Hora em inglês, você pode usar abreviado ou completo
@@ -19,29 +24,31 @@ clock set 14:00:00 16 April 2020
 	hostname sw-l2-2960-1
   
 	!Habilitar o serviço de criptografia de senhas do Tipo-7 Password 
-	!DICA: senhas do Tipo-7 por padrão não são criptografas
+	!DICA: senhas do Tipo-7 por padrão não são criptografadas
 	!OBSERVAÇÃO: senhas do Tipo-7 são fáceis de serem quebradas
+	!EXEMPLO: https://packetlife.net/toolbox/type7/
 	service password-encryption
 	
 	!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs
 	!DICA: recurso utilizado em sistemas de monitoramento e desempenho de rede
 	service timestamps log datetime msec
   
-	!Desativar a resolução de nomes de domínio
+	!Desativando a resolução de nomes de domínio
 	!DICA: desabilitar esse recurso resolve o problema de travamento de comandos
-	!EXEMPLO: - para desbloquear você preciona: Ctrl+Shift+6
+	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255)
+	!para desbloquear ou parar o comando você preciona: Ctrl+Shift+6 ou espera a liberação do terminal
 	!DICA: o comando: no, e usado para desabilitar ou remover configurações
 	no ip domain-lookup
   
 	!Configuração do banner da mensagem do dia
 	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD e o mais usado
 	!DICA: não utilizar acentuação e textos longos ou complexos
-	!DESAFIO: Buscar na Internet imagens ASCII para o Banner MOTD
+	!DESAFIO: Buscar na Internet imagens ASCII Art para colocar no Banner MOTD
 	!CUIDADO: utilizar o mesmo caracter de início e fim do Banner
 	banner motd #AVISO: acesso autorizado somente a funcionarios#
   
 	!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado
-	!DICA: senhas do Tipo-5 por padrão são criptografas
+	!DICA: senhas do Tipo-5 por padrão são criptografadas
 	!DICA: por padrão e liberado sem segurança o acesso ao modo EXEC Privilegiado 
 	enable secret vaamonde@pti
   
@@ -74,19 +81,20 @@ clock set 14:00:00 16 April 2020
 		!DICA: esse recurso facilita bastante, pois não atrapalha na digitação de comandos
 		logging synchronous
 		
-		!Habilitando o tempo de inatividade do console
-		!DICA: configuração de minutos e depois segundos
+		!Habilitando o tempo de inatividade de uso do console
+		!DICA: configuração de minutos e segundos
 		!OBSERVAÇÃO: não e recomendo deixar o tempo muito curto e nem muito longo
 		exec-timeout 5 30
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilégiado
 		!DICA: você pode utilizar as teclas de atalho: Ctrl+C ou Ctrl+Z
-		!DICA: o comando: exit sai nível por nível, o comando: end já sai de todos os níveis
-		!OBSERVAÇÃO: os dois comandos são muito utilizado em scripts
+		!DICA: o comando: exit sai nível por nível, o comando: end sai de todos os níveis
+		!OBSERVAÇÃO: os dois comandos são utilizados em scripts
 		end
 
 !Salvando as confgurações da memória RAM para a memória NVRAM
-!DICA: você pode utilziar o comando: write, muito utilizado em scripts
+!DICA: no Cisco IOS temos vários tipos de memórias: RAM, NVRAM, Flash, etc.
+!DICA: você pode utilizar o comando: write, indicado para scripts
 copy running-config startup-config
 	
 !Visualizando as confgurações da memória RAM e NVRAM
