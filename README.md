@@ -1,4 +1,4 @@
-# Curso GRÁTIS DE OCS Inventory NG e GLPI Help Desk
+# Curso GRÁTIS Laboratório Prático da NOVA Certificação Cisco CCNA V7 200-301
 
 Série de vídeos do Curso GRÁTIS de Laboratórios Cisco CCNA V7 200-301.
 
