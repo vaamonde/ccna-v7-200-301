@@ -1,4 +1,4 @@
-<center> # Curso GRÁTIS Laboratório Prático da NOVA Certificação Cisco CCNA V7 200-301</center>
+<h1>Curso GRÁTIS Laboratório Prático da NOVA Certificação Cisco CCNA V7 200-301</h1>
 
 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos gratuitos para o Canal, acessando o link de doação do PagSeguro: https://pag.ae/bjlSJcH
 
@@ -24,7 +24,7 @@ Topologias Lógica e Física no Cisco Packet Tracer: https://www.youtube.com/wat
 
 =================================================================================================
 
-#Primeira Aula-001: Criação do cenário Básico no Cisco Packet Tracer
+<b>#Primeira Aula-001: Criação do cenário Básico no Cisco Packet Tracer</b>
 
 Nessa primeira aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
