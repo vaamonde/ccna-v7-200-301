@@ -1,7 +1,7 @@
 !Primeiro acesso no modo EXEC de Comandos >
 switch>
 
-!Acessando o modo EXEC Privilegiado #
+!Acessando o modo EXEC Privilégiado #
 enable
 
 !Configuração de Data/Hora em inglês, você pode usar abreviado ou completo
