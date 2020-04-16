@@ -16,7 +16,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 =================================================================================================
 
-#Links de vídeos de apoio para o Curso:
+<b>#Links de vídeos de apoio para o Curso:</b>
 
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
 Conhecendo o Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
