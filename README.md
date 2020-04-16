@@ -1,4 +1,4 @@
-<h1>Curso GRÁTIS Laboratório Prático da NOVA Certificação Cisco CCNA V7 200-301</h1>
+# Curso GRÁTIS Laboratório Prático da NOVA Certificação Cisco CCNA V7 200-301
 
 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos gratuitos para o Canal, acessando o link de doação do PagSeguro: https://pag.ae/bjlSJcH
 
@@ -16,7 +16,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 =================================================================================================
 
-<b>#Links de vídeos de apoio para o Curso:</b>
+**#Links de vídeos de apoio para o Curso:
 
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
 Conhecendo o Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
@@ -24,7 +24,7 @@ Topologias Lógica e Física no Cisco Packet Tracer: https://www.youtube.com/wat
 
 =================================================================================================
 
-<b>#Primeira Aula-001: Criação do cenário Básico no Cisco Packet Tracer</b>
+**#Primeira Aula-001: Criação do cenário Básico no Cisco Packet Tracer
 
 Nessa primeira aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
