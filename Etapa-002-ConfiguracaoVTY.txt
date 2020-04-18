@@ -20,7 +20,7 @@ enable
 		!Acessando as linhas virtuais de acesso remoto do Switch
 		!DICA: por padrão o switch cisco possui 16 (0 até 15) linhas virtuais de acesso remoto
 		!OBSERVAÇÃO: as linhas virtuais são utilizadas para acessar remotamente o console do switch
-		!OBSERVAÇÃO: linhas virtuais não são utilizadas para monitoramente, para isso usamos o Protocolo SNMP com SVI
+		!OBSERVAÇÃO: linhas virtuais não são utilizadas para monitoramento, para isso usamos o Protocolo SNMP com SVI
 		!DICA: não e recomendo habilitar poucas linhas ou todas as linhas virtuais
 		!OBSERVAÇÃO: as linhas virtuais são bem parecidas com a linha console, a diferença que o acesso e remoto
 		!DICA: por padrão as linhas virtuais estão desabilitadas, elas dependem da configuraçao do SVI
