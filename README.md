@@ -17,6 +17,8 @@ Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/w
 Conhecendo o Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
 Topologias Lógica e Física no Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
 Acessando Roteadores e Switch Cisco usando o GNU/Linux: https://www.youtube.com/watch?v=B9EUvYCNCqI&t<br>
+Recuperando e Descobrindo Senhas de Roteadores Cisco: https://www.youtube.com/watch?v=oZsdY8RDKnU&t<br>
+Descobrindo Senhas da Roteadores Cisco por Força Bruta: https://www.youtube.com/watch?v=iZuxEwET8cg&t<br>
 GIT e GITHUB Básico no GNU/Linux Mint: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
 Visual Studio Code no GNU/Linux Mint: https://www.youtube.com/watch?v=ZSEwwtQuccY&t
 
