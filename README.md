@@ -22,10 +22,26 @@ Descobrindo Senhas de Roteadores Cisco por Força Bruta: https://www.youtube.com
 GIT e GITHUB Básico no GNU/Linux Mint: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
 Visual Studio Code no GNU/Linux Mint: https://www.youtube.com/watch?v=ZSEwwtQuccY&t
 
-## **Primeira Aula-001: Criação do cenário Básico no Cisco Packet Tracer**
+## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base Switch 2960**
 
-Nessa primeira aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
+Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
 As configurações básicas dos Switches será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-001-ConfiguracaoBaseSwitch-2960.txt
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
+
+## **002 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do VTY Switch 2960**
+
+Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Linhas Virtuais VTY, que será utilizado para acesso remoto dos equipamentos.
+
+As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-002-ConfiguracaoVTY.txt
+
+Link da vídeo aula:
+
+## **003 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do Gateway e SVI Switch 2960**
+
+Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY para o acesso remoto e o gerenciamento do equipamento.
+
+As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-003-ConfiguracaoGatewaySVI.txt
+
+Link da vídeo aula:
