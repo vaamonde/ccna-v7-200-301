@@ -11,6 +11,15 @@ Facebook Bora para Prática: https://www.facebook.com/boraparapratica<br>
 Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
+## **Links Oficiais da Cisco CCNA v7 200-301:**
+
+Cisco Certified Network Associate (200-301 CCNA): https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html<br>
+Implementing and Administering Cisco Solutions (CCNA) v1.0: https://www.cisco.com/c/en/us/training-events/training-certifications/training/training-services/courses/implementing-and-administering-cisco-solutions-ccna.html<br>
+
+## **Livros Oficiais da Cisco CCNA v7 200-301:**
+CCNA 200-301 Official Cert Guide, Volume 1 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/0135792738<br>
+CCNA 200-301 Official Cert Guide, Volume 2 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/1587147130
+
 ## **Links de vídeos de apoio para o Curso:**
 
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
