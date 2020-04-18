@@ -49,8 +49,16 @@ Link da vídeo aula:
 
 ## **003 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do Gateway e SVI Switch 2960**
 
-Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY para o acesso remoto e o gerenciamento do equipamento.
+Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY (linhas virtuais) para o acesso remoto e o gerenciamento do equipamento.
 
 As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-003-ConfiguracaoGatewaySVI.txt
+
+Link da vídeo aula:
+
+## **004 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do SSH Server Switch 2960**
+
+Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso do serviço de acesso remoto utilizando o protocolo SSH, essas configurações são utilizadas junto com o VTY (linhas virtuais) e SVI (interface virtual do switch) para o acesso remoto e o gerenciamento do equipamento de forma segura.
+
+As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-004-ConfiguracaoSSH.txt
 
 Link da vídeo aula:
