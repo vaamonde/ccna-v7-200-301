@@ -39,7 +39,7 @@ clock set 14:00:00 16 April 2020
 	!Habilitando o serviço de criptografia de senhas do Tipo-7 Password 
 	!DICA: senhas do Tipo-7 por padrão não são criptografadas
 	!OBSERVAÇÃO: senhas do Tipo-7 são fáceis de serem quebradas
-	!EXEMPLO: https://packetlife.net/toolbox/type7/
+	!DESAFIO: https://packetlife.net/toolbox/type7/
 	service password-encryption
 	
 	!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs
@@ -48,9 +48,9 @@ clock set 14:00:00 16 April 2020
   
 	!Desativando a resolução de nomes de domínio
 	!DICA: desabilitar esse recurso resolve o problema de travamento de comandos
-	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255)
-	!para desbloquear ou parar o comando você preciona: Ctrl+Shift+6 ou espera a liberação do terminal
-	!DICA: o comando: no e usado para desabilitar ou remover configurações feitas
+	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255))
+	!DICA: para desbloquear ou parar o comando você preciona: Ctrl+Shift+6 ou espera a liberação do terminal
+	!DICA: o comando: no e usado para desabilitar ou remover configurações feitas no switch
 	no ip domain-lookup
   
 	!Configuração do banner da mensagem do dia
@@ -70,7 +70,7 @@ clock set 14:00:00 16 April 2020
 	!DICA: não e recomendo criar usuários utilizando senhas do Tipo-7
 	!DICA: existe a possibilidade de se autenticar no switch utilizando o protocolos RADIUS ou TACACS
 	!DICA: usuários como Privilégio 15 não precisa digitar o comando enable
-	!OBSERVAÇÃO: Criação de usuários comuns para administrar o swtich, privilégio padrão 1
+	!OBSERVAÇÃO: Criação de usuários comuns para administrar o switch, privilégio padrão 1
 	username robson secret vaamonde@pti
 	username vaamonde password vaamonde@pti
 	username admin privilege 15 secret vaamonde@pti
