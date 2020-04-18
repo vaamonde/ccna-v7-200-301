@@ -20,8 +20,8 @@ enable
 	!Configuração do Gateway padrão IPv4 no Switch
 	!DICA: configuração do Gateway IPv4 em Switch Layer 2 serve somente para acesso remoto
 	!DICA: switch Layer 3 o recurso de Gateway e utilizado tanto para acesso remoto como roteamento
-	!OBSERVAÇÃO: esse recurso e necessário para administração remota ou monitoramente
-	!OBSERVAÇÃO: esse a possibilidade de configuraçao de endereço IPv6
+	!OBSERVAÇÃO: esse recurso e necessário para administração remota ou monitoramento
+	!OBSERVAÇÃO: esse a possibilidade de configuração de endereço IPv6
 	ip default-gateway 192.168.1.254
   
 	!Configuração da Interface Virtual do Switch SVI
@@ -32,8 +32,8 @@ enable
 	interface vlan 1
 		
 		!Configuração da Descrição da Interface Virtual
-		!DICA: sempre utilizar o comando description nas interface para documentaçao
-		!OBSERVAÇÃO: documentaçãoo de interfaces facilita o processo de indentificação e função na rede
+		!DICA: sempre utilizar o comando description nas interface para documentação
+		!OBSERVAÇÃO: documentação de interfaces facilita o processo de indentificação e função na rede
 		description Interface de Gerenciamento do Switch SW-L2-2960-1
 		
 		!Configuração do Endereçamento IPv4 da Interface Virtual
@@ -86,7 +86,7 @@ enable
 		description Interface de Gerenciamento do Switch SW-L2-2960-2
 		
 		!Configuração do Endereçamento IPv4 da Interface Virtual
-		ip address 192.168.1.251
+		ip address 192.168.1.251 255.255.255.0
 		
 		!Inicializando a Interface Virtual do Switch
 		no shutdown
