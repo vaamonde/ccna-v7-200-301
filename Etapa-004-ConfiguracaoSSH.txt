@@ -24,7 +24,7 @@ enable
 		!Criação da chave de criptografia e habilitar o serviço de SSH Server local
 		!DICA: por padrão o serviço de SSH Server está desabilitado no switch
 		!DICA: por padrão todas as conexões remotas utilizando o protocolo SSH são criptografas
-		!OBSERVAÇÃO: e recomendo utilizar módulo de criptografia de 1024 bits
+		!OBSERVAÇÃO: e recomendo utilizar módulo de criptografia de 1024 bits (360 até 2048)
 		!OBSERVAÇÃO: no switch real utilizamos o comando: crypto key generate rsa usage-keys modulus 1024
 		!OBSERVAÇÃO: existe vários modos de geração das chaves públicas criptografadas, o padrão e utilizar o RSA
 		!OBSERVAÇÃO: porta padrão de conexão do serviço de SSH e 22
@@ -35,7 +35,7 @@ enable
 		ip ssh version 2
 
 		!Habilitando o tempo de inatividade para novas conexões do SSH Server
-		!DICA: configuração de inatividade e feito somente em segundos
+		!DICA: configuração de inatividade e feita somente em segundos (0 até 120)
 		!OBSERVAÇÃO: essa configuração está relacionada ao tempo para autenticação
 		ip ssh time-out 60
 
@@ -61,11 +61,8 @@ show running-config
 !Visualizando as configurações do SSH Server
 show ip ssh
 
-!Visualizando as chaves públicas RSA
+!Visualizando das chaves públicas RSA
 show crypto key mypubkey rsa
-
-!Visualizando as sessões de conexões ativas do Switch
-show sessions
 
 !Visualizando as conexões ativas do SSH Server
 show ssh
@@ -109,3 +106,12 @@ write
 	
 !Visualizando as configurações da memória RAM
 show running-config
+
+!Visualizando as configurações do SSH Server
+show ip ssh
+
+!Visualizando das chaves públicas RSA
+show crypto key mypubkey rsa
+
+!Visualizando as conexões ativas do SSH Server
+show ssh
