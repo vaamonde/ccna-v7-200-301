@@ -28,4 +28,4 @@ Nessa primeira aula, será utilizado o Simulador de Redes Cisco Packet Tracer ve
 
 As configurações básicas dos Switches será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-001-ConfiguracaoBaseSwitch-2960.txt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
