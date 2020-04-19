@@ -45,7 +45,7 @@ Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora ha
 
 As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-002-ConfiguracaoVTY.txt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
 
 ## **003 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do Gateway e SVI Switch 2960**
 
