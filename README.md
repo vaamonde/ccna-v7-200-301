@@ -37,6 +37,8 @@ Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3
 
 As configurações básicas dos Switches será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-001-ConfiguracaoBaseSwitch-2960.txt
 
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-001.pkt
+
 Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 
 ## **002 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do VTY Switch 2960**
@@ -44,6 +46,8 @@ Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Linhas Virtuais VTY, que será utilizado para acesso remoto dos equipamentos.
 
 As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-002-ConfiguracaoVTY.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-002.pkt
 
 Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
 
@@ -53,6 +57,8 @@ Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora ha
 
 As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-003-ConfiguracaoGatewaySVI.txt
 
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-003.pkt
+
 Link da vídeo aula:
 
 ## **004 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do SSH Server Switch 2960**
@@ -60,5 +66,7 @@ Link da vídeo aula:
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso do serviço de acesso remoto utilizando o protocolo SSH, essas configurações são utilizadas junto com o VTY (linhas virtuais) e SVI (interface virtual do switch) para o acesso remoto e o gerenciamento do equipamento de forma segura.
 
 As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-004-ConfiguracaoSSH.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-004.pkt
 
 Link da vídeo aula:
