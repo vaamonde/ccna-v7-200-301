@@ -67,6 +67,12 @@ show crypto key mypubkey rsa
 !Visualizando as conexões ativas do SSH Server
 show ssh
 
+!Acessando remotamente o Switch utilizando o protocolo Telnet
+telnet 192.168.1.250
+
+!Acessando remotamente o Switch utilizando o protocolo SSH
+ssh -l admin 192.168.1.250
+
 ==============================================================================================
 
 !Automação da configuração do Switch 2
