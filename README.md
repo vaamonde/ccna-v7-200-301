@@ -20,6 +20,11 @@ Implementing and Administering Cisco Solutions (CCNA) v1.0: https://www.cisco.co
 CCNA 200-301 Official Cert Guide, Volume 1 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/0135792738<br>
 CCNA 200-301 Official Cert Guide, Volume 2 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/1587147130
 
+## **Indicação de eBooks Não Oficiais da Cisco CCNA**
+GNS3 Vault: How to Master CCNA R&S, René Molenaar (Inglês): https://gns3vault.com/product/how-to-master-ccna-rs<br>
+GNS3 Vault: How to Master Subnetting, René Molenaar (Inglês): https://gns3vault.com/product/master-subnetting<br>
+FlackBox: Cisco CCNA Lab Guide (Inglês): https://www.flackbox.com/
+
 ## **Links de vídeos de apoio para o Curso:**
 
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
