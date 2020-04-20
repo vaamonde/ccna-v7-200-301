@@ -37,8 +37,8 @@ enable
 		description Interface de Gerenciamento do Switch SW-L2-2960-1
 		
 		!Configuração do Endereçamento IPv4 da Interface Virtual
-		!DICA: o endereço IPv4 deve ser o mesmo rede do Gateway
-		!DICA: e recomendo que os endereços de rede dos Switch devem ser configurados em redes diferentes
+		!DICA: o endereço IPv4 deve ser da mesma rede do Gateway
+		!DICA: e recomendo que os endereços de rede dos Switch devem ser de redes diferentes dos desktops
 		!OBSERVAÇÃO: configuração do endereço IPv4 de ser: IP + Máscara de Rede completa, não utilizar CIDR
 		ip address 192.168.1.250 255.255.255.0
 		
