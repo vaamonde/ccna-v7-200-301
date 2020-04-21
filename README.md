@@ -49,7 +49,13 @@ Visual Studio Code no GNU/Linux Mint: https://www.youtube.com/watch?v=ZSEwwtQucc
 
 ## **Playlist de Cursos de Apoio de Infraestrutura de Rede:**
 Curso Grátis Infraestrutura de Redes: https://www.youtube.com/playlist?list=PLozhsZB1lLUP8-70SXyscODg5dvIwQRGG<br>
-Curso Grátis Hardware e Software de Servidores: https://www.youtube.com/playlist?list=PLozhsZB1lLUPBmrvMXzsFxG34LwO9K8Pu
+Curso Grátis Hardware de Servidores: https://www.youtube.com/playlist?list=PLozhsZB1lLUPBmrvMXzsFxG34LwO9K8Pu
+
+## **Material de Apoio em PDF Detalhado dos Comandos Básicos:**
+Material de Apoio-01: https://drive.google.com/file/d/1BxUXh8Vf82_Ze7p3ZDYZsjHxHzpvezUi/view<br>
+Material de Apoio-02: https://drive.google.com/file/d/1hujPpL7Jd_C1hNMb_GM9RmQxbQstnBrV/view<br>
+Material de Apoio-03: https://drive.google.com/file/d/1IKKm_U9anbwuUCwq1mFU9WG-MFFXXQht/view<br>
+Material de Apoio-04: https://drive.google.com/file/d/1LBQWS7IS1CMWRpGT074uahFSA32qa9PC/view
 
 ## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base Switch 2960**
 
