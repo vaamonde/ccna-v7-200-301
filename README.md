@@ -15,6 +15,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 Cisco Certified Network Associate (200-301 CCNA): https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html<br>
 Implementing and Administering Cisco Solutions (CCNA) v1.0: https://www.cisco.com/c/en/us/training-events/training-certifications/training/training-services/courses/implementing-and-administering-cisco-solutions-ccna.html<br>
+Exam Description CCNA Exam v1.0 (CCNA 200-301): https://www.cisco.com/c/dam/en_us/training-events/le31/le46/cln/marketing/exam-topics/200-301-CCNA.pdf
 
 ## **Livros Oficiais da Cisco CCNA v7 200-301:**
 CCNA 200-301 Official Cert Guide, Volume 1 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/0135792738<br>
@@ -36,6 +37,9 @@ Laboratório de IPv6, Equipe IPv6 (Português): http://ipv6.br/pagina/livro-ipv6
 ## **Site com Questões da Prova de CCNA c7 200-301:**
 9tut CCNA Training: https://www.9tut.com/
 
+## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
+Cisco::Pearson VUE: https://home.pearsonvue.com/cisco
+
 ## **Links de Vídeos de Apoio para o Curso de CCNA v7 200-301:**
 
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
@@ -55,10 +59,28 @@ Curso Grátis Hardware de Servidores: https://www.youtube.com/playlist?list=PLoz
 Material de Apoio-01: https://drive.google.com/file/d/1BxUXh8Vf82_Ze7p3ZDYZsjHxHzpvezUi/view<br>
 Material de Apoio-02: https://drive.google.com/file/d/1hujPpL7Jd_C1hNMb_GM9RmQxbQstnBrV/view<br>
 Material de Apoio-03: https://drive.google.com/file/d/1IKKm_U9anbwuUCwq1mFU9WG-MFFXXQht/view<br>
-Material de Apoio-04: https://drive.google.com/file/d/1LBQWS7IS1CMWRpGT074uahFSA32qa9PC/view
+Material de Apoio-04: https://drive.google.com/file/d/1LBQWS7IS1CMWRpGT074uahFSA32qa9PC/view<br>
+Tabela ASCII: https://drive.google.com/file/d/1NS5qDgem0lJhq6O6aIE1sX5e5IedKjeT/view<br>
 
-## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
-Cisco::Pearson VUE: https://home.pearsonvue.com/cisco
+## **Material de Apoio do Protocolo IPv4 e IPv6**
+IPv4 Subnetting: https://drive.google.com/file/d/1iQk5oda16J68GEn7pQP1oY3v_Hzfgbrw/view<br>
+IPv4 CIDR Table: https://drive.google.com/file/d/1dTE6RUHgS68Pf_kMNREJITeU3m4DqIIl/view<br>
+IPv4 Multicast: https://drive.google.com/file/d/182zqH3eTkhhBHVNIFPZ9aCRcdZJa5UeW/view<br>
+IPv4 Workbook: https://drive.google.com/file/d/1H9Euz1k0LRXNY59wbkYCrEYsJzuwSjbm/view<br>
+IPv4 Calculation Summary: https://drive.google.com/file/d/1UJxYpALL8cjV0enpgz3GoVM2MosM6zj3/view<br>
+IPv4 Tabela de Cálculo: https://drive.google.com/file/d/1USrllB1x8fw26E7304vK4_PA_DLs6HWL/view<br>
+IPv4/IPv6 Common Ports: https://drive.google.com/file/d/1FWP7IuTXjaVi0WAjrwwVJ7gojMNvCZ9D/view<br>
+IPv6 Information: https://drive.google.com/file/d/1tyqxQ3CT3SAtGohOUvG1q7zNZ-gZiHfm/view
+
+## **Site para quebrar Senhas da Cisco do Tipo-5 (Secret) e Tipo7 (Password)**
+Senhas do Tipo-5 Secret: https://www.ifm.net.nz/cookbooks/cisco-ios-enable-secret-password-cracker.html<br>
+Senhas do Tipo-7 Password: https://www.ifm.net.nz/cookbooks/passwordcracker.html
+
+## **Indicação de Editores de Texto para trabalhar com Scripts:**
+Microsoft: Notepad++ (Plus): https://notepad-plus-plus.org/<br>
+Microsoft e GNU/Linux: Visual Sutdio VSCode: https://code.visualstudio.com/<br>
+Microsoft e GNU/Linux: Atom: https://atom.io/<br>
+GNU/Linux: Notepadqq: https://notepadqq.com/s/
 
 ## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base Switch 2960**
 
