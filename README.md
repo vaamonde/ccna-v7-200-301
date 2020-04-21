@@ -98,4 +98,4 @@ As configurações do VTY será feita utilizando o Script: https://github.com/va
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-004.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
