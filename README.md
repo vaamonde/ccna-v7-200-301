@@ -27,7 +27,7 @@ CCNA 7: Introduction to Networks: https://www.netacad.com/pt-br/courses/networki
 CCNA 7: Switching, Routing, and Wireless Essentials: https://www.netacad.com/pt-br/courses/networking/ccna-switching-routing-wireless-essentials<br>
 CCNA 7: Enterprise Networking, Security, and Automation: https://www.netacad.com/pt-br/courses/networking/ccna-enterprise-networking-security-automation
 
-## **Indicação de eBooks Não Oficiais da Cisco CCNA**
+## **Indicação de eBooks e Livros não Oficiais da Cisco CCNA**
 GNS3 Vault: How to Master CCNA R&S, René Molenaar (Inglês): https://gns3vault.com/product/how-to-master-ccna-rs<br>
 GNS3 Vault: How to Master Subnetting, René Molenaar (Inglês): https://gns3vault.com/product/master-subnetting<br>
 FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.com/<br>
