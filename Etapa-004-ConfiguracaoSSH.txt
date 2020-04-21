@@ -21,9 +21,9 @@ enable
 		!DICA: o nome de domínio e utilizado pelo serviço do SSH e outros serviços de rede, como autenticação
 		ip domain-name vaamonde.pti
 
-		!Criação da chave de criptografia e habilitar o serviço de SSH Server local
+		!Criação da chave de criptografia e habilitar o serviço do SSH Server local
 		!DICA: por padrão o serviço de SSH Server está desabilitado no switch
-		!DICA: por padrão todas as conexões remotas utilizando o protocolo SSH são criptografas
+		!DICA: por padrão todas as conexões remotas utilizando o protocolo SSH são criptografadas
 		!OBSERVAÇÃO: e recomendo utilizar módulo de criptografia de 1024 bits (360 até 2048)
 		!OBSERVAÇÃO: no switch real utilizamos o comando: crypto key generate rsa usage-keys modulus 1024
 		!OBSERVAÇÃO: existe vários modos de geração das chaves públicas criptografadas, o padrão e utilizar o RSA
