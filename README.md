@@ -34,7 +34,7 @@ FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.co
 Laboratórios de Tecnologias Cisco, Samuel Henrique (Português): https://novatec.com.br/livros/laboratorios-cisco-2ed/<br>
 Laboratório de IPv6, Equipe IPv6 (Português): http://ipv6.br/pagina/livro-ipv6/
 
-## **Site com Questões da Prova de CCNA c7 200-301:**
+## **Site com Questões da Prova de CCNA v7 200-301:**
 9tut CCNA Training: https://www.9tut.com/
 
 ## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
