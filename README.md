@@ -24,7 +24,7 @@ CCNA 200-301 Official Cert Guide, Volume 2 (Inglês): https://www.amazon.com.br/
 ## **Treinamento Oficial da Cisco CCNA v7 200-301:**
 
 CCNA 7: Introduction to Networks: https://www.netacad.com/pt-br/courses/networking/ccna-introduction-networks<br>
-CCNA 7: Switching, Routing, and Wireless Essentials: https://www.netacad.com/pt-br/courses/networking/ccna-switching-routing-wireless-essentials
+CCNA 7: Switching, Routing, and Wireless Essentials: https://www.netacad.com/pt-br/courses/networking/ccna-switching-routing-wireless-essentials<br>
 CCNA 7: Enterprise Networking, Security, and Automation: https://www.netacad.com/pt-br/courses/networking/ccna-enterprise-networking-security-automation
 
 ## **Indicação de eBooks Não Oficiais da Cisco CCNA**
