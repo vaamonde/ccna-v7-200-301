@@ -57,6 +57,9 @@ Material de Apoio-02: https://drive.google.com/file/d/1hujPpL7Jd_C1hNMb_GM9RmQxb
 Material de Apoio-03: https://drive.google.com/file/d/1IKKm_U9anbwuUCwq1mFU9WG-MFFXXQht/view<br>
 Material de Apoio-04: https://drive.google.com/file/d/1LBQWS7IS1CMWRpGT074uahFSA32qa9PC/view
 
+## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
+Cisco::Pearson VUE: https://home.pearsonvue.com/cisco
+
 ## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base Switch 2960**
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
