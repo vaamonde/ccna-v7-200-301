@@ -33,7 +33,10 @@ FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.co
 Laboratórios de Tecnologias Cisco, Samuel Henrique (Português): https://novatec.com.br/livros/laboratorios-cisco-2ed/<br>
 Laboratório de IPv6, Equipe IPv6 (Português): http://ipv6.br/pagina/livro-ipv6/
 
-## **Links de vídeos de apoio para o Curso:**
+## **Site com Questões da Prova de CCNA c7 200-301:**
+9tut CCNA Training: https://www.9tut.com/
+
+## **Links de Vídeos de Apoio para o Curso de CCNA v7 200-301:**
 
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
 Conhecendo o Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
@@ -44,7 +47,7 @@ Descobrindo Senhas de Roteadores Cisco por Força Bruta: https://www.youtube.com
 GIT e GITHUB Básico no GNU/Linux Mint: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
 Visual Studio Code no GNU/Linux Mint: https://www.youtube.com/watch?v=ZSEwwtQuccY&t
 
-## **Playlist de Cursos de Apoio:**
+## **Playlist de Cursos de Apoio de Infraestrutura de Rede:**
 Curso Grátis Infraestrutura de Redes: https://www.youtube.com/playlist?list=PLozhsZB1lLUP8-70SXyscODg5dvIwQRGG<br>
 Curso Grátis Hardware e Software de Servidores: https://www.youtube.com/playlist?list=PLozhsZB1lLUPBmrvMXzsFxG34LwO9K8Pu
 
