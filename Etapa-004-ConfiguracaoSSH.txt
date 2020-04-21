@@ -35,12 +35,13 @@ enable
 		ip ssh version 2
 
 		!Habilitando o tempo de inatividade para novas conexões do SSH Server
-		!DICA: configuração de inatividade e feita somente em segundos (0 até 120)
+		!DICA: configuração de inatividade e feita somente em segundos (1 até 120)
 		!OBSERVAÇÃO: essa configuração está relacionada ao tempo para autenticação
 		ip ssh time-out 60
 
 		!Habilitando o número máximo de tentativas de conexões simultâneas no SSH Server
 		!DICA: essa opção aumenta o nível de segurança com Força Bruta (Brute-Force)
+		!OBSERVAÇÃO: limites de conexões simultâneas vai de: 0 até 5
 		ip ssh authentication-retries 2
 
 		!Acessando as linhas virtuais de acesso remoto do Switch
