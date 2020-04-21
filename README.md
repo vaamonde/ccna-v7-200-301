@@ -29,8 +29,8 @@ CCNA 7: Enterprise Networking, Security, and Automation: https://www.netacad.com
 ## **Indicação de eBooks Não Oficiais da Cisco CCNA**
 GNS3 Vault: How to Master CCNA R&S, René Molenaar (Inglês): https://gns3vault.com/product/how-to-master-ccna-rs<br>
 GNS3 Vault: How to Master Subnetting, René Molenaar (Inglês): https://gns3vault.com/product/master-subnetting<br>
-FlackBox: Cisco CCNA Lab Guide Neil Anderson (Inglês): https://www.flackbox.com/<br>
-Laboratórios de Tecnologias Cisco em Infraestrutura de Redes, Samuel Henrique Bucke Brito (Português): https://novatec.com.br/livros/laboratorios-cisco-2ed/<br>
+FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.com/<br>
+Laboratórios de Tecnologias Cisco, Samuel Henrique (Português): https://novatec.com.br/livros/laboratorios-cisco-2ed/<br>
 Laboratório de IPv6, Equipe IPv6 (Português): http://ipv6.br/pagina/livro-ipv6/
 
 ## **Links de vídeos de apoio para o Curso:**
@@ -43,6 +43,10 @@ Recuperando e Descobrindo Senhas de Roteadores Cisco: https://www.youtube.com/wa
 Descobrindo Senhas de Roteadores Cisco por Força Bruta: https://www.youtube.com/watch?v=iZuxEwET8cg&t<br>
 GIT e GITHUB Básico no GNU/Linux Mint: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
 Visual Studio Code no GNU/Linux Mint: https://www.youtube.com/watch?v=ZSEwwtQuccY&t
+
+## **Playlist de Cursos de Apoio:**
+Curso Grátis Infraestrutura de Redes: https://www.youtube.com/playlist?list=PLozhsZB1lLUP8-70SXyscODg5dvIwQRGG<br>
+Curso Grátis Hardware e Software de Servidores: https://www.youtube.com/playlist?list=PLozhsZB1lLUPBmrvMXzsFxG34LwO9K8Pu
 
 ## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base Switch 2960**
 
