@@ -136,7 +136,7 @@ Link da vídeo aula:
 
 Nessa aula, daremos continuidade nas configurações do Router 1941, agora configurando a Interface GigabitEthernet que será utilizada como Gateway da Rede LAN.
 
-As configurações da Interface será feita utilizando o Script: 
+As configurações da Interface será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-006-ConfiguracaoInterfaceRouter-1941.txt
 
 Download do cenário configurado: 
 
