@@ -69,6 +69,7 @@ enable
 		!OBSERVAÇÃO: períodos de tempo de bloqueio configurado em segundos (1 até 65535)
 		!OBSERVAÇÃO: tentativas de falhas de conexões em quantidade (1 até 65535)
 		!OBSERVAÇÃO: dentro do período de tempo configurado em segundos (1 até 65535)
+		!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 mais está disponível em Switch Layer 3 3560
 		login block-for 120 attempts 2 within 60
 
 		!Acessando a linha console, porta padrão de acesso Out-of-Band (Fora da Banda)
@@ -89,7 +90,7 @@ enable
 			!Saindo da configuração da linha console
 			exit
 
-		!Acessando a linha auxiliar, porta padrão de acesso Out-of-Band (Fora da Banda)
+		!Acessando a linha auxiliar, utilizada como acesso remoto utilizando Modem
 		!DICA: a porta auxiliar permite configurações do suporte de discagem (Modem)
 		!OBSERVAÇÃO: no simulador Cisco Packet Tracer as configurações são limitadas
 		!OBSERVAÇÃO: essa configuração não e cobrada no CCNA e pouca usada no dia-a-dia
@@ -114,8 +115,8 @@ enable
 			speed 115200
 			
 			!Habilitando o controle de fluxo de dados
-			!DICA: o controle de fluxo de dados mantem a estabilidade da transmissão
-			OBSERVAÇÃO: a configuração de fluxo de dados pode ser controlada por hardware ou software
+			!DICA: o controle de fluxo de dados mantém a estabilidade da transmissão
+			!OBSERVAÇÃO: a configuração de fluxo de dados pode ser controlada por hardware ou software
 			flowcontrol hardware
 			
 			!Recursos que não estão disponíveis no Cisco Packet Tracer

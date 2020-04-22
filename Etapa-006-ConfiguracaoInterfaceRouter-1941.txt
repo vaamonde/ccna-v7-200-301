@@ -50,10 +50,11 @@ show interface gigabitEthernet 0/0
 !Visualizando informações de roteamento
 show ip route
 
-!Testando a conectividade de rede
+!Testando a conectividade de rede do roteador
 ping 192.168.1.254
 ping 192.168.1.250
 ping 192.168.1.251
+ping 192.168.1.10
 
 !Testando o acesso remoto utilizando o SSH
 ssh -l admin 192.168.1.254
