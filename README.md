@@ -82,7 +82,7 @@ Microsoft e GNU/Linux: Visual Sutdio VSCode: https://code.visualstudio.com/<br>
 Microsoft e GNU/Linux: Atom: https://atom.io/<br>
 GNU/Linux: Notepadqq: https://notepadqq.com/s/
 
-## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base Switch 2960**
+## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base do Switch 2960**
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
@@ -121,3 +121,43 @@ As configurações do VTY será feita utilizando o Script: https://github.com/va
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-004.pkt
 
 Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
+
+## **005 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base do Router 1941**
+
+Nessa aula, vou fazer a configuração Base do Cisco Router 1941, nesse cenário, utilizando os conhecimentos adquiridos até agora, seu processo de configuração será mais rápido, apenas a aplicação do script com alguns detalhes a mais em relação ao Switch, será configurado a Porta Aux (Auxiliar).
+
+As configurações do Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-005-ConfiguracaoBaseRouter-1941.txt
+
+Download do cenário configurado: 
+
+Link da vídeo aula: 
+
+## **006 Laboratório Prático Cisco CCNA v7 200-301 - Configuração da Interface do Router 1941**
+
+Nessa aula, daremos continuidade nas configurações do Router 1941, agora configurando a Interface GigabitEthernet que será utilizada como Gateway da Rede LAN.
+
+As configurações da Interface será feita utilizando o Script: 
+
+Download do cenário configurado: 
+
+Link da vídeo aula: 
+
+## **007 Laboratório Prático Cisco CCNA v7 200-301 - Backup das Configurações do Switch 2960 e Router 1941**
+
+Nessa aula, vou fazer o backup das configurações dos Switch 2960 e do Router 1941 para o Servidor de TFTP (Trivial File Transfer Protocol), o backup consiste das configurações do Running ou Startup Config de cada equipamento e do Cisco IOS (Internetwork Operating System).
+
+As configurações do Backup será feita utilizando o Script: 
+
+Download do cenário configurado: 
+
+Link da vídeo aula: 
+
+## **007 Laboratório Prático Cisco CCNA v7 200-301 - Atualização do Cisco IOS no Switch 2960**
+
+Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Operating System) utilizando o servidor TFTP (Trivial File Transfer Protocol) dos Switch Cisco 2960.
+
+As configurações da Atualização será feita utilizando o Script: 
+
+Download do cenário configurado: 
+
+Link da vídeo aula: 
