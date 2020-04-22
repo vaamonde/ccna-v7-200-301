@@ -12,7 +12,6 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **Links Oficiais da Cisco CCNA v7 200-301:**
-
 Cisco Certified Network Associate (200-301 CCNA): https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html<br>
 Implementing and Administering Cisco Solutions (CCNA) v1.0: https://www.cisco.com/c/en/us/training-events/training-certifications/training/training-services/courses/implementing-and-administering-cisco-solutions-ccna.html<br>
 Exam Description CCNA Exam v1.0 (CCNA 200-301): https://www.cisco.com/c/dam/en_us/training-events/le31/le46/cln/marketing/exam-topics/200-301-CCNA.pdf
@@ -22,26 +21,24 @@ CCNA 200-301 Official Cert Guide, Volume 1 (Inglês): https://www.amazon.com.br/
 CCNA 200-301 Official Cert Guide, Volume 2 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/1587147130
 
 ## **Treinamento Oficial da Cisco CCNA v7 200-301:**
-
 CCNA 7: Introduction to Networks: https://www.netacad.com/pt-br/courses/networking/ccna-introduction-networks<br>
 CCNA 7: Switching, Routing, and Wireless Essentials: https://www.netacad.com/pt-br/courses/networking/ccna-switching-routing-wireless-essentials<br>
 CCNA 7: Enterprise Networking, Security, and Automation: https://www.netacad.com/pt-br/courses/networking/ccna-enterprise-networking-security-automation
 
-## **Indicação de eBooks e Livros não Oficiais da Cisco CCNA**
+## **Indicação de eBooks e Livros não Oficiais da Cisco CCNA v7 200-301 - v6 200-125**
 GNS3 Vault: How to Master CCNA R&S, René Molenaar (Inglês): https://gns3vault.com/product/how-to-master-ccna-rs<br>
 GNS3 Vault: How to Master Subnetting, René Molenaar (Inglês): https://gns3vault.com/product/master-subnetting<br>
 FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.com/<br>
 Laboratórios de Tecnologias Cisco, Samuel Henrique (Português): https://novatec.com.br/livros/laboratorios-cisco-2ed/<br>
 Laboratório de IPv6, Equipe IPv6 (Português): http://ipv6.br/pagina/livro-ipv6/
 
-## **Site com Questões da Prova de CCNA v7 200-301:**
+## **Site com Questões da Prova de CCNA v7 200-301 - v6 200-125:**
 9tut CCNA Training: https://www.9tut.com/
 
 ## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
 Cisco::Pearson VUE: https://home.pearsonvue.com/cisco
 
 ## **Links de Vídeos de Apoio para o Curso de CCNA v7 200-301:**
-
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
 Conhecendo o Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
 Topologias Lógica e Física no Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
