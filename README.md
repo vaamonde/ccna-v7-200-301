@@ -131,7 +131,7 @@ As configurações do Router será feita utilizando o Script: https://github.com
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-005.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=hNlAzBushZ0
 
 ## **006 Laboratório Prático Cisco CCNA v7 200-301 - Configuração da Interface do Router 1941**
 
