@@ -128,7 +128,7 @@ Nessa aula, vou fazer a configuração Base do Cisco Router 1941, nesse cenário
 
 As configurações do Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-005-ConfiguracaoBaseRouter-1941.txt
 
-Download do cenário configurado: 
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-005.pkt
 
 Link da vídeo aula: 
 
@@ -138,7 +138,7 @@ Nessa aula, daremos continuidade nas configurações do Router 1941, agora confi
 
 As configurações da Interface será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-006-ConfiguracaoInterfaceRouter-1941.txt
 
-Download do cenário configurado: 
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-006.pkt
 
 Link da vídeo aula: 
 
@@ -152,7 +152,7 @@ Download do cenário configurado:
 
 Link da vídeo aula: 
 
-## **007 Laboratório Prático Cisco CCNA v7 200-301 - Atualização do Cisco IOS no Switch 2960**
+## **008 Laboratório Prático Cisco CCNA v7 200-301 - Atualização do Cisco IOS no Switch 2960**
 
 Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Operating System) utilizando o servidor TFTP (Trivial File Transfer Protocol) dos Switch Cisco 2960.
 
