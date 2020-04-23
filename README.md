@@ -83,6 +83,9 @@ GNU/Linux: Notepadqq: https://notepadqq.com/s/
 SolarWinds TFTP Server Free: https://www.solarwinds.com/free-tools/free-tftp-server/registration<br>
 TFTP32 Opensource: http://tftpd32.jounin.net/tftpd32_download.html
 
+## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNA v7 200-301:**
+Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
+
 ## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base do Switch 2960**
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
