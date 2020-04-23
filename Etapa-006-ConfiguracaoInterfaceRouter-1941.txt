@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 22/04/2020
-!Data de atualização: 22/04/2020
-!Versão: 0.01
+!Data de atualização: 23/04/2020
+!Versão: 0.02
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !Acessando o modo EXEC Privilégiado
@@ -30,6 +30,7 @@ enable
 			!Inicializando a Interface Física do Router
 			!DICA: por padrão todas as interfaces de roteadores estão no status desligada (Shutdown)
 			!OBSERVAÇÃO: todas as interfaces do roteador estão com o status Administratively Down
+			!ERRATA: no vídeo eu falo: Desligada pelo Administrador, correto é: Desligada Administrativamente.
 			no shutdown
   
 			!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
