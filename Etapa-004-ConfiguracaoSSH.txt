@@ -83,6 +83,9 @@ telnet 192.168.1.251
 ssh -l admin 192.168.1.250
 ssh -l admin 192.168.1.251
 
+!Visualizando as conexões remotas estabelecidas no Switch
+show users
+
 ==============================================================================================
 
 !Automação da configuração do Switch 2
@@ -131,3 +134,6 @@ show crypto key mypubkey rsa
 
 !Visualizando as conexões ativas do SSH Server
 show ssh
+
+!Visualizando as conexões remotas estabelecidas no Switch
+show users
