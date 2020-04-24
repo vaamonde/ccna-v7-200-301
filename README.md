@@ -145,7 +145,7 @@ As configurações da Interface será feita utilizando o Script: https://github.
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-006.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=WfvVUL-WQVs&t
 
 ## **007 Laboratório Prático Cisco CCNA v7 200-301 - Backup das Configurações do Switch 2960 e Router 1941**
 
