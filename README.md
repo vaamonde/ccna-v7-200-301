@@ -150,7 +150,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer o backup das configurações dos Switch 2960 e do Router 1941 para o Servidor de TFTP (Trivial File Transfer Protocol), o backup consiste das configurações do Running ou Startup Config de cada equipamento e do Cisco IOS (Internetwork Operating System).
 
-As configurações do Backup será feita utilizando o Script: 
+As configurações do Backup será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-007-BackupConfiguracaoCiscoIOS.txt
 
 Download do cenário configurado: 
 
