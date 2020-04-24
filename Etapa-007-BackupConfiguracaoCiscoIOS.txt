@@ -15,17 +15,17 @@
 !Acessando o modo EXEC Privilégiado
 enable
 	
-	!Visualizando a versão do Cisco IOS e informações do Hardware do Switch
-	!DICA: esse comando e utilizado para verificar a versão e hardware do Switch
+	!Visualizando a versão do Cisco IOS e informações do Hardware do Switch 2960
+	!DICA: esse comando e utilizado para verificar a versão de hardware e IOS do Switch
 	!DICA: atualmente a versão utilizada nos hardware da Cisco e 15.x
 	!OBSERVAÇÃO: as informações de memórias em equipamentos da Cisco estão em Kbytes ou Bytes
-	!OBSERVAÇÃO: esse comando fornece informações de referente a Configuração do Registro de Inicialização
+	!OBSERVAÇÃO: esse comando fornece informações referente a Configuração do Registro de Inicialização
 	show version
 		63488K bytes of flash-simulated non-volatile configuration memory.
 		63488KB/1000=64MB
 
 	!Visualizando informações da inicialização do Switch 2960
-	!DICA: comando utilizado para verificar o arquivo de configuração de inicialização
+	!DICA: comando e utilizado para verificar o arquivo de configuração de inicialização
 	!OBSERVAÇÃO: as informações são importante para o processo de quebra de senha do Switch
 	show boot
 	
@@ -42,6 +42,7 @@ enable
 	
 	!Salvando as configurações da memória RAM para a memória FLASH
 	copy startup-config flash: 
+	dir flash:
 	
 	!Salvando as configurações da memória NVRAM para o Servidor TFTP 
 	!DICA: o serviço de TFTP (Trivial File Transfer Protocol) utiliza o Protocolo UDP na Porta 69
@@ -52,15 +53,16 @@ enable
 		192.168.1.1
 	
 	!Salvando a imagem do Cisco IOS do Switch 2960 para o Servidor TFTP
-	!DICA:
-	!OBSERVAÇÃO:
+	!DICA: as imagens do Cico IOS estão no formato BIN (binário) e compactado (m=RAM | z=zip)
+	!OBSERVAÇÃO: não e aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura
+	!CUIDADO: como o Cisco IOS e uma sub-derivação do Unix, ele é Case Sensitive (Maiúscula/Minúscula)
 	copy flash: tftp:
 		c2960-lanbase-mz.122-25.FX.bin
 		192.168.1.1
 		
 	!Salvando as configurações do Running Config ou Startup Config no Bloco de Notas
-	!DICA:
-	!OBSERVAÇÃO:
+	!DICA: esse e o método mais simples de backup das configurações do Switch ou Router 
+	!OBSERVAÇÃO: utilizar sempre um editor de texto profissional, para não modificar o arquivo
 	show running-config
 	
 	!Saindo do modo EXEC Privilegiado
@@ -73,8 +75,8 @@ enable
 enable
 	
 	!Visualizando a versão do Cisco IOS e informações do Hardware do Router
-	!DICA: em roteadores esse comando fornece informaçoes de licenciamento do hardware
-	!OBSERVAÇÃO: como no Switch, esse comando fornece informações de inicialização do hardware
+	!DICA: em roteadores esse comando fornece informações de licenciamento do hardware
+	!OBSERVAÇÃO: como no Switch, esse comando fornece informações de inicialização do IOS
 	!OBSERVAÇÃO: em roteadores não temos o comando: show boot
 	show version
 		249856K bytes of ATA System CompactFlash 0 (Read/Write)
@@ -92,7 +94,7 @@ enable
 	!Salvando as configurações da memória RAM para memória NVRAM
 	copy running-config startup-config
 	
-	!Salvando as configurações da memória RAM para a memória FLASH
+	!Salvando as configurações da memória NVRAM para a memória FLASH
 	copy startup-config flash: 
 	
 	!Salvando as configurações da memória NVRAM para o Servidor TFTP
@@ -106,8 +108,6 @@ enable
 		192.168.1.1
 		
 	!Salvando as configurações do Running Config ou Startup Config no Bloco de Notas
-	!DICA:
-	!OBSERVAÇÃO:
 	show running-config
 	
 	!Saindo do modo EXEC Privilegiado
