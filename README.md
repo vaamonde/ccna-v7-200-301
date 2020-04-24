@@ -162,6 +162,8 @@ Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Oper
 
 As configurações da Atualização será feita utilizando o Script: 
 
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-008-UpdateCiscoIOS-Switch-2960.txt
+
 Download do cenário configurado: 
 
 Link da vídeo aula: 
