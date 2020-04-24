@@ -81,7 +81,8 @@ GNU/Linux: Notepadqq: https://notepadqq.com/s/
 
 ## **Indicação de Software de TFTP (Trivial File Transfer Protocol):**
 SolarWinds TFTP Server Free: https://www.solarwinds.com/free-tools/free-tftp-server/registration<br>
-TFTP32 Opensource: http://tftpd32.jounin.net/tftpd32_download.html
+TFTP32 Opensource: http://tftpd32.jounin.net/tftpd32_download.html<br>
+TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
 
 ## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNA v7 200-301:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
