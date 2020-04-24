@@ -1,0 +1,46 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 24/04/2020
+!Data de atualização: 24/04/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!Acessando o modo EXEC Privilégiado
+enable
+	
+	!Atualizando o Cisco IOS (Firmware) do Switch 2960
+	!DICA: as imagens do Cico IOS estão no formato BIN (binário) e compactado (m=RAM | z=zip)
+	!OBSERVAÇÃO: só executa esse procedimento, depois de fazer os backups do IOS e Config
+	!OBSERVAÇÃO: não e aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura
+	!CUIDADO: como o Cisco IOS e uma sub-derivação do Unix, ele é Case Sensitive (Maiúscula/Minúscula)
+	!CUIDADO: por padrão, caso não tenha espaço suficiente na Flash para a nova imagem, será removida a imagem anterior
+	copy tftp: flash:
+		192.168.1.1
+		c2960-lanbasek9-mz.150-2.SE4.bin
+	show flash:
+	
+	!Acessando o modo de Configuração Global de comandos
+	configure terminal
+	
+		!Atualizando a imagem do Cisco IOS de inicialização
+		!OBSERVAÇÃO: o nome da imagem tem que ser igual ao copiado para o Flash Card 
+		boot system c2960-lanbasek9-mz.150-2.SE4.bin
+		
+		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+		end
+
+!Visualizando as informações da inicialização do Switch
+show boot
+	
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+	
+!Reinicializando o Switch 2960
+!DICA: em Switch ou Router não existe o comando para desligar
+reload
