@@ -152,7 +152,7 @@ Nessa aula, vou fazer o backup das configurações dos Switch 2960 e do Router 1
 
 As configurações do Backup será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-007-BackupConfiguracaoCiscoIOS.txt
 
-Download do cenário configurado: 
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-007.pkt
 
 Link da vídeo aula: 
 
@@ -164,6 +164,6 @@ As configurações da Atualização será feita utilizando o Script:
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-008-UpdateCiscoIOS-Switch-2960.txt
 
-Download do cenário configurado: 
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-008.pkt
 
 Link da vídeo aula: 
