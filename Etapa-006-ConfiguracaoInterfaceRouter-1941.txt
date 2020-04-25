@@ -17,24 +17,24 @@ enable
 	!Acessando o modo de Configuração Global de comandos
 	configure terminal
 	
-	!Configurando a Interface Física GigabitEthernet 0/0
-	interface gigabitEthernet 0/0
+		!Configurando a Interface Física GigabitEthernet 0/0
+		interface gigabitEthernet 0/0
 		
-		!Configuração da Descrição da Interface Virtual
-		description Interface de Gateway da Rede LAN Router rt-1941-1
+			!Configuração da Descrição da Interface Virtual
+			description Interface de Gateway da Rede LAN Router rt-1941-1
 		
-		!Configuração do Endereçamento IPv4 da Interface Física
-		!OBSERVAÇÃO: essa interface será o endereço de Gateway da Rede LAN
-		ip address 192.168.1.254 255.255.255.0
+			!Configuração do Endereçamento IPv4 da Interface Física
+			!OBSERVAÇÃO: essa interface será o endereço de Gateway da Rede LAN
+			ip address 192.168.1.254 255.255.255.0
 		
-		!Inicializando a Interface Física do Router
-		!DICA: por padrão todas as interfaces de roteadores estão no status desligada (Shutdown)
-		!OBSERVAÇÃO: todas as interfaces do roteador estão com o status Administratively Down
-		!ERRATA: no vídeo eu falo: Desligada pelo Administrador, correto é: Desligada Administrativamente.
-		no shutdown
+			!Inicializando a Interface Física do Router
+			!DICA: por padrão todas as interfaces de roteadores estão no status desligada (Shutdown)
+			!OBSERVAÇÃO: todas as interfaces do roteador estão com o status Administratively Down
+			!ERRATA: no vídeo eu falo: Desligada pelo Administrador, correto é: Desligada Administrativamente.
+			no shutdown
   
-		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
-		end
+			!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+			end
 
 !Salvando as configurações da memória RAM para a memória NVRAM
 write
