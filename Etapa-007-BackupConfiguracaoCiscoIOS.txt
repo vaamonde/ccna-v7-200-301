@@ -16,7 +16,7 @@
 enable
 	
 	!Visualizando a versão do Cisco IOS e informações do Hardware do Switch 2960
-	!DICA: esse comando e utilizado para verificar a versão de hardware e IOS do Switch
+	!DICA: esse comando é utilizado para verificar a versão de hardware e IOS do Switch
 	!DICA: atualmente a versão utilizada nos hardware da Cisco e 15.x
 	!OBSERVAÇÃO: as informações de memórias em equipamentos da Cisco estão em Kbytes ou Bytes
 	!OBSERVAÇÃO: esse comando fornece informações referente a Configuração do Registro de Inicialização
@@ -25,7 +25,7 @@ enable
 		63488KB/1000=64MB
 
 	!Visualizando informações da inicialização do Switch 2960
-	!DICA: comando e utilizado para verificar o arquivo de configuração de inicialização
+	!DICA: esse comando é utilizado para verificar o arquivo de configuração de inicialização
 	!OBSERVAÇÃO: as informações são importante para o processo de quebra de senha do Switch
 	show boot
 	
@@ -40,7 +40,7 @@ enable
 	!Salvando as configurações da memória RAM para a memória NVRAM
 	copy running-config startup-config
 	
-	!Salvando as configurações da memória RAM para a memória FLASH
+	!Salvando as configurações da memória NVRAM para a memória FLASH
 	copy startup-config flash: 
 	dir flash:
 	
@@ -49,19 +49,20 @@ enable
 	!OBSERVAÇÃO: o protocolo UDP (User Datagram Protocol) não é confiável, pois não exige confirmação
 	!OBSERVAÇÃO: o protocolo TFTP foi escolhido pela Cisco para ser o sistema padrão de atualização e Backup
 	dir nvram:
+	ping 192.168.1.1
 	copy startup-config tftp:
 		192.168.1.1
 	
 	!Salvando a imagem do Cisco IOS do Switch 2960 para o Servidor TFTP
 	!DICA: as imagens do Cico IOS estão no formato BIN (binário) e compactado (m=RAM | z=zip)
-	!OBSERVAÇÃO: não e aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura
-	!CUIDADO: como o Cisco IOS e uma sub-derivação do Unix, ele é Case Sensitive (Maiúscula/Minúscula)
+	!OBSERVAÇÃO: não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura
+	!CUIDADO: como o Cisco IOS é uma sub-derivação do Unix/BSD, ele é Case Sensitive (Maiúscula/Minúscula)
 	copy flash: tftp:
 		c2960-lanbase-mz.122-25.FX.bin
 		192.168.1.1
 		
 	!Salvando as configurações do Running Config ou Startup Config no Bloco de Notas
-	!DICA: esse e o método mais simples de backup das configurações do Switch ou Router 
+	!DICA: esse é o método mais simples de backup das configurações do Switch ou Router 
 	!OBSERVAÇÃO: utilizar sempre um editor de texto profissional, para não modificar o arquivo
 	show running-config
 	
@@ -76,7 +77,7 @@ enable
 	
 	!Visualizando a versão do Cisco IOS e informações do Hardware do Router
 	!DICA: em roteadores esse comando fornece informações de licenciamento do hardware
-	!OBSERVAÇÃO: como no Switch, esse comando fornece informações de inicialização do IOS
+	!OBSERVAÇÃO: como no Switch, esse comando fornece informações de inicialização do IOS do Router
 	!OBSERVAÇÃO: em roteadores não temos o comando: show boot
 	show version
 		249856K bytes of ATA System CompactFlash 0 (Read/Write)
@@ -99,6 +100,7 @@ enable
 	
 	!Salvando as configurações da memória NVRAM para o Servidor TFTP
 	dir nvram:
+	ping 192.168.1.1
 	copy startup-config tftp:
 		192.168.1.1
 	
