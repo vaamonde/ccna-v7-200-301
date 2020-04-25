@@ -15,7 +15,7 @@
 enable
 	
 	!Atualizando o Cisco IOS (Firmware) do Switch 2960
-	!DICA: as imagens do Cico IOS estão no formato BIN (binário) e compactado (m=RAM | z=zip)
+	!DICA: as imagens do Cisco IOS estão no formato BIN (binário) e compactado (m=RAM | z=zip)
 	!OBSERVAÇÃO: só executar esse procedimento depois de fazer os backups do IOS e Config
 	!OBSERVAÇÃO: não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura
 	!CUIDADO: como o Cisco IOS é uma sub-derivação do Unix/BSD, ele é Case Sensitive (Maiúscula/Minúscula)
