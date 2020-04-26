@@ -161,10 +161,34 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Operating System) utilizando o servidor TFTP (Trivial File Transfer Protocol) dos Switch Cisco 2960.
 
-As configurações da Atualização será feita utilizando o Script: 
-
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-008-UpdateCiscoIOS-Switch-2960.txt
+As configurações da Atualização será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-008-UpdateCiscoIOS-Switch-2960.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-008.pkt
+
+Link da vídeo aula: 
+
+## **009 Laboratório Prático Cisco CCNA v7 200-301 - Acessando o Modo ROMMON do Router 1941**
+
+Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que o Cisco fica parado
+
+As configurações da Atualização será feita utilizando o Script: 
+
+Download do cenário configurado: 
+
+Link da vídeo aula: 
+
+## **010 Laboratório Prático Cisco CCNA v7 200-301 - Documentação da Topologia de Rede**
+
+Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que o Cisco fica parado
+
+Download do cenário configurado: 
+
+Link da vídeo aula: 
+
+## **011 Laboratório Prático Cisco CCNA v7 200-301 - Expandindo a Topologia em Três Camadas**
+
+Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três Camadas, adicionando um Roteador Cisco 1941 como Núcleo (Core), Switch Layer 3 3560 como Distribuição (Distribuition) e Switch Layer 2 2960 como Acesso (Access), adicionando o Servidor na Distribuição (Não Indicado), Ponto de Acesso para Rede Sem-Fio 802.11-N e Desktops, será feito a interligação dos Switch com Caminhos Redundântes (Loop de Camada 2).
+
+Download do cenário configurado: 
 
 Link da vídeo aula: 
