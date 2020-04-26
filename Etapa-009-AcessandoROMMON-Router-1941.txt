@@ -22,6 +22,7 @@ rommon 1 >?
 
 !Alterando o modo de inicialização do Cisco IOS do Router 1941
 !DICA: o comando confreg alterar a forma como a inicialização do Cisco IOS ler os arquivos de configuração
+!DICA: no modo ROMMON a opção do TAB não funciona, precisando digitar o comando completo
 !OBSERVAÇÃO: essa opção é utilizada para forçar o Router não ler as configurações do startup-config
 !OBSERVAÇÃO: chave de registro em hexadecimal: 0x2142 (não ler as configurações do startup-config)
 !OBSERVAÇÃO: chave de registro em hexadecimal: 0x2102 (ler as configurações do startup-config - padrão)
