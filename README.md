@@ -171,7 +171,7 @@ Link da vídeo aula:
 
 Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que o Cisco fica parado
 
-As configurações da Atualização será feita utilizando o Script: 
+As configurações da Atualização será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-009-AcessandoROMMON-Router-1941.txt
 
 Download do cenário configurado: 
 
