@@ -87,7 +87,7 @@ TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
 ## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNA v7 200-301:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
 
-## **001 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base do Switch 2960**
+## **001 Configuração Base do Switch 2960 - Laboratório Prática Cisco CCNA v7 200-301**
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
@@ -97,7 +97,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 
-## **002 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do VTY Switch 2960**
+## **002 Configuração das Linhas Virtuais VTY Switch 2960 - Laboratório Prática Cisco CCNA v7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Linhas Virtuais VTY, que será utilizado para acesso remoto dos equipamentos.
 
@@ -107,7 +107,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
 
-## **003 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do Gateway e SVI Switch 2960**
+## **003 Configuração do Gateway e SVI Switch 2960 - Laboratório Prática Cisco CCNA v7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY (linhas virtuais) para o acesso remoto e o gerenciamento do equipamento.
 
@@ -117,7 +117,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=cOZDezhef3o&t
 
-## **004 Laboratório Prático Cisco CCNA v7 200-301 - Configuração do SSH Server Switch 2960**
+## **004 Configuração do SSH Server Switch 2960 - Laboratório Prática Cisco CCNA v7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso do serviço de acesso remoto utilizando o protocolo SSH, essas configurações são utilizadas junto com o VTY (linhas virtuais) e SVI (interface virtual do switch) para o acesso remoto e o gerenciamento do equipamento de forma segura.
 
@@ -127,7 +127,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
 
-## **005 Laboratório Prático Cisco CCNA v7 200-301 - Configuração Base do Router 1941**
+## **005 Configuração Base do Router 1941- Laboratório Prática Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a configuração Base do Cisco Router 1941, nesse cenário, utilizando os conhecimentos adquiridos até agora, seu processo de configuração será mais rápido, apenas a aplicação do script com alguns detalhes a mais em relação ao Switch, será configurado a Porta Aux (Auxiliar).
 
@@ -137,7 +137,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=hNlAzBushZ0
 
-## **006 Laboratório Prático Cisco CCNA v7 200-301 - Configuração da Interface do Router 1941**
+## **006 Configuração da Interface Router 1941 - Laboratório Prática Cisco CCNA v7 200-301**
 
 Nessa aula, daremos continuidade nas configurações do Router 1941, agora configurando a Interface GigabitEthernet que será utilizada como Gateway da Rede LAN.
 
@@ -147,7 +147,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=WfvVUL-WQVs&t
 
-## **007 Laboratório Prático Cisco CCNA v7 200-301 - Backup das Configurações do Switch 2960 e Router 1941**
+## **007 Backup das Configurações e do IOS - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer o backup das configurações dos Switch 2960 e do Router 1941 para o Servidor de TFTP (Trivial File Transfer Protocol), o backup consiste das configurações do Running ou Startup Config de cada equipamento e do Cisco IOS (Internetwork Operating System).
 
@@ -157,7 +157,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **008 Laboratório Prático Cisco CCNA v7 200-301 - Atualização do Cisco IOS no Switch 2960**
+## **008 Atualização do Cisco IOS Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Operating System) utilizando o servidor TFTP (Trivial File Transfer Protocol) dos Switch Cisco 2960.
 
@@ -167,7 +167,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **009 Laboratório Prático Cisco CCNA v7 200-301 - Acessando o Modo ROMMON do Router 1941**
+## **009 Acessando o Modo ROMMON do Router 1941 - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que o Cisco fica parado
 
@@ -177,7 +177,7 @@ Download do cenário configurado:
 
 Link da vídeo aula: 
 
-## **010 Laboratório Prático Cisco CCNA v7 200-301 - Documentação da Topologia de Rede**
+## **010 Documentação da Topologia de Rede - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que o Cisco fica parado
 
@@ -185,7 +185,7 @@ Download do cenário configurado:
 
 Link da vídeo aula: 
 
-## **011 Laboratório Prático Cisco CCNA v7 200-301 - Expandindo a Topologia em Três Camadas**
+## **011 Expandindo a Topologia em 3 Camadas - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três Camadas, adicionando um Roteador Cisco 1941 como Núcleo (Core), Switch Layer 3 3560 como Distribuição (Distribuition) e Switch Layer 2 2960 como Acesso (Access), adicionando o Servidor na Distribuição (Não Indicado), Ponto de Acesso para Rede Sem-Fio 802.11-N e Desktops, será feito a interligação dos Switch com Caminhos Redundântes (Loop de Camada 2).
 
