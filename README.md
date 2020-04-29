@@ -87,7 +87,7 @@ TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
 ## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNA v7 200-301:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
 
-## **001 Configuração Base do Switch 2960 - Laboratório Prática Cisco CCNA v7 200-301**
+## **001 Configuração Base do Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
@@ -97,7 +97,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 
-## **002 Configuração das Linhas Virtuais VTY Switch 2960 - Laboratório Prática Cisco CCNA v7 200-301**
+## **002 Configuração das Linhas Virtuais VTY Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Linhas Virtuais VTY, que será utilizado para acesso remoto dos equipamentos.
 
@@ -107,7 +107,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
 
-## **003 Configuração do Gateway e SVI Switch 2960 - Laboratório Prática Cisco CCNA v7 200-301**
+## **003 Configuração do Gateway e SVI Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY (linhas virtuais) para o acesso remoto e o gerenciamento do equipamento.
 
@@ -117,7 +117,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=cOZDezhef3o&t
 
-## **004 Configuração do SSH Server Switch 2960 - Laboratório Prática Cisco CCNA v7 200-301**
+## **004 Configuração do SSH Server Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso do serviço de acesso remoto utilizando o protocolo SSH, essas configurações são utilizadas junto com o VTY (linhas virtuais) e SVI (interface virtual do switch) para o acesso remoto e o gerenciamento do equipamento de forma segura.
 
@@ -127,7 +127,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
 
-## **005 Configuração Base do Router 1941- Laboratório Prática Cisco CCNA v7 200-301**
+## **005 Configuração Base do Router 1941- Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a configuração Base do Cisco Router 1941, nesse cenário, utilizando os conhecimentos adquiridos até agora, seu processo de configuração será mais rápido, apenas a aplicação do script com alguns detalhes a mais em relação ao Switch, será configurado a Porta Aux (Auxiliar).
 
@@ -137,7 +137,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=hNlAzBushZ0
 
-## **006 Configuração da Interface Router 1941 - Laboratório Prática Cisco CCNA v7 200-301**
+## **006 Configuração da Interface Router 1941 - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, daremos continuidade nas configurações do Router 1941, agora configurando a Interface GigabitEthernet que será utilizada como Gateway da Rede LAN.
 
