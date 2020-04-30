@@ -199,6 +199,18 @@ Nessa aula, vou fazer a configuração do Servidor de DHCPv4 (Dynamic Host Confi
 
 As configurações Base do Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-012-ConfiguracaoBaseCenario.txt
 
+As configuraçoes do DHCPv4 Server será feita utilizando o Script: 
+
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-012.pkt
+
+Link da vídeo aula: 
+
+## **013 Configuração do Servidor DNSv4 - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do Servidor de DNSv4 (Domain Name System), essa configuração será feita no Servidor, esse recurso facilita a configuração de acesso as equipamentos de redes ou computadores da nossa topologia utilizando nome, o servidor de DNS é o principalmente recurso utilizado nas redes locais e principalmente na internet.
+
+As configuraçoes do DHCPv4 Server será feita utilizando o Script: 
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-013.pkt
 
 Link da vídeo aula: 
