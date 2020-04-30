@@ -9,4 +9,5 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **Mudanças no Repositório do Github:**
 
+30/04/2020 - Robson Vaamonde - Criação do Diretório ETAPAS, mudança dos arquivos de configuração para esse diretório.
 30/04/2020 - Robson Vaamonde - Criação dos arquivos CHANGELOG, NEW e LICENSE.
