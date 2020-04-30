@@ -189,15 +189,15 @@ Link da vídeo aula:
 
 Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três Camadas, adicionando um Roteador Cisco 1941 como Núcleo (Core), Switch Layer 3 3560 como Distribuição (Distribuition) e Switch Layer 2 2960 como Acesso (Access), adicionando o Servidor na Distribuição (Não Indicado), Ponto de Acesso para Rede Sem-Fio 802.11-N e Desktops, será feito a interligação dos Switch com Caminhos Redundântes (Loop de Camada 2).
 
-As configurações Base do Switch e Router será feita utilizando o Script: 
-
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-011.pkt
 
 Link da vídeo aula: 
 
-## **011 Expandindo a Topologia em 3 Camadas - Laboratório Prático Cisco CCNA v7 200-301**
+## **012 Configuração do Servidor DHCPv4 - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três Camadas, adicionando um Roteador Cisco 1941 como Núcleo (Core), Switch Layer 3 3560 como Distribuição (Distribuition) e Switch Layer 2 2960 como Acesso (Access), adicionando o Servidor na Distribuição (Não Indicado), Ponto de Acesso para Rede Sem-Fio 802.11-N e Desktops, será feito a interligação dos Switch com Caminhos Redundântes (Loop de Camada 2).
+Nessa aula, vou fazer a configuração do Servidor de DHCPv4 (Dynamic Host Configuration Protocol), essa configuração será feita no Servidor, lembrando que o Switch Layer 3 e Router possui esse recurso que será feito futuramente no cenário, esse recurso facilita a configuração dinâmica do endereçamento IPv4 em todos os dipositivos da rede.
+
+As configurações Base do Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-012-ConfiguracaoBaseCenario.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-012.pkt
 
