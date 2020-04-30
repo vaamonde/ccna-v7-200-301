@@ -29,7 +29,7 @@
 !Registro Tipo A: Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio.
 !Registro Tipo CNAME: Significa o Nome Canônico e seu papel é fazer com de um domínio um alias de outro domínio.
 !Registro Tipo SOA: Significa Início de Autoridade. Obviamente é um dos registros de DNS mais importantes.
-!Registro Tipo NS: Significa Name Server e indica qual nome de servidor é autorativo para o domínio.
+!Registro Tipo NS: Significa Name Server e indica qual nome de servidor é autoritativo para o domínio.
 
 !Configurações do Serviço de DNS Server no Cisco Packet Tracer:
 !OBSERVAÇÃO: por padrão o Serviço de DNS Server no Cisco Packet Tracer está desligado
@@ -37,7 +37,7 @@
 !OBSERVAÇÃO: no Cisco Packet Tracer temos apenas a configuração da Zona de Pesquisa Direta
 
 !DNS Service:		On
-!Resource Records:	Name = server-01			Type = A Record		Address = 192.168.3.1
+!Resource Records:	Name = server-02			Type = A Record		Address = 192.168.3.1
 !Resource Records:	Name = vaamonde.pti			Type = SOA			Primary Server Name = 192.168.3.1
 															 		Mail Box = vaamonde@vaamonde.pti
 															 		Minimum TTL = 3600
@@ -56,3 +56,10 @@
 !Resource Records:	Name = sw-l2-2960-4			Type = A Record		Address = 192.168.3.251
 !Resource Records:	Name = sw-l3-3560-1			Type = A Record		Address = 192.168.3.252
 !Resource Records:	Name = rt-1941-2			Type = A Record		Address = 192.168.2.254
+
+!Comandos básicos de consulta de resoluções de nomes DNS
+ipconfig
+ipconfig /all
+nslookup server-02
+nslookup vaamonde.pti
+ping vaamonde.pti
