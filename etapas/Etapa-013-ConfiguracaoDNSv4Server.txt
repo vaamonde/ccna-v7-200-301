@@ -14,6 +14,8 @@
 !DNSv4 (Domain Name System) é um sistema hierárquico e distribuído de gestão de nomes para computadores, serviços ou qualquer
 !máquina conectada à Internet ou a uma rede privada. Utilizado principalmente para fazer as resolução de nomes para endereços IP.
 
+!O protocolo padrão utilizado pelo DNS Server é o UDP (User Datagram Protocol) na porta padrão: 53
+
 !Zona de Pesquisa Direta: resolução de nome para endereço IP
 !Zona de Pesquisa Inversa/Reversa: resolução de endereço IP para nome
 

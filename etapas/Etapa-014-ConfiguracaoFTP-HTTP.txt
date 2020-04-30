@@ -1,0 +1,37 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 30/04/2020
+!Data de atualização: 30/04/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!FTPv4 (File Transfer Protocol) é um protocolo padrão/genérico independente de hardware sobre um modo de transferir
+!arquivos/ficheiros e também é um programa de transferência. A transferência de dados em redes de computadores envolve
+!normalmente transferência de arquivos e acesso a sistemas de arquivos remotos.
+
+!O protocolo padrão utilizado pelo FTP Server é o TCP (Transmission Control Protocol) na porta padrão: 21
+
+!HTTP (Hypertext Transfer Protocol) é um protocolo de comunicação utilizado para sistemas de informação de hipermídia,
+!distribuídos e colaborativos. Ele é a base para a comunicação de dados da World Wide Web. Hipertexto é o texto
+!estruturado que utiliza ligações lógicas entre nós contendo texto.
+
+!O protocolo padrão utilizado pelo HTTP Server é o TCP (Transmission Control Protocol) na porta padrão: 80
+
+!HTTPS (Hyper Text Transfer Protocol Secure) é uma implementação do protocolo HTTP sobre uma camada adicional de segurança
+!que utiliza o protocolo SSL/TLS. Essa camada adicional permite que os dados sejam transmitidos por meio de uma conexão !criptografada e que se verifique a autenticidade do servidor e do cliente por meio de certificados digitais.
+
+!O protocolo padrão utilizado pelo HTTP Server é o TCP (Transmission Control Protocol) na porta padrão: 443
+
+!Configurações do Serviço de FTP Server no Cisco Packet Tracer:
+!OBSERVAÇÃO: por padrão o Serviço de DNS Server no Cisco Packet Tracer está desligado
+
+
+!Configurações do Serviço de HTTP/HTTPS Server no Cisco Packet Tracer:
+!OBSERVAÇÃO: por padrão o Serviço de HTTP/HTTPS Server no Cisco Packet Tracer está ligado
+ 	
