@@ -106,3 +106,17 @@ _04# Após a reinicialização o Switch será resetado.
 7. Limpar o arquivo statup-config: erase startup-config
 8. Limpar as configurações de VLAN: delete flash:vlan.dat
 9. Reinicializar o Switch: reload
+
+!ADENDO: NÃO ESTÁ NO VÍDEO: Atualização do Cisco IOS via TFTPDNLD ROMMON
+!OBSERVAÇÃO: esse recurso e utilizado em caso de corrompimento do Cisco ISO da Flash
+
+rommon 1 > IP_ADDRESS=192.168.10.20 
+rommon 2 > IP_SUBNET_MASK=255.255.255.0 
+rommon 3 > DEFAULT_GATEWAY=192.168.10.1
+rommon 4 > TFTP_SERVER=192.168.10.10
+rommon 5 > TFTP_FILE=c2960-lanbasek9-mz.150-2.SE4.bin
+rommon 6 > TFTP_CHECKSUM=0
+rommon 7 > set
+rommon 8 > tftpdnld
+rommon 9 > confreg 0x2102
+rommon 10 > reset
