@@ -169,17 +169,17 @@ Link da vídeo aula: https://www.youtube.com/watch?v=NbqqlAwChOQ&t
 
 ## **009 Acessando o Modo ROMMON do Router 1941 - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que o Cisco fica parado
+Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que os equipamentos da Cisco fica parado, com recursos limitados e apenas com ferramentas de manutenção.
 
 As configurações da Atualização será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-009-AcessandoROMMON-Router-1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-009.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=vC6fIQAX1N8&t=
 
 ## **010 Documentação da Topologia de Rede - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que o Cisco fica parado
+Nessa aula, vou mostrar como fazer a documentação básica da topologo de rede, utilizando os recursos de Bloco de Notas (Notes) do Cisco Packetr Tracer, documentando os equipamentos de rede, desktop, servidores, conexões e rede.
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-010.pkt
 
@@ -187,7 +187,7 @@ Link da vídeo aula:
 
 ## **011 Expandindo a Topologia em 3 Camadas - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três Camadas, adicionando um Roteador Cisco 1941 como Núcleo (Core), Switch Layer 3 3560 como Distribuição (Distribuition) e Switch Layer 2 2960 como Acesso (Access), adicionando o Servidor na Distribuição (Não Indicado), Ponto de Acesso para Rede Sem-Fio 802.11-N e Desktops, será feito a interligação dos Switch com Caminhos Redundântes (Loop de Camada 2).
+Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três Camadas, adicionando um Roteador Cisco 1941 como Núcleo (Core), Switch Layer 3 3560 como Distribuição (Distribuition) e Switch Layer 2 2960 como Acesso (Access), adicionando o Servidor na Distribuição (Não Indicado), Ponto de Acesso para Rede Sem-Fio 802.11-N na Distribuição (Não Indicado) e Desktops nos Switch de Acesso, será feito a interligação dos Switch com Caminhos Redundântes (Loop de Camada 2).
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-011.pkt
 
@@ -195,11 +195,11 @@ Link da vídeo aula:
 
 ## **012 Configuração do Servidor DHCPv4 - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de DHCPv4 (Dynamic Host Configuration Protocol), essa configuração será feita no Servidor, lembrando que o Switch Layer 3 e Router possui esse recurso que será feito futuramente no cenário, esse recurso facilita a configuração dinâmica do endereçamento IPv4 em todos os dipositivos da rede.
+Nessa aula, vou fazer a configuração do Servidor de DHCPv4 (Dynamic Host Configuration Protocol), essa configuração será feita no Servidor, lembrando que o Switch Layer 3 e Router possui esse recurso, o uso do serviço de DHCP facilita á configuração dinâmica dos endereçamentos IPv4 em todos os dipositivos da rede.
 
 As configurações Base do Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-012-ConfiguracaoBaseCenario.txt
 
-As configuraçoes do DHCPv4 Server será feita utilizando o Script: 
+As configuraçoes do DHCPv4 Server será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-012-ConfiguracaoDHCPv4Server-B.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-012.pkt
 
@@ -207,9 +207,9 @@ Link da vídeo aula:
 
 ## **013 Configuração do Servidor DNSv4 - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de DNSv4 (Domain Name System), essa configuração será feita no Servidor, esse recurso facilita a configuração de acesso as equipamentos de redes ou computadores da nossa topologia utilizando nome, o servidor de DNS é o principalmente recurso utilizado nas redes locais e principalmente na internet.
+Nessa aula, vou fazer a configuração do Servidor de DNSv4 (Domain Name System), essa configuração será feita no Servidor, esse recurso facilita a configuração de acesso a equipamentos da redes ou computadores da nossa topologia utilizando nomes, o servidor de DNS é o principal serviço utilizado nas redes locais e principalmente na internet.
 
-As configuraçoes do DHCPv4 Server será feita utilizando o Script: 
+As configuraçoes do DNSv4 Server será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-013-ConfiguracaoDNSv4Server.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-013.pkt
 
