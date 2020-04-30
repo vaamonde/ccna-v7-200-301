@@ -1,0 +1,56 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 30/04/2020
+!Data de atualização: 30/04/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!DNSv4 (Domain Name System) é um sistema hierárquico e distribuído de gestão de nomes para computadores, serviços ou qualquer
+!máquina conectada à Internet ou a uma rede privada. Utilizado principalmente para fazer as resolução de nomes para endereços IP.
+
+!Zona de Pesquisa Direta: resolução de nome para endereço IP
+!Zona de Pesquisa Inversa/Reversa: resolução de endereço IP para nome
+
+!Registros DNS: Os registros DNS são mapeamentos de arquivos ou sistemas que dizem a um servidor DNS para qual endereço IP um
+!determinado domínio está associado. Também informa aos servidores DNS como lidar com as solicitações que estão sendo enviadas
+!para cada nome de domínio.
+
+!Sintaxe DNS: Diferentes sequências de letras são usadas para ditar as ações do servidor DNS. Essas letras são chamadas de 
+!sintaxe DNS (Exemplo: A, AAAA, CNAME, MX, PTR, NS, SOA, SRV, TXT, etc).
+
+!Registro Tipo A: Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio.
+!Registro Tipo CNAME: Significa o Nome Canônico e seu papel é fazer com de um domínio um alias de outro domínio.
+!Registro Tipo SOA: Significa Início de Autoridade. Obviamente é um dos registros de DNS mais importantes.
+!Registro Tipo NS: Significa Name Server e indica qual nome de servidor é autorativo para o domínio.
+
+!Configurações do Serviço de DNS Server no Cisco Packet Tracer:
+!OBSERVAÇÃO: por padrão o Serviço de DNS Server no Cisco Packet Tracer está desligado
+!OBSERVAÇÃO: no Cisco Packet Tracer as configuração de Sintaxe são limitadas a: A, CNAME, SOA e NS.
+!OBSERVAÇÃO: no Cisco Packet Tracer temos apenas a configuração da Zona de Pesquisa Direta
+
+!DNS Service:		On
+!Resource Records:	Name = server-01			Type = A Record		Address = 192.168.3.1
+!Resource Records:	Name = vaamonde.pti			Type = SOA			Primary Server Name = 192.168.3.1
+															 		Mail Box = vaamonde@vaamonde.pti
+															 		Minimum TTL = 3600
+															 		Refresh Time = 3600
+															 		Retry Time = 600
+															 		Expiry Time = 86400
+!Resource Records:	Name = vaamonde.pti			Type = NS			Server Name = 192.168.3.1
+!Resource Records:	Name = vaamonde.pti			Type = CNAME		Host Name = server-02
+!Resource Records:	Name = www.vaamonde.pti		Type = CNAME		Host Name = server-02
+!Resource Records:	Name = pop3.vaamonde.pti	Type = CNAME		Host Name = server-02
+!Resource Records:	Name = smtp.vaamonde.pti	Type = CNAME		Host Name = server-02
+!Resource Records:	Name = ftp.vaamonde.pti		Type = CNAME		Host Name = server-02
+!Resource Records:	Name = tftp.vaamonde.pti	Type = CNAME		Host Name = server-02
+!Resource Records:	Name = ntp.vaamonde.pti		Type = CNAME		Host Name = server-02
+!Resource Records:	Name = sw-l2-2960-3			Type = A Record		Address = 192.168.3.250
+!Resource Records:	Name = sw-l2-2960-4			Type = A Record		Address = 192.168.3.251
+!Resource Records:	Name = sw-l3-3560-1			Type = A Record		Address = 192.168.3.252
+!Resource Records:	Name = rt-1941-2			Type = A Record		Address = 192.168.2.254
