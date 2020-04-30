@@ -165,7 +165,7 @@ As configurações da Atualização será feita utilizando o Script: https://git
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-008.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=NbqqlAwChOQ&t
 
 ## **009 Acessando o Modo ROMMON do Router 1941 - Laboratório Prático Cisco CCNA v7 200-301**
 
