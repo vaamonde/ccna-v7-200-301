@@ -91,7 +91,7 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCt
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3, utilizado apenas 02 (dois) Switches Cisco Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
-As configurações básicas dos Switches será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-001-ConfiguracaoBaseSwitch-2960.txt
+As configurações básicas dos Switches será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-001-ConfiguracaoBaseSwitch-2960.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-001.pkt
 
@@ -101,7 +101,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Linhas Virtuais VTY, que será utilizado para acesso remoto dos equipamentos.
 
-As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-002-ConfiguracaoVTY.txt
+As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-002-ConfiguracaoVTY.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-002.pkt
 
@@ -111,7 +111,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY (linhas virtuais) para o acesso remoto e o gerenciamento do equipamento.
 
-As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-003-ConfiguracaoGatewaySVI.txt
+As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-003-ConfiguracaoGatewaySVI.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-003.pkt
 
@@ -121,7 +121,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=cOZDezhef3o&t
 
 Nessa aula, daremos continuidade nas configurações dos Switches 2960, agora habilitando o recurso do serviço de acesso remoto utilizando o protocolo SSH, essas configurações são utilizadas junto com o VTY (linhas virtuais) e SVI (interface virtual do switch) para o acesso remoto e o gerenciamento do equipamento de forma segura.
 
-As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-004-ConfiguracaoSSH.txt
+As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-004-ConfiguracaoSSH.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-004.pkt
 
@@ -131,7 +131,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
 
 Nessa aula, vou fazer a configuração Base do Cisco Router 1941, nesse cenário, utilizando os conhecimentos adquiridos até agora, seu processo de configuração será mais rápido, apenas a aplicação do script com alguns detalhes a mais em relação ao Switch, será configurado a Porta Aux (Auxiliar).
 
-As configurações do Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-005-ConfiguracaoBaseRouter-1941.txt
+As configurações do Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-005-ConfiguracaoBaseRouter-1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-005.pkt
 
@@ -141,7 +141,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=hNlAzBushZ0
 
 Nessa aula, daremos continuidade nas configurações do Router 1941, agora configurando a Interface GigabitEthernet que será utilizada como Gateway da Rede LAN.
 
-As configurações da Interface será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-006-ConfiguracaoInterfaceRouter-1941.txt
+As configurações da Interface será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-006-ConfiguracaoInterfaceRouter-1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-006.pkt
 
@@ -151,7 +151,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=WfvVUL-WQVs&t
 
 Nessa aula, vou fazer o backup das configurações dos Switch 2960 e do Router 1941 para o Servidor de TFTP (Trivial File Transfer Protocol), o backup consiste das configurações do Running ou Startup Config de cada equipamento e do Cisco IOS (Internetwork Operating System).
 
-As configurações do Backup será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-007-BackupConfiguracaoCiscoIOS.txt
+As configurações do Backup será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-007-BackupConfiguracaoCiscoIOS.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-007.pkt
 
@@ -161,7 +161,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=giOOtn4AQxE&t
 
 Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Operating System) utilizando o servidor TFTP (Trivial File Transfer Protocol) dos Switch Cisco 2960.
 
-As configurações da Atualização será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-008-UpdateCiscoIOS-Switch-2960.txt
+As configurações da Atualização será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-008-UpdateCiscoIOS-Switch-2960.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-008.pkt
 
@@ -171,7 +171,7 @@ Link da vídeo aula:
 
 Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização é nesse modo que o Cisco fica parado
 
-As configurações da Atualização será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/Etapa-009-AcessandoROMMON-Router-1941.txt
+As configurações da Atualização será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-009-AcessandoROMMON-Router-1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-009.pkt
 
