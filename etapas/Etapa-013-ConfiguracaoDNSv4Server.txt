@@ -36,15 +36,18 @@
 !OBSERVAÇÃO: no Cisco Packet Tracer as configuração de Sintaxe são limitadas a: A, CNAME, SOA e NS.
 !OBSERVAÇÃO: no Cisco Packet Tracer temos apenas a configuração da Zona de Pesquisa Direta
 
+!ERRATA: correção do nome do NS para: ns1.vaamonde.pti e correção do Server Name para: server-02
+!ERRATA: correção do nome do SOA para: ns1.vaamonde.pti
+
 !DNS Service:		On
 !Resource Records:	Name = server-02			Type = A Record		Address = 192.168.3.1
-!Resource Records:	Name = vaamonde.pti			Type = SOA			Primary Server Name = 192.168.3.1
+!Resource Records:	Name = ns1.vaamonde.pti		Type = NS			Server Name = server-02
+!Resource Records:	Name = vaamonde.pti			Type = SOA			Primary Server Name = ns1.vaamonde.pti
 															 		Mail Box = vaamonde@vaamonde.pti
 															 		Minimum TTL = 3600
 															 		Refresh Time = 3600
 															 		Retry Time = 600
 															 		Expiry Time = 86400
-!Resource Records:	Name = vaamonde.pti			Type = NS			Server Name = 192.168.3.1
 !Resource Records:	Name = vaamonde.pti			Type = CNAME		Host Name = server-02
 !Resource Records:	Name = www.vaamonde.pti		Type = CNAME		Host Name = server-02
 !Resource Records:	Name = pop3.vaamonde.pti	Type = CNAME		Host Name = server-02

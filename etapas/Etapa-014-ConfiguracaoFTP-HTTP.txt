@@ -27,7 +27,7 @@
 !que utiliza o protocolo SSL/TLS. Essa camada adicional permite que os dados sejam transmitidos por meio de uma conexão
 !criptografada e que se verifique a autenticidade do servidor e do cliente por meio de certificados digitais.
 
-!O protocolo padrão utilizado pelo HTTP Server é o TCP (Transmission Control Protocol) na porta padrão: 443
+!O protocolo padrão utilizado pelo HTTPS Server é o TCP (Transmission Control Protocol) na porta padrão: 443
 
 !Configurações do Serviço de FTP Server no Cisco Packet Tracer:
 !OBSERVAÇÃO: por padrão o Serviço de FTP Server no Cisco Packet Tracer está ligado
@@ -41,7 +41,7 @@ User Setup		Username: vaamonde	Password: vaamonde
 !Configurações do Serviço de HTTP/HTTPS Server no Cisco Packet Tracer:
 !OBSERVAÇÃO: por padrão o Serviço de HTTP/HTTPS Server no Cisco Packet Tracer está ligado
 !OBSERVAÇÃO: recomendo acessar o site: https://www.w3schools.com/ para mais informações sobre o HTML
-!DICA: o acesso a páginas HTTPS precisa ser configurado o recurso da Unidade Certificadora e a geração de Certificados
+!DICA: o acesso a páginas HTTPS precisa ser configurado o recurso da Unidade Certificadora CA e a geração de Certificados
 Service HTTP	On
 Service HTTPS	On
 
@@ -57,7 +57,8 @@ Service HTTPS	On
 		<p><b>Projeto Bora para Prática!!!</b></p>
 		</center>
 	</body>
-	
+</html>
+
 !Comandos básicos de FTP e HTTP/HTTPS
 http://localhost
 http://127.0.0.1
