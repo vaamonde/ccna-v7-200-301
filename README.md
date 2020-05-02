@@ -31,9 +31,9 @@ GNS3 Vault: How to Master Subnetting, René Molenaar (Inglês): https://gns3vaul
 FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.com/<br>
 Laboratórios de Tecnologias Cisco, Samuel Henrique (Português): https://novatec.com.br/livros/laboratorios-cisco-2ed/<br>
 Laboratório de IPv6, Equipe IPv6 (Português): http://ipv6.br/pagina/livro-ipv6/<br>
-CCNA 6.0: Guia Completo de Estudo, Marco Aurelio Filippetti:  https://www.americanas.com.br/produto/100208315/ccna-6-0-guia-completo-de-estudo-1<br>
-Certificaçao CCNA - Guia Preparatorio para o Exame 200-120, Alexandre Vieria de Oliveira, Jefferson Lisboa Melo: https://www.americanas.com.br/produto/16372263/certificacao-ccna-guia-preparatorio-para-o-exame-200-120<br>
-Configurando Switches e Roteadores de Cisco: Guia para a Certificação CCENT/CCNA, César Felipe G. Silva: https://www.americanas.com.br/produto/116404584/livro-configurando-switches-e-roteadores-de-cisco-guia-para-a-certificacao-ccent-ccna
+CCNA 6.0: Guia Completo de Estudo, Marco Aurelio Filippetti (Português): https://www.americanas.com.br/produto/100208315/ccna-6-0-guia-completo-de-estudo-1<br>
+Certificaçao CCNA - Guia Preparatorio para o Exame 200-120, Alexandre Vieria de Oliveira, Jefferson Lisboa Melo (Português): https://www.americanas.com.br/produto/16372263/certificacao-ccna-guia-preparatorio-para-o-exame-200-120<br>
+Configurando Switches e Roteadores de Cisco: Guia para a Certificação CCENT/CCNA, César Felipe G. Silva (Português): https://www.americanas.com.br/produto/116404584/livro-configurando-switches-e-roteadores-de-cisco-guia-para-a-certificacao-ccent-ccna
 
 ## **Site com Questões da Prova de CCNA v7 200-301 - v6 200-125:**
 9tut CCNA Training: https://www.9tut.com/
