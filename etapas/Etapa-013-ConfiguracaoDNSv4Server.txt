@@ -11,20 +11,21 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!DNSv4 (Domain Name System) é um sistema hierárquico e distribuído de gestão de nomes para computadores, serviços ou qualquer
-!máquina conectada à Internet ou a uma rede privada. Utilizado principalmente para fazer as resolução de nomes para endereços IP.
+!DNSv4 (Domain Name System) é um sistema hierárquico e distribuído de gestão de nomes para computadores, 
+!serviços ou qualquer máquina conectada à Internet ou a uma rede privada. Utilizado principalmente para 
+!fazer as resoluções de nomes para endereços IPv4 ou IPv6.
 
 !O protocolo padrão utilizado pelo DNS Server é o UDP (User Datagram Protocol) na porta padrão: 53
 
 !Zona de Pesquisa Direta: resolução de nome para endereço IP
 !Zona de Pesquisa Inversa/Reversa: resolução de endereço IP para nome
 
-!Registros DNS: Os registros DNS são mapeamentos de arquivos ou sistemas que dizem a um servidor DNS para qual endereço IP um
-!determinado domínio está associado. Também informa aos servidores DNS como lidar com as solicitações que estão sendo enviadas
-!para cada nome de domínio.
+!Registros DNS: Os registros DNS são mapeamentos de arquivos ou sistemas que dizem a um servidor DNS para
+!qual endereço IP um determinado domínio está associado. Também informa aos servidores DNS como lidar com
+!as solicitações que estão sendo enviadas para cada nome de domínio.
 
-!Sintaxe DNS: Diferentes sequências de letras são usadas para ditar as ações do servidor DNS. Essas letras são chamadas de 
-!sintaxe DNS (Exemplo: A, AAAA, CNAME, MX, PTR, NS, SOA, SRV, TXT, etc).
+!Sintaxe DNS: Diferentes sequências de letras são usadas para ditar as ações do servidor DNS. Essas letras
+!são chamadas de sintaxe DNS (Exemplo: A, AAAA, CNAME, MX, PTR, NS, SOA, SRV, TXT, etc).
 
 !Registro Tipo A: Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio.
 !Registro Tipo CNAME: Significa o Nome Canônico e seu papel é fazer com de um domínio um alias de outro domínio.
@@ -37,7 +38,8 @@
 !OBSERVAÇÃO: no Cisco Packet Tracer temos apenas a configuração da Zona de Pesquisa Direta
 
 !ERRATA: correção do nome do NS para: ns1.vaamonde.pti e correção do Server Name para: server-02
-!ERRATA: correção do nome do SOA para: ns1.vaamonde.pti
+!ERRATA: correção do nome do SOA do Server Name para: ns1.vaamonde.pti
+!ERRATA: no vídeo os registros dos Switch e Router foram criados com o Tipo: CNAME, correto: A Record
 
 !DNS Service:		On
 !Resource Records:	Name = server-02			Type = A Record		Address = 192.168.3.1

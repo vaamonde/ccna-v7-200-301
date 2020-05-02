@@ -11,21 +11,22 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!FTPv4 (File Transfer Protocol) é um protocolo padrão/genérico independente de hardware sobre um modo de transferir
-!arquivos/ficheiros e também é um programa de transferência. A transferência de dados em redes de computadores envolve
-!normalmente transferência de arquivos e acesso a sistemas de arquivos remotos.
+!FTPv4 (File Transfer Protocol) é um protocolo padrão/genérico independente de hardware sobre um modo de
+!transferir arquivos/ficheiros e também é um programa de transferência. A transferência de dados em redes
+!de computadores envolve normalmente transferência de arquivos e acesso a sistemas de arquivos remotos.
 
 !O protocolo padrão utilizado pelo FTP Server é o TCP (Transmission Control Protocol) na porta padrão: 21
 
-!HTTP (Hypertext Transfer Protocol) é um protocolo de comunicação utilizado para sistemas de informação de hipermídia,
-!distribuídos e colaborativos. Ele é a base para a comunicação de dados da World Wide Web. Hipertexto é o texto
-!estruturado que utiliza ligações lógicas entre nós contendo texto.
+!HTTP (Hypertext Transfer Protocol) é um protocolo de comunicação utilizado para sistemas de informação de
+!hipermídia, distribuídos e colaborativos. Ele é a base para a comunicação de dados da World Wide Web. 
+!Hipertexto é o texto estruturado que utiliza ligações lógicas entre nós contendo texto.
 
 !O protocolo padrão utilizado pelo HTTP Server é o TCP (Transmission Control Protocol) na porta padrão: 80
 
-!HTTPS (Hyper Text Transfer Protocol Secure) é uma implementação do protocolo HTTP sobre uma camada adicional de segurança
-!que utiliza o protocolo SSL/TLS. Essa camada adicional permite que os dados sejam transmitidos por meio de uma conexão
-!criptografada e que se verifique a autenticidade do servidor e do cliente por meio de certificados digitais.
+!HTTPS (Hyper Text Transfer Protocol Secure) é uma implementação do protocolo HTTP sobre uma camada adicional
+!de segurança que utiliza o protocolo SSL/TLS. Essa camada adicional permite que os dados sejam transmitidos
+!por meio de uma conexão criptografada e que se verifique a autenticidade do servidor e do cliente por meio
+!de certificados digitais.
 
 !O protocolo padrão utilizado pelo HTTPS Server é o TCP (Transmission Control Protocol) na porta padrão: 443
 
@@ -41,7 +42,7 @@ User Setup		Username: vaamonde	Password: vaamonde
 !Configurações do Serviço de HTTP/HTTPS Server no Cisco Packet Tracer:
 !OBSERVAÇÃO: por padrão o Serviço de HTTP/HTTPS Server no Cisco Packet Tracer está ligado
 !OBSERVAÇÃO: recomendo acessar o site: https://www.w3schools.com/ para mais informações sobre o HTML
-!DICA: o acesso a páginas HTTPS precisa ser configurado o recurso da Unidade Certificadora CA e a geração de Certificados
+!DICA: para acessar páginas utilizando o Protocolo HTTPS, é necessário a configuração de uma CA e a geração de Certificados
 Service HTTP	On
 Service HTTPS	On
 

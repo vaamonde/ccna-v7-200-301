@@ -1,0 +1,65 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 30/04/2020
+!Data de atualização: 30/04/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!SMTP (Simple Mail Transfer Protocol) é o protocolo padrão de envio de mensagens de correio eletrônico 
+!através da Internet entre dois dispositivos computacionais, definido na RFC 821
+
+!O protocolo padrão utilizado pelo SMTP Server é o TCP (Transmission Control Protocol) na porta padrão: 25
+!OBSERVAÇÃO: desde 01/01/2013 o CGI.br solicitou o bloqueio do envio de e-mails na porta 25 
+!OBSERVAÇÃO: altualmente a porta utilizada pelo SMTP é 587, essa mudança tem foco na diminuição de spam
+!DICA: a porta 587 utiliza TLS (segurança) já a porta 465 utiliza SSL (segurança) mais foi depreciada (desuso)
+
+!POP3 (Post Office Protocol) é um protocolo utilizado no acesso remoto a um servidor de correio eletrônico, 
+!definido no RFC 1939, que permite que todas as mensagens contidas em uma caixa de correio eletrônico possam
+!ser transferidas sequencialmente para um software cliente de e-mail em outro dispositivo.
+
+!O protocolo padrão utilizado pelo POP3 é o TCP (Transmission Control Protocol) na porta padrão: 110
+!DICA: a porta 995 utiliza SSL/TLS (segurança) também conhecida como POP3S
+
+!IMAP (Internet Message Access Protocol) é um protocolo de gerenciamento de correio eletrônico. O mais 
+!interessante é que as mensagens ficam armazenadas no servidor de hospedagem de email. Trabalhando com
+!sincronismo entre a caixa postal e o cliente de e-mail.
+
+!O protocolo padrão utilizado pelo IMAP é o TCP (Transmission Control Protocol) na porta padrão: 143
+!DICA: a porta 993 utiliza SSL/TLS (segurança) também conhecida como IMAPS
+
+!MAPI (Messaging API) é um protocolo proprietário desenvolvido pela Microsoft. Ele é usado como interface
+!de comunicação entre as aplicações e o servidor Microsoft Exchange.
+
+!O protocolo MAPI utiliza um conjunto de protocolos TCP (Transmission Control Protocol) nas portas:
+!80, 443, 143, 993, 110, 995 e 587 
+
+!Configurações do Serviço de SMTP e POP3 Server no Cisco Packet Tracer:
+!OBSERVAÇÃO: por padrão o Serviço de SMTP e POP3 no Cisco Packet Tracer está ligado
+!DICA: em servidores de email geralmente no Servidor de DNS e feito a criação do Registro MX ()
+!DICA: geralmente nesse servidor e criados arquivos do Tipo TXT com informações de Black List
+
+SMTP Service		On
+POP3 Service		On
+Domain Name			vaamonde.pti 	SET
+User Setup			User: robsonvaamonde	Password: 123456	(+)
+					User: leandroramos		Password: 123456	(+)
+					User: josedeassis		Password: 123456	(+)
+					User: sirlenesanches	Password: 123456	(+)
+					User: vaamonde			Password: 123456	(+)
+
+!Comandos básicos de FTP e HTTP/HTTPS
+http://localhost
+http://127.0.0.1
+http://www.vaamonde.pti
+https://www.vaamonde.pti
+ftp ftp.vaamonde.pti
+	dir
+	put vaamonde.txt
+	get vaamonde.txt
+	quit
