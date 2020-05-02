@@ -1,0 +1,61 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 02/05/2020
+!Data de atualização: 02/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!SNMP (Simple Network Management Protocol) é um protocolo padrão da Internet para gerenciamento de
+!dispositivos em redes IP. Dispositivos que normalmente suportam SNMP incluem roteadores, computadores,
+!servidores, estações de trabalho, impressoras, racks modernos e etc.
+
+!O protocolo padrão utilizado pelo SNMP e o UDP (User Datagram Protocol) na porta padrão: 161
+!OBSERVAÇÃO: o protoclo SNMP também utiliza a Porta 162 para Trap e portas seguras: 10161 e 10162
+
+!Versões do SNMP: SNMPv1, SNMPv2c (c=comunidade), SNMPv3
+
+!O SNMP e dividido em: SNMP Manager, SNMP Agent, MIB (Managed Information Base) e OID (Object Identifier)
+
+!PRIMEIRA ETAPA: Configuração dos Switch e Router para permiti informações SNMP
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+		
+		!Configurando a Comunidade do SNMP com direito a Leitura
+		!DICA: o nome da comunidade de leitura tem que ser diferente da que tem direitos de escrita
+		!OBSERVAÇÃO: no cisco Packet Tracer as configurações de SNMP são limitadas
+		!OBSERVAÇÃO: o recurso do somente leitura consegue apenas ler a MID e alguns OID
+		snmp-server community ptiro ro
+		
+		!Configurando a Comunidade do SNMP com direito a Leitura e Escrita
+		!DICA: o SNMPv3 possui recursos de segurança, criptografia e autenticação
+		snmp-server community ptirw rw
+		
+		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+		end
+
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | include snmp
+show snmp
+
+!Comandos de teste e verificação do SNMP
+.sysName		OID: .1.3.6.1.2.1.1.5.0		GET
+.sysUpTime		OID: .1.3.6.1.2.1.1.3.0		GET
+.sysDescr		OID: .1.3.6.1.2.1.1.1.0		GET
+
+.sysContact		OID: .1.3.6.1.2.1.1.4.0		SET: Robson Vaamonde	OctetString
+.sysLocation	OID: .1.3.6.1.2.1.1.6.0		SET: Switch Layer 3		OctetString
+
+snmpget /v 3 /a 192.168.3.252 /c ptiro /o .1.3.6.1.2.1.1.1.0
+snmpget /d
