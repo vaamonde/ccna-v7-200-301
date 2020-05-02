@@ -1,0 +1,79 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 02/05/2020
+!Data de atualização: 02/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!NTP (Network Time Protocol) é um protocolo para sincronização dos relógios dos computadores. É utilizado para
+!sincronização do relógio de um conjunto de computadores e dispositivos em redes de dados com latência variável.
+
+!O protocolo padrão utilizado pelo NTP é o UDP (User Datagram Protocol) na porta padrão: 123
+
+!No Brasil, o Servidor de Referência de Data e Hora é o Ntp.br: a.st1.ntp.br 200.160.7.186 e 2001:12ff:0:7::186
+
+!PRIMEIRA ETAPA: Configuração do Servidor de NTP Local
+!OBSERVAÇÃO: por padrão o Servidor de NTP do Cisco Packet Tracer está ligado
+
+!NTP Service:		On
+!Authentication:	Enable
+!Key:				123456		Password: vaamonde
+!Date:				05/05/2020
+!Hour:				12:00:00 PM
+
+!SEGUNDA ETAPA: Configuração dos Clientes de NTP no Switch e Router
+!Acessando o modo EXEC Privilégiado
+enable
+
+!Verificando a Data e Hora do Switch e Router
+show clock
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+		
+		!Configuração do Fuso Horário (Timezone) do Switch e Router
+		!DICA: configurar o Fuso Horário nos equipamentos e obrigatório para a Data/Hora ficar correta
+		!OBSERVAÇÃO: a configuração do Fuso Horário e dividida em: Nome da Zona (BR) e UTC (Coordinated Universal Time)
+		!OBSERVAÇÃO: no Brasil utilizamos quatros UTC diferentes, São Paulo utiliza o UTC de Brasília -3
+		clock timezone BR -3
+		
+		!Habilitando o recurso de Autenticação do Servidor NTP
+		!DICA: esse recurso aumenta o nível de segurança em servidor de NTP
+		ntp authenticate
+		
+		!Configurando a Chave e Senha de autenticação do Servidor NTP
+		!DICA: a chave por padrão é uma sequência numérica já a senha e criptografada utilizando o MD5
+		!OBSERVAÇÃO: essas informações são configuradas no Servidor de NTP Local
+		ntp authentication-key 123456 md5 vaamonde
+		
+		!Configurando o Endereço IPv4 ou Nome do Servidor de NTP
+		!OBSERVAÇÃO: para utilizar nomes de servidores de NTP e necessário a configuração do DNS
+		!DICA: por padrão apenas um servidor de NTP e configurado no Cisco Packet Tracer, em equipamento real permite mais
+		!DICA: Switch Layer 3 ou Router pode ser Servidor de NTP na Rede usando a opção: ntp master 1 (stratum)
+		ntp server ntp.vaamonde.pti
+		
+		!Habilitando o sincronismo da Data e Hora do NTP com o Hardware
+		!DICA: essa opção habilitar o recurso de sincronização de Data/Hora de Software e Hardware
+		!OBSERVAÇÃO: No Switch 2960 esse recurso não está disponível para configuração
+		ntp update-calendar
+		
+		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+		end
+
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | include ntp
+
+!Comandos de teste e verificação do Sincronismo do NTP Server
+!OBSERVAÇÃO: a sincronização no Cisco Packet Tracer demora alguns segundos
+show ntp status
+show ntp associations
+show clock

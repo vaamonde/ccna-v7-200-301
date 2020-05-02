@@ -1,0 +1,72 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 02/05/2020
+!Data de atualização: 02/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!SYSLOG é um padrão criado pela IETF para a transmissão de mensagens de log em redes IP. O termo é
+!geralmente usado para identificar tanto o protocolo de rede quanto para a aplicação ou biblioteca
+!de envio de mensagens no protocolo syslog.
+
+!O protocolo padrão utilizado pelo Syslog é o UDP (User Datagram Protocol) na porta padrão: 514
+!OBSERVAÇÃO: O Servidor de Syslog também utiliza o Protocolo TCP na porta 514 ou com suporte a 
+!Criptografia na Porta 6514
+
+!O Syslog trabalha com Níveis de Severidade (Traps) que vão de: 0 até 7 utilizando palavras chaves como:
+!0=emergency, 1=alert, 2=critical, 3=error, 4=warning, 5=notice, 6=info e 7=debugging
+
+!PRIMEIRA ETAPA: Configuração do Servidor de Syslog
+!OBSERVAÇÃO: por padrão o Servidor de Syslog do Cisco Packet Tracer está ligado
+
+!SEGUNDA ETAPA: Configuração dos Switch e Router para enviar os Log para o Syslog
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+		
+		!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Switch e Router
+		!OBSERVAÇÃO: configuração da Marcação de Data/Hora detalhado nos Log já executada no Script Base
+		!service timestamps log datetime msec
+		
+		!Habilitando o Recurso de Log no Switch e Router
+		!DICA: por padrão todos os Logs habilitadoS no Switch ou Router são volátil
+		logging on
+		
+		!Configurando o Endereço IPv4 ou Nome do Servidor de Syslog
+		!OBSERVAÇÃO: para utilizar nomes de servidores de Syslog e necessário a configuração do DNS
+		logging host log.vaamonde.pti
+		
+		!Configurando o Nível de Log que será enviado para o Syslog
+		!DICA: nível de detalhamento do Log que será enviado para o Syslog
+		!OBSERVAÇÃO: no Cisco Packet Tracer temos apenas a opção: Debugging (severity=7)
+		logging trap debugging
+		
+		!Habilitando os Logs de Autenticação que será enviado para o Syslog
+		!DICA: esse recurso aumenta o nível de segurança e auditoria da rede
+		!OBSERVAÇÃO: recomendo habilitar o recursos de sucesso e falhas de autenticação
+		!OBSERVAÇÃO: essas informações em conjunto com as regras de segurança aumenta a confiabilidade da rede
+		login on-success log
+		login on-failure log
+		
+		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+		end
+
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | include log
+
+!Comandos de teste e verificação do envio das Mensagens para o Syslog
+debug ip icmp
+ping server-02
+no debug ip icmp
+exit

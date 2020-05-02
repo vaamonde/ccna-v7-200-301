@@ -24,14 +24,14 @@
 !ser transferidas sequencialmente para um software cliente de e-mail em outro dispositivo.
 
 !O protocolo padrão utilizado pelo POP3 é o TCP (Transmission Control Protocol) na porta padrão: 110
-!DICA: a porta 995 utiliza SSL/TLS (segurança) também conhecida como POP3S
+!DICA: a porta 995 utiliza SSL/TLS (segurança) ela e também conhecida como POP3S
 
 !IMAP (Internet Message Access Protocol) é um protocolo de gerenciamento de correio eletrônico. O mais 
 !interessante é que as mensagens ficam armazenadas no servidor de hospedagem de email. Trabalhando com
 !sincronismo entre a caixa postal e o cliente de e-mail.
 
 !O protocolo padrão utilizado pelo IMAP é o TCP (Transmission Control Protocol) na porta padrão: 143
-!DICA: a porta 993 utiliza SSL/TLS (segurança) também conhecida como IMAPS
+!DICA: a porta 993 utiliza SSL/TLS (segurança) ela e também conhecida como IMAPS
 
 !MAPI (Messaging API) é um protocolo proprietário desenvolvido pela Microsoft. Ele é usado como interface
 !de comunicação entre as aplicações e o servidor Microsoft Exchange.
