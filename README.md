@@ -278,3 +278,10 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
+## **020 Configuração do WPA2 no Access Point N - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do WPA2 (Wi-Fi Protected Access v2) no Access Point modelo 802.11-N utilizado para conectar os dispositivos Sem-Fio da topologia (Notebook, Smartphone e Tablet), na nova certificação da Cisco CCNA v7 a configuração de dispositivos de rede sem-fio e a grande novidade, nas versões anteriores era cobrado somente a parte teórica, agora tem a parte prática. Nessa primeira parte será configuarado os conceitos básicos.
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-020.pkt
+
+Link da vídeo aula:
