@@ -182,7 +182,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=vC6fIQAX1N8&t=
 
 ## **010 Documentação da Topologia de Rede - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou mostrar como fazer a documentação básica da topologia de rede, utilizando os recursos de Bloco de Notas (Notes) do Cisco Packetr Tracer, documentando os equipamentos de rede, desktop, servidores, conexões e rede.
+Nessa aula, vou mostrar como fazer a documentação básica da topologia de rede, utilizando os recursos de Bloco de Notas (Notes) do Cisco Packetr Tracer, documentando os equipamentos de rede, desktop, servidores, conexões e rede e endereços IPv4/IPv6.
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-010.pkt
 
@@ -198,7 +198,7 @@ Link da vídeo aula:
 
 ## **012 Configuração do Servidor DHCPv4 - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de DHCPv4 (Dynamic Host Configuration Protocol), essa configuração será feita no Servidor, lembrando que o Switch Layer 3 e Router possui esse recurso, o uso do serviço de DHCP facilita á configuração dinâmica dos endereçamentos IPv4 em todos os dipositivos da rede.
+Nessa aula, vou fazer a configuração do Servidor de DHCPv4 (Dynamic Host Configuration Protocol), essa configuração será feita no Servidor, lembrando que Switch Layer 3 ou Router possui esse recurso, o uso do serviço de DHCP facilita á configuração dinâmica dos endereçamentos IPv4 em todos os dipositivos da rede.
 
 As configurações Base do Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-012-ConfiguracaoBaseCenario.txt
 
@@ -210,10 +210,71 @@ Link da vídeo aula:
 
 ## **013 Configuração do Servidor DNSv4 - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de DNSv4 (Domain Name System), essa configuração será feita no Servidor, esse recurso facilita a configuração de acesso a equipamentos da redes ou computadores da nossa topologia utilizando nomes, o servidor de DNS é o principal serviço utilizado nas redes locais e principalmente na internet.
+Nessa aula, vou fazer a configuração do Servidor de DNSv4 (Domain Name System), essa configuração será feita no Servidor, esse recurso facilita o acesso a equipamentos da redes ou computadores da nossa topologia utilizando nomes, o servidor de DNS é o principal serviço utilizado nas redes locais e principalmente na internet.
 
 As configuraçoes do DNSv4 Server será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-013-ConfiguracaoDNSv4Server.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-013.pkt
 
 Link da vídeo aula: 
+
+## **014 Configuração do Servidor FTP e HTTP/HTTPS - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do Servidor de FTP (File Transfer Protocol) e do Servidor HTTP/HTTPS (Hypertext Transfer Protocol - Hypertext Transfer Protocol Secure), essa configuração será feita no Servidor, o FTP é um dos principais serviços de transferência de arquivos na Internet (hoje substituido pelo SFTP e SSH), o HTTP/HTTP é o principal serviço de Hospedagem de Páginas Web na Internet, utilizando principalmente a Linguagem de Marcação HTML (Hypertext Markup Language) para hospedar práginas .html dinâmicas ou estáticas. 
+
+As configuraçoes do FTP e HTTP/HTTPS Server será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-014-ConfiguracaoFTP-HTTP.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-014.pkt
+
+Link da vídeo aula: 
+
+## **015 Configuração do Servidor SMTP e POP3 - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do Servidor de SMTP (Simple Mail Transfer Protocol) e do Servidor POP3 (Post Office Protocol v3), essa configuração será feita no Servidor, o SMTP é o principal serviço de envio de mensagem de email na Internet já o POP3 é o principal serviço para acessar remotamente os MailBox e baixar as mensagens de email.
+
+As configuraçoes do SMTP e POP3 Server será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-015-ConfiguracaoSMTP-POP3.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-015.pkt
+
+Link da vídeo aula:
+
+## **016 Configuração do DNS no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do DNS (Domain Name System) nos Switch Layer 2 2960, Switch Layer 3 3560 e nos Router 1941, essa configuração facilita o acesso remoto utilizando o protocolo SSH ou testes de rede utilizando o protocolo ICMP (ping) por nomes, fazendo a tradução do nomes para IP utilizando o serviço de DNS configurado no Servidor ou consultando a base de nomes locais do equipamento.
+
+As configuraçoes do DNS no Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-016-ConfiguracaoDNS-SwitchRouter.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-016.pkt
+
+Link da vídeo aula:
+
+## **017 Configuração do NTP no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do NTP (Network Time Protocol) nos Switch Layer 2 2960, Switch Layer 3 3560 e nos Router 1941, essa configuração facilita o sincronismo e alteração de Data/Hora nos equipamentos de rede, facilitando a administração, padronização e confiabilidade nos registros de Logs e eventos dos equipamentos de rede, com Data/Hora corretas.
+
+As configuraçoes do NTP no Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-017-ConfiguracaoNTP-SwitchRouter.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-017.pkt
+
+Link da vídeo aula:
+
+## **018 Configuração do SYSLOG no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do SYSLOG (System Logging) nos Switch Layer 2 2960, Switch Layer 3 3560 e nos Router 1941, essa configuração facilita a centralização de todos os Logs de eventos dos equipamentos de rede, ajudando no processo de resolução de problemas e análise das falhas ou mundaças nos equipamentos.
+
+As configuraçoes do SYSLOG no Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-018-ConfiguracaoSYSLOG-SwitchRouter.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-018.pkt
+
+Link da vídeo aula:
+
+## **019 Configuração do SNMP no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do SNMP (Simple Network Management Protocol) nos Switch Layer 2 2960, Switch Layer 3 3560 e nos Router 1941, essa configuração facilita a administração e monitoramento dos equipamentos de redes, utilizando o protocolo SNMP podemos obter dados de estátistica das interfaces de rede, estatus das interfaces e alteração das informações ou configurações remotas. 
+
+As configuraçoes do SNMP no Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-019-ConfiguracaoSNMP-SwitchRouter.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-019.pkt
+
+Link da vídeo aula:
+
