@@ -30,13 +30,14 @@ enable
 	configure terminal
 		
 		!Configurando a Comunidade do SNMP com direito a Leitura
-		!DICA: o nome da comunidade de leitura tem que ser diferente da que tem direitos de escrita
+		!DICA: o nome da comunidade de leitura tem que ser diferente da comunidade que tem direitos de escrita
 		!OBSERVAÇÃO: no cisco Packet Tracer as configurações de SNMP são limitadas
-		!OBSERVAÇÃO: o recurso do somente leitura consegue apenas ler a MID e alguns OID
+		!OBSERVAÇÃO: o recurso de somente leitura consegue apenas ler as informaçoes da MID e OID
 		snmp-server community ptiro ro
 		
 		!Configurando a Comunidade do SNMP com direito a Leitura e Escrita
 		!DICA: o SNMPv3 possui recursos de segurança, criptografia e autenticação
+		!OBSERVAÇÃO: a aconselhável configurar a segurança do SNMP no Switch e Router com uso de ACL
 		snmp-server community ptirw rw
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
