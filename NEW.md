@@ -21,8 +21,12 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 020 Configuração do WPA2 no Access Point N
 
 ## **ETAPA-02: Testes e Documentação para Criação dos Roteiros:**
-021 Configuração do Switchport e Port-Security<br>
-022 Configuração da Interface do Switch Layer 3<br>
-023 Configuração da Rota Estática e Rota Padrão<br>
-024 Configuraçao da Rota Flutuante Estática<br>
-025 Configuração do STP e RSTP no Switch Layer 2 e 3
+021 Configuração da Velocidade e Duplex das Portas do Switch<br>
+022 Desativando Portas do Switch não Utilizadas na Rede<br>
+023 Configuração da Segurança de Acesso a Porta do Switch<br>
+024 Configuração da Segurança DHCP Snooping/Spoofing<br>
+025 Configuração da Rota Estática e Rota Padrão<br>
+026 Configuraçao da Rota Flutuante Estática<br>
+027 Configuração do STP e RSTP no Switch Layer 2 e 3<br>
+028 Configuração do Protocolo CDP (Cisco Discovery Protocol)<br>
+029 Configuração do NetFlow no Switch e Router<br>
