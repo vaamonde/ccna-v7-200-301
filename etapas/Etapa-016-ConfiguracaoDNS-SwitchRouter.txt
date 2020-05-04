@@ -31,7 +31,7 @@ enable
 		!Configurando o Endereço IPv4 do Servidor de DNS no Switch e Router
 		!DICA: após a configuração do endereço IPv4 do Servidor de DNS o Switch ou Router ele não usará mais o Broadcast
 		!OBSERVAÇÃO: você só pode configurar apenas um servidor de Resolução de Nomes de DNS
-		ip name-server ns1.vaamonde.pti
+		ip name-server 192.168.3.1
 		
 		!Adicionando manualmente a Resolução de Nomes e Endereços no Switch e Router
 		!DICA: por padrão o Switch e Router consulta primeiro a Base Local de Nomes e depois o DNS Server

@@ -57,6 +57,7 @@
 !Resource Records:	Name = ftp.vaamonde.pti		Type = CNAME		Host Name = server-02
 !Resource Records:	Name = tftp.vaamonde.pti	Type = CNAME		Host Name = server-02
 !Resource Records:	Name = ntp.vaamonde.pti		Type = CNAME		Host Name = server-02
+!Resource Records:	Name = log.vaamonde.pti		Type = CNAME		Host Name = server-02
 !Resource Records:	Name = sw-l2-2960-3			Type = A Record		Address = 192.168.3.250
 !Resource Records:	Name = sw-l2-2960-4			Type = A Record		Address = 192.168.3.251
 !Resource Records:	Name = sw-l3-3560-1			Type = A Record		Address = 192.168.3.252
