@@ -19,7 +19,7 @@ Exam Description CCNA Exam v1.0 (CCNA 200-301): https://www.cisco.com/c/dam/en_u
 ## **Livros Oficiais da Cisco CCNA v7 200-301:**
 CCNA 200-301 Official Cert Guide, Volume 1 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/0135792738<br>
 CCNA 200-301 Official Cert Guide, Volume 2 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/1587147130<br>
-Cisco IOS Configuration FundamentalsCommand Reference (Inglês): https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference.pdf
+Cisco IOS Configuration Fundamentals Command Reference (Inglês): https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference.pdf
 
 ## **Treinamento Oficial da Cisco CCNA v7 200-301:**
 CCNA 7: Introduction to Networks: https://www.netacad.com/pt-br/courses/networking/ccna-introduction-networks<br>
@@ -38,7 +38,9 @@ Configurando Switches e Roteadores de Cisco: Guia para a Certificação CCENT/CC
 
 ## **Site com Questões da Prova de CCNA v7 200-301 - v6 200-125:**
 9tut CCNA Training: https://www.9tut.com/<br>
-Study CCNA: https://study-ccna.com/
+Study CCNA: https://study-ccna.com/<br>
+ICT Community: https://www.ccna7.com/<br>
+IT ExamAnswers: https://itexamanswers.net/ccna-v7-0
 
 ## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
 Cisco::Pearson VUE: https://home.pearsonvue.com/cisco
@@ -95,6 +97,7 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCt
 **ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dica de alunos;<br>
 **DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração ou para o exame;<br>
 **ERRATA:** correções dos script, correções de falas, correções de configurações, etc;<br>
+**EXEMPLO:** exemplos de comandos ou configuações das opções de DICAS ou OBSERVAÇÃO;<br>
 **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco de adicionar informações extras da tecnologia ou da certificação.
 
 ## **001 Configuração Base do Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
