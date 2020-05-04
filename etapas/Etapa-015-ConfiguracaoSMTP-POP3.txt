@@ -41,8 +41,8 @@
 
 !Configurações do Serviço de SMTP e POP3 Server no Cisco Packet Tracer:
 !OBSERVAÇÃO: por padrão o Serviço de SMTP e POP3 no Cisco Packet Tracer está ligado
-!DICA: em servidores de email geralmente no Servidor de DNS e feito a criação do Registro MX ()
-!DICA: geralmente nesse servidor e criados arquivos do Tipo TXT com informações de Black List
+!DICA: em servidores de email geralmente no Servidor de DNS e feito a criação do Registro MX (Mail Exchanger Record)
+!DICA: geralmente nesse servidor e criados arquivos do Tipo TXT com informações de Black List (Sender Policy Framework)
 
 SMTP Service		On
 POP3 Service		On
@@ -53,13 +53,6 @@ User Setup			User: robsonvaamonde	Password: 123456	(+)
 					User: sirlenesanches	Password: 123456	(+)
 					User: vaamonde			Password: 123456	(+)
 
-!Comandos básicos de FTP e HTTP/HTTPS
-http://localhost
-http://127.0.0.1
-http://www.vaamonde.pti
-https://www.vaamonde.pti
-ftp ftp.vaamonde.pti
-	dir
-	put vaamonde.txt
-	get vaamonde.txt
-	quit
+!Configurações do Clientes de SMTP e POP3 no Cisco Packet Tracer
+!DICA: o principal cliente de email utilizado hoje em dia e o: Microsoft Outlook
+!OBSERVAÇÃO: existe outros clientes como: Thunderbid, Evolution, SeaMonkey, eM Client, etc

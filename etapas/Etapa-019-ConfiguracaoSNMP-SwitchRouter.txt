@@ -37,7 +37,7 @@ enable
 		
 		!Configurando a Comunidade do SNMP com direito a Leitura e Escrita
 		!DICA: o SNMPv3 possui recursos de segurança, criptografia e autenticação
-		!OBSERVAÇÃO: a aconselhável configurar a segurança do SNMP no Switch e Router com uso de ACL
+		!OBSERVAÇÃO: e aconselhável configurar a segurança do SNMP no Switch e Router com uso de ACL
 		snmp-server community ptirw rw
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado

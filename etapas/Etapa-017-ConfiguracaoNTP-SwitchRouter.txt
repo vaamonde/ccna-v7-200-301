@@ -44,7 +44,7 @@ show clock
 		clock timezone BR -3
 		
 		!Habilitando o recurso de Autenticação do Servidor NTP
-		!DICA: esse recurso aumenta o nível de segurança em servidor de NTP
+		!DICA: esse recurso aumenta o nível de segurança da configuração de NTP Server
 		ntp authenticate
 		
 		!Configurando a Chave e Senha de autenticação do Servidor NTP
