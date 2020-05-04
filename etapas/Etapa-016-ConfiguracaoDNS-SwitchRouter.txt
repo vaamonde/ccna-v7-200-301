@@ -19,23 +19,24 @@ enable
 		
 		!Habilitando o recurso de Resolução de Nomes de Domínio no Switch e Router
 		!OBSERVAÇÃO: esse recurso vem habilitado por padrão no Switch ou Router
-		!OBSERVAÇÃO: por padrão o endereço IPv4 de resolução de nomes é: 255.255.255.255 (Broadcast)
+		!OBSERVAÇÃO: por padrão o endereço IPv4 de resolução de nomes e: 255.255.255.255 (Broadcast)
 		!DICA: habilitar esse recurso somente quando o Servidor DNS estiver configurando, caso contrário, desabilitar
 		ip domain-lookup
 		
 		!Configurando o Nome de Domínio no Switch e Router
 		!OBSERVAÇÃO: esse recurso já foi configurado, ele é necessário para o serviço do SSH Server
-		!DICA: a configuranção do Nome de Domínio é recomendada, mesmo que não seja utilizado
+		!DICA: a configuranção do Nome de Domínio e recomendada, mesmo que não seja utilizado no Switch e Router
 		!ip domain-name vaamonde.pti
 		
 		!Configurando o Endereço IPv4 do Servidor de DNS no Switch e Router
-		!DICA: após a configuração do endereço IPv4 do Servidor de DNS o Switch ou Router ele não usará mais o Broadcast
-		!OBSERVAÇÃO: você só pode configurar apenas um servidor de Resolução de Nomes de DNS
+		!DICA: após a configuração do endereço IPv4 do Servidor de DNS no Switch ou Router ele não usará mais o Broadcast
+		!OBSERVAÇÃO: você só pode configurar apenas um Servidor de Resolução de Nomes de DNS
 		ip name-server 192.168.3.1
 		
 		!Adicionando manualmente a Resolução de Nomes e Endereços no Switch e Router
-		!DICA: por padrão o Switch e Router consulta primeiro a Base Local de Nomes e depois o DNS Server
+		!DICA: por padrão o Switch e Router consulta primeiro a Base Dados Locais de Nomes e depois o DNS Server
 		!OBSERVAÇÃO: a criação de nomes locais facilita o acesso a equipamentos sem a dependência do servidor de DNS
+		!OBSERVAÇÃO: desvantagem, que esse e um procedimento manual, sua atualização não e dinânica.
 		ip host servidor 192.168.3.1
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
@@ -44,13 +45,13 @@ enable
 !Salvando as configurações da memória RAM para a memória NVRAM
 write
 
-!!Visualizando as configurações da memória RAM
+!Visualizando as configurações da memória RAM
 !DICA: utilização dos Filtros | (Pipe) para filtrar informações do running-config
-!DICA: muito utilizado no dia-a-dia para filtrar informações rápidas das configurações
+!DICA: muito utilizado no dia-a-dia para filtshow running-config | include iprar informações rápidas das configurações
 !OBSERVAÇÃO: opções de filtros: show running-config | ? (begin, exclude, include e section)
 show running-config | include ip
 
-!Comandos de teste e verificação da Resolução de Nomes
+!Comandos para testar a verificação da Resolução de Nomes no Switch ou Router
 show hosts
 ping servidor
 ping server-02
