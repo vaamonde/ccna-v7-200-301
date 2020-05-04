@@ -65,9 +65,9 @@ write
 !Visualizando as configurações da memória RAM
 show running-config | include log
 
-!Comandos de teste e verificação do envio das Mensagens para o Syslog
-!DICA: o comando Debug e muito utilizado para analisar informações detalhadas do recurso ou comando
-!OBSERVAÇÃO: muito cuidado quando habilitar o Debug não esquecer de desabilitar, pois consome recurso do harware
+!Comandos para verificar do envio das Mensagens para o Syslog Server
+!DICA: o comando Debug e muito utilizado para analisar informações detalhadas de recursos ou comandos
+!OBSERVAÇÃO: muito cuidado quando habilitar o Debug não esquecer de desabilitar, pois consome recursos de hardware
 debug ip icmp
 ping server-02
 no debug ip icmp

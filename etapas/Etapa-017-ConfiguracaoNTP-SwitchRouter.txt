@@ -60,7 +60,7 @@ show clock
 		
 		!Habilitando o sincronismo da Data e Hora do NTP com o Hardware
 		!DICA: essa opção habilitar o recurso de sincronização de Data/Hora de Software e Hardware
-		!OBSERVAÇÃO: No Switch 2960 esse recurso não está disponível para configuração
+		!OBSERVAÇÃO: no Switch 2960 esse recurso não está disponível para configuração
 		ntp update-calendar
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
@@ -72,7 +72,7 @@ write
 !Visualizando as configurações da memória RAM
 show running-config | include ntp
 
-!Comandos de teste e verificação do Sincronismo do NTP Server
+!Comandos para teste e verificação do Sincronismo do NTP Server
 !OBSERVAÇÃO: a sincronização no Cisco Packet Tracer demora alguns segundos
 show ntp status
 show ntp associations
