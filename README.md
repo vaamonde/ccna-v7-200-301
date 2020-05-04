@@ -90,9 +90,9 @@ TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
 ## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNA v7 200-301:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
 
-**ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dica de alunos;
-**DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração ou para o exame;
-**ERRATA:** correções dos script, correções de falas, correções de configurações, etc;
+**ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dica de alunos;<br>
+**DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração ou para o exame;<br>
+**ERRATA:** correções dos script, correções de falas, correções de configurações, etc;<br>
 **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco de adicionar informações extras da tecnologia ou da certificação.
 
 ## **001 Configuração Base do Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
