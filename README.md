@@ -204,7 +204,7 @@ Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três C
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-011.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=_YVXarhu-io&t
 
 ## **012 Configuração do Servidor DHCPv4 - Laboratório Prático Cisco CCNA v7 200-301**
 
