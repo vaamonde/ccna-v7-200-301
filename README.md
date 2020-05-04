@@ -295,3 +295,13 @@ Nessa aula, vou fazer a configuração do WPA2 (Wi-Fi Protected Access v2) no Ac
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-020.pkt
 
 Link da vídeo aula:
+
+## **021 Configuração do SPEED, DUPLEX e MDIX - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do SPEED (Velocidade da Interface/Porta de Rede), DUPLEX (Modo de Transmissão - Half-Duplex ou Full-Duplex) e o recurso do MDIX (Medium-dependent interface), todos os recursos de configuração de Interface/Porta de Rede são necessários em casos onde o recurso de auto-negociação da Interface/Porta não seja possível, nessa aula já vou desabilitar as Interface/Porta de Redes que não estão em uso no nosso Switch.
+
+As configuraçoes do SPEED, DUPLEX e MDIX no Switch Layer 3 e Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-021-ConfiguracaoSpeedDuplex-Switch.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-021.pkt
+
+Link da vídeo aula:
