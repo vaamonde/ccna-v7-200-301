@@ -40,7 +40,8 @@ Configurando Switches e Roteadores de Cisco: Guia para a Certificação CCENT/CC
 9tut CCNA Training: https://www.9tut.com/<br>
 Study CCNA: https://study-ccna.com/<br>
 ICT Community: https://www.ccna7.com/<br>
-IT ExamAnswers: https://itexamanswers.net/ccna-v7-0
+IT ExamAnswers: https://itexamanswers.net/ccna-v7-0<br>
+PacketLife Cheat Sheets: https://packetlife.net/library/cheat-sheets/
 
 ## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
 Cisco::Pearson VUE: https://home.pearsonvue.com/cisco
@@ -204,7 +205,7 @@ Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três C
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-011.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=_YVXarhu-io&t
 
 ## **012 Configuração do Servidor DHCPv4 - Laboratório Prático Cisco CCNA v7 200-301**
 
