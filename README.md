@@ -18,7 +18,8 @@ Exam Description CCNA Exam v1.0 (CCNA 200-301): https://www.cisco.com/c/dam/en_u
 
 ## **Livros Oficiais da Cisco CCNA v7 200-301:**
 CCNA 200-301 Official Cert Guide, Volume 1 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/0135792738<br>
-CCNA 200-301 Official Cert Guide, Volume 2 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/1587147130
+CCNA 200-301 Official Cert Guide, Volume 2 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/1587147130<br>
+Cisco IOS Configuration FundamentalsCommand Reference (Inglês): https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference.pdf
 
 ## **Treinamento Oficial da Cisco CCNA v7 200-301:**
 CCNA 7: Introduction to Networks: https://www.netacad.com/pt-br/courses/networking/ccna-introduction-networks<br>
@@ -36,7 +37,8 @@ Certificaçao CCNA - Guia Preparatorio para o Exame 200-120, Alexandre Vieria de
 Configurando Switches e Roteadores de Cisco: Guia para a Certificação CCENT/CCNA, César Felipe G. Silva (Português): https://www.americanas.com.br/produto/116404584/livro-configurando-switches-e-roteadores-de-cisco-guia-para-a-certificacao-ccent-ccna
 
 ## **Site com Questões da Prova de CCNA v7 200-301 - v6 200-125:**
-9tut CCNA Training: https://www.9tut.com/
+9tut CCNA Training: https://www.9tut.com/<br>
+Study CCNA: https://study-ccna.com/
 
 ## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
 Cisco::Pearson VUE: https://home.pearsonvue.com/cisco
