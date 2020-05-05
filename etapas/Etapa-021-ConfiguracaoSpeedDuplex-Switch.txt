@@ -22,21 +22,22 @@ enable
 		interface fastEthernet 0/1
 		
 			!Configurando a descrição da Interface (Porta de Rede)
-			description Porta de Conexao do Servidor SERVER-02
+			description Porta de Conexão do Servidor SERVER-02
 
 			!Configurando a velocidade da Interface (Porta de Rede)
-			!DICA: conexões Ethernet em Switch possui velocidades por padrão de: 10, 100 e 1000Mbps
-			!OBSERVAÇÃO: existe a possibilidade de velocidades maiores de 1000Mbps como por exemplo 10000Mbps (10Gbps)
+			!DICA: conexões Ethernet em Switch possui velocidades padrão de: 10, 100 e 1000Mbps
+			!OBSERVAÇÃO: existe a possibilidade de velocidades maiores que 1000Mbps como por exemplo 10000Mbps (10Gbps)
 			speed 100
 
 			!Configuração do modo de transmissão da Interface (Porta de Rede)
 			!DICA: conexões Ethernet em Switch pode trabalhar com os modos: Half-Duplex, Full-Duplex e Auto
-			!OBSERVAÇÃO: 
+			!OBSERVAÇÃO: Hal-Duplex era o modo de transmissão em redes Ethernet 10Mbps com conlisão (CSMA-CA)
+			!OBSERVAÇÃO: Full-Duplex e o modo transmissão em Redes FastEthernet e GigabitEthernet sem colisão
 			duplex full
 			
-			!Configuração do MDIX (Medium-dependent interface) da Interface (Porta de Rede)
-			!DICA: por padrão do recurso de MDIX está configurado como auto em todas as interfaces
-			!OBSERVAÇÃO: o recurso do MDIX facilita na administração do Switch, pois não precisamos se preocupar com
+			!Configuração do MDIX (Medium-Dependent Interface) da Interface (Porta de Rede)
+			!DICA: por padrão o recurso de MDIX está configurado como auto em todas as interfaces
+			!OBSERVAÇÃO: o recurso MDIX facilita na administração do Switch, pois não precisamos se preocupar com
 			!o tipo de cabo utilizado para fazer a conexão com o Host ou outro equipamento na rede
 			!EXEMPLO: utilizar cabo direto ou cabo cross-over
 			no mdix auto
@@ -46,10 +47,16 @@ enable
 			
 		!Acessando a Interface (Porta de Rede) da Conexão do Access Point
 		interface FastEthernet 0/2
-			description Porta de Conexao do Access Point N APT-01
+			description Porta de Conexão do Access Point N APT-01
+			speed 100
+			duplex full	
+			exit
+
+		!Acessando a Interface (Porta de Rede) da Conexão do Router 1941
+		interface FastEthernet 0/24
+			description Porta de Conexão do Router 1941
 			speed 100
 			duplex full
-			mdix auto	
 			exit
 			
 		!Acessando todas as Interfaces (Porta de Rede) que não estão sendo utilizadas
