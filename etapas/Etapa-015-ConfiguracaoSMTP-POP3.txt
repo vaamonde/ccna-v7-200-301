@@ -18,6 +18,7 @@
 !OBSERVAÇÃO: desde 01/01/2013 o CGI.br solicitou o bloqueio do envio de e-mails na porta 25 
 !OBSERVAÇÃO: atualmente a porta utilizada pelo SMTP e a 587, essa mudança tem o foco na diminuição de SPAM
 !DICA: a porta 587 utiliza TLS (segurança) já a porta 465 utiliza SSL (segurança) mais foi depreciada (desuso)
+!ERRATA: no vídeo eu falho: 01/01/2003 o correto é: 01/01/2013
 
 !POP3 (Post Office Protocol) é um protocolo utilizado no acesso remoto a um servidor de correio eletrônico (e-mail), 
 !definido no RFC 1939, que permite que todas as mensagens contidas em uma caixa de correio eletrônico possam
@@ -61,15 +62,18 @@ User Setup			User: robsonvaamonde	Password: 123456	(+)		Email: robsonvaamonde@va
 !DICA: o principal cliente de e-mail utilizado hoje em dia no mercado corporativo e o: Microsoft Outlook
 !OBSERVAÇÃO: existe outros clientes como: Thunderbid, Evolution, SeaMonkey, eM Client, etc
 
+nslookup smtp.vaamonde.pti
+nsllokup pop3.vaamonde.pti
+
 Configure Mail
-Your Name				Robson Vaamonde
-Email Address			robsonvaamonde@vaamonde.pti
+Your Name				Admin SOA
+Email Address			vaamonde@vaamonde.pti
 
 Server Information
 Incoming Mail Server	pop3.vaamonde.pti
 Outgoing Mail Server	smtp.vaamonde.pti
 
 Logon Information
-User Name				robsonvaamonde
+User Name				vaamonde
 Password				123456
 (SAVE)
