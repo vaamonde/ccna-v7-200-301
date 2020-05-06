@@ -227,7 +227,7 @@ As configurações do DNSv4 Server será feita utilizando o Script: https://gith
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-013.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=qE76uyWSLR8&t
 
 ## **014 Configuração do Servidor FTP e HTTP/HTTPS - Laboratório Prático Cisco CCNA v7 200-301**
 
