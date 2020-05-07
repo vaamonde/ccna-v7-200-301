@@ -313,6 +313,6 @@ Nessa aula, vou fazer a configuração do SwitchPort e PortSecurity no Switch La
 
 As configurações do SwitchPort e PortSecurity no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-021-ConfiguracaoSpeedDuplex-Switch.txt
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-021.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-022.pkt
 
 Link da vídeo aula:
