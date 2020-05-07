@@ -31,7 +31,8 @@ enable
 
 			!Configuração do modo de transmissão da Interface (Porta de Rede)
 			!DICA: conexões Ethernet em Switch pode trabalhar com os modos: Half-Duplex, Full-Duplex e Auto
-			!OBSERVAÇÃO: Hal-Duplex era o modo de transmissão em redes Ethernet 10Mbps com conlisão (CSMA-CA)
+			!DICA: por padrão o recurso de Duplex está configurado como auto em todas as interfaces
+			!OBSERVAÇÃO: Half-Duplex era o modo de transmissão em redes Ethernet 10Mbps com conlisão (CSMA-CD)
 			!OBSERVAÇÃO: Full-Duplex e o modo transmissão em Redes FastEthernet e GigabitEthernet sem colisão
 			duplex full
 			
@@ -68,7 +69,7 @@ enable
 			!Desligando todas as Interfaces (Porta de Rede) que não estão sendo utilizadas
 			!DICA: para aumentar a segurança e recomendado desligar todas as interfaces que não estão sendo utilizadas
 			!OBSERVAÇÃO: desligar as interfaces faz parte da segurança física da rede
-			!OBSERVAÇÃO: todas as interfaces do Switch estão no status: no shutdown e na VLAN padrão 1
+			!OBSERVAÇÃO: todas as interfaces do Switch estão no status: no shutdown e na VLAN padrão 1 com DTP ativado
 			shutdown
 			
 			!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado

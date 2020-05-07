@@ -237,7 +237,7 @@ As configurações do FTP e HTTP/HTTPS Server será feita utilizando o Script: h
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-014.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=krHwI-nlloM&t
 
 ## **015 Configuração do Servidor SMTP e POP3 - Laboratório Prático Cisco CCNA v7 200-301**
 

@@ -11,18 +11,19 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!SNMP (Simple Network Management Protocol) é um protocolo padrão da Internet para gerenciamento de
+!SNMP (Simple Network Management Protocol) é um protocolo padrão da Internet para o gerenciamento de
 !dispositivos em redes IP. Dispositivos que normalmente suportam SNMP incluem roteadores, computadores,
-!servidores, estações de trabalho, impressoras, racks modernos e etc.
+!servidores, estações de trabalho, impressoras, nobreaks, racks modernos e etc.
 
-!O protocolo padrão utilizado pelo SNMP e o UDP (User Datagram Protocol) na porta padrão: 161
+!O protocolo padrão utilizado pelo SNMP é o UDP (User Datagram Protocol) na porta padrão: 161
 !OBSERVAÇÃO: o protoclo SNMP também utiliza a Porta 162 para Trap e portas seguras: 10161 e 10162
 
 !Versões do SNMP: SNMPv1, SNMPv2c (c=comunidade), SNMPv3
 
-!O SNMP e dividido em: SNMP Manager, SNMP Agent, MIB (Managed Information Base) e OID (Object Identifier)
+!O SNMP e dividido em: SNMP Manager (Gerente), SNMP Agent (Agente), MIB (Managed Information Base)
+!e OID (Object Identifier)
 
-!PRIMEIRA ETAPA: Configuração dos Switch e Router para permiti informações SNMP
+!PRIMEIRA ETAPA: Configuração dos Switch e Router para permiti acesso as informações SNMP
 !Acessando o modo EXEC Privilégiado
 enable
 
@@ -31,8 +32,8 @@ enable
 		
 		!Configurando a Comunidade do SNMP com direito a Leitura
 		!DICA: o nome da comunidade de leitura tem que ser diferente da comunidade que tem direitos de escrita
-		!OBSERVAÇÃO: no cisco Packet Tracer as configurações de SNMP são limitadas
-		!OBSERVAÇÃO: o recurso de somente leitura consegue apenas ler as informaçoes da MID e OID
+		!OBSERVAÇÃO: no Cisco Packet Tracer as configurações de SNMP são limitadas
+		!OBSERVAÇÃO: o recurso de somente leitura consegue apenas ler as informações da MID e OID
 		snmp-server community ptiro ro
 		
 		!Configurando a Comunidade do SNMP com direito a Leitura e Escrita

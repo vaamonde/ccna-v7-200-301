@@ -24,7 +24,7 @@ enable
 			!Configurando a Interface (Porta de Rede) para o modo de Acesso
 			!DICA: uma Interface de acesso pertence e trafega dados de uma única VLAN
 			!OBSERVAÇÃO: por padrão todos os Switch tem a VLAN 1 que não pode ser removida e está associada a todas as Interface
-			!OBSERVAÇÃO: e recomendo sempre configurar as Interfaces dos dispositivos finais para Acesso (Access)
+			!OBSERVAÇÃO: e recomendo sempre configurar as Interfaces dos dispositivos finais para o Modo Acesso (Access)
 			!OBSERVAÇÃO: tipos de configuração: access (porta de acesso), trunk (porta de tronco) e dynamic (porta dinâmica)
 			switchport mode access
 			
@@ -35,7 +35,7 @@ enable
 			
 			!Habilitando o recurso de Port-Security na Interface (Porta de Rede)
 			!DICA: habilitar o recurso de port-security aumenta o nível de segurança da rede
-			!OBSERVAÇÃO: o recurso de Port-Security não deve ser usado em Interfaces do tipo Tronco (Trunk)
+			!OBSERVAÇÃO: o recurso de Port-Security não deve ser usado em Interfaces do Modo Tronco (Trunk)
 			!OBSERVAÇÃO: o Port-Security tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de MAC)
 			switchport port-security
 			
@@ -49,7 +49,7 @@ enable
 			!DICA: o recurso de aprendizagem do endereço MAC possibilita indicar qual endereço está associada a Interface
 			!OBSERVAÇÃO: existe duas formas de configurar o endereço MAC na Interface: static (estático) ou dynamic (dinâmico)
 			!OBSERVAÇÃO: configurando o modo estático: switchport port-security mac-address H.H.H (0002.16d2.da19)
-			!OBSERVAÇÃO: configurando o modo dinâmico: switchport port-security mac-address 
+			!OBSERVAÇÃO: configurando o modo dinâmico: switchport port-security mac-address sticky
 			!DICA: o endereço MAC e aprendido quando o dispositivos final faz sua primeira transmissão na rede
 			switchport port-security mac-address sticky
 			
@@ -58,6 +58,7 @@ enable
 			!ou quando exceder a quantidade de MAC Address associado a uma Interface
 			!OBSERVAÇÃO: existe três tipos de violação: protect (proteger), restrict (restringir) e shutdown (desligar)
 			!OBSERVAÇÃO: por padrão a opção de violação do Switch Cisco e: shutdown (desligar a Interface)
+			!OBSERVAÇÃO: o modo shutdown 
 			switchport port-security violation shutdown
 			exit
 		
@@ -69,6 +70,7 @@ enable
 			switchport port-security maximum 5
 			switchport port-security mac-address sticky
 			!OBSERVAÇÃO: alterado o modo de violação da Interface
+			!OBSERVAÇÃO: o modo protect
 			switchport port-security violation protect
 			end
 
@@ -82,12 +84,13 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 		
-		interface FastEthernet 0/1 - 2
+		interface range FastEthernet 0/1 - 2
 			switchport mode access
 			switchport port-security
 			switchport port-security maximum 1
 			switchport port-security mac-address sticky
 			!OBSERVAÇÃO: alterado o modo de violação da Interface
+			!OBSERVAÇÃO: o modo restrict 
 			switchport port-security violation restrict
 			end
 
