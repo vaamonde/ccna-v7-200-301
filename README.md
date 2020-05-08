@@ -14,7 +14,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 ## **Links Oficiais da Cisco CCNA v7 200-301:**
 Cisco Certified Network Associate (200-301 CCNA): https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html<br>
 Implementing and Administering Cisco Solutions (CCNA) v1.0: https://www.cisco.com/c/en/us/training-events/training-certifications/training/training-services/courses/implementing-and-administering-cisco-solutions-ccna.html<br>
-Exam Description CCNA Exam v1.0 (CCNA 200-301): https://www.cisco.com/c/dam/en_us/training-events/le31/le46/cln/marketing/exam-topics/200-301-CCNA.pdf
+Exam Description CCNA Exam v1.0 (CCNA 200-301): https://www.cisco.com/c/dam/en_us/training-events/le31/le46/cln/marketing/exam-topics/200-301-CCNA.pdf<br>
 Network Topology Icons: https://www.cisco.com/c/en/us/about/brand-center/network-topology-icons.html
 
 ## **Livros Oficiais da Cisco CCNA v7 200-301:**
