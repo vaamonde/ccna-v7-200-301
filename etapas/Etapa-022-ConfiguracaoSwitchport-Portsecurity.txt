@@ -99,6 +99,8 @@ write
 
 !Visualizando as configurações da memória RAM
 show running-config
+
+!Verificando as informações do Switchport e PortSecurity
 show port-security
 show port-security address
 show port-security interface fastEthernet 0/1

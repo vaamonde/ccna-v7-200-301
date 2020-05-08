@@ -1,0 +1,81 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 08/05/2020
+!Data de atualização: 08/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!PRIMEIRA ETAPA: Configuração do Switch Layer 3 3560
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+		
+		!Habilitando o recurso do DHCP Snooping no Switch Layer 3
+		!DICA:
+		!OBSERVAÇÃO:
+		ip dhcp snooping
+		
+		!Configurando a segurança do DHCP Snooping para a VLAN 1
+		!DICA:
+		!OBSERVAÇÃO: 
+		ip dhcp snooping vlan 1
+		
+		!Configurando a 
+		!DICA:
+		!OBSERVAÇÃO
+		ip dhcp snooping information option allow-untrusted
+		
+		!Configurando a Interface (Porta de Rede) do Servidor
+		interface FastEthernet 0/1
+		
+			!Configurando a confiabilidade da Interface do Servidor
+			!DICA:
+			!OBSERVAÇÃO
+			ip dhcp snooping trust
+			exit
+
+		!Configurando a Interface (Porta de Rede) do Access Point
+		interface FastEthernet 0/23
+		
+			!Configurando o limite de requisições de DHCP
+			!DICA:
+			!OBSERVAÇÃO
+			ip dhcp snooping limit rate 10
+			end
+
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!SEGUNDA ETAPA: Configuração do Switch Layer 2 2960
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+	
+		ip dhcp snooping
+		ip dhcp snooping vlan 1
+		interface range GigabitEthernet 0/1 - 2
+			ip dhcp snooping trust
+			exit
+		interface range FastEthernet 0/1 - 2
+			ip dhcp snooping limit rate 5
+			end
+
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!Visualizando as configurações da memória RAM
+show running-config
+
+!Verificando as informações do DHCP Snooping
+show ip dhcp snooping
+show ip dhcp snooping binding
