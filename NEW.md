@@ -7,7 +7,7 @@ Facebook Bora para Prática: https://www.facebook.com/boraparapratica<br>
 Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
-## **Criação da Novas Vídeo Aulas para o Curso de CCNA v7 200-301:**
+## **Criação das Novas Vídeo Aulas para o Curso de CCNA v7 200-301:**
 
 ## **ETAPA-01: Criação dos Roteiros para a Gravação:**
 012 Configuração do Servidor DHCPv4<br>
