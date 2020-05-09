@@ -23,7 +23,7 @@
 !O SNMP e dividido em: SNMP Manager (Gerente), SNMP Agent (Agente), MIB (Managed Information Base)
 !e OID (Object Identifier)
 
-!PRIMEIRA ETAPA: Configuração dos Switch e Router para permiti acesso as informações SNMP
+!PRIMEIRA ETAPA: Configuração dos Switches e Router para permiti acesso as informações SNMP
 !Acessando o modo EXEC Privilégiado
 enable
 
@@ -33,7 +33,8 @@ enable
 		!Configurando a Comunidade do SNMP com direito a Leitura
 		!DICA: o nome da comunidade de leitura tem que ser diferente da comunidade que tem direitos de escrita
 		!OBSERVAÇÃO: no Cisco Packet Tracer as configurações de SNMP são limitadas
-		!OBSERVAÇÃO: o recurso de somente leitura consegue apenas ler as informações da MID e OID
+		!OBSERVAÇÃO: o recurso de somente leitura consegue apenas ler as informações da MIB e OID
+		!ERRATA: no vídeo eu falo MID, o correto e MIB
 		snmp-server community ptiro ro
 		
 		!Configurando a Comunidade do SNMP com direito a Leitura e Escrita
@@ -51,13 +52,25 @@ write
 show running-config | include snmp
 show snmp
 
-!Comandos de teste e verificação do SNMP
+!Comandos de teste e verificação do Protocolo SNMP
+!PRIMEIRA ETAPA: utilizando o Gerenciador Grãfico do SNMP (MIB Browser)
+
+!Configurando o MIB Browser
+Advanced:		Address: 			192.168.3.252
+				Port: 				161
+				Read Community: 	ptiro
+				Write Community:	ptirw
+				SNMP Version: 		v3
+
+!Obtendo dados da MIB do Switch Multilayer			
 .sysName		OID: .1.3.6.1.2.1.1.5.0		GET
 .sysUpTime		OID: .1.3.6.1.2.1.1.3.0		GET
 .sysDescr		OID: .1.3.6.1.2.1.1.1.0		GET
 
+!Atualizandos os dados da MID do Switch Multilayer
 .sysContact		OID: .1.3.6.1.2.1.1.4.0		SET: Robson Vaamonde	OctetString
 .sysLocation	OID: .1.3.6.1.2.1.1.6.0		SET: Switch Layer 3		OctetString
 
+!SEGUNDA ETAPA: acessando informações da MIB utilizando Prompt de Comando
 snmpget /v 3 /a 192.168.3.252 /c ptiro /o .1.3.6.1.2.1.1.1.0
 snmpget /d
