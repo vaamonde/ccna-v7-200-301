@@ -258,7 +258,7 @@ As configurações do DNS nos Switches e Router será feita utilizando o Script:
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-016.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=q6AblFEplEQ&t
 
 ## **017 Configuração do NTP no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
 
