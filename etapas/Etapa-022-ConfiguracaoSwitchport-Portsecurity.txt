@@ -78,12 +78,8 @@ enable
 write
 
 !SEGUNDA ETAPA: Configuração do Switch Layer 2 2960
-!Acessando o modo EXEC Privilégiado
 enable
-
-	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
-		
 		interface range FastEthernet 0/1 - 2
 			switchport mode access
 			switchport port-security
@@ -93,8 +89,6 @@ enable
 			!OBSERVAÇÃO: o modo restrict 
 			switchport port-security violation restrict
 			end
-
-!Salvando as configurações da memória RAM para a memória NVRAM
 write
 
 !Visualizando as configurações da memória RAM

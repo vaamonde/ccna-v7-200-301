@@ -248,7 +248,7 @@ As configurações do SMTP e POP3 Server será feita utilizando o Script: https:
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-015.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=_aoi9GurBNE&t
 
 ## **016 Configuração do DNS no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
 

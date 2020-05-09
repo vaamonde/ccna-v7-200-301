@@ -19,7 +19,7 @@ enable
 	configure terminal
 		
 		!Habilitando o recurso do DHCP Snooping no Switch Layer 3
-		!DICA:
+		!DICA: 
 		!OBSERVAÇÃO:
 		ip dhcp snooping
 		
@@ -57,10 +57,7 @@ write
 !SEGUNDA ETAPA: Configuração do Switch Layer 2 2960
 !Acessando o modo EXEC Privilégiado
 enable
-
-	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
-	
 		ip dhcp snooping
 		ip dhcp snooping vlan 1
 		interface range GigabitEthernet 0/1 - 2
@@ -69,8 +66,6 @@ enable
 		interface range FastEthernet 0/1 - 2
 			ip dhcp snooping limit rate 5
 			end
-
-!Salvando as configurações da memória RAM para a memória NVRAM
 write
 
 !Visualizando as configurações da memória RAM
