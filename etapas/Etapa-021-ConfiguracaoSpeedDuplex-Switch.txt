@@ -26,21 +26,26 @@ enable
 
 			!Configurando a velocidade da Interface (Porta de Rede)
 			!DICA: conexões Ethernet em Switch possui velocidades padrão de: 10, 100 e 1000Mbps
-			!OBSERVAÇÃO: existe a possibilidade de velocidades maiores que 1000Mbps como por exemplo 10000Mbps (10Gbps)
+			!OBSERVAÇÃO: existe velocidades maiores que 1000Mbps como por exemplo 10000Mbps (10Gbps)
+			!OBSERVAÇÃO: quando configurado a velocidade na Interface ela não ficará UP se a outra Interface estiver 
+			!configurada com velocidades diferentes
 			speed 100
 
 			!Configuração do modo de transmissão da Interface (Porta de Rede)
-			!DICA: conexões Ethernet em Switch pode trabalhar com os modos: Half-Duplex, Full-Duplex e Auto
+			!DICA: conexões Ethernet em Switch podem trabalhar com os modos: Half-Duplex, Full-Duplex e Auto
 			!DICA: por padrão o recurso de Duplex está configurado como auto em todas as interfaces
 			!OBSERVAÇÃO: Half-Duplex era o modo de transmissão em redes Ethernet 10Mbps com conlisão (CSMA-CD)
 			!OBSERVAÇÃO: Full-Duplex e o modo transmissão em Redes FastEthernet e GigabitEthernet sem colisão
+			!OBSERVAÇÃO: quando configurado o Duplex na Interface ela não ficará UP se a outra Interface estiver
+			!configurada com Duplex difrente
+			!OBSERVAÇÃO: em Interface GigabitEthernet não temos a opção de mudar o Duplex, pois o padrão e Full
 			duplex full
 			
 			!Configuração do MDIX (Medium-Dependent Interface) da Interface (Porta de Rede)
 			!DICA: por padrão o recurso de MDIX está configurado como auto em todas as interfaces
 			!OBSERVAÇÃO: o recurso MDIX facilita na administração do Switch, pois não precisamos se preocupar com
-			!o tipo de cabo utilizado para fazer a conexão com o Host ou outro equipamento na rede
-			!EXEMPLO: utilizar cabo direto ou cabo cross-over
+			!o tipo de cabo utilizado para fazer a conexão com o Host ou outro equipamento na rede como um Switch
+			!EXEMPLO: utilizar cabo direto ou cabo cross-over para fazer o cascateamento entre Switches
 			no mdix auto
 			
 			!Saindo da configuranção da Interface (Porta de Rede)
@@ -50,7 +55,8 @@ enable
 		interface FastEthernet 0/2
 			description Porta de Conexão do Access Point N APT-01
 			speed 100
-			duplex full	
+			duplex full
+			no mdix auto
 			exit
 
 		!Acessando a Interface (Porta de Rede) da Conexão do Router 1941
@@ -59,18 +65,25 @@ enable
 			speed 100
 			duplex full
 			exit
-			
+
 		!Acessando todas as Interfaces (Porta de Rede) que não estão sendo utilizadas
 		!DICA: a opção range do comando interface possibilita fazer a mesma configuração em várias interfaces
 		!OBSERVAÇÃO: existe a possibilidade de utilizar a opção de range para portas não consecutivas, utilizando , (vírgula)
-		!EXEMPLO: interface range fastEthernet 0/1 - 5 , fastEthernet 0/10
+		!EXEMPLO: interface range fastEthernet 0/1 - 5 , fastEthernet 0/10, fastEthernet 0/15
 		interface range FastEthernet 0/3 - 23
 		
 			!Desligando todas as Interfaces (Porta de Rede) que não estão sendo utilizadas
 			!DICA: para aumentar a segurança e recomendado desligar todas as interfaces que não estão sendo utilizadas
 			!OBSERVAÇÃO: desligar as interfaces faz parte da segurança física da rede
-			!OBSERVAÇÃO: todas as interfaces do Switch estão no status: no shutdown e na VLAN padrão 1 com DTP ativado
+			!OBSERVAÇÃO: todas as interfaces dos Switches estão no status: no shutdown e na VLAN padrão 1 com DTP ativado
 			shutdown
+			exit
+			
+		!Configurando as Interfaces de Trunk (Tronco) e Backbone (Cascateamento) dos Switches Layer 2960
+		interface range GigabitEthernet 0/1 - 2
+			description Porta de Backbone com o Switch Layer 2 2960
+			speed 1000
+			no mdix auto
 			
 			!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 			end
@@ -78,6 +91,26 @@ enable
 !Salvando as configurações da memória RAM para a memória NVRAM
 write
 
+!SEGUNDA ETAPA: Configuração dos Switches Layer 2 2960
+!Acessando o modo EXEC Privilégiado
+enable
+	configure terminal
+		interface range FastEthernet 0/1 - 2
+			description Porta de Conexão dos Desktop
+			speed 100
+			duplex full
+			no mdix auto
+			exit
+		interface range FastEthernet 0/3 - 23
+			shutdown
+			exit
+		interface range GigabitEthernet 0/1 - 2
+			description Porta de Backbone com o Switch Layer 3 3560
+			speed 1000
+			no mdix auto
+			end
+write
+	
 !Visualizando as configurações da memória RAM
 show running-config | section interface
 show ip interface brief

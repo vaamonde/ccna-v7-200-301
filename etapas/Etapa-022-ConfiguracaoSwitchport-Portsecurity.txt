@@ -42,36 +42,58 @@ enable
 			!Configurando a quantidade máxima de endereços físicos (MAC Address) associado a uma Interface (Porta de Rede)
 			!DICA: por padrão o Switch Cisco suporte até 1025 endereços MAC em uma Interface
 			!OBSERVAÇÃO: cuidado com Interfaces de Servidores ou Access Point, nessas interfaces temos vários endereços MAC
-			!OBSERVAÇÃO: no cisco Packet Tracer temos a limitação de: 1 até 132 endereços MAC por Interface
+			!OBSERVAÇÃO: no Cisco Packet Tracer temos a limitação de: 1 até 132 endereços MAC por Interface
+			!OBSERVAÇAO: no Cisco Packet Tracer temos a limitação de configuração de VLAN de Access e VoIP
 			switchport port-security maximum 1
 			
 			!Configurando o aprendizado do endereço físico da Placa de Rede MAC (MAC Address - Media Access Control)
 			!DICA: o recurso de aprendizagem do endereço MAC possibilita indicar qual endereço está associada a Interface
-			!OBSERVAÇÃO: existe duas formas de configurar o endereço MAC na Interface: static (estático) ou dynamic (dinâmico)
+			!OBSERVAÇÃO: existe duas formas de configurar o endereço MAC na Interface: static (estático) ou stick (dinâmico)
 			!OBSERVAÇÃO: configurando o modo estático: switchport port-security mac-address H.H.H (0002.16d2.da19)
 			!OBSERVAÇÃO: configurando o modo dinâmico: switchport port-security mac-address sticky
-			!DICA: o endereço MAC e aprendido quando o dispositivos final faz sua primeira transmissão na rede
+			!DICA: o endereço MAC e aprendido quando o quadro entra pela primeira vez na Porta do Switch
 			switchport port-security mac-address sticky
 			
 			!Configurando a violação de segurança da Interface (Porta de Rede)
 			!DICA: o recurso de violação da Interface será executado quando algum MAC Address não constar nas configurações
 			!ou quando exceder a quantidade de MAC Address associado a uma Interface
-			!OBSERVAÇÃO: existe três tipos de violação: protect (proteger), restrict (restringir) e shutdown (desligar)
-			!OBSERVAÇÃO: por padrão a opção de violação do Switch Cisco e: shutdown (desligar a Interface)
-			!OBSERVAÇÃO: o modo shutdown 
+			!OBSERVAÇÃO: existe três tipos de violação: protect (proteger), restrict (restringir) e shutdown (bloquear)
+			!OBSERVAÇÃO: por padrão a opção de violação do Switch Cisco e: shutdown (bloquear a Interface)
+			!OBSERVAÇÃO: o modo shutdown restringe a interface com o serviço habilitado, descartando todo tráfego, envia 
+			!mensagens informativas (logs, Syslog e SNMP Trap).
 			switchport port-security violation shutdown
+			
+			!Configurando a Auto-Recuperação da Configuração da Interface (Porta de Rede)
+			!DICA: caso tenha alguma violação de segurança na Interface, o processo de retorno da configuração e manual
+			!DICA: o recurso de errdisable e configurado com base na violação e o tempo para retorno em minutos
+			!OBSERVAÇÃO: no Cisco Packet Tracer esse recurso não está disponível nos Switches 2960 e 3560
+			!errdisable recovery cause psecure-violation
+			!errdisable recovery interval 600
+			
+			!Saindo da configuração da Interface (Porta de Rede)
 			exit
 		
 		!Configurando a Interface (Porta de Rede) do Access Point
 		interface FastEthernet 0/2
 			switchport mode access
 			switchport port-security
+			switchport port-security mac-address sticky
+			
 			!OBSERVAÇÃO: aumentando o número de endereços MAC da Interface
 			switchport port-security maximum 5
-			switchport port-security mac-address sticky
-			!OBSERVAÇÃO: alterado o modo de violação da Interface
-			!OBSERVAÇÃO: o modo protect
+			
+			!OBSERVAÇÃO: alterado o modo de violação da Interface para protect
+			!OBSERVAÇÃO: o modo protect recusa os quadros com endereços desconhecidos (drop) sem bloquear a porta.
 			switchport port-security violation protect
+			
+			!Configurando a validade de envelhecimento do endereço MAC na Interface (Porta de Rede)
+			!DICA: esse recurso remove automaticamente os endereços MAC da configuração após um período de tempo
+			!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de aging time (tempo de vida/envelhecimento/cache) e limitado
+			!OBSERVAÇÃO: temos as opções: time (tempo), type (tipo: absolute ou inactivity) e static (tempo de vida estático)
+			!OBSERVAÇÃO: no Cisco Packe Tracer temos somente a opção de tempo de: 1 até 1440 minutos
+			!OBSERVAÇÃO: devido a limitação do recurso de aging, o MAC aprendidos dinâmicas ou estático não serão removidos
+			!OBSERVAÇÃO: para o funcionamento dessa opção temos que usar o comando: switchport port-security againg type inactivity
+			switchport port-security aging time 5
 			end
 
 !Salvando as configurações da memória RAM para a memória NVRAM
@@ -82,21 +104,25 @@ enable
 	configure terminal
 		interface range FastEthernet 0/1 - 2
 			switchport mode access
+			switchport nonegotiate
 			switchport port-security
 			switchport port-security maximum 1
 			switchport port-security mac-address sticky
+			
 			!OBSERVAÇÃO: alterado o modo de violação da Interface
-			!OBSERVAÇÃO: o modo restrict 
+			!OBSERVAÇÃO: o modo restrict recusa os quadros com endereços desconhecidos (drop) sem bloquear a porta,
+			!e incrementa a contagem de violação enviando uma mensagem informativa (logs, Syslog e SNMP Trap)
 			switchport port-security violation restrict
 			end
 write
 
 !Visualizando as configurações da memória RAM
-show running-config
+show running-config | section interface
 
 !Verificando as informações do Switchport e PortSecurity
+show mac-address-table
 show port-security
 show port-security address
 show port-security interface fastEthernet 0/1
 show port-security interface fastEthernet 0/2
-show mac-address-table
+show interface fastEthernet 0/1
