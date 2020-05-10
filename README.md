@@ -327,3 +327,13 @@ As configurações do DHCP Snooping/Spoofing no Switch Layer 3 e nos Switches La
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-023.pkt
 
 Link da vídeo aula:
+
+## **024 Configuração do DHCP Snooping/Spoofing - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração da Interface (Porta de Rede) Roteada do Switch Layer 3 3560, utilizando o recurso de no switchport, transformando uma porta de switch em uma interface de rede, permitindo a configuração do endereçamento IPv4 ou IPv6, habilitando o recurso de ip routing, nosso Switch Layer 3 se torna uma roteador para a rede LAN, fazendo o roteamento na cada de hardware.
+
+As configurações da Porta Roteada no Switch Layer 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-024-ConfiguracaoDaInterfaceRoteada.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-024.pkt
+
+Link da vídeo aula:
