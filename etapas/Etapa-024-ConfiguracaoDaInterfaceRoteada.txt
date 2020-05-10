@@ -1,0 +1,62 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 10/05/2020
+!Data de atualização: 10/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+		
+		!Habilitando o recurso de roteamento loca do Switch Layer 3 3560
+		!DICA: habilitar o recurso de roteamento no Switch Layer 3 permite utilizar protocolos de roteamente em Switch
+		!OBSERVAÇÃO: habilitar o recurso de roteamento do Switch Layer 3 somente se for necessário
+		!OBSERVAÇÃO: por padrão o recurso de roteamento do Switch Layer 3 está desligado/deslabilitado
+		!OBSERVAÇÃO: os recursos de roteamento permite utilizar protocolos RIP, RIPv2, EIGRP e OSPF na rede local
+		!OBSERVAÇÃO: Switch Layer 3 não foi projetado para trabalhar com Roteamento de WAN, indicado somente para a LAN
+		ip routing
+		
+		!Alterando o Endereço IPv4 da Interface Virtual VDI do Switch Layer 3
+		!DICA: com a ativação do recurso de roteamento, as Interfaces Virtual se tornam Gateway da Rede Local
+		!OBSERVAÇÃO: as SVI são utilizadas para rotear entre VLAN's, agilizando o processo em camada de hardware
+		interface vlan 1
+			ip address 192.168.3.254 255.255.255.0
+			exit
+		
+		!Configurando a Interface (Porta de Rede) Roteada do Switch Layer 3
+		interface FastEthernet 0/24
+		
+			!Desabilitando o recurso de Switch da Porta
+			!DICA: desabilitar o recurso de Switch da porta permite transforma a mesma em Interface de Rede, permitindo
+			!adicionar um endereço IPv4 ou IPv6 e utilizar como uma Interface Roteada
+			no switchport
+			
+			!Configurando o endereço de IPv4 de conexão com a Rede do Roteador
+			ip address 192.168.2.1 255.255.255.0
+			exit
+			
+		!Configurando o Gateway do Switch Layer 3 3560
+		!DICA: a configuração do Gateway no Switch Layer 3 com suporte a roteamento será utilizada para acesso remoto ou
+		!gerenciamento do Switch utilizando protocolos como SNMP, Syslog, etc
+		!OBSERVAÇÃO: para a porta roteada acessar outras redes e necessário a configuração do roteamento estático ou dinâmico
+		ip default-gateway 192.168.2.254
+		end
+
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section interface
+
+!Verificando as informações do DHCP Snooping
+show ip interface brief
+show ip route
