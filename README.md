@@ -308,11 +308,11 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **022 Configuração do SwitchPort e PortSecurity - Laboratório Prático Cisco CCNA v7 200-301**
+## **022 Configuração do Switchport e Port-Security - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou fazer a configuração do SwitchPort e PortSecurity no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de SwitchPort permite mudar o Tipo de Porta que usamos no nosso SWitch, como por exemplo Access (Porta de Acesso) ou Trunk (Porta de Tronco), já o PortSecurity tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de Endereços MAC), aplicando políticas de segurança baseadas em endereços Físicos de Placa de Rede (MAC Address) e bloqueando ou desativando a porta em caso de violação.
+Nessa aula, vou fazer a configuração do Switchport e Port-Security no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de Switchport permite mudar o Tipo de Porta que usamos no nosso Switch, como por exemplo Access (Porta de Acesso) ou Trunk (Porta de Tronco), já o Port-Security tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de Endereços MAC), aplicando políticas de segurança baseadas em endereços Físicos de Placa de Rede (MAC Address) e bloqueando ou desativando a porta em caso de violação.
 
-As configurações do SwitchPort e PortSecurity no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-022-ConfiguracaoSwitchport-Portsecurity.txt
+As configurações do Switchport e Port-Security no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-022-ConfiguracaoSwitchport-Portsecurity.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-022.pkt
 
