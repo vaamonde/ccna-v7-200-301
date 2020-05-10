@@ -312,8 +312,18 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração do SwitchPort e PortSecurity no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de SwitchPort permite mudar o Tipo de Porta que usamos no nosso SWitch, como por exemplo Access (Porta de Acesso) ou Trunk (Porta de Tronco), já o PortSecurity tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de Endereços MAC), aplicando políticas de segurança baseadas em endereços Físicos de Placa de Rede (MAC Address) e bloqueando ou desativando a porta em caso de violação.
 
-As configurações do SwitchPort e PortSecurity no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-021-ConfiguracaoSpeedDuplex-Switch.txt
+As configurações do SwitchPort e PortSecurity no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-022-ConfiguracaoSwitchport-Portsecurity.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-022.pkt
+
+Link da vídeo aula:
+
+## **023 Configuração do DHCP Snooping/Spoofing - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração do DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação) no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de DHCP Snooping tem como objetivo mitigar ataques do tipo Man In The Middle (Homem no Meio), ele é um recurso de camada 2, que age filtrando mensagens DHCP não confiáveis/inválidas, criando um banco de dados de informações (DHCP Snooping Binding Table) e configurado Portas Confiáveis e Portas não Confiáveis.
+
+As configurações do DHCP Snooping/Spoofing no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-023-ConfiguracaoDoDHCPSnooping.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-023.pkt
 
 Link da vídeo aula:
