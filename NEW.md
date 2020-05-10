@@ -22,14 +22,14 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 021 Configuração da Speed, Duplex e MDIX do Switch Layer 2 e 3<br>
 022 Configuração do Switchport e Port-Security do Switch Layer 2 e 3<br>
 023 Configuração do DHCP Snoopingno Switch Layer 2 e 3<br>
-024 Configuração da Interface Roteada do Switch Layer 3
+024 Configuração da Interface Roteada do Switch Layer 3<br>
+025 Configuração da Rota Estática e Rota Padrão Switch e Router
 
 ## **ETAPA-02: Testes e Documentação para Criação dos Roteiros:**
-025 Configuração da Rota Estática e Rota Padrão<br>
 026 Configuraçao da Rota Flutuante Estática<br>
-027 Configuração do STP e RSTP no Switch Layer 2 e 3<br>
-028 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
-029 Configuração do NetFlow no Router 1941<br>
+027 Configuração do NetFlow no Router 1941<br>
+028 Configuração do STP e RSTP no Switch Layer 2 e 3<br>
+029 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
 030 Interligação de uma Nova Rede WAN na Topologia
 
 ## **ETAPA-03: Planejamento de Aulas para a Continuidade do Curso:**

@@ -84,7 +84,7 @@ Senhas do Tipo-7 Password: https://www.ifm.net.nz/cookbooks/passwordcracker.html
 
 ## **Indicação de Editores de Texto para trabalhar com Scripts:**
 Microsoft: Notepad++ (Plus): https://notepad-plus-plus.org/<br>
-Microsoft e GNU/Linux: Visual Sutdio VSCode: https://code.visualstudio.com/<br>
+Microsoft e GNU/Linux: Visual Studio VSCode: https://code.visualstudio.com/<br>
 Microsoft e GNU/Linux: Atom: https://atom.io/<br>
 GNU/Linux: Notepadqq: https://notepadqq.com/s/
 
@@ -268,7 +268,7 @@ As configurações do NTP nos Switches e Router será feita utilizando o Script:
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-017.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=X1f7bHZTSGs
 
 ## **018 Configuração do SYSLOG no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
 
@@ -290,7 +290,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **020 Configuração do WPA2 no Access Point N - Laboratório Prático Cisco CCNA v7 200-301**
+## **020 Configuração do WPA2 no Access Point 802.11-N - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a configuração do WPA2 (Wi-Fi Protected Access v2) no Access Point modelo 802.11-N utilizado para conectar os dispositivos de rede Sem-Fio da topologia (Notebook, Smartphone e Tablet), na nova certificação da Cisco CCNA v7 200-301 a configuração de dispositivos de rede sem-fio e a grande novidade, nas versões anteriores era cobrado somente a parte teórica, agora tem a parte prática. Nessa primeira etapa será configuarado os conceitos básicos do Access Point, depois será acréscentado os equipamentos WLC (Wireless Lan Controller). 
 
@@ -298,7 +298,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **021 Configuração do SPEED, DUPLEX e MDIX - Laboratório Prático Cisco CCNA v7 200-301**
+## **021 Configuração do SPEED, DUPLEX e MDIX no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a configuração do SPEED (Velocidade da Interface/Porta de Rede), DUPLEX (Modo de Transmissão - Half-Duplex, Full-Duplex ou Auto) e o recurso do MDIX (Medium-Dependent Interface), todos os recursos de configurações de Interface/Porta de Rede são necessários em casos onde a auto-negociação da Interface/Porta não esteja disponível ou quando temos necessidade de atender pré-requisitos de uma determinada tecnologia, nessa aula já vou mostrar os conceitos de segurança para desabilitar as Interface/Porta de Redes que não estão em uso no nossos Switches.
 
@@ -308,7 +308,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **022 Configuração do Switchport e Port-Security - Laboratório Prático Cisco CCNA v7 200-301**
+## **022 Configuração do Switchport e Port-Security no Switch - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a configuração do Switchport e Port-Security no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de Switchport permite mudar o Tipo de Porta que usamos no nosso Switch, como por exemplo Access (Porta de Acesso) ou Trunk (Porta de Tronco), já o Port-Security tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de Endereços MAC), aplicando políticas de segurança baseadas em endereços Físicos de Placa de Rede (MAC Address) e bloqueando ou desativando a porta em caso de violação.
 
@@ -318,7 +318,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **023 Configuração do DHCP Snooping/Spoofing - Laboratório Prático Cisco CCNA v7 200-301**
+## **023 Configuração do DHCP Snooping/Spoofing no Switch - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação) no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de DHCP Snooping tem como objetivo mitigar ataques do tipo Man In The Middle (Homem no Meio), ele é um recurso de camada 2, que age filtrando mensagens DHCP não confiáveis/inválidas, criando um banco de dados de informações (DHCP Snooping Binding Table) e configurado Portas Confiáveis e Portas não Confiáveis.
 
@@ -328,12 +328,22 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **024 Configuração do DHCP Snooping/Spoofing - Laboratório Prático Cisco CCNA v7 200-301**
+## **024 Configuração da Interface Roteada Switch 3560 - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a configuração da Interface (Porta de Rede) Roteada do Switch Layer 3 3560, utilizando o recurso de no switchport, transformando uma porta de switch em uma interface de rede, permitindo a configuração do endereçamento IPv4 ou IPv6, habilitando o recurso de ip routing, nosso Switch Layer 3 se torna uma roteador para a rede LAN, fazendo o roteamento na cada de hardware.
 
 As configurações da Porta Roteada no Switch Layer 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-024-ConfiguracaoDaInterfaceRoteada.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-024.pkt
+
+Link da vídeo aula:
+
+## **025 Configuração da Rota Estática e Padrão Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+
+Nessa aula, vou fazer a configuração da Rota Estática nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática e o método mais simples de roteamento que temos nos Roteadores e Switch Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes de pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos muito a rota padrão em Links de ISP, WAN, VPN, Internet, etc.
+
+As configurações da Porta Roteada no Switch Layer 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-025-ConfiguracaoDaRotaEstaticaPadrao.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-025.pkt
 
 Link da vídeo aula:
