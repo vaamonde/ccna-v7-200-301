@@ -342,7 +342,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração da Rota Estática nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática e o método mais simples de roteamento que temos nos Roteadores e Switch Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes de pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos muito a rota padrão em Links de ISP, WAN, VPN, Internet, etc.
 
-As configurações da Porta Roteada no Switch Layer 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-025-ConfiguracaoDaRotaEstaticaPadrao.txt
+As configurações da Rota Estática e Padrão no Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-025-ConfiguracaoDaRotaEstaticaPadrao.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-025.pkt
 

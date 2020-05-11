@@ -23,17 +23,17 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 022 Configuração do Switchport e Port-Security do Switch Layer 2 e 3<br>
 023 Configuração do DHCP Snoopingno Switch Layer 2 e 3<br>
 024 Configuração da Interface Roteada do Switch Layer 3<br>
-025 Configuração da Rota Estática e Rota Padrão Switch e Router
+025 Configuração da Rota Estática e Rota Padrão Switch e Router<br>
+026 Configuraçao da Rota Estática Flutuante no Router 1941
 
 ## **ETAPA-02: Testes e Documentação para Criação dos Roteiros:**
-026 Configuraçao da Rota Flutuante Estática<br>
 027 Configuração do NetFlow no Router 1941<br>
 028 Configuração do STP e RSTP no Switch Layer 2 e 3<br>
 029 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
-030 Interligação de uma Nova Rede WAN na Topologia
+030 Interligação de uma Nova Rede WAN na Topologia<br>
+031 Configuração da VLAN, TRUNK e VTP no Switch Layer 2 e 3
 
 ## **ETAPA-03: Planejamento de Aulas para a Continuidade do Curso:**
-031 Configuração da VLAN, TRUNK e VTP no Switch Layer 2 e 3<br>
 032 Configuração do Router-on-Stick no Router 2911<br>
 033 Configuração do DHCP Server no Router 2911<br>
 034 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>

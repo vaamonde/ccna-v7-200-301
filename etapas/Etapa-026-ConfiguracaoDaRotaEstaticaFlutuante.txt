@@ -1,0 +1,94 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 11/05/2020
+!Data de atualização: 11/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!PRIMEIRA ETAPA: Adicionando o Módulo HWIC-2T (High-Speed WAN Interface Card)
+!Router 1941-2 será o DCE (Data Circuit-Terminating Equipment)
+!Router 1941-1 será o DTE (Data Terminal Equipment)
+!Nessa topologia não será configurado o CSU/DSU (Channel Service Unit/Data Service Unit)
+
+!SEGUNDA ETAPA: Configuração do Router 1941-2
+!Acessando o modo EXEC Privilégiado
+enable
+
+!Verificando se o módulo foi adicionado corretamente
+show version
+show ip interface brief
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+	
+		!Configurando a Interface de Interligação com o Router 1941-1
+		interface serial 0/0/0
+		
+			!Configurando a descrição da Interface
+			description Interface de WAN com o Router 1941-1
+			
+			!Configuração do endereço IPv4 do Router 1941-2
+			ip address 10.0.0.6 255.255.255.252
+			
+			!
+			!DICA:
+			!OBSERVAÇÃO:
+			clock rate 
+			
+			!
+			!DICA:
+			!OBSERVAÇÃO:
+			bandwith 
+			
+			!Inicializando a Interface do Router 1941
+			no sutdown
+			exit
+			
+		!Configurando a Rota Estática Fluante para atingir a Rede 192.168.1.0/24
+		!DICA:
+		!OBSERVAÇÃO: 
+		ip route 192.168.1.0 255.255.255.0 10.0.0.5 5
+		end
+	
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!TERCEIRA ETAPA: Configuração do Router 1941-1
+!Acessando o modo EXEC Privilégiado
+enable
+
+		!Configurando a Interface de Interligação com o Router 1941-2
+		interface GigabitEthernet 0/1
+			description Interface de WAN com o Router 1941-2
+			ip address 10.0.0.5 255.255.255.252
+			bandwith
+			no sutdown
+			exit
+			
+		!Configurando a Rota Estática Fluante para atingir as Redes 192.168.2.0/30 e 192.168.3.0/30
+		ip route 192.168.2.0 255.255.255.0 10.0.0.6 5
+		ip route 192.168.3.0 255.255.255.0 10.0.0.6 5
+			
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section interface
+show running-config | section ip route
+
+!Verificando as informações das Interfaces e Tabela de Roteamento Local
+show controller serial 0/0/0
+show ip interface brief
+show ip route
+
+!Testando a conexão nos Desktops da Rede com o Protocolo ICMP
+ping 192.168.1.1
+ping 192.168.3.1
+tracert 192.168.1.1
+tracert 192.168.3.1
