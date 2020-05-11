@@ -9,7 +9,18 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **Criação das Novas Vídeo Aulas para o Curso de CCNA v7 200-301:**
 
-## **ETAPA-01: Criação dos Roteiros para a Gravação:**
+## **ETAPA-00: Aulas já Publicadas no YouTUBE e Github:**
+001 Configuração Base do Switch 2960<br>
+002 Configuração das Linhas Virtuais VTY Switch 2960<br>
+003 Configuração do Gateway e SVI Switch 2960<br>
+004 Configuração do SSH Server Switch 2960<br>
+005 Configuração Base do Router 1941<br>
+006 Configuração da Interface Router 1941<br>
+007 Backup das Configurações e do Cisco IOS<br>
+008 Atualização do Cisco IOS Switch 2960<br>
+009 Acessando o Modo ROMMON do Router 1941<br>
+010 Documentação da Topologia de Rede<br>
+011 Expandindo a Topologia em 3 Camadas<br>
 012 Configuração do Servidor DHCPv4<br>
 013 Configuração do Servidor DNSv4<br>
 014 Configuração do Servidor FTP e HTTP/HTTPS<br>
@@ -17,6 +28,8 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 016 Configuração do DNS no Switch e Router<br>
 017 Configuração do NTP no Switch e Router<br>
 018 Configuração do SYSLOG no Switch e Router<br>
+
+## **ETAPA-01: Criação dos Roteiros para a Gravação:**
 019 Configuração do SNMP no Switch e Router<br>
 020 Configuração do WPA2 no Access Point N<br>
 021 Configuração da Speed, Duplex e MDIX do Switch Layer 2 e 3<br>
@@ -27,15 +40,19 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 026 Configuraçao da Rota Estática Flutuante no Router 1941<br>
 027 Configuração do NetFlow no Router 1941<br>
 028 Configuração do TACACS e RADIUS no Switch e Router<br>
-029 Configuração do Servidor de Cadastro IoT <br>
-030 Configuração do Protocolo CDP e LLDP no Switch e Router
+029 Configuração do Servidor de Cadastro de IoT <br>
+030 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
+031 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3
 
 ## **ETAPA-02: Testes e Documentação para Criação dos Roteiros:**
-031 Configuração do STP e RSTP no Switch Layer 2 e 3<br>
-032 Interligação de uma Nova Rede WAN na Topologia<br>
-033 Configuração da VLAN, TRUNK e VTP no Switch Layer 2 e 3
+032 Interligando uma Nova Rede WAN na Topologia<br>
+033 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
+034 Configuração da VLAN e TRUNK no Switch Layer 2 e 3<br>
+035 Configuração do Router-on-Stick no Router 2911
 
 ## **ETAPA-03: Planejamento de Aulas para a Continuidade do Curso:**
-034 Configuração do Router-on-Stick no Router 2911<br>
-035 Configuração do DHCP Server no Router 2911<br>
-036 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
+036 Configuração do DHCP Server no Router 2911<br>
+037 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
+038 Configuração do Endereçamento IPv6 Estático<br>
+039 Configuração do Endereçamento IPv6 Dinâmico<br>
+040 Configuração do Roteamento Estático IPv6
