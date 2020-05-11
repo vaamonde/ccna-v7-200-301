@@ -11,6 +11,9 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
+!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS EM
+!NETFLOW, HOJE UTILIZAMOS NOVAS TECNOLOGIAS PARA O MONITORAMENTO E GERENCIAMENTO DO FLUXO DE DADOS EM REDE
+
 !NetFlow (Fluxo da Rede) é um recurso que foi introduzido em roteadores Cisco cuja função é coletar características
 !e informações sobre o tráfego de redes IP, tanto na saída quanto na entrada de uma interface.
 
