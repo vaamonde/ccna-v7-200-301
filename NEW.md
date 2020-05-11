@@ -21,19 +21,21 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 020 Configuração do WPA2 no Access Point N<br>
 021 Configuração da Speed, Duplex e MDIX do Switch Layer 2 e 3<br>
 022 Configuração do Switchport e Port-Security do Switch Layer 2 e 3<br>
-023 Configuração do DHCP Snoopingno Switch Layer 2 e 3<br>
+023 Configuração do DHCP Snooping no Switch Layer 2 e 3<br>
 024 Configuração da Interface Roteada do Switch Layer 3<br>
 025 Configuração da Rota Estática e Rota Padrão Switch e Router<br>
 026 Configuraçao da Rota Estática Flutuante no Router 1941<br>
 027 Configuração do NetFlow no Router 1941<br>
+028 Configuração do TACACS e RADIUS no Switch e Router<br>
+029 Configuração do Servidor de Cadastro IoT <br>
+030 Configuração do Protocolo CDP e LLDP no Switch e Router
 
 ## **ETAPA-02: Testes e Documentação para Criação dos Roteiros:**
-028 Configuração do STP e RSTP no Switch Layer 2 e 3<br>
-029 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
-030 Interligação de uma Nova Rede WAN na Topologia<br>
-031 Configuração da VLAN, TRUNK e VTP no Switch Layer 2 e 3
+031 Configuração do STP e RSTP no Switch Layer 2 e 3<br>
+032 Interligação de uma Nova Rede WAN na Topologia<br>
+033 Configuração da VLAN, TRUNK e VTP no Switch Layer 2 e 3
 
 ## **ETAPA-03: Planejamento de Aulas para a Continuidade do Curso:**
-032 Configuração do Router-on-Stick no Router 2911<br>
-033 Configuração do DHCP Server no Router 2911<br>
-034 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
+034 Configuração do Router-on-Stick no Router 2911<br>
+035 Configuração do DHCP Server no Router 2911<br>
+036 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
