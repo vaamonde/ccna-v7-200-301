@@ -298,7 +298,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **021 Configuração do SPEED, DUPLEX e MDIX no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+## **021 Configuração do Speed, Duplex e MDIX no Switch - Laboratório Prático Cisco CCNA v7 200-301**
 
 Nessa aula, vou fazer a configuração do SPEED (Velocidade da Interface/Porta de Rede), DUPLEX (Modo de Transmissão - Half-Duplex, Full-Duplex ou Auto) e o recurso do MDIX (Medium-Dependent Interface), todos os recursos de configurações de Interface/Porta de Rede são necessários em casos onde a auto-negociação da Interface/Porta não esteja disponível ou quando temos necessidade de atender pré-requisitos de uma determinada tecnologia, nessa aula já vou mostrar os conceitos de segurança para desabilitar as Interface/Porta de Redes que não estão em uso no nossos Switches.
 
