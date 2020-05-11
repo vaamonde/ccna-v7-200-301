@@ -272,13 +272,13 @@ Link da vídeo aula: https://www.youtube.com/watch?v=X1f7bHZTSGs
 
 ## **018 Configuração do SYSLOG no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
 
-Nessa aula, vou fazer a configuração do SYSLOG (System Logging) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita a centralização de todos os Logs de eventos dos equipamentos de rede, ajudando no processo de resolução de problemas e análise das falhas ou mundaças nos equipamentos.
+Nessa aula, vou fazer a configuração do SYSLOG (System Logging) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita a centralização de todos os Logs de eventos dos equipamentos de rede, ajudando no processo de resolução de problemas e análise das falhas ou mundanças nos equipamentos.
 
 As configurações do SYSLOG nos Switches e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-018-ConfiguracaoSYSLOG-SwitchRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-018.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=zlFcWwAOY54&t
 
 ## **019 Configuração do SNMP no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
 
