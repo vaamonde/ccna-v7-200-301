@@ -11,6 +11,10 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
+!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS EM
+!CONFIGURAÇÕES DE PLACA DE REDE SERIAL OU LINK DE WAN SERIAL, UMA VEZ QUE ESSA TECNOLOGIA JÁ CAIU EM DESUSO, 
+!OUTRAS TECNOLOGIAS COMO O: FRAME RELAY, FAX MODEM ISDN, ATM, X.25, HDLC, SDLC, PPP, ETC. TAMBÉM ENTRA NA LISTA.
+
 !PRIMEIRA ETAPA: Adicionando o Módulo HWIC-2T (High-Speed WAN Interface Card)
 !Router 1941-2 será o DCE (Data Circuit-Terminating Equipment)
 !Router 1941-1 será o DTE (Data Terminal Equipment)
@@ -28,32 +32,41 @@ show ip interface brief
 	configure terminal
 	
 		!Configurando a Interface de Interligação com o Router 1941-1
+		!OBSERVAÇÃO: nomenclatura da Interface: 0 = primeiro módulo do Router, 0 = cartão HWIC e 0 = primeira porta 
 		interface serial 0/0/0
 		
 			!Configurando a descrição da Interface
-			description Interface de WAN com o Router 1941-1
+			description Interface de Backup WAN com o Router 1941-1
 			
 			!Configuração do endereço IPv4 do Router 1941-2
 			ip address 10.0.0.6 255.255.255.252
 			
-			!
-			!DICA:
-			!OBSERVAÇÃO:
-			clock rate 
+			!Configuração do Clock Rate (Frequência do Relógio) da Interface Serial
+			!DICA: o Clock Rate define a taxa de bits transmitida na interface serial, é uma definição que afeta o hardware
+			!OBSERVAÇÃO: o Clock Rate só está disponível em Interface Serial que estejam configuradas em modo DCE ou com Cabo DCE
+			!OBSERVAÇÃO: configurar essa opção em Interface Serial DTE você recebe a mensagem: This command applies only to DCE interfaces
+			!OBSERVAÇÃO: velocidades da Porta Serial varia de: 300 até 4000000bps (Bits por Segundo - bps)
+			clock rate 2000000
 			
-			!
-			!DICA:
-			!OBSERVAÇÃO:
-			bandwith 
+			!Configuração do Bandwith (Largura de Banda) da Interface Serial
+			!DICA: o Bandwith é uma indicação de largura de banda que a interface é capaz de transmitir, não interface no hardware 
+			!OBSERVAÇÃO: essa informação e utilizada nos protocolos de roteamento dinâmica para determinar a Métrica (Custo) do Link
+			!OBSERVAÇÃO: configurações de largura de banda varia de: 1-10000000  (Kilobits - kbps)
+			!OBSERVAÇÃO: o valor do bandwith e determinado da seguinte forma: valor do clock rate / 1000 = valor kbps
+			bandwidth 2000
 			
-			!Inicializando a Interface do Router 1941
+			!Inicializando a Interface Serial do Router 1941-2
 			no sutdown
 			exit
 			
 		!Configurando a Rota Estática Fluante para atingir a Rede 192.168.1.0/24
-		!DICA:
-		!OBSERVAÇÃO: 
-		ip route 192.168.1.0 255.255.255.0 10.0.0.5 5
+		!DICA: rota estática fluante é igual a rota estática normal, a diferença está no valor da Distância Administrativa
+		!DICA: rota estática fluante é muito utilizada em Links de Backup e Redundância de Conexão de WAN
+		!OBSERVAÇÃO: quando o roteador aprende duas rotas para o mesmo destino, ele dará preferência para a menor Distância Administrativa
+		!OBSERVAÇÃO: os valores de Distância Administrativa pode variar de: 1 até 255
+		!OBSERVAÇÃO: caso os AD sejam igual, será análisado os valores de Métrica (Custo) para o desempate e preferência da rota
+		!OBSERVAÇÃO: rota estática fluante para o mesmo destino não aparece na tabela de roteamento, somente quando a rota estática padrão estiver down
+		ip route 192.168.1.0 255.255.255.0 serial 0/0/0 5
 		end
 	
 !Salvando as configurações da memória RAM para a memória NVRAM
@@ -62,20 +75,15 @@ write
 !TERCEIRA ETAPA: Configuração do Router 1941-1
 !Acessando o modo EXEC Privilégiado
 enable
-
-		!Configurando a Interface de Interligação com o Router 1941-2
-		interface GigabitEthernet 0/1
-			description Interface de WAN com o Router 1941-2
+	configure terminal
+		interface serial 0/0/0
+			description Interface de Backup WAN com o Router 1941-2
 			ip address 10.0.0.5 255.255.255.252
-			bandwith
+			bandwidth 2000
 			no sutdown
-			exit
-			
-		!Configurando a Rota Estática Fluante para atingir as Redes 192.168.2.0/30 e 192.168.3.0/30
-		ip route 192.168.2.0 255.255.255.0 10.0.0.6 5
-		ip route 192.168.3.0 255.255.255.0 10.0.0.6 5
-			
-!Salvando as configurações da memória RAM para a memória NVRAM
+			end
+		ip route 192.168.2.0 255.255.255.0 serial 0/0/0 5
+		ip route 192.168.3.0 255.255.255.0 serial 0/0/0 5
 write
 
 !Visualizando as configurações da memória RAM
@@ -86,6 +94,9 @@ show running-config | section ip route
 show controller serial 0/0/0
 show ip interface brief
 show ip route
+show ip route static
+show ip route summary
+show ip route connected
 
 !Testando a conexão nos Desktops da Rede com o Protocolo ICMP
 ping 192.168.1.1

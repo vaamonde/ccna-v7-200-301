@@ -57,6 +57,6 @@ write
 !Visualizando as configurações da memória RAM
 show running-config | section interface
 
-!Verificando as informações do DHCP Snooping
+!Verificando as informações das Interfaces e Roteamento
 show ip interface brief
 show ip route

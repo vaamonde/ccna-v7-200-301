@@ -43,7 +43,8 @@ enable
 			
 			!Configuração da Velocidade do Link e Modo de Transmissão
 			!OBSERVAÇÃO: essas configurações foram feitas na Interface (Porta de Rede) do Switch Layer 3
-			speed 1000
+			!OBSERVAÇÃO: a velocidade da Interface do Switch Layer 3 e 100Mbps, por isso a mudança de velocidade
+			speed 100
 			duplex full
 			
 			!Configuração do endereço IPv4 do Router 1941
@@ -56,13 +57,15 @@ enable
 			
 		!Configurando a Rota Estática para atingir a Rede 192.168.1.0/24
 		!DICA: rota estática e indicada para links Ponto-a-Ponto e para redes simples, com pouco roteadores
-		!DICA: rota estática recebe a letra: S (static) no início da rota declara manualmente na Tabela de Roteamento
+		!DICA: rota estática recebe a letra: S (static) no início da rota declarada manualmente na Tabela de Roteamento
+		!OBSERVAÇÃO: na tabela de roteamento temos: L - local (Endereço Local), C - connected (Rede Diretamente Conectada)
 		!OBSERVAÇÃO: rota estática e configurada manualmente em cada equipamento da rede, sua atualização não e dinâmica
 		!OBSERVAÇÃO: rota estática tem a Distância Administrativa (AD - Confiabilidade) 1 (um)
 		!OBSERVAÇÃO: rota estática tem Métrica (Custo) 0 (zero)
 		!OBSERVAÇÃO: rota estática pode encaminhar redes por: Endereço IPv4/IPv6 de Próximo Salto ou Interface de Saída
 		!EXEMPLO: ip route Rede_de_Destino Máscara_de_Rede_de_Destino Interface_de_Saída ou IP_do_Próximo_Salto Distância_Administrativa
 		ip route 192.168.1.0 255.255.255.0 10.0.0.1
+		ip route 192.168.3.0 255.255.255.0 192.168.2.1
 		end
 	
 !Salvando as configurações da memória RAM para a memória NVRAM
@@ -80,6 +83,7 @@ enable
 		!OBSERVAÇÃO: todos os pacotes para destinos desconhecidos da Tabela do Roteador são enviados para o endereço de rota padrão
 		!OBSERVAÇÃO: o endereço de rota padrão no IPv4 (Na notação CIDR) é o 0.0.0.0/0, também conhecido como “rota dos quatro zeros”).
 		!OBSERVAÇÃO: a rota padrão e utilizada para indicar uma rede além dos seus roteadores, como Links com ISP, WAN, VPN, Internet etc 
+		!OBSERVAÇÃO: a rota padrão estática recebe a letra com asterisco: S* que significa que é um Gateway of last resort
 		ip route 0.0.0.0 0.0.0.0 192.168.2.254
 		end
 	
@@ -89,7 +93,7 @@ write
 !TERCEIRA ETAPA: Configuração do Router 1941-1
 !Acessando o modo EXEC Privilégiado
 enable
-
+	configure terminal
 		!Configurando a Interface de Interligação com o Router 1941-2
 		interface GigabitEthernet 0/1
 			description Interface de WAN com o Router 1941-2
@@ -100,6 +104,7 @@ enable
 		!Configurando a Rota Estática para atingir as Redes 192.168.2.0/30 e 192.168.3.0/30
 		ip route 192.168.2.0 255.255.255.0 GigabitEthernet 0/1
 		ip route 192.168.3.0 255.255.255.0 GigabitEthernet 0/1
+		end
 			
 !Salvando as configurações da memória RAM para a memória NVRAM
 write

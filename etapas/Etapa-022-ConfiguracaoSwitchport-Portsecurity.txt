@@ -44,6 +44,7 @@ enable
 			!OBSERVAÇÃO: cuidado com Interfaces de Servidores ou Access Point, nessas interfaces temos vários endereços MAC
 			!OBSERVAÇÃO: no Cisco Packet Tracer temos a limitação de: 1 até 132 endereços MAC por Interface
 			!OBSERVAÇAO: no Cisco Packet Tracer temos a limitação de configuração de VLAN de Access e VoIP
+			!OBSERVAÇÃO: o recurso de port-security maximum por padrão e apenas 1 (um) endereço MAC
 			switchport port-security maximum 1
 			
 			!Configurando o aprendizado do endereço físico da Placa de Rede MAC (MAC Address - Media Access Control)
@@ -62,13 +63,6 @@ enable
 			!OBSERVAÇÃO: o modo shutdown restringe a interface com o serviço habilitado, descartando todo tráfego, envia 
 			!mensagens informativas (logs, Syslog e SNMP Trap).
 			switchport port-security violation shutdown
-			
-			!Configurando a Auto-Recuperação da Configuração da Interface (Porta de Rede)
-			!DICA: caso tenha alguma violação de segurança na Interface, o processo de retorno da configuração e manual
-			!DICA: o recurso de errdisable e configurado com base na violação e o tempo para retorno em minutos
-			!OBSERVAÇÃO: no Cisco Packet Tracer esse recurso não está disponível nos Switches 2960 e 3560
-			!errdisable recovery cause psecure-violation
-			!errdisable recovery interval 600
 			
 			!Saindo da configuração da Interface (Porta de Rede)
 			exit
@@ -94,7 +88,15 @@ enable
 			!OBSERVAÇÃO: devido a limitação do recurso de aging, o MAC aprendidos dinâmicas ou estático não serão removidos
 			!OBSERVAÇÃO: para o funcionamento dessa opção temos que usar o comando: switchport port-security againg type inactivity
 			switchport port-security aging time 5
-			end
+			exit
+			
+		!Configurando a Auto-Recuperação da Configuração da Interface (Porta de Rede)
+		!DICA: caso tenha alguma violação de segurança na Interface, o processo de retorno da configuração e manual
+		!DICA: o recurso de errdisable e configurado com base na violação e o tempo para retorno em minutos
+		!OBSERVAÇÃO: no Cisco Packet Tracer esse recurso não está disponível nos Switches 2960 e 3560
+		!errdisable recovery cause psecure-violation
+		!errdisable recovery interval 600
+		end
 
 !Salvando as configurações da memória RAM para a memória NVRAM
 write
@@ -119,10 +121,23 @@ write
 !Visualizando as configurações da memória RAM
 show running-config | section interface
 
-!Verificando as informações do Switchport e PortSecurity
+!Verificando as informações do Switchport e Port-Security
 show mac-address-table
 show port-security
 show port-security address
 show port-security interface fastEthernet 0/1
 show port-security interface fastEthernet 0/2
 show interface fastEthernet 0/1
+
+!Limpando os contadores do Port-Security e Restabelecendo a Conexão
+interface fastEthernet 0/2
+	shutdown
+	no shutdown
+clear port-security all
+clear port-security dinamic
+clear port-security stick
+!OBSERVAÇÃO:
+!clear port-security dynamic interface fastethernet0/2
+!OBSERVAÇÃO: 
+!configure terminal
+!	errdisable recovery cause psecure-violation
