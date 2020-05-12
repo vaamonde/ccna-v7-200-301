@@ -1,4 +1,4 @@
-# Curso GRÁTIS Laboratório Prático da NOVA Certificação Cisco CCNA v7 200-301
+# Curso GRÁTIS Laboratório Prático da NOVA Certificação Cisco CCNAv7 200-301
 
 ## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos gratuitos para o Canal, acessando o link de doação do PagSeguro: https://pag.ae/bjlSJcH
 
@@ -11,23 +11,23 @@ Facebook Bora para Prática: https://www.facebook.com/boraparapratica<br>
 Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
-## **Links Oficiais da Cisco CCNA v7 200-301:**
+## **Links Oficiais da Cisco CCNAv7 200-301:**
 Cisco Certified Network Associate (200-301 CCNA): https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html<br>
 Implementing and Administering Cisco Solutions (CCNA) v1.0: https://www.cisco.com/c/en/us/training-events/training-certifications/training/training-services/courses/implementing-and-administering-cisco-solutions-ccna.html<br>
 Exam Description CCNA Exam v1.0 (CCNA 200-301): https://www.cisco.com/c/dam/en_us/training-events/le31/le46/cln/marketing/exam-topics/200-301-CCNA.pdf<br>
 Network Topology Icons: https://www.cisco.com/c/en/us/about/brand-center/network-topology-icons.html
 
-## **Livros Oficiais da Cisco CCNA v7 200-301:**
+## **Livros Oficiais da Cisco CCNAv7 200-301:**
 CCNA 200-301 Official Cert Guide, Volume 1 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/0135792738<br>
 CCNA 200-301 Official Cert Guide, Volume 2 (Inglês): https://www.amazon.com.br/CCNA-200-301-Official-Cert-Guide/dp/1587147130<br>
 Cisco IOS Configuration Fundamentals Command Reference (Inglês): https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference.pdf
 
-## **Treinamento Oficial da Cisco CCNA v7 200-301:**
+## **Treinamento Oficial da Cisco CCNAv7 200-301:**
 CCNA 7: Introduction to Networks: https://www.netacad.com/pt-br/courses/networking/ccna-introduction-networks<br>
 CCNA 7: Switching, Routing, and Wireless Essentials: https://www.netacad.com/pt-br/courses/networking/ccna-switching-routing-wireless-essentials<br>
 CCNA 7: Enterprise Networking, Security, and Automation: https://www.netacad.com/pt-br/courses/networking/ccna-enterprise-networking-security-automation
 
-## **Indicação de eBooks e Livros não Oficiais da Cisco CCNA v7 200-301 - v6 200-125**
+## **Indicação de eBooks e Livros não Oficiais da Cisco CCNAv7 200-301 - v6 200-125**
 GNS3 Vault: How to Master CCNA R&S, René Molenaar (Inglês): https://gns3vault.com/product/how-to-master-ccna-rs<br>
 GNS3 Vault: How to Master Subnetting, René Molenaar (Inglês): https://gns3vault.com/product/master-subnetting<br>
 FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.com/<br>
@@ -37,17 +37,17 @@ CCNA 6.0 - Guia Completo de Estudo, Marco Aurelio Filippetti (Português): https
 Certificaçao CCNA - Guia Preparatório para o Exame 200-120, Alexandre Vieria de Oliveira, Jefferson Lisboa Melo (Português): https://www.americanas.com.br/produto/16372263/certificacao-ccna-guia-preparatorio-para-o-exame-200-120<br>
 Configurando Switches e Roteadores de Cisco: Guia para a Certificação CCENT/CCNA, César Felipe G. Silva (Português): https://www.americanas.com.br/produto/116404584/livro-configurando-switches-e-roteadores-de-cisco-guia-para-a-certificacao-ccent-ccna
 
-## **Site com Questões da Prova de CCNA v7 200-301 - v6 200-125:**
+## **Site com Questões da Prova de CCNAv7 200-301 - CCNAv6 200-125:**
 9tut CCNA Training: https://www.9tut.com/<br>
 Study CCNA: https://study-ccna.com/<br>
 ICT Community: https://www.ccna7.com/<br>
 IT ExamAnswers: https://itexamanswers.net/ccna-v7-0<br>
 PacketLife Cheat Sheets: https://packetlife.net/library/cheat-sheets/
 
-## **Site para o Agendamento da Prova da Cisco CCNA v7 200-301:**
+## **Site para o Agendamento da Prova da Cisco CCNAv7 200-301:**
 Cisco::Pearson VUE: https://home.pearsonvue.com/cisco
 
-## **Links de Vídeos de Apoio para o Curso de CCNA v7 200-301:**
+## **Links de Vídeos de Apoio para o Curso de CCNAv7 200-301:**
 Instalação do Cisco Packet Tracer 7.3 no Linux Mint: https://www.youtube.com/watch?v=4EIO6Ma0foA&t=<br>
 Conhecendo o Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
 Topologias Lógica e Física no Cisco Packet Tracer: https://www.youtube.com/watch?v=PTJUh3jYq4c<br>
@@ -93,7 +93,7 @@ SolarWinds TFTP Server Free: https://www.solarwinds.com/free-tools/free-tftp-ser
 TFTP32 Opensource: http://tftpd32.jounin.net/tftpd32_download.html<br>
 TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
 
-## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNA v7 200-301:**
+## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNAv7 200-301:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
 
 **ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dica de alunos;<br>
@@ -102,7 +102,7 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCt
 **EXEMPLO:** exemplos de comandos ou configuações das opções de DICAS ou OBSERVAÇÃO;<br>
 **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco de adicionar informações extras da tecnologia ou da certificação.
 
-## **001 Configuração Base do Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
+## **001 Configuração Base do Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3.x, utilizado apenas 02 (dois) Cisco Switches Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
@@ -112,7 +112,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 
-## **002 Configuração das Linhas Virtuais VTY Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
+## **002 Configuração das Linhas Virtuais VTY Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso de Linhas Virtuais VTY, que será utilizado para o acesso remoto dos equipamentos.
 
@@ -122,7 +122,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
 
-## **003 Configuração do Gateway e SVI Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
+## **003 Configuração do Gateway e SVI Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY (linhas virtuais) para o acesso remoto e o gerenciamento dos equipamentos.
 
@@ -132,7 +132,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=cOZDezhef3o&t
 
-## **004 Configuração do SSH Server Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
+## **004 Configuração do SSH Server Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso do serviço de acesso remoto seguro utilizando o protocolo SSH (Secure Shell), essas configurações são utilizadas junto com o VTY (linhas virtuais) e o SVI (interface virtual do switch) para o acesso remoto e o gerenciamento dos equipamentos de forma segura.
 
@@ -142,7 +142,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
 
-## **005 Configuração Base do Router 1941- Laboratório Prático Cisco CCNA v7 200-301**
+## **005 Configuração Base do Router 1941- Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração Base do Cisco Router 1941, nesse cenário, utilizando os conhecimentos adquiridos até agora, seu processo de configuração será mais rápido, será aplicado o script base com apenas alguns recursos a mais em relação ao Switch Layer 2 2960 que não tem suporte, nesse Router será configurado a Porta Aux (Auxiliar).
 
@@ -152,7 +152,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=hNlAzBushZ0
 
-## **006 Configuração da Interface Router 1941 - Laboratório Prático Cisco CCNA v7 200-301**
+## **006 Configuração da Interface Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações do Router 1941, agora configurando a Interface GigabitEthernet que será utilizada como Gateway da Rede LAN.
 
@@ -162,7 +162,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=WfvVUL-WQVs&t
 
-## **007 Backup das Configurações e do Cisco IOS - Laboratório Prático Cisco CCNA v7 200-301**
+## **007 Backup das Configurações e do Cisco IOS - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer o backup das configurações dos Switch Layer 2 2960 e do Router 1941 para o Servidor de TFTP (Trivial File Transfer Protocol), o backup consiste das configurações do Running-Config ou Startup-Config de cada equipamento e do Cisco IOS (Internetwork Operating System).
 
@@ -172,7 +172,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=giOOtn4AQxE&t
 
-## **008 Atualização do Cisco IOS Switch 2960 - Laboratório Prático Cisco CCNA v7 200-301**
+## **008 Atualização do Cisco IOS Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Operating System) utilizando o Servidor TFTP (Trivial File Transfer Protocol) dos Switches Layer 2 2960.
 
@@ -182,7 +182,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=NbqqlAwChOQ&t
 
-## **009 Acessando o Modo ROMMON do Router 1941 - Laboratório Prático Cisco CCNA v7 200-301**
+## **009 Acessando o Modo ROMMON do Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização do POST (Power-on Selt-Test) é nesse modo que os equipamentos da Cisco fica parado, com recursos limitados e apenas com ferramentas de manutenção.
 
@@ -192,7 +192,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=vC6fIQAX1N8&t=
 
-## **010 Documentação da Topologia de Rede - Laboratório Prático Cisco CCNA v7 200-301**
+## **010 Documentação da Topologia de Rede - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou mostrar como fazer a documentação básica da topologia de rede, utilizando os recursos de Bloco de Notas (Notes) do Cisco Packetr Tracer, documentando os equipamentos de rede, desktop, servidores, conexões de rede e endereços IPv4/IPv6.
 
@@ -200,7 +200,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=MTH9bEkBm9w
 
-## **011 Expandindo a Topologia em 3 Camadas - Laboratório Prático Cisco CCNA v7 200-301**
+## **011 Expandindo a Topologia em 3 Camadas - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou expandir a Topologia de Rede no modelo de Hierárquia de Três Camadas, adicionando um Router 1941 como Núcleo (Core), um Switch Layer 3 3560 como Distribuição (Distribuition) e dois Switches Layer 2 2960 como Acesso (Access), adicionando um Servidor na Distribuição (Não Indicado), um Ponto de Acesso para Rede Sem-Fio 802.11-N na Distribuição (Não Indicado) e Desktops nos Switches de Acesso, será feito a interligação dos Switches com Caminhos Redundântes (Loop de Camada 2).
 
@@ -208,7 +208,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=_YVXarhu-io&t
 
-## **012 Configuração do Servidor DHCPv4 - Laboratório Prático Cisco CCNA v7 200-301**
+## **012 Configuração do Servidor DHCPv4 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de DHCPv4 (Dynamic Host Configuration Protocol), essa configuração será feita no Servidor, lembrando que o Switch Layer 3 ou Router possui esse recurso, o uso do serviço de DHCP facilita á configuração dinâmica dos endereçamentos IPv4 em todos os dispositivos da rede.
 
@@ -220,7 +220,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=4meY7WSk2-Y&t
 
-## **013 Configuração do Servidor DNSv4 - Laboratório Prático Cisco CCNA v7 200-301**
+## **013 Configuração do Servidor DNSv4 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de DNSv4 (Domain Name System), essa configuração será feita no Servidor, esse recurso facilita o acesso a equipamentos da rede ou computadores da nossa topologia utilizando nomes, o servidor de DNS é o principal serviço utilizado nas redes locais e principalmente na internet.
 
@@ -230,7 +230,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=qE76uyWSLR8&t
 
-## **014 Configuração do Servidor FTP e HTTP/HTTPS - Laboratório Prático Cisco CCNA v7 200-301**
+## **014 Configuração do Servidor FTP e HTTP/HTTPS - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de FTP (File Transfer Protocol) e do Servidor HTTP/HTTPS (Hypertext Transfer Protocol - Hypertext Transfer Protocol Secure), essa configuração será feita no Servidor, o FTP é um dos principais serviços de transferência de arquivos na Internet (hoje substituido pelo SFTP ou SSH), o HTTP/HTTPS é o principal serviço de Hospedagem de Páginas Web na Internet, utilizando principalmente a Linguagem de Marcação de Texto HTML (Hypertext Markup Language) para hospedar páginas HTML dinâmicas ou estáticas. 
 
@@ -240,7 +240,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=krHwI-nlloM&t
 
-## **015 Configuração do Servidor SMTP e POP3 - Laboratório Prático Cisco CCNA v7 200-301**
+## **015 Configuração do Servidor SMTP e POP3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de SMTP (Simple Mail Transfer Protocol) e do Servidor POP3 (Post Office Protocol v3), essa configuração será feita no Servidor, o SMTP é o principal serviço de envio de mensagens de emails na Internet já o POP3 é o principal serviço para acessar remotamente os MailBox e baixar as mensagens de email em clientes ou gerenciados de email.
 
@@ -250,7 +250,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=_aoi9GurBNE&t
 
-## **016 Configuração do DNS no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+## **016 Configuração do DNS no Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DNS (Domain Name System) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita o acesso remoto utilizando o protocolo SSH ou testes de rede com o protocolo ICMP (Internet Control Message Protocol - ping, traceroute, tracert, etc) por nomes, fazendo a tradução dos nomes para IP utilizando o serviço de DNS configurado no Servidor ou consultando a base de nomes locais do equipamento.
 
@@ -260,7 +260,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=q6AblFEplEQ&t
 
-## **017 Configuração do NTP no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+## **017 Configuração do NTP no Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do NTP (Network Time Protocol) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita o sincronismo e alteração de Data/Hora nos equipamentos de rede, facilitando a administração, padronização e confiabilidade nos registros de Logs e eventos dos equipamentos de rede, com Data/Hora corretas.
 
@@ -270,7 +270,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=X1f7bHZTSGs
 
-## **018 Configuração do SYSLOG no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+## **018 Configuração do SYSLOG no Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do SYSLOG (System Logging) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita a centralização de todos os Logs de eventos dos equipamentos de rede, ajudando no processo de resolução de problemas e análise das falhas ou mundanças nos equipamentos.
 
@@ -280,7 +280,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=zlFcWwAOY54&t
 
-## **019 Configuração do SNMP no Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+## **019 Configuração do SNMP no Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do SNMP (Simple Network Management Protocol) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita a administração e monitoramento dos equipamentos de rede, utilizando o protocolo SNMP podemos obter dados de estatísticas das interfaces de rede, estatus das interfaces e alteração das informações ou configurações remotas. 
 
@@ -288,9 +288,9 @@ As configurações do SNMP nos Switches e Router será feita utilizando o Script
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-019.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=jxWzbjhihtg
 
-## **020 Configuração do WPA2 no Access Point 802.11-N - Laboratório Prático Cisco CCNA v7 200-301**
+## **020 Configuração do WPA2 no Access Point 802.11-N - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do WPA2 (Wi-Fi Protected Access v2) no Access Point modelo 802.11-N utilizado para conectar os dispositivos de rede Sem-Fio da topologia (Notebook, Smartphone e Tablet), na nova certificação da Cisco CCNA v7 200-301 a configuração de dispositivos de rede sem-fio e a grande novidade, nas versões anteriores era cobrado somente a parte teórica, agora tem a parte prática. Nessa primeira etapa será configuarado os conceitos básicos do Access Point, depois será acréscentado os equipamentos WLC (Wireless Lan Controller). 
 
@@ -298,7 +298,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **021 Configuração do Speed, Duplex e MDIX no Switch - Laboratório Prático Cisco CCNA v7 200-301**
+## **021 Configuração do Speed, Duplex e MDIX no Switch - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do SPEED (Velocidade da Interface/Porta de Rede), DUPLEX (Modo de Transmissão - Half-Duplex, Full-Duplex ou Auto) e o recurso do MDIX (Medium-Dependent Interface), todos os recursos de configurações de Interface/Porta de Rede são necessários em casos onde a auto-negociação da Interface/Porta não esteja disponível ou quando temos necessidade de atender pré-requisitos de uma determinada tecnologia, nessa aula já vou mostrar os conceitos de segurança para desabilitar as Interface/Porta de Redes que não estão em uso no nossos Switches.
 
@@ -308,7 +308,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **022 Configuração do Switchport e Port-Security no Switch - Laboratório Prático Cisco CCNA v7 200-301**
+## **022 Configuração do Switchport e Port-Security no Switch - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Switchport e Port-Security no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de Switchport permite mudar o Tipo de Porta que usamos no nosso Switch, como por exemplo Access (Porta de Acesso) ou Trunk (Porta de Tronco), já o Port-Security tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de Endereços MAC), aplicando políticas de segurança baseadas em endereços Físicos de Placa de Rede (MAC Address) e bloqueando ou desativando a porta em caso de violação.
 
@@ -318,7 +318,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **023 Configuração do DHCP Snooping no Switch - Laboratório Prático Cisco CCNA v7 200-301**
+## **023 Configuração do DHCP Snooping no Switch - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação) no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de DHCP Snooping tem como objetivo mitigar ataques do tipo Man In The Middle (Homem no Meio), ele é um recurso de camada 2, que age filtrando mensagens DHCP não confiáveis/inválidas, criando um banco de dados de informações (DHCP Snooping Binding Table) e configurado Portas Confiáveis e Portas não Confiáveis.
 
@@ -328,7 +328,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **024 Configuração da Interface Roteada Switch 3560 - Laboratório Prático Cisco CCNA v7 200-301**
+## **024 Configuração da Interface Roteada Switch 3560 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Interface (Porta de Rede) Roteada do Switch Layer 3 3560, utilizando o recurso de no switchport, transformando uma porta de switch em uma interface de rede, permitindo a configuração do endereçamento IPv4 ou IPv6, habilitando o recurso de ip routing, nosso Switch Layer 3 se torna uma roteador para a rede LAN, fazendo o roteamento na cada de hardware.
 
@@ -338,7 +338,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **025 Configuração da Rota Estática e Padrão Switch e Router - Laboratório Prático Cisco CCNA v7 200-301**
+## **025 Configuração da Rota Estática e Padrão Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Rota Estática nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática é o método mais simples de roteamento que temos nos Roteadores e Switch Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes de pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos muito a rota padrão em Links de ISP, WAN, VPN, Internet, etc.
 
@@ -348,7 +348,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **026 Configuração da Rota Estática Flutuante no Router 1941 - Laboratório Prático Cisco CCNA v7 200-301**
+## **026 Configuração da Rota Estática Flutuante no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Rota Estática Flutuante no Router 1941, a utilização da rota estática fluante é um dos método mais simples de configuração de rota backup e redundância de Link de WAN utilizado em redes Ponto-a-Ponto, para a configuração da Rota Estática Fluante funcionar será necessário manipular o valor da Distância Administrativa (AD - Confiabilidade do Link), nesse cenário vou mostrar os processo de configuração das Interfaces Seriais.
 
@@ -358,7 +358,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **027 Configuração do NetFlow no Router 1941 - Laboratório Prático Cisco CCNA v7 200-301**
+## **027 Configuração do NetFlow no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do NetFlow no Router 1941, a utilização do recurso de NetFlow em nossa rede tem como objetivo de análisar os Fluxos de Dados em nossa Rede, análisando dados de protocolos, endereços de IPv4/IPv6 de origem e destino, monitoramento da largura de banda, rastreamento de dados e planejamento de capacidade de Links e recursos da rede.
 
