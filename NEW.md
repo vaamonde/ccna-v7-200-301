@@ -29,9 +29,11 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 017 Configuração do NTP no Switch e Router<br>
 018 Configuração do SYSLOG no Switch e Router<br>
 
-## **ETAPA-01: Criação dos Roteiros para a Gravação:**
+## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE e Github:**
 019 Configuração do SNMP no Switch e Router<br>
 020 Configuração do WPA2 no Access Point N<br>
+
+## **ETAPA-02: Aulas Preparadas para Gravação e Edição:**
 021 Configuração da Speed, Duplex e MDIX do Switch Layer 2 e 3<br>
 022 Configuração do Switchport e Port-Security do Switch Layer 2 e 3<br>
 023 Configuração do DHCP Snooping no Switch Layer 2 e 3<br>
@@ -39,20 +41,26 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 025 Configuração da Rota Estática e Rota Padrão Switch e Router<br>
 026 Configuraçao da Rota Estática Flutuante no Router 1941<br>
 027 Configuração do NetFlow no Router 1941<br>
-028 Configuração do TACACS e RADIUS no Switch e Router<br>
+028 Configuração do RADIUS e TACACS+ no Switch e Router
+
+## **ETAPA-03: Aulas Finalizadas os Estudos e Inicio da Criação do Script:**
 029 Configuração do Servidor de Cadastro de IoT <br>
 030 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
 031 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3
 
-## **ETAPA-02: Testes e Documentação para Criação dos Roteiros:**
+## **ETAPA-04: Testes e Documentação para Criação dos Script:**
 032 Interligando uma Nova Rede WAN na Topologia<br>
 033 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
 034 Configuração da VLAN e TRUNK no Switch Layer 2 e 3<br>
 035 Configuração do Router-on-Stick no Router 2911
 
-## **ETAPA-03: Planejamento de Aulas para a Continuidade do Curso:**
+## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso:**
 036 Configuração do DHCP Server no Router 2911<br>
 037 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
 038 Configuração do Endereçamento IPv6 Estático<br>
 039 Configuração do Endereçamento IPv6 Dinâmico<br>
 040 Configuração do Roteamento Estático IPv6
+
+## **ETAPA-06: Temas de Aulas:**
+ACL, NAT, EIGRP, OSPF, BGP, IS-IS, WLC, FHRP, HSVRP, GLBP, Etherchannel,<br>
+LACP, PPP, PPPoE, Frame-Relay, VPN, Firewall, QoS, etc
