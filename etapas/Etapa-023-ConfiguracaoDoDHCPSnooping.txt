@@ -18,34 +18,34 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 		
-		!Habilitando o recurso do DHCP Snooping no Switch Layer 3
-		!DICA: o recurso do DHCP Snooping tem como objetivo básico mitigar ataques do tipo man-in-the-middle
-		!DICA: o DHCP Snooping é associado sempre as VLAN's e quando habilitado ele coloca todas as portas no status Untrusted (não confiável)
+		!Habilitando o recurso do DHCP Snooping no Switch Layer 3 3560
+		!DICA: o recurso do DHCP Snooping tem como objetivo básico mitigar ataques do tipo Homem-do-Meio (man-in-the-middle)
+		!DICA: o DHCP Snooping é associado sempre as VLAN's e quando habilitado ele coloca todas as portas no status não confiável (Untrusted)
 		!OBSERVAÇÃO: por padrão o recurso de DHCP Snooping está desabilitado em todos os Switch Cisco
-		!OBSERVAÇÃO: o DHCP Snooping possui uma base de dados local com informações de endereços IP, MAC Address Lease Time
-		!OBSERVAÇÃO: o recurso do DHCP Snooping bloquear que um usuário acidentalmente adicione um Servidor DHCP na rede
+		!OBSERVAÇÃO: o DHCP Snooping possui uma base de dados local com informações de endereços IP, MAC Address e Lease Time
+		!OBSERVAÇÃO: o recurso do DHCP Snooping protege que um usuário acidentalmente adicione um Servidor DHCP na rede ou Router SOHO-ISR
 		ip dhcp snooping
 		
-		!Configurando a segurança do DHCP Snooping para a VLAN 1
+		!Configurando a segurança do DHCP Snooping na VLAN 1
 		!DICA: por padrão todos as Interfaces (Porta de Rede) no Switch estão associadas a VLAN 1 (VLAN Default)
-		!OBSERVAÇÃO: o DHCP Snooping monitora solicitações DHCP Client monitorando a VLAN que está associada a Interface
+		!OBSERVAÇÃO: o DHCP Snooping monitora solicitações DHCP Client analisando os quadros da VLAN que está associada na Interface
 		!OBSERVAÇÃO: podemos adicionar mais VLAN's para o monitoramento, separadas por espaço ou range
 		!EXEMPLO: ip dhcp snooping vlan 10 20 30 | ip dhcp snooping vlan 10-30 | ip dhcp snooping vlan 1,5,8,10-30
 		ip dhcp snooping vlan 1
 		
 		!Habilitando a opção 82 das requisições do DHCP Server
-		!DICA: o recurso de information option permite adicionar a opção 82 no pacotes de solicitação DHCP
-		!OBSERVAÇÃO: esse recurso é importante quando os pacotes DHCP estão vindo dos Switch de Acesso nem serem descartados
+		!DICA: o recurso de information option permite adicionar a opção 82 nos pacotes de solicitações do DHCP Server
+		!OBSERVAÇÃO: esse recurso é importante quando os pacotes DHCP estão vindo dos Switches de Acesso para não serem descartados
 		ip dhcp snooping information option
 		ip dhcp snooping information option allow-untrusted
 		
-		!Configurando a Interface (Porta de Rede) do Servidor
+		!Configurando a Interface (Porta de Rede) do Servidor SERVER-02
 		interface FastEthernet 0/1
 		
 			!Configurando a confiabilidade da Interface do Servidor
 			!DICA: portas confiáveis (Trust) são portas que tem permissão de enviar e receber pacotes DHCP
-			!OBSERVAÇÃO: configurar a porta Trust somente nos servidores DHCP ou equipamentos que fornecem DHCP na rede
-			!CUIDADO: esse recurso também precisa ser configurado nas Interface de Trunk (Tronco - Cascateamento)
+			!OBSERVAÇÃO: configurar a porta Trust somente quando tiver servidores DHCP ou equipamentos que fornecem DHCP na rede
+			!CUIDADO: esse recurso também precisa ser configurado nas Interface de Trunk (Tronco - Cascateamento) dos Switch de Acesso
 			ip dhcp snooping trust
 			exit
 
@@ -53,9 +53,9 @@ enable
 		interface FastEthernet 0/23
 		
 			!Configurando o limite de requisições de DHCP Client por Interface
-			!DICA: limitar a quantidade de requisição de solicitação DHCP aumenta a segurança da rede
+			!DICA: limitar a quantidade de requisições de solicitações de DHCP aumenta a segurança da rede
 			!OBSERVAÇÃO: cuidado com portas que possuem vários equipamentos associada a mesma, como Access Point, Hub, etc
-			!OBSERVAÇÃO: limite de configuração da requisições de DHCP Client são de: 1 até 2048
+			!OBSERVAÇÃO: o limite de configuração das requisições simultaneas de DHCP Client é de: 1 até 2048
 			ip dhcp snooping limit rate 10
 			end
 
@@ -70,10 +70,12 @@ enable
 		ip dhcp snooping vlan 1
 		ip dhcp snooping information option
 		ip dhcp snooping information option allow-untrusted
+		
 		!Configuração das Interface de Trunk (Tronco - Cascateamento)
 		interface range GigabitEthernet 0/1 - 2
 			ip dhcp snooping trust
 			exit
+		
 		!Configuração das Interface de Access (Acesso - Desktop)
 		interface range FastEthernet 0/1 - 2
 			ip dhcp snooping limit rate 5

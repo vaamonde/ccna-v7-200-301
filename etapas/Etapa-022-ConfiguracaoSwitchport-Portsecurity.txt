@@ -21,34 +21,34 @@ enable
 		!Configurando a Interface (Porta de Rede) do Servidor
 		interface FastEthernet 0/1
 		
-			!Configurando a Interface (Porta de Rede) para o modo de Acesso
-			!DICA: uma Interface de acesso pertence e trafega dados de uma única VLAN
-			!OBSERVAÇÃO: por padrão todos os Switch tem a VLAN 1 que não pode ser removida e está associada a todas as Interface
+			!Configurando a Interface (Porta de Rede) para o Modo de Acesso (Access)
+			!DICA: uma Interface de Acesso pertence e trafega dados de uma única VLAN
+			!OBSERVAÇÃO: por padrão todos os Switch tem a VLAN 1 que não pode ser removida e está associada a todas as Interfaces
 			!OBSERVAÇÃO: e recomendo sempre configurar as Interfaces dos dispositivos finais para o Modo Acesso (Access)
 			!OBSERVAÇÃO: tipos de configuração: access (porta de acesso), trunk (porta de tronco) e dynamic (porta dinâmica)
 			switchport mode access
 			
 			!Desabilitando o recurso de auto-negociação da Interface (Porta de Rede)
 			!DICA: por padrão todas as Interfaces do Switch está com o recurso do DTP (Dynacmic Trunk Protocol) habilitado
-			!OBSERVAÇÃO: e recomendo desabilitar o recurso de DTP nas Interfaces que são do tipo Acesso (Access)
+			!OBSERVAÇÃO: é recomendo desabilitar o recurso de DTP nas Interfaces que são do tipo Acesso (Access)
 			switchport nonegotiate
 			
 			!Habilitando o recurso de Port-Security na Interface (Porta de Rede)
 			!DICA: habilitar o recurso de port-security aumenta o nível de segurança da rede
-			!OBSERVAÇÃO: o recurso de Port-Security não deve ser usado em Interfaces do Modo Tronco (Trunk)
-			!OBSERVAÇÃO: o Port-Security tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de MAC)
+			!OBSERVAÇÃO: o recurso de Port-Security não deve ser usado em Interfaces de Modo Tronco (Trunk)
+			!OBSERVAÇÃO: o Port-Security tem o objetivo de mitigar um ataque do Tipo Inundação de MAC (MAC Flood)
 			switchport port-security
 			
 			!Configurando a quantidade máxima de endereços físicos (MAC Address) associado a uma Interface (Porta de Rede)
-			!DICA: por padrão o Switch Cisco suporte até 1025 endereços MAC em uma Interface
+			!DICA: por padrão o Switch Cisco suporte até 1025 endereços físicos de MAC em uma Interface
 			!OBSERVAÇÃO: cuidado com Interfaces de Servidores ou Access Point, nessas interfaces temos vários endereços MAC
 			!OBSERVAÇÃO: no Cisco Packet Tracer temos a limitação de: 1 até 132 endereços MAC por Interface
-			!OBSERVAÇAO: no Cisco Packet Tracer temos a limitação de configuração de VLAN de Access e VoIP
-			!OBSERVAÇÃO: o recurso de port-security maximum por padrão e apenas 1 (um) endereço MAC
+			!OBSERVAÇAO: no Cisco Packet Tracer temos a limitação de configuração de VLAN de Acesso e VoIP
+			!OBSERVAÇÃO: o recurso de port-security maximum por padrão e configurado para apenas 1 (um) endereço MAC
 			switchport port-security maximum 1
 			
 			!Configurando o aprendizado do endereço físico da Placa de Rede MAC (MAC Address - Media Access Control)
-			!DICA: o recurso de aprendizagem do endereço MAC possibilita indicar qual endereço está associada a Interface
+			!DICA: o recurso de aprendizagem do endereço MAC possibilita indicar qual endereço está associado a Interface
 			!OBSERVAÇÃO: existe duas formas de configurar o endereço MAC na Interface: static (estático) ou stick (dinâmico)
 			!OBSERVAÇÃO: configurando o modo estático: switchport port-security mac-address H.H.H (0002.16d2.da19)
 			!OBSERVAÇÃO: configurando o modo dinâmico: switchport port-security mac-address sticky
@@ -60,8 +60,8 @@ enable
 			!ou quando exceder a quantidade de MAC Address associado a uma Interface
 			!OBSERVAÇÃO: existe três tipos de violação: protect (proteger), restrict (restringir) e shutdown (bloquear)
 			!OBSERVAÇÃO: por padrão a opção de violação do Switch Cisco e: shutdown (bloquear a Interface)
-			!OBSERVAÇÃO: o modo shutdown restringe a interface com o serviço habilitado, descartando todo tráfego, envia 
-			!mensagens informativas (logs, Syslog e SNMP Trap).
+			!OBSERVAÇÃO: o modo shutdown restringe a interface com o serviço habilitado, descartando todo tráfego, enviando 
+			!mensagens informativas de SNMP Trap, não informando Log's para o Syslog e não incrementando a contagem de violação
 			switchport port-security violation shutdown
 			
 			!Saindo da configuração da Interface (Porta de Rede)
@@ -73,19 +73,22 @@ enable
 			switchport port-security
 			switchport port-security mac-address sticky
 			
-			!OBSERVAÇÃO: aumentando o número de endereços MAC da Interface
+			!DICA: aumentar o número de endereços MAC da Interface de Access Point
+			!OBSERVAÇÃO: nesse cenário, o Access Point se comportar como um Hub, tendo vários MAC na mesma Interface
 			switchport port-security maximum 5
 			
-			!OBSERVAÇÃO: alterado o modo de violação da Interface para protect
+			!OBSERVAÇÃO: alterando o modo de violação da Interface para protect
 			!OBSERVAÇÃO: o modo protect recusa os quadros com endereços desconhecidos (drop) sem bloquear a porta.
+			!não incrementa a contagem de violação e não envia uma mensagem informativa SNMP Trap, não informando Log's
+			!para o Syslog, mantém os MAC aprendindo transmitindo normalmente.
 			switchport port-security violation protect
 			
-			!Configurando a validade de envelhecimento do endereço MAC na Interface (Porta de Rede)
+			!Configurando a validade de envelhecimento dos endereços MAC na Interface (Porta de Rede)
 			!DICA: esse recurso remove automaticamente os endereços MAC da configuração após um período de tempo
 			!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de aging time (tempo de vida/envelhecimento/cache) e limitado
 			!OBSERVAÇÃO: temos as opções: time (tempo), type (tipo: absolute ou inactivity) e static (tempo de vida estático)
-			!OBSERVAÇÃO: no Cisco Packe Tracer temos somente a opção de tempo de: 1 até 1440 minutos
-			!OBSERVAÇÃO: devido a limitação do recurso de aging, o MAC aprendidos dinâmicas ou estático não serão removidos
+			!OBSERVAÇÃO: no Cisco Packet Tracer temos somente a opção de tempo de: 1 até 1440 minutos
+			!OBSERVAÇÃO: devido a limitação do recurso de aging, os MAC aprendidos dinâmicamente ou estático não serão removidos
 			!OBSERVAÇÃO: para o funcionamento dessa opção temos que usar o comando: switchport port-security againg type inactivity
 			switchport port-security aging time 5
 			exit
@@ -93,9 +96,9 @@ enable
 		!Configurando a Auto-Recuperação da Configuração da Interface (Porta de Rede)
 		!DICA: caso tenha alguma violação de segurança na Interface, o processo de retorno da configuração e manual
 		!DICA: o recurso de errdisable e configurado com base na violação e o tempo para retorno em minutos
-		!OBSERVAÇÃO: no Cisco Packet Tracer esse recurso não está disponível nos Switches 2960 e 3560
+		!OBSERVAÇÃO: no Cisco Packet Tracer esse recurso não está disponível nos Switches Layer 2 2960 e Layer 3 3560
 		!errdisable recovery cause psecure-violation
-		!errdisable recovery interval 600
+		!errdisable recovery interval 60
 		end
 
 !Salvando as configurações da memória RAM para a memória NVRAM
@@ -111,9 +114,10 @@ enable
 			switchport port-security maximum 1
 			switchport port-security mac-address sticky
 			
-			!OBSERVAÇÃO: alterado o modo de violação da Interface
+			!OBSERVAÇÃO: alterado o modo de violação da Interface para restrict
 			!OBSERVAÇÃO: o modo restrict recusa os quadros com endereços desconhecidos (drop) sem bloquear a porta,
-			!e incrementa a contagem de violação enviando uma mensagem informativa (logs, Syslog e SNMP Trap)
+			!e incrementa a contagem de violação (Security Violation) enviando uma mensagem informativa (logs, Syslog
+			!e SNMP Trap), mantém os MAC aprendindos transmitindo normalmente.
 			switchport port-security violation restrict
 			end
 write
@@ -129,15 +133,21 @@ show port-security interface fastEthernet 0/1
 show port-security interface fastEthernet 0/2
 show interface fastEthernet 0/1
 
-!Limpando os contadores do Port-Security e Restabelecendo a Conexão
+!Limpando os contadores do Port-Security e Restabelecendo a Conexão da Interface
 interface fastEthernet 0/2
 	shutdown
 	no shutdown
-clear port-security all
-clear port-security dinamic
-clear port-security stick
-!OBSERVAÇÃO:
-!clear port-security dynamic interface fastethernet0/2
-!OBSERVAÇÃO: 
+	
+	!OBSERVAÇÃO: as opções do comando clean no Cisco Packet Tracer não estão disponíveis
+	!clear port-security all
+	!clear port-security dinamic
+	1clear port-security stick
+
+!OBSERVAÇÃO: as opções do comando clean no Cisco Packet Tracer não estão disponíveis
 !configure terminal
-!	errdisable recovery cause psecure-violation
+	!clear port-security dynamic interface fastethernet0/2
+
+!OBSERVAÇÃO: as opções do comando errdisable no Cisco Packet Tracer não estão disponíveis
+!configure terminal
+	!errdisable recovery cause psecure-violation
+	!errdisable recovery interval 6

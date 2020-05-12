@@ -31,13 +31,13 @@ enable
 			!configurada com velocidades diferentes
 			speed 100
 
-			!Configuração do modo de transmissão da Interface (Porta de Rede)
-			!DICA: conexões Ethernet em Switch podem trabalhar com os modos: Half-Duplex, Full-Duplex e Auto
+			!Configuração do Modo de Transmissão da Interface (Porta de Rede)
+			!DICA: conexões FastEthernet em Switch podem trabalhar com os modos: Half-Duplex, Full-Duplex e Auto
 			!DICA: por padrão o recurso de Duplex está configurado como auto em todas as interfaces
 			!OBSERVAÇÃO: Half-Duplex era o modo de transmissão em redes Ethernet 10Mbps com conlisão (CSMA-CD)
-			!OBSERVAÇÃO: Full-Duplex e o modo transmissão em Redes FastEthernet e GigabitEthernet sem colisão
+			!OBSERVAÇÃO: Full-Duplex é o modo transmissão em Redes FastEthernet e GigabitEthernet sem colisão
 			!OBSERVAÇÃO: quando configurado o Duplex na Interface ela não ficará UP se a outra Interface estiver
-			!configurada com Duplex difrente
+			!configurada com Duplex diferente
 			!OBSERVAÇÃO: em Interface GigabitEthernet não temos a opção de mudar o Duplex, pois o padrão e Full
 			duplex full
 			
@@ -73,13 +73,14 @@ enable
 		interface range FastEthernet 0/3 - 23
 		
 			!Desligando todas as Interfaces (Porta de Rede) que não estão sendo utilizadas
-			!DICA: para aumentar a segurança e recomendado desligar todas as interfaces que não estão sendo utilizadas
+			!DICA: para aumentar a segurança é recomendado desligar todas as interfaces que não estão sendo utilizadas
 			!OBSERVAÇÃO: desligar as interfaces faz parte da segurança física da rede
 			!OBSERVAÇÃO: todas as interfaces dos Switches estão no status: no shutdown e na VLAN padrão 1 com DTP ativado
+			!OBSERVAÇÃO: o DTP (Dynamic Trunking Protocol) será estudo nas configurações de STP, VLAN e TRUNK
 			shutdown
 			exit
 			
-		!Configurando as Interfaces de Trunk (Tronco) e Backbone (Cascateamento) dos Switches Layer 2960
+		!Configurando as Interfaces de Trunk (Tronco) e Backbone (Cascateamento) dos Switches Layer 2 2960
 		interface range GigabitEthernet 0/1 - 2
 			description Porta de Backbone com o Switch Layer 2 2960
 			speed 1000
