@@ -292,11 +292,11 @@ Link da vídeo aula: https://www.youtube.com/watch?v=jxWzbjhihtg
 
 ## **020 Configuração do WPA2 no Access Point 802.11-N - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do WPA2 (Wi-Fi Protected Access v2) no Access Point modelo 802.11-N utilizado para conectar os dispositivos de rede Sem-Fio da topologia (Notebook, Smartphone e Tablet), na nova certificação da Cisco CCNA v7 200-301 a configuração de dispositivos de rede sem-fio e a grande novidade, nas versões anteriores era cobrado somente a parte teórica, agora tem a parte prática. Nessa primeira etapa será configuarado os conceitos básicos do Access Point, depois será acréscentado os equipamentos WLC (Wireless Lan Controller). 
+Nessa aula, vou fazer a configuração do WPA2 (Wi-Fi Protected Access v2) no Access Point modelo 802.11-N utilizado para conectar os dispositivos de rede Sem-Fio da topologia (Notebook, Smartphone e Tablet), na nova certificação da Cisco CCNA v7 200-301 a configuração de dispositivos de rede sem-fio e a grande novidade, nas versões anteriores era cobrado somente a parte teórica, agora tem a parte prática. Nessa primeira etapa será configurado os conceitos básicos do Access Point, depois será acrescentado os equipamentos WLC (Wireless Lan Controller). 
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-020.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=-qExeM_Xk3s&t
 
 ## **021 Configuração do Speed, Duplex e MDIX no Switch - Laboratório Prático Cisco CCNAv7 200-301**
 
