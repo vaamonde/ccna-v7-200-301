@@ -27,7 +27,7 @@ CCNA 7: Introduction to Networks: https://www.netacad.com/pt-br/courses/networki
 CCNA 7: Switching, Routing, and Wireless Essentials: https://www.netacad.com/pt-br/courses/networking/ccna-switching-routing-wireless-essentials<br>
 CCNA 7: Enterprise Networking, Security, and Automation: https://www.netacad.com/pt-br/courses/networking/ccna-enterprise-networking-security-automation
 
-## **Indicação de eBooks e Livros não Oficiais da Cisco CCNAv7 200-301 - v6 200-125**
+## **Indicação de eBooks e Livros não Oficiais da Cisco CCNAv7 200-301 - CCNAv6 200-125**
 GNS3 Vault: How to Master CCNA R&S, René Molenaar (Inglês): https://gns3vault.com/product/how-to-master-ccna-rs<br>
 GNS3 Vault: How to Master Subnetting, René Molenaar (Inglês): https://gns3vault.com/product/master-subnetting<br>
 FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.com/<br>
@@ -82,7 +82,7 @@ IPv6 Information: https://drive.google.com/file/d/1tyqxQ3CT3SAtGohOUvG1q7zNZ-gZi
 Senhas do Tipo-5 Secret: https://www.ifm.net.nz/cookbooks/cisco-ios-enable-secret-password-cracker.html<br>
 Senhas do Tipo-7 Password: https://www.ifm.net.nz/cookbooks/passwordcracker.html
 
-## **Indicação de Editores de Texto para trabalhar com Scripts:**
+## **Indicação de Editores de Texto para Trabalhar com os Scripts:**
 Microsoft: Notepad++ (Plus): https://notepad-plus-plus.org/<br>
 Microsoft e GNU/Linux: Visual Studio VSCode: https://code.visualstudio.com/<br>
 Microsoft e GNU/Linux: Atom: https://atom.io/<br>
@@ -350,7 +350,7 @@ Link da vídeo aula:
 
 ## **026 Configuração da Rota Estática Flutuante no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração da Rota Estática Flutuante no Router 1941, a utilização da rota estática fluante é um dos método mais simples de configuração de rota backup e redundância de Link de WAN utilizado em redes Ponto-a-Ponto, para a configuração da Rota Estática Fluante funcionar será necessário manipular o valor da Distância Administrativa (AD - Confiabilidade do Link), nesse cenário vou mostrar os processo de configuração das Interfaces Seriais.
+Nessa aula, vou fazer a configuração da Rota Estática Flutuante no Router 1941, a utilização da rota estática fluante é um dos método mais simples de configuração de rota backup e redundância de Links de WAN utilizada em redes Ponto-a-Ponto, para a configuração da Rota Estática Fluante funcionar corretamente será necessário manipular o valor da Distância Administrativa (AD - Confiabilidade do Link), nesse cenário vou mostrar o processo de configuração nas Interfaces Seriais.
 
 As configurações da Rota Estática Fluante no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-026-ConfiguracaoDaRotaEstaticaFlutuante.txt
 
@@ -360,10 +360,20 @@ Link da vídeo aula:
 
 ## **027 Configuração do NetFlow no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do NetFlow no Router 1941, a utilização do recurso de NetFlow em nossa rede tem como objetivo de análisar os Fluxos de Dados em nossa Rede, análisando dados de protocolos, endereços de IPv4/IPv6 de origem e destino, monitoramento da largura de banda, rastreamento de dados e planejamento de capacidade de Links e recursos da rede.
+Nessa aula, vou fazer a configuração do NetFlow no Router 1941, a utilização do recurso de NetFlow em nossa rede tem como objetivo de análisar os Fluxos de Dados em nossa Rede, analisando dados de protocolos, endereços de IPv4/IPv6 de origem e destino, monitoramento da largura de banda, rastreamento de dados e planejamento de capacidade de Links e recursos da rede.
 
 As configurações do NetFlow no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-027-ConfiguracaoDoNetFlowNaInterfaceDoRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-027.pkt
+
+Link da vídeo aula:
+
+## **028 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting) utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
+
+As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-028-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-028.pkt
 
 Link da vídeo aula:

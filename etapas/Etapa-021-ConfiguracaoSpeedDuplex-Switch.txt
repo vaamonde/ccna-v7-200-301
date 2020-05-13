@@ -34,7 +34,6 @@ enable
 			!Configuração do Modo de Transmissão da Interface (Porta de Rede)
 			!DICA: conexões FastEthernet em Switch podem trabalhar com os modos: Half-Duplex, Full-Duplex e Auto
 			!DICA: por padrão o recurso de Duplex está configurado como auto em todas as interfaces
-			!ERRATA: no vídeo eu falo: Full-Duplex, correto é: Half-Duplex
 			!OBSERVAÇÃO: Half-Duplex era o modo de transmissão em redes Ethernet 10Mbps com conlisão (CSMA-CD)
 			!OBSERVAÇÃO: Full-Duplex é o modo transmissão em Redes FastEthernet e GigabitEthernet sem colisão
 			!OBSERVAÇÃO: quando configurado o Duplex na Interface ela não ficará UP se a outra Interface estiver

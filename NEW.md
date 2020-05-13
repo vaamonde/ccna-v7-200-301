@@ -44,15 +44,15 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 028 Configuração do RADIUS e TACACS+ no Switch e Router
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Inicio da Criação do Script:**
-029 Configuração do Servidor de Cadastro de IoT <br>
-030 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
-031 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3
+029 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
+030 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3
 
 ## **ETAPA-04: Testes e Documentação para Criação dos Script:**
-032 Interligando uma Nova Rede WAN na Topologia<br>
-033 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
-034 Configuração da VLAN e TRUNK no Switch Layer 2 e 3<br>
-035 Configuração do Router-on-Stick no Router 2911
+031 Interligando uma Nova Rede WAN na Topologia<br>
+032 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
+033 Configuração da VLAN e TRUNK no Switch Layer 2 e 3<br>
+034 Configuração do Router-on-Stick no Router 2911<br>
+035 Configuração do Servidor de IoT Manager<br>
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso:**
 036 Configuração do DHCP Server no Router 2911<br>
