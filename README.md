@@ -358,30 +358,40 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **027 Configuração do NetFlow no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
+## **027 Configuração da Interface de Loopback no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do NetFlow no Router 1941, a utilização do recurso de NetFlow em nossa rede tem como objetivo de análisar os Fluxos de Dados em nossa Rede, analisando dados de protocolos, endereços de IPv4/IPv6 de origem e destino, monitoramento da largura de banda, rastreamento de dados e planejamento de capacidade de Links e recursos da rede.
+Nessa aula, vou fazer a configuração da Interface de Loopback no Router 1941, á Interface de Loopback é uma interface lógica e virtual em um Router ou Switch Layer 3 da Cisco, uma interface de loopback não é uma interface física como a interface FastEthernet ou GigabitEthernet, as Interface de Loopback estão sempre ativas e sempre disponíveis, mesmo se outras interfaces físicas no roteador estiverem inativas, utilizadas principalmente para teste de rede e para protocolos de roteamento dinâmico, como o OSPF (Open Shortest Path First), BGP (Border Gateway Protocol), RSRB (Remote Source-Route Bridging) e DLSW+ (Data-Link Switching Plus) entre outros.
 
-As configurações do NetFlow no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-027-ConfiguracaoDoNetFlowNaInterfaceDoRouter.txt
+As configurações da Interface de Loopback no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-027-ConfiguracaoDaInterfaceLoopback.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-027.pkt
 
 Link da vídeo aula:
 
-## **028 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
+## **028 Configuração do NetFlow no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting), essa configuração será feita no Servidor, utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
+Nessa aula, vou fazer a configuração do NetFlow no Router 1941, a utilização do recurso de NetFlow em nossa rede tem como objetivo de análisar os Fluxos de Dados em nossa Rede, analisando dados de protocolos, endereços de IPv4/IPv6 de origem e destino, monitoramento da largura de banda, rastreamento de dados e planejamento de capacidade de Links e recursos da rede.
 
-As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-028-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
+As configurações do NetFlow no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-028-ConfiguracaoDoNetFlowNaInterfaceDoRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-028.pkt
 
 Link da vídeo aula:
 
-## **029 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
+## **029 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting), essa configuração será feita no Servidor, utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
+
+As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-029-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-029.pkt
+
+Link da vídeo aula:
+
+## **030 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor, o Servidor de Registro e Gerenciamento de Dispositivos de Internet da Coisas, tem como objetivo de gerenciar todos os dispositivos de automação e gerenciamento analógcio ou digital da nossa rede, oferecendo a centralização e gerenciamento dos dispositvos e automatizando tarefas e monitoranto status e consumo da rede.
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-029.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-030.pkt
 
 Link da vídeo aula:

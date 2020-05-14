@@ -39,27 +39,28 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 024 Configuração da Interface Roteada do Switch Layer 3<br>
 025 Configuração da Rota Estática e Rota Padrão Switch e Router<br>
-026 Configuraçao da Rota Estática Flutuante no Router 1941<br>
-027 Configuração do NetFlow no Router 1941<br>
-028 Configuração do RADIUS e TACACS+ no Switch e Router
+026 Configuração da Rota Estática Flutuante no Router 1941<br>
+027 Configuração da Interface de Loopback no Router 1941<br>
+028 Configuração do NetFlow no Router 1941<br>
+029 Configuração do RADIUS e TACACS+ no Switch e Router
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos é Iniciado a Criação dos Scripts, não Disponível no Github:**
-029 Configuração do Servidor de IoT Manager
-030 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
-031 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3
+030 Configuração do Servidor de IoT Manager Registrator<br>
+031 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
+032 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-032 Interligando uma Nova Rede WAN Fiber na Topologia<br>
-033 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
-034 Configuração da VLAN e TRUNK no Switch Layer 2 e 3<br>
-035 Configuração do Router-on-Stick no Router 2911
+033 Interligando uma Nova Rede WAN Fiber na Topologia<br>
+034 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
+035 Configuração da VLAN e TRUNK no Switch Layer 2 e 3<br>
+036 Configuração do Router-on-Stick no Router 2911
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-036 Configuração do DHCP Server no Router 2911<br>
-037 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
-038 Configuração do Endereçamento IPv6 Estático<br>
-039 Configuração do Endereçamento IPv6 Dinâmico<br>
-040 Configuração do Roteamento Estático, Padrão e Flutuante IPv6
+037 Configuração do DHCP Server no Router 2911<br>
+038 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
+039 Configuração do Endereçamento IPv6 Estático<br>
+040 Configuração do Endereçamento IPv6 Dinâmico<br>
+041 Configuração do Roteamento Estático, Padrão e Flutuante IPv6
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
 ACL, NAT, EIGRP, OSPF, BGP, IS-IS, WLC, FHRP, HSVRP, GLBP, Etherchannel, xDSL<br>

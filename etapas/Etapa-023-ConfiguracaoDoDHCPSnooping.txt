@@ -24,6 +24,7 @@ enable
 		!OBSERVAÇÃO: por padrão o recurso de DHCP Snooping está desabilitado em todos os Switch Cisco
 		!OBSERVAÇÃO: o DHCP Snooping possui uma base de dados local com informações de endereços IP, MAC Address e Lease Time
 		!OBSERVAÇÃO: o recurso do DHCP Snooping protege que um usuário acidentalmente adicione um Servidor DHCP na rede ou Router SOHO-ISR
+		!(Small Office / Home Office | Integrated Services Router)
 		ip dhcp snooping
 		
 		!Configurando a segurança do DHCP Snooping na VLAN 1
@@ -54,7 +55,7 @@ enable
 		
 			!Configurando o limite de requisições de DHCP Client por Interface
 			!DICA: limitar a quantidade de requisições de solicitações de DHCP aumenta a segurança da rede
-			!OBSERVAÇÃO: cuidado com portas que possuem vários equipamentos associada a mesma, como Access Point, Hub, etc
+			!OBSERVAÇÃO: cuidado com portas que possuem vários equipamentos associadas a mesma, como Access Point, Hub, etc
 			!OBSERVAÇÃO: o limite de configuração das requisições simultaneas de DHCP Client é de: 1 até 2048
 			ip dhcp snooping limit rate 10
 			end
