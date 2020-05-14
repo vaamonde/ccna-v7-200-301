@@ -306,7 +306,7 @@ As configurações do SPEED, DUPLEX e MDIX no Switch Layer 3 e nos Switches Laye
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-021.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=obRpiRL2Fns
 
 ## **022 Configuração do Switchport e Port-Security no Switch - Laboratório Prático Cisco CCNAv7 200-301**
 

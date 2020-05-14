@@ -15,10 +15,10 @@
 !CONFIGURAÇÕES DE PLACA DE REDE SERIAL OU LINK DE WAN SERIAL, UMA VEZ QUE ESSA TECNOLOGIA JÁ CAIU EM DESUSO, 
 !OUTRAS TECNOLOGIAS COMO O: FRAME RELAY, FAX MODEM ISDN, ATM, X.25, HDLC, SDLC, PPP, ETC. TAMBÉM ENTRA NA LISTA.
 
-!PRIMEIRA ETAPA: Adicionando o Módulo HWIC-2T (High-Speed WAN Interface Card)
+!PRIMEIRA ETAPA: Adicionando o Módulo HWIC-2T (High-Speed WAN Interface Card) nos Router 1941
 !Router 1941-2 será o DCE (Data Circuit-Terminating Equipment)
 !Router 1941-1 será o DTE (Data Terminal Equipment)
-!Nessa topologia não será configurado o CSU/DSU (Channel Service Unit/Data Service Unit)
+!Nessa topologia não será configurado o Modem CSU/DSU (Channel Service Unit/Data Service Unit)
 
 !SEGUNDA ETAPA: Configuração do Router 1941-2
 !Acessando o modo EXEC Privilégiado
@@ -60,11 +60,11 @@ show ip interface brief
 			exit
 			
 		!Configurando a Rota Estática Fluante para atingir a Rede 192.168.1.0/24
-		!DICA: rota estática fluante é igual a rota estática normal, a diferença está no valor da Distância Administrativa
+		!DICA: rota estática fluante é igual a rota estática normal, a diferença está no valor do AD (Distância Administrativa)
 		!DICA: rota estática fluante é muito utilizada em Links de Backup e Redundância de Conexão de WAN
 		!OBSERVAÇÃO: quando o roteador aprende duas rotas para o mesmo destino, ele dará preferência para a menor Distância Administrativa
 		!OBSERVAÇÃO: os valores de Distância Administrativa pode variar de: 1 até 255
-		!OBSERVAÇÃO: caso os AD sejam igual, será análisado os valores de Métrica (Custo) para o desempate e preferência da rota
+		!OBSERVAÇÃO: caso os AD's sejam iguais, será análisado os valores de Métrica (Custo) para o desempate e preferência da rota
 		!OBSERVAÇÃO: rota estática fluante para o mesmo destino não aparece na tabela de roteamento, somente quando a rota estática padrão estiver down
 		ip route 192.168.1.0 255.255.255.0 serial 0/0/0 5
 		end
