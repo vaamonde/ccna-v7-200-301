@@ -24,44 +24,41 @@ enable
 			!Configurando a descrição da Interface
 			description Interface de WAN com o Router 1941-1
 			
-			!Configuração do endereço IPv4 do Router 1941
+			!Configuração do endereço IPv4 do Router 1941-2
 			!DICA: configuração das Interface de WAN, os endereços IPv4/IPv6 devem pertencer a mesma rede
 			!OBSERVAÇÃO: configuração de Link Ponto-a-Ponto (Point-to-Point) e recomendo utilizar endereços IPv4 /30
 			!OBSERVAÇÃO: o CIDR /30 permite apenas 4 endereços IPv4 válidos: ID Rede, Primeiro e Último endereço IPv4 e Broadcast
 			!EXEMPLO: 2^2-2=2 (2 = Base | ^2 = Exponênciação de 2 bits emprestados | -2 = Subtração do ID de Rede e Broadcast)
+			!OBSERVAÇÃO: por padrão todas as Interfaces de Roteador está com o Status Shutdown
 			ip address 10.0.0.2 255.255.255.252
-		
-			!Inicializando a Interface do Router 1941
-			no sutdown
+			no shutdown
 			exit
 			
 		!Configurando a Interface de Interligação com Switch Layer 3 3560
 		interface GigabitEthernet 0/0
 		
 			!Configurando a descrição da Interface
-			description Interface de LAN do Switch Layer 3 3560
+			description Interface de LAN com o Switch Layer 3 3560
 			
-			!Configuração da Velocidade do Link e Modo de Transmissão
+			!Configuração da Velocidade do Link e Modo de Transmissão da Interface
 			!OBSERVAÇÃO: essas configurações foram feitas na Interface (Porta de Rede) do Switch Layer 3
-			!OBSERVAÇÃO: a velocidade da Interface do Switch Layer 3 e 100Mbps, por isso a mudança de velocidade
+			!OBSERVAÇÃO: a velocidade da Interface do Switch Layer 3 é de 100Mbps, por isso a mudança de velocidade
 			speed 100
 			duplex full
 			
 			!Configuração do endereço IPv4 do Router 1941
-			!OBSERVAÇÃO: esse endereço será o Gateway do Switch Layer 3 3560
+			!OBSERVAÇÃO: esse endereço será o Gateway para o Switch Layer 3 3560
 			ip address 192.168.2.254 255.255.255.0
-		
-			!Inicializando a Interface do Router 1941
-			no sutdown
+			no shutdown
 			exit
 			
 		!Configurando a Rota Estática para atingir a Rede 192.168.1.0/24
-		!DICA: rota estática e indicada para links Ponto-a-Ponto e para redes simples, com pouco roteadores
+		!DICA: rota estática e indicada para links Ponto-a-Ponto e para redes simples, com poucos roteadores
 		!DICA: rota estática recebe a letra: S (static) no início da rota declarada manualmente na Tabela de Roteamento
-		!OBSERVAÇÃO: na tabela de roteamento temos: L - local (Endereço Local), C - connected (Rede Diretamente Conectada)
+		!OBSERVAÇÃO: na tabela de roteamento temos as opções: L - local (Endereço Local), C - connected (Rede Diretamente Conectada)
 		!OBSERVAÇÃO: rota estática e configurada manualmente em cada equipamento da rede, sua atualização não e dinâmica
 		!OBSERVAÇÃO: rota estática tem a Distância Administrativa (AD - Confiabilidade) 1 (um)
-		!OBSERVAÇÃO: rota estática tem Métrica (Custo) 0 (zero)
+		!OBSERVAÇÃO: rota estática tem Métrica (Custo) de 0 (zero)
 		!OBSERVAÇÃO: rota estática pode encaminhar redes por: Endereço IPv4/IPv6 de Próximo Salto ou Interface de Saída
 		!EXEMPLO: ip route Rede_de_Destino Máscara_de_Rede_de_Destino Interface_de_Saída ou IP_do_Próximo_Salto Distância_Administrativa
 		ip route 192.168.1.0 255.255.255.0 10.0.0.1
@@ -74,8 +71,6 @@ write
 !SEGUNDA ETAPA: Configuração do Switch Layer 3 3560
 !Acessando o modo EXEC Privilégiado
 enable
-
-	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 	
 		!Configurando a Rota Padrão para o Gateway do Router 1941-2
@@ -86,8 +81,6 @@ enable
 		!OBSERVAÇÃO: a rota padrão estática recebe a letra com asterisco: S* que significa que é um Gateway of last resort
 		ip route 0.0.0.0 0.0.0.0 192.168.2.254
 		end
-	
-!Salvando as configurações da memória RAM para a memória NVRAM
 write
 
 !TERCEIRA ETAPA: Configuração do Router 1941-1
@@ -98,15 +91,14 @@ enable
 		interface GigabitEthernet 0/1
 			description Interface de WAN com o Router 1941-2
 			ip address 10.0.0.1 255.255.255.252
-			no sutdown
+			no shutdown
 			exit
 			
 		!Configurando a Rota Estática para atingir as Redes 192.168.2.0/30 e 192.168.3.0/30
+		!OBSERVAÇÃO: nesse cenário vou utilizar a Interface de Saída para as Redes
 		ip route 192.168.2.0 255.255.255.0 GigabitEthernet 0/1
 		ip route 192.168.3.0 255.255.255.0 GigabitEthernet 0/1
 		end
-			
-!Salvando as configurações da memória RAM para a memória NVRAM
 write
 
 !Visualizando as configurações da memória RAM
