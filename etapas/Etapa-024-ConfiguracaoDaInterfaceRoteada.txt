@@ -25,7 +25,7 @@ enable
 		!IMPORTANTE: o Switch Layer 3 não foi projetado para trabalhar com Roteamento de WAN, indicado somente para a LAN
 		ip routing
 		
-		!Alterando o Endereço IPv4 da Interface Virtual VDI do Switch Layer 3
+		!Alterando o Endereço IPv4 da Interface Virtual SVI do Switch Layer 3
 		!DICA: com a ativação do recurso de roteamento, as Interfaces Virtual se tornam Gateway da Rede Local
 		!OBSERVAÇÃO: as SVI são utilizadas para o roteamento entre VLAN's, agilizando o processo em camada de Hardware
 		!OBSERVAÇÃO: utilizar Switch Layer 3 para fazer o Roteamento da VLAN e mais rápido do que utilizar o Router-on-Stick
