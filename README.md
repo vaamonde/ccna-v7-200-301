@@ -300,9 +300,9 @@ Link da vídeo aula: https://www.youtube.com/watch?v=-qExeM_Xk3s&t
 
 ## **021 Configuração do Speed, Duplex e MDIX no Switch - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do SPEED (Velocidade da Interface/Porta de Rede), DUPLEX (Modo de Transmissão - Half-Duplex, Full-Duplex ou Auto) e o recurso do MDIX (Medium-Dependent Interface), todos os recursos de configurações de Interface/Porta de Rede são necessários em casos onde a auto-negociação da Interface/Porta não esteja disponível ou quando temos necessidade de atender pré-requisitos de uma determinada tecnologia, nessa aula já vou mostrar os conceitos de segurança para desabilitar as Interface/Porta de Redes que não estão em uso no nossos Switches.
+Nessa aula, vou fazer a configuração do Speed (Velocidade da Interface/Porta de Rede), Duplex (Modo de Transmissão - Half-Duplex, Full-Duplex ou Auto) e o recurso do MDIX (Medium-Dependent Interface), todos os recursos de configurações de Interface/Porta de Rede são necessários em casos onde a auto-negociação da Interface/Porta não esteja disponível ou quando temos necessidade de atender pré-requisitos de uma determinada tecnologia, nessa aula já vou mostrar os conceitos de segurança para desabilitar as Interface/Porta de Redes que não estão em uso no nossos Switches.
 
-As configurações do SPEED, DUPLEX e MDIX no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-021-ConfiguracaoSpeedDuplex-Switch.txt
+As configurações do Speed, Duplex e MDIX no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-021-ConfiguracaoSpeedDuplex-Switch.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-021.pkt
 
@@ -316,7 +316,7 @@ As configurações do Switchport e Port-Security no Switch Layer 3 e nos Switche
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-022.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=qA4Rl8sPKAk&t
 
 ## **023 Configuração do DHCP Snooping no Switch - Laboratório Prático Cisco CCNAv7 200-301**
 
