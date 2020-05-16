@@ -390,7 +390,7 @@ Link da vídeo aula:
 
 ## **030 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor, o Servidor de Registro e Gerenciamento de Dispositivos de Internet da Coisas, tem como objetivo de gerenciar todos os dispositivos de automação e gerenciamento analógcio ou digital da nossa rede, oferecendo a centralização e gerenciamento dos dispositvos e automatizando tarefas e monitoranto status e consumo da rede.
+Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor da Primeira Topologia, o Servidor de Registro e Gerenciamento de Dispositivos de Internet das Coisas, tem como objetivo gerenciar todos os dispositivos de automação e gerenciamento analógico ou digital da nossa rede, oferecendo a centralização e gerenciamento dos dispositvos e automatizando tarefas e monitorando status e consumo da rede.
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-030.pkt
 

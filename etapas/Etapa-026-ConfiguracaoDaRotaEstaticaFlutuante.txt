@@ -55,6 +55,13 @@ show ip interface brief
 			!OBSERVAÇÃO: o valor do bandwidth e determinado da seguinte forma: valor do clock rate / 1000 = valor kbps
 			bandwidth 2000
 			
+			!Configuração do Encapsulamento Back-to-Back da Interface Serial
+			!DICA: a configuração do encapsulamento da interface determina a forma como os dados serão transmitidos em Camada 2
+			!OBSERVAÇÃO: o encapsulamento serial padrão nos routers Cisco é o Cisco HDLC (High-Level Data Link Control)
+			!OBSERVAÇÃO: temos as opções de encapsulamento suportadas no Cisco Packet Tracer: Frame-Relay e PPP (Point-to-Point Protocol)
+			!OBSERVAÇÃO: essa configuração não é necessária, uma vez que a configuração padrão da interface serial é HDLC
+			encapsulation hdlc
+			
 			!Inicializando a Interface Serial do Router 1941-2
 			no shutdown
 			exit
@@ -80,6 +87,7 @@ enable
 			description Interface de Backup WAN com o Router 1941-2
 			ip address 10.0.0.5 255.255.255.252
 			bandwidth 2000
+			encapsulation hdlc
 			no shutdown
 			end
 		ip route 192.168.2.0 255.255.255.0 serial 0/0/0 5
