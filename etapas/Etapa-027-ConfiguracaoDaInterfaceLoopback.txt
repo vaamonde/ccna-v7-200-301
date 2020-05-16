@@ -24,16 +24,16 @@ show ip interface brief
 	
 		!Configurando a Interface de Loopback no Router 1941-2
 		!DICA: á Interface de Loopback é uma interface lógica e virtual em um Router ou Switch Layer 3 da Cisco
-		!OBSERVAÇÃO: uma interface de loopback não é uma interface física como a interface FastEthernet ou GigabitEthernet
+		!OBSERVAÇÃO: uma interface de loopback não é uma interface física como a interface FastEthernet, GigabitEthernet ou Serial
 		!OBSERVAÇÃO: as Interface de Loopback estão sempre ativas e sempre disponíveis, mesmo se outras interfaces físicas 
 		!no roteador estiverem inativas, utilizadas principalmente para teste de rede e para protocolos de roteamento dinâmico
 		!EXEMPLO: OSPF (Open Shortest Path First), BGP (Border Gateway Protocol), RSRB (Remote Source-Route Bridging) entre outros 
-		!DICA: a quantidade máxima de Interface de Loopback no Router ou Switch Cisco Packet Tracer e de 64 interfaces
+		!DICA: a quantidade máxima de Interface de Loopback no Router ou Switch do Cisco Packet Tracer e de 64 interfaces
 		!DICA: o Cisco IOS suporta interfaces de: Loopback, Null (Nula), Subinterfaces e Tunnel (Túnel)
 		interface loopback 0
 		
 			!Configurando a descrição da Interface de Loopback
-			description Interface de Loopback do Router 1941
+			description Interface de Loopback do Router 1941-2
 			ip address 10.0.0.253 255.255.255.252
 			no sutdown
 			end

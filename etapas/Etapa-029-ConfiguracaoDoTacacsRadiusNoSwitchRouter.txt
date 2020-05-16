@@ -68,6 +68,13 @@ enable
 		!DICA: configuração do endereço IPv4 do Servidor AAA e da chave de autenticação
 		!OBSERVAÇÃO: no Cisco Packet Tracer, os Switches Layer 2 e 3 são limitados somente a autenticação TACACS+
 		tacacs-server host 192.168.3.1 key pti
+		
+		!Configuração das Linhas Virtuais (VTY) do Switch Layer 3 3560
+		line vty 0 5
+			!Alteração da forma da autenticação de acesso das Linhas Virtuais
+			!DICA: alterar a forma da autenticação das Linhas, permite utilizar usuários Locais e Remotos
+			!OBSERVAÇÃO: na configuração do Script Base o padrão definido foi login local
+			login authentication default
 		end
 	
 !Salvando as configurações da memória RAM para a memória NVRAM
@@ -80,10 +87,12 @@ enable
 		aaa authentication login default group tacacs+ local
 		aaa authentication enable default group tacacs+ local
 		tacacs-server host 192.168.3.1 key pti
+		line vty 0 5
+			login authentication default
 		end
 write
 
-!QUARTA ETAPA: Configuração do Router 1941
+!QUARTA ETAPA: Configuração do Router 1941-2
 enable
 	configure terminal
 		aaa new-model
@@ -91,9 +100,12 @@ enable
 		aaa authentication login default group radius local
 		aaa authentication enable default group radius local
 		radius-server host 192.168.3.1 key pti
+		line vty 0 5
+			login authentication default
 		end
 write
 
 !Visualizando as configurações da memória RAM
 show running-config | section aaa
 show running-config | include tacacs
+show running-config | include radius

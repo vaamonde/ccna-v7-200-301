@@ -12,8 +12,8 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS EM
-!CONFIGURAÇÕES DE PLACA DE REDE SERIAL OU LINK DE WAN SERIAL, UMA VEZ QUE ESSA TECNOLOGIA JÁ CAIU EM DESUSO, 
-!OUTRAS TECNOLOGIAS COMO O: FRAME RELAY, FAX MODEM ISDN, ATM, X.25, HDLC, SDLC, PPP, ETC. TAMBÉM ENTRA NA LISTA.
+!CONFIGURAÇÕES DE PLACA DE REDE SERIAL OU LINK DE WAN SERIAL, UMA VEZ QUE ESSAS TECNOLOGIAS JÁ CAIRAM EM DESUSO, 
+!OUTRAS TECNOLOGIAS COMO: FRAME RELAY, FAX MODEM ISDN, ATM, X.25, HDLC, SDLC, PPP, ETC. TAMBÉM ENTRA NA LISTA.
 
 !PRIMEIRA ETAPA: Adicionando o Módulo HWIC-2T (High-Speed WAN Interface Card) nos Router 1941
 !Router 1941-2 será o DCE (Data Circuit-Terminating Equipment)
@@ -43,27 +43,27 @@ show ip interface brief
 			
 			!Configuração do Clock Rate (Frequência do Relógio) da Interface Serial
 			!DICA: o Clock Rate define a taxa de bits transmitida na interface serial, é uma definição que afeta o hardware
-			!OBSERVAÇÃO: o Clock Rate só está disponível em Interface Serial que estejam configuradas em modo DCE ou com Cabo DCE
+			!OBSERVAÇÃO: o Clock Rate só está disponível em Interface Serial que estejam configuradas no modo DCE ou com Cabo DCE
 			!OBSERVAÇÃO: configurar essa opção em Interface Serial DTE você recebe a mensagem: This command applies only to DCE interfaces
-			!OBSERVAÇÃO: velocidades da Porta Serial varia de: 300 até 4000000bps (Bits por Segundo - bps)
+			!OBSERVAÇÃO: velocidades da Porta Serial vária de: 300 até 4000000bps (Bits por Segundo - bps)
 			clock rate 2000000
 			
-			!Configuração do Bandwith (Largura de Banda) da Interface Serial
-			!DICA: o Bandwith é uma indicação de largura de banda que a interface é capaz de transmitir, não interface no hardware 
+			!Configuração do Bandwidth (Largura de Banda) da Interface Serial
+			!DICA: o Bandwidth é uma indicação de largura de banda que a interface é capaz de transmitir, não interface no hardware 
 			!OBSERVAÇÃO: essa informação e utilizada nos protocolos de roteamento dinâmica para determinar a Métrica (Custo) do Link
-			!OBSERVAÇÃO: configurações de largura de banda varia de: 1-10000000  (Kilobits - kbps)
-			!OBSERVAÇÃO: o valor do bandwith e determinado da seguinte forma: valor do clock rate / 1000 = valor kbps
+			!OBSERVAÇÃO: configurações de largura de banda varia de: 1 até 10000000  (Kilo Bits por Segundo - kbps)
+			!OBSERVAÇÃO: o valor do bandwidth e determinado da seguinte forma: valor do clock rate / 1000 = valor kbps
 			bandwidth 2000
 			
 			!Inicializando a Interface Serial do Router 1941-2
-			no sutdown
+			no shutdown
 			exit
 			
 		!Configurando a Rota Estática Fluante para atingir a Rede 192.168.1.0/24
 		!DICA: rota estática fluante é igual a rota estática normal, a diferença está no valor do AD (Distância Administrativa)
-		!DICA: rota estática fluante é muito utilizada em Links de Backup e Redundância de Conexão de WAN
+		!DICA: rota estática fluante é muito utilizada em Links de Backup e Redundância de Conexão de WAN e Internet
 		!OBSERVAÇÃO: quando o roteador aprende duas rotas para o mesmo destino, ele dará preferência para a menor Distância Administrativa
-		!OBSERVAÇÃO: os valores de Distância Administrativa pode variar de: 1 até 255
+		!OBSERVAÇÃO: os valores de Distância Administrativa pode variar de: 1 até 255 (Rota estática padrão tem AD de 1 (um))
 		!OBSERVAÇÃO: caso os AD's sejam iguais, será análisado os valores de Métrica (Custo) para o desempate e preferência da rota
 		!OBSERVAÇÃO: rota estática fluante para o mesmo destino não aparece na tabela de roteamento, somente quando a rota estática padrão estiver down
 		ip route 192.168.1.0 255.255.255.0 serial 0/0/0 5
@@ -80,7 +80,7 @@ enable
 			description Interface de Backup WAN com o Router 1941-2
 			ip address 10.0.0.5 255.255.255.252
 			bandwidth 2000
-			no sutdown
+			no shutdown
 			end
 		ip route 192.168.2.0 255.255.255.0 serial 0/0/0 5
 		ip route 192.168.3.0 255.255.255.0 serial 0/0/0 5
