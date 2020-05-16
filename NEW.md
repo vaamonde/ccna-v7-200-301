@@ -59,8 +59,8 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
 039 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
-040 Configuração do Endereçamento IPv6 Estático<br>
-041 Configuração do Endereçamento IPv6 Dinâmico<br>
+040 Configuração do Endereçamento IPv6 Estático SLAAC<br>
+041 Configuração do Servidor DHCPv6 Stateless<br>
 042 Configuração do Roteamento Estático, Padrão e Flutuante IPv6<br>
 043 Configuração da ACL Padrão BÁSICA nos Switches e Routers 
 
