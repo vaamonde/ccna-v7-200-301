@@ -328,7 +328,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=JjKn7deNcvU&t
 
-## **024 Configuração da Interface Roteada Switch 3560 - Laboratório Prático Cisco CCNAv7 200-301**
+## **024 Configuração da Interface Roteada Switch Layer 3 3560 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Interface (Porta de Rede) Roteada do Switch Layer 3 3560, utilizando o recurso de no switchport, transformando uma porta de switch em uma interface de rede, permitindo a configuração do endereçamento IPv4 ou IPv6, habilitando o recurso de ip routing, nosso Switch Layer 3 se torna uma roteador para a rede LAN, fazendo o roteamento na cada de hardware.
 
@@ -336,9 +336,9 @@ As configurações da Porta Roteada no Switch Layer 3 será feita utilizando o S
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-024.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=VqjnM85f-z4
 
-## **025 Configuração da Rota Estática e Padrão Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
+## **025 Configuração da Rota Estática e Padrão no Router e Switch Layer 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Rota Estática nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática é o método mais simples de roteamento que temos nos Roteadores e Switch Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes de pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos muito a rota padrão em Links de ISP, WAN, VPN, Internet, etc.
 

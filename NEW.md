@@ -30,19 +30,19 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 018 Configuração do SYSLOG no Switch e Router<br>
 019 Configuração do SNMP no Switch e Router<br>
 020 Configuração do WPA2 no Access Point 802.11-N<br>
-021 Configuração da Speed, Duplex e MDIX do Switch Layer 2 e 3<br>
-022 Configuração do Switchport e Port-Security do Switch Layer 2 e 3<br>
-023 Configuração do DHCP Snooping no Switch Layer 2 e 3
+021 Configuração do Speed, Duplex e MDIX no Switch Layer 2 e 3<br>
+022 Configuração do Switchport e Port-Security no Switch Layer 2 e 3<br>
+023 Configuração do DHCP Snooping no Switch Layer 2 e 3<br>
+024 Configuração da Interface Roteada do Switch Layer 3
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-024 Configuração da Interface Roteada do Switch Layer 3<br>
-025 Configuração da Rota Estática e Rota Padrão Switch e Router
-
-## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
+025 Configuração da Rota Estática e Rota Padrão Switch e Router<br>
 026 Configuração da Rota Estática Flutuante no Router 1941<br>
 027 Configuração da Interface de Loopback no Router 1941<br>
 028 Configuração do NetFlow no Router 1941<br>
-029 Configuração do Servidor de IoT Manager Registrator<br>
+029 Configuração do Servidor de IoT Manager Registrator
+
+## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 030 Configuração do RADIUS e TACACS+ no Switch e Router
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos é Iniciado a Criação dos Scripts, não Disponível no Github:**
