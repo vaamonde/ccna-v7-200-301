@@ -15,7 +15,7 @@
 !NETFLOW, HOJE UTILIZAMOS NOVAS TECNOLOGIAS PARA O MONITORAMENTO E GERENCIAMENTO DO FLUXO DE DADOS EM REDE
 
 !NetFlow (Fluxo da Rede) é um recurso que foi introduzido em roteadores Cisco cuja função é coletar características
-!e informações sobre o tráfego de redes IP, tanto na saída quanto na entrada de uma interface.
+!e informações sobre o tráfego de redes IPv4/IPv6, tanto na saída quanto na entrada de uma interface.
 
 !NetFlow foi implementado inicialmente pela Cisco, descrito na RFC 3954, sendo substituido pelo IPFIX (Internet Protocol
 !Flow Information eXport) com base na versão 9 do NetFlow em 2008
@@ -37,9 +37,9 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 	
-		!Configurando o endereço IPv4 do Destino do Coletor da Informações do NetFlow
+		!Configurando o endereço IPv4 do Destino do Coletor das Informações do NetFlow
 		!DICA: essa opção configura o endereço de destino do Coletor de Dados e Análise do NetFlow
-		!OBSERVAÇÃO: no Cisco Packet Tracer o endereço de Destino é somente em IPv4 e porta padrão UDP 9996
+		!OBSERVAÇÃO: no Cisco Packet Tracer o endereço de Destino é somente em IPv4 e porta padrão é UDP 9996
 		ip flow-export destination 192.168.3.1 9996
 		
 		!Configurando a origem dos dados do Fluxo do NetFlow
@@ -75,3 +75,9 @@ show running-config | section interface
 
 !Verificando as informações de Cache Local do Fluxo de Dados do NetFlow
 show ip cache flow
+
+!Testando a análise de Fluxo do Netflow nos Desktops da Redes 192.168.1.0/24 e 192.168.3.0/24
+ping -n 1000 192.168.1.1
+ftp 192.168.3.1
+www.vaamonde.pti
+nslookup vaamonde.pti

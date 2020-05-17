@@ -15,22 +15,18 @@
 !Acessando o modo EXEC Privilégiado
 enable
 
-!Verificando se o módulo foi adicionado corretamente
-show version
-show ip interface brief
-
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 	
 		!Configurando a Interface de Loopback no Router 1941-2
 		!DICA: á Interface de Loopback é uma interface lógica e virtual em um Router ou Switch Layer 3 da Cisco
 		!OBSERVAÇÃO: uma interface de loopback não é uma interface física como a interface FastEthernet, GigabitEthernet ou Serial
-		!OBSERVAÇÃO: as Interface de Loopback estão sempre ativas e sempre disponíveis, mesmo se outras interfaces físicas 
-		!no roteador estiverem inativas, utilizadas principalmente para teste de rede e para protocolos de roteamento dinâmico
+		!OBSERVAÇÃO: as Interface de Loopback estão sempre ativas e sempre disponíveis, mesmo se outras interfaces físicas no
+		!roteador estiverem inativas, utilizadas principalmente para teste de rede e para protocolos de roteamento dinâmico
 		!EXEMPLO: OSPF (Open Shortest Path First), BGP (Border Gateway Protocol), RSRB (Remote Source-Route Bridging) entre outros 
 		!DICA: a quantidade máxima de Interface de Loopback no Router ou Switch do Cisco Packet Tracer e de 64 interfaces (recomendada)
 		!OBSERVAÇÃO: no Cisco Packet Tracer temos as opção de criação de: 0 até 2.147.483.647 de interfaces
-		!DICA: o Cisco IOS suporta interfaces de: Loopback, Null (Nula), Subinterfaces e Tunnel (Túnel)
+		!DICA: o Cisco IOS suporta interfaces dos tipos de: Loopback, Null (Nula), Subinterfaces e Tunnel (Túnel)
 		interface loopback 0
 		
 			!Configurando a descrição da Interface de Loopback

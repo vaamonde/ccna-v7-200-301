@@ -13,12 +13,13 @@
 
 !OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS EM
 !CONFIGURAÇÕES DE PLACA DE REDE SERIAL OU LINK DE WAN SERIAL, UMA VEZ QUE ESSAS TECNOLOGIAS JÁ CAIRAM EM DESUSO, 
-!OUTRAS TECNOLOGIAS COMO: FRAME RELAY, FAX MODEM ISDN, ATM, X.25, HDLC, SDLC, PPP, ETC. TAMBÉM ENTRA NA LISTA.
+!OUTRAS TECNOLOGIAS COMO: FRAME RELAY, FAX MODEM ISDN (Integrated Services Digital Network), ATM (Asynchronous 
+!Transfer Mode), X.25, HDLC (High-Level Data Link Control), SDLC (Synchronous Data Link Control), PPP (Point to
+!Point Protocol), ETC. TAMBÉM ENTRAM NA LISTA.
 
 !PRIMEIRA ETAPA: Adicionando o Módulo HWIC-2T (High-Speed WAN Interface Card) nos Router 1941
-!Router 1941-2 será o DCE (Data Circuit-Terminating Equipment)
-!Router 1941-1 será o DTE (Data Terminal Equipment)
-!Nessa topologia não será configurado o Modem CSU/DSU (Channel Service Unit/Data Service Unit)
+!DICA: Router 1941-2 será o DCE (Data Circuit-Terminating Equipment) e Router 1941-1 será o DTE (Data Terminal Equipment)
+!OBSERVAÇÃO: nessa topologia não será configurado o Modem CSU/DSU (Channel Service Unit/Data Service Unit)
 
 !SEGUNDA ETAPA: Configuração do Router 1941-2
 !Acessando o modo EXEC Privilégiado
@@ -32,32 +33,32 @@ show ip interface brief
 	configure terminal
 	
 		!Configurando a Interface de Interligação com o Router 1941-1
-		!OBSERVAÇÃO: nomenclatura da Interface: 0 = primeiro módulo do Router, 0 = cartão HWIC e 0 = primeira porta 
+		!OBSERVAÇÃO: nomenclatura da Interface: 0 = primeiro módulo do Router, 0 = cartão HWIC e 0 = primeira interface serial
 		interface serial 0/0/0
 		
 			!Configurando a descrição da Interface
-			description Interface de Backup WAN com o Router 1941-1
+			description Interface de Backup WAN Serial com o Router 1941-1
 			
 			!Configuração do endereço IPv4 do Router 1941-2
 			ip address 10.0.0.6 255.255.255.252
 			
 			!Configuração do Clock Rate (Frequência do Relógio) da Interface Serial
 			!DICA: o Clock Rate define a taxa de bits transmitida na interface serial, é uma definição que afeta o hardware
-			!OBSERVAÇÃO: o Clock Rate só está disponível em Interface Serial que estejam configuradas no modo DCE ou com Cabo DCE
+			!OBSERVAÇÃO: o Clock Rate só está disponível em Interface Seriais que estejam configuradas no modo DCE ou com Cabo DCE
 			!OBSERVAÇÃO: configurar essa opção em Interface Serial DTE você recebe a mensagem: This command applies only to DCE interfaces
-			!OBSERVAÇÃO: velocidades da Porta Serial vária de: 300 até 4000000bps (Bits por Segundo - bps)
+			!OBSERVAÇÃO: velocidades da Interface Serial vária de: 300 até 4000000bps (Bits por Segundo - bps, maior Taxa: 4000Kbps ou 4Mbps)
 			clock rate 2000000
 			
 			!Configuração do Bandwidth (Largura de Banda) da Interface Serial
 			!DICA: o Bandwidth é uma indicação de largura de banda que a interface é capaz de transmitir, não interface no hardware 
-			!OBSERVAÇÃO: essa informação e utilizada nos protocolos de roteamento dinâmica para determinar a Métrica (Custo) do Link
-			!OBSERVAÇÃO: configurações de largura de banda varia de: 1 até 10000000  (Kilo Bits por Segundo - kbps)
-			!OBSERVAÇÃO: o valor do bandwidth e determinado da seguinte forma: valor do clock rate / 1000 = valor kbps
+			!OBSERVAÇÃO: essa informação e utilizada nos protocolos de roteamento dinâmico para determinar a Métrica (Custo) do Link
+			!OBSERVAÇÃO: as configurações de largura de banda vária de: 1 até 10000000  (Kilo Bits por Segundo - Kbps ou 10.000Mbps)
+			!OBSERVAÇÃO: o valor do bandwidth e determinado da seguinte forma: valor do clock rate / 1000 = valor Kbps
 			bandwidth 2000
 			
-			!Configuração do Encapsulamento Back-to-Back da Interface Serial
+			!Configuração do Encapsulamento Back-to-Back (Ida e Volta) da Interface Serial
 			!DICA: a configuração do encapsulamento da interface determina a forma como os dados serão transmitidos em Camada 2
-			!OBSERVAÇÃO: o encapsulamento serial padrão nos routers Cisco é o Cisco HDLC (High-Level Data Link Control)
+			!OBSERVAÇÃO: o encapsulamento serial padrão nos routers Cisco é o HDLC (High-Level Data Link Control)
 			!OBSERVAÇÃO: temos as opções de encapsulamento suportadas no Cisco Packet Tracer: Frame-Relay e PPP (Point-to-Point Protocol)
 			!OBSERVAÇÃO: essa configuração não é necessária, uma vez que a configuração padrão da interface serial é HDLC
 			encapsulation hdlc
@@ -68,11 +69,12 @@ show ip interface brief
 			
 		!Configurando a Rota Estática Fluante para atingir a Rede 192.168.1.0/24
 		!DICA: rota estática fluante é igual a rota estática normal, a diferença está no valor do AD (Distância Administrativa)
-		!DICA: rota estática fluante é muito utilizada em Links de Backup e Redundância de Conexão de WAN e Internet
+		!DICA: rota estática fluante é muito utilizada em Links de Backup e Redundância nas Conexões de WAN ou Internet
 		!OBSERVAÇÃO: quando o roteador aprende duas rotas para o mesmo destino, ele dará preferência para a menor Distância Administrativa
 		!OBSERVAÇÃO: os valores de Distância Administrativa pode variar de: 1 até 255 (Rota estática padrão tem AD de 1 (um))
 		!OBSERVAÇÃO: caso os AD's sejam iguais, será análisado os valores de Métrica (Custo) para o desempate e preferência da rota
-		!OBSERVAÇÃO: rota estática fluante para o mesmo destino não aparece na tabela de roteamento, somente quando a rota estática padrão estiver down
+		!OBSERVAÇÃO: rota estática fluante para o mesmo destino não aparece na tabela de roteamento, somente quando a interface ou endereço
+		!de próximo salto estiver inacessível ou down
 		ip route 192.168.1.0 255.255.255.0 serial 0/0/0 5
 		end
 	
@@ -84,7 +86,7 @@ write
 enable
 	configure terminal
 		interface serial 0/0/0
-			description Interface de Backup WAN com o Router 1941-2
+			description Interface de Backup WAN Serial com o Router 1941-2
 			ip address 10.0.0.5 255.255.255.252
 			bandwidth 2000
 			encapsulation hdlc
