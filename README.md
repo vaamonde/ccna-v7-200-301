@@ -326,7 +326,7 @@ As configurações do DHCP Snooping/Spoofing no Switch Layer 3 e nos Switches La
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-023.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=JjKn7deNcvU&t
 
 ## **024 Configuração da Interface Roteada Switch 3560 - Laboratório Prático Cisco CCNAv7 200-301**
 
@@ -378,19 +378,19 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **029 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
+## **029 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting), essa configuração será feita no Servidor, utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
-
-As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-029-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
+Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor da Primeira Topologia, o Servidor de Registro e Gerenciamento de Dispositivos de Internet das Coisas, tem como objetivo gerenciar todos os dispositivos de automação e gerenciamento analógico ou digital da nossa rede, oferecendo a centralização e gerenciamento dos dispositvos e automatizando tarefas e monitorando status e consumo da rede.
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-029.pkt
 
 Link da vídeo aula:
 
-## **030 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
+## **030 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor da Primeira Topologia, o Servidor de Registro e Gerenciamento de Dispositivos de Internet das Coisas, tem como objetivo gerenciar todos os dispositivos de automação e gerenciamento analógico ou digital da nossa rede, oferecendo a centralização e gerenciamento dos dispositvos e automatizando tarefas e monitorando status e consumo da rede.
+Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting), essa configuração será feita no Servidor, utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
+
+As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-030-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-030.pkt
 
