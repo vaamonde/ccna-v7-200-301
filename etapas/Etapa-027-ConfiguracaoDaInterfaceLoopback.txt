@@ -28,14 +28,15 @@ show ip interface brief
 		!OBSERVAÇÃO: as Interface de Loopback estão sempre ativas e sempre disponíveis, mesmo se outras interfaces físicas 
 		!no roteador estiverem inativas, utilizadas principalmente para teste de rede e para protocolos de roteamento dinâmico
 		!EXEMPLO: OSPF (Open Shortest Path First), BGP (Border Gateway Protocol), RSRB (Remote Source-Route Bridging) entre outros 
-		!DICA: a quantidade máxima de Interface de Loopback no Router ou Switch do Cisco Packet Tracer e de 64 interfaces
+		!DICA: a quantidade máxima de Interface de Loopback no Router ou Switch do Cisco Packet Tracer e de 64 interfaces (recomendada)
+		!OBSERVAÇÃO: no Cisco Packet Tracer temos as opção de criação de: 0 até 2.147.483.647 de interfaces
 		!DICA: o Cisco IOS suporta interfaces de: Loopback, Null (Nula), Subinterfaces e Tunnel (Túnel)
 		interface loopback 0
 		
 			!Configurando a descrição da Interface de Loopback
 			description Interface de Loopback do Router 1941-2
 			ip address 10.0.0.253 255.255.255.252
-			no sutdown
+			no shutdown
 			end
 write
 
@@ -53,3 +54,4 @@ show running-config | section interface
 show ip interface brief
 ping 10.0.0.253
 tracert 10.0.0.252
+ssh -l admin 10.0.0.253

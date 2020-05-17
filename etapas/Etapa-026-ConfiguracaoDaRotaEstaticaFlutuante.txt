@@ -89,9 +89,10 @@ enable
 			bandwidth 2000
 			encapsulation hdlc
 			no shutdown
-			end
+			exit
 		ip route 192.168.2.0 255.255.255.0 serial 0/0/0 5
 		ip route 192.168.3.0 255.255.255.0 serial 0/0/0 5
+		end
 write
 
 !Visualizando as configurações da memória RAM
@@ -102,12 +103,10 @@ show running-config | section ip route
 show controller serial 0/0/0
 show ip interface brief
 show ip route
+show ip route connected
 show ip route static
 show ip route summary
-show ip route connected
 
 !Testando a conexão nos Desktops da Rede com o Protocolo ICMP
-ping 192.168.1.1
-ping 192.168.3.1
+ping -n 1000 192.168.1.1
 tracert 192.168.1.1
-tracert 192.168.3.1
