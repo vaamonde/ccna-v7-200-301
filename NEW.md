@@ -67,7 +67,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
 ACL Standard, ACL Extended, Static NAT, Dynamic NAT, Port Address Translation PAT, Overload NAT<br>
 EIGRP, OSPF, BGP, IS-IS, WLC, FHRP, HSVRP, GLBP, Etherchannel PAgP, Etherchannel LACP, xDSL, <br>
-PPP, PPPoE, Frame-Relay, VPN, MPLS, Firewall, QoS, PYTHON, JSON, SD-WAN, etc
+PPP, PPPoE, Frame-Relay, VPN, MPLS, Firewall, QoS, PYTHON, JSON, SD-WAN, STP Pruning, etc
 
 ## **ETAPA-07: Temas de Aulas que não fazem parte do CCNAv7, não Disponível no Github:**
 VoIP, ARDUINO, IoT/IoE, ASA, DSL, CABLE WAN, WAN Emulator, 3/4G Celular, MERAKI, <br>
