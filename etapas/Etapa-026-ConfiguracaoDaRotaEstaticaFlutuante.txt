@@ -33,7 +33,7 @@ show ip interface brief
 	configure terminal
 	
 		!Configurando a Interface de Interligação com o Router 1941-1
-		!OBSERVAÇÃO: nomenclatura da Interface: 0 = primeiro módulo do Router, 0 = cartão HWIC e 0 = primeira interface serial
+		!OBSERVAÇÃO: nomenclatura da Interface: 0 = primeiro módulo/slot do Router, 0 = cartão HWIC e 0 = primeira interface serial
 		interface serial 0/0/0
 		
 			!Configurando a descrição da Interface
@@ -50,7 +50,7 @@ show ip interface brief
 			clock rate 2000000
 			
 			!Configuração do Bandwidth (Largura de Banda) da Interface Serial
-			!DICA: o Bandwidth é uma indicação de largura de banda que a interface é capaz de transmitir, não interface no hardware 
+			!DICA: o Bandwidth é uma indicação de largura de banda que a interface é capaz de transmitir, é uma definição que não interface no hardware 
 			!OBSERVAÇÃO: essa informação e utilizada nos protocolos de roteamento dinâmico para determinar a Métrica (Custo) do Link
 			!OBSERVAÇÃO: as configurações de largura de banda vária de: 1 até 10000000  (Kilo Bits por Segundo - Kbps ou 10.000Mbps)
 			!OBSERVAÇÃO: o valor do bandwidth e determinado da seguinte forma: valor do clock rate / 1000 = valor Kbps
