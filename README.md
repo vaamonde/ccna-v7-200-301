@@ -340,13 +340,13 @@ Link da vídeo aula: https://www.youtube.com/watch?v=VqjnM85f-z4
 
 ## **025 Configuração da Rota Estática e Padrão no Router e Switch Layer 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração da Rota Estática nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática é o método mais simples de roteamento que temos nos Roteadores e Switch Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes de pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos muito a rota padrão em Links de ISP, WAN, VPN, Internet, etc.
+Nessa aula, vou fazer a configuração da Rota Estática nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática é o método mais simples de roteamento que temos nos Roteadores e Switch Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes com pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos muito a rota padrão em Links de ISP (Internet Service Provider), WAN (Wide Área Network), VPN (Virtual Private Networ), Internet, etc.
 
 As configurações da Rota Estática e Padrão no Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-025-ConfiguracaoDaRotaEstaticaPadrao.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-025.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=i2DRjhiHewA
 
 ## **026 Configuração da Rota Estática Flutuante no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
