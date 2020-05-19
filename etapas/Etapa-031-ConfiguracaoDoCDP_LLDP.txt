@@ -1,0 +1,107 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 19/05/2020
+!Data de atualização: 19/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!CDP (Cisco Discovery Portocol) é um protocolo proprietário da camada de ligação de dados desenvolvido pela Cisco
+!que tem como principal função a descoberta de equipamentos na rede, facilitando a compreensão da topologia da rede
+!e de sua arquitetura. O CDP se encontra ativo por padrão nos Switches e Routes da Cisco
+
+!O CDP envia pacotes (packets CDP) a cada: 60 segundos, trabalha com tempo de espera (hold time) de 180 segundos e
+!envia anúncios (advertisements) utilizando o CDPv2 habilitado por padrão.
+
+!LLDP (Link-Layer Discovery Protocol) tem a mesma finalidade do CDP, com a diferença de ser um padrão da indústria
+!(IEEE 802.1AB) que pode ser implementado por qualquer fabricante, o que faz dele uma solução bem mais flexível do
+!que o CDP em ambientes com dispositivos de múltiplos fabricantes. O LLDP não se encontra ativo nos Switches e 
+!Routes da Cisco.
+
+!O LLDP envia anúncios (advertisements) a cada 30 segundos, trabalha com o tempo de espera de anúncios (hold time
+!advertisements) de 120 segundos e o atraso de inicialização de interface e de 2 segundos..
+
+!OBSERVAÇÃO: Tanto o CDP como o LLDP pode ser habilitado Globalmente (configure terminal) ou somente na Interface
+!que se deseja enviar e receber informações sobre os equipamentos vizinho (neighbors).
+
+!PRIMEIRA ETAPA: Configuração do CDP e LLDP nos Switches Layer 2 2960
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+
+	!Habilitando o recurso de descoberta de vizinhos CDP
+	cdp run
+
+	!Configurando os anúncios do CDP na versão 2
+	!DICA:  a versão 2 do CDP permite verificar informações de VLAN Nativa, Domínio VTP e o Modo da Porta (Duplex)
+	!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de Configuração da versão 2 do CDP não está disponível
+	!cdp advertise-v2
+
+	!Habilitando o recurso de descoberta de vizinhos LLDP
+	lldp run
+
+	!Configurando o recurso de TLV (Type, Lenght, Value) do LLDP
+	!DICA: o LLDP oferece uma flexibilidade maior em termos de quantidade de informações que podem ser enviadas
+	!DICA: o LLDP utiliza o TLV para codificar informações que serão enviadas e recebidas, customizando a quantidade
+	!de dados enviados, filtando apenas as informações importantes
+	!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de TLV do LLDP não está disponível
+	!lldp tlv-select ? 
+	end
+write
+
+!SEGUNDA ETAPA: Configuração do CDP e LLDP no Switch Layer 3 3560
+enable
+	configure terminal
+		cdp run
+		lldp run
+		end
+write
+
+!TERCEIRA ETAPA: Configuração do CDP e LLDP no Router 1941-2
+enable
+	configure terminal
+		
+		!Desabilitando os recursos de descoberta do CDP e LLDP globalmente
+		!DICA: em Roteadores que estão diretamente conectados na Internet ou em Redes desconhecidas, e recomendado 
+		!desabilitar os recursos de CDP ou LLDP para não enviar informações sobre o IOS, prejudicando a segurança da rede
+		no cdp run
+		no lldp run
+
+		!Configurando a Interface de Gateway da Rede LAN
+		interface gigabitEthernet 0/0
+
+			!Habilitando o recurso de descoberta de vizinhos CDP na Interface
+			!DICA: o CDP permite enviar dados de informações entre vizinhos independente do enlace físico
+			!EXEMPLO: conexões Ethernet (FastEthernet, GigabitEthernet), Serial, etc
+			cdp enable
+
+			!!Habilitando o recurso de enviar e receber informações de descoberta de vizinhos LLDP na Interface
+			!DICA: diferente do CDP, no LLDP existe a possibilidade de controlar o fluxo de dados enviados entre os vizinhos
+			!OBSERVAÇÃO: o LLDP só funciona em enlace Ethernet (FastEthernet, GigabitEthernet)
+			lldp receive
+			lldp transmit
+			end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section cdp
+show running-config | section lldp
+show running-config | section interface
+
+!Visualizando informações do CDP e LLDP
+show cdp
+show cdp entry *
+show cdp entry Router
+show cdp neighbors
+show cdp neighbors detail
+show cdp interface gigabitEthernet 0/0
+show lldp
+show lldp neighbors
+show lldp neighbors detail

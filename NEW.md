@@ -43,10 +43,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 029 Configuração do Servidor de IoT Manager Registrator
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-030 Configuração do RADIUS e TACACS+ no Switch e Router
+030 Configuração do RADIUS e TACACS+ no Switch e Router<br>
+031 Configuração do Protocolo CDP e LLDP no Switch e Router
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-031 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
 032 Configuração do Dynamic ARP Inspection no Switch Layer 2 e 3<br>
 033 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia
