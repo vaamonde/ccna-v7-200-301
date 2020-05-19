@@ -45,7 +45,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 030 Configuração do RADIUS e TACACS+ no Switch e Router
 
-## **ETAPA-03: Aulas Finalizadas os Estudos é Iniciado a Criação dos Scripts, não Disponível no Github:**
+## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
 031 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
 032 Configuração do Dynamic ARP Inspection no Switch Layer 2 e 3<br>
 033 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3<br>
@@ -53,8 +53,8 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
 035 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
-036 Configuração da VLAN e Trunk no Switch Layer 2 e 3<br>
-037 Configuração do Router-on-Stick no Router 2911<br>
+036 Configuração da VLAN e Trunk BÁSICO no Switch Layer 2 e 3<br>
+037 Configuração do Router-on-a-Stick no Router 2911<br>
 038 Configuração do DHCP Server no Router 2911
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**

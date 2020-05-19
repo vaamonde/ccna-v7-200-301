@@ -48,7 +48,7 @@ enable
 		ip flow-export source gigabitEthernet 0/0
 		
 		!Configurando a versão do NetFlow
-		!DICA: é importante configurar a versão do NetFlow, essa opção habilitar os recursos existem dessa versão
+		!DICA: é importante configurar a versão do NetFlow, essa opção habilitar os recursos existente dessa versão
 		!OBSERVAÇÃO: no Cisco Packet Tracer e limitado somente na versão 9 do NetFlow, sem suporte a versão v10 IPFIX
 		ip flow-export version 9
 		
