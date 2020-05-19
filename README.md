@@ -395,3 +395,13 @@ As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Scri
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-030.pkt
 
 Link da vídeo aula:
+
+## **031 Configuração do CDP e LLDP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do CDP (Cisco Discovery Portocol) que é um protocolo proprietário da camada de ligação de dados desenvolvido pela Cisco que tem como principal função a descoberta de equipamentos na rede, facilitando a compreensão da topologia da rede e de sua arquitetura, também a configuração do LLDP (Link-Layer Discovery Protocol) tem a mesma finalidade do CDP, com a diferença de ser um padrão da indústria (IEEE 802.1AB) que pode ser implementado por qualquer fabricante, o que faz dele uma solução bem mais flexível do que o CDP em ambientes com dispositivos de múltiplos fabricantes.
+
+As configurações do CDP e LLDP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-031-ConfiguracaoDoCDP_LLDP.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-031.pkt
+
+Link da vídeo aula:
