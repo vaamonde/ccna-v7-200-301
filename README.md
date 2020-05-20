@@ -396,9 +396,9 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula:
 
-## **031 Configuração do do Dynamic ARP Inspection DAI nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
+## **031 Configuração do Dynamic ARP Inspection DAI nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Dynamic ARP Inspection DAI (Inspeção Dinâmica do ARP) nos Switches Layer 2 e 3, o DAI é um recurso de segurança que protege o o Protocolo ARP (Address Resolution Protocol), contra possiveis vulnerábilidades de ataques como ARP Poisoning (Envenenamento por ARP). O DAI trabalha com conjunto com o DHCP Snooping, quando o DAI está ativo, o Switch descarta os pacotes ARP se o endereço MAC e IP do remetente não correspondem a uma entrada válida no banco de dados do DHCP Snooping. 
+Nessa aula, vou fazer a configuração do Dynamic ARP Inspection DAI (Inspeção Dinâmica do ARP) nos Switches Layer 2 e 3, o DAI é um recurso de segurança que protege o Protocolo ARP (Address Resolution Protocol) contra possíveis vulnerabilidades de ataques como ARP Poisoning (Envenenamento por ARP), o DAI trabalha em conjunto com o DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação), quando o DAI está habilitado o Switch descarta os pacotes ARP se o endereço MAC e IP do remetente não correspondem a uma entrada válida no banco de dados do DHCP Snooping. 
 
 As configurações do Dynamic ARP Inspection nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-031-ConfiguracaoDoDynamicARP_Inspection.txt
 
@@ -408,7 +408,7 @@ Link da vídeo aula:
 
 ## **032 Configuração do STP e RSTP BÁSICO nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do STP (Spanning Tree Protocol) e do RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan rapid spanning tree mode) nos Switches Layer 2 e 3, O STP é um protocolo da camada 2 que é executado em interligações dos Switches. A especificação para o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede. O protocolo RSTP detecta topologias de rede para fornecer uma convergência mais rápida e para criar uma rede sem os laços de loop de camada 2. 
+Nessa aula, vou fazer a configuração do STP (Spanning Tree Protocol) e do RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan rapid spanning tree mode) nos Switches Layer 2 e 3, o STP é um protocolo da camada 2 que é executado em interligações dos Switches na nossa topologia. A especificação para o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede. O protocolo RSTP detecta topologias de rede para fornecer uma convergência mais rápida em relação ao STP e cria uma rede sem loop de camada 2. 
 
 As configurações do STP e RSTP BÁSICO nos Switche Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-032-ConfiguracaoDoSTP_RSTP.txt
 
