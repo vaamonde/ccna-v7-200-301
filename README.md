@@ -398,20 +398,30 @@ Link da vídeo aula:
 
 ## **031 Configuração do do Dynamic ARP Inspection DAI nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do do Dynamic ARP Inspection DAI (Inspeção Dinâmica do ARP) nos Switches Layer 2 e 3, o DAI é um recurso de segurança que protege o o Protocolo ARP (Address Resolution Protocol), contra possiveis vulnerábilidades de ataques como ARP Poisoning (Envenenamento por ARP). O DAI trabalha com conjunto com o DHCP Snooping, quando o DAI está ativo, o Switch descarta os pacotes ARP se o endereço MAC e IP do remetente não correspondem a uma entrada válida no banco de dados do DHCP Snooping. 
+Nessa aula, vou fazer a configuração do Dynamic ARP Inspection DAI (Inspeção Dinâmica do ARP) nos Switches Layer 2 e 3, o DAI é um recurso de segurança que protege o o Protocolo ARP (Address Resolution Protocol), contra possiveis vulnerábilidades de ataques como ARP Poisoning (Envenenamento por ARP). O DAI trabalha com conjunto com o DHCP Snooping, quando o DAI está ativo, o Switch descarta os pacotes ARP se o endereço MAC e IP do remetente não correspondem a uma entrada válida no banco de dados do DHCP Snooping. 
 
-As configurações do do Dynamic ARP Inspection nos Switches Layer 2 e 3 será feita utilizando o Script: 
+As configurações do Dynamic ARP Inspection nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-031-ConfiguracaoDoDynamicARP_Inspection.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-031.pkt
 
 Link da vídeo aula:
 
-## **032 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
+## **032 Configuração do STP e RSTP BÁSICO nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do STP (Spanning Tree Protocol) e do RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan rapid spanning tree mode) nos Switches Layer 2 e 3, O STP é um protocolo da camada 2 que é executado em interligações dos Switches. A especificação para o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede. O protocolo RSTP detecta topologias de rede para fornecer uma convergência mais rápida e para criar uma rede sem os laços de loop de camada 2. 
+
+As configurações do STP e RSTP BÁSICO nos Switche Layer 2 e 3 será feita utilizando o Script: 
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-032.pkt
+
+Link da vídeo aula:
+
+## **033 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting), essa configuração será feita no Servidor, utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
 
-As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-031-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
+As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-033-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-032.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-033.pkt
 
 Link da vídeo aula:

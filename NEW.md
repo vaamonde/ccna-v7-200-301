@@ -45,11 +45,11 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 030 Configuração do Protocolo CDP e LLDP no Switch e Router<br>
 031 Configuração do Dynamic ARP Inspection no Switch Layer 2 e 3<br>
-032 Configuração do RADIUS e TACACS+ no Switch e Router
+032 Configuração do STP e RSTP BÁSICO nos Switche Layer 2 e 3<br>
+033 Configuração do RADIUS e TACACS+ no Switch e Router<br>
+034 Interligando uma Nova Rede WAN Fiber na Topologia
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-033 Configuração do STP e RSTP BÁSICO no Switch Layer 2 e 3<br>
-034 Interligando uma Nova Rede WAN Fiber na Topologia
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
 035 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>

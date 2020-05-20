@@ -1,0 +1,38 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 12/05/2020
+!Data de atualização: 12/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!O STP (Spanning Tree Protocol) é um protocolo da camada 2 que é executado em interligações dos Switches, a especificação para
+!o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede.
+
+!O RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan Rapid Spanning Tree Mode) o protocolo RSTP detecta topologias de rede para fornecer
+!uma convergência mais rápida e para criar uma rede sem os laços de loop de camada 2.
+
+!PRIMEIRA ETAPA: Configuração do Switch Layer 3 3560
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+			end
+	
+!Salvando as configurações da memória RAM para a memória NVRAM
+write
+
+!SEGUNDA ETAPA: Configuração dos Switches Layer 2 2960
+enable
+	configure terminal 
+		end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section 
