@@ -34,11 +34,11 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 022 Configuração do Switchport e Port-Security no Switch Layer 2 e 3<br>
 023 Configuração do DHCP Snooping no Switch Layer 2 e 3<br>
 024 Configuração da Interface Roteada do Switch Layer 3<br>
-025 Configuração da Rota Estática e Rota Padrão Switch e Router
+025 Configuração da Rota Estática e Rota Padrão Switch e Router<br>
+026 Configuração da Rota Estática Flutuante no Router 1941<br>
+027 Configuração da Interface de Loopback no Router 1941
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-026 Configuração da Rota Estática Flutuante no Router 1941<br>
-027 Configuração da Interface de Loopback no Router 1941<br>
 028 Configuração do NetFlow no Router 1941<br>
 029 Configuração do Servidor de IoT Manager Registrator
 
@@ -50,10 +50,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
+035 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
+036 Configuração da VLAN e Trunk BÁSICO no Switch Layer 2 e 3
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-035 Configuração do VTP Server e Client no Switch Layer 2 e 3<br>
-036 Configuração da VLAN e Trunk BÁSICO no Switch Layer 2 e 3<br>
 037 Configuração do Router-on-a-Stick no Router 2911<br>
 038 Configuração do DHCP Server no Router 2911
 
@@ -62,7 +62,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 040 Configuração do Endereçamento IPv6 Estático SLAAC<br>
 041 Configuração do Servidor DHCPv6 Stateless<br>
 042 Configuração do Roteamento Estático, Padrão e Flutuante IPv6<br>
-043 Configuração da ACL Padrão BÁSICA nos Switches e Routers 
+043 Configuração da ACL Standard BÁSICA nos Switches e Routers 
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
 ACL Standard, ACL Extended, Static NAT, Dynamic NAT, Port Address Translation PAT, Overload NAT<br>

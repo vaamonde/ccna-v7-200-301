@@ -11,28 +11,61 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O STP (Spanning Tree Protocol) é um protocolo da camada 2 que é executado em interligações dos Switches, a especificação para
-!o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede.
+!O STP (Spanning Tree Protocol) é um protocolo da camada 2 que é executado em interligações dos Switches Layer 2 e 3, a especificação
+!para o STP é IEEE 802.1D (a mais recente especificação é IEEE 802.1Q), o propósito principal do STP é assegurar-se que você não crie
+!ou exista caminhos redundantes (loop) na rede.
 
-!O RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan Rapid Spanning Tree Mode) o protocolo RSTP detecta topologias de rede para fornecer
-!uma convergência mais rápida e para criar uma rede sem os laços de loop de camada 2.
+!O RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan Rapid Spanning Tree Mode) é o protocolo de detecção de topologias de rede que fornecer
+!uma convergência mais rápida para criar uma rede sem os laços de loop de camada 2, padronizado pelo IEEE 802.1w
+
+!O STP cria uma árvore de Switches presentes na rede e elege o Switch de Referência, a partir do qual será criada a árvore, esse Switch
+!é denominado de Ponte Raiz (Root Bridge). A eleição da Root Bridge é feita com base na Prioridade (Priority) e também com base no menor
+!endereço MAC-Address, em uma rede por padrão, pode existir apenas um Switch Root Bridge na Topologia.
+
+!A prioridade padrão do STP nos Switches da Cisco é: 32768 acrescentado mais 1 (um) que faz referência a indentificação do sistema
+!(ID sys-id-ext) com base no valor da VLAN Padrão ou VLAN configurada, EXEMPLO: Bridge ID Priority: 32769 (priority 32768 sys-id-ext 1)
+
+!As portas de interligações com outros Switches da Rede do Root Bridge são denominadas: Portas Designadas (Designated Port - DP)
+!As portas de interligações com outros Switches da Rede que não são Root Bridge são denominadas: Porta Raiz (Root Port - RP)
+
+!A escolha do Root Port e feita com base no menor custo da Interface (Largura de Banda) para o Switch Root Bridge, o custo do STP é:
+!Porta de 10Mbit/s = 100 | Porta de 100Mbit/s = 19, Porta de 1 Gbit/s = 4 e Porta de 10 Gbit/s = 2
+
+!A interface escolhida como Root Port e colocada no Modo de Encaminhamento (Forwarding - FW)
+!As interfaces que não são consideradas Designated Port são colocadas no Modo de Bloqueio (Blocked Port - BP)
+
+!Os status das Portas do STP são: Disabled (), Blocking (), Listening (), Learning (), e Forwarding ()
+!Os tempos padrão utlizados pelo STP são: 2s Hello (), 15s Forward Delay () e 20s Max Age ()
+!O tempo de convergência do Protocolo STP pode variar de: 30 até 50 segundos, dependendo do tamanho da árvore da Topologia do STP
+!O tempo de convergência do RSTP varia em torno de 2 segundos em relação ao tempo de convergência do padrão do STP
 
 !PRIMEIRA ETAPA: Configuração do Switch Layer 3 3560
-!Acessando o modo EXEC Privilégiado
 enable
-
-	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
-			end
-	
-!Salvando as configurações da memória RAM para a memória NVRAM
+
+		!Configurando o STP no Switch Layer 3 para ser a Raiz Primária
+		!DICA: 
+		!OBSERVAÇÃO: na configuração da prioridade do STP da VLAN do Switch, temos as opções: 0 até 61440 (com incremento de 4096)
+		!OBSERVAÇÃO: na configuração do Switch Raiz do STP, temos as opções de: primary ou secondary
+		!OBSERVAÇÃO: podemos adicionar mais VLAN's para a arvore do STP, utilizando as mesmas opções do comando ip arp inspection ou dhcp snooping
+		!EXEMPLO: spanning-tree vlan 10 20 30 | spanning-tree vlan 10-30 | spanning-tree vlan 1,5,8,10-30
+		spanning-tree vlan 1 root primary
+
+		!Configurando o RSTP para o modo Rapid-PVST
+		!DICA: 
+		!OBSERVAÇÃO: a configuração padrão do Modo do STP dos Switches da Cisco e: 
+		!OBSERVAÇÃO: no Cisco Packet Tracer temos os suporte de Modos do STP: pvst ou rapid-pvst 
+		!IMPORTANTE: caso você altere o modo do STP em um Switch na rede e recomendado manter a padronização em todos os Switches para o mesmo Modo
+		spanning-tree mode rapid-pvst
+		end
 write
 
 !SEGUNDA ETAPA: Configuração dos Switches Layer 2 2960
 enable
-	configure terminal 
+	configure terminal
+		spanning-tree mode rapid-pvst
 		end
 write
 
 !Visualizando as configurações da memória RAM
-show running-config | section 
+show running-config | section spanning-tree

@@ -366,7 +366,7 @@ As configurações da Interface de Loopback no Router será feita utilizando o S
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-027.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=vb4ZZwBBlCk
 
 ## **028 Configuração do NetFlow no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
@@ -410,7 +410,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração do STP (Spanning Tree Protocol) e do RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan rapid spanning tree mode) nos Switches Layer 2 e 3, O STP é um protocolo da camada 2 que é executado em interligações dos Switches. A especificação para o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede. O protocolo RSTP detecta topologias de rede para fornecer uma convergência mais rápida e para criar uma rede sem os laços de loop de camada 2. 
 
-As configurações do STP e RSTP BÁSICO nos Switche Layer 2 e 3 será feita utilizando o Script: 
+As configurações do STP e RSTP BÁSICO nos Switche Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-032-ConfiguracaoDoSTP_RSTP.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-032.pkt
 
