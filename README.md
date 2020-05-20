@@ -96,11 +96,20 @@ TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
 ## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNAv7 200-301:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
 
-**ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dica de alunos;<br>
-**DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração ou para o exame;<br>
+**ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dicas de alunos;<br>
+**DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração no exame;<br>
 **ERRATA:** correções dos script, correções de falas, correções de configurações, etc;<br>
-**EXEMPLO:** exemplos de comandos ou configuações das opções de DICAS ou OBSERVAÇÃO;<br>
-**OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco de adicionar informações extras da tecnologia ou da certificação.
+**EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou OBSERVAÇÃO;<br>
+**IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação.<>
+**OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
+
+## **000 Apresentação do Curso, da Nova Certificação CCNAv7 Exame 200-301, Download e Instalação do Cisco Packet Tracer v7.3**
+
+Nessa aula, será apresentado o Treinamento Oficial da Certificação da Cisco o CCNAv7 do Netacad, divido em três módulos: CCNAv7 Switching, Routing, and Wireless (Switch, Roteador e Rede Sem-Fio) CCNAv7 Introduction to Networks (Introdução a Redes de Computadores), CCNAv7 Enterprise Networking, Security and Automation (Redes Empresariais, Segurança e Automação), apresentação do novo Exame 200-301, download do Cisco Packet Tracer versão 7.3.
+
+Link para download das versões do Cisco Packet Tracer no MEGA.nz: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI 
+
+Link da vídeo aula: https://www.youtube.com/watch?v=4EIO6Ma0foA&t
 
 ## **001 Configuração Base do Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
