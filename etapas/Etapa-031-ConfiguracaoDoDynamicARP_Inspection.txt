@@ -1,0 +1,68 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 19/05/2020
+!Data de atualização: 19/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!O DAI (Dynamic ARP Inspection - Inspeção Dinâmica do ARP) é um recurso de segurança que válida os pacotes ARP (Address Resolution Protocol)
+!em uma rede. A DAI permite que um administrador de rede intercepte, registre e descarte pacotes ARP com endereço MAC inválido para ligações
+!de endereço IP. Esse recurso protege a rede de ataques do tipo Man-in-the-Middle (Homem do Meio) ou ARP Poisoning (Envenenamento do ARP).
+
+!O DAI determina a validade de um pacote ARP com base no endereço MAC válido para as ligações de endereço IP armazenadas em um banco de dados
+!de endereços confiáveis. Esse banco de dados é criado em tempo de execução pelo DHCP Snooping, desde que esteja ativado nas VLANs dos Switches.
+
+!O DAI trabalha igual e integrado com o DHCP Snooping, monitorando portas Confiáveis (Trusted) ou Não Confiáveis (Untrusted)
+
+!PRIMEIRA ETAPA: Configuração do Dynamic ARP Inspection no Switch Layer 3 3560
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+
+		!Habilitando o recurso de Inspeção Dinâmica do ARP na VLAN 1
+		!DICA: por padrão todos as Interfaces (Porta de Rede) no Switch estão associadas a VLAN 1 (VLAN Default)
+		!OBSERVAÇÃO: podemos adicionar mais VLAN's para o monitoramento, separadas por espaço ou range
+		!EXEMPLO: ip arp inspection vlan 10 20 30 | ip arp inspection vlan 10-30 | ip arp inspection vlan 1,5,8,10-30
+		ip arp inspection vlan 1
+
+		!Configurando a Interface (Porta de Rede) do Servidor SERVER-02
+		interface fastEthernet 0/1
+
+			!Configurando a confiabilidade da Interface do Servidor
+			!DICA: portas confiáveis (Trust) são portas que não serão monitoradas ou bloqueadas os quadros do ARP pelo DAI 
+			!OBSERVAÇÃO: configurar a porta Trust somente quando tiver servidores DHCP ou equipamentos que fornecem DHCP na rede
+			!CUIDADO: esse recurso também precisa ser configurado nas Interface de Trunk (Tronco - Cascateamento) dos Switches de Acesso
+			ip arp inspection trust
+			end
+write
+
+!SEGUNDA ETAPA: Configuração do Dynamic ARP Inspection nos Switches Layer 2 2960
+enable
+	configure terminal
+		ip arp inspection vlan 1
+
+		!Configuração das Interface de Trunk (Tronco - Cascateamento)
+		interface range gigabitEthernet 0/1 -2
+			ip arp inspection trust
+		end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section ip arp
+show running-config | section interface
+
+!Visualizando informações do Dynamic ARP Inspection nos Switches Layer 2 e 3
+show ip arp inspection
+show ip arp inspection vlan 1
+show ip arp inspection statistics vlan 1
+show ip arp inspection interfaces
+show ip arp inspection interfaces gigabitEthernet 0/1
+show ip dhcp snooping binding

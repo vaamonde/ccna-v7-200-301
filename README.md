@@ -380,28 +380,38 @@ Link da vídeo aula:
 
 ## **029 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor da Primeira Topologia, o Servidor de Registro e Gerenciamento de Dispositivos de Internet das Coisas, tem como objetivo gerenciar todos os dispositivos de automação e gerenciamento analógico ou digital da nossa rede, oferecendo a centralização e gerenciamento dos dispositvos e automatizando tarefas e monitorando status e consumo da rede.
+Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor da Primeira Topologia, o Servidor de Registro e Gerenciamento de Dispositivos de Internet das Coisas, tem como objetivo gerenciar todos os dispositivos de automação analógico ou digital da nossa infraestrutura de rede, oferecendo a centralização e controle dos dispositvos e automatizando as tarefas de monitoramento consumo de recursos da rede, nesse cenário vou simular um ambiente de CFTV (Circuito Fechado de TV).
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-029.pkt
 
 Link da vídeo aula:
 
-## **030 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
+## **030 Configuração do CDP e LLDP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting), essa configuração será feita no Servidor, utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
+Nessa aula, vou fazer a configuração do CDP (Cisco Discovery Portocol) que é um protocolo proprietário da camada de ligação de dados desenvolvido pela Cisco que tem como principal função a descoberta de equipamentos na rede, facilitando a compreensão da topologia da rede e de sua arquitetura, também a configuração do LLDP (Link-Layer Discovery Protocol) tem a mesma finalidade do CDP, com a diferença de ser um padrão da indústria (IEEE 802.1AB) que pode ser implementado por qualquer fabricante, o que faz dele uma solução bem mais flexível do que o CDP em ambientes com dispositivos de múltiplos fabricantes.
 
-As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-030-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
+As configurações do CDP e LLDP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-030-ConfiguracaoDoCDP_LLDP.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-030.pkt
 
 Link da vídeo aula:
 
-## **031 Configuração do CDP e LLDP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
+## **031 Configuração do do Dynamic ARP Inspection DAI nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do CDP (Cisco Discovery Portocol) que é um protocolo proprietário da camada de ligação de dados desenvolvido pela Cisco que tem como principal função a descoberta de equipamentos na rede, facilitando a compreensão da topologia da rede e de sua arquitetura, também a configuração do LLDP (Link-Layer Discovery Protocol) tem a mesma finalidade do CDP, com a diferença de ser um padrão da indústria (IEEE 802.1AB) que pode ser implementado por qualquer fabricante, o que faz dele uma solução bem mais flexível do que o CDP em ambientes com dispositivos de múltiplos fabricantes.
+Nessa aula, vou fazer a configuração do do Dynamic ARP Inspection DAI (Inspeção Dinâmica do ARP) nos Switches Layer 2 e 3, o DAI é um recurso de segurança que protege o o Protocolo ARP (Address Resolution Protocol), contra possiveis vulnerábilidades de ataques como ARP Poisoning (Envenenamento por ARP). O DAI trabalha com conjunto com o DHCP Snooping, quando o DAI está ativo, o Switch descarta os pacotes ARP se o endereço MAC e IP do remetente não correspondem a uma entrada válida no banco de dados do DHCP Snooping. 
 
-As configurações do CDP e LLDP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-031-ConfiguracaoDoCDP_LLDP.txt
+As configurações do do Dynamic ARP Inspection nos Switches Layer 2 e 3 será feita utilizando o Script: 
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-031.pkt
+
+Link da vídeo aula:
+
+## **032 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting), essa configuração será feita no Servidor, utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
+
+As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-031-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-032.pkt
 
 Link da vídeo aula:

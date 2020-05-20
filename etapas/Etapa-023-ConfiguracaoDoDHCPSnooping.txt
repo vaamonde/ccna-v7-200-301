@@ -91,7 +91,7 @@ show running-config | section interface
 ipconfig /release
 ipconfig /renew
 
-!Verificando as informações do DHCP Snooping no Switch Layer 2 e 3
+!Verificando as informações do DHCP Snooping nos Switches Layer 2 e 3
 show ip dhcp snooping
 show ip dhcp snooping binding
 show ip dhcp snooping database
