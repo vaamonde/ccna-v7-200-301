@@ -11,5 +11,6 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **Mudanças no Repositório do Github:**
 
+20/05/2020 - Robson Vaamonde - Alterado a sequência das Aulas de 27 até 32, devido a falhas no RADIUS e TACACS+. 
 30/04/2020 - Robson Vaamonde - Criação do Diretório ETAPAS, mudança dos arquivos de configuração para esse diretório.
 30/04/2020 - Robson Vaamonde - Criação dos arquivos CHANGELOG, NEW e LICENSE.
