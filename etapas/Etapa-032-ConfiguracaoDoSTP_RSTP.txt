@@ -23,7 +23,7 @@
 !(ID sys-id-ext) com base no valor da VLAN Padrão ou VLAN configurada, EXEMPLO: Bridge ID Priority: 32769 (priority 32768 sys-id-ext 1)
 
 !A construção da árvore da topologia do STP e feita através do envio dos quadros de BPDU (Bridge Protocol Data Unit). Os BPDUs são frames
- enviados para troca de informações tais como o Bridge ID e o Custo de Caminho de um nó para a Root Bridge. 
+!enviados para troca de informações tais como o Bridge ID e o Custo de Caminho de um Nó para a Root Bridge.
 
 !As portas de interligações com outros Switches da Rede do Root Bridge são denominadas: Portas Designadas (Designated Port - DP)
 !As portas de interligações com outros Switches da Rede que não são Root Bridge são denominadas: Porta Raiz (Root Port - RP)
@@ -31,17 +31,21 @@
 !Porta de 10Mbit/s = 100 | Porta de 100Mbit/s = 19, Porta de 1 Gbit/s = 4 e Porta de 10 Gbit/s = 2
 !A interface escolhida com Designated Port com o menor custo para o Root Port e colocada no Modo de Encaminhamento (Forwarding - FW)
 !As interfaces que não são consideradas Designated Port são colocadas no Modo de Bloqueio (Blocked Port - BP)
+!Na topologia do STP, apenas uma Porta e colocada no status de Blocked Port por padrão.
 
-!Os status do STP são: Disabled (Desativado), Blocking (Bloqueio), Listening (Ouvindo), Learning (Aprendendo) e Forwarding (Encaminhamento)
+!Os 5 status da Negociação das Portas do STP são: Disabled (Desativado), Blocking (Bloqueio), Listening (Ouvindo), Learning (Aprendendo)
+!e Forwarding (Encaminhamento)
 !Os tempos utlizados pelo STP são: 2s Hello (Avisos), 15s Forward Delay (Atraso de Encaminhamento) e 20s Max Age (Idade Máxima)
 !O tempo de convergência do Protocolo STP pode variar de: 30 até 50 segundos, dependendo do tamanho da árvore da Topologia do STP
 
 !O RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan Rapid Spanning Tree Mode) é o protocolo de detecção de topologias de rede que fornecer
 !uma convergência mais rápida para criar uma rede sem os laços de loop de camada 2, padronizado pelo IEEE 802.1w desenvolvido pela Cisco
-!O tempo de convergência do RSTP vária em torno de 2 segundos em relação ao tempo de convergência do padrão do STP que vária de 30 ou 50s
+!O tempo de convergência do RSTP vária em torno de 2 segundos em relação ao tempo de convergência padrão do STP que vária de 30 até 50s
 !Os status do RSTP são: Discarding (Descartando), Learning (Aprendendo) e Forwarding (Encaminhamento)
-!Os status das Portas do RSTP são: Root Port (Porta Raiz), Designated Port (Porta Designadas), Alternate Port (Porta Alternativa) e Backup
-!Port (Porta Backup)
+!Os 4 status da Negociação das Portas do RSTP são: Root Port (Porta Raiz), Designated Port (Porta Designadas), Alternate Port (Porta Alternativa)
+!e Backup Port (Porta Backup)
+!A vantagem do RSTP em conjunto com o PVST é a possibilidade de criar instâncias individuais para cada VLAN na Topologia do STP, facilitando
+!a administração e configuração dos melhores caminhos da rede, utilizado em grandes redes para determinar os caminhos principais das VLAN's
 
 !PRIMEIRA ETAPA: Configuração do Switch Layer 3 3560
 enable
@@ -51,16 +55,18 @@ enable
 		!DICA: geralmente Switch Layer 3 que estão configurados na cama de Distribuição são eleitos Root Bridge
 		!OBSERVAÇÃO: na configuração da prioridade do STP da VLAN do Switch, temos as opções: 0 até 61440 (com incremento de 4096)
 		!OBSERVAÇÃO: na configuração do Switch Root Bridge do STP, temos as opções de: primary (Primário) ou secondary (Secundário)
-		!OBSERVAÇÃO: podemos adicionar mais VLAN's para a árvore do STP, utilizando as mesmas opções do comando: ip arp inspection ou dhcp snooping
-		!EXEMPLO: spanning-tree vlan 10 20 30 | spanning-tree vlan 10-30 | spanning-tree vlan 1,5,8,10-30
-		!IMPORTANTE: com essa configuração, automáticamente o Bridge ID da Switch será decrementado, sendo eleito o Root Bridge com o menor Priority
+		!OBSERVAÇÃO: podemos adicionar mais VLAN's para a árvore do STP, utilizando as mesmas opções do comando: ip arp inspection ou
+		!dhcp snooping - EXEMPLO: spanning-tree vlan 10 20 30 | spanning-tree vlan 10-30 | spanning-tree vlan 1,5,8,10-30
+		!IMPORTANTE: com essa configuração, automáticamente o Bridge ID da Switch será decrementado, sendo eleito o Root Bridge com o
+		!menor Priority
 		spanning-tree vlan 1 root primary
 
 		!Configurando o RSTP para o modo Rapid-PVST
 		!DICA: configurar o Rapid-PVST acelera o processo de convergência da rede
 		!OBSERVAÇÃO: a configuração padrão do Modo do STP dos Switches da Cisco e: PVST
 		!OBSERVAÇÃO: no Cisco Packet Tracer temos os suporte de Modos do STP: pvst ou rapid-pvst 
-		!IMPORTANTE: caso você altere o modo do STP em um Switch na rede é recomendado manter a padronização em todos os Switches para o mesmo Modo
+		!IMPORTANTE: caso você altere o modo do STP em um Switch na rede é recomendado manter a padronização em todos os Switches para
+		!o mesmo Modo do STP, para não ter conflitos de eleições ou configurações erradas da árvore do STP
 		spanning-tree mode rapid-pvst
 		end
 write

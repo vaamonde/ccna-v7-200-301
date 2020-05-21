@@ -37,20 +37,22 @@ enable
 	configure terminal
 
 	!Habilitando o recurso de descoberta de vizinhos CDP
+	!OBSERVAÇÃO: por padrão o CDP já está habilitado no Switch Layer 2 2960
 	cdp run
 
 	!Configurando os anúncios do CDP na versão 2
-	!DICA:  a versão 2 do CDP permite verificar informações de VLAN Nativa, Domínio VTP e o Modo da Porta (Duplex)
+	!DICA: a versão 2 do CDP permite verificar informações de VLAN Nativa, Domínio VTP e o Modo da Porta (Duplex)
 	!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de Configuração da versão 2 do CDP não está disponível
 	!cdp advertise-v2
 
 	!Habilitando o recurso de descoberta de vizinhos LLDP
+	!OBSERVAÇÃO: por padrão o LLDP está desabilitado no Switch Layer 2 2960
 	lldp run
 
 	!Configurando o recurso de TLV (Type, Lenght, Value) do LLDP
-	!DICA: o LLDP oferece uma flexibilidade maior em termos de quantidade de informações que podem ser enviadas
+	!DICA: o LLDP oferece uma flexibilidade maior em termos de quantidade de informações que podem ser enviadas entre os vizinhos
 	!DICA: o LLDP utiliza o TLV para codificar informações que serão enviadas e recebidas, customizando a quantidade
-	!de dados enviados, filtando apenas as informações importantes
+	!de dados enviados, filtando apenas as informações importantes entre os vizinhos
 	!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de TLV do LLDP não está disponível
 	!lldp tlv-select ? 
 	end
@@ -59,6 +61,10 @@ write
 !SEGUNDA ETAPA: Configuração do CDP e LLDP no Switch Layer 3 3560
 enable
 	configure terminal
+		
+		!OBSERVAÇÃO: igual ao Switch Layer 2 2960 ou CDP está habilitado é o LLDP está desabilitado
+		!DICA: em Switch Layer 2 ou 3, o recurso do CDP e muito importante para dispositivos VoIP, fazendo a configuração
+		!automática da VLAN de VoIP nesses equipamentos.
 		cdp run
 		lldp run
 		end
@@ -70,7 +76,8 @@ enable
 		
 		!Desabilitando os recursos de descoberta do CDP e LLDP globalmente
 		!DICA: em Roteadores que estão diretamente conectados na Internet ou em Redes desconhecidas, e recomendado 
-		!desabilitar os recursos de CDP ou LLDP para não enviar informações sobre o IOS, prejudicando a segurança da rede
+		!desabilitar os recursos de CDP ou LLDP para não enviar informações sobre o equipamentos, prejudicando a
+		!segurança da rede
 		no cdp run
 		no lldp run
 
@@ -84,7 +91,7 @@ enable
 
 			!!Habilitando o recurso de enviar e receber informações de descoberta de vizinhos LLDP na Interface
 			!DICA: diferente do CDP, no LLDP existe a possibilidade de controlar o fluxo de dados enviados entre os vizinhos
-			!OBSERVAÇÃO: o LLDP só funciona em enlace Ethernet (FastEthernet, GigabitEthernet)
+			!OBSERVAÇÃO: o LLDP só funciona em enlace Ethernet (FastEthernet, GigabitEthernet), não suportando outras mídias
 			lldp receive
 			lldp transmit
 			end
