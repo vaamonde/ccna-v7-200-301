@@ -379,13 +379,13 @@ Link da vídeo aula: https://www.youtube.com/watch?v=vb4ZZwBBlCk
 
 ## **028 Configuração do NetFlow no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do NetFlow no Router 1941, a utilização do recurso de NetFlow em nossa rede tem como objetivo de análisar os Fluxos de Dados em nossa Rede, analisando dados de protocolos, endereços de IPv4/IPv6 de origem e destino, monitoramento da largura de banda, rastreamento de dados e planejamento de capacidade de Links e recursos da rede.
+Nessa aula, vou fazer a configuração do NetFlow no Router 1941, a utilização do recurso de NetFlow em nossa topologia tem como objetivo de analisar os Fluxos de Dados em nossa Rede, analisando dados de protocolos, endereços IPv4/IPv6 de origem e destino, monitorando a utilização da largura de banda, rastreando tráfegos de rede e ajudando no planejamento de capacidade de Links e recursos da rede.
 
 As configurações do NetFlow no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-028-ConfiguracaoDoNetFlowNaInterfaceDoRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-028.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=xTmZIDfrQVE&t
 
 ## **029 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
 
