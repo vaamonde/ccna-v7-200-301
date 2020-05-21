@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O STP (Spanning Tree Protocol) é um protocolo da camada 2 que é executado em interligações dos Switches Layer 2 e 3, a especificação
+!O STP (Spanning Tree Protocol) é um protocolo da camada 2 que é executado nas interligações dos Switches Layer 2 e 3, a especificação
 !para o STP é IEEE 802.1D (a mais recente especificação é IEEE 802.1Q), o propósito principal do STP é assegurar-se que você não crie
 !ou exista caminhos redundantes (loops) de camada 2 na rede.
 
@@ -23,29 +23,32 @@
 !(ID sys-id-ext) com base no valor da VLAN Padrão ou VLAN configurada, EXEMPLO: Bridge ID Priority: 32769 (priority 32768 sys-id-ext 1)
 
 !A construção da árvore da topologia do STP e feita através do envio dos quadros de BPDU (Bridge Protocol Data Unit). Os BPDUs são frames
-!enviados para troca de informações tais como o Bridge ID e o Custo de Caminho de um Nó para a Root Bridge.
+!enviados para troca de informações tais como o Bridge ID e o Custo de Caminho de um Nó para o Switch Root Bridge.
 
 !As portas de interligações com outros Switches da Rede do Root Bridge são denominadas: Portas Designadas (Designated Port - DP)
-!As portas de interligações com outros Switches da Rede que não são Root Bridge são denominadas: Porta Raiz (Root Port - RP)
-!A escolha do Root Port e feita com base no menor custo da Interface (Largura de Banda) para o Switch Root Bridge, o custo do STP padrão é:
-!Porta de 10Mbit/s = 100 | Porta de 100Mbit/s = 19, Porta de 1 Gbit/s = 4 e Porta de 10 Gbit/s = 2
-!A interface escolhida com Designated Port com o menor custo para o Root Port e colocada no Modo de Encaminhamento (Forwarding - FW)
-!As interfaces que não são consideradas Designated Port são colocadas no Modo de Bloqueio (Blocked Port - BP)
-!Na topologia do STP, apenas uma Porta e colocada no status de Blocked Port por padrão.
+!As portas de interligações dos outros Switches da Rede que são Non-Root Bridge são denominadas: Porta Raiz (Root Port - RP)
+!A escolha do Root Port dos Non-Root Bridge e feita com base no menor custo da Interface (Largura de Banda) para o Switch Root Bridge, o
+!custo das interfaces do STP padrão é: Porta de 10Mbit/s = 100 | Porta de 100Mbit/s = 19, Porta de 1 Gbit/s = 4 e Porta de 10 Gbit/s = 2
+!A interface escolhida com o modo Designated Port tem o menor custo para o Root Port ela e colocada no Modo de Encaminhamento (Forwarding-FWD)
+!As interfaces que não são consideradas Designated Port são colocadas no Modo de Bloqueio (Blocked Port - BLK)
+!Na topologia do STP, apenas uma Porta e colocada no modo de Blocked Port por padrão, somente um processo STP e criado para toda a árvore do STP
 
-!Os 5 status da Negociação das Portas do STP são: Disabled (Desativado), Blocking (Bloqueio), Listening (Ouvindo), Learning (Aprendendo)
+!Os 5 estágios da Negociação das Portas do STP são: Disabled (Desativado), Blocking (Bloqueio), Listening (Ouvindo), Learning (Aprendendo)
 !e Forwarding (Encaminhamento)
 !Os tempos utlizados pelo STP são: 2s Hello (Avisos), 15s Forward Delay (Atraso de Encaminhamento) e 20s Max Age (Idade Máxima)
 !O tempo de convergência do Protocolo STP pode variar de: 30 até 50 segundos, dependendo do tamanho da árvore da Topologia do STP
+!Portas no status de Blocking demora cerca de 20 segundos, portas no status de Listening demora cerca de 15 segundos, portas nos status de
+!Learning demora cerca de 15 segundos, somente após esses estágios a porta entre no modo de Forwarding, hoje esse processo e considerado 
+!muito lento para as redes atuais.
 
 !O RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan Rapid Spanning Tree Mode) é o protocolo de detecção de topologias de rede que fornecer
-!uma convergência mais rápida para criar uma rede sem os laços de loop de camada 2, padronizado pelo IEEE 802.1w desenvolvido pela Cisco
+!uma convergência mais rápida para criar uma rede sem os laços de loop de camada 2, padronizado pelo IEEE 802.1w e desenvolvido pela Cisco
 !O tempo de convergência do RSTP vária em torno de 2 segundos em relação ao tempo de convergência padrão do STP que vária de 30 até 50s
-!Os status do RSTP são: Discarding (Descartando), Learning (Aprendendo) e Forwarding (Encaminhamento)
-!Os 4 status da Negociação das Portas do RSTP são: Root Port (Porta Raiz), Designated Port (Porta Designadas), Alternate Port (Porta Alternativa)
-!e Backup Port (Porta Backup)
-!A vantagem do RSTP em conjunto com o PVST é a possibilidade de criar instâncias individuais para cada VLAN na Topologia do STP, facilitando
-!a administração e configuração dos melhores caminhos da rede, utilizado em grandes redes para determinar os caminhos principais das VLAN's
+!Os 3 estágios da Negociação do RSTP são: Discarding (Descartando), Learning (Aprendendo) e Forwarding (Encaminhamento)
+!Os 4 status da Negociação das Portas do RSTP são: Root Port (Porta Raiz), Designated Port (Porta Designadas), Alternate Port (Porta 
+!Alternativa) e Backup Port (Porta Backup)
+!A vantagem do RSTP em conjunto com o PVST ou PVRST+ é a possibilidade de criar instâncias individuais para cada VLAN na Topologia do STP,
+!facilitando a administração e configuração dos melhores caminhos para cada VLAN na Topologida da rede.
 
 !PRIMEIRA ETAPA: Configuração do Switch Layer 3 3560
 enable
@@ -64,7 +67,7 @@ enable
 		!Configurando o RSTP para o modo Rapid-PVST
 		!DICA: configurar o Rapid-PVST acelera o processo de convergência da rede
 		!OBSERVAÇÃO: a configuração padrão do Modo do STP dos Switches da Cisco e: PVST
-		!OBSERVAÇÃO: no Cisco Packet Tracer temos os suporte de Modos do STP: pvst ou rapid-pvst 
+		!OBSERVAÇÃO: no Cisco Packet Tracer temos o suporte aos Modos do STP: pvst ou rapid-pvst 
 		!IMPORTANTE: caso você altere o modo do STP em um Switch na rede é recomendado manter a padronização em todos os Switches para
 		!o mesmo Modo do STP, para não ter conflitos de eleições ou configurações erradas da árvore do STP
 		spanning-tree mode rapid-pvst
@@ -83,3 +86,5 @@ show running-config | section spanning-tree
 
 !Comandos de Visualização do STP nos Switches Layer 2 e 3
 show spanning-tree
+show spanning-tree summary
+show spanning-tree vlan 1
