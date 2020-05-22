@@ -40,6 +40,7 @@ Configurando Switches e Roteadores de Cisco: Guia para a Certificação CCENT/CC
 ## **Site com Questões da Prova de CCNAv7 200-301 - CCNAv6 200-125:**
 9tut CCNA Training: https://www.9tut.com/<br>
 Study CCNA: https://study-ccna.com/<br>
+Free CCNA Workbook: https://www.freeccnaworkbook.com/<br>
 ICT Community: https://www.ccna7.com/<br>
 IT ExamAnswers: https://itexamanswers.net/ccna-v7-0<br>
 PacketLife Cheat Sheets: https://packetlife.net/library/cheat-sheets/

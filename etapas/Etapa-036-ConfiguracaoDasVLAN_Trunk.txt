@@ -1,0 +1,154 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 22/05/2020
+!Data de atualização: 22/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!As VLANs (Virtual LANs – Redes Locais Virtuais) é uma rede logicamente independente, várias VLANs podem coexistir
+!em um mesmo Switch, de forma a dividir uma rede local em mais de uma rede, criando domínios de broadcast separados.
+
+!As VLANs permitem a segmentação das redes físicas, sendo que a comunicação entre máquinas de VLANs diferentes terá
+!de passar obrigatoriamente por um Roteador ou outro equipamento capaz de realizar o Roteamento, esse equipamento
+!será o responsável por encaminhar o tráfego entre as VLANs distintas.
+
+!As VLANs oferecem vantagens das quais se destacam: segurança, escalabilidade, flexibilidade, redução de custos, etc.
+
+!Um Switch com a capacidade de criar VLANs suporta dois tipos de configuraça de portas: Portas de Acesso (conexões de
+!acesso) e Portas Trunk (conexões de tronco)
+
+!Os range de VLANs nos Switches Cisco são: 0 e 4095 Reservadas (Reserved - apenas para uso do sistema operacional IOS,
+!você não pode ver ou usar essas VLANs), 1 Nativa (Normal - padrão da Cisco, você pode usar essa VLAN, estão configuradas
+!por padrão em todas as portas do Switch, você não pode deletar essa VLAN), 2 até 1001 Nativas (Normal - usadas para as
+!VLANs Ethernet, você pode criar, usar e excluir essas VLANs, armazenadas no arquivo vlan.dat), 1002 até 1005 Nativa
+!(Normal - padrões da Cisco para FDDI e Token Ring, você não pode excluir essas VLANs) e 1006 até 4094 Extendidas (Extended
+!elas são usadas principalmente em redes de provedores de serviços para permitir o provisionamento do número do clientes)
+
+!Exite também dois tipos de associação de VLANs: VLAN Estáticas (Static - configurada manualmente na porta de rede do
+!Switch ou do Router) e VLAN Dinâmica (Dynamic - são criadas e alteradas dinamicamente via software como por exemplo
+!o VMPS (VLAN Management Policy Server))
+
+!Uma Porta de Acesso (access), permite associar uma porta do Switch a uma VLAN, as portas do tipo acesso são usadas
+!para conectar dispositivos finais (Desktop, Notebook, Impressoras, Access Point, etc), por padrão, todas as portas
+!dos Switches estão configuradas na VLAN 1.
+
+!Uma Porta de Tronco (trunk), normalmente usada para interligação de Switches ou ligação a Roteadores, ela permite a
+!passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no
+!Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
+
+!PRIMEIRA ETAPA: Configuração das VLANs e Trunk no Switch Layer 3 3560
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+
+		!Criando as VLANs Standard no Switch Layer 3 3560 VTP Server
+		!DICA: por padrão e recomendo trabalhar nos Switches Catalyst a faixa de VLANs Standard (padrão de 2 até 1001)
+		!OBSERVAÇÃO: no Switch Layer 3 3560 foi configurado o recurso de VTP Server, que centraliza a administração das VLANs
+		vlan 10
+			!Configurando o nome da VLAN Standard
+			!DICA: a configuração do nome da VLAN facilita na administração e auditoria com o comando: show vlan brief
+			!OBSERVAÇÃO: para criar uma nova VLAN não é necessário sair do modo de configuração de VLAN com o comando exit
+			name adm
+		vlan 20
+			name cap 
+		vlan 30
+			name car 
+		vlan 40
+			name est
+		vlan 50
+			name guest
+		vlan 99
+			name admin
+		vlan 100
+			name server
+			exit
+		
+		!Configurando as Interface de Trunk com os Switches Layer 2 2960
+		interface range gigabitEthernet 0/1 - 2
+			description Interface de Trunk com os Switches Layer 2 2960
+			!Configurando o modo de Trunk (Tronco) da Interface do Switch Layer 3
+			!DICA: por padrão o recurso de DTP (Dynamic Trunking Protocol) está habilitado nas portas do Switches
+			!OBSERVAÇÃO: e recomendo configurar as portas de Trunk em nossa topologia que utiliza o VTP e o STP
+			switchport mode trunk
+			exit
+
+		!Configurando a Interface de Trunk com o Router 2911
+		interface fastEthernet 0/24
+			description Interface de Trunk com o Router 2911
+			switchport mode trunk
+			exit
+
+		!Configurando a Interface de Acesso a VLAN 100 do Servidor
+		interface fastEthernet 0/1
+			description Interface de Acesso do Servidor
+			
+			!Configurando o modo de Access (Acesso) da Interface do Servidor
+			!DICA: essa configuração já foi comentada nas configurações do switchport e port-security
+			!OBSERVAÇÃO: para a correta configuração da VLAN na porta de rede e recomendo mudar o modo da porta
+			switchport mode access
+			
+			!Configurando o acesso a VLAN 100 da Interface do Servidor
+			!DICA: por padrão podemos configurar apenas uma VLAN no porta do Switch
+			!OBSERVAÇÃO: a partir do momento que configuramos a VLAN na porta do Switch, todos os quadros (frames)
+			!recebem a Tag (etiqueta) dot1q (IEEE 802.1Q) ou do ISL (Inter-Switch Link - Cisco) no seu frame ethernet
+			!quando passa pela porta do switch 
+			switchport access vlan 100
+			exit
+		
+		!Configurando a Interface de Acesso a VLAN 50 do Access Point
+		interface fastEthernet 0/2
+			description Interface de Acesso do Access Point
+			switchport mode access
+			switchport access vlan 50
+			end
+write
+
+!SEGUNDA ETAPA: Configuração das VLANs e Trunk nos Switches Layer 2 2960
+enable
+	configure terminal
+		interface fastEthernet 0/1
+			description Interface de Acesso do Desktop da VLAN 10
+			switchport mode access
+			switchport access vlan 10
+			exit
+		interface fastEthernet 0/2
+			description Interface de Acesso do Desktop da VLAN 20
+			switchport mode access
+			switchport access vlan 20
+			exit
+		interface fastEthernet 0/3
+			description Interface de Acesso do Desktop da VLAN 30
+			switchport mode access
+			switchport access vlan 30
+			exit
+		interface fastEthernet 0/4
+			description Interface de Acesso do Desktop da VLAN 40
+			switchport mode access
+			switchport access vlan 40
+			exit
+		interface range gigabitEthernet 0/1 - 2
+			description Interface de Trunk com os Switches Layer 2 e 3 
+			switchport mode trunk
+			exit
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section interface
+
+!Verificando as informações das VLAN, VTP e Trunk
+show vlan brief
+show vlan id 10
+show vlan name adm
+show vtp status
+show vtp counters
+show interface status
+show interface trunk
+show interfaces gigabitEthernet 0/1 switchport
