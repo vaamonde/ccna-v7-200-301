@@ -87,4 +87,3 @@ show running-config | section spanning-tree
 !Comandos de Visualização do STP nos Switches Layer 2 e 3
 show spanning-tree
 show spanning-tree summary
-show spanning-tree vlan 1

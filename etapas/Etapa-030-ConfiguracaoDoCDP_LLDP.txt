@@ -36,26 +36,26 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 
-	!Habilitando o recurso de descoberta de vizinhos CDP
-	!OBSERVAÇÃO: por padrão o CDP já está habilitado no Switch Layer 2 2960
-	cdp run
+		!Habilitando o recurso de descoberta de vizinhos CDP
+		!OBSERVAÇÃO: por padrão o CDP já está habilitado no Switch Layer 2 2960, não aparecendo no arquivo running-config
+		cdp run
 
-	!Configurando os anúncios do CDP na versão 2
-	!DICA: a versão 2 do CDP permite verificar informações de VLAN Nativa, Domínio VTP e o Modo da Porta (Duplex)
-	!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de Configuração da versão 2 do CDP não está disponível
-	!cdp advertise-v2
+		!Configurando os anúncios do CDP na versão 2
+		!DICA: a versão 2 do CDP permite verificar informações de VLAN Nativa, Domínio VTP e o Modo da Porta (Duplex)
+		!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de Configuração da versão 2 do CDP não está disponível
+		!cdp advertise-v2
 
-	!Habilitando o recurso de descoberta de vizinhos LLDP
-	!OBSERVAÇÃO: por padrão o LLDP está desabilitado no Switch Layer 2 2960
-	lldp run
+		!Habilitando o recurso de descoberta de vizinhos LLDP
+		!OBSERVAÇÃO: por padrão o LLDP está desabilitado no Switch Layer 2 2960, depois de configurado ele aparece no running-config
+		lldp run
 
-	!Configurando o recurso de TLV (Type, Lenght, Value) do LLDP
-	!DICA: o LLDP oferece uma flexibilidade maior em termos de quantidade de informações que podem ser enviadas entre os vizinhos
-	!DICA: o LLDP utiliza o TLV para codificar informações que serão enviadas e recebidas, customizando a quantidade
-	!de dados enviados, filtando apenas as informações importantes entre os vizinhos
-	!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de TLV do LLDP não está disponível
-	!lldp tlv-select ? 
-	end
+		!Configurando o recurso de TLV (Type, Lenght, Value) do LLDP
+		!DICA: o LLDP oferece uma flexibilidade maior em termos de quantidade de informações que podem ser enviadas entre os vizinhos
+		!DICA: o LLDP utiliza o TLV para codificar informações que serão enviadas e recebidas, customizando a quantidade
+		!de dados enviados, filtando apenas as informações importantes entre os vizinhos
+		!OBSERVAÇÃO: no Cisco Packet Tracer os recursos de TLV do LLDP não está disponível para a sua configuração
+		!lldp tlv-select
+		end
 write
 
 !SEGUNDA ETAPA: Configuração do CDP e LLDP no Switch Layer 3 3560
@@ -77,28 +77,39 @@ enable
 		!Desabilitando os recursos de descoberta do CDP e LLDP globalmente
 		!DICA: em Roteadores que estão diretamente conectados na Internet ou em Redes desconhecidas, e recomendado 
 		!desabilitar os recursos de CDP ou LLDP para não enviar informações sobre o equipamentos, prejudicando a
-		!segurança da rede
-		no cdp run
-		no lldp run
+		!segurança da rede e comprometando a confiabilidade da topologia
+		!OBSERVAÇÃO: no Cisco Packet Tracer, desabilitar o CDP ou LLDP globalmente e configurar apenas nas Interfaces
+		!que vão enviar anúncios infelizmente não funciona, sendo necessário deixar habilitado globalmente o CDP e LLDP
+		cdp run
+		lldp run
 
 		!Configurando a Interface de Gateway da Rede LAN
 		interface gigabitEthernet 0/0
 
 			!Habilitando o recurso de descoberta de vizinhos CDP na Interface
-			!DICA: o CDP permite enviar dados de informações entre vizinhos independente do enlace físico
+			!DICA: o CDP permite enviar dados de informações entre vizinhos independente do tipoo de enlace físico utilizado
 			!EXEMPLO: conexões Ethernet (FastEthernet, GigabitEthernet), Serial, etc
+			!IMPORTANTE: mesmo configurando essa opção no Cisco Packet Tracer ela não aparece no running-config
 			cdp enable
 
 			!!Habilitando o recurso de enviar e receber informações de descoberta de vizinhos LLDP na Interface
 			!DICA: diferente do CDP, no LLDP existe a possibilidade de controlar o fluxo de dados enviados entre os vizinhos
 			!OBSERVAÇÃO: o LLDP só funciona em enlace Ethernet (FastEthernet, GigabitEthernet), não suportando outras mídias
+			!IMPORTANTE: mesmo configurando essa opção no Cisco Packet Tracer ela não aparece no running-config
 			lldp receive
 			lldp transmit
 			end
 write
 
+!QUARTA ETAPA: Desabilitando o CDP e LLDP no Router 1941-1
+enable
+	configure terminal
+		no cdp run
+		no lldp run
+		end
+write
+
 !Visualizando as configurações da memória RAM
-show running-config | section cdp
 show running-config | section lldp
 show running-config | section interface
 
