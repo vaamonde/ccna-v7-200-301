@@ -38,16 +38,16 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 024 Configuração da Interface Roteada no Switch Layer 3<br>
 025 Configuração da Rota Estática e Rota Padrão no Router e Switch Layer 3<br>
 026 Configuração da Rota Estática Flutuante no Router 1941<br>
-027 Configuração da Interface de Loopback no Router 1941
+027 Configuração da Interface de Loopback no Router 1941r<br>
+028 Configuração do NetFlow no Router 1941<br>
+029 Configuração do Servidor de IoT Manager Registrato
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-028 Configuração do NetFlow no Router 1941<br>
-029 Configuração do Servidor de IoT Manager Registrator
-
-## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 030 Configuração do Protocolo CDP e LLDP nos Switches e Router<br>
 031 Configuração do Dynamic ARP Inspection nos Switches Layer 2 e 3<br>
-032 Configuração do STP e RSTP BÁSICO nos Switches Layer 2 e 3<br>
+032 Configuração do STP e RSTP BÁSICO nos Switches Layer 2 e 3
+
+## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 033 Configuração do RADIUS e TACACS+ nos Switches e Router<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
 035 Configuração do VTP Server e Client nos Switches Layer 2 e 3

@@ -390,11 +390,11 @@ Link da vídeo aula: https://www.youtube.com/watch?v=xTmZIDfrQVE&t
 
 ## **029 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor da Primeira Topologia, o Servidor de Registro e Gerenciamento de Dispositivos de Internet das Coisas, tem como objetivo gerenciar todos os dispositivos de automação analógico ou digital da nossa infraestrutura de rede, oferecendo a centralização e controle dos dispositvos e automatizando as tarefas de monitoramento consumo de recursos da rede, nesse cenário vou simular um ambiente de CFTV (Circuito Fechado de TV).
+Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor da Primeira Topologia, o Servidor de Registro e Gerenciamento de Dispositivos de Internet das Coisas, tem como objetivo gerenciar todos os dispositivos de automação analógico ou digital da nossa infraestrutura de rede, oferecendo a centralização e controle dos dispositivos e automatizando as tarefas de monitoramento consumo de recursos da rede, nesse cenário vou simular um ambiente de CFTV (Circuito Fechado de TV).
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-029.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=2B_skmB_Ucs&t=
 
 ## **030 Configuração do CDP e LLDP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
