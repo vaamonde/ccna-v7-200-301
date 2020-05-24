@@ -29,7 +29,7 @@
 !As portas de interligações dos outros Switches da Rede que não são Non-Root Bridge são denominadas: Porta Raiz (Root Port - RP)
 !A escolha do Root Port dos Non-Root Bridge e feita com base no menor custo da Interface (Largura de Banda) para o Switch Root Bridge, o
 !custo das interfaces do STP padrão é: Porta de 10Mbit/s = 100 | Porta de 100Mbit/s = 19, Porta de 1 Gbit/s = 4 e Porta de 10 Gbit/s = 2
-!A interface escolhida com o modo Designated Port tem o menor custo para o Root Port ela e colocada no Modo de Encaminhamento (Forwarding - FWD)
+!A interface escolhida com o modo Root Port tem o menor custo para o Designated Port e ela e colocada no Modo de Encaminhamento (Forwarding - FWD)
 !As interfaces que não são consideradas Designated Port são colocadas no Modo de Bloqueio (Blocked Port - BLK)
 !Na topologia do STP, apenas uma Porta e colocada no modo de Blocked Port por padrão, somente um processo STP e criado para toda a árvore do STP
 

@@ -117,7 +117,7 @@ write
 !de AAA TACACS+, não está disponível no Cisco Packet Tracer a possibilidade de configuração do AAA RADIUS
 enable
 	copy tftp: flash:
-		192.168.1.1
+		192.168.3.1
 		c2960-lanbasek9-mz.150-2.SE4.bin
 	configure terminal 
 		boot system c2960-lanbasek9-mz.150-2.SE4.bin
