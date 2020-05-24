@@ -74,16 +74,22 @@ enable
 		!Configurando as Interface de Trunk com os Switches Layer 2 2960
 		interface range gigabitEthernet 0/1 - 2
 			description Interface de Trunk com os Switches Layer 2 2960
+			
 			!Configurando o modo de Trunk (Tronco) da Interface do Switch Layer 3
-			!DICA: por padrão o recurso de DTP (Dynamic Trunking Protocol) está habilitado nas portas do Switches
+			!DICA: por padrão o recurso de DTP (Dynamic Trunking Protocol) está habilitado nas portas dos Switches
 			!OBSERVAÇÃO: e recomendo configurar as portas de Trunk em nossa topologia que utiliza o VTP e o STP
+			!OBSERVAÇÃO: para configurar a Porta de Trunk em Switch Layer 3 e necessário primeiro configurar o protocolo 802.1q
+			switchport trunk encapsulation dot1q 
 			switchport mode trunk
+			switchport nonegotiate
 			exit
 
 		!Configurando a Interface de Trunk com o Router 2911
 		interface fastEthernet 0/24
 			description Interface de Trunk com o Router 2911
+			switchport trunk encapsulation dot1q 
 			switchport mode trunk
+			switchport nonegotiate
 			exit
 
 		!Configurando a Interface de Acesso a VLAN 100 do Servidor
@@ -94,6 +100,7 @@ enable
 			!DICA: essa configuração já foi comentada nas configurações do switchport e port-security
 			!OBSERVAÇÃO: para a correta configuração da VLAN na porta de rede e recomendo mudar o modo da porta
 			switchport mode access
+			switchport nonegotiate
 			
 			!Configurando o acesso a VLAN 100 da Interface do Servidor
 			!DICA: por padrão podemos configurar apenas uma VLAN no porta do Switch
@@ -108,36 +115,42 @@ enable
 			description Interface de Acesso do Access Point
 			switchport mode access
 			switchport access vlan 50
+			switchport nonegotiate
 			end
 write
 
 !SEGUNDA ETAPA: Configuração das VLANs e Trunk nos Switches Layer 2 2960
 enable
 	configure terminal
+		interface range gigabitEthernet 0/1 - 2
+			description Interface de Trunk com os Switches Layer 2 e 3 
+			switchport mode trunk
+			switchport nonegotiate
+			exit
 		interface fastEthernet 0/1
 			description Interface de Acesso do Desktop da VLAN 10
 			switchport mode access
 			switchport access vlan 10
+			switchport nonegotiate
 			exit
-		interface fastEthernet 0/2
+		interface fastEthernet 0/6
 			description Interface de Acesso do Desktop da VLAN 20
 			switchport mode access
 			switchport access vlan 20
+			switchport nonegotiate
 			exit
-		interface fastEthernet 0/3
+		interface fastEthernet 0/11
 			description Interface de Acesso do Desktop da VLAN 30
 			switchport mode access
 			switchport access vlan 30
+			switchport nonegotiate
 			exit
-		interface fastEthernet 0/4
+		interface fastEthernet 0/16
 			description Interface de Acesso do Desktop da VLAN 40
 			switchport mode access
 			switchport access vlan 40
-			exit
-		interface range gigabitEthernet 0/1 - 2
-			description Interface de Trunk com os Switches Layer 2 e 3 
-			switchport mode trunk
-			exit
+			switchport nonegotiate
+			end
 write
 
 !Visualizando as configurações da memória RAM

@@ -1,0 +1,169 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 24/05/2020
+!Data de atualização: 24/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!PRIMEIRA ETAPA: Configuração Base Switch Layer 2 2960
+enable
+clock set 14:00:00 25 May 2020
+	configure terminal
+		hostname sw-l2-2960-5
+		service password-encryption
+		service timestamps log datetime msec
+		no ip domain-lookup
+		banner motd #AVISO: acesso autorizado somente a funcionarios#
+		enable secret vaamonde@pti
+		username robson secret vaamonde@pti
+		username vaamonde password vaamonde@pti
+		username admin privilege 15 secret vaamonde@pti
+		ip domain-name vaamonde.pti
+		crypto key generate rsa
+		ip ssh version 2
+		ip ssh time-out 60
+		ip ssh authentication-retries 2
+		cdp run
+		lldp run
+		line console 0
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			exit	
+		line vty 0 4
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			transport input ssh
+			end
+write
+---------------------------------------------------------------------------
+
+!SEGUNDA ETAPA: Configuração Base Switch Layer 2 2960
+enable
+clock set 14:00:00 25 May 2020
+	configure terminal
+		hostname sw-l2-2960-6
+		service password-encryption
+		service timestamps log datetime msec
+		no ip domain-lookup
+		banner motd #AVISO: acesso autorizado somente a funcionarios#
+		enable secret vaamonde@pti
+		username robson secret vaamonde@pti
+		username vaamonde password vaamonde@pti
+		username admin privilege 15 secret vaamonde@pti
+		ip domain-name vaamonde.pti
+		crypto key generate rsa
+		ip ssh version 2
+		ip ssh time-out 60
+		ip ssh authentication-retries 2
+		cdp run
+		lldp run
+		line console 0
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			exit	
+		line vty 0 4
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			transport input ssh
+			end
+write
+---------------------------------------------------------------------------
+
+!TERCEIRA ETAPA: Configuração Base Switch Layer 3 3560
+enable
+clock set 14:00:00 25 May 2020
+	configure terminal
+		hostname sw-l3-3560-2
+		service password-encryption
+		service timestamps log datetime msec
+		service timestamps debug datetime msec
+		no ip domain-lookup
+		banner motd #AVISO: acesso autorizado somente a funcionarios#
+		enable secret vaamonde@pti
+		username robson secret vaamonde@pti
+		username vaamonde password vaamonde@pti
+		username admin privilege 15 secret vaamonde@pti
+		ip domain-name vaamonde.pti
+		crypto key generate rsa
+		ip ssh version 2
+		ip ssh time-out 60
+		ip ssh authentication-retries 2
+		login block-for 120 attempts 2 within 60
+		cdp run
+		lldp run
+		line console 0
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			exit	
+		line vty 0 4
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			transport input ssh
+			end
+write
+---------------------------------------------------------------------------
+
+!QUARTA ETAPA: Configuração Base Router 2911
+enable
+clock set 14:00:00 25 May 2020
+	configure terminal
+		hostname rt-2911-1
+		service password-encryption
+		service timestamps log datetime msec
+		service timestamps debug datetime msec
+		no ip domain-lookup
+		banner motd #AVISO: acesso autorizado somente a funcionarios#
+		security passwords min-length 10
+		enable secret vaamonde@pti
+		username robson secret vaamonde@pti
+		username vaamonde password vaamonde@pti
+		username admin privilege 15 secret vaamonde@pti
+		ip domain-name vaamonde.pti
+		crypto key generate rsa
+		ip ssh version 2
+		ip ssh time-out 60
+		ip ssh authentication-retries 2
+		login block-for 120 attempts 2 within 60
+		cdp run
+		lldp run
+		line console 0
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			exit
+		line aux 0
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			speed 115200
+			flowcontrol hardware
+			exit
+		line vty 0 4
+			login local
+			password vaamonde@pti
+			logging synchronous
+			exec-timeout 5 30
+			transport input ssh
+			end
+write
+---------------------------------------------------------------------------
