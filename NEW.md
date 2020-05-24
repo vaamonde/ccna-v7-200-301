@@ -40,7 +40,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 026 Configuração da Rota Estática Flutuante no Router 1941<br>
 027 Configuração da Interface de Loopback no Router 1941r<br>
 028 Configuração do NetFlow no Router 1941<br>
-029 Configuração do Servidor de IoT Manager Registrato
+029 Configuração do Servidor de IoT Manager Registrator
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
 030 Configuração do Protocolo CDP e LLDP nos Switches e Router<br>
@@ -51,17 +51,17 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 033 Configuração do RADIUS e TACACS+ nos Switches e Router<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
 035 Configuração do VTP Server e Client nos Switches Layer 2 e 3<br>
-036 Configuração da VLAN e TRUNK BÁSICO nos Switches Layeres 2 e 3
+036 Configuração da VLAN e TRUNK BÁSICO nos Switches Layeres 2 e 3<br>
+037 Configuração do Router-on-a-Stick no Router 2911
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-037 Configuração do Router-on-a-Stick no Router 2911<br>
-038 Configuração do DHCP Server no Router 2911
+038 Configuração do DHCP Server no Router 2911<br>
+039 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-039 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
+040 Configuração do Endereçamento IPv6 Estático SLAAC
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-040 Configuração do Endereçamento IPv6 Estático SLAAC<br>
 041 Configuração do Servidor DHCPv6 Stateless<br>
 042 Configuração do Roteamento Estático, Padrão e Flutuante IPv6<br>
 043 Configuração da ACL Standard BÁSICA nos Switches e Routers 

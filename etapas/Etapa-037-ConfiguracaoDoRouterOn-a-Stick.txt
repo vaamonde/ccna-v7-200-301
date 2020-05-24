@@ -1,0 +1,96 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 24/05/2020
+!Data de atualização: 24/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!O Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede,
+!é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento
+!lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. O conceito
+!do Router-on-a-Stick e bem parecido com o Hub-and-Spoke utilizado em Redes Frame Relay.
+
+!Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma
+!subinterface em um roteador Cisco usa a interface física para enviar e receber dados, as subinterfaces são usadas para
+!vários propósitos, principalmente para o roteamento entre VLANs, quando não temos recursos de Switche Layer 3 na rede
+
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+		
+		!Configurando as Interface Física do Router 2911
+		!DICA: para configurar a subinterface, a interface física deve está no status no shutdown
+		interface gigabitEthernet 0/0
+			description Interface Física do Gateway da Rede LAN
+			no shutdown
+			exit
+
+		!Configurando a Subinterface da VLAN 10 ADM
+		!DICA: a subinterface da VLAN será utilizada como Gateway da Rede Local
+		!OBSERVAÇÃO: e recomendado fazer a criação da subinterface utilizando a numeração da VLAN correspondente
+		!OBSERVAÇÃO: para fazer a criação da subinterface utilizando o . (ponto) depois da numeração da interface
+		!OBSERVAÇÃO: a quantidade de subinterface suportada pelo Router é: 0 até 4.294.967.295
+		interface gigabitEthernet 0/0.10
+			description Subinterface da VLAN 10 ADM
+			
+			!Configuração do Modo de Encapsulamento de Trunk (Tronco) IEEE 802.1Q da Subinterface
+			!DICA: o modo de encapsulamento permite usar uma subinterface do roteador como uma porta de tronco para um switch.
+			!OBSERVAÇÃO: por padrão só e permitido fazer a configuração de uma única VLAN por encapsulamento da subinterface
+			encapsulation dot1Q 10
+
+			!Configuração do Endereçamento IPv4 da Subinterface da VLAN
+			ip address 192.168.10.254 255.255.255.0
+			exit
+
+		!Configurando a Subinterface da VLAN 20 CAP
+		interface gigabitEthernet 0/0.20
+			description Subinterface da VLAN 20 CAP
+			encapsulation dot1Q 20
+			ip address 192.168.20.254 255.255.255.0
+			exit
+		!Configurando a Subinterface da VLAN 30 CAR
+		interface gigabitEthernet 0/0.30
+			description Subinterface da VLAN 30 CAR
+			encapsulation dot1Q 30
+			ip address 192.168.30.254 255.255.255.0
+			exit
+		!Configurando a Subinterface da VLAN 40 EST
+		interface gigabitEthernet 0/0.40
+			description Subinterface da VLAN 40 EST
+			encapsulation dot1Q 40
+			ip address 192.168.40.254 255.255.255.0
+			exit
+		!Configurando a Subinterface da VLAN 50 GUEST
+		interface gigabitEthernet 0/0.50
+			description Subinterface da VLAN 50 GUEST
+			encapsulation dot1Q 50
+			ip address 192.168.50.254 255.255.255.0
+			exit
+		!Configurando a Subinterface da VLAN 99 ADMIN
+		interface gigabitEthernet 0/0.99
+			description Subinterface da VLAN 99 ADMIN
+			encapsulation dot1Q 99
+			ip address 192.168.99.254 255.255.255.0
+			exit
+		!Configurando a Subinterface da VLAN 100 SERVER
+		interface gigabitEthernet 0/0.100
+			description Subinterface da VLAN 100 SERVER
+			encapsulation dot1Q 100
+			ip address 192.168.100.254 255.255.255.0
+			end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section interface
+
+!Verificando as informações das interfaces e subinterfaces
+show ip interface brief
+show ip route connected

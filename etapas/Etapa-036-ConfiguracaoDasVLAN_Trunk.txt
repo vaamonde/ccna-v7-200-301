@@ -80,7 +80,11 @@ enable
 			!OBSERVAÇÃO: e recomendo configurar as portas de Trunk em nossa topologia que utiliza o VTP e o STP
 			!OBSERVAÇÃO: para configurar a Porta de Trunk em Switch Layer 3 e necessário primeiro configurar o protocolo 802.1q
 			switchport trunk encapsulation dot1q 
+			
+			!Configurando o modo de Trunk (Tronco) da Interface
 			switchport mode trunk
+
+			!Desabilitando a Auto-negociação da Interface
 			switchport nonegotiate
 			exit
 
@@ -90,6 +94,12 @@ enable
 			switchport trunk encapsulation dot1q 
 			switchport mode trunk
 			switchport nonegotiate
+
+			!Configurando o modo do STP de Rápida mudança para Encaminhamento da Interface
+			!DICA: em portas Trunk (Tronco) conectadas em Roteadores ou Servidores e recomendado acelerar a velocidade de 
+			!encaminhamento de quadros (frames) na Interface, agilizando processo de convergência da topologia
+			!OBSERVAÇÃO: essa configuração não deve ser utilizada em Interfaces de Trunk entre Switches na Topologia
+			spanning-tree portfast trunk
 			exit
 
 		!Configurando a Interface de Acesso a VLAN 100 do Servidor
@@ -106,17 +116,28 @@ enable
 			!DICA: por padrão podemos configurar apenas uma VLAN no porta do Switch
 			!OBSERVAÇÃO: a partir do momento que configuramos a VLAN na porta do Switch, todos os quadros (frames)
 			!recebem a Tag (etiqueta) dot1q (IEEE 802.1Q) ou do ISL (Inter-Switch Link - Cisco) no seu frame ethernet
-			!quando passa pela porta do switch 
+			!quando passa pela porta do switch
 			switchport access vlan 100
 			exit
 		
-		!Configurando a Interface de Acesso a VLAN 50 do Access Point
+		!Configurando a Interface de Acesso a VLAN 50 do Access Point AC
 		interface fastEthernet 0/2
-			description Interface de Acesso do Access Point
+			description Interface de Acesso do Access Point AC
 			switchport mode access
 			switchport access vlan 50
 			switchport nonegotiate
-			end
+			exit
+
+		!Configuração do STP e RSTP no Switch Layer 3 para ser o Root Bridge das VLANs
+		spanning-tree vlan 1,10,20,30,40,50,99-100 root primary
+		spanning-tree mode rapid-pvst
+
+		!Configurando o modo do STP de Rápida mudança para Encaminhamento da Interface
+		!DICA: diferente do comando spanning-tree portfast trunk, o comando spanning-tree portfast e utilizado somente
+		!em interface configurada no modo de acesso, não deve ser utilizada em Interfaces de Trunk
+		!OBSERVAÇÃO: existe a possibilidade de configurar o Portfast Globalmente ou individualmente na Interface com o
+		!comando: spanning-tree portfast
+		spanning-tree portfast default
 write
 
 !SEGUNDA ETAPA: Configuração das VLANs e Trunk nos Switches Layer 2 2960
@@ -127,30 +148,33 @@ enable
 			switchport mode trunk
 			switchport nonegotiate
 			exit
-		interface fastEthernet 0/1
+		interface range fastEthernet 0/1 - 5
 			description Interface de Acesso do Desktop da VLAN 10
 			switchport mode access
 			switchport access vlan 10
 			switchport nonegotiate
 			exit
-		interface fastEthernet 0/6
+		interface range fastEthernet 0/6 - 10
 			description Interface de Acesso do Desktop da VLAN 20
 			switchport mode access
 			switchport access vlan 20
 			switchport nonegotiate
 			exit
-		interface fastEthernet 0/11
+		interface range fastEthernet 0/11 - 15
 			description Interface de Acesso do Desktop da VLAN 30
 			switchport mode access
 			switchport access vlan 30
 			switchport nonegotiate
 			exit
-		interface fastEthernet 0/16
+		interface range fastEthernet 0/16 - 20
 			description Interface de Acesso do Desktop da VLAN 40
 			switchport mode access
 			switchport access vlan 40
 			switchport nonegotiate
-			end
+			exit
+		spanning-tree mode rapid-pvst
+		spanning-tree portfast default
+		end
 write
 
 !Visualizando as configurações da memória RAM
