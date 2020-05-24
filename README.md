@@ -435,3 +435,33 @@ As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Scri
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-033.pkt
 
 Link da vídeo aula:
+
+## **034 Interligando uma Nova Rede WAN Fiber na Topologia - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou interligar uma nova Rede WAN Fiber (Fibra Óptica) mantendo o modelo de Hierarquia de Três Camadas, adicionando um Router 2911 como Núcleo (Core), um Switch Layer 3 3560 como Distribuição (Distribuition) e dois Switches Layer 2 2960 como Acesso (Access), adicionando um Servidor na Distribuição (Não Indicado), um Ponto de Acesso (Access Point) para Rede Sem-Fio (Wireless - Wi-Fi) 802.11-AC na Distribuição (Não Indicado) e Desktops nos Switches de Acesso, será feito a interligação dos Switches com Caminhos Redundantes (Loop de Camada 2). Nessa topologia o diferencial vai ser a configuração da simulação de uma Rede GPON (Gigabit Passive Optical Network), simulando as OLT's (Optical Line Terminal) e os ONU's (Optical Network Unit) e ONT's (Optical Network Terminal).
+
+Configuração base do cenário será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-034-ConfiguracaoDosSwitchesRouter-TopologiaFiber.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-034.pkt
+
+Link da vídeo aula: 
+
+## **035 Configuração do VTP Server e Client nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do Serviços de VTP (VLAN Trunk Protocol), essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, o VTP é um protocolo proprietário da Cisco de Camada 2 que está disponível na maioria dos produtos da série de Switches Catalyst. O VTP reduz a administração em uma rede de Switches, quando você configura uma VLAN nova em um servidor VTP, a VLAN será distribuída através de todos os Switches no domínio VTP, isso reduz a necessidade de configurar a mesma VLAN em todos os Switches manualmente.
+
+As configurações do VTP Server e Client nos Switche Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-035-ConfiguracaoVTP_ServerClient.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-035.pkt
+
+Link da vídeo aula: 
+
+## **036 Configuração da VLAN e TRUNK BÁSICO nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração das VLAN (Virtual-LAN - Local Area Network) e das Portas de Tronco (Trunk), essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, as VLANs é uma rede logicamente independente, várias VLANs podem coexistir em um mesmo Switch, de forma a dividir uma rede local em mais de uma rede, criando domínios de broadcast separados. Uma Porta de Tronco, normalmente usada para interligação de Switches ou ligação a Roteadores, ela permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
+
+As configurações da VLAN e TRUNK BÁSICO nos Switche Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-036-ConfiguracaoDasVLAN_Trunk.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-036.pkt
+
+Link da vídeo aula: 

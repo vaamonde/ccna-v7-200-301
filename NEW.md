@@ -50,10 +50,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 033 Configuração do RADIUS e TACACS+ nos Switches e Router<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
-035 Configuração do VTP Server e Client nos Switches Layer 2 e 3
+035 Configuração do VTP Server e Client nos Switches Layer 2 e 3<br>
+036 Configuração da VLAN e TRUNK BÁSICO nos Switches Layeres 2 e 3
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-036 Configuração da VLAN e TRUNK BÁSICO nos Switches Layeres 2 e 3<br>
 037 Configuração do Router-on-a-Stick no Router 2911<br>
 038 Configuração do DHCP Server no Router 2911
 
