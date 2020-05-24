@@ -52,24 +52,27 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
 035 Configuração do VTP Server e Client nos Switches Layer 2 e 3<br>
 036 Configuração da VLAN e TRUNK BÁSICO nos Switches Layeres 2 e 3<br>
-037 Configuração do Router-on-a-Stick no Router 2911
-
-## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-038 Configuração do DHCP Server no Router 2911<br>
+037 Configuração do Router-on-a-Stick no Router 2911<br>
+038 Configuração do DHCPv4 Server no Router 2911<br>
 039 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
 
+## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
+040 Configuração do Endereçamento IPv6 Estático SLAAC<br>
+041 Configuração do Servidor DHCPv6 Stateless<br>
+042 Configuração do Roteamento Estático, Padrão e Flutuante do IPv6
+
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-040 Configuração do Endereçamento IPv6 Estático SLAAC
+043 Configuração do DHCPv6 Server no Router 2911<br>
+044 Configuração do RIPng nos Router 1941 e 2911
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-041 Configuração do Servidor DHCPv6 Stateless<br>
-042 Configuração do Roteamento Estático, Padrão e Flutuante IPv6<br>
-043 Configuração da ACL Standard BÁSICA nos Switches e Routers 
+044 Configuração da ACL Standard BÁSICA nos Switches e Routers<br>
+045 Configuração da ACL Extended BÁSICA nos Switches e Routers
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
-ACL Standard, ACL Extended, Static NAT, Dynamic NAT, Port Address Translation PAT, Overload NAT<br>
-EIGRP, OSPF, BGP, IS-IS, WLC, FHRP, HSVRP, GLBP, Etherchannel PAgP, Etherchannel LACP, xDSL, <br>
-PPP, PPPoE, Frame-Relay, VPN, MPLS, Firewall, QoS, PYTHON, JSON, SD-WAN, STP Pruning, etc
+Static NAT, Dynamic NAT, Port Address Translation PAT, Overload NAT, EIGRP, OSPF, BGP,<br>
+IS-IS, WLC, FHRP, HSVRP, GLBP, Etherchannel PAgP, Etherchannel LACP, xDSL, PPP, PPPoE,<br>
+Frame-Relay, VPN, MPLS, Firewall, QoS, PYTHON, JSON, SD-WAN, STP Pruning, etc
 
 ## **ETAPA-07: Temas de Aulas que não fazem parte do CCNAv7, não Disponível no Github:**
 VoIP, ARDUINO, IoT/IoE, ASA, DSL, CABLE WAN, WAN Emulator, 3/4G Celular, MERAKI, <br>

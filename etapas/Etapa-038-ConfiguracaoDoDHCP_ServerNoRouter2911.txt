@@ -1,0 +1,105 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 24/05/2020
+!Data de atualização: 24/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!OBSERVAÇÃO: os recursos de DHCP Server em Roteadores ou Switches Layer 3 da Cisco são limitados, e recomendo utilizar Servidores 
+!Microsoft ou GNU/Linux em uma rede corporativa, as principais limitações dos servidores DHCP em Router e Switch são: opções de 
+!configurações avançadas, integrações de serviços de rede, relatórios, etc. 
+
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+		
+		!Configurando a Faixa de Exclusão de Endereços IPv4 do Escopo do DHCP Server
+		!DICA: a faixa de exclusão são endereços IPv4 que não serão ofertados na rede para os dispositivos finais
+		!OBSERVAÇÃO: e recomendo sempre declarar os endereços IPv4 de exclusão do Gateway e equipamentos da rede que oferecem 
+		!serviços de rede, como por exemplo: Impressoras, Access Point, para que esses endereços não entrem em conflitos de
+		!duplicidade na rede (endereços IPv4 duplicados na rede)
+		ip dhcp excluded-address 192.168.10.200 192.168.10.254
+		
+		!Configurando o Pool do DHCP Server da VLAN 10
+		!DICA: tanto no Router como em Servidores temos a possibilidade de configurar vários Pools de DHCP na rede
+		!OBSERVAÇÃO: para cada VLAN na rede, está associada a sua Subinterface, será criado um Pool de configuração da VLAN
+		!com base nas configurações do endereçamento de rede da Subinterface.
+		ip dhcp pool adm-10
+		
+			!Configurando a Rede do Pool do DHCP da VLAN 10
+			!DICA: a configuração da rede do Pool do DHCP precisa ser a mesma configurada na Subinterface do Router
+			!OBSERVAÇÃO: a configuração da rede do Pool e obrigatória para o funcionamento correto do DHCP Server
+			network 192.168.10.0 255.255.255.0
+			
+			!Configurando o Gateway padrão do Pool da VLAN 10
+			!DICA: configuração do Gateway padrão dos dispositivos finais da VLAN 10
+			!OBSERVAÇÃO: no cisco Packet Tracer só temos a possibilidade de configurar um Gateway Padrão no Pool do DHCP
+			!OBSERVAÇÃO: em equipamentos reais temos a possibilidade de configurar mais Gateway, separados por espaço
+			default-router 192.168.10.254
+			
+			!Configurando o Endereço IPv4 do Servidor de DNS do Pool da VLAN 10
+			!DICA: 
+			!OBSERVAÇÃO: no cisco Packet Tracer só temos a possibilidade de configurar um Servidor DNS no Pool do DHCP
+			!OBSERVAÇÃO: em equipamentos reais temos a possibilidade de configurar mais DNS, separados por espaço
+			dns-server 192.168.3.1
+			
+			!Configurando o Nome de Domínio do Pool da VLAN 10
+			!DICA: a configuração do Nome de Domínio e fundamental para a pesquisa e sufixo do DNS nos desktops
+			!OBSERVAÇÃO: o nome de domínio também e utilizado para criar o FQDN (Fully Qualified Domain Name) no desktops
+			domain-name vaamonde.pti
+			
+			!Configurando as Opções do DHCP do Pool da VLAN 10
+			!DICA: em servidores DHCP tem os recursos de Opções (Option), que possibilita fazer configurações de parâmetros do DHCP Server 
+			!OBSERVAÇÃO: no Cisco Packet Tracer só temos as possibilidade de configurar as Opções: 43 (Vendor Specific) e 150 (TFTP Server)
+			option 150 ip 192.168.100.1
+			exit
+			
+		ip dhcp excluded-address 192.168.20.200 192.168.20.254
+		ip dhcp pool cap-20
+			network 192.168.20.0 255.255.255.0
+			default-router 192.168.20.254
+			dns-server 192.168.3.1
+			domain-name vaamonde.pti
+			option 150 ip 192.168.100.1
+			exit		
+		ip dhcp excluded-address 192.168.30.200 192.168.30.254
+		ip dhcp pool car-30
+			network 192.168.30.0 255.255.255.0
+			default-router 192.168.30.254
+			dns-server 192.168.3.1
+			domain-name vaamonde.pti
+			option 150 ip 192.168.100.1
+			exit
+		ip dhcp excluded-address 192.168.40.200 192.168.10.254
+		ip dhcp pool est-40
+			network 192.168.40.0 255.255.255.0
+			default-router 192.168.40.254
+			dns-server 192.168.3.1
+			domain-name vaamonde.pti
+			option 150 ip 192.168.100.1
+			exit
+		ip dhcp excluded-address 192.168.50.200 192.168.10.254
+		ip dhcp pool guest-50
+			network 192.168.50.0 255.255.255.0
+			default-router 192.168.50.254
+			dns-server 192.168.3.1
+			domain-name vaamonde.pti
+			option 150 ip 192.168.100.1
+			end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section dhcp
+
+!Verificando as informações do DHCP Server no Router 2911
+show ip dhcp binding
+show ip dhcp pool
+show ip dhcp conflict

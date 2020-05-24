@@ -1,0 +1,34 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 24/05/2020
+!Data de atualização: 24/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS NO
+!PROTOCOLO DE ROTEAMENTO DINÂMICO RIP OU RIPv2, UMA VEZ QUE SUA IMPLEMENTAÇÃO EM REDES CORPORATIVAS ATUAIS CAIU
+!EM DESUSO, DEVIDO AO SEU ALGORITMO DE VETOR DE DISTÂNCIA SER LIMITADO EM REDES MAIS COMPLEXAS, PRINCIPALMENTE
+!NA INTERNET, MAIS RECOMENDO O SEU ESTUDO, POIS O RIP FOI O PRIMEIRO PROTOCOLO DE ROTEAMENTO DINÂMICO DESENVOLVIDO.
+
+!O RIP (Routing Information Protocol) é um protocolo de roteamento, baseado no algoritmo de Vetor de Distância, 
+!projetado para ser usado como um IGP () em redes de tamanho moderado com tamanho máximo de 15 saltos (Routers),
+!a primeira versão do RIP foi descrita em 1988, no RFC 1058.
+
+!Acessando o modo EXEC Privilégiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+
+
+!Visualizando as configurações da memória RAM
+show running-config | section rip
+
+!Verificando as informações do Protocolo RIPv2 nos Routeres 2911 e 1941
+show 
