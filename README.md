@@ -465,3 +465,13 @@ As configurações da VLAN e TRUNK BÁSICO nos Switche Layer 2 e 3 será feita u
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-036.pkt
 
 Link da vídeo aula: 
+
+## **037 Configuração do Router-on-a-Stick no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração Router-on-a-Stick, essa configuração será feita no Router 2911, o Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede, é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma subinterface em um roteador Cisco usa a interface física para enviar e receber dados, as subinterfaces são usadas para vários propósitos, principalmente para o roteamento entre VLANs, quando não temos recursos de Switche Layer 3 na rede.
+
+As configurações do Router-on-a-Stick no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-037-ConfiguracaoDoRouterOn-a-Stick.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-037.pkt
+
+Link da vídeo aula: 
