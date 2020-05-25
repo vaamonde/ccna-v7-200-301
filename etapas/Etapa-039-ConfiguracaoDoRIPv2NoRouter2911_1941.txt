@@ -16,19 +16,118 @@
 !EM DESUSO, DEVIDO AO SEU ALGORITMO DE VETOR DE DISTÂNCIA SER LIMITADO EM REDES MAIS COMPLEXAS, PRINCIPALMENTE
 !NA INTERNET, MAIS RECOMENDO O SEU ESTUDO, POIS O RIP FOI O PRIMEIRO PROTOCOLO DE ROTEAMENTO DINÂMICO DESENVOLVIDO.
 
-!O RIP (Routing Information Protocol) é um protocolo de roteamento, baseado no algoritmo de Vetor de Distância, 
-!projetado para ser usado como um IGP () em redes de tamanho moderado com tamanho máximo de 15 saltos (Routers),
-!a primeira versão do RIP foi descrita em 1988, no RFC 1058.
+!O RIP (Routing Information Protocol) é um protocolo de roteamento, baseado no algoritmo de Vetor de Distância, ele
+!foi projetado para ser usado como um IGP (Interior Gateway Protocol) em redes de abrangência moderada com tamanho
+!máximo de 15 saltos (Hopes, Routers, Gateway), a primeira versão do RIP foi descrita em 1988, no RFC 1058.
 
+!O Protocolo RIP possui basicamente três versões: RIPv1 implementação original, limitado ao roteamento de rede de
+!de classe cheia/completa (classful), considerado obsoleto, RIPv2 introduziu suporte para roteamento sem classe
+!(classless), autenticação, atualizações dinâmicas e anúncios multicast (RFC 2453) e o RIPng (RIP Next Generation)
+!que estende o RIPv2 para oferecer suporte ao roteamento IPv6 (RFC 2080).
+
+!Informações importantes do Protocolo RIPv2: Tipo de Protocolo de Vetor de Distância, utiliza o Algoritmo Bellman-Ford,
+!possui Distância Administrativa de 120, utiliza Métrica/Custo Padrão baseado em Contagem de Saltos (Hop Count) no máximo
+!de 15 saltos, utilizada o Método de Transporte UDP, possui suporte o Protocolo IPv4, possui suporte a Redes Sem Classe
+!(Classless - CIDR Classless Inter-Domain Routing), envia anúncios (advertisement) utilizando o endereço de Multicast
+!224.0.0.9, suporta Autenticação de Texto Plano (Plaintext) ou com Criptografia MD5, possui suporte a Sumarização de Redes.
+
+!O RIPv2 trabalha com os tempos padrão de: 30s Update (atualizações das rotas), 180s Invalid (rota considerada inválida),
+!180s Holddown (informações sobre um melhor caminho não são consideradas - unreachable) e 240s Flush (tempo que deve-se 
+!passar para que uma rota seja removida da tabela de roteamento)
+
+!PRIMEIRA ETAPA: Configuração do Roteador 2911
 !Acessando o modo EXEC Privilégiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 
+		!Inicializando a Interface Física de Interligação com o Router 1941-2
+		interface gigabitEthernet 0/0/0
+			description Interface de Interligação Física da WAN Fiber com o Router 1941-2
+			no shutdown
+			exit
+		
+		!Configurando a Interface Lógica de Interligação com o Router 1941-2
+		interface gigabitEthernet 0/0/0.999
+			description Interface Lógica de Interligação da WAN Fiber com o Router 1941-2
+			encapsulation dot1Q 999
+			ip address 10.0.0.9 255.255.255.252
+			exit
+
+		!Configurando o Processo Local do Protocolo de Roteamento Dinâmico RIP
+		router rip
+
+			!Configurando a versão do Protocolo RIP
+			!DICA: configurar a versão 2 do protocolo RIP permite utilizar o recurso de redes Classless
+			!OBSERVAÇÃO: após a configuração da versão do protocolo RIP, todos os roteadores do domínio do RIP precisam está
+			!configurados na mesma versão, para trocar anúncios e tabela de roteamento
+			version 2
+
+			!Configurando a Interface Passiva do Protocolo RIP
+			!DICA: as interface passivas do roteador não enviam anúncios do RIP pela sua interface, mais recebem anúncios de
+			!outros roteadores conectados nessa interface
+			!OBSERVAÇÃO: e recomendo sempre desativar os anúncios das interface que não vão participar do domínio do RIP
+			passive-interface gigabitEthernet 0/0
+
+			!Desabilitando o recurso de Auto-Sumarização do Protocolo RIP
+			!DICA: desabilitar o recurso de auto-sumarização do protocolo RIP facilita na análise das redes declaradas
+			!OBSERVAÇÃO: dependendo do tamanho da rede, e recomendo habilitar o recurso de sumarização para diminuir o tamanho
+			!da tabela de roteamento e os anúncios enviados na rede
+			no auto-summary
+
+			!Declarando as Redes Físicamente Conectadas no Router 2911
+			!DICA: declarar as redes físicas conectadas que serão anúncidas para todos os roteadores que fazem parte do domínio do RIP
+			!OBSERVAÇÃO: na declaração de rede do protocolo RIP não e necessário especificar a máscara de rede ou CIDR
+			network 10.0.0.8
+			network 192.168.10.0
+			network 192.168.20.0
+			network 192.168.30.0
+			network 192.168.40.0
+			network 192.168.50.0
+			network 192.168.99.0
+			network 192.168.100.0
+			end
+write
+
+!SEGUNDA ETAPA: Configuração do Roteador 1941-2
+enable
+	configure terminal
+		interface gigabitEthernet 0/1/0
+			description Interface de Interligação Física da WAN Fiber com o Router 2911
+			no shutdown
+			exit
+		interface gigabitEthernet 0/1/0.999
+			description Interface Lógica de Interligação da WAN Fiber com o Router 2911
+			encapsulation dot1Q 999
+			ip address 10.0.0.10 255.255.255.252
+			exit
+
+		!Configurando o Protocolo de Roteamento Dinâmico RIPv2
+		router rip
+			version 2
+			!OBSERVAÇÃO: no roteador 1941-2 temos mais interface que não vão enviar anúncios do protocolo RIP
+			passive-interface gigabitEthernet 0/0
+			passive-interface gigabitEthernet 0/1
+			passive-interface serial 0/0/0
+			no auto-summary
+			network 10.0.0.0
+			network 10.0.0.4
+			network 10.0.0.8
+			network 10.0.0.252
+			network 192.168.2.0
+
+			!Configurando a Redistribuição de Rotas Estática do Roteador 1941
+			!DICA: o protocolo RIP permite redistribuir redes aprendidas no roteador através de outros protocolos de roteamento
+			!OBSERVAÇÃO: nesse roteador foi configurado rotas estáticas para as rede: 192.168.1.0/24 e 192.168.3.0/24
+			!OBSERVAÇÃO: na redistribuição de rotas estáticas temos as opções de alteração de métricas/custo: 0 até 16 ou transparente
+			redistribute static metric transparent
+			end
+write
 
 !Visualizando as configurações da memória RAM
-show running-config | section rip
+show running-config | section router rip
 
 !Verificando as informações do Protocolo RIPv2 nos Routeres 2911 e 1941
-show 
+show ip router rip
+show ip rip database
