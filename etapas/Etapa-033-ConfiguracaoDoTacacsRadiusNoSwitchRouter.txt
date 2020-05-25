@@ -19,7 +19,7 @@
 !um serviço de rede.
 
 !O protocolo padrão utilizado pelo RADIUS é o UDP (User Datagram Protocol) na porta padrão: 1812
-!OBSERVAÇÃO: o protocolo RADIUS também utiliza as portas: 1812, 1813, 1645, e 1646
+!OBSERVAÇÃO: o protocolo RADIUS também utiliza as portas: 1812, 1813, 1645 e 1646
 
 !TACACS (Terminal Access Controller Access-Control System) é um protocolo de autenticação remota usado
 !para comunicação com servidores de autenticação, ele permite que um servidor de acesso remoto se 
@@ -72,18 +72,18 @@ enable
 		
 		!Configuração da Autorização AAA do Modo EXEC
 		!DICA: as configurações de autorização está relacionada ao nível de privilegio de acesso ao Shell
-		!OBSERVAÇÃO: no Cisco Packet Tracer os niveis de privilegio de acesso são limitados
+		!OBSERVAÇÃO: no Cisco Packet Tracer os níveis de privilégios de acesso são limitados
 		!OBSERVAÇÃO: nas configurações de autorização temos as opções: exec e network (Protocolos SLIP, PPP, e ARAP)
 		aaa authorization exec default group tacacs+ local
 		
 		!Configuração dos Avisos de Contabilização AAA
 		!DICA: as configurações de contabilização está relacionada aos tipos de aviso enviados para contabilização
-		!OBSERVAÇÃO: no Cisco Packet Tracer os niveis de contabilização são limitados
+		!OBSERVAÇÃO: no Cisco Packet Tracer os níveis de contabilização são limitados
 		!OBSERVAÇÃO: nas configurações da contabilização temos as opções: start-stop e stop-only
 		aaa accounting exec default start-stop group tacacs+
 		
 		!Configuração do Servidor de Autenticação AAA TACACS+
-		!DICA: configuração do endereço IPv4 do Servidor AAA e da chave de autenticação
+		!DICA: a configuração do endereço IPv4 do Servidor AAA e da chave de autenticação
 		!OBSERVAÇÃO: no Cisco Packet Tracer, os Switches Layer 2 e 3 são limitados somente a autenticação TACACS+
 		tacacs-server host 192.168.3.1 key pti
 		
@@ -97,7 +97,7 @@ enable
 			login authentication default
 			
 			!Configuração da contabilização da autenticação das Linhas Virtuais
-			!DICA: alterar a forma de contabilização das Linhas permite enviar avisos do uso dos terminais
+			!DICA: alterar a forma de contabilização das Linhas permite enviar avisos de utilização dos terminais
 			!OBSERVAÇÃO: essa contabilização será feita com base no comando: aaa accounting exec default
 			accounting exec default
 			exit
@@ -168,3 +168,4 @@ write
 show running-config | section aaa
 show running-config | include tacacs
 show running-config | include radius
+show users
