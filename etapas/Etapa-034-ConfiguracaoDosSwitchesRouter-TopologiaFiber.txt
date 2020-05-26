@@ -7,24 +7,39 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 24/05/2020
-!Data de atualização: 24/05/2020
+!Data de atualização: 26/05/2020
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !PRIMEIRA ETAPA: Configuração Base Switch Layer 2 2960
 enable
-clock set 14:00:00 25 May 2020
+clock set 14:00:00 26 May 2020
+terminal history size 256
+terminal monitor
 	configure terminal
 		hostname sw-l2-2960-5
 		service password-encryption
 		service timestamps log datetime msec
-		no ip domain-lookup
+		logging on
+		logging host 192.168.3.1
+		logging trap debugging
+		snmp-server community ptiro ro
+		snmp-server community ptirw rw
+		cdp run
+		lldp run
+		ip domain-lookup
+		ip domain-name vaamonde.pti
+		ip name-server 192.168.3.1
+		ip default-gateway 192.168.99.254
+		clock timezone BR -3
+		ntp authenticate
+		ntp authentication-key 123456 md5 vaamonde
+		ntp server 192.168.3.1
 		banner motd #AVISO: acesso autorizado somente a funcionarios#
 		enable secret vaamonde@pti
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
-		ip domain-name vaamonde.pti
 		crypto key generate rsa
 		ip ssh version 2
 		ip ssh time-out 60
@@ -49,18 +64,32 @@ write
 
 !SEGUNDA ETAPA: Configuração Base Switch Layer 2 2960
 enable
-clock set 14:00:00 25 May 2020
+clock set 14:00:00 26 May 2020
+terminal history size 256
+terminal monitor
 	configure terminal
 		hostname sw-l2-2960-6
 		service password-encryption
 		service timestamps log datetime msec
+		logging on
+		logging host 192.168.3.1
+		logging trap debugging
+		snmp-server community ptiro ro
+		snmp-server community ptirw rw
+		cdp run
+		lldp run
 		no ip domain-lookup
+		ip domain-name vaamonde.pti
+		ip name-server 192.168.3.1
+		ip default-gateway 192.168.99.254
+		ntp authenticate
+		ntp authentication-key 123456 md5 vaamonde
+		ntp server 192.168.3.1
 		banner motd #AVISO: acesso autorizado somente a funcionarios#
 		enable secret vaamonde@pti
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
-		ip domain-name vaamonde.pti
 		crypto key generate rsa
 		ip ssh version 2
 		ip ssh time-out 60
@@ -85,19 +114,34 @@ write
 
 !TERCEIRA ETAPA: Configuração Base Switch Layer 3 3560
 enable
-clock set 14:00:00 25 May 2020
+clock set 14:00:00 26 May 2020
+terminal history size 256
+terminal monitor
 	configure terminal
 		hostname sw-l3-3560-2
 		service password-encryption
 		service timestamps log datetime msec
 		service timestamps debug datetime msec
+		logging on
+		logging host 192.168.3.1
+		logging trap debugging
+		snmp-server community ptiro ro
+		snmp-server community ptirw rw
+		cdp run
+		lldp run
 		no ip domain-lookup
+		ip domain-name vaamonde.pti
+		ip name-server 192.168.3.1
+		ip default-gateway 192.168.99.254
+		ntp authenticate
+		ntp authentication-key 123456 md5 vaamonde
+		ntp server 192.168.3.1
+		ntp update-calendar
 		banner motd #AVISO: acesso autorizado somente a funcionarios#
 		enable secret vaamonde@pti
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
-		ip domain-name vaamonde.pti
 		crypto key generate rsa
 		ip ssh version 2
 		ip ssh time-out 60
@@ -123,20 +167,37 @@ write
 
 !QUARTA ETAPA: Configuração Base Router 2911
 enable
-clock set 14:00:00 25 May 2020
+clock set 14:00:00 26 May 2020
+terminal history size 256
+terminal monitor
 	configure terminal
 		hostname rt-2911-1
 		service password-encryption
 		service timestamps log datetime msec
 		service timestamps debug datetime msec
-		no ip domain-lookup
+		logging on
+		logging host 192.168.3.1
+		logging trap debugging
+		login on-success log
+		login on-failure log
+		logging userinfo
+		snmp-server community ptiro ro
+		snmp-server community ptirw rw
+		cdp run
+		lldp run
+		ip domain-lookup
+		ip domain-name vaamonde.pti
+		ip name-server 192.168.3.1
+		ntp authenticate
+		ntp authentication-key 123456 md5 vaamonde
+		ntp server 192.168.3.1
+		ntp update-calendar
 		banner motd #AVISO: acesso autorizado somente a funcionarios#
 		security passwords min-length 10
 		enable secret vaamonde@pti
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
-		ip domain-name vaamonde.pti
 		crypto key generate rsa
 		ip ssh version 2
 		ip ssh time-out 60
