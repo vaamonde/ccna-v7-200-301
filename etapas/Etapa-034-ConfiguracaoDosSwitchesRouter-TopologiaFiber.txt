@@ -14,6 +14,7 @@
 !PRIMEIRA ETAPA: Configuração Base Switch Layer 2 2960
 enable
 clock set 14:00:00 26 May 2020
+!Configuração do Histórico de comandos e Monitoramento dos Log no Terminal
 terminal history size 256
 terminal monitor
 	configure terminal
@@ -30,6 +31,7 @@ terminal monitor
 		ip domain-lookup
 		ip domain-name vaamonde.pti
 		ip name-server 192.168.3.1
+		!OBSERVAÇÃO: as SVI dos Switches serão configuradas utilizando a VLAN-99
 		ip default-gateway 192.168.99.254
 		clock timezone BR -3
 		ntp authenticate
