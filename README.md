@@ -408,13 +408,13 @@ Link da vídeo aula: https://www.youtube.com/watch?v=SA4d8nd5rxM
 
 ## **031 Configuração do Dynamic ARP Inspection DAI nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Dynamic ARP Inspection DAI (Inspeção Dinâmica do ARP) nos Switches Layer 2 e 3, o DAI é um recurso de segurança que protege o Protocolo ARP (Address Resolution Protocol) contra possíveis vulnerabilidades de ataques como ARP Poisoning (Envenenamento por ARP), o DAI trabalha em conjunto com o DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação), quando o DAI está habilitado o Switch ele descarta os pacotes ARP se o endereço MAC e IP do remetente não correspondem a uma entrada válida no banco de dados do DHCP Snooping. 
+Nessa aula, vou fazer a configuração do Dynamic ARP Inspection DAI (Inspeção Dinâmica do ARP) nos Switches Layer 2 e 3, o DAI é um recurso de segurança que protege o Protocolo ARP (Address Resolution Protocol) contra possíveis vulnerabilidades de ataques como ARP Poisoning (Envenenamento por ARP), o DAI trabalha em conjunto com o DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação), quando o DAI está habilitado no Switch ele descarta os pacotes ARP se o endereço MAC e IP do remetente não correspondem a uma entrada válida no banco de dados do DHCP Snooping. 
 
 As configurações do Dynamic ARP Inspection nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-031-ConfiguracaoDoDynamicARP_Inspection.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-031.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=qUU_JNBbN7A&t
 
 ## **032 Configuração do STP e RSTP BÁSICO nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
