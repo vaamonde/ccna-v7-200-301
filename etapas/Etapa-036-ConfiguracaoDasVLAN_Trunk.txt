@@ -65,6 +65,8 @@ enable
 			name est
 		vlan 50
 			name guest
+		vlan 90
+			name native
 		vlan 99
 			name admin
 		vlan 100
@@ -105,6 +107,10 @@ enable
 			!OBSERVAÇÃO: para a correta configuração da VLAN na porta de rede e recomendo mudar o modo da porta
 			switchport mode access
 			switchport nonegotiate
+			switchport port-security
+			switchport port-security maximum 1
+			switchport port-security mac-address sticky
+			switchport port-security violation restrict
 			
 			!Configurando o acesso a VLAN 100 da Interface do Servidor
 			!DICA: por padrão podemos configurar apenas uma VLAN no porta do Switch
@@ -120,6 +126,11 @@ enable
 			switchport mode access
 			switchport access vlan 50
 			switchport nonegotiate
+			switchport mode access
+			switchport port-security
+			switchport port-security mac-address sticky
+			switchport port-security maximum 5
+			switchport port-security violation restrict
 			end
 write
 
@@ -136,25 +147,41 @@ enable
 			switchport mode access
 			switchport access vlan 10
 			switchport nonegotiate
+			switchport port-security
+			switchport port-security maximum 1
+			switchport port-security mac-address sticky
+			switchport port-security violation restrict
 			exit
 		interface range fastEthernet 0/6 - 10
 			description Interface de Acesso do Desktop da VLAN 20
 			switchport mode access
 			switchport access vlan 20
 			switchport nonegotiate
+			switchport port-security
+			switchport port-security maximum 1
+			switchport port-security mac-address sticky
+			switchport port-security violation restrict
 			exit
 		interface range fastEthernet 0/11 - 15
 			description Interface de Acesso do Desktop da VLAN 30
 			switchport mode access
 			switchport access vlan 30
 			switchport nonegotiate
+			switchport port-security
+			switchport port-security maximum 1
+			switchport port-security mac-address sticky
+			switchport port-security violation restrict
 			exit
 		interface range fastEthernet 0/16 - 20
 			description Interface de Acesso do Desktop da VLAN 40
 			switchport mode access
 			switchport access vlan 40
 			switchport nonegotiate
-		end
+			switchport port-security
+			switchport port-security maximum 1
+			switchport port-security mac-address sticky
+			switchport port-security violation restrict
+			end
 write
 
 !Visualizando as configurações da memória RAM

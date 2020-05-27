@@ -41,7 +41,7 @@ enable
 	
 		!Configuração do STP do Switch Layer 3 para ser o Root Bridge das VLANs
 		!OBSERVAÇÃO: configurando somente as VLANs criadas no Switch para ser o Root Bridge padrão da Topologia
-		spanning-tree vlan 1,10,20,30,40,50,99-100 root primary
+		spanning-tree vlan 1,10,20,30,40,50,90-100 root primary
 		
 		!Configurando o RSTP Rapid-PVST no Switch Layer 3 3560
 		!OBSERVAÇÃO: lembre-se de que ser atividado no Switch Root Bridge os demais também precisam ser configurados
@@ -58,7 +58,7 @@ enable
 		!DICA: proteger portas de acesso contra ataques de BPDU aumenta o nível de segurança da topologia
 		!OBSERVAÇÃO: existe a possibilidade de configurar o BPDU Guard Globalmente ou Individualmente na Interface com o
 		!comando: spanning-tree bpduguard disable ou spanning-tree bpduguard enable
-		spanning-tree portfast bpduguard default
+		!spanning-tree portfast bpduguard default
 
 		!Configurando a Interface de Trunk com o Router 2911
 		interface fastEthernet 0/24
@@ -76,7 +76,7 @@ enable
 			!Configurando a Poda (Pruning) das VLANs nas Interface de Trunk
 			!DICA: essa poda das VLANs aumenta o nível de segurança do tráfego entre os Trunks
 			!OBSERVAÇÃO: nessa topologia, somente as VLANs entre 10 até 40 e a VLAN 99 estão autorizadas a trafegar entre os Trunk
-			switchport trunk allowed vlan 10-40,99
+			switchport trunk allowed vlan 10-40,90,99
 
 			!Configurando a Proteção contra Eleições de Portas Raiz (Root Port)
 			!DICA: essa proteção aumenta o nível de segurança da topologia
@@ -90,7 +90,7 @@ enable
 	configure terminal
 		spanning-tree mode rapid-pvst
 		spanning-tree portfast default
-		spanning-tree portfast bpduguard default
+		!spanning-tree portfast bpduguard default
 		end
 write
 
