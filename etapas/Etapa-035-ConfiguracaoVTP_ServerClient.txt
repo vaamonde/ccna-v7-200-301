@@ -64,7 +64,7 @@ enable
 		!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de configuração do Pruning não está disponível para configuração
 		!OBSERVAÇÃO: o VTP Pruning filtra o tráfego de mensagens Broadcast, Multicast e Flood desnecessárias nos Trunks
 		!IMPORTANTE: o VTP Pruning é proprietário da Cisco, não é possível configurar o recurso de Pruning em outros fabricantes,
-		!para isso é recomendo utilizar as configurações do: switchport trunk allowed que será visto nas configurações de Trunk
+		!para isso é recomendo utilizar as configurações de Prunning do Switchport na Interface: switchport trunk allowed vlan
 		!vtp pruning
 		end
 
