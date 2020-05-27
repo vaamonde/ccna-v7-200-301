@@ -466,32 +466,44 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **037 Configuração do Router-on-a-Stick no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
+## **037 Configuração STP Portfast e Switchport Trunk Allowed nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração Router-on-a-Stick, essa configuração será feita no Router 2911, o Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede, é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma subinterface em um roteador Cisco usa a interface física para enviar e receber dados, as subinterfaces são usadas para vários propósitos, principalmente para o roteamento entre VLANs, quando não temos recursos de Switche Layer 3 na rede.
+Nessa aula, vou fazer a configuração do STP Portfast, Portfast Trunk, Portfast BPDU Guard, Root Guard e do Switchport Trunk Allowed, essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, STP Portfast e recurso do STP faz com que uma Porta do Switch entre imediatamente no estado de encaminhament (Forwarding), ignorando os estados de escuta (Listening) e aprendizado (learning). O recurso de STP Portfast Trunk tem a mesma finalidade do STP Portfast, mais é somente configurado em Portas de Tronco (Trunk) com dispostivos que não são Switches, como por exemplo: Roteadores (Router), Servidores, Pontes (Bridge) e etc. O recurso de BPDU Guard é usado para proteger a topologia do protocolo STP contra ataques relacionados ao BPDU. O recurso de Root Guard impede que uma porta se torne Porta Raiz (Root Port) ou porta Bloqueada. O recurso do Switchport Trunk Allowed permite fazer a Poda (Pruning) nas Interfaces configuradas
+!como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da 
+!topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede. 
 
-As configurações do Router-on-a-Stick no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-037-ConfiguracaoDoRouterOn-a-Stick.txt
+As configurações do STP Portfast e Switchport Trunk Allowed nos Switche Layer 2 e 3 será feita utilizando o Script: 
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-037.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula:
 
-## **038 Configuração do DHCPv4 Server no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
+## **038 Configuração do Router-on-a-Stick no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do DHCPv4 Server, essa configuração será feita no Router 2911, os recursos de DHCP Server em Roteadores ou Switches Layer 3 da Cisco são limitados, e recomendo utilizar Servidores Microsoft ou GNU/Linux em uma rede corporativa, as principais limitações dos servidores DHCP em Router e Switch são: opções de configurações avançadas, integrações de serviços de rede, relatórios, etc. 
+Nessa aula, vou fazer a configuração Router-on-a-Stick, essa configuração será feita no Router 2911, o Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede, é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma subinterface em um roteador Cisco usa a interface física para enviar e receber dados, as subinterfaces são usadas para vários propósitos, principalmente para o roteamento entre VLANs, quando não temos recursos de Switche Layer 3 na rede.
 
-As configurações do DHCPv4 Server no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-038-ConfiguracaoDoDHCP_ServerNoRouter2911.txt
+As configurações do Router-on-a-Stick no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-038-ConfiguracaoDoRouterOn-a-Stick.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-038.pkt
 
 Link da vídeo aula: 
 
-## **039 Configuração do Protocolo RIPv2 nos Router 1941 e 2911 - Laboratório Prático Cisco CCNAv7 200-301**
+## **039 Configuração do DHCPv4 Server no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do DHCPv4 Server, essa configuração será feita no Router 2911, os recursos de DHCP Server em Roteadores ou Switches Layer 3 da Cisco são limitados, e recomendo utilizar Servidores Microsoft ou GNU/Linux em uma rede corporativa, as principais limitações dos servidores DHCP em Router e Switch são: opções de configurações avançadas, integrações de serviços de rede, relatórios, etc. 
+
+As configurações do DHCPv4 Server no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-039-ConfiguracaoDoDHCP_ServerNoRouter2911.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-039.pkt
+
+Link da vídeo aula: 
+
+## **040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Protocolo de Roteamento Dinâmico RIPv2 (Routing Information Protocol), essas configurações serão feitas nos Router 2911 e 1941, é um protocolo de roteamento, baseado no algoritmo de Vetor de Distância, ele foi projetado para ser usado como um IGP (Interior Gateway Protocol) em redes de abrangência moderada com tamanho máximo de 15 saltos (Hopes, Routers, Gateway), a primeira versão do RIP foi descrita em 1988, no RFC 1058.
 
-As configurações do do Protocolo RIPv2 nos Router 1941 e 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-039-ConfiguracaoDoRIPv2NoRouter2911_1941.txt
+As configurações do do Protocolo RIPv2 nos Router 1941 e 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-040-ConfiguracaoDoRIPv2NoRouter2911_1941.txt
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-039.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-040.pkt
 
 Link da vídeo aula: 

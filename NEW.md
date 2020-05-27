@@ -52,22 +52,23 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
 035 Configuração do VTP Server e Client nos Switches Layer 2 e 3<br>
 036 Configuração da VLAN e TRUNK BÁSICO nos Switches Layeres 2 e 3<br>
-037 Configuração do Router-on-a-Stick no Router 2911<br>
-038 Configuração do DHCPv4 Server no Router 2911<br>
-039 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
+036 Configuração do Portfast e Switchport Trunk Allowed nos Switches Layeres 2 e 3<br>
+038 Configuração do Router-on-a-Stick no Router 2911<br>
+039 Configuração do DHCPv4 Server no Router 2911<br>
+040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-040 Configuração do Endereçamento IPv6 Estático SLAAC<br>
-041 Configuração do Servidor DHCPv6 Stateless<br>
-042 Configuração do Roteamento Estático, Padrão e Flutuante do IPv6
+041 Configuração do Endereçamento IPv6 Estático SLAAC<br>
+042 Configuração do Servidor DHCPv6 Stateless<br>
+043 Configuração do Roteamento Estático, Padrão e Flutuante do IPv6
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-043 Configuração do DHCPv6 Server no Router 2911<br>
-044 Configuração do RIPng nos Router 1941 e 2911
+044 Configuração do DHCPv6 Server no Router 2911<br>
+045 Configuração do RIPng nos Router 1941 e 2911
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-044 Configuração da ACL Standard BÁSICA nos Switches e Routers<br>
-045 Configuração da ACL Extended BÁSICA nos Switches e Routers
+046 Configuração da ACL Standard BÁSICA nos Switches e Routers<br>
+047 Configuração da ACL Extended BÁSICA nos Switches e Routers
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
 Static NAT, Dynamic NAT, Port Address Translation PAT, Overload NAT, EIGRP, OSPF, BGP,<br>

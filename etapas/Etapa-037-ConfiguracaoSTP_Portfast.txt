@@ -28,6 +28,10 @@
 !inconsistente (bloqueado). Normalmente, o Root Guard do STP é configurado nos Switches Root Primary (Raiz Primario) e
 !Root Secundary (Raiz Secundário).
 
+!Switchport Trunk allowed: O recurso do Switchport Trunk Allowed permite fazer a Poda (Pruning) nas Interfaces configuradas
+!como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da 
+!topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede.   
+
 !PRIMEIRA ETAPA: Configuração do STP e RSTP Portfast no Switche Layer 3 3560
 !Acessando o modo EXEC Privilégiado
 enable
