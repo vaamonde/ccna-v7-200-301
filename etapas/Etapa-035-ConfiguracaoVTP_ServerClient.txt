@@ -11,9 +11,9 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS EM
-!VTP, HOJE EM DIA EM ALGUMAS EMPRESAS O RECURSO DO VTP E DESABILITADO, MESMO NÃO SENDO COBRADO NO NOVO EXAME,
-!NOS MATERIAIS OFICIAIS AINDA E MENCIONADO AS SUAS CARACTERÍSTICAS E CONFIGURAÇÕES, RECOMENDO O SEU ESTUDO.
+!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO É MAIS COBRADO OS CONHECIMENTOS EM
+!VTP, HOJE EM DIA EM ALGUMAS EMPRESAS O RECURSO DO VTP É DESABILITADO, MESMO NÃO SENDO COBRADO NO NOVO EXAME, NOS
+!MATERIAIS OFICIAIS AINDA É MENCIONADO AS SUAS CARACTERÍSTICAS E CONFIGURAÇÕES, RECOMENDO O SEU ESTUDO.
 
 !O VTP (VLAN Trunk Protocol) é um protocolo proprietário da Cisco de Camada 2 que está disponível na maioria dos
 !produtos da série de Switches Catalyst. O VTP reduz a administração em uma rede de Switches, quando você configura
@@ -60,11 +60,11 @@ enable
 		vtp password vaamonde@pti
 		
 		!Habilitando o recurso de Poda (Pruning) no VTP Server no Switch Layer 3
-		!DICA: e recomendado habilitar o recurso de Pruning no Switch VTP Server da rede que gerência todas as VLANs do domínio
+		!DICA: é recomendado habilitar o recurso de Pruning no Switch VTP Server da rede que gerência todas as VLANs do domínio
 		!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de configuração do Pruning não está disponível para configuração
 		!OBSERVAÇÃO: o VTP Pruning filtra o tráfego de mensagens Broadcast, Multicast e Flood desnecessárias nos Trunks
-		!IMPORTANTE: o VTP Pruning e proprietário da Cisco, não é possível configurar o recurso de Poda em outros fabricantes,
-		!para isso e recomendo as configurações do: switchport trunk allowed que será visto nas configurações de Trunk
+		!IMPORTANTE: o VTP Pruning é proprietário da Cisco, não é possível configurar o recurso de Pruning em outros fabricantes,
+		!para isso é recomendo utilizar as configurações do: switchport trunk allowed que será visto nas configurações de Trunk
 		!vtp pruning
 		end
 
