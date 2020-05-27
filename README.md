@@ -424,7 +424,7 @@ As configurações do STP e RSTP BÁSICO nos Switche Layer 2 e 3 será feita uti
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-032.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=usoZfyFhcGw&t
 
 ## **033 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
 
@@ -456,7 +456,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **036 Configuração da VLAN e TRUNK BÁSICO nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
+## **036 Configuração da VLAN e Trunk BÁSICO nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração das VLAN (Virtual-LAN - Local Area Network) e das Portas de Tronco (Trunk), essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, as VLANs é uma rede logicamente independente, várias VLANs podem coexistir em um mesmo Switch, de forma a dividir uma rede local em mais de uma rede, criando domínios de broadcast separados. Uma Porta de Tronco, normalmente usada para interligação de Switches ou ligação a Roteadores, ela permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
 
@@ -468,9 +468,7 @@ Link da vídeo aula:
 
 ## **037 Configuração STP Portfast e Switchport Trunk Allowed nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do STP Portfast, Portfast Trunk, Portfast BPDU Guard, Root Guard e do Switchport Trunk Allowed, essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, STP Portfast e recurso do STP faz com que uma Porta do Switch entre imediatamente no estado de encaminhament (Forwarding), ignorando os estados de escuta (Listening) e aprendizado (learning). O recurso de STP Portfast Trunk tem a mesma finalidade do STP Portfast, mais é somente configurado em Portas de Tronco (Trunk) com dispostivos que não são Switches, como por exemplo: Roteadores (Router), Servidores, Pontes (Bridge) e etc. O recurso de BPDU Guard é usado para proteger a topologia do protocolo STP contra ataques relacionados ao BPDU. O recurso de Root Guard impede que uma porta se torne Porta Raiz (Root Port) ou porta Bloqueada. O recurso do Switchport Trunk Allowed permite fazer a Poda (Pruning) nas Interfaces configuradas
-!como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da 
-!topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede. 
+Nessa aula, vou fazer a configuração do STP Portfast, Portfast Trunk, Portfast BPDU Guard, Root Guard e do Switchport Trunk Allowed, essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, STP Portfast é o recurso do STP faz com que uma Porta do Switch entre imediatamente no estado de encaminhamento (Forwarding), ignorando os estados de escuta (Listening) e aprendizado (learning). O recurso de STP Portfast Trunk tem a mesma finalidade do STP Portfast, mais é somente configurado em Portas de Tronco (Trunk) com dispostivos que não são Switches, como por exemplo: Roteadores (Router), Servidores, Pontes (Bridge) e etc. O recurso de BPDU Guard é usado para proteger a topologia do protocolo STP contra ataques relacionados ao BPDU. O recurso de Root Guard impede que uma porta se torne Porta Raiz (Root Port) ou porta Bloqueada. O recurso do Switchport Trunk Allowed permite fazer a Poda (Pruning) nas Interfaces configuradas como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede. 
 
 As configurações do STP Portfast e Switchport Trunk Allowed nos Switche Layer 2 e 3 será feita utilizando o Script: 
 
