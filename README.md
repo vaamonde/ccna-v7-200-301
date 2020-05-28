@@ -434,7 +434,7 @@ As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Scri
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-033.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=L-c6c3cLQSA
 
 ## **034 Interligando uma Nova Rede WAN Fiber na Topologia - Laboratório Prático Cisco CCNAv7 200-301**
 

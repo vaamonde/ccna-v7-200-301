@@ -41,18 +41,18 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 027 Configuração da Interface de Loopback no Router 1941r<br>
 028 Configuração do NetFlow no Router 1941<br>
 029 Configuração do Servidor de IoT Manager Registrator
-
-## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
 030 Configuração do Protocolo CDP e LLDP nos Switches e Router<br>
 031 Configuração do Dynamic ARP Inspection nos Switches Layer 2 e 3<br>
-032 Configuração do STP e RSTP BÁSICO nos Switches Layer 2 e 3
+032 Configuração do STP e RSTP BÁSICO nos Switches Layer 2 e 3<br>
+033 Configuração do RADIUS e TACACS+ nos Switches e Router
 
-## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-033 Configuração do RADIUS e TACACS+ nos Switches e Router<br>
+## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
 034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
 035 Configuração do VTP Server e Client nos Switches Layer 2 e 3<br>
-036 Configuração da VLAN e TRUNK BÁSICO nos Switches Layeres 2 e 3<br>
-036 Configuração do Portfast e Switchport Trunk Allowed nos Switches Layeres 2 e 3<br>
+
+## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
+036 Configuração da VLAN e Trunk BÁSICO nos Switches Layeres 2 e 3<br>
+036 Configuração do STP Portfast nos Switches Layeres 2 e 3<br>
 038 Configuração do Router-on-a-Stick no Router 2911<br>
 039 Configuração do DHCPv4 Server no Router 2911<br>
 040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
