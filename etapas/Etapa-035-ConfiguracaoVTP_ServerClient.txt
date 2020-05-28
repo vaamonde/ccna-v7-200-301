@@ -17,13 +17,14 @@
 
 !O VTP (VLAN Trunk Protocol) é um protocolo proprietário da Cisco de Camada 2 que está disponível na maioria dos
 !produtos da série de Switches Catalyst. O VTP reduz a administração em uma rede de Switches, quando você configura
-!uma VLAN nova em um servidor VTP, a VLAN será distribuída através de todos os Switches no domínio VTP, isso reduz
+!uma nova VLAN em um Servidor VTP, a VLAN será distribuída através de todos os Switches no domínio VTP, isso reduz
 !a necessidade de configurar a mesma VLAN em todos os Switches manualmente.
 
 !Versões do VTP: VTPv1 (habilitado por padrão nos Switches Cisco, suporta números de VLAN de 1 a 1005), VTPv2 
 !(habilitado manualmente, suporta as VLAN de 1 a 1005) e o VTPv3 (suporta todas as VLANs de 1 a 4094, suporta 
-!autenticação VTP, suporta o protocolo MST e VLANs Privadas, introduz o conceito de servidor VTP primário e secundário)
-!OBSERVAÇÃO: no Cisco Packet Tracer não está disponível a versão 3 do VTP nos Switches Catalyst Layer 2 ou 3
+!autenticação VTP, suporta o protocolo MST (Multiple Spanning Tree) e VLANs Privadas, introduz o conceito de servidor
+!VTP primário e secundário). OBSERVAÇÃO: no Cisco Packet Tracer não está disponível a versão 3 do VTP nos Switches
+!Catalyst Layer 2 ou 3.
 
 !Os modos do VTP são: VTP Server (o Servidor VTP pode criar, deletar e renomear VLANs), VTP Client (o Cliente VTP não
 !pode criar, deletar e renomear VLANs), VTP Transparent (o Transparente VTP não participa do domínio do VTP) é o
@@ -37,17 +38,17 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 
-		!Habilitando a versão 2 do VTP Server no Switch Layer 3
-		!DICA: recomendado utilizar a versão 2 do VTP em todos os Switches da rede
+		!Habilitando a Versão 2 do VTP Server no Switch Layer 3
+		!DICA: é recomendado utilizar a versão 2 do VTP em todos os Switches da rede
 		!OBSERVAÇÃO: por padrão a versão 1 do VTP está habilitada, no Cisco Packet Tracer não temos a possibilidade
 		!de configurar a versão 3 do VTP, somente as versões 1 ou 2
 		vtp version 2
 
 		!Configurando o modo de Servidor do VTP no Switch Layer 3
-		!DICA: em topologia de três camadas é recomendo utilizar os Switches de Distribuição para ser o VTP Server
+		!DICA: em topologia de três camadas é recomendado utilizar os Switches da Distribuição para ser o VTP Server
 		!OBSERVAÇÃO: o Switch VTP Server vai centralizar toda a administração das VLANs do Domínio do VTP
 		!IMPORTANTE: no Cisco Packet Tracer todos os Switches estão com o VTP ativado e configurado como Server e o número
-		!de revisão 0, os Switches que serão Clientes e recomendado deixar no modo Transparent antes de configurar para Client
+		!de revisão 0, os Switches que serão Clientes é recomendado deixar no modo Transparent antes de configurar para Client
 		vtp mode server
 		
 		!Configurando o nome de Domínio do VTP no Switch Layer 3
@@ -56,8 +57,8 @@ enable
 		vtp domain vaamonde
 		
 		!Configurando a senha do Domínio do VTP no Switch Layer 3
-		!DICA: e recomendado configurar a senha do domínio do VTP para não enviar ou receber anúncios de outros domínios VTP
-		!OBSERVAÇÃO: a senha por padrão não e criptografa, criada em ASCII padrão, podendo utilizar caracteres especiais
+		!DICA: é recomendado configurar a senha do domínio do VTP para não enviar ou receber anúncios de outros domínios VTP
+		!OBSERVAÇÃO: a senha por padrão não é criptografa, criada em ASCII padrão, podendo utilizar caracteres especiais
 		vtp password vaamonde@pti
 		
 		!Habilitando o recurso de Poda (Pruning) no VTP Server no Switch Layer 3
@@ -65,7 +66,7 @@ enable
 		!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de configuração do Pruning não está disponível para configuração
 		!OBSERVAÇÃO: o VTP Pruning filtra o tráfego de mensagens Broadcast, Multicast e Flood (Inundar) desnecessárias nos Trunks
 		!IMPORTANTE: o VTP Pruning é proprietário da Cisco, não é possível configurar o recurso de Pruning em outros fabricantes,
-		!para isso é recomendo utilizar as configurações de Prunning do Switchport na Interface: switchport trunk allowed vlan
+		!para isso é recomendado utilizar as configurações de Prunning do Switchport na Interface: switchport trunk allowed vlan
 		!vtp pruning
 		end
 
@@ -84,6 +85,7 @@ enable
 write
 
 !Visualizando as configurações da memória RAM
+!OBSERVÇÃO IMPORTANTE: no Cisco Packet Tracer no ruuning-config não aparece as informações do VTP
 show running-config | section vtp
 
 !Verificando do Servidor e Cliente do VTP nos Switches Layer 2 e 3
