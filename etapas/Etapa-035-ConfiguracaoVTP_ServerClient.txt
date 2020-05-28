@@ -25,9 +25,10 @@
 !autenticação VTP, suporta o protocolo MST e VLANs Privadas, introduz o conceito de servidor VTP primário e secundário)
 !OBSERVAÇÃO: no Cisco Packet Tracer não está disponível a versão 3 do VTP nos Switches Catalyst Layer 2 ou 3
 
-!Os modos do VTP são: VTP Server (o VTP Servidor pode criar, deletar e renomear VLANs), VTP Client (o VTP Cliente não
-!pode criar, deletar e renomear VLANs), VTP Transparent (o VTP Transparente não participa do domínio do VTP) e o
-!VTP Pruning (o VTP Poda é uma funcionalidade do VTP, que permite evitar o tráfego desnecessário na rede)
+!Os modos do VTP são: VTP Server (o Servidor VTP pode criar, deletar e renomear VLANs), VTP Client (o Cliente VTP não
+!pode criar, deletar e renomear VLANs), VTP Transparent (o Transparente VTP não participa do domínio do VTP) é o
+!VTP Pruning (a Poda VTP é uma funcionalidade do VTP, que permite evitar o tráfego desnecessário na rede de VLANs que
+!não estão configuradas nas Interfaces dos Switches)
 
 !PRIMEIRA ETAPA: Configuração do Servidor VTP no Switch Layer 3 3560
 !Acessando o modo EXEC Privilégiado
@@ -62,7 +63,7 @@ enable
 		!Habilitando o recurso de Poda (Pruning) no VTP Server no Switch Layer 3
 		!DICA: é recomendado habilitar o recurso de Pruning no Switch VTP Server da rede que gerência todas as VLANs do domínio
 		!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de configuração do Pruning não está disponível para configuração
-		!OBSERVAÇÃO: o VTP Pruning filtra o tráfego de mensagens Broadcast, Multicast e Flood desnecessárias nos Trunks
+		!OBSERVAÇÃO: o VTP Pruning filtra o tráfego de mensagens Broadcast, Multicast e Flood (Inundar) desnecessárias nos Trunks
 		!IMPORTANTE: o VTP Pruning é proprietário da Cisco, não é possível configurar o recurso de Pruning em outros fabricantes,
 		!para isso é recomendo utilizar as configurações de Prunning do Switchport na Interface: switchport trunk allowed vlan
 		!vtp pruning

@@ -16,31 +16,32 @@
 
 !As VLANs permitem a segmentação das redes físicas, sendo que a comunicação entre máquinas de VLANs diferentes terá
 !de passar obrigatoriamente por um Roteador ou outro equipamento capaz de realizar o Roteamento, esse equipamento
-!será o responsável por encaminhar o tráfego entre as VLANs distintas.
+!será o responsável por encaminhar o tráfego entre as VLANs distintas (iguais).
 
 !As VLANs oferecem vantagens das quais se destacam: segurança, escalabilidade, flexibilidade, redução de custos, etc.
 
-!Um Switch com a capacidade de criar VLANs suporta dois tipos de configuraça de portas: Portas de Acesso (conexões de
+!Um Switch com a capacidade de criar VLANs suporta dois tipos de configuração de portas: Portas de Acesso (conexões de
 !acesso) e Portas Trunk (conexões de tronco)
 
-!Os range de VLANs nos Switches Cisco são: 0 e 4095 Reservadas (Reserved - apenas para uso do sistema operacional IOS,
+!Os range de VLANs nos Switches Cisco são: 0 é 4095 Reservadas (Reserved - apenas para uso do sistema operacional IOS,
 !você não pode ver ou usar essas VLANs), 1 Padrão (Default - Padrão da Cisco, você pode usar essa VLAN, está configurada
 !por padrão em todas as Portas do Switch, você não pode deletar essa VLAN), 2 até 1001 Nativas (Normal - usadas para as
 !VLANs Ethernet, você pode criar, usar e excluir essas VLANs, são armazenadas no arquivo vlan.dat), 1002 até 1005 Nativa
-!(Normal - padrões da Cisco para FDDI e Token Ring, você não pode excluir essas VLANs) e 1006 até 4094 Extendidas (Extended
-!elas são usadas principalmente em redes de provedores de serviços para permitir o provisionamento do número do clientes)
+!(Normal - padrões da Cisco para Redes FDDI (Fiber Distributed Data Interface) e Token Ring, você não pode excluir essas
+!VLANs) e 1006 até 4094 Extendidas (Extended elas são usadas principalmente em redes de provedores de serviços para 
+!permitir o provisionamento do número do clientes)
 
-!Exite também dois tipos de associação de VLANs: VLAN Estáticas (Static - configurada manualmente na porta de rede do
-!Switch ou do Router) e VLAN Dinâmica (Dynamic - são criadas e alteradas dinamicamente via software como por exemplo
+!Exite também dois tipos de associação de VLANs: VLANs Estáticas (Static - configurada manualmente na porta de rede do
+!Switch ou do Router) e VLANs Dinâmicas (Dynamic - são criadas e alteradas dinamicamente via software como por exemplo
 !o VMPS (VLAN Management Policy Server))
 
 !Uma Porta de Acesso (access), permite associar uma porta do Switch a uma VLAN, as portas do tipo acesso são usadas
 !para conectar dispositivos finais (Desktop, Notebook, Impressoras, Access Point, etc), por padrão, todas as portas
 !dos Switches estão configuradas na VLAN 1.
 
-!Uma Porta de Tronco (trunk), normalmente usada para interligação de Switches ou ligação a Roteadores, ela permite a
-!passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no
-!Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
+!Uma Porta de Tronco (trunk), normalmente usada para interligação de Switches ou ligação de Roteadores e Servidores, ela
+!permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas
+!no Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
 
 !PRIMEIRA ETAPA: Configuração das VLANs e Trunk no Switch Layer 3 3560
 !Acessando o modo EXEC Privilégiado
@@ -50,7 +51,7 @@ enable
 	configure terminal
 
 		!Criando as VLANs Standard no Switch Layer 3 3560 VTP Server
-		!DICA: por padrão e recomendo trabalhar nos Switches Catalyst a faixa de VLANs Standard (padrão de 2 até 1001)
+		!DICA: por padrão é recomendo trabalhar nos Switches Catalyst a faixa de VLANs Standard (padrão de 2 até 1001)
 		!OBSERVAÇÃO: no Switch Layer 3 3560 foi configurado o recurso de VTP Server, que centraliza a administração das VLANs
 		vlan 10
 			!Configurando o nome da VLAN Standard
@@ -79,8 +80,8 @@ enable
 			
 			!Configurando o modo de Trunk (Tronco) da Interface do Switch Layer 3
 			!DICA: por padrão o recurso de DTP (Dynamic Trunking Protocol) está habilitado nas portas dos Switches
-			!OBSERVAÇÃO: e recomendo configurar as portas de Trunk em nossa topologia que utiliza o VTP e o STP
-			!OBSERVAÇÃO: para configurar a Porta de Trunk em Switch Layer 3 e necessário primeiro configurar o protocolo 802.1q
+			!OBSERVAÇÃO: é recomendo configurar as portas de Trunk em nossa topologia que utiliza o VTP é o STP
+			!OBSERVAÇÃO: para configurar a Porta de Trunk em Switch Layer 3 eé necessário configurar o protocolo 802.1q
 			switchport trunk encapsulation dot1q 
 			
 			!Configurando o modo de Trunk (Tronco) da Interface
@@ -104,7 +105,7 @@ enable
 			
 			!Configurando o modo de Access (Acesso) da Interface do Servidor
 			!DICA: essa configuração já foi comentada nas configurações do switchport e port-security
-			!OBSERVAÇÃO: para a correta configuração da VLAN na porta de rede e recomendo mudar o modo da porta
+			!OBSERVAÇÃO: para a correta configuração da VLAN na porta de rede é recomendo mudar o modo da porta primeiro
 			switchport mode access
 			switchport nonegotiate
 			switchport port-security
@@ -115,8 +116,10 @@ enable
 			!Configurando o acesso a VLAN 100 da Interface do Servidor
 			!DICA: por padrão podemos configurar apenas uma VLAN no porta do Switch
 			!OBSERVAÇÃO: a partir do momento que configuramos a VLAN na porta do Switch, todos os quadros (frames)
-			!recebem a Tag (etiqueta) dot1q (IEEE 802.1Q) ou do ISL (Inter-Switch Link - Cisco) no seu frame ethernet
-			!quando passa pela porta do switch
+			!recebem a Tag (etiqueta) dot1q (IEEE 802.1Q) ou do ISL (Inter-Switch Link - Cisco) no seu frame (quadro) 
+			!ethernet quando entra pela porta de rede do switch
+			!OBSERVAÇÃO: existe a possibilidade de configurar mais uma VLAN de VoIP na mesma porta de acesso, usando o
+			!comando: switchport voice vlan
 			switchport access vlan 100
 			exit
 		
@@ -126,7 +129,6 @@ enable
 			switchport mode access
 			switchport access vlan 50
 			switchport nonegotiate
-			switchport mode access
 			switchport port-security
 			switchport port-security mac-address sticky
 			switchport port-security maximum 5
@@ -139,6 +141,7 @@ enable
 	configure terminal
 		interface range gigabitEthernet 0/1 - 2
 			description Interface de Trunk com os Switches Layer 2 e 3 
+			!OBSERVAÇÃO: nos Switches Layer 2 não é necessário configurar o protocolo 802.1q nas portas de Trunk
 			switchport mode trunk
 			switchport nonegotiate
 			exit
