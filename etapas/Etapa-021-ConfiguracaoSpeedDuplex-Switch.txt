@@ -82,7 +82,7 @@ enable
 			
 		!Configurando as Interfaces de Trunk (Tronco) e Backbone (Cascateamento) dos Switches Layer 2 2960
 		interface range GigabitEthernet 0/1 - 2
-			description Porta de Backbone com o Switch Layer 2 2960
+			description Porta de Conexão com o Switch Layer 2 2960
 			speed 1000
 			no mdix auto
 			
@@ -105,8 +105,15 @@ enable
 		interface range FastEthernet 0/3 - 23
 			shutdown
 			exit
-		interface range GigabitEthernet 0/1 - 2
+		interface GigabitEthernet 0/1
 			description Porta de Backbone com o Switch Layer 3 3560
+			speed 1000
+			no mdix auto
+			exit
+		!ADENDO: adicionado a configuração individual da Porta GigabitEthernet 0/2
+		!ERRATA: no vídeo utilizei a opção de range, mais a descrição das Interfaces são diferentes
+		interface GigabitEthernet 0/2
+			description Porta de Backbone com o Switch Layer 2 2960
 			speed 1000
 			no mdix auto
 			end
