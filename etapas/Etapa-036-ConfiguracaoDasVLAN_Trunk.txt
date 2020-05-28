@@ -24,9 +24,9 @@
 !acesso) e Portas Trunk (conexões de tronco)
 
 !Os range de VLANs nos Switches Cisco são: 0 e 4095 Reservadas (Reserved - apenas para uso do sistema operacional IOS,
-!você não pode ver ou usar essas VLANs), 1 Nativa (Normal - padrão da Cisco, você pode usar essa VLAN, estão configuradas
-!por padrão em todas as portas do Switch, você não pode deletar essa VLAN), 2 até 1001 Nativas (Normal - usadas para as
-!VLANs Ethernet, você pode criar, usar e excluir essas VLANs, armazenadas no arquivo vlan.dat), 1002 até 1005 Nativa
+!você não pode ver ou usar essas VLANs), 1 Padrão (Default - Padrão da Cisco, você pode usar essa VLAN, está configurada
+!por padrão em todas as Portas do Switch, você não pode deletar essa VLAN), 2 até 1001 Nativas (Normal - usadas para as
+!VLANs Ethernet, você pode criar, usar e excluir essas VLANs, são armazenadas no arquivo vlan.dat), 1002 até 1005 Nativa
 !(Normal - padrões da Cisco para FDDI e Token Ring, você não pode excluir essas VLANs) e 1006 até 4094 Extendidas (Extended
 !elas são usadas principalmente em redes de provedores de serviços para permitir o provisionamento do número do clientes)
 
