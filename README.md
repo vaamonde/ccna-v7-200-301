@@ -416,7 +416,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=qUU_JNBbN7A&t
 
-## **032 Configuração do STP e RSTP BÁSICO nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
+## **032 Configuração do STP e RSTP BÁSICO nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do STP (Spanning Tree Protocol) e do RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan rapid spanning tree mode) nos Switches Layer 2 e 3, o STP é um protocolo da camada 2 que é executado em interligações dos Switches na nossa topologia. A especificação para o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede. O protocolo RSTP detecta topologias de rede para fornecer uma convergência mais rápida em relação ao STP e cria uma rede sem loop de camada 2. 
 
@@ -466,11 +466,11 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **037 Configuração STP Portfast e Switchport Trunk Allowed nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
+## **037 Configuração do STP Portfast nos Switche Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do STP Portfast, Portfast Trunk, Portfast BPDU Guard, Root Guard e do Switchport Trunk Allowed, essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, STP Portfast é o recurso do STP faz com que uma Porta do Switch entre imediatamente no estado de encaminhamento (Forwarding), ignorando os estados de escuta (Listening) e aprendizado (learning). O recurso de STP Portfast Trunk tem a mesma finalidade do STP Portfast, mais é somente configurado em Portas de Tronco (Trunk) com dispostivos que não são Switches, como por exemplo: Roteadores (Router), Servidores, Pontes (Bridge) e etc. O recurso de BPDU Guard é usado para proteger a topologia do protocolo STP contra ataques relacionados ao BPDU. O recurso de Root Guard impede que uma porta se torne Porta Raiz (Root Port) ou porta Bloqueada. O recurso do Switchport Trunk Allowed permite fazer a Poda (Pruning) nas Interfaces configuradas como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede. 
 
-As configurações do STP Portfast e Switchport Trunk Allowed nos Switche Layer 2 e 3 será feita utilizando o Script: 
+As configurações do STP Portfast nos Switche Layer 2 e 3 será feita utilizando o Script: 
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-037.pkt
 
@@ -478,7 +478,7 @@ Link da vídeo aula:
 
 ## **038 Configuração do Router-on-a-Stick no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração Router-on-a-Stick, essa configuração será feita no Router 2911, o Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede, é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma subinterface em um roteador Cisco usa a interface física para enviar e receber dados, as subinterfaces são usadas para vários propósitos, principalmente para o roteamento entre VLANs, quando não temos recursos de Switche Layer 3 na rede.
+Nessa aula, vou fazer a configuração do Router-on-a-Stick, essa configuração será feita no Router 2911, o Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede, é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma subinterface em um roteador Cisco usa a interface física para enviar e receber quadros (frames) e as subinterface virtuais para enviar e receber pacotes (packets), as subinterfaces são usadas para vários propósitos, principalmente para o roteamento entre VLANs, quando não temos o recurso do Switche Layer 3 na rede.
 
 As configurações do Router-on-a-Stick no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-038-ConfiguracaoDoRouterOn-a-Stick.txt
 
