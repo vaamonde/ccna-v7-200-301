@@ -11,6 +11,10 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
+!ADENDO: No vídeo não foi comentando sobre a inicialização do serviço do SSH Server depois que o Router ou Switch
+!é resetado. Para resolver essa falha, recomendo digitar os comandos: crypto key zeroize rsa (zerar as chaves) e
+!depois o comando: crypto key generate rsa (gerar as chaves novamente).
+
 !PRIMEIRA ETAPA: parar a inicialização do Cisco IOS do Router 1941
 !DICA: no Cisco Packet Tracer utilizamos a combinação de teclas: Ctrl+C
 !OBSERVAÇÃO: em equipamento reais, podemos utilizar as combinações de teclas: Ctrl+C, Ctrl+Break ou Ctrl+Backspace
@@ -77,8 +81,9 @@ enable
 	
 	!Aplicando as configurações da NVRAM (startup-config) para a RAM (running-config)
 	!OBSERVAÇÃO: no vídeo após a cópia da configuração da NVRAM para RAM, por padrão as interfaces não são inicializadas
-	!OBSERVAÇÃO: sendo necessário inicializar manualmetne cada interface
-	!ERRATA: no vídeo não foi falado ou comentado sobre isso.
+	!OBSERVAÇÃO: sendo necessário inicializar manualmetne cada interface, pois no arquivo running-config não tem o comando
+	!no shutdown
+	!ERRATA: no vídeo não foi falado ou comentado sobre isso, não esqueça de inicializar as interfaces
 	copy startup-config running-config
 	
 	!Salvando as configurações da memória RAM para a memória NVRAM

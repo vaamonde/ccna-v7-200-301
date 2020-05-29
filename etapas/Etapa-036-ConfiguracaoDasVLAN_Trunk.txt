@@ -29,7 +29,7 @@
 !VLANs Ethernet, você pode criar, usar e excluir essas VLANs, são armazenadas no arquivo vlan.dat), 1002 até 1005 Nativa
 !(Normal - padrões da Cisco para Redes FDDI (Fiber Distributed Data Interface) e Token Ring, você não pode excluir essas
 !VLANs) e 1006 até 4094 Extendidas (Extended elas são usadas principalmente em redes de provedores de serviços para 
-!permitir o provisionamento do número do clientes)
+!permitir o provisionamento do número do cliente)
 
 !Exite também dois tipos de associação de VLANs: VLANs Estáticas (Static - configurada manualmente na porta de rede do
 !Switch ou do Router) e VLANs Dinâmicas (Dynamic - são criadas e alteradas dinamicamente via software como por exemplo
@@ -41,7 +41,7 @@
 
 !Uma Porta de Tronco (trunk), normalmente usada para interligação de Switches ou ligação de Roteadores e Servidores, ela
 !permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas
-!no Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
+!no Switch podem passar por ela, no entanto o administrador pode limitar o número de VLANs que podem passar pelo Trunk.
 
 !PRIMEIRA ETAPA: Configuração das VLANs e Trunk no Switch Layer 3 3560
 !Acessando o modo EXEC Privilégiado
@@ -50,8 +50,8 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 
-		!Criando as VLANs Standard no Switch Layer 3 3560 VTP Server
-		!DICA: por padrão é recomendo trabalhar nos Switches Catalyst a faixa de VLANs Standard (padrão de 2 até 1001)
+		!Criando as VLANs Standard (Padrão) no Switch Layer 3 3560 VTP Server
+		!DICA: por padrão é recomendado trabalhar nos Switches Catalyst a faixa de VLANs Standard (padrão de 2 até 1001)
 		!OBSERVAÇÃO: no Switch Layer 3 3560 foi configurado o recurso de VTP Server, que centraliza a administração das VLANs
 		vlan 10
 			!Configurando o nome da VLAN Standard
@@ -80,8 +80,8 @@ enable
 			
 			!Configurando o modo de Trunk (Tronco) da Interface do Switch Layer 3
 			!DICA: por padrão o recurso de DTP (Dynamic Trunking Protocol) está habilitado nas portas dos Switches
-			!OBSERVAÇÃO: é recomendo configurar as portas de Trunk em nossa topologia que utiliza o VTP é o STP
-			!OBSERVAÇÃO: para configurar a Porta de Trunk em Switch Layer 3 eé necessário configurar o protocolo 802.1q
+			!OBSERVAÇÃO: é recomendado configurar as portas de Trunk em nossa topologia que utiliza o VTP é o STP
+			!OBSERVAÇÃO: para configurar a Porta de Trunk em Switch Layer 3 é necessário configurar o protocolo 802.1q
 			switchport trunk encapsulation dot1q 
 			
 			!Configurando o modo de Trunk (Tronco) da Interface
@@ -101,11 +101,11 @@ enable
 
 		!Configurando a Interface de Acesso a VLAN 100 do Servidor
 		interface fastEthernet 0/1
-			description Interface de Acesso do Servidor
+			description Interface de Acesso da VLAN 100 do Servidor
 			
 			!Configurando o modo de Access (Acesso) da Interface do Servidor
 			!DICA: essa configuração já foi comentada nas configurações do switchport e port-security
-			!OBSERVAÇÃO: para a correta configuração da VLAN na porta de rede é recomendo mudar o modo da porta primeiro
+			!OBSERVAÇÃO: para a correta configuração da VLAN na porta de rede é recomendado mudar o modo da porta primeiro
 			switchport mode access
 			switchport nonegotiate
 			switchport port-security
@@ -114,7 +114,7 @@ enable
 			switchport port-security violation restrict
 			
 			!Configurando o acesso a VLAN 100 da Interface do Servidor
-			!DICA: por padrão podemos configurar apenas uma VLAN no porta do Switch
+			!DICA: por padrão só podemos configurar uma VLAN na porta de rede do Switch
 			!OBSERVAÇÃO: a partir do momento que configuramos a VLAN na porta do Switch, todos os quadros (frames)
 			!recebem a Tag (etiqueta) dot1q (IEEE 802.1Q) ou do ISL (Inter-Switch Link - Cisco) no seu frame (quadro) 
 			!ethernet quando entra pela porta de rede do switch
@@ -125,7 +125,7 @@ enable
 		
 		!Configurando a Interface de Acesso a VLAN 50 do Access Point 802.11-AC
 		interface fastEthernet 0/2
-			description Interface de Acesso do Access Point AC
+			description Interface de Acesso da VLAN 150 do Access Point AC
 			switchport mode access
 			switchport access vlan 50
 			switchport nonegotiate
