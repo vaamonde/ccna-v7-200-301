@@ -444,7 +444,7 @@ Configuração base do cenário será feita utilizando o Script: https://github.
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-034.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=gwgLz6P7a24
 
 ## **035 Configuração do VTP Server e Client nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 

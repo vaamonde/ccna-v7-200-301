@@ -31,7 +31,7 @@
 !(Classless - CIDR Classless Inter-Domain Routing), envia anúncios (advertisement) utilizando o endereço de Multicast
 !224.0.0.9, suporta Autenticação de Texto Plano (Plaintext) ou com Criptografia MD5, possui suporte a Sumarização de Redes.
 
-!O RIPv2 trabalha com os tempos padrão de: 30s Update (atualizações das rotas), 180s Invalid (rota considerada inválida),
+!O RIPv2 trabalha com os tempos padrões de: 30s Update (atualizações das rotas), 180s Invalid (rota considerada inválida),
 !180s Holddown (informações sobre um melhor caminho não são consideradas - unreachable) e 240s Flush (tempo que deve-se 
 !passar para que uma rota seja removida da tabela de roteamento)
 
@@ -55,7 +55,7 @@ enable
 			ip address 10.0.0.9 255.255.255.252
 			exit
 
-		!Configurando o Processo Local do Protocolo de Roteamento Dinâmico RIP
+		!Configurando o Processo Local do Protocolo de Roteamento Dinâmico RIPv2
 		router rip
 
 			!Configurando a versão do Protocolo RIP
@@ -67,7 +67,7 @@ enable
 			!Configurando a Interface Passiva do Protocolo RIP
 			!DICA: as interface passivas do roteador não enviam anúncios do RIP pela sua interface, mais recebem anúncios de
 			!outros roteadores conectados nessa interface
-			!OBSERVAÇÃO: e recomendo sempre desativar os anúncios das interface que não vão participar do domínio do RIP
+			!OBSERVAÇÃO: é recomendo sempre desativar os anúncios das interface que não vão participar do domínio do RIP
 			passive-interface gigabitEthernet 0/0
 
 			!Desabilitando o recurso de Auto-Sumarização do Protocolo RIP

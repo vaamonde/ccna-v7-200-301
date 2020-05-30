@@ -28,7 +28,7 @@
 !STP Root Guard: O recurso de Root Guard impede que uma porta se torne Porta Raiz (Root Port) ou porta Bloqueada. Se uma
 !porta e configurada com o Root Guard e recebe um quadro de BPDU superior, a porta passa imediatamente para o estado 
 !inconsistente (bloqueado). Normalmente, o Root Guard do STP é configurado nos Switches Root Primary (Raiz Primária) ou
-!Root Secundary (Raiz Secundária), o Root Guard e configurando com o comando: spanning-tree guard root
+!Root Secondary (Raiz Secundária), o Root Guard e configurando com o comando: spanning-tree guard root
 
 !Switchport Trunk allowed: O recurso do Switchport Trunk Allowed permite fazer a Poda (Pruning) nas Interfaces configuradas
 !como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da 
@@ -53,7 +53,7 @@ enable
 
 		!Configurando o modo do STP para Rápida Mudança de Encaminhamento das Interfaces
 		!DICA: diferente do comando spanning-tree portfast trunk, o comando spanning-tree portfast e utilizado somente
-		!em interface configurada no modo de acesso, não deve ser utilizada em Interfaces configurada como Trunk
+		!em interface configurada no modo de acesso, não deve ser utilizada em Interfaces configuradas como Trunk
 		!OBSERVAÇÃO: existe a possibilidade de configurar o Portfast Globalmente ou Individualmente na Interface com o
 		!comando: spanning-tree portfast em cada Interface de Acesso
 		spanning-tree portfast default
@@ -83,7 +83,7 @@ enable
 	configure terminal
 		spanning-tree mode rapid-pvst
 		spanning-tree portfast default
-		spanning-tree vlan 10,20,30,40 root secundary
+		spanning-tree vlan 10,20,30,40 root secondary
 		end
 write
 

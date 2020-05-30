@@ -11,9 +11,9 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!OBSERVAÇÃO: os recursos de DHCP Server em Roteadores ou Switches Layer 3 da Cisco são limitados, e recomendo utilizar Servidores 
+!OBSERVAÇÃO: os recursos de DHCP Server em Roteadores ou Switches Layer 3 da Cisco são limitados, é recomendado utilizar Servidores 
 !Microsoft ou GNU/Linux em uma rede corporativa, as principais limitações dos servidores DHCP em Router e Switch são: opções de 
-!configurações avançadas, integrações de serviços de rede, relatórios, etc. 
+!configurações avançadas, integrações de serviços de rede, relatórios, monitoramento, etc. 
 
 !Acessando o modo EXEC Privilégiado
 enable

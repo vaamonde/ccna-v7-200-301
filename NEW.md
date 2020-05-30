@@ -40,41 +40,43 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 026 Configuração da Rota Estática Flutuante no Router 1941<br>
 027 Configuração da Interface de Loopback no Router 1941r<br>
 028 Configuração do NetFlow no Router 1941<br>
-029 Configuração do Servidor de IoT Manager Registrator
+029 Configuração do Servidor de IoT Manager Registrator<br>
 030 Configuração do Protocolo CDP e LLDP nos Switches e Router<br>
 031 Configuração do Dynamic ARP Inspection nos Switches Layer 2 e 3<br>
 032 Configuração do STP e RSTP BÁSICO nos Switches Layer 2 e 3<br>
-033 Configuração do RADIUS e TACACS+ nos Switches e Router
+033 Configuração do RADIUS e TACACS+ nos Switches e Router<br>
+034 Interligando uma Nova Rede WAN Fiber na Topologia
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
 035 Configuração do VTP Server e Client nos Switches Layer 2 e 3<br>
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-036 Configuração da VLAN e Trunk BÁSICO nos Switches Layeres 2 e 3<br>
-036 Configuração do STP Portfast nos Switches Layeres 2 e 3<br>
+036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3<br>
+037 Configuração do STP Portfast nos Switches Layer 2 e 3<br>
 038 Configuração do Router-on-a-Stick no Router 2911<br>
 039 Configuração do DHCPv4 Server no Router 2911<br>
-040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
+040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
+041 Conectando com a Internet xDSL no Router 2911<br>
+042 Configurando o Encaminhamento de Solicitações DHCP<br>
+043 Redistribuindo a Rota Padrão no RIPv2 no Router 2911
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-041 Configuração do Endereçamento IPv6 Estático SLAAC<br>
-042 Configuração do Servidor DHCPv6 Stateless<br>
-043 Configuração do Roteamento Estático, Padrão e Flutuante do IPv6
+044 Configuração do Endereçamento IPv6 Estático SLAAC<br>
+045 Configuração do Servidor DHCPv6 Stateless<br>
+046 Configuração do Roteamento Estático, Padrão e Flutuante do IPv6
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-044 Configuração do DHCPv6 Server no Router 2911<br>
-045 Configuração do RIPng nos Router 1941 e 2911
+047 Configuração do DHCPv6 Server no Router 2911<br>
+048 Configuração do RIPng nos Router 1941 e 2911
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-046 Configuração da ACL Standard BÁSICA nos Switches e Routers<br>
-047 Configuração da ACL Extended BÁSICA nos Switches e Routers
+049 Configuração da ACL Standard BÁSICA nos Switches e Routers<br>
+050 Configuração da ACL Extended BÁSICA nos Switches e Routers
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
-Static NAT, Dynamic NAT, Port Address Translation PAT, Overload NAT, EIGRP, OSPF, BGP,<br>
-IS-IS, WLC, FHRP, HSVRP, GLBP, Etherchannel PAgP, Etherchannel LACP, xDSL, PPP, PPPoE,<br>
-Frame-Relay, VPN, MPLS, Firewall, QoS, PYTHON, JSON, SD-WAN, STP Pruning, etc
+Static NAT, Dynamic NAT, Overload NAT, Port Address Translation PAT, EIGRP, OSPF Single Area,<br>
+OSPF Multi Area, BGP, WLC, FHRP, HSRP, GLBP, VRRP, Etherchannel PAgP, Etherchannel LACP, xDSL,<br>
+PPPoE, PPP, Frame-Relay, MPLS, Firewall, VPN, QoS, PYTHON, JSON, SD-WAN, etc
 
 ## **ETAPA-07: Temas de Aulas que não fazem parte do CCNAv7, não Disponível no Github:**
-VoIP, ARDUINO, IoT/IoE, ASA, DSL, CABLE WAN, WAN Emulator, 3/4G Celular, MERAKI, <br>
-Cabeamento Estruturado - Dimensionamento de Rede Sem-Fio
+VoIP, ARDUINO, IoT/IoE, ASA, 3/4G Celular, MERAKI <br>
