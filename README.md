@@ -518,7 +518,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração do IP Helper Address (Ajuda de Endereço IP), essas configurações serão feitas no Router 1941 do DNS Google, o IP Helper são endereços IP configurados em uma Interface Roteada como uma Interface de VLAN ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de roteadores que permite que esse dispositivo específico atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
 
-As configurações do Encaminhamento de Solicitações DHCP será feita utilizando o Script: 
+As configurações do Encaminhamento de Solicitações DHCP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-042-ConfiguracaoDoIP_DHCP_Helper.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-042.pkt
 
@@ -528,7 +528,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração da Redistribuição da Rota Padrão no Protocolo de Roteamento Dinâmico RIPv2, essa configuração será feita no Router 2911, a configuração de Rotas Padrão Estáticas em todos os dispositivos de rede da infraestrutura é complicada e de difícil administração, essa função pode ser executada automaticamente com a propagação de rota padrão no RIPv2, conhecida como Default Information Originate (Origem de Informações Padrão).
 
-As configurações da Redistribuição de Rota Padrão no RIPv2 será feita utilizando o Script: 
+As configurações da Redistribuição de Rota Padrão no RIPv2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-043-ConfiguracaoDaRedistribuicaoDeRotaRIPv2.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-043.pkt
 
