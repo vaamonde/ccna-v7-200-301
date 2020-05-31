@@ -58,25 +58,30 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
 041 Conectando com a Internet xDSL no Router 2911<br>
 042 Configurando o Encaminhamento de Solicitações DHCP<br>
-043 Redistribuindo a Rota Padrão no RIPv2 no Router 2911
+043 Redistribuindo a Rota Padrão no RIPv2 no Router 2911<br>
+044 Configuração do Endereçamento IPv6 Estático
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-044 Configuração do Endereçamento IPv6 Estático SLAAC<br>
 045 Configuração do Servidor DHCPv6 Stateless<br>
-046 Configuração do Roteamento Estático, Padrão e Flutuante do IPv6
-
-## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
+046 Configuração do Roteamento Estático, Padrão e Flutuante do IPv6<br>
 047 Configuração do DHCPv6 Server no Router 2911<br>
 048 Configuração do RIPng nos Router 1941 e 2911
 
-## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
+## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
 049 Configuração da ACL Standard BÁSICA nos Switches e Routers<br>
 050 Configuração da ACL Extended BÁSICA nos Switches e Routers
 
+## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
+051 Configuração do Protocolo PPPoE nos Router SOHO e 1941<br>
+052 Configuração do WLC 2504 e LWAP 3702i com Segurança 802.1x<br>
+053 Configuração do NAT Estático no Router 2911<br>
+054 Configuração do NAT Dinâmico no Router 2911<br>
+055 Configuração do NAT Overload no Router 2911<br>
+056 Configuração do PAT Estático no Router 2911
+
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
-Static NAT, Dynamic NAT, Overload NAT, Port Address Translation PAT, EIGRP, OSPF Single Area,<br>
-OSPF Multi Area, BGP, WLC, FHRP, HSRP, GLBP, VRRP, Etherchannel PAgP, Etherchannel LACP, xDSL,<br>
-PPPoE, PPP, Frame-Relay, MPLS, Firewall, VPN, QoS, PYTHON, JSON, SD-WAN, etc
+EIGRP, OSPF Single Area, OSPF Multi Area, BGP, FHRP, HSRP, GLBP, VRRP, Etherchannel PAgP,<br>
+Etherchannel LACP, PPP, Frame-Relay, MPLS, Firewall, VPN, QoS, PYTHON, JSON, SD-WAN, etc
 
 ## **ETAPA-07: Temas de Aulas que não fazem parte do CCNAv7, não Disponível no Github:**
 VoIP, ARDUINO, IoT/IoE, ASA, 3/4G Celular, MERAKI <br>
