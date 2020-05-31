@@ -12,15 +12,15 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !O IP Helper (Ajuda de Endereço IP) são endereços IP configurados em uma Interface Roteada como uma Interface de VLAN
-!ou uma Tnterface Ethernet (FasEthert, GigabitEthernet, etc) de roteadores que permite que esse dispositivo específico
+!ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de roteadores que permite que esse dispositivo específico
 !atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface
 !para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
 
 !O IP DHCP Client (Cliente do DHCP) é uma das formas de configuração do endereço IPv4 ou IPv6 em uma Interface de Rede, 
-!esse recurso permite configuração uma interface dinâmicamente, obtendo o endereço IPv4 ou IPv6 dos servidores DHCP da Rede.
-!Interface configuradas com o DHCP Client geralmente são utilizadas para se conectar com ISP (Internet Service Provider).
+!esse recurso permite configurar uma interface dinâmicamente, obtendo o endereço IPv4 ou IPv6 dos servidores de DHCP da Rede.
+!Interfaces configuradas com o DHCP Client geralmente são utilizadas para se conectar com ISP (Internet Service Provider).
 
-!PRIMEIRA ETAPA: Configuração do Escopo do DHCPv4 Server no Servidor do Google
+!PRIMEIRA ETAPA: Configuração do Escopo do DHCPv4 Server no Servidor do DNS Google
 !Interface:					GigabitEthernet0
 !Service:					On
 !Pool Name:					dnsgoogle
@@ -31,7 +31,7 @@
 !Maximum Number of Users:	50
 !TFTP Server:				8.8.8.8
 
-!SEGUNDA ETAPA: Configuração da Página HTML do Servidor HTTP no Servidor do Google
+!SEGUNDA ETAPA: Configuração da Página HTML do Servidor HTTP no Servidor do DNS Google
 Service HTTP	On
 Service HTTPS	On
 <!DOCTYPE html>
@@ -42,14 +42,14 @@ Service HTTPS	On
 	<body>
 		<center>
 		<h1>Google</h1>
-		<p>Configuração do IP Helper DHCP e DNS do Google</p>
+		<p>Configuração do IP Helper Address DHCP e DNS do Google</p>
 		<p><b>Projeto Bora para Prática!!!</b></p>
 		<p><b><i><u>Curso de CCNAv7 Exame 200-301</u></i></b></p>
 		</center>
 	</body>
 </html>
 
-!TERCEIRA ETAPA: Configuração do Roteador 1941-3
+!TERCEIRA ETAPA: Configuração do Roteador 1941-3 do DNS Google
 !Acessando o modo EXEC Privilégiado
 enable
 
@@ -62,11 +62,12 @@ enable
 		!Configurando a Interface de WAN do Router 1941-3
 		interface gigabitEthernet 0/0
 			description Interface de WAN do DNS do Google
+			!OBSERVAÇÃO: nesse cenário será configurado um Endereço IPv4 Público de Internet
 			ip address 200.204.0.126 255.255.255.128
 
 			!Configurando o Recurso de Ajuda de Endereço DHCP na Interface WAN
 			!DICA: configurando o endereço IPv4 do Servidor de DHCP que possui o Escopo da Rede configurado
-			!OBSERVAÇÃO: esse recurso funciona no Router ou Switch Layer, principalmente quando trabalhamos com VLAN
+			!OBSERVAÇÃO: esse recurso funciona no Router ou Switch Layer 3, principalmente quando trabalhamos com VLAN
 			ip helper-address 8.8.8.8
 			no shutdown
 			exit
@@ -79,9 +80,9 @@ enable
 			exit
 
 		!Configurando a Rota Padrão de Saída do Router 1941-3
-		!OBSERVAÇÃO: na vida real de Provedores de Serviços de Internet (ISP), não é configurado Rota Padrão de retorno
-		!para o cliente, nesse cenário é utilizado NAT (Network Address Translation), que será visto futuramente nas 
-		!configurações de acesso a internet
+		!OBSERVAÇÃO: na vida real de Provedores de Serviços de Internet (ISP), não é configurado a Rota Padrão de Retorno
+		!para o cliente, nesse cenário é utilizado o NAT (Network Address Translation), que será visto futuramente nas 
+		!configurações de acesso a Internet junto com os Recursos de ACL (Access Control List) e PAT (Port Address Translation)
 		ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0
 		end
 write
@@ -92,33 +93,21 @@ enable
 		interface GigabitEthernet 0/1
 
 			!Configurando a Interface do Router 2911-1 para obter endereço IPv4 via DHCP Client
-			!DICA: interface configuradas para obter endereços IPv4 via DHCP geralmente são utilizadas para conexão com a internet
+			!DICA: interface configurada para obter endereços IPv4 via DHCP geralmente são utilizadas para conexão com a Internet
 			!OBSERVAÇÃO: não é recomendado utilizar interfaces configuradas com DHCP Client na rede LAN, somente na WAN é em casos
-			!especificos, quando se conectamos com o ISP (Internet Service Provider) ou Links Privados.
+			!específicos, quando se conectamos com o ISP (Internet Service Provider) ou Links Privados de WAN ou VPN.
+			!OBSERVAÇÃO: no Cisco Packet Tracer a configuração do Endereço IPv4 via DHCP Client demora alguns segundos
+			!IMPORTANTE: em roteadores reais temos os comandos: release e renew no Modo EXEC Privilegiado, no Cisco Packet Tracer
+			!essas opções são limitadas, recomendo desligar a interface (shutdown) e ligar novamente (no shutdown)
 			ip address dhcp
 			no shutdown
-			exit
-
-		!Configurando o Processo do Protocolo RIPv2
-		router rip
-
-			!Configurando a redistribuição da Rota Padrão para os outros roteadores do domínio do RIPv2
-			!DICA: na vida real se torna complicado propagar e administrar rota estática padrão na rede, esse recurso parecido com
-			!o comando: redistribute que facilita nossa vida informando o roteador na rede que tem a rota padrão para a Internet
-			!OBSERVAÇÃO: cuidao com o comando default-information quando utilizado em roteadores ou switch layer 3 que tem roteadores
-			!padrão para outra redes que não e da interface, utilizando o comando: ip route 0.0.0.0 0.0.0.0 gigabitEthernet 0/0
-			!IMPORTANTE: a rota padrão desse roteador se aprendida e configurada dinâmicamente pelo DHCP Client.
-			default-information originate
 			end
 write
 
-!DESAFIO: 
-
 !Visualizando as configurações da memória RAM
 show running-config | section interface
-show running-config | section rip
 
-!Verificando as informações do Protocolo RIPv2 nos Routeres 2911 e 1941
-show ip router rip
-show ip router static
-show ip rip database
+!Verificando as informações do Endereçamento IPv4 do Router 2911
+show dhcp lease
+show ip interface brief
+show ip route static
