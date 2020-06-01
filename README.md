@@ -454,7 +454,7 @@ As configurações do VTP Server e Client nos Switche Layer 2 e 3 será feita ut
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-035.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=NZ3yW7h9Xjw
 
 ## **036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
