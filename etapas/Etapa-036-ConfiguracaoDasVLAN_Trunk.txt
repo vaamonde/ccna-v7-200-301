@@ -21,7 +21,7 @@
 !As VLANs oferecem vantagens das quais se destacam: segurança, escalabilidade, flexibilidade, redução de custos, etc.
 
 !Um Switch com a capacidade de criar VLANs suporta dois tipos de configurações de porta: Access Port (porta de acesso
-!para conexões de dispositovos finais) e Trunk Port (porta de tronco para interligação de Switch, Router ou Server)
+!para conexões de dispositivos finais) e Trunk Port (porta de tronco para interligação de Switch, Router ou Server)
 
 !Os range de VLANs nos Switches Cisco são: 0 é 4095 Reservadas (Reserved - apenas para uso do sistema operacional IOS,
 !você não pode ver ou usar essas VLANs), 1 Padrão/Nativa (Default/Native - você pode usar essa VLAN, está associada por
@@ -37,9 +37,9 @@
 
 !Uma Porta de Acesso (access), permite associar uma porta do Switch a uma VLAN, as portas do tipo acesso são usadas
 !para conectar dispositivos finais (Desktop, Notebook, Impressoras, Access Point, etc), por padrão, todas as portas
-!dos Switches estão associadas na VLAN Padrão/NAtiva 1, que transporta dados sem marcação (Untagged VLAN).
+!dos Switches estão associadas na VLAN Padrão/Nativa 1, que transporta os dados sem marcação (Untagged VLAN).
 
-!Uma Porta de Tronco (trunk), normalmente usada para interligação de Switches ou ligação de Roteadores e Servidores, ela
+!Uma Porta de Tronco (trunk), normalmente é usada para interligação de Switches ou ligação de Roteadores e Servidores, ela
 !permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas
 !no Switch podem passar por ela, no entanto o administrador pode limitar o número de VLANs que podem passar pelo Trunk.
 
@@ -123,7 +123,7 @@ enable
 			!Configurando o acesso a VLAN 100 da Interface do Servidor
 			!DICA: por padrão só podemos configurar uma VLAN na porta de rede do Switch
 			!OBSERVAÇÃO: a partir do momento que configuramos a VLAN na porta do Switch, todos os quadros (frames)
-			!recebem a Tag (etiqueta) dot1q (IEEE 802.1Q) no seu frame (quadro) ethernet quando transmite pacotes
+			!recebem a Tag (etiqueta) dot1q (IEEE 802.1Q) no seu frame (quadro) Ethernet quando transmite pacotes
 			!pela porta de rede do switch
 			!OBSERVAÇÃO: existe a possibilidade de configurar mais uma VLAN de VoIP na mesma porta de acesso, usando o
 			!comando: switchport voice vlan
@@ -132,7 +132,7 @@ enable
 		
 		!Configurando a Interface de Acesso a VLAN 50 do Access Point 802.11-AC
 		interface fastEthernet 0/2
-			description Interface de Acesso da VLAN 150 do Access Point AC
+			description Interface de Acesso da VLAN 50 do Access Point AC
 			switchport mode access
 			switchport access vlan 50
 			switchport nonegotiate
