@@ -16,6 +16,11 @@
 !atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface
 !para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
 
+!As mensagens do DHCPv4 não é o único serviço no qual o roteador pode ser configurado para retransmitir, por padrão, o 
+!comando ip helper-address encaminha os seguintes pacotes de serviços UDP: Porta 37: tempo, Porta 49: TACACS, Porta 53: DNS
+!Porta 67: cliente de DHCP/BOOTP, Porta 68: servidor de DHCP/BOOTP, Porta 69: TFTP, Porta 137: serviço de nomes NetBIOS e
+!Porta 138: serviço de conjunto de dados NetBIOS
+
 !O IP DHCP Client (Cliente do DHCP) é uma das formas de configuração do endereço IPv4 ou IPv6 em uma Interface de Rede, 
 !esse recurso permite configurar uma interface dinâmicamente, obtendo o endereço IPv4 ou IPv6 dos servidores de DHCP da Rede.
 !Interfaces configuradas com o DHCP Client geralmente são utilizadas para se conectar com ISP (Internet Service Provider).

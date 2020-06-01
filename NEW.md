@@ -62,9 +62,9 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 044 Configuração do Endereçamento IPv6 Estático
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-045 Configuração do Servidor DHCPv6 Stateless<br>
-046 Configuração do Roteamento Estático, Padrão e Flutuante do IPv6<br>
-047 Configuração do DHCPv6 Server no Router 2911<br>
+045 Configuração do Servidor DHCPv6 Stateful<br>
+046 Configuração do DHCPv6 Stateless no Router 2911<br>
+047 Configuração da Rota Estática, Padrão e Flutuante do IPv6<br>
 048 Configuração do RIPng nos Router 1941 e 2911
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**

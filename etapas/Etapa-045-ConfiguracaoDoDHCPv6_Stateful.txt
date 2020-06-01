@@ -1,0 +1,86 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 31/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!
+
+!PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
+!Faixa Link Local: FE80::/10
+!Faixa Unicast Global: 2001:abcd:1234:3::/64
+!Endereço IPv6 do Gateway: FE80::254
+!Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
+
+!Endereço IPv6 Unicast Global: 2001:abcd:1234:3::1/64
+!Endereço IPv6 Link Local: FE80::1
+
+!SEGUNDA ETAPA: Configuração do Servidor DHCPv6 Stateful
+!OBSERVAÇÃO: por padrão o Serviço do DHCPv6 Stateful no Cisco Packet Tracer está desabilitado
+Service			On
+Interface		FastEthernet0
+DHCPv6 Pool		pti
+
+Create Pool			Pool Name:					pti
+					DNS Name:					2001:abcd:1234:3::1
+					Domain Name:				vaamonde.pti
+					IPv6 Prefix:				2001:abcd:1234:3::/64
+					DHCPv6 Unique Identifier:	000100011886ECE90001637BD5E2
+					Valid Lifetime:				2592000
+					Preferred Lifetime:			604800
+					Local Pool Name:			pti
+					Valid Lifetime:				2592000
+					Preferred Lifetime			604800
+
+Create Local Pool	IPv6 Local Pool				pti
+					IPv6 Pool Prefix			2001:abcd:1234:3::/64
+					Prefix Length to Assign		64
+
+!TERCEIRA ETAPA: Configuração do Switch Layer 3 3560
+enable
+	configure terminal
+		
+		!Habilitando o Recurso de Roteamento Unicast do IPv6
+		ipv6 unicast-routing
+		
+		!Configuração da Interface de Gateway Local da LAN
+		interface 
+
+			!Configurando o Endereço de Link Local IPv6
+			ipv6 address FE80::254 link-local
+			
+			!Configurando o Endereço de Unicast Global IPv6
+			ipv6 address 2001:abcd:1234:3::254/64
+			end
+write
+
+!QUARTA ETAPA: Configuração do Roteador 1941-2
+enable
+	configure terminal
+		
+		!Habilitando o Recurso de Roteamento Unicast do IPv6
+		ipv6 unicast-routing
+		
+		!Configuração da Interface de Gateway Local da LAN
+		interface 
+
+			!Configurando o Endereço de Link Local IPv6
+			ipv6 address FE80::254 link-local
+			
+			!Configurando o Endereço de Unicast Global IPv6
+			ipv6 address 2001:abcd:1234:3::254/64
+			end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section interface
+
+!Visualizando as informações dos endereços IPv6
+show ipv6 interface brief
