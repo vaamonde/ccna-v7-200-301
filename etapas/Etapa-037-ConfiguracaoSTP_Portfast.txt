@@ -11,30 +11,32 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!STP Portfast: O recurso do STP Portfast faz com que uma Porta do Switch entre imediatamente no estado de encaminhamento
-!(Forwarding), ignorando os estados de escuta (Listening) e aprendizado (learning). Esse recurso e configurado somente
-!em Portas de Acesso (Access).
+!STP Portfast: O recurso do STP Portfast (Porta Rápida) faz com que uma Porta do Switch entre imediatamente no estado
+!de encaminhamento (Forwarding), ignorando os estados de escuta (Listening) e aprendizado (learning), esse recurso e
+!configurado somente em Portas de Acesso (Access).
 
-!STP Portfast Trunk: O recurso de STP Portfast Trunk tem a mesma finalidade do STP Portfast, mais é somente configurado
-!em Portas de Tronco (Trunk) com dispostivos que não são Switches, como por exemplo: Roteadores (Router), Servidores, 
-!Pontes (Bridge) e etc.
+!STP Portfast Trunk: O recurso de STP Portfast Trunk (Porta Rápida de Tronco) tem a mesma finalidade do STP Portfast,
+!mais é somente configurado em Portas de Tronco (Trunk) com dispostivos que não são Switches, como por exemplo: 
+!Roteadores (Router), Servidores (Server), Pontes (Bridge) e etc.
 
-!STP Portfast BPDU Guard: O recurso de BPDU Guard é usado para proteger a topologia do protocolo STP contra ataques
-!relacionados ao BPDU. O BPDU Guard coloca a porta em Desabilitada por Erro (Error Disable) se ela receber quadros BPDU,
-!o BPDU Guard é habilitado apenas nas interfaces configuradas com Portfast de Acesso, existe a possibilidade de configurar
-!globalmente com o comando: spanning-tree portfast bpduguard default ou na interface com os comando: spanning-tree bpduguard
-!disable ou comando: spanning-tree bpduguard enable
+!STP Portfast BPDU Guard: O recurso de STP Portfast BPDU Guard é usado para proteger a topologia do protocolo STP contra
+!ataques relacionados ao BPDU. O BPDU Guard coloca a porta em Desabilitada por Erro (Error Disable) se ela receber quadros
+!BPDU, o BPDU Guard é habilitado apenas nas interfaces configuradas com Portfast de Acesso, existe a possibilidade de 
+!configurar globalmente com o comando: spanning-tree portfast bpduguard default ou na interface com os comando: spanning-tree
+!bpduguard disable ou comando: spanning-tree bpduguard enable. (esse recurso não será configurado nesse vídeo)
 
-!STP Root Guard: O recurso de Root Guard impede que uma porta se torne Porta Raiz (Root Port) ou porta Bloqueada. Se uma
-!porta e configurada com o Root Guard e recebe um quadro de BPDU superior, a porta passa imediatamente para o estado 
-!inconsistente (bloqueado). Normalmente, o Root Guard do STP é configurado nos Switches Root Primary (Raiz Primária) ou
-!Root Secondary (Raiz Secundária), o Root Guard e configurando com o comando: spanning-tree guard root
+!STP Root Guard: O recurso de STP Root Guard (Guarda Raiz) impede que uma porta se torne Porta Raiz (Root Port) ou porta
+!Bloqueada. Se uma porta e configurada com o Root Guard e recebe um quadro de BPDU superior, a porta passa imediatamente para
+!o estado inconsistente (bloqueado). Normalmente, o Root Guard do STP é configurado nos Switches Root Primary (Raiz Primária)
+!ou Root Secondary (Raiz Secundária), o Root Guard e configurando com o comando: spanning-tree guard root. (esse recurso não
+!será configurado nesse vídeo)
 
-!Switchport Trunk allowed: O recurso do Switchport Trunk Allowed permite fazer a Poda (Pruning) nas Interfaces configuradas
-!como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da 
-!topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede. Essa configuração e feita nas Interfaces Designadas,
-!para configurar as VLAN liberadas na interface você utiliza o comando: switchport trunk allowed vlan 10-40,90,99, esse 
-!comando possui as opções: add (adicionar), all (todos), except (exceção), none (não) e remove (remover)
+!Switchport Trunk allowed: O recurso do Switchport Trunk Allowed (Tronco Permitido) permite fazer a Poda (Pruning) nas
+!Interfaces configuradas como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível
+!de segurança da topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede. Essa configuração e feita nas Interfaces 
+!Designadas, para configurar as VLAN liberadas na interface você utiliza o comando: switchport trunk allowed vlan 10-40,90,99,
+!esse comando possui as opções: add (adicionar), all (todos), except (exceção), none (não) e remove (remover) - (esse recurso não
+!será configurado nesse vídeo)
 
 !PRIMEIRA ETAPA: Configuração do STP e RSTP Portfast no Switche Layer 3 3560
 !Acessando o modo EXEC Privilégiado
@@ -44,7 +46,7 @@ enable
 	configure terminal
 	
 		!Configuração do STP do Switch Layer 3 para ser o Root Bridge das VLANs
-		!OBSERVAÇÃO: configurando somente as VLANs criadas no Switch para ser o Root Bridge padrão da Topologia
+		!OBSERVAÇÃO: configurando somente as VLANs associadas no Switch para ser o Root Bridge padrão da Topologia
 		spanning-tree vlan 1,50,90-100 root primary
 		
 		!Configurando o RSTP Rapid-PVST no Switch Layer 3 3560
@@ -52,8 +54,8 @@ enable
 		spanning-tree mode rapid-pvst
 
 		!Configurando o modo do STP para Rápida Mudança de Encaminhamento das Interfaces
-		!DICA: diferente do comando spanning-tree portfast trunk, o comando spanning-tree portfast e utilizado somente
-		!em interface configurada no modo de acesso, não deve ser utilizada em Interfaces configuradas como Trunk
+		!DICA: diferente do comando spanning-tree portfast trunk, o comando spanning-tree portfast é utilizado somente
+		!em Interface configurada no modo de Acesso, não deve ser utilizada em Interfaces configuradas como Trunk
 		!OBSERVAÇÃO: existe a possibilidade de configurar o Portfast Globalmente ou Individualmente na Interface com o
 		!comando: spanning-tree portfast em cada Interface de Acesso
 		spanning-tree portfast default
@@ -74,6 +76,7 @@ enable
 	configure terminal
 		spanning-tree mode rapid-pvst
 		spanning-tree portfast default
+		!OBSERVAÇÃO: o primeiro Switch Layer 2 será o Root Bridge Primary da Topologia das VLANs associadas
 		spanning-tree vlan 10,20,30,40 root primary
 		end
 write
@@ -83,6 +86,7 @@ enable
 	configure terminal
 		spanning-tree mode rapid-pvst
 		spanning-tree portfast default
+		!OBSERVAÇÃO: o segundo Switch Layer 2 será o Root Bridge Secondary da Topologia das VLANs associadas
 		spanning-tree vlan 10,20,30,40 root secondary
 		end
 write
