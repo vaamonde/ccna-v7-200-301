@@ -52,6 +52,7 @@ enable
 
 		!Criando as VLANs Standard (Padrão) no Switch Layer 3 3560 com VTP Server
 		!DICA: por padrão é recomendado trabalhar nos Switches Catalyst a faixa de VLANs Standard (padrão de 2 até 1001)
+		!ERRATA: no vídeo eu falo que as VLANs Padrão/Nativas vai de 1 até 1001, correto é: 2 até 1001 conforme descrito em DICA
 		!OBSERVAÇÃO: no Switch Layer 3 3560 foi configurado o recurso de VTP Server, que centraliza a administração das VLANs
 		vlan 10
 			!Configurando o nome da VLAN Standard
