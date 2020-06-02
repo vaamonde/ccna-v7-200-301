@@ -49,7 +49,7 @@ enable
 		spanning-tree vlan 1,50,90-100 root primary
 		
 		!Configurando o RSTP Rapid-PVST no Switch Layer 3 3560
-		!OBSERVAÇÃO: lembre-se que quando ativado no Switch Root Bridge os demais também precisam ser configurados
+		!OBSERVAÇÃO: lembre-se que quando ativado no Switch Root Bridge os demais Switches também precisam ser configurados
 		spanning-tree mode rapid-pvst
 
 		!Configurando o Portfast na Interface de Trunk com o Router 2911
@@ -76,7 +76,7 @@ enable
 			!Configurando o STP para Rápida Mudança de Encaminhamento das Interfaces
 			!DICA: diferente do comando spanning-tree portfast trunk, o comando spanning-tree portfast é utilizado somente
 			!em Interfaces configuradas no Modo de Acesso, não deve ser utilizado em Interfaces configuradas como Trunk e
-			!conectas em outros Switches na Topologia
+			!conectadas em outros Switches na Topologia
 			!OBSERVAÇÃO: o Portfast pode ser configurado Globalmente com o comando: spanning-tree portfast default
 			!IMPORTANTE: difirente do BPDU Guard configurado Globalmente, o Portfast só vai funcionar nas Interfaces que 
 			!estão configuradas com o comando: switchport mode access, não sendo aplicando nas Interfaces de Trunk
@@ -88,10 +88,10 @@ enable
 		interface range gigabitEthernet 0/1 - 2
 
 			!Removendo as VLANs que serão negadas a trafegar pelos Trunk dos Switches Layer 2 2960
-			!DICA: por padrão os Trunk permite trafegar todas as VLANs criadas, por motivo de Segurança e recomendado
+			!DICA: por padrão os Trunk permite trafegar todas as VLANs criadas, por motivo de Segurança é recomendado
 			!filtrar/podar o tráfego de determinadas VLANs em nossa topologia, como por exemplo a VLAN de Wireless
 			!OBSERVAÇÃO: o comando switchport trunk allowed vlan possui as opções de: add (adicionar), all (tudo)
-			!except (exceto), none (nenhum), remove (remomver) ou faixa de VLANs permitidas.
+			!except (exceto), none (nenhum), remove (remover) ou faixa de VLANs permitidas.
 			!IMPORTANTE: para voltar a configuaração padrão, utilize o comando: switchport trunk allowed vlan all
 			switchport trunk allowed vlan remove 50
 			switchport trunk allowed vlan remove 100
