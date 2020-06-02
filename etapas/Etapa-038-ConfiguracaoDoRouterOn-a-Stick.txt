@@ -12,7 +12,7 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !O Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede,
-!é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento
+!ele é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento
 !lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. O conceito
 !do Router-on-a-Stick e bem parecido com o Hub-and-Spoke utilizado em Redes Frame Relay.
 
@@ -35,8 +35,8 @@ enable
 
 		!Configurando a Subinterface da VLAN 10 ADM
 		!DICA: a subinterface da VLAN será utilizada como Gateway da Rede Local
-		!OBSERVAÇÃO: e recomendado fazer a criação da subinterface utilizando a numeração da VLAN correspondente
-		!OBSERVAÇÃO: para fazer a criação da subinterface utilizando o . (ponto) depois da numeração da interface
+		!OBSERVAÇÃO: é recomendado fazer a criação da subinterface utilizando a numeração da VLAN correspondente
+		!OBSERVAÇÃO: para fazer a criação da subinterface utilizamos o . (ponto) depois da numeração da interface
 		!OBSERVAÇÃO: a quantidade de subinterface suportada pelo Router é: 0 até 4.294.967.295
 		interface gigabitEthernet 0/0.10
 			description Subinterface da VLAN 10 ADM
