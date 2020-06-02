@@ -112,7 +112,7 @@ Link para download das versões do Cisco Packet Tracer no MEGA.nz: https://mega.
 
 Link da vídeo aula: https://www.youtube.com/watch?v=4EIO6Ma0foA&t
 
-## **001 Configuração Base do Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
+## **001 Configuração Base dos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3.x, utilizado apenas 02 (dois) Cisco Switches Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
 
@@ -122,7 +122,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 
-## **002 Configuração das Linhas Virtuais VTY Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
+## **002 Configuração das Linhas Virtuais VTY nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso de Linhas Virtuais VTY, que será utilizado para o acesso remoto dos equipamentos quando as Interface SVI estiverem configuradas e os Switches já entrar em produção na rede.
 
@@ -132,7 +132,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
 
-## **003 Configuração do Gateway e SVI Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
+## **003 Configuração do Gateway e SVI nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY (linhas virtuais) para o acesso remoto e o gerenciamento dos equipamentos.
 
@@ -142,7 +142,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=cOZDezhef3o&t
 
-## **004 Configuração do SSH Server Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
+## **004 Configuração do SSH Server nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso do serviço de acesso remoto seguro utilizando o protocolo SSH (Secure Shell), essas configurações são utilizadas junto com o VTY (linhas virtuais) e o SVI (interface virtual do switch) para o acesso remoto e o gerenciamento dos equipamentos de forma segura.
 
@@ -152,7 +152,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
 
-## **005 Configuração Base do Router 1941- Laboratório Prático Cisco CCNAv7 200-301**
+## **005 Configuração Base do Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração Base do Cisco Router 1941, nesse cenário, utilizando os conhecimentos adquiridos até agora, seu processo de configuração será mais rápido, será aplicado o script base com apenas alguns recursos a mais em relação ao Switch Layer 2 2960 que não tem suporte, nesse Router será configurado a Porta Aux (Auxiliar).
 
@@ -162,7 +162,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=hNlAzBushZ0
 
-## **006 Configuração da Interface Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
+## **006 Configuração da Interface no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações do Router 1941, agora configurando a Interface GigabitEthernet que será utilizada como Gateway da Rede LAN.
 
@@ -172,7 +172,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=WfvVUL-WQVs&t
 
-## **007 Backup das Configurações e do Cisco IOS - Laboratório Prático Cisco CCNAv7 200-301**
+## **007 Backup das Configurações e do Cisco IOS dos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer o backup das configurações dos Switches Layer 2 2960 e do Router 1941 para o Servidor de TFTP (Trivial File Transfer Protocol), o backup consiste das configurações do Running-Config ou Startup-Config de cada equipamento na rede e do Cisco IOS (Internetwork Operating System) utilizados nos Switches e Router.
 
@@ -182,7 +182,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=giOOtn4AQxE&t
 
-## **008 Atualização do Cisco IOS Switch 2960 - Laboratório Prático Cisco CCNAv7 200-301**
+## **008 Atualização do Cisco IOS nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Operating System) utilizando o Servidor TFTP (Trivial File Transfer Protocol) dos Switches Layer 2 2960.
 
@@ -260,7 +260,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=_aoi9GurBNE&t
 
-## **016 Configuração do DNS no Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
+## **016 Configuração do DNS nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DNS (Domain Name System) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita o acesso remoto utilizando o protocolo SSH ou testes de rede com o protocolo ICMP (Internet Control Message Protocol - ping, traceroute, tracert, etc) por nomes, fazendo a tradução dos nomes dos equipamentos para o endereço IPv4 correspondente, utilizando o serviço de DNS configurado no Servidor ou consultando a base de nomes locais do equipamento.
 
@@ -270,7 +270,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=q6AblFEplEQ&t
 
-## **017 Configuração do NTP no Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
+## **017 Configuração do NTP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do NTP (Network Time Protocol) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração faz o sincronismo e alteração de Data/Hora nos equipamentos de rede, facilitando a administração, padronização e confiabilidade nos registros de Logs e eventos dos equipamentos de rede, registrando as informações com Data/Hora corretas.
 
@@ -280,7 +280,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=X1f7bHZTSGs
 
-## **018 Configuração do SYSLOG no Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
+## **018 Configuração do SYSLOG nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do SYSLOG (System Logging) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita a centralização de todos os Logs de eventos dos equipamentos de rede, ajudando no processo de resolução de problemas e análise das falhas ou mudanças nos equipamentos.
 
@@ -290,7 +290,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=zlFcWwAOY54&t
 
-## **019 Configuração do SNMP no Switch e Router - Laboratório Prático Cisco CCNAv7 200-301**
+## **019 Configuração do SNMP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do SNMP (Simple Network Management Protocol) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita a administração e monitoramento dos equipamentos da rede, utilizando o protocolo SNMP podemos obter dados de estatísticas das interfaces de rede, status das interfaces e alteração das informações ou configurações remotas. 
 
@@ -308,7 +308,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=-qExeM_Xk3s&t
 
-## **021 Configuração do Speed, Duplex e MDIX no Switch - Laboratório Prático Cisco CCNAv7 200-301**
+## **021 Configuração do Speed, Duplex e MDIX nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Speed (Velocidade da Interface/Porta de Rede), Duplex (Modo de Transmissão - Half-Duplex, Full-Duplex ou Auto) e o recurso do MDIX (Medium-Dependent Interface), todos os recursos das configurações de Interface/Porta de Rede são necessários em casos onde a auto-negociação da Interface/Porta de Rede não esteja disponível ou quando temos necessidade de atender pré-requisitos de uma determinada tecnologia, nessa aula vou mostrar os conceitos de segurança para desabilitar as Interface/Porta de Redes que não estão em uso nos nossos Switches.
 
@@ -318,7 +318,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=obRpiRL2Fns
 
-## **022 Configuração do Switchport e Port-Security no Switch - Laboratório Prático Cisco CCNAv7 200-301**
+## **022 Configuração do Switchport e Port-Security nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Switchport e Port-Security no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de Switchport permite mudar o Tipo de Porta que usamos no nosso Switch, como por exemplo Access (Porta de Acesso) ou Trunk (Porta de Tronco), já o Port-Security tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de Endereços MAC), aplicando políticas de segurança baseadas em endereços Físicos de Placa de Rede (MAC Address) e bloqueando ou desativando a porta em caso de violação.
 
@@ -328,7 +328,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=qA4Rl8sPKAk&t
 
-## **023 Configuração do DHCP Snooping no Switch - Laboratório Prático Cisco CCNAv7 200-301**
+## **023 Configuração do DHCP Snooping nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação) no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de DHCP Snooping tem como objetivo mitigar ataques do tipo Man In The Middle (Homem no Meio), ele é um recurso de camada 2, que age filtrando mensagens DHCP não confiáveis/inválidas, criando um banco de dados de informações (DHCP Snooping Binding Table) e configurado Portas Confiáveis e Portas não Confiáveis.
 
@@ -338,7 +338,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=JjKn7deNcvU&t
 
-## **024 Configuração da Interface Roteada Switch Layer 3 3560 - Laboratório Prático Cisco CCNAv7 200-301**
+## **024 Configuração da Interface Roteada no Switch Layer 3 3560 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Interface (Porta de Rede) Roteada do Switch Layer 3 3560, utilizando o recurso de Switchport na Porta de Rede e transformando uma porta de Switch em uma Interface de Rede, permitindo a configuração do endereçamento IPv4 ou IPv6, habilitando o recurso de ip routing o nosso Switch Layer 3 se torna uma Roteador para a rede LAN, fazendo o roteamento na cada de hardware.
 
@@ -396,11 +396,11 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: https://www.youtube.com/watch?v=2B_skmB_Ucs&t=
 
-## **030 Configuração do CDP e LLDP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
+## **030 Configuração do CDP e LLDP nos Switches Layer 2 e 3 e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do CDP (Cisco Discovery Portocol) que é um protocolo proprietário da camada de ligação de dados desenvolvido pela Cisco que tem como principal função a descoberta de equipamentos na rede, facilitando a compreensão da topologia da rede e de sua arquitetura, também, vou fazer a configuração do protocolo LLDP (Link-Layer Discovery Protocol) que tem a mesma finalidade do CDP, com a diferença de ser um padrão da indústria (IEEE 802.1AB) que pode ser implementado por qualquer fabricante, o que faz dele uma solução bem mais flexível do que o CDP em ambientes com dispositivos de múltiplos fabricantes.
 
-As configurações do CDP e LLDP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-030-ConfiguracaoDoCDP_LLDP.txt
+As configurações do CDP e LLDP nos Switches Layer 2 e 3 e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-030-ConfiguracaoDoCDP_LLDP.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-030.pkt
 
@@ -420,7 +420,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=qUU_JNBbN7A&t
 
 Nessa aula, vou fazer a configuração do STP (Spanning Tree Protocol) e do RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan rapid spanning tree mode) nos Switches Layer 2 e 3, o STP é um protocolo da camada 2 que é executado em interligações dos Switches na nossa topologia. A especificação para o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede. O protocolo RSTP detecta topologias de rede para fornecer uma convergência mais rápida em relação ao STP e cria uma rede sem loop de camada 2. 
 
-As configurações do STP e RSTP BÁSICO nos Switche Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-032-ConfiguracaoDoSTP_RSTP.txt
+As configurações do STP e RSTP BÁSICO nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-032-ConfiguracaoDoSTP_RSTP.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-032.pkt
 
@@ -450,7 +450,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=gwgLz6P7a24
 
 Nessa aula, vou fazer a configuração do Serviços de VTP (VLAN Trunk Protocol), essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, o VTP é um protocolo proprietário da Cisco de Camada 2 que está disponível na maioria dos produtos da série de Switches Catalyst. O VTP reduz a administração em uma rede de Switches, quando você configura uma VLAN nova em um servidor VTP, a VLAN será distribuída através de todos os Switches no domínio VTP, isso reduz a necessidade de configurar a mesma VLAN em todos os Switches manualmente.
 
-As configurações do VTP Server e Client nos Switche Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-035-ConfiguracaoVTP_ServerClient.txt
+As configurações do VTP Server e Client nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-035-ConfiguracaoVTP_ServerClient.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-035.pkt
 
@@ -458,19 +458,19 @@ Link da vídeo aula: https://www.youtube.com/watch?v=NZ3yW7h9Xjw
 
 ## **036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração das VLAN (Virtual-LAN - Local Area Network) e das Portas de Tronco (Trunk), essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, as VLANs é uma rede logicamente independente, várias VLANs podem coexistir em um mesmo Switch, de forma a dividir uma rede local em mais de uma rede, criando domínios de broadcast separados. Uma Porta de Tronco, normalmente usada para interligação de Switches ou ligação a Roteadores, ela permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
+Nessa aula, vou fazer a configuração das VLAN (Virtual-LAN - Local Area Network) e das Portas de Tronco (Trunk), essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, as VLANs é uma rede logicamente independente, várias VLANs podem coexistir em um mesmo Switch, de forma a dividir uma rede local em mais de uma rede, criando domínios de Broadcast separados. Uma Porta de Tronco, normalmente usada para interligação de Switches ou ligação a Roteadores, ela permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
 
-As configurações da VLAN e TRUNK BÁSICO nos Switche Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-036-ConfiguracaoDasVLAN_Trunk.txt
+As configurações da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-036-ConfiguracaoDasVLAN_Trunk.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-036.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=HuAGMPQlTZ4&t
 
 ## **037 Configuração do STP Portfast BÁSICO nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do STP Portfast, Portfast Trunk, Portfast BPDU Guard, Root Guard e do Switchport Trunk Allowed, essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, STP Portfast é o recurso do STP faz com que uma Porta do Switch entre imediatamente no estado de encaminhamento (Forwarding), ignorando os estados de escuta (Listening) e aprendizado (learning). O recurso de STP Portfast Trunk tem a mesma finalidade do STP Portfast, mais é somente configurado em Portas de Tronco (Trunk) com dispostivos que não são Switches, como por exemplo: Roteadores (Router), Servidores, Pontes (Bridge) e etc. O recurso de BPDU Guard é usado para proteger a topologia do protocolo STP contra ataques relacionados ao BPDU. O recurso de Root Guard impede que uma porta se torne Porta Raiz (Root Port) ou porta Bloqueada. O recurso do Switchport Trunk Allowed permite fazer a Poda (Pruning) nas Interfaces configuradas como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede. 
 
-As configurações do STP Portfast nos Switche Layer 2 e 3 será feita utilizando o Script: 
+As configurações do STP Portfast nos Switches Layer 2 e 3 será feita utilizando o Script: 
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-037.pkt
 

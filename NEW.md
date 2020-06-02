@@ -46,10 +46,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 032 Configuração do STP e RSTP BÁSICO nos Switches Layer 2 e 3<br>
 033 Configuração do RADIUS e TACACS+ nos Switches e Router<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
-035 Configuração do VTP Server e Client nos Switches Layer 2 e 3
+035 Configuração do VTP Server e Client nos Switches Layer 2 e 3<br>
+036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3<br>
 037 Configuração do STP Portfast BÁSICO nos Switches Layer 2 e 3<br>
 038 Configuração do Router-on-a-Stick no Router 2911<br>
 039 Configuração do DHCPv4 Server no Router 2911<br>
