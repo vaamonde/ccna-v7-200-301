@@ -18,7 +18,7 @@
 
 !Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma
 !subinterface em um roteador Cisco usa a interface física para enviar e receber dados, as subinterfaces são usadas para
-!vários propósitos, principalmente para o roteamento entre VLANs, quando não temos recursos de Switche Layer 3 na rede
+!vários propósitos, principalmente para o roteamento entre VLANs, quando não temos o recurso de Switch Layer 3 na rede.
 
 !Acessando o modo EXEC Privilégiado
 enable
@@ -94,3 +94,9 @@ show running-config | section interface
 !Verificando as informações das interfaces e subinterfaces
 show ip interface brief
 show ip route connected
+
+!Teste de conectividade com os Switches Layer 2 e 3 e Servidor
+ping 192.168.99.250
+ping 192.168.99.251
+ping 192.168.99.252
+ping 192.168.100.1

@@ -22,16 +22,19 @@
 !mais é somente configurado em Portas de Tronco (Trunk) com dispostivos que NÃO SÃO Switches, como por exemplo: Router
 !(Roteadores), Server (Servidores), Bridge (Pontes), Access Point (Ponto de Acesso) e etc.
 
-!STP Portfast BPDU Guard: é usado para proteger a topologia do protocolo STP contra ataques relacionados ao BPDU. O 
-!BPDU Guard coloca a porta em Desabilitada por Erro (errdisabled) se ela receber quadros BPDU's, o BPDU Guard é 
-!habilitado apenas nas Interfaces configuradas com Portfast de Acesso.
+!STP Portfast BPDU Guard: O recurso do STP Portfast BPDU Guard (Proteção de BPDU) é usado para proteger a topologia do
+!protocolo STP contra ataques relacionados ao BPDU. O BPDU Guard coloca a porta em Desabilitada por Erro (errdisabled)
+!se ela receber quadros BPDU's, o BPDU Guard é habilitado apenas nas Interfaces configuradas com Portfast de Acesso.
+
+!Switchport Trunk Allowed: O recurso do Switchport Trunk Allowed (Tronco Permitido) é usado para impedir que o tráfego
+!de determinadas VLANs não atravessem um Link de Trunk, fazendo um Filtro/Poda (Prunning) das VLANs permitidas ou VLANs
+!negadas, esse recurso e utilizado quando trabalhamos com Switches de Fabricantes diferentes, pois o Recurso de Poda do 
+!VTP só funciona em equipamentos da Cisco.
 
 !Outros recursos de Segurança do Protocolo Spanning-Tree: STP Root Guard (Proteção da Porta Raiz), STP Loop Guard (Proteção
-!contra falta de Recebimento de BPDU's), UDLD Unidirectional Link Detection (Proteção e Detecção de Links Unidirecionais) e
-!Switchport Trunk Allowed (Poda (Prunning) de VLANs nos Trunk)- esses recursos não serão configurados nesse vídeo, divido a
-!forma da configuração da topologia.
+!contra falta de Recebimento de BPDU's), UDLD Unidirectional Link Detection (Proteção e Detecção de Links Unidirecionais).
 
-!OBSERVAÇÃO IMPORTANTE: O STP Loop Guard é o UDLD não estão disponíveis para configuração no Cisco Packet Tracer.
+!OBSERVAÇÃO IMPORTANTE: O STP Loop Guard é o UDLD não estão disponíveis para configurações no Cisco Packet Tracer.
 
 !PRIMEIRA ETAPA: Configuração do STP Portfast e RSTP no Switch Layer 3 3560
 !Acessando o modo EXEC Privilégiado
@@ -79,6 +82,19 @@ enable
 			!estão configuradas com o comando: switchport mode access, não sendo aplicando nas Interfaces de Trunk
 			spanning-tree portfast
 			spanning-tree bpduguard enable
+			exit
+
+		!Configurando a Poda de VLANs nas Interfaces de Trunk
+		interface range gigabitEthernet 0/1 - 2
+
+			!Removendo as VLANs que serão negadas a trafegar pelos Trunk dos Switches Layer 2 2960
+			!DICA: por padrão os Trunk permite trafegar todas as VLANs criadas, por motivo de Segurança e recomendado
+			!filtrar/podar o tráfego de determinadas VLANs em nossa topologia, como por exemplo a VLAN de Wireless
+			!OBSERVAÇÃO: o comando switchport trunk allowed vlan possui as opções de: add (adicionar), all (tudo)
+			!except (exceto), none (nenhum), remove (remomver) ou faixa de VLANs permitidas.
+			!IMPORTANTE: para voltar a configuaração padrão, utilize o comando: switchport trunk allowed vlan all
+			switchport trunk allowed vlan remove 50
+			switchport trunk allowed vlan remove 100
 			end
 write
 
@@ -92,7 +108,11 @@ enable
 		interface range fastEthernet 0/1 - 20
 			spanning-tree portfast
 			spanning-tree bpduguard enable
-		end
+			exit
+		!OBSERVAÇÃO: configurando a Poda de VLANs nas Interfaces de Trunk, somente das VLANs específicas
+		interface range gigabitEthernet 0/1 - 2
+			switchport trunk allowed vlan 10,20,30,40,90,99
+			end
 write
 
 !TERCEIRA ETAPA: Configuração do STP Portfast e RSTP no Switch Layer 2 2960-6
@@ -104,7 +124,10 @@ enable
 		interface range fastEthernet 0/1 - 20
 			spanning-tree portfast
 			spanning-tree bpduguard enable
-		end
+			exit
+		interface range gigabitEthernet 0/1 - 2
+			switchport trunk allowed vlan 10,20,30,40,90,99
+			end
 write
 
 !Visualizando as configurações da memória RAM
