@@ -20,6 +20,10 @@
 !subinterface em um roteador Cisco usa a interface física para enviar e receber dados, as subinterfaces são usadas para
 !vários propósitos, principalmente para o roteamento entre VLANs, quando não temos o recurso de Switch Layer 3 na rede.
 
+!ADENDO: OBSERVAÇÃO IMPORTANTE: EM TOPOLOGIAS DA VIDA REAL, É RECOMENDADO SEMPRE UTILIZAR SWITCHES LAYER 3 PARA FAZER O
+!ROTEAMENTO ENTRE VLANS, UTILIZAR ROTEADORES PARA ESSA FINALIDADE DEIXA AS TRANSMISSÕES DE REDE LENTA, POIS O ROTEADOR
+!EXECUTA O PROCESSO DE ROTEAMENTO VIA SOFTWARE, JÁ O SWITCHES LAYER 3 EXECUTA O PROCESSO DE ROTEAMENTO VIA HARDWARE.
+
 !Acessando o modo EXEC Privilégiado
 enable
 

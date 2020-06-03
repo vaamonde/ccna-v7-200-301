@@ -474,7 +474,7 @@ As configurações do STP Portfast nos Switches Layer 2 e 3 será feita utilizan
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-037.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=7_ipamH2ok4&t
 
 ## **038 Configuração do Router-on-a-Stick no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
