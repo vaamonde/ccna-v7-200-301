@@ -484,7 +484,7 @@ As configurações do Router-on-a-Stick no Router 2911 será feita utilizando o 
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-038.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=85Y2TdjpNRE
 
 ## **039 Configuração do DHCPv4 Server no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
