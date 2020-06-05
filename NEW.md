@@ -47,23 +47,24 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 033 Configuração do RADIUS e TACACS+ nos Switches e Router<br>
 034 Interligando uma Nova Rede WAN Fiber na Topologia<br>
 035 Configuração do VTP Server e Client nos Switches Layer 2 e 3<br>
-036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3
-
-## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
+036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3<br>
 037 Configuração do STP Portfast BÁSICO nos Switches Layer 2 e 3<br>
 038 Configuração do Router-on-a-Stick no Router 2911<br>
-039 Configuração do DHCPv4 Server no Router 2911<br>
-040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
+039 Configuração do DHCPv4 Server no Router 2911
 
-## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
+## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
+040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
 041 Conectando com a Internet xDSL no Router 2911<br>
 042 Configurando o Encaminhamento de Solicitações DHCP<br>
-043 Redistribuindo a Rota Padrão no RIPv2 no Router 2911<br>
+043 Redistribuindo a Rota Padrão no RIPv2 no Router 2911
+
+## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 044 Configuração do Endereçamento IPv6 Estático
+045 Configuração do DHCPv6 Statless no Router 1941<br>
+046 Configuração do DHCPv6 Stateful no Router 2911<br>
+047 Configuração do Servidor DHCPv6 no DNS Google
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-045 Configuração do Servidor DHCPv6 Stateful<br>
-046 Configuração do DHCPv6 Stateless no Router 2911<br>
 047 Configuração da Rota Estática, Padrão e Flutuante do IPv6<br>
 048 Configuração do RIPng nos Router 1941 e 2911
 

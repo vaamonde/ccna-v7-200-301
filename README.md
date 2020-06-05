@@ -488,13 +488,13 @@ Link da vídeo aula: https://www.youtube.com/watch?v=85Y2TdjpNRE
 
 ## **039 Configuração do DHCPv4 Server no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do DHCPv4 Server, essa configuração será feita no Router 2911, os recursos de DHCP Server em Roteadores ou Switches Layer 3 da Cisco são limitados, e recomendo utilizar Servidores Microsoft ou GNU/Linux em uma rede corporativa, as principais limitações dos servidores DHCP em Router e Switch são: opções de configurações avançadas, integrações de serviços de rede, relatórios, etc. 
+Nessa aula, vou fazer a configuração do DHCPv4 Server, essa configuração será feita no Router 2911, os recursos de DHCP Server em Roteadores ou Switches Layer 3 da Cisco são limitados, é recomendado utilizar Servidores Microsoft ou GNU/Linux em uma rede corporativa, as principais limitações dos servidores DHCP em Router e Switch são: opções de configurações avançadas, integrações de serviços de rede, relatórios, etc. 
 
 As configurações do DHCPv4 Server no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-039-ConfiguracaoDoDHCP_ServerNoRouter2911.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-039.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=Idbmi03D7Hs
 
 ## **040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
