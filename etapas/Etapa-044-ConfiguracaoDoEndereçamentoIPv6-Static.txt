@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!IPv6 (Internet Protocol Version 6) é a versão mais atual do Protocolo de Internet, originalmente oficializada em 
+!O IPv6 (Internet Protocol Version 6) é a versão mais atual do Protocolo de Internet, originalmente oficializado em 
 !6 de Junho de 2012, é fruto do esforço do IETF (Internet Engineering Task Force) para criar a "nova geração do IP",
 !cujas linhas mestras foram descritas por Scott Bradner e Allison Marken, em 1994, na RFC 1752. Sua principal
 !especificação encontra-se na RFC 2460.
@@ -45,14 +45,12 @@
 
 !PRIMEIRA ETAPA: Configuração dos Endereços de Link Local e Global Unicast nos Desktops e Servidor
 !Faixa Link Local: FE80::/10
-!Faixa Unicast Global: 2001:abcd:1234:1::/64
+!Faixa Global Unicast: 2001:abcd:1234:1::/64
 !Endereço IPv6 do Gateway: FE80::254
 !Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
 
 !Verificando as informações de Endereços IPv6 no Desktop e Servidor
 ipv6config
-ping FE80::254
-ping 2001:abcd:1234:1::254
 
 !SEGUNDA ETAPA: Configuração do Roteador 1941-1
 enable
@@ -68,12 +66,12 @@ enable
 		interface gigabitEthernet 0/0
 
 			!Configurando o Endereço de Link Local IPv6
-			!DICA: o endereço de Link Local do Roteador e utilizado como Gateway da Rede Local
-			!OBSERVAÇÃO: em roteadores locais e indicado configurar o endereço de Link Local manualmente
+			!DICA: o endereço de Link Local do Roteador é utilizado como Gateway da Rede Local
+			!OBSERVAÇÃO: em roteadores locais é indicado configurar o endereço de Link Local manualmente
 			ipv6 address FE80::254 link-local
 			
-			!Configurando o Endereço de Unicast Global IPv6
-			!DICA: o Prefixo do Endereço Unicast Global geralmente e determinado pela operadora de telecom ISP
+			!Configurando o Endereço de Global Unicast IPv6
+			!DICA: o Prefixo do Endereço Global Unicast geralmente é determinado pela operadora de telecom ISP
 			!OBSERVAÇÃO: para a criação de subredes no IPv6 utilizando o campo de ID Sub-Rede (16bits)
 			ipv6 address 2001:abcd:1234:1::254/64
 			end
@@ -84,3 +82,5 @@ show running-config | section interface
 
 !Visualizando as informações dos endereços IPv6
 show ipv6 interface brief
+ping FE80::254
+ping 2001:abcd:1234:1::254

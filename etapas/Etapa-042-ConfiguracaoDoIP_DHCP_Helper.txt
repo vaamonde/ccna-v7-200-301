@@ -11,19 +11,21 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O IP Helper (Ajuda de Endereço IP) são endereços IP configurados em uma Interface Roteada como uma Interface de VLAN
-!ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de roteadores que permite que esse dispositivo específico
+!O IP Helper (Ajuda de Endereço IP) são endereços IPs configurados em uma Interface Roteada como uma Interface de VLAN
+!ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de roteadores, permitindo que esse dispositivo específico
 !atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface
 !para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
 
-!As mensagens do DHCPv4 não é o único serviço no qual o roteador pode ser configurado para retransmitir, por padrão, o 
-!comando ip helper-address encaminha os seguintes pacotes de serviços UDP: Porta 37: tempo, Porta 49: TACACS, Porta 53: DNS
-!Porta 67: cliente de DHCP/BOOTP, Porta 68: servidor de DHCP/BOOTP, Porta 69: TFTP, Porta 137: serviço de nomes NetBIOS e
-!Porta 138: serviço de conjunto de dados NetBIOS
+!As mensagens do DHCPv4 não é o único serviço no qual o roteador pode ser configurado para retransmitir as solicitações, 
+!por padrão o comando ip helper-address encaminha os seguintes pacotes de serviços UDP: Porta 37: tempo, Porta 49: TACACS,
+!Porta 53: DNS Porta 67: cliente de DHCP/BOOTP, Porta 68: servidor de DHCP/BOOTP, Porta 69: TFTP, Porta 137: serviço de 
+!nomes NetBIOS e Porta 138: serviço de conjunto de dados NetBIOS
+
+!OBSERVAÇÃO: vale lembrar que o Roteador por padrão não encaminha Mensagens de Broadcast para outros Redes conectadas.
 
 !O IP DHCP Client (Cliente do DHCP) é uma das formas de configuração do endereço IPv4 ou IPv6 em uma Interface de Rede, 
-!esse recurso permite configurar uma interface dinâmicamente, obtendo o endereço IPv4 ou IPv6 dos servidores de DHCP da Rede.
-!Interfaces configuradas com o DHCP Client geralmente são utilizadas para se conectar com ISP (Internet Service Provider).
+!esse recurso permite configurar uma interface dinâmicamente, obtendo o endereço IPv4 ou IPv6 dos Servidores de DHCP da Rede.
+!Interfaces configuradas com o DHCP Client geralmente são utilizadas para se conectar com o ISP (Internet Service Provider).
 
 !PRIMEIRA ETAPA: Configuração do Escopo do DHCPv4 Server no Servidor do DNS Google
 !Interface:					GigabitEthernet0
@@ -55,6 +57,8 @@ Service HTTPS	On
 </html>
 
 !TERCEIRA ETAPA: Configuração do Roteador 1941-3 do DNS Google
+!OBSERVAÇÃO: nesse roteador eu não configurar todos os recursos BASE, apenas as configurações necessárias para o 
+!funcionamento e comunicação dos dispositivos, recomendo aplicar os recursos BASE futuramente para treino
 !Acessando o modo EXEC Privilégiado
 enable
 
@@ -67,7 +71,7 @@ enable
 		!Configurando a Interface de WAN do Router 1941-3
 		interface gigabitEthernet 0/0
 			description Interface de WAN do DNS do Google
-			!OBSERVAÇÃO: nesse cenário será configurado um Endereço IPv4 Público de Internet
+			!OBSERVAÇÃO: nesse cenário será configurado um Endereço IPv4 Público de Internet em Subrede /25
 			ip address 200.204.0.126 255.255.255.128
 
 			!Configurando o Recurso de Ajuda de Endereço DHCP na Interface WAN
@@ -98,9 +102,9 @@ enable
 		interface GigabitEthernet 0/1
 
 			!Configurando a Interface do Router 2911-1 para obter endereço IPv4 via DHCP Client
-			!DICA: interface configurada para obter endereços IPv4 via DHCP geralmente são utilizadas para conexão com a Internet
+			!DICA: interface configurada para obter endereços IPv4 via DHCP geralmente são utilizadas para conexões com a Internet
 			!OBSERVAÇÃO: não é recomendado utilizar interfaces configuradas com DHCP Client na rede LAN, somente na WAN é em casos
-			!específicos, quando se conectamos com o ISP (Internet Service Provider) ou Links Privados de WAN ou VPN.
+			!específicos, quando se conectamos com o ISP (Internet Service Provider), Links Privados de WAN ou VPN.
 			!OBSERVAÇÃO: no Cisco Packet Tracer a configuração do Endereço IPv4 via DHCP Client demora alguns segundos
 			!IMPORTANTE: em roteadores reais temos os comandos: release e renew no Modo EXEC Privilegiado, no Cisco Packet Tracer
 			!essas opções são limitadas, recomendo desligar a interface (shutdown) e ligar novamente (no shutdown)
@@ -115,4 +119,5 @@ show running-config | section interface
 !Verificando as informações do Endereçamento IPv4 do Router 2911
 show dhcp lease
 show ip interface brief
+show ip route connected
 show ip route static
