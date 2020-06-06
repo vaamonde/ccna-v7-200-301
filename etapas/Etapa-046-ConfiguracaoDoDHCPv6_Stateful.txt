@@ -1,0 +1,87 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 31/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!DHCPv6 Stateful (com estado): O DHCPv6 Stateful e muito parecido com o funcionamento do Servidor DHCPv4. 
+!O servidor DHCPv6 atribui endereços IPv6 a todos os hosts com o Client DHCPv6 configurado, mantendo o 
+!controle de qual endereço IPv6 foi atribuído a qual host. O servidor também pode oferecer outros parâmetros
+!de rede, como servidores DNS, um nome de domínio ou qualquer outra opção fornecida por um servidor DHCPv6.
+
+!PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
+!Faixa Link Local: FE80::/10
+!Faixa Global Unicast: 2001:abcd:1234:100::/64
+!Endereço IPv6 do Gateway: FE80::254
+!Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
+!Endereço IPv6 Unicast Global: 2001:abcd:1234:100::1/64
+!Endereço IPv6 Link Local: FE80::1
+
+!SEGUNDA ETAPA: Configuração do Router 2911
+enable
+	configure terminal
+
+
+!TERCEIRA ETAPA: Configuração do Switch Layer 3 3560-2
+enable
+	configure terminal
+		sdm prefer dual-ipv4-and-ipv6 routing
+		end
+write
+reload
+
+enable
+	configure terminal
+		ipv6 unicast-routing
+		interface vlan 99
+			ipv6 address FE80::254 link-local
+			ipv6 address 2001:abcd:1234:99::254/64
+			end
+write
+
+!TERCEIRA ETAPA: Configuração do Switch Layer 2 2960-5
+enable
+	configure terminal
+		sdm prefer dual-ipv4-and-ipv6 routing
+		end
+write
+reload
+
+enable
+	configure terminal
+		ipv6 unicast-routing
+		interface vlan 99
+			ipv6 address FE80::254 link-local
+			ipv6 address 2001:abcd:1234:99::254/64
+			end
+write
+
+!TERCEIRA ETAPA: Configuração do Switch Layer  2 2960-6
+enable
+	configure terminal
+		sdm prefer dual-ipv4-and-ipv6 routing
+		end
+write
+reload
+
+enable
+	configure terminal
+		ipv6 unicast-routing
+		interface vlan 99
+			ipv6 address FE80::254 link-local
+			ipv6 address 2001:abcd:1234:99::254/64
+			end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section interface
+
+!Visualizando as informações dos endereços IPv6
+show ipv6 interface brief

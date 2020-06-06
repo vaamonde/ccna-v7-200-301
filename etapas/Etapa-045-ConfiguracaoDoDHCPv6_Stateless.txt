@@ -1,0 +1,113 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 31/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!DHCPv6 Stateless (sem estado): O servidor DHCPv6 Stateless não atribui endereços IPv6 aos hosts e nem conserva
+!o estado dos dispositivos a que ele atribui os prefixos de endereços IPv6. Um host se auto-configura com um
+!endereço IPv6 enquanto o servidor DHCPv6 Stateless oferece outras informações de rede, como nome de domínio,
+!servidor DNS, servidor NTP, etc.
+
+!O DHCPv6 Stateles trabalha com o Protocolo ICMPv6 (Internet Control Message Protocol v6) utiizando o recurso do
+!Protocolo ND (Neighbor Discovery) que substitui o Protocolo ARP (Address Resolution Protocol) nas comunicações
+!do Protocolo IPv6. Os hosts e servidores trocam mensagens ND, o cliente envia mensagens do Tipo RS (Multicast
+!Router Solicitation) a todos os agentes DHCPv6 na rede, no endereço de Multicast FF02::1:2 com escopo local, e
+!aguarda as mensagens dos Anúncios dos Roteadores RA (Unicast Router Advertisement), nas mensagens de RA o DHCPv6
+!ele informa o seu tipo de configuração: Stateful ou Stateles.
+
+!Configuração Automática (Auto-Configuration) do Stateless, também conhecida como Configuração Automática de Endereço
+!Sem Estado (SLAAC - Stateless Address Auto-Configuration), nenhum servidor DHCPv6 é necessário para atribuir os 
+!endereços IPv6 aos hosts, não é necessário a configuração manual dos endereços IPv6 em cada host na rede, o endereço
+!IPv6 e obtido pela combinação do Prefixo (64 bits) e do Endereço MAC da NIC (Network Interface Card).
+
+!O SLAAC utiliza o conceito de EUI-64 (Extended Unique Identifier) que tem como objetivo montar a porção de host do
+!Endereço IPv6 de Link Local, Endereço de Global Unicast e Endereço de Unique Local.
+
+!Exemplo do EUI-64 em endereços de Link Local: Prefixo Padrão: FE80::/10 + MAC Address: 55:77:BB:CC:11:22 + FF:FE
+!Endereço de Link Local completo: FE80:0000:0000:0000:5777:BBFF:FECC:1122 alterado o Bit Universal: 7Bit de 5 para 7
+!Endereço de Link Local resumido: FE80::5777:BBFF:FECC:1122
+
+!Exemplo do EUI-64 em endereços de Unicast Global: Prefixo Padrão: 2001:ABCD:1234:3::/64 MAC: 55:77:BB:CC:11:22
+!Endereço de Global Unicast completo: 2001:ABCD:1234:0003:5777:BBFF:FECC:1122/64
+!Endereço de Global Unicast resumido: 2001:ABCD:1234:3:5777:BBFF:FECC:1122/64
+
+!PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
+!Faixa Link Local: FE80::/10
+!Faixa Global Unicast: 2001:abcd:1234:3::/64
+!Endereço IPv6 do Gateway: FE80::254
+!Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
+!Endereço IPv6 Unicast Global: 2001:abcd:1234:3::1/64
+!Endereço IPv6 Link Local: FE80::1
+
+!SEGUNDA ETAPA: Configuração do Switch Layer 3 3560
+enable
+	configure terminal
+
+		!OBSERVAÇÃO: diferente do Switch Layer 2, o Switch Layer 3 tem suporte ao recurso de Roteamento do IPv6
+		sdm prefer dual-ipv4-and-ipv6 routing
+		end
+write
+reload
+
+enable
+	configure terminal
+		ipv6 unicast-routing
+		interface vlan 1
+			ipv6 address FE80::254 link-local
+			ipv6 address 2001:abcd:1234:3::254/64
+			exit
+		interface fastEthernet 0/24
+			ipv6 address FE80::1 link-local
+			ipv6 address 2001:abcd:1234:2::1/64
+			end
+write
+
+!TERCEIRA ETAPA: Configuração do Switch Layer 2 2960-3
+enable
+	configure terminal
+		sdm prefer dual-ipv4-and-ipv6 default
+		end
+write
+reload
+
+enable
+	configure terminal
+
+		!Configurando o endereço IPv6 na SVI do Switch Layer 2
+		interface vlan 1
+			ipv6 address fe80::250 link-local
+			ipv6 address 2001:abcd:1234:3::250/64
+			end
+write
+
+!QUARTA ETAPA: Configuração do Switch Layer 2 2960-4
+enable
+	configure terminal
+		sdm prefer dual-ipv4-and-ipv6 default
+		end
+write
+reload
+
+enable
+	configure terminal
+
+		!Configurando o endereço IPv6 na SVI do Switch Layer 2
+		interface vlan 1
+			ipv6 address fe80::251 link-local
+			ipv6 address 2001:abcd:1234:3::251/64
+			end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section interface
+
+!Visualizando as informações dos endereços IPv6
+show ipv6 interface brief
