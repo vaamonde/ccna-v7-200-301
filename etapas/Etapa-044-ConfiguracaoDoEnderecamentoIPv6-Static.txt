@@ -139,5 +139,7 @@ show running-config | section interface
 
 !Visualizando as informações dos endereços IPv6
 show ipv6 interface brief
+show ipv6 interface gigabitethernet 0/0
+show ipv6 route
 ping FE80::254
 ping 2001:ABCD:1234:1::254
