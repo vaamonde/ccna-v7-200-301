@@ -66,14 +66,18 @@ ping 2001:ABCD:1234:1::1
 enable
 	configure terminal
 		
-		!Habilitando o Recurso de Roteamento Unicast do IPv6
-		!DICA: habilitando o recurso do IPv6 Unicast Routing do roteador, ele vai suportar o roteamento de endereços IPv6
+		!Habilitando o Recurso de Ecaminhamento do Protocolo IPv6
+		!DICA: habilitando o recurso do IPv6 Unicast Routing no roteador, ele vai suportar o encaminhamento de pacotes IPv6
 		!OBSERVAÇÃO: por padrão esse recurso está desabilitado no roteador, recomendo habilitar somente se for necessário
 		!IMPORTANTE: com esse recurso habilitado essa topologia vai trabalhar com Pilha Dupla (Dual Stack Topology)
 		ipv6 unicast-routing
 		
 		!Configurando a Interface de Gateway Local da LAN
 		interface gigabitEthernet 0/0
+
+			!Habilitando o Protocolo IPv6 na Interface
+			!DICA: esse opção habilita os recursos do Protocolo IPv6 na interface
+			ipv6 enable
 
 			!Configurando o Endereço de Link Local IPv6
 			!DICA: o endereço de Link Local do Roteador é utilizado como Gateway da Rede Local
@@ -109,8 +113,11 @@ enable
 	configure terminal
 
 		!Configurando o endereço IPv6 na SVI do Switch Layer 2
-		!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de IPv6 é limitado, não temos as opções de Default-Gateway IPv6
+		!OBSERVAÇÃO: no Cisco Packet Tracer o Protocolo IPv6 é limitado no Switch Layer 2 e 3 da Série Catalyst
+		!OBSERVAÇÃO: no Switch Layer 2 não temos a opção de configurar o ipv6 unicast-routing, esse recurso só está presente
+		!em Roteadores ou Switch Layer 3
 		interface vlan 1
+			ipv6 enable
 			ipv6 address FE80::250 link-local
 			ipv6 address 2001:ABCD:1234:1::250/64
 			end
@@ -126,9 +133,8 @@ reload
 
 enable
 	configure terminal
-
-		!Configurando o endereço IPv6 na SVI do Switch Layer 2
 		interface vlan 1
+			ipv6 enable
 			ipv6 address FE80::251 link-local
 			ipv6 address 2001:ABCD:1234:1::251/64
 			end
