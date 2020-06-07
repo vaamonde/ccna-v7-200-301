@@ -514,7 +514,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **042 Configurando o Encaminhamento de Solicitações DHCP - Laboratório Prático Cisco CCNAv7 200-301**
+## **042 Configurando o Encaminhamento de Solicitações DHCPv4 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do IP Helper Address (Ajuda de Endereço IP), essas configurações serão feitas no Router 1941 do DNS Google, o IP Helper são endereços IP configurados em uma Interface Roteada como uma Interface de VLAN ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de roteadores que permite que esse dispositivo específico atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
 
@@ -538,7 +538,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração do Endereçamento IPv6 Estático, essas configurações serão feitas nos Desktop, Servidor e Router 1941, O IPv6 (Internet Protocol Version 6) é a versão mais atual do Protocolo de Internet, originalmente oficializada em 6 de Junho de 2012, é fruto do esforço do IETF (Internet Engineering Task Force) para criar a "nova geração do IP", cujas linhas mestras foram descritas por Scott Bradner e Allison Marken, em 1994, na RFC 1752. Sua principal especificação encontra-se na RFC 2460.
 
-As configurações do Endereçamento IPv6 Estático será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-044-ConfiguracaoDoEndere%C3%A7amentoIPv6-Static.txt
+As configurações do Endereçamento IPv6 Estático será feita utilizando o Script: 
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-044.pkt
 
