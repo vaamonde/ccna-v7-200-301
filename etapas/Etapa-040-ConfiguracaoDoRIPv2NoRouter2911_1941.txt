@@ -44,13 +44,14 @@ enable
 
 		!Inicializando a Interface Física de Interligação com o Router 1941-2
 		interface gigabitEthernet 0/0/0
-			description Interface de Interligação Física da WAN Fiber com o Router 1941-2
+			description Interface de Interligação Fisica da WAN Fiber com o Router 1941-2
 			no shutdown
 			exit
 		
 		!Configurando a Interface Lógica de Interligação com o Router 1941-2
 		interface gigabitEthernet 0/0/0.999
-			description Interface Lógica de Interligação da WAN Fiber com o Router 1941-2
+			!OBSERVAÇÃO: esse tipo de configuração é muito comum em Rede WAN Privadas como PAP-L2
+			description Interface Logica de Interligação da WAN Fiber com o Router 1941-2
 			encapsulation dot1Q 999
 			ip address 10.0.0.9 255.255.255.252
 			exit
@@ -60,15 +61,15 @@ enable
 		router rip
 
 			!Configurando a versão do Protocolo RIPv2
-			!DICA: configurar a versão 2 do protocolo RIP permite utilizar o recurso de Redes Sem-Classe (Classless)
+			!DICA: configurar a versão 2 do protocolo RIP permite utilizar o recurso de Redes Sem Classe (Classless)
 			!OBSERVAÇÃO: após a configuração da versão do protocolo RIP, todos os roteadores do domínio do RIP precisam
-			!está configurados na mesma versão, para trocar anúncios e tabela de roteamento
+			!está configurados na mesma versão, para trocar anúncios e tabela de roteamento corretamente
 			version 2
 
 			!Configurando a Interface Passiva do Protocolo RIPv2
 			!DICA: as interface passivas do roteador não enviam anúncios do RIP pela sua interface, mais recebem anúncios
 			!de outros roteadores conectados nessa interface
-			!OBSERVAÇÃO: é recomendo sempre desativar os anúncios das interface que não vão participar do domínio do RIP
+			!OBSERVAÇÃO: é recomendado sempre desativar os anúncios das interface que não vão participar do domínio do RIP
 			passive-interface gigabitEthernet 0/0
 
 			!Desabilitando o recurso de Auto-Sumarização do Protocolo RIPv2
@@ -77,12 +78,12 @@ enable
 			!tamanho da tabela de roteamento e os anúncios enviados na rede
 			no auto-summary
 
-			!Declarando as Redes Físicamente Conectadas no Router 2911-1
-			!DICA: declarar as redes fisicamente conectadas no router que serão anúncidas para todos os roteadores que
+			!Declarando as Redes Fisicamente Conectadas no Router 2911-1
+			!DICA: declarar as redes fisicamente conectadas no router que serão anúnciadas para todos os roteadores que
 			!fazem parte do domínio do protocolo RIP
-			!OBSERVAÇÃO: na declaração de rede do protocolo RIP não é necessário especificar a máscara de rede ou CIDR 
+			!OBSERVAÇÃO: na declaração de rede do protocolo RIP não é necessário especificar a máscara de rede, o CIDR 
 			!ou máscara de rede coringa (wildcard mask)
-			!IMPORTANTE: declarar todos os endereços locais (LAN) e remotos (WAN) no processo do protocolo do RIP
+			!IMPORTANTE: declarar todos os endereços locais (LAN) e remotos (WAN) no processo do protocolo RIP
 			network 10.0.0.8
 			network 192.168.10.0
 			network 192.168.20.0
@@ -98,11 +99,11 @@ write
 enable
 	configure terminal
 		interface gigabitEthernet 0/1/0
-			description Interface de Interligação Física da WAN Fiber com o Router 2911
+			description Interface de Interligação Fisica da WAN Fiber com o Router 2911
 			no shutdown
 			exit
 		interface gigabitEthernet 0/1/0.999
-			description Interface Lógica de Interligação da WAN Fiber com o Router 2911
+			description Interface Logica de Interligação da WAN Fiber com o Router 2911
 			encapsulation dot1Q 999
 			ip address 10.0.0.10 255.255.255.252
 			exit
@@ -126,8 +127,8 @@ enable
 			!de roteamento, como por exemplo: Rota Etática, EIGRP, OSPF, etc
 			!OBSERVAÇÃO: nesse roteador foi configurado rotas estáticas para as rede: 192.168.1.0/24 e 192.168.3.0/24,
 			!também, rotas flutuantes para as mesmas redes utilizando o Link Serial
-			!OBSERVAÇÃO: na redistribuição de rotas estáticas no protocolo RIPV3 temos as opções de alteração das 
-			!métricas/custo da rota de: 0 até 16 ou transparente
+			!OBSERVAÇÃO: na redistribuição de rotas estáticas no protocolo RIPv2 temos a opção de alteração da 
+			!métrica/custo da rota de: 0 até 16 ou transparente
 			redistribute static metric transparent
 			end
 write

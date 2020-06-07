@@ -35,8 +35,8 @@
 !para todos os destinos)
 
 !Alguns Endereços IPv6 Unicast: Global Unicast (equivalente aos endereços públicos IPv4 - Faixa: 2000::/3), Link
-!Local (atribuído automaticamente utilizando o prefixo FE80::/64 - EUI64), Loopback (representado pelo endereço
-!unicast 0:0:0:0:0:0:0:1/128 ou ::1), Não Especificado (::/128 ou ::), Unique Local Address ULA (igual aos endereços
+!Local (atribuído automaticamente, utilizando o Prefixo FE80::/64 - EUI64), Loopback (representado pelo endereço
+!Unicast 0:0:0:0:0:0:0:1/128 ou ::1), Não Especificado (::/128 ou ::), Unique Local Address ULA (igual aos endereços
 !de Classe do IPv4 Privado (Classes A, B e C), faixa FC00::/7, FDFF::/7 e FEC0::/10).
 
 !Faixa dos Endereços de Link Local (FE80 até FEBF::/10), Faixa dos Endereços de Global Unicast (2000 até 3FFF::/64)
@@ -47,16 +47,20 @@
 !Regra 01: omitir os 0 à esquerda: 2001:0123:0012:0003:0000:0000:0000:0200 = 2001:123:12:3:0:0:0:200
 !Regra 02: omitir o segmento/sequência de 0: 2001:123:12:3::200 (OBSERVAÇÃO: SÓ PODE SER FEITO UMA VEZ POR SEGMENTO)
 
+!IMPORTANTE: O protocolo IPv6 não é Case Sensitive (não faz diferença de Maiúsculas e Minúsculas) na sua configuração
+!IMPORTANTE: O protocolo IPv6 não trabalha com Máscara de Rede, sua configuração e feita utilizando o Prefixo de Rede
+!IMPORTANTE: O protocolo IPv6 trabalha com o conceito de descoberta e auto-configuração dos Endereços/Prefixos de Rede
+
 !PRIMEIRA ETAPA: Configuração dos Endereços de Link Local e Global Unicast nos Desktops e Servidor
 !Faixa Link Local: FE80::/10
-!Faixa Global Unicast: 2001:abcd:1234:1::/64
+!Faixa Global Unicast: 2001:ABCD:1234:1::/64
 !Endereço IPv6 do Gateway: FE80::254
-!Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
+!Endereço IPv6 do DNS Server: 2001:ABCD:1234:3::1
 
-!Verificando as informações de Endereços IPv6 no Desktop e Servidor
+!Verificando as informações de Endereços IPv6 nos Desktops e Servidor
 ipv6config
 ping FE80::1
-ping 2001:abcd:1234:1::1
+ping 2001:ABCD:1234:1::1
 
 !SEGUNDA ETAPA: Configuração do Roteador 1941-1
 enable
@@ -80,8 +84,8 @@ enable
 			!Configurando o Endereço de Global Unicast IPv6
 			!DICA: o Prefixo do Endereço Global Unicast geralmente é determinado pela operadora de Telecom ou ISP
 			!OBSERVAÇÃO: para a criação de subredes no IPv6 utilizamos o campo de ID Sub-Rede (16bits), endereços de Global
-			!Unicast é necessário configurar o prefixo no final
-			ipv6 address 2001:abcd:1234:1::254/64
+			!Unicast é necessário configurar o Prefixo no final do Endereço IPv6
+			ipv6 address 2001:ABCD:1234:1::254/64
 			end
 write
 
@@ -93,9 +97,9 @@ enable
 		!DICA: por padrão os Switches Layer 2 e 3 não tem suporte ao protocolo IPv6 habiltiado por padrão no IOS
 		!OBSERVAÇÃO: para habilitar o recurso do IPv6 nos Switches Layer 2 ou 3 utilizamos o SDM (Switching Database Manager)
 		!que tem o objetivo de gerenciar o uso da Memória TCAM (Ternary Content Addressable Memory) que é diferente da Tabela
-		!CAM (Content Addressable Memory)
-		!IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO É COBRADO CONFIGURAÇÕES DO PROTOCOLO IPv6 NOS
-		!SWITCHES LAYER 2 OU 3, TAMBÉM, CONHECIMENTOS PROFUNDOS DE SDM E TCAM, ESSES TÓPICOS SÃO ABORDADOS NO CCNP R&S.
+		!CAM (Content Addressable Memory) usado para configurar os recursos de Roteamente, ACL, QoS em Switches Catalyst
+		!IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO O CCNAv7 EXAME 200-301 NÃO É COBRADO CONFIGURAÇÕES DO PROTOCOLO IPv6 NOS
+		!SWITCHES LAYER 2 OU 3, TAMBÉM, CONHECIMENTOS PROFUNDOS EM SDM E TCAM, ESSES TÓPICOS SÃO ABORDADOS NO CCNP R&S.
 		sdm prefer dual-ipv4-and-ipv6 default
 		end
 write
@@ -107,8 +111,8 @@ enable
 		!Configurando o endereço IPv6 na SVI do Switch Layer 2
 		!OBSERVAÇÃO: no Cisco Packet Tracer o recurso de IPv6 é limitado, não temos as opções de Default-Gateway IPv6
 		interface vlan 1
-			ipv6 address fe80::250 link-local
-			ipv6 address 2001:abcd:1234:1::250/64
+			ipv6 address FE80::250 link-local
+			ipv6 address 2001:ABCD:1234:1::250/64
 			end
 write
 
@@ -125,8 +129,8 @@ enable
 
 		!Configurando o endereço IPv6 na SVI do Switch Layer 2
 		interface vlan 1
-			ipv6 address fe80::251 link-local
-			ipv6 address 2001:abcd:1234:1::251/64
+			ipv6 address FE80::251 link-local
+			ipv6 address 2001:ABCD:1234:1::251/64
 			end
 write
 
@@ -136,4 +140,4 @@ show running-config | section interface
 !Visualizando as informações dos endereços IPv6
 show ipv6 interface brief
 ping FE80::254
-ping 2001:abcd:1234:1::254
+ping 2001:ABCD:1234:1::254

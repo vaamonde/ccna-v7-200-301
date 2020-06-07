@@ -19,7 +19,7 @@
 !As mensagens do DHCPv4 não é o único serviço no qual o roteador pode ser configurado para retransmitir as solicitações, 
 !por padrão o comando ip helper-address encaminha os seguintes pacotes de serviços UDP: Porta 37: tempo, Porta 49: TACACS,
 !Porta 53: DNS Porta 67: cliente de DHCP/BOOTP, Porta 68: servidor de DHCP/BOOTP, Porta 69: TFTP, Porta 137: serviço de 
-!nomes NetBIOS e Porta 138: serviço de conjunto de dados NetBIOS
+!nomes NetBIOS e Porta 138: serviço de conjunto de dados NetBIOS.
 
 !OBSERVAÇÃO: vale lembrar que o Roteador por padrão não encaminha Mensagens de Broadcast para outros Redes conectadas.
 
@@ -58,7 +58,7 @@ Service HTTPS	On
 
 !TERCEIRA ETAPA: Configuração do Roteador 1941-3 do DNS Google
 !OBSERVAÇÃO: nesse roteador eu não configurar todos os recursos BASE, apenas as configurações necessárias para o 
-!funcionamento e comunicação dos dispositivos, recomendo aplicar os recursos BASE futuramente para treino
+!funcionamento e comunicação dos dispositivos, recomendo aplicar os recursos BASE futuramente.
 !Acessando o modo EXEC Privilégiado
 enable
 
