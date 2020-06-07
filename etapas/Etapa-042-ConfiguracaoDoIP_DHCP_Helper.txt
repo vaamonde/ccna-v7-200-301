@@ -12,33 +12,35 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !O IP Helper (Ajuda de Endereço IP) são endereços IPs configurados em uma Interface Roteada como uma Interface de VLAN
-!ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de roteadores, permitindo que esse dispositivo específico
-!atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface
-!para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
+!ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de Roteadores ou Switch Layer 3, permitindo que esse 
+!dispositivo específico atue como um intermediário (middle man) para encaminhar a solicitação DHCP do BOOTP (Broadcast)
+!que recebe em uma interface para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
 
 !As mensagens do DHCPv4 não é o único serviço no qual o roteador pode ser configurado para retransmitir as solicitações, 
 !por padrão o comando ip helper-address encaminha os seguintes pacotes de serviços UDP: Porta 37: tempo, Porta 49: TACACS,
 !Porta 53: DNS Porta 67: cliente de DHCP/BOOTP, Porta 68: servidor de DHCP/BOOTP, Porta 69: TFTP, Porta 137: serviço de 
 !nomes NetBIOS e Porta 138: serviço de conjunto de dados NetBIOS.
 
-!OBSERVAÇÃO: vale lembrar que o Roteador por padrão não encaminha Mensagens de Broadcast para outros Redes conectadas.
+!OBSERVAÇÃO: vale lembrar que o Roteador por padrão não encaminha Mensagens de Broadcast para outras Redes conectadas.
 
 !O IP DHCP Client (Cliente do DHCP) é uma das formas de configuração do endereço IPv4 ou IPv6 em uma Interface de Rede, 
 !esse recurso permite configurar uma interface dinâmicamente, obtendo o endereço IPv4 ou IPv6 dos Servidores de DHCP da Rede.
 !Interfaces configuradas com o DHCP Client geralmente são utilizadas para se conectar com o ISP (Internet Service Provider).
 
-!PRIMEIRA ETAPA: Configuração do Escopo do DHCPv4 Server no Servidor do DNS Google
+!PRIMEIRA ETAPA: Configuração do Escopo do DHCPv4 Server no Servidor do DNSGoogle
+!OBSERVAÇÃO: no serviço do Servidor DHCPv4 temos a possibilidade de criar vários escopos diferentes, que são utilizados em
+!vários cenários, como por exemplo em redes locais com várias VLAN's ou nos Links de WAN 
 !Interface:					GigabitEthernet0
 !Service:					On
 !Pool Name:					dnsgoogle
-!Default Gateway:			200.204.0.62
+!Default Gateway:			200.204.0.126
 !DNS Server:				8.8.8.8
 !Start IP Address:			200.204.0.10
-!Subnet Mask:				255.255.255.19
+!Subnet Mask:				255.255.255.128
 !Maximum Number of Users:	50
 !TFTP Server:				8.8.8.8
 
-!SEGUNDA ETAPA: Configuração da Página HTML do Servidor HTTP no Servidor do DNS Google
+!SEGUNDA ETAPA: Configuração da Página HTML no Servidor do DNSGoogle
 Service HTTP	On
 Service HTTPS	On
 <!DOCTYPE html>
@@ -49,50 +51,46 @@ Service HTTPS	On
 	<body>
 		<center>
 		<h1>Google</h1>
-		<p>Configuração do IP Helper Address DHCP e DNS do Google</p>
+		<p>Configuração do IP Helper Address DHCPv4 do DNSGoogle</p>
 		<p><b>Projeto Bora para Prática!!!</b></p>
 		<p><b><i><u>Curso de CCNAv7 Exame 200-301</u></i></b></p>
 		</center>
 	</body>
 </html>
 
-!TERCEIRA ETAPA: Configuração do Roteador 1941-3 do DNS Google
+!TERCEIRA ETAPA: Configuração do Router DNSGoogle
 !OBSERVAÇÃO: nesse roteador eu não configurar todos os recursos BASE, apenas as configurações necessárias para o 
-!funcionamento e comunicação dos dispositivos, recomendo aplicar os recursos BASE futuramente.
+!funcionamento e comunicação dos dispositivos, recomendo você aplicar os recursos BASE depois da configuração.
 !Acessando o modo EXEC Privilégiado
 enable
-
-	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
-
-		!Configurando o hostname do Router 1941-3
 		hostname dnsgoogle
 
-		!Configurando a Interface de WAN do Router 1941-3
-		interface gigabitEthernet 0/0
-			description Interface de WAN do DNS do Google
-			!OBSERVAÇÃO: nesse cenário será configurado um Endereço IPv4 Público de Internet em Subrede /25
+		!Configurando a Interface de WAN do Router DNSGoogle
+		interface gigabitEthernet 0/1
+			description Interface de WAN do DNSGoogle
+			!OBSERVAÇÃO: nesse cenário será configurado um Endereço IPv4 Público de Internet na Subrede /25
 			ip address 200.204.0.126 255.255.255.128
 
-			!Configurando o Recurso de Ajuda de Endereço DHCP na Interface WAN
-			!DICA: configurando o endereço IPv4 do Servidor de DHCP que possui o Escopo da Rede configurado
+			!Configurando o Recurso de Ajuda de Endereço DHCPv4 na Interface WAN
+			!DICA: configurando o endereço IPv4 do Servidor de DHCPv4 que possui o Escopo da Rede configurado
 			!OBSERVAÇÃO: esse recurso funciona no Router ou Switch Layer 3, principalmente quando trabalhamos com VLAN
 			ip helper-address 8.8.8.8
 			no shutdown
 			exit
 
-		!Configurando a Interface de LAN do Router 1941-3
-		interface gigabitEthernet 0/1
-			description Interface de LAN do DNS do Google
+		!Configurando a Interface de LAN do Router DNSGoogle
+		interface gigabitEthernet 0/0
+			description Interface de LAN do DNSGoogle
 			ip address 8.8.8.254 255.255.255.0
 			no shutdown
 			exit
 
-		!Configurando a Rota Padrão de Saída do Router 1941-3
+		!Configurando a Rota Padrão de Saída do Router DNSGoogle
 		!OBSERVAÇÃO: na vida real de Provedores de Serviços de Internet (ISP), não é configurado a Rota Padrão de Retorno
 		!para o cliente, nesse cenário é utilizado o NAT (Network Address Translation), que será visto futuramente nas 
-		!configurações de acesso a Internet junto com os Recursos de ACL (Access Control List) e PAT (Port Address Translation)
-		ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0
+		!configurações de acesso á Internet junto com os Recursos de ACL (Access Control List) e PAT (Port Address Translation)
+		ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/1
 		end
 write
 
@@ -101,8 +99,8 @@ enable
 	configure terminal
 		interface GigabitEthernet 0/1
 
-			!Configurando a Interface do Router 2911-1 para obter endereço IPv4 via DHCP Client
-			!DICA: interface configurada para obter endereços IPv4 via DHCP geralmente são utilizadas para conexões com a Internet
+			!Configurando a Interface do Router 2911-1 para obter o Endereço IPv4 via DHCP Client
+			!DICA: interface configurada para obter endereços IPv4 via DHCP geralmente são utilizadas para conexões com á Internet
 			!OBSERVAÇÃO: não é recomendado utilizar interfaces configuradas com DHCP Client na rede LAN, somente na WAN é em casos
 			!específicos, quando se conectamos com o ISP (Internet Service Provider), Links Privados de WAN ou VPN.
 			!OBSERVAÇÃO: no Cisco Packet Tracer a configuração do Endereço IPv4 via DHCP Client demora alguns segundos

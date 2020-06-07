@@ -16,24 +16,26 @@
 !EM DESUSO, DEVIDO AO SEU ALGORITMO DE VETOR DE DISTÂNCIA SER LIMITADO EM REDES MAIS COMPLEXAS, PRINCIPALMENTE
 !NA INTERNET, MAIS RECOMENDO O SEU ESTUDO, POIS O RIP FOI O PRIMEIRO PROTOCOLO DE ROTEAMENTO DINÂMICO DESENVOLVIDO.
 
-!O RIP (Routing Information Protocol) é um protocolo de roteamento, baseado no algoritmo de Vetor de Distância, ele
+!O RIP (Routing Information Protocol) é um protocolo de roteamento baseado no algoritmo de Vetor de Distância, ele
 !foi projetado para ser usado como um IGP (Interior Gateway Protocol) em redes de abrangência moderada com tamanho
-!máximo de 15 saltos (Hopes, Routers, Gateway), a primeira versão do RIP foi descrita em 1988, no RFC 1058.
+!máximo de 15 saltos (Hopes, Routers, Gateway), a primeira versão do RIP foi descrita na RFC 1058 em 1988.
 
-!O Protocolo RIP possui basicamente três versões: RIPv1 implementação original, limitado ao roteamento de rede de
-!de classe cheia/completa (classful), considerado obsoleto, RIPv2 introduziu o suporte para roteamento sem classe
-!(classless), autenticação, atualizações dinâmicas e anúncios multicast (RFC 2453) e o RIPng (RIP Next Generation)
-!que estende o RIPv2 para oferecer suporte ao roteamento IPv6 (RFC 2080).
+!O Protocolo RIP possui basicamente três versões: RIPv1 implementação original, limitado ao roteamento de Rede de Classe
+!Cheia/Completa (classful), considerado obsoleto, RIPv2 introduziu o suporte para roteamento de Rede Sem Classe (classless), 
+!autenticação, atualizações dinâmicas e anúncios Multicast (RFC 2453) e o RIPng (RIP Next Generation) que estende o RIPv2
+!para oferecer suporte ao roteamento do Protocolo IPv6 (RFC 2080).
 
 !Informações importantes do Protocolo RIPv2: Tipo de Protocolo de Vetor de Distância, utiliza o Algoritmo Bellman-Ford,
 !possui Distância Administrativa de 120, utiliza Métrica/Custo Padrão baseado em Contagem de Saltos (Hop Count) no máximo
-!de 15 saltos, utilizada o Método de Transporte UDP, possui suporte o Protocolo IPv4, possui suporte a Redes Sem Classe
-!(Classless - CIDR Classless Inter-Domain Routing), envia anúncios (advertisement) utilizando o endereço de Multicast
-!224.0.0.9, suporta Autenticação de Texto Plano (Plaintext) ou com Criptografia MD5, possui suporte a Sumarização de Redes.
+!de 15 saltos (16 saltos é considerado inacessível - unreachable), utiliza o Método de Transporte UDP, possui suporte aos
+!Protocolos IPv4/IPv6 utilizando o RIPng, possui suporte a Redes Sem Classe (Classless - CIDR Classless Inter-Domain Routing),
+!envia anúncios (advertisement) utilizando o endereço de Multicast 224.0.0.9, suporta Autenticação de Texto Plano (Plaintext)
+!ou com Criptografia MD5 (Message-Digest Algorithm 5), possui suporte a Sumarização de Redes e suporte a Balanceamento de
+!Carga para Rotas com o mesmo destino e custo.
 
-!O RIPv2 trabalha com os tempos padrões de: 30s Update (atualizações das rotas), 180s Invalid (rota considerada inválida),
-!180s Holddown (informações sobre um melhor caminho que não serão consideradas - unreachable) e 240s Flush (tempo que 
-!deve-se passar para que uma rota seja removida da tabela de roteamento)
+!O RIPv2 trabalha com os temporizadores de: 30s Update (atualização da tabela de roteamento), 180s Holddown (retenção para
+!atualização de rotas inacessíveis - unreachable), 180s Invalid (rota considerada inválida) e 240s Flush (tempo que se deve
+!passar antes que a rota seja removida da tabela de roteamento)
 
 !PRIMEIRA ETAPA: Configuração do Roteador 2911-1
 !Acessando o modo EXEC Privilégiado
@@ -57,7 +59,7 @@ enable
 			exit
 
 		!Configurando o Processo Local do Protocolo de Roteamento Dinâmico RIPv2
-		!OBSERVAÇÃO: o protocolo RIPv2 trabalha somente com um processo local por roteador
+		!OBSERVAÇÃO: o protocolo RIPv2 trabalha somente com um processo local de roteamento por roteador
 		router rip
 
 			!Configurando a versão do Protocolo RIPv2
@@ -126,7 +128,7 @@ enable
 			!DICA: o protocolo RIP permite redistribuir redes aprendidas no roteador através de outros protocolos
 			!de roteamento, como por exemplo: Rota Etática, EIGRP, OSPF, etc
 			!OBSERVAÇÃO: nesse roteador foi configurado rotas estáticas para as rede: 192.168.1.0/24 e 192.168.3.0/24,
-			!também, rotas flutuantes para as mesmas redes utilizando o Link Serial
+			!também, rotas flutuantes para a rede 192.168.1.0/24 utilizando o Link Serial
 			!OBSERVAÇÃO: na redistribuição de rotas estáticas no protocolo RIPv2 temos a opção de alteração da 
 			!métrica/custo da rota de: 0 até 16 ou transparente
 			redistribute static metric transparent
@@ -134,6 +136,7 @@ enable
 write
 
 !Visualizando as configurações da memória RAM
+show running-config | section interface
 show running-config | section router rip
 
 !Verificando as informações do Protocolo RIPv2 nos Roteadores 2911 e 1941
