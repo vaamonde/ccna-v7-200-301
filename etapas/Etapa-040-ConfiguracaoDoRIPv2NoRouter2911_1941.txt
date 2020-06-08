@@ -72,6 +72,8 @@ enable
 			!DICA: as interface passivas do roteador não enviam anúncios do RIP pela sua interface, mais recebem anúncios
 			!de outros roteadores conectados nessa interface
 			!OBSERVAÇÃO: é recomendado sempre desativar os anúncios das interface que não vão participar do domínio do RIP
+			!ERRATA: no vídeo eu falo que a Interface gigabitEthernet 0/0 não vai participar do Domínio do Protocolo RIPv2
+			!correto seria: Que a Interface gigabitEthernet 0/0 não vai Enviar Anúncios do Protocolo RIPv2 nessa Interface
 			passive-interface gigabitEthernet 0/0
 
 			!Desabilitando o recurso de Auto-Sumarização do Protocolo RIPv2
