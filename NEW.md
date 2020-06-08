@@ -50,10 +50,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3<br>
 037 Configuração do STP Portfast BÁSICO nos Switches Layer 2 e 3<br>
 038 Configuração do Router-on-a-Stick no Router 2911<br>
-039 Configuração do DHCPv4 Server no Router 2911
+039 Configuração do DHCPv4 Server no Router 2911<br>
+040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
 041 Conectando com a Internet ADSL no Router 2911<br>
 042 Configurando o Encaminhamento de Solicitações DHCPv4<br>
 043 Redistribuindo a Rota Padrão no RIPv2 do Router 2911

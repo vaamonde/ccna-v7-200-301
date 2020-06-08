@@ -498,13 +498,13 @@ Link da vídeo aula: https://www.youtube.com/watch?v=Idbmi03D7Hs
 
 ## **040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Protocolo de Roteamento Dinâmico RIPv2 (Routing Information Protocol), essas configurações serão feitas nos Router 2911 e 1941, é um protocolo de roteamento, baseado no algoritmo de Vetor de Distância, ele foi projetado para ser usado como um IGP (Interior Gateway Protocol) em redes de abrangência moderada com tamanho máximo de 15 saltos (Hopes, Routers, Gateway), a primeira versão do RIP foi descrita em 1988, no RFC 1058.
+Nessa aula, vou fazer a configuração do Protocolo de Roteamento Dinâmico RIPv2 (Routing Information Protocol), essas configurações serão feitas nos Router 2911 e 1941, o RIPv2 é um protocolo de roteamento baseado no algoritmo de Vetor de Distância, ele foi projetado para ser usado como um IGP (Interior Gateway Protocol) em redes de abrangência moderada com tamanho máximo de 15 saltos (Hopes, Routers, Gateway), a primeira versão do RIP foi descrita na RFC 1058 em 1988.
 
 As configurações do Protocolo RIPv2 nos Router 1941 e 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-040-ConfiguracaoDoRIPv2NoRouter2911_1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-040.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=vFBiRRc5TLw
 
 ## **041 Conectando com a Internet ADSL no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
