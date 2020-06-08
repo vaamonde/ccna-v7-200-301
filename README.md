@@ -514,11 +514,11 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **042 Configurando o Encaminhamento de Solicitações DHCPv4 - Laboratório Prático Cisco CCNAv7 200-301**
+## **042 Configurando o IP Helper Address e DHCPv4 Client no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do IP Helper Address (Ajuda de Endereço IP), essas configurações serão feitas no Router 1941 do DNS Google, o IP Helper são endereços IP configurados em uma Interface Roteada como uma Interface de VLAN ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de roteadores que permite que esse dispositivo específico atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
 
-As configurações do Encaminhamento de Solicitações DHCP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-042-ConfiguracaoDoIP_DHCP_Helper.txt
+As configurações do IP Helper Address e DHCPv4 Client no Router 1941 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-042-ConfiguracaoDoIP_DHCP_Helper.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-042.pkt
 
