@@ -23,8 +23,8 @@
 !OBSERVAÇÃO: vale lembrar que o Endereço MAC também é em Hexadecimal (00:00:00:00:00:00 ou FF:FF:FF:FF:FF:FF)
 
 !Possibilidades de trabalhar o IPv6 junto com o IPv4: Pilha Dupla (os dois protocolos trabalhando simultaneamente), 
-!Encapsulamento/Tunelamento (protocolo IPv6 encapsulado dentro do protocolo IPv4 6over4) e NAT64 (Conversão/Tradução
-!protocolo IPv6 nativo se comunicando com protocolo IPv4 nativo) e vários outros tipos de transição estão disponíveis
+!Encapsulamento/Tunelamento (protocolo IPv6 encapsulado dentro do protocolo IPv4 6over4), NAT64 (Conversão/Tradução
+!protocolo IPv6 nativo se comunicando com protocolo IPv4 nativo) e vários outros tipos de transição está disponível.
 
 !Formato da representação do Endereço IPv6: 8 Hextets separados por : (dois pontos) cada Hextets possui 16 Bits
 !(16 * 8 = 128 Bits) - Exemplo: 0000:0000:0000:0000:0000:0000:0000:0000 ou FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF
@@ -36,8 +36,8 @@
 
 !Alguns Endereços IPv6 Unicast: Global Unicast (equivalente aos endereços públicos IPv4 - Faixa: 2000::/3), Link
 !Local (atribuído automaticamente, utilizando o Prefixo FE80::/64 - EUI64), Loopback (representado pelo endereço
-!Unicast 0:0:0:0:0:0:0:1/128 ou ::1), Não Especificado (::/128 ou ::), Unique Local Address ULA (igual aos endereços
-!de Classe do IPv4 Privado (Classes A, B e C), faixa FC00::/7, FDFF::/7 e FEC0::/10).
+!Unicast 0:0:0:0:0:0:0:1/128 ou ::1), Não Especificado (::/128 ou ::) e o endereço Unique Local Address ULA (igual
+!aos endereços de Classe do IPv4 Privado (Classes A, B e C), faixa FC00::/7, FDFF::/7 e FEC0::/10).
 
 !Faixa dos Endereços de Link Local (FE80 até FEBF::/10), Faixa dos Endereços de Global Unicast (2000 até 3FFF::/64)
 !Endereços de Link Local são divididos em: Prefixo Local (10bits) - Remanescentes (54bits) - ID Interface (64bits)
@@ -62,7 +62,7 @@ ipv6config
 ping FE80::1
 ping 2001:ABCD:1234:1::1
 
-!SEGUNDA ETAPA: Configuração do Roteador 1941-1
+!SEGUNDA ETAPA: Configuração do Router 1941-1
 enable
 	configure terminal
 		
@@ -77,17 +77,20 @@ enable
 
 			!Habilitando o Protocolo IPv6 na Interface
 			!DICA: esse opção habilita os recursos do Protocolo IPv6 na interface
+			!OBSERVAÇÃO: no Cisco Packet Tracer não é obrigatório habilitar esse recurso, pois os endereços IPv6 funciona
+			!sem essa configuração, mais recomendo habilitar, tanto no simulador como nos equipamentos reais
 			ipv6 enable
 
 			!Configurando o Endereço de Link Local IPv6
 			!DICA: o endereço de Link Local do Roteador é utilizado como Gateway da Rede Local
 			!OBSERVAÇÃO: em roteadores locais é indicado configurar o endereço de Link Local manualmente, não é necessário
-			!configurar o prefixo padrão do Link Local, somente o endereço IPv6
+			!configurar o prefixo padrão do Link Local, somente o endereço IPv6 e indicar que ele é Link Local no final
+			!OBSERVAÇÃO: endereços de Link Local não configuramos o Prefixo Padrão (/10), somente o endereço IPv6
 			ipv6 address FE80::254 link-local
 			
 			!Configurando o Endereço de Global Unicast IPv6
 			!DICA: o Prefixo do Endereço Global Unicast geralmente é determinado pela operadora de Telecom ou ISP
-			!OBSERVAÇÃO: para a criação de subredes no IPv6 utilizamos o campo de ID Sub-Rede (16bits), endereços de Global
+			!OBSERVAÇÃO: para a criação de subrede no IPv6 utilizamos o campo de ID Sub-Rede (16bits), endereços de Global
 			!Unicast é necessário configurar o Prefixo no final do Endereço IPv6
 			ipv6 address 2001:ABCD:1234:1::254/64
 			end
@@ -98,10 +101,10 @@ enable
 	configure terminal
 
 		!Habilitando o suporte ao Protocolo IPv6 no Switch Layer 2
-		!DICA: por padrão os Switches Layer 2 e 3 não tem suporte ao protocolo IPv6 habiltiado por padrão no IOS
+		!DICA: por padrão os Switches Layer 2 e 3 não tem suporte ao protocolo IPv6 habiltiado no IOS
 		!OBSERVAÇÃO: para habilitar o recurso do IPv6 nos Switches Layer 2 ou 3 utilizamos o SDM (Switching Database Manager)
 		!que tem o objetivo de gerenciar o uso da Memória TCAM (Ternary Content Addressable Memory) que é diferente da Tabela
-		!CAM (Content Addressable Memory) usado para configurar os recursos de Roteamente, ACL, QoS em Switches Catalyst
+		!CAM (Content Addressable Memory) usado para configurar os recursos de Roteamente, ACL e QoS em Switches Catalyst
 		!IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO O CCNAv7 EXAME 200-301 NÃO É COBRADO CONFIGURAÇÕES DO PROTOCOLO IPv6 NOS
 		!SWITCHES LAYER 2 OU 3, TAMBÉM, CONHECIMENTOS PROFUNDOS EM SDM E TCAM, ESSES TÓPICOS SÃO ABORDADOS NO CCNP R&S.
 		sdm prefer dual-ipv4-and-ipv6 default
@@ -115,7 +118,7 @@ enable
 		!Configurando o endereço IPv6 na SVI do Switch Layer 2
 		!OBSERVAÇÃO: no Cisco Packet Tracer o Protocolo IPv6 é limitado no Switch Layer 2 e 3 da Série Catalyst
 		!OBSERVAÇÃO: no Switch Layer 2 não temos a opção de configurar o ipv6 unicast-routing, esse recurso só está presente
-		!em Roteadores ou Switch Layer 3
+		!em Roteadores ou Switch Layer 3, também, as configurações de Gateway não está disponível.
 		interface vlan 1
 			ipv6 enable
 			ipv6 address FE80::250 link-local

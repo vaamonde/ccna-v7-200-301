@@ -11,23 +11,21 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!A configuração das Rotas Padrão Estática em todos os dispositivos de rede da infraestrutura é complicada e de difícil
+!A configuração das Rotas Estática Padrão em todos os dispositivos de rede da Infraestrutura de TI é complicada e de difícil
 !administração, essa função pode ser executada automaticamente com a propagação da rota padrão no Protocolo RIPv2, conhecida
 !como Default Information Originate (Origem de Informações Padrão)
 
 !Diferente da opção de Redistribute (Redistribuição) que é um processo que permite a troca de informações de roteamento entre
-!diferentes protocolos de roteamento ou de rotas estáticas para o processo de roteamento do protocolo RIPv2.
+!diferentes protocolos de roteamento ou de rotas estáticas para o processo de roteamento dinâmico do protocolo RIPv2.
 
 !DESAFIO: Na Primeira Topologia da Rede, os Desktops e Servidor só acessam a Segunda Topologia, quando configuramos a Terceira 
 !Topologia somente os Desktops e Servidor da Segunda Topologia tem acesso, agora configuramos a Quarta Topologia, nesse cenário
 !somente a Terceira e a Segunda Topologia tem conectividade total. Qual a forma mais simples de resolver o Problema de Acesso da
 !Primeira Topologia com as demais redes, sem alterar a forma de emprendizado da Rede que é Rota Estática e Rota Flutuante.
 
-!PRIMEIRA ETAPA: Configuração do Roteador 2911-1
+!PRIMEIRA ETAPA: Configuração do Router 2911-1
 enable
 	configure terminal
-
-		!Configurando o Processo Local do Protocolo RIPv2
 		router rip
 
 			!Configurando a Origem da Rota Padrão para os outros roteadores do domínio do RIPv2

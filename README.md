@@ -508,11 +508,11 @@ Link da vídeo aula: https://www.youtube.com/watch?v=vFBiRRc5TLw
 
 ## **041 Conectando com a Internet ADSL no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou interligar uma nova Rede ADSL (Asymmetric Digital Subscriber Line) interligando com o Router 2911 da Terceira Topologia, adicionando um Modem ADSL que será conectado utilizando Cabeamento Telefônico na WAN Emulation (Emulador de WAN), será adicionando um Router 1941 que será conectado diretamente no Servidor de DNS da Google. Nessa topologia o diferencial vai ser a configuração da simulação de uma Rede xDSL (Digital Subscriber Line), simulando por exemplo uma conexão do Antigo Vivo Speedy ADSL, nesse cenário não será configurado o serviço de PPPoE (Point-to-Point Protocol over Ethernet) que ficará para um pŕoximo cenário, apenas a interligação e configuração das Redes WAN e LAN simulando o Servidor de DNS do Google.
+Nessa aula, vou interligar uma nova Rede ADSL (Asymmetric Digital Subscriber Line) interligando com o Router 2911 da Terceira Topologia, adicionando um Modem ADSL que será conectado utilizando o Cabeamento Telefônico na WAN Emulation (Emulador de WAN), será adicionado um Router 1941 que será conectado diretamente no Servidor de DNS da Google. Nessa topologia o diferencial vai ser a configuração da simulação de uma Rede xDSL (Digital Subscriber Line), simulando por exemplo uma conexão do Antigo Vivo Speedy ADSL, nesse cenário não será configurado o serviço de PPPoE (Point-to-Point Protocol over Ethernet) que ficará para um próximo cenário, apenas a interligação e configuração das Redes WAN e LAN e simulando o Servidor de DNS do Google.
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-041.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=gslS_zNLnuk
 
 ## **042 Configurando o IP Helper Address e DHCPv4 Client no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
