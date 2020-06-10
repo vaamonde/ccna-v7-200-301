@@ -66,30 +66,37 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
 047 Configuração da Rota Estática, Padrão e Flutuante do IPv6<br>
-048 Configuração do RIPng nos Router 1941 e 2911
+048 Configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-049 Configuração da ACL Standard BÁSICA nos Switches e Routers<br>
-050 Configuração da ACL Extended BÁSICA nos Switches e Routers<br>
-051 Configuração do Protocolo EIGRP na Topologia Geral<br>
-052 Configuração do Protocolo OSPF Single Area na Topologia Geral
+049 Configuração do Protocolo EIGRP IPv4 na Topologia Geral<br>
+050 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral<br>
+051 Configuração do Protocolo EIGRP IPv6 na Topologia Geral<br>
+052 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral<br>
+053 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers<br>
+054 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-053 Configuração do Protocolo PPPoE nos Router SOHO e 1941<br>
-054 Configuração do WLC 2504 e LWAP 3702i com Segurança 802.1x<br>
-055 Configuração do NAT Estático no Router 2911<br>
-056 Configuração do NAT Dinâmico no Router 2911<br>
-057 Configuração do NAT Overload no Router 2911<br>
-058 Configuração do PAT Estático no Router 2911<br>
-059 Configuração do Etherchannel PAgP nos Switches<br>
-060 Configuração do Etherchannel LACP nos Switches<br>
-061 Configuração do FHRP HSRP nos Router<br>
-061 Configuração do FHRP VRRP nos Router<br>
-063 Configuração do FHRP GLBP nos Router
+055 Criação do Cenário de Conexão com a Internet SOHO<br>
+056 Configuração do Protocolo PPPoE Server no ISP<br>
+057 Configuração do Protocolo PPPoE Client ADSL no SOHO WRT-300N<br>
+058 Configuração da Rede SOHO Tri-Band Wireless<br>
+059 Configuração do Router Meraki MX65W<br>
+060 Configuração do Router Home Gateway DLC-100<br>
+061 Configuração do Router 4321 e do WLC-3504 e do LWAP-3702i<br>
+062 Configuração do NAT Estático no Router 2911<br>
+063 Configuração do NAT Dinâmico no Router 2911<br>
+064 Configuração do NAT Overload no Router 2911<br>
+065 Configuração do PAT Estático no Router 2911<br>
+066 Configuração do FHRP HSRP nos Router<br>
+067 Configuração do FHRP VRRP nos Router<br>
+068 Configuração do FHRP GLBP nos Router<br>
+069 Configuração do Etherchannel PAgP nos Switches<br>
+070 Configuração do Etherchannel LACP nos Switches<br>
+071 Configuração do Firewall no ASA 
+072 Configuração da VPN Site-to-Site
+073 Configuração da VPN Site-to-Client
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
-OSPF Multi Area, BGP, PPP, Frame-Relay, MPLS, Firewall, VPN, QoS, PYTHON, JSON, SD-WAN,<br>
-Inter-VLAN Routing Switch Layer 3, etc
-
-## **ETAPA-07: Temas de Aulas que não fazem parte do CCNAv7, não Disponível no Github:**
-VoIP, ARDUINO, IoT/IoE, ASA, 3/4G Celular, MERAKI <br>
+OSPF Multi Area, BGP, PPP, Frame-Relay, MPLS, QoS, PYTHON, JSON, SD-WAN,<br>
+Inter-VLAN Routing Switch Layer 3, VoIP, ARDUINO, IoT/IoE

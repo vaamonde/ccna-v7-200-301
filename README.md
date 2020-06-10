@@ -522,7 +522,7 @@ As configurações do IP Helper Address e DHCPv4 Client no Router 1941 será fei
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-042.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=y4veNnLzDE8
 
 ## **043 Redistribuindo a Rota Padrão no RIPv2 no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
