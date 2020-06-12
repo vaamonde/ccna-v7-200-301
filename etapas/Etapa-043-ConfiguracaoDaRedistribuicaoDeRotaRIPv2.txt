@@ -12,8 +12,8 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !A configuração das Rotas Estática Padrão em todos os dispositivos de rede da Infraestrutura de TI é complicada e de difícil
-!administração, essa função pode ser executada automaticamente com a propagação da rota padrão no Protocolo RIPv2, conhecida
-!como Default Information Originate (Origem de Informações Padrão)
+!administração, essa função pode ser executada automaticamente com a propagação da rota padrão no Protocolo de Roteamento
+!Dinâmico RIPv2, conhecida como Default Information Originate (Origem de Informações Padrão)
 
 !Diferente da opção de Redistribute (Redistribuição) que é um processo que permite a troca de informações de roteamento entre
 !diferentes protocolos de roteamento ou de rotas estáticas para o processo de roteamento dinâmico do protocolo RIPv2.
@@ -38,7 +38,7 @@ enable
 write
 
 !Visualizando as configurações da memória RAM
-show running-config | section rip
+show running-config | section router rip
 
 !Verificando as informações do Protocolo RIPv2 nos Routeres 2911 e 1941
 show ip router rip

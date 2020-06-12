@@ -85,13 +85,13 @@ enable
 			!DICA: o endereço de Link Local do Roteador é utilizado como Gateway da Rede Local
 			!OBSERVAÇÃO: em roteadores locais é indicado configurar o endereço de Link Local manualmente, não é necessário
 			!configurar o prefixo padrão do Link Local, somente o endereço IPv6 e indicar que ele é Link Local no final
-			!OBSERVAÇÃO: endereços de Link Local não configuramos o Prefixo Padrão (/10), somente o endereço IPv6
+			!OBSERVAÇÃO: endereços de Link Local não é configurado o Prefixo Padrão (/10), somente o endereço IPv6
 			ipv6 address FE80::254 link-local
 			
 			!Configurando o Endereço de Global Unicast IPv6
 			!DICA: o Prefixo do Endereço Global Unicast geralmente é determinado pela operadora de Telecom ou ISP
 			!OBSERVAÇÃO: para a criação de subrede no IPv6 utilizamos o campo de ID Sub-Rede (16bits), endereços de Global
-			!Unicast é necessário configurar o Prefixo no final do Endereço IPv6
+			!Unicast é necessário configurar o Prefixo Padrão no final do Endereço IPv6
 			ipv6 address 2001:ABCD:1234:1::254/64
 			end
 write
@@ -116,7 +116,7 @@ enable
 	configure terminal
 
 		!Configurando o endereço IPv6 na SVI do Switch Layer 2
-		!OBSERVAÇÃO: no Cisco Packet Tracer o Protocolo IPv6 é limitado no Switch Layer 2 e 3 da Série Catalyst
+		!OBSERVAÇÃO: no Cisco Packet Tracer o Protocolo IPv6 é limitado nos Switches Layer 2 e 3 da Série Catalyst
 		!OBSERVAÇÃO: no Switch Layer 2 não temos a opção de configurar o ipv6 unicast-routing, esse recurso só está presente
 		!em Roteadores ou Switch Layer 3, também, as configurações de Gateway não está disponível.
 		interface vlan 1
