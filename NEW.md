@@ -53,10 +53,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 039 Configuração do DHCPv4 Server no Router 2911<br>
 040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
 041 Conectando com a Internet ADSL no Router 2911<br>
-042 Configurando o Encaminhamento de Solicitações DHCPv4
+042 Configurando o Encaminhamento de Solicitações DHCPv4<br>
+043 Redistribuindo a Rota Padrão no RIPv2 do Router 2911
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-043 Redistribuindo a Rota Padrão no RIPv2 do Router 2911<br>
 044 Configuração do Endereçamento IPv6 Estático
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**

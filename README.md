@@ -534,7 +534,7 @@ As configurações da Redistribuição de Rota Padrão no RIPv2 será feita util
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-043.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=yiaIp41yYVc
 
 ## **044 Configuração do Endereçamento IPv6 Estático - Laboratório Prático Cisco CCNAv7 200-301**
 
