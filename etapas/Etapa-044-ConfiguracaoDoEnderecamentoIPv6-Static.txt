@@ -28,28 +28,31 @@
 
 !Formato da representação do Endereço IPv6: 8 Hextets separados por : (dois pontos) cada Hextets possui 16 Bits
 !(16 * 8 = 128 Bits) - Exemplo: 0000:0000:0000:0000:0000:0000:0000:0000 ou FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF
-!OBSERVAÇÃO: vale lembrar que o Endereço IPv4 trabalha com 4 Octetos (0.0.0.0 ou 255.255.255.255 - 4 * 8 = 32 Bits)
+!OBSERVAÇÃO: vale lembrar que o Endereço IPv4 trabalha com 4 Octetos separados por . (ponto) - Exemplo: 0.0.0.0 ou 
+!255.255.255.255 (4 * 8 = 32 Bits)
 
 !Métodos de Comunicação do Protocolo IPv6: Unicast (origem - destino), Multicast (origem - múltiplos destinos) e 
 !Anycast (origem - múltiplos destinos mais próximo da origem) o protocolo IPv6 não trabalha com Broadcast (origem -
 !para todos os destinos)
 
-!Alguns Endereços IPv6 Unicast: Global Unicast (equivalente aos endereços públicos IPv4 - Faixa: 2000::/3), Link
+!Alguns Endereços IPv6 Unicast: Global Unicast (equivalente aos endereços Públicos IPv4 - Faixa: 2000::/3), Link
 !Local (atribuído automaticamente, utilizando o Prefixo FE80::/64 - EUI64), Loopback (representado pelo endereço
 !Unicast 0:0:0:0:0:0:0:1/128 ou ::1), Não Especificado (::/128 ou ::) e o endereço Unique Local Address ULA (igual
-!aos endereços de Classe do IPv4 Privado (Classes A, B e C), faixa FC00::/7, FDFF::/7 e FEC0::/10).
+!aos endereços de Classe do IPv4 Privado (Classes A, B e C), faixa de Prefixo FC00::/7, FDFF::/7 e FEC0::/10).
 
 !Faixa dos Endereços de Link Local (FE80 até FEBF::/10), Faixa dos Endereços de Global Unicast (2000 até 3FFF::/64)
 !Endereços de Link Local são divididos em: Prefixo Local (10bits) - Remanescentes (54bits) - ID Interface (64bits)
 !Endereços de Global Unicast são divididos em: Prefixo Global (48bits) - ID Sub-Rede (16bits) - ID Interface (64bits)
 
 !Regras para omissão dos 0 (zeros) no Protocolo IPv6 para endereços de Link Local, Global Unicast ou Unique Local
-!Regra 01: omitir os 0 à esquerda: 2001:0123:0012:0003:0000:0000:0000:0200 = 2001:123:12:3:0:0:0:200
-!Regra 02: omitir o segmento/sequência de 0: 2001:123:12:3::200 (OBSERVAÇÃO: SÓ PODE SER FEITO UMA VEZ POR SEGMENTO)
+!Regra 01: omitir os 0 à esquerda: 2001:0123:0012:0003:0000:0000:0000:0200/64 = 2001:123:12:3:0:0:0:200/64
+!Regra 02: omitir o segmento/sequência de 0: 2001:123:12:3::200/64 (OBSERVAÇÃO: SÓ PODE SER FEITO UMA VEZ POR SEGMENTO)
 
-!IMPORTANTE: O protocolo IPv6 não é Case Sensitive (não faz diferença de Maiúsculas e Minúsculas) na sua configuração
+!IMPORTANTE: O protocolo IPv6 não é Case Sensitive (não faz diferença de Maiúsculas ou Minúsculas) na sua configuração
 !IMPORTANTE: O protocolo IPv6 não trabalha com Máscara de Rede, sua configuração e feita utilizando o Prefixo de Rede
-!IMPORTANTE: O protocolo IPv6 trabalha com o conceito de descoberta e auto-configuração dos Endereços/Prefixos de Rede
+!IMPORTANTE: O protocolo IPv6 trabalha com o conceito de descoberta e auto-configuração dos Prefixos/Sufixos de Rede
+!IMPORTANTE: O protocolo IPv6 pode ser configurado Manualmente, utilizando DHCPv6 Server ou Auto-Configuração SLACC
+!IMPORTANTE: O protocolo IPv6 nas opções de Auto-Configuração ele utiliza o recurso do EUI64 para a criação do Sufixo 
 
 !PRIMEIRA ETAPA: Configuração dos Endereços de Link Local e Global Unicast nos Desktops e Servidor
 !Faixa Link Local: FE80::/10
@@ -82,7 +85,7 @@ enable
 			ipv6 enable
 
 			!Configurando o Endereço de Link Local IPv6
-			!DICA: o endereço de Link Local do Roteador é utilizado como Gateway da Rede Local
+			!DICA: o endereço de Link Local do Roteador, geralmente esse endereço é utilizado como Gateway da Rede Local
 			!OBSERVAÇÃO: em roteadores locais é indicado configurar o endereço de Link Local manualmente, não é necessário
 			!configurar o prefixo padrão do Link Local, somente o endereço IPv6 e indicar que ele é Link Local no final
 			!OBSERVAÇÃO: endereços de Link Local não é configurado o Prefixo Padrão (/10), somente o endereço IPv6
@@ -118,7 +121,7 @@ enable
 		!Configurando o endereço IPv6 na SVI do Switch Layer 2
 		!OBSERVAÇÃO: no Cisco Packet Tracer o Protocolo IPv6 é limitado nos Switches Layer 2 e 3 da Série Catalyst
 		!OBSERVAÇÃO: no Switch Layer 2 não temos a opção de configurar o ipv6 unicast-routing, esse recurso só está presente
-		!em Roteadores ou Switch Layer 3, também, as configurações de Gateway não está disponível.
+		!em Roteadores ou Switch Layer 3
 		interface vlan 1
 			ipv6 enable
 			ipv6 address FE80::250 link-local

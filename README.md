@@ -32,6 +32,7 @@ GNS3 Vault: How to Master CCNA R&S, René Molenaar (Inglês): https://gns3vault.
 GNS3 Vault: How to Master Subnetting, René Molenaar (Inglês): https://gns3vault.com/product/master-subnetting<br>
 FlackBox: Cisco CCNA Lab Guide, Neil Anderson (Inglês): https://www.flackbox.com/<br>
 Laboratórios de Tecnologias Cisco, Samuel Henrique (Português): https://novatec.com.br/livros/laboratorios-cisco-2ed/<br>
+IPv6 - O Novo Protocolo da Internet, Samuel Henrique (Português): https://www.novatec.com.br/livros/ipv6/<br>
 Laboratório de IPv6, Equipe IPv6 (Português): http://ipv6.br/pagina/livro-ipv6/<br>
 CCNA 6.0 - Guia Completo de Estudo, Marco Aurelio Filippetti (Português): https://www.americanas.com.br/produto/100208315/ccna-6-0-guia-completo-de-estudo-1<br>
 Certificaçao CCNA - Guia Preparatório para o Exame 200-120, Alexandre Vieria de Oliveira, Jefferson Lisboa Melo (Português): https://www.americanas.com.br/produto/16372263/certificacao-ccna-guia-preparatorio-para-o-exame-200-120<br>
@@ -98,11 +99,12 @@ TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
 
 **ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dicas de alunos;<br>
+**DESAFIO:** desafio proposto para o aluno, com o objetivo de estimular o raciocínio lógica para a resolução de um problema de rede ou mudança das configurações;<br> 
 **DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração no exame;<br>
 **ERRATA:** correções dos script, correções de falas, correções de configurações, etc;<br>
 **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou OBSERVAÇÃO;<br>
 **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação.<br>
-**OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
+**OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação,
 
 ## **000 Apresentação do Curso, da Nova Certificação CCNAv7 Exame 200-301, Download e Instalação do Cisco Packet Tracer v7.3**
 
