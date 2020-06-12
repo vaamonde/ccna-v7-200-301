@@ -38,7 +38,7 @@
 !Alguns Endereços IPv6 Unicast: Global Unicast (equivalente aos endereços Públicos IPv4 - Faixa: 2000::/3), Link
 !Local (atribuído automaticamente, utilizando o Prefixo FE80::/64 - EUI64), Loopback (representado pelo endereço
 !Unicast 0:0:0:0:0:0:0:1/128 ou ::1), Não Especificado (::/128 ou ::) e o endereço Unique Local Address ULA (igual
-!aos endereços de Classe do IPv4 Privado (Classes A, B e C), faixa de Prefixo FC00::/7, FDFF::/7 e FEC0::/10).
+!aos Endereços de Classe Privado do IPv4 (Classes A, B e C), faixa de Prefixo FC00::/7, FDFF::/7 e FEC0::/10).
 
 !Faixa dos Endereços de Link Local (FE80 até FEBF::/10), Faixa dos Endereços de Global Unicast (2000 até 3FFF::/64)
 !Endereços de Link Local são divididos em: Prefixo Local (10bits) - Remanescentes (54bits) - ID Interface (64bits)
@@ -99,6 +99,13 @@ enable
 			end
 write
 
+!ACRÉSCIMO - IMPORTANTE: NO CISCO PACKET TRACER VERSÃO 7.3 O SUPORTE AO PROTOCOLO IPv6 NO SWITCH LAYER 2 SÓ FUNCIONA 
+!CORRETAMENTE NA VERSÃO 15.x DO IOS, RECOMENDO FAZER O UPGRADE DO IOS ANTES DA CONFIGURAÇÃO, NA PRIMEIRA TOPOLOGIA ESSE
+!PROCEDIMENTO JÁ FOI EXECUTADO, MESMO EXECUTANDO A ATUALIZAÇÃO, FAZENDO A CONFIGURAÇÃO DO SDM PREFER, O PING DO DESKTOP
+!PARA OS SWITCHES LAYER 2 2960 NÃO E CONCLUÍDO (Request timed out.), É O PING DO SWITCH PARA O DESKTOP TEM A MESMA FALHA
+!(% Unrecognized host or address, or protocol not running.) - ATÉ O MOMENTO DA GRAVAÇÃO DESSE VÍDEO: 12/06/2020 A FALHA
+!PERSISTE, ESTANDO RELACIONADA AO SIMULADOR, NOS EQUIPAMENTOS REAIS ESSA FALHA NÃO ACONTECE.
+
 !TERCEIRA ETAPA: Configuração do Switch Layer 2 2960-1
 enable
 	configure terminal
@@ -153,5 +160,7 @@ show running-config | section interface
 show ipv6 interface brief
 show ipv6 interface gigabitethernet 0/0
 show ipv6 route
+show sdm prefer
+show ipv6 interface vlan 1
 ping FE80::254
 ping 2001:ABCD:1234:1::254
