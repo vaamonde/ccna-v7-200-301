@@ -540,7 +540,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=yiaIp41yYVc
 
 Nessa aula, vou fazer a configuração do Endereçamento IPv6 Estático, essas configurações serão feitas nos Desktop, Servidor e Router 1941, O IPv6 (Internet Protocol Version 6) é a versão mais atual do Protocolo de Internet, originalmente oficializada em 6 de Junho de 2012, é fruto do esforço do IETF (Internet Engineering Task Force) para criar a "nova geração do IP", cujas linhas mestras foram descritas por Scott Bradner e Allison Marken, em 1994, na RFC 1752. Sua principal especificação encontra-se na RFC 2460.
 
-As configurações do Endereçamento IPv6 Estático será feita utilizando o Script: 
+As configurações do Endereçamento IPv6 Estático será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-044-ConfiguracaoDoEnderecamentoIPv6-Static.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-044.pkt
 
