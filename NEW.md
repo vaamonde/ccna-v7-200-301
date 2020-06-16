@@ -54,13 +54,13 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911<br>
 041 Conectando com a Internet ADSL no Router 2911<br>
 042 Configurando o Encaminhamento de Solicitações DHCPv4<br>
-043 Redistribuindo a Rota Padrão no RIPv2 do Router 2911
-
-## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
+043 Redistribuindo a Rota Padrão no RIPv2 do Router 2911<br>
 044 Configuração do Endereçamento IPv6 Estático
 
+## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
+045 Configuração do DHCPv6 Statless no Router 1941
+
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-045 Configuração do DHCPv6 Statless no Router 1941<br>
 046 Configuração do DHCPv6 Stateful no Router 2911<br>
 047 Configuração do Servidor Genérico DHCPv6 Statefull
 
@@ -93,8 +93,8 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 068 Configuração do FHRP GLBP nos Router<br>
 069 Configuração do Etherchannel PAgP nos Switches<br>
 070 Configuração do Etherchannel LACP nos Switches<br>
-071 Configuração do Firewall no ASA 
-072 Configuração da VPN Site-to-Site
+071 Configuração do Firewall no ASA<br>
+072 Configuração da VPN Site-to-Site<br>
 073 Configuração da VPN Site-to-Client
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
