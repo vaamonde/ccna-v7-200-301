@@ -556,7 +556,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **046 Configuração do DHCPv6 Stateless no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
+## **046 Configuração do DHCPv6 Stateful no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCPv6 Stateful, essa configuração será feita no Router 2911 da Terceira Topologia, o DHCPv6 Stateful é muito parecido com o funcionamento do Servidor DHCPv4. O servidor DHCPv6 Stateful atribui endereços IPv6 a todos os hosts com o DHCPv6 Client configurado, mantendo o controle de qual endereço IPv6 foi atribuído ao host. O servidor também pode oferecer outros parâmetros de rede, como servidores DNS, um nome de domínio ou qualquer outra opção fornecida por um Servidor DHCPv6.
 

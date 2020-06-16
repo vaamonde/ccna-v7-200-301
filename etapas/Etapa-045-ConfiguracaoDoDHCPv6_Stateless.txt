@@ -29,15 +29,18 @@
 !IPv6 é obtido pela combinação do Prefixo (64 bits) e do Endereço MAC da NIC (Network Interface Card).
 
 !O SLAAC utiliza o conceito de EUI-64 (Extended Unique Identifier) que tem como objetivo montar a porção de host do
-!Endereço IPv6 de Link Local, Endereço de Global Unicast e Endereço de Unique Local.
+!Endereço IPv6 de Link Local, Global Unicast e Unique Local ULA.
 
 !Exemplo do EUI-64 em endereços de Link Local: Prefixo Padrão: FE80::/10 + MAC Address: 55:77:BB:CC:11:22 + FF:FE
-!Endereço de Link Local completo: FE80:0000:0000:0000:5577:BBFF:FECC:1122 alterando o Bit Universal: 7Bit de 5 para 7
-!Endereço de Link Local resumido e com o 7Bit alterado: FE80::5777:BBFF:FECC:1122
+!Endereço de Link Local completo: FE80:0000:0000:0000:5577:BBFF:FECC:1122 adicionado no meio do MAC Address entre as
+!opções de OUI (Organizational Unique Identifier) é o NIC (Network Interface Controller) o valor reservador pelo IEEE
+!da conversão do EUI-64 0xFF:FE é alterando o valor do Bit Universal (7 Bit): de 5 para 7 (converte hexadecimal para 
+!binário - 55 = 0101 0101 para 0101 0111 = 57)
+!Endereço de Link Local resumido é com o 7 Bit alterado: FE80::5777:BBFF:FECC:1122
 
-!Exemplo do EUI-64 em endereços de Unicast Global: Prefixo Padrão: 2001:ABCD:1234:3::/64 MAC: 55:77:BB:CC:11:22
+!Exemplo do EUI-64 em endereços de Global Unicast: Prefixo Padrão: 2001:ABCD:1234:3::/64 MAC: 55:77:BB:CC:11:22 + FF:FE
 !Endereço de Global Unicast completo: 2001:ABCD:1234:0003:5577:BBFF:FECC:1122/64
-!Endereço de Global Unicast resumido e com o 7Bit alterado: 2001:ABCD:1234:3:5777:BBFF:FECC:1122/64
+!Endereço de Global Unicast resumido é com o 7 Bit alterado: 2001:ABCD:1234:3:5777:BBFF:FECC:1122/64
 
 !PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor do DNS do Google
 !Faixa Link Local: FE80::/10
@@ -74,7 +77,7 @@ enable
 			ipv6 address 2001:abcd:1234:8::254/64
 			exit
 
-		!Configurando a Interface de WAN da Rede do DNS go Google
+		!Configurando a Interface de WAN da Rede do DNS do Google
 		interface gigabitEthernet 0/1
 
 			!Configuração dos Endereços IPv6 de Link Local e Global Unicast
@@ -109,17 +112,17 @@ enable
 		
 		!Configurando a Interface do Router 2911-1 para obter o Endereço IPv6 via SLAAC
 		!DICA: interface configurada com o recurso de Auto-Configuração geralmente são utilizadas em Link de
-		!Conexão com a Internet ou configurações de Redes WAN especifícas (Link Privados, VPN, etc)
-		!OBSERVAÇÃO: nesse cenário a Interface de WAN do Router 2911 vai obter o Prefixo de Rede do Global 
-		!Unicast do Router 1941 é as configurações de Domínio e DNS, o Sufixo de Rede será configurado utilizando
-		!o recurso do EUI-64 (MAC Address + FF:FE), essa configuração também será feita no Link Local da Interface
+		!Conexão com a Internet ou configurações de Redes WAN especifícas (Links Privados, VPN, etc)
+		!OBSERVAÇÃO: nesse cenário a Interface de WAN do Router 2911 vai obter o Prefixo de Rede Global Unicast
+		!do Router 1941 é as configurações de Domínio é DNS, o Sufixo de Rede será configurado utilizando o 
+		!recurso do EUI-64 (MAC Address + FF:FE), essa configuração também será feita no Link Local da Interface
 		interface GigabitEthernet 0/1
 			ipv6 address autoconfig
 			exit
 
 		!Configurando a Rota Padrão IPv6 de Saída do Router 2911
 		!OBSERVAÇÃO: nesse cenário, á configuração da Rota Padrão de Saída é totalmente declarada, indicando
-		!a interface de saída e o Endereço IPv6 de Link Local de Próximo Salto
+		!a interface de saída é o Endereço IPv6 de Link Local de Próximo Salto
 		ipv6 route ::/0 GigabitEthernet 0/1 FE80::126
 		end
 write

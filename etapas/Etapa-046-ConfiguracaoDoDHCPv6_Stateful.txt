@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!DHCPv6 Stateful (com estado): O DHCPv6 Stateful e muito parecido com o funcionamento do Servidor DHCPv4. 
+!DHCPv6 Stateful (com estado): O DHCPv6 Stateful é muito parecido com o funcionamento do Servidor DHCPv4. 
 !O servidor DHCPv6 Stateful atribui endereços IPv6 a todos os hosts com o DHCPv6 Client configurado, mantendo
 !o controle de qual endereço IPv6 foi atribuído ao host. O servidor também pode oferecer outros parâmetros
 !de rede, como servidores DNS, um nome de domínio ou qualquer outra opção fornecida por um Servidor DHCPv6.
@@ -21,6 +21,20 @@
 !OU MICROSOFT WINDOWS SERVER.
 
 !OBSERVAÇÃO IMPORTANTE: NO CISCO PACKET TRACER VERSÃO 7.3 AS CONFIGURAÇÕES DO DHCPv6 STATEFUL SÃO LIMITADAS
+
+!ACRÉSCIMO - IMPORTANTE: NO CISCO PACKET TRACER VERSÃO 7.3 O SUPORTE AO PROTOCOLO IPv6 NO SWITCH LAYER 2 2960 SÓ
+!FUNCIONA CORRETAMENTE NA VERSÃO 15.x DO IOS, RECOMENDO FAZER O UPGRADE DO IOS ANTES DA CONFIGURAÇÃO, MESMO EXECUTANDO
+!A ATUALIZAÇÃO, FAZENDO A CONFIGURAÇÃO DO SDM PREFER, O PING DO DESKTOP PARA OS SWITCHES LAYER 2 2960 NÃO É CONCLUÍDO
+!COM SUCESSO (Request timed out.), O PING DO SWITCH LAYER 2 PARA O DESKTOP TEM A MESMA FALHA (% Unrecognized host or 
+!address, or protocol not running.) - ATÉ O MOMENTO DA GRAVAÇÃO DESSE VÍDEO: 12/06/2020 A FALHA PERSISTE, ESTANDO 
+!RELACIONADA APARENTEMENTE AO SIMULADOR (executando testes é analisando comentários no Fórum da Cisco), NOS EQUIPAMENTOS
+!REAIS ESSA FALHA NÃO ACONTECE.
+
+!ADENDO IMPORTANTE: TESTE FEITO NO DIA 16/06/2020, QUANDO É INICIADO A SIMULAÇÃO DO AMBIENTE, OS SWITCHES LAYER 2 2960
+!PERDE AS CONFIGURAÇÕES DO SDM E DAS CONFIGURAÇÕES DOS ENDEREÇOS IPv6, SENDO NECESSÁRIO FAZER O RELOAD DO EQUIPAMENTO
+!PARA O SDM VOLTAR A FUNCIONAR, MAIS AS CONFIGURAÇÕES DOS ENDEREÇOS IPv6 SÃO PERDIDAS, SENDO NECESSÁRIO REFAZER. DICA:
+!RECOMENDO NÃO PERDER TEMPO NESSAS CONFIGURAÇÕES NO CISCO PACKET TRACER 7.3, NA NOVA TOPOLOGIA QUE SERÁ CRIADA VOU UTILIZAR
+!O ROUTER DA SÉRIE 4000 E SWITCH MULTILAYER DA SÉRIE 3650 QUE SÃO EQUIPAMENTOS ATUALIZADOS PARA OS NOVOS CENÁRIOS DO CCNAv7
 
 !PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
 !Faixa Link Local: FE80::/10
@@ -37,19 +51,15 @@ enable
 
 		!Configurando o DHCPv6 Pool Stateful (Escopo) da VLAN 10
 		ipv6 dhcp pool stateful_vlan10
-
-			!Configurando o Nome de Domínio no Pool do DHCPv6
 			domain-name vaamonde.pti
-
-			!Configurando o Endereço IPv6 do Servidor de DNS no Pool do DHCPv6
 			dns-server 2001:abcd:1234:3::1
 
 			!Configurando o Prefixo Padrão do Endereço IPv6 no Pool do DHCPv6
 			!DICA: essa opção configurar o endereço de prefixo padrão que será utilizado na VLAN 10
 			!OBSERVAÇÃO: nas configurações da delegação do endereço de prefixo é determinado o tempo
 			!de vida (lifetime) do Prefixo e da Preferência dos endereços atribuídos os hosts em segundos
-			!IMPORTANTE: caso no queira utilizar o comando: address prefix, você pode fazer a criação de
-			!um Pool Local e associar ao Pool do DHCPv6 Stateful no Modo de Configuração Global com o comando:
+			!IMPORTANTE: caso não queira utilizar o comando: address prefix, você pode fazer a criação de
+			!um Pool Local é associar ao Pool do DHCPv6 Stateful no Modo de Configuração Global com o comando:
 			!ipv6 local pool stateful_vlan10 2001:abcd:1234:10::/64 64
 			address prefix 2001:abcd:1234:10::/64 lifetime 1800 600
 			exit
@@ -146,44 +156,9 @@ reload
 
 enable
 	configure terminal
-		ipv6 unicast-routing
 		interface vlan 99
 			ipv6 address FE80::252 link-local
 			ipv6 address 2001:abcd:1234:99::252/64
-			end
-write
-
-!QUARTA ETAPA: Configuração do Switch Layer 2 2960-5
-enable
-	configure terminal
-		sdm prefer dual-ipv4-and-ipv6 default
-		end
-write
-reload
-
-enable
-	configure terminal
-		ipv6 unicast-routing
-		interface vlan 99
-			ipv6 address FE80::250 link-local
-			ipv6 address 2001:abcd:1234:99::250/64
-			end
-write
-
-!QUINTA ETAPA: Configuração do Switch Layer 2 2960-6
-enable
-	configure terminal
-		sdm prefer dual-ipv4-and-ipv6 default
-		end
-write
-reload
-
-enable
-	configure terminal
-		ipv6 unicast-routing
-		interface vlan 99
-			ipv6 address FE80::251 link-local
-			ipv6 address 2001:abcd:1234:99::251/64
 			end
 write
 
