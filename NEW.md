@@ -62,7 +62,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 045 Configuração do DHCPv6 Statless no Router 1941<br>
 046 Configuração do DHCPv6 Stateful no Router 2911<br>
-047 Configuração do Servidor DHCPv6 no DNS Google
+047 Configuração do Servidor Genérico DHCPv6 Statefull
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
 047 Configuração da Rota Estática, Padrão e Flutuante do IPv6<br>

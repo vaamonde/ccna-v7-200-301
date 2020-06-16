@@ -12,27 +12,134 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !DHCPv6 Stateful (com estado): O DHCPv6 Stateful e muito parecido com o funcionamento do Servidor DHCPv4. 
-!O servidor DHCPv6 atribui endereços IPv6 a todos os hosts com o Client DHCPv6 configurado, mantendo o 
-!controle de qual endereço IPv6 foi atribuído a qual host. O servidor também pode oferecer outros parâmetros
-!de rede, como servidores DNS, um nome de domínio ou qualquer outra opção fornecida por um servidor DHCPv6.
+!O servidor DHCPv6 Stateful atribui endereços IPv6 a todos os hosts com o DHCPv6 Client configurado, mantendo
+!o controle de qual endereço IPv6 foi atribuído ao host. O servidor também pode oferecer outros parâmetros
+!de rede, como servidores DNS, um nome de domínio ou qualquer outra opção fornecida por um Servidor DHCPv6.
+
+!OBSERVAÇÃO IMPORTANTE: A CONFIGURAÇÃO DO DHCPv6 STATEFUL EM ROTEADORES NÃO É RECOMENDADA PELA CISCO, NEM TODOS 
+!OS ROUTER E SWITCH LAYER 3 TEM ESSA FUNÇÃO, ESSE SERVIÇO É INDICADO PARA SER CONFIGURADO EM SERVIDORES GNU/LINUX
+!OU MICROSOFT WINDOWS SERVER.
+
+!OBSERVAÇÃO IMPORTANTE: NO CISCO PACKET TRACER VERSÃO 7.3 AS CONFIGURAÇÕES DO DHCPv6 STATEFUL SÃO LIMITADAS
 
 !PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
 !Faixa Link Local: FE80::/10
 !Faixa Global Unicast: 2001:abcd:1234:100::/64
-!Endereço IPv6 do Gateway: FE80::254
-!Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
 !Endereço IPv6 Unicast Global: 2001:abcd:1234:100::1/64
 !Endereço IPv6 Link Local: FE80::1
+!Endereço IPv6 do Gateway: FE80::100
+!Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
 
 !SEGUNDA ETAPA: Configuração do Router 2911
 enable
 	configure terminal
+		ipv6 unicast-routing
 
+		!Configurando o DHCPv6 Pool Stateful (Escopo) da VLAN 10
+		ipv6 dhcp pool stateful_vlan10
+
+			!Configurando o Nome de Domínio no Pool do DHCPv6
+			domain-name vaamonde.pti
+
+			!Configurando o Endereço IPv6 do Servidor de DNS no Pool do DHCPv6
+			dns-server 2001:abcd:1234:3::1
+
+			!Configurando o Prefixo Padrão do Endereço IPv6 no Pool do DHCPv6
+			!DICA: essa opção configurar o endereço de prefixo padrão que será utilizado na VLAN 10
+			!OBSERVAÇÃO: nas configurações da delegação do endereço de prefixo é determinado o tempo
+			!de vida (lifetime) do Prefixo e da Preferência dos endereços atribuídos os hosts em segundos
+			!IMPORTANTE: caso no queira utilizar o comando: address prefix, você pode fazer a criação de
+			!um Pool Local e associar ao Pool do DHCPv6 Stateful no Modo de Configuração Global com o comando:
+			!ipv6 local pool stateful_vlan10 2001:abcd:1234:10::/64 64
+			address prefix 2001:abcd:1234:10::/64 lifetime 1800 600
+			exit
+
+		!Configurando o Endereço IPv6 da Sub-Interface da VLAN 10
+		interface gigabitEthernet0/0.10
+			ipv6 enable
+			ipv6 address fe80::10 link-local
+			ipv6 address 2001:abcd:1234:10::254/64
+			ipv6 dhcp server stateful_vlan10
+
+			!OBSERVAÇÃO IMPORTANTE: nas configurações do DHCPv6 Stateful utilizamos a opção: managed-config-flag
+			!que habilita a Flag M, com essa opção configurada, no Cisco Packet Tracer 7.3 utilizando a opção de
+			!DHCPv6 Client ou SLAAC nos hosts o Endereço de Prefixo Global Unicast IPv6 não é configurado/obtido 
+			!em equipamento reais esse recurso funciona perfeitamente
+			ipv6 nd other-config-flag
+			exit
+
+		ipv6 dhcp pool stateful_vlan20
+			domain-name vaamonde.pti
+			dns-server 2001:abcd:1234:3::1
+			address prefix 2001:abcd:1234:20::/64 lifetime 1800 600
+			exit
+		interface gigabitEthernet0/0.20
+			ipv6 enable
+			ipv6 address fe80::20 link-local
+			ipv6 address 2001:abcd:1234:20::254/64
+			ipv6 dhcp server stateful_vlan20
+			ipv6 nd other-config-flag
+			exit
+
+		ipv6 dhcp pool stateful_vlan30
+			domain-name vaamonde.pti
+			dns-server 2001:abcd:1234:3::1
+			address prefix 2001:abcd:1234:30::/64 lifetime 1800 600
+			exit
+		interface gigabitEthernet0/0.30
+			ipv6 enable
+			ipv6 address fe80::30 link-local
+			ipv6 address 2001:abcd:1234:30::254/64
+			ipv6 dhcp server stateful_vlan30
+			ipv6 nd other-config-flag
+			exit		
+
+		ipv6 dhcp pool stateful_vlan40
+			domain-name vaamonde.pti
+			dns-server 2001:abcd:1234:3::1
+			address prefix 2001:abcd:1234:40::/64 lifetime 1800 600
+			exit
+		interface gigabitEthernet0/0.40
+			ipv6 enable
+			ipv6 address fe80::40 link-local
+			ipv6 address 2001:abcd:1234:40::254/64
+			ipv6 dhcp server stateful_vlan40
+			ipv6 nd other-config-flag
+			exit
+
+		ipv6 dhcp pool stateful_vlan50
+			domain-name vaamonde.pti
+			dns-server 2001:abcd:1234:3::1
+			address prefix 2001:abcd:1234:50::/64 lifetime 1800 600
+			exit
+		interface gigabitEthernet0/0.50
+			ipv6 enable
+			ipv6 address fe80::50 link-local
+			ipv6 address 2001:abcd:1234:50::254/64
+			ipv6 dhcp server stateful_vlan50
+			ipv6 nd other-config-flag
+			exit
+
+		interface gigabitEthernet0/0.99
+			ipv6 enable
+			ipv6 address fe80::99 link-local
+			ipv6 address 2001:abcd:1234:99::254/64
+			exit
+			
+		interface gigabitEthernet0/0.100
+			ipv6 enable
+			ipv6 address fe80::100 link-local
+			ipv6 address 2001:abcd:1234:100::254/64
+			end
+write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 3560-2
 enable
 	configure terminal
-		sdm prefer dual-ipv4-and-ipv6 routing
+
+		!OBSERVAÇÃO: no Switch Layer 3, diferente do Switch Layer 2, temos as opções de configuração do SDM
+		!default (padrão), routing (roteamento) e vlan (virtual LAN)
+		sdm prefer dual-ipv4-and-ipv6 default
 		end
 write
 reload
@@ -41,15 +148,15 @@ enable
 	configure terminal
 		ipv6 unicast-routing
 		interface vlan 99
-			ipv6 address FE80::254 link-local
-			ipv6 address 2001:abcd:1234:99::254/64
+			ipv6 address FE80::252 link-local
+			ipv6 address 2001:abcd:1234:99::252/64
 			end
 write
 
-!TERCEIRA ETAPA: Configuração do Switch Layer 2 2960-5
+!QUARTA ETAPA: Configuração do Switch Layer 2 2960-5
 enable
 	configure terminal
-		sdm prefer dual-ipv4-and-ipv6 routing
+		sdm prefer dual-ipv4-and-ipv6 default
 		end
 write
 reload
@@ -58,15 +165,15 @@ enable
 	configure terminal
 		ipv6 unicast-routing
 		interface vlan 99
-			ipv6 address FE80::254 link-local
-			ipv6 address 2001:abcd:1234:99::254/64
+			ipv6 address FE80::250 link-local
+			ipv6 address 2001:abcd:1234:99::250/64
 			end
 write
 
-!TERCEIRA ETAPA: Configuração do Switch Layer  2 2960-6
+!QUINTA ETAPA: Configuração do Switch Layer 2 2960-6
 enable
 	configure terminal
-		sdm prefer dual-ipv4-and-ipv6 routing
+		sdm prefer dual-ipv4-and-ipv6 default
 		end
 write
 reload
@@ -75,13 +182,23 @@ enable
 	configure terminal
 		ipv6 unicast-routing
 		interface vlan 99
-			ipv6 address FE80::254 link-local
-			ipv6 address 2001:abcd:1234:99::254/64
+			ipv6 address FE80::251 link-local
+			ipv6 address 2001:abcd:1234:99::251/64
 			end
 write
 
 !Visualizando as configurações da memória RAM
 show running-config | section interface
+show running-config | section ipv6 dhcp
 
 !Visualizando as informações dos endereços IPv6
 show ipv6 interface brief
+show ipv6 interface gigabitethernet 0/0.10
+show ipv6 dhcp pool
+show ipv6 dhcp interface
+show ipv6 dhcp binding
+show ipv6 route
+show sdm prefer
+show ipv6 interface vlan 99
+ping FE80::254
+ping 2001:ABCD:1234:100::254

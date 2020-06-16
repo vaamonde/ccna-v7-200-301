@@ -545,3 +545,13 @@ As configurações do Endereçamento IPv6 Estático será feita utilizando o Scr
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-044.pkt
 
 Link da vídeo aula: 
+
+## **045 Configuração do DHCPv6 Stateless no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do DHCPv6 Stateless, essas configurações será feita no Router 1941 do DNS do Google, o servidor DHCPv6 Stateless não atribui endereços IPv6 aos hosts e nem conserva o estado dos dispositivos a que ele atribui os prefixos de endereços IPv6. Um host se auto-configura com um endereço IPv6 enquanto o servidor DHCPv6 Stateless oferece outras informações de rede, como nome de domínio, servidor DNS, servidor NTP, etc.
+
+As configurações do DHCPv6 Stateless será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-045-ConfiguracaoDoDHCPv6_Stateless.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-045.pkt
+
+Link da vídeo aula: 
