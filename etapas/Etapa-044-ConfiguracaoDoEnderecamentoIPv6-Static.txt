@@ -51,7 +51,7 @@
 !IMPORTANTE: O protocolo IPv6 não é Case Sensitive (não faz diferença de Maiúsculas ou Minúsculas) na sua configuração
 !IMPORTANTE: O protocolo IPv6 não trabalha com Máscara de Rede, sua configuração e feita utilizando o Prefixo de Rede
 !IMPORTANTE: O protocolo IPv6 trabalha com o conceito de descoberta e auto-configuração dos Prefixos/Sufixos de Rede
-!IMPORTANTE: O protocolo IPv6 pode ser configurado Manualmente, utilizando DHCPv6 Server ou Auto-Configuração SLACC
+!IMPORTANTE: O protocolo IPv6 pode ser configurado Manualmente, utilizando DHCPv6 Server ou Auto-Configuração SLAAC
 !IMPORTANTE: O protocolo IPv6 nas opções de Auto-Configuração ele utiliza o recurso do EUI64 para a criação do Sufixo 
 
 !PRIMEIRA ETAPA: Configuração dos Endereços de Link Local e Global Unicast nos Desktops e Servidor

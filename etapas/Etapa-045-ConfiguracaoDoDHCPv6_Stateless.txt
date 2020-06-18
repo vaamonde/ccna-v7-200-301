@@ -105,6 +105,10 @@ enable
 		end
 write
 
+!ERRATA: NO VÍDEO, QUANDO EU FAÇO O TESTE DE CONECTIVIDADE DO SERVIDOR COM O ROUTER, UTILIZANDO O COMANDO PING, NO
+!TESTE DE LINK LOCAL ESTÁ OK, NO GLOBAL UNICAST UTILIZO O ENDEREÇO: 2001:ABCD:1234:8::8 O CORRETO SERIA O ENNDEREÇO
+!DO GATEWAY: 2001:ABCD:1234:8::254. (OBSERVAÇÃO: OS DOIS TESTES FUNCIONA PERFEITAMENTE)
+
 !TERCEIRA ETAPA: Configuração do Router 2911-1 da Terceira Topologia
 enable
 	configure terminal
@@ -117,6 +121,7 @@ enable
 		!do Router 1941 é as configurações de Domínio é DNS, o Sufixo de Rede será configurado utilizando o 
 		!recurso do EUI-64 (MAC Address + FF:FE), essa configuração também será feita no Link Local da Interface
 		interface gigabitEthernet 0/1
+			ipv6 enable
 			ipv6 address autoconfig
 			exit
 
@@ -136,3 +141,6 @@ show ipv6 dhcp pool
 show ipv6 dhcp interface
 show ipv6 dhcp binding
 show ipv6 route
+ping fe80::254
+ping 2001:abcd:1234:8::254
+ping 2001:abcd:1234:8::8
