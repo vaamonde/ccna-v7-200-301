@@ -1,0 +1,49 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 31/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!O Servidor DHCPv6 Genérico segue as mesmas configurações do Router Stateful (com estado) ou Stateless (sem estado):
+
+
+!O DHCPv6 Stateful trabalha com o Protocolo UDP (User Datagram Protocol) na Porta Padrão: 547
+
+!PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
+!Faixa Link Local: FE80::/10
+!Faixa Global Unicast: 2001:abcd:1234:3::/64
+!Endereço IPv6 Unicast Global: 2001:abcd:1234:3::1/64
+!Endereço IPv6 Link Local: FE80::1
+!Endereço IPv6 do Gateway: FE80::254
+!Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
+ipv6config /all
+
+!SEGUNDA ETAPA: Configuração do Servidor Generico de DHCPv6 Stateful
+!OBSERVAÇÃO: por padrão o serviço do Servidor DHCPv6 no Cisco Packet Tracer está desativado
+Interface:		FasEthernet0
+Service:		On
+DHCPv6 Pool:	dhcpv6_generic
+Pool List:		dhcpv6_generic
+Create Pool:	Pool Name:			dhcpv6_generic
+				DNS Name:			2001:abcd:1234:3::1
+				Domain Name:		vaamonde.pti
+				IPv6 Prefix:		2001:abcd:1234:3::/64
+				DHCPv6 DUI:			000100011886ECE90001637BD5E2
+				Valid Lifetime:		2592000
+				Prefered Lifetime:	604800
+				Local Pool Name:	dhcpv6_generic
+				Valid Lifetime:		2592000
+				Prefered Lifetime:	604800
+Create Local:	IPv6 Local Pool:	dhcpv6_generic
+				IPv6 Pool Prefix:	2001:abcd:1234:3::/64
+				Prefix Length:		64
+
+!Verificação dos Endereços IPv6 nos Desktop
+ipv6config /all
