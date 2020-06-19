@@ -11,8 +11,9 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O Servidor DHCPv6 Genérico segue as mesmas configurações do Router Stateful (com estado) ou Stateless (sem estado):
-
+!O Servidor DHCPv6 Genérico segue as mesmas configurações do Router Stateful (com estado) ou Stateless (sem estado), sua 
+!configuração muda em relação do Servidor DHCPv4, a criação dos Escopo Global e Local segue os mesmos padrão do Router ou
+!Switch Layer 3.
 
 !O DHCPv6 Stateful trabalha com o Protocolo UDP (User Datagram Protocol) na Porta Padrão: 547
 

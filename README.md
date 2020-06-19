@@ -554,7 +554,7 @@ As configurações do DHCPv6 Stateless no Router 1941 será feita utilizando o S
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-045.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=cOjLiZzGSqs
 
 ## **046 Configuração do DHCPv6 Stateful no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
@@ -565,3 +565,13 @@ As configurações do DHCPv6 Stateful no Router 2911 será feita utilizando o Sc
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-046.pkt
 
 Link da vídeo aula: 
+
+## **047 Configuração do Servidor DHCPv6 - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do Servidor DHCPv6, essa configuração será no Servidor da Segunda Topologia, o Servidor DHCPv6 Genérico segue as mesmas configurações do Router Stateful (com estado) ou Stateless (sem estado), sua  configuração muda em relação do Servidor DHCPv4, a criação dos Escopo Global e Local segue os mesmos padrão do Router ou Switch Layer 3.
+
+As configurações do Servidor DHCPv6 será feita utilizando o Script: 
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-047.pkt
+
+Link da vídeo aula:
