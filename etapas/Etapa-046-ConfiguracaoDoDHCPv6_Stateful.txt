@@ -29,11 +29,10 @@
 !FUNCIONA CORRETAMENTE NA VERSÃO 15.x DO IOS, RECOMENDO FAZER O UPGRADE DO IOS ANTES DA CONFIGURAÇÃO, MESMO EXECUTANDO
 !A ATUALIZAÇÃO, FAZENDO A CONFIGURAÇÃO DO SDM PREFER, O PING DO DESKTOP PARA OS SWITCHES LAYER 2 2960 NÃO É CONCLUÍDO
 !COM SUCESSO (Request timed out.), O PING DO SWITCH LAYER 2 PARA O DESKTOP TEM A MESMA FALHA (% Unrecognized host or 
-!address, or protocol not running.) - ATÉ O MOMENTO DA GRAVAÇÃO DESSE VÍDEO: 12/06/2020 A FALHA PERSISTE, ESTANDO 
-!RELACIONADA APARENTEMENTE AO SIMULADOR (executando testes é analisando comentários no Fórum da Cisco), NOS EQUIPAMENTOS
-!REAIS ESSA FALHA NÃO ACONTECE.
+!address, or protocol not running.) A FALHA ESTÁ RELACIONADA APARENTEMENTE AO SIMULADOR (executando testes é analisando
+!comentários no Fórum da Cisco), NOS EQUIPAMENTOS REAIS ESSA FALHA NÃO ACONTECE.
 
-!ADENDO IMPORTANTE: TESTE FEITO NO DIA 16/06/2020, QUANDO É INICIADO A SIMULAÇÃO DO AMBIENTE, OS SWITCHES LAYER 2 2960
+!ADENDO IMPORTANTE: TESTE FEITO NO DIA 19/06/2020, QUANDO É INICIADO A SIMULAÇÃO DO AMBIENTE, OS SWITCHES LAYER 2 2960
 !PERDE AS CONFIGURAÇÕES DO SDM E DAS CONFIGURAÇÕES DOS ENDEREÇOS IPv6, SENDO NECESSÁRIO FAZER O RELOAD DO EQUIPAMENTO
 !PARA O SDM VOLTAR A FUNCIONAR, MAIS AS CONFIGURAÇÕES DOS ENDEREÇOS IPv6 SÃO PERDIDAS, SENDO NECESSÁRIO REFAZER. DICA:
 !RECOMENDO NÃO PERDER TEMPO NESSAS CONFIGURAÇÕES NO CISCO PACKET TRACER 7.3, NA NOVA TOPOLOGIA QUE SERÁ CRIADA VOU UTILIZAR
@@ -49,11 +48,12 @@
 
 !SEGUNDA ETAPA: Atualização do Rota de Retorno do Router 1941 do DNS do Google
 !OBSERVAÇÃO: configurar o Rota Padrão de Retorno totalmente Declarada no Router após a configuração do SLAAC no Router 2911
-!OBSERVAÇÃO: igual as configurações do IPv4, na vida real não é configurado a Rota de Retorno, nesse cenário utilizamos
+!OBSERVAÇÃO: igual as configurações do IPv4, na vida real não é configurado a Rota de Retorno, nesse cenário utilizamos os
 !recursos de Tradução de Endereços IPv6 (NAT).
 enable
 	configure terminal
-		no ipv6 route ::/0 GigabitEthernet0/1 
+		no ipv6 route ::/0 GigabitEthernet0/1
+		!OBSERVAÇÃO: verificar o endereço IPv6 de Link Local configurado no Router 2911 utilizando o SLAAC e EUI-64
 		ipv6 route ::/0 GigabitEthernet0/1 FE80::201:43FF:FE67:A502
 		end
 write
@@ -61,7 +61,6 @@ write
 !TERCEIRA ETAPA: Configuração do Router 2911
 enable
 	configure terminal
-		ipv6 unicast-routing
 
 		!Configurando o Pool (Escopo) do DHCPv6 Stateful da VLAN 10
 		ipv6 dhcp pool stateful_vlan10
@@ -77,7 +76,7 @@ enable
 			!ipv6 local pool stateful_vlan10 2001:abcd:1234:10::/64 64 | prefix-delegation pool stateful_vlan10 
 			!OBSERVAÇÃO IMPORTANTE: com essa configuração feita a Interface não vai manter a configuração do IPv6 Global
 			!Unicast, não possibilitando o Roteamente entre as Redes IPv6, por esse motivo não estarei utilizando esses 
-			!recursos nesse cenário
+			!recursos nesse cenário, script de exemplo no final desse arquivo.
 			address prefix 2001:abcd:1234:10::/64 lifetime 1800 600
 			exit
 
@@ -93,7 +92,7 @@ enable
 			!todas as informações de leasing dos endereços IPv6 ficaram armazenadas no roteador
 			!OBSERVAÇÃO IMPORTANTE: nesse cenário, como não está sendo utilizado os recursos do Pool Local e da Delegação, as opções
 			!da Flag M não vai funcionar, mais você pode utilizar a opção da Flag O para Auto-Configurar os endereços IPv6 dos hosts 
-			!das VLANs
+			!das VLANs, veja o script de exemplo no final desse arquivo.
 			ipv6 nd other-config-flag
 			exit
 
@@ -199,21 +198,22 @@ ping 2001:ABCD:1234:8::8
 tracert 2001:ABCD:1234:8::8
 
 !Bloco de configuração do DHCPv6 Stateful com Pool Local e Delegação
-configure terminal
-	ipv6 unicast-routing
-	ipv6 dhcp pool stateful_vlan10
-		domain-name vaamonde.pti
-		dns-server 2001:abcd:1234:3::1
-		address prefix 2001:abcd:1234:10::/64 lifetime 1800 600
-		prefix-delegation pool stateful_vlan10 
-		exit
-	interface gigabitEthernet0/0.10
-		ipv6 enable
-		ipv6 address fe80::10 link-local
-		!ipv6 address 2001:abcd:1234:10::254/64
-		ipv6 dhcp server stateful_vlan10
-		ipv6 nd managed-config-flag
-		exit
-	ipv6 local pool stateful_vlan10 2001:abcd:1234:10::/64 64
-	end
+enable
+	configure terminal
+		ipv6 unicast-routing
+		ipv6 dhcp pool stateful_vlan10
+			domain-name vaamonde.pti
+			dns-server 2001:abcd:1234:3::1
+			address prefix 2001:abcd:1234:10::/64 lifetime 1800 600
+			prefix-delegation pool stateful_vlan10 
+			exit
+		interface gigabitEthernet0/0.10
+			ipv6 enable
+			ipv6 address fe80::10 link-local
+			!ipv6 address 2001:abcd:1234:10::254/64
+			ipv6 dhcp server stateful_vlan10
+			ipv6 nd managed-config-flag
+			exit
+		ipv6 local pool stateful_vlan10 2001:abcd:1234:10::/64 64
+		end
 write
