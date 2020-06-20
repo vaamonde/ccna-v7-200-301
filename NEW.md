@@ -55,10 +55,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 041 Conectando com a Internet ADSL no Router 2911<br>
 042 Configurando o Encaminhamento de Solicitações DHCPv4<br>
 043 Redistribuindo a Rota Padrão no RIPv2 do Router 2911<br>
-044 Configuração do Endereçamento IPv6 Estático
+044 Configuração do Endereçamento IPv6 Estático<br>
+045 Configuração do DHCPv6 Statless no Router 1941
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-045 Configuração do DHCPv6 Statless no Router 1941
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 046 Configuração do DHCPv6 Stateful no Router 2911<br>
