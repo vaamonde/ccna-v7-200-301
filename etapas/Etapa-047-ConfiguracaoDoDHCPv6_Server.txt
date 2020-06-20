@@ -11,11 +11,9 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O Servidor DHCPv6 Genérico segue as mesmas configurações do Router Stateful (com estado) ou Stateless (sem estado), sua 
-!configuração muda em relação do Servidor DHCPv4, a criação dos Escopo Global e Local segue os mesmos padrão do Router ou
-!Switch Layer 3.
-
-!O DHCPv6 Stateful trabalha com o Protocolo UDP (User Datagram Protocol) na Porta Padrão: 547
+!O Servidor DHCPv6 Genérico segue as mesmas configurações do DHCPv6 Stateful (com estado) ou Stateless (sem estado), sua 
+!configuração muda em relação do Servidor DHCPv4, a criação dos Pool Global Unicast e Local segue o mesmos padrão do Router
+!ou Switch Layer 3, o DHCPv6 Genérico trabalha com o Protocolo UDP (User Datagram Protocol) na Porta Padrão: 547
 
 !PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
 !Faixa Link Local: FE80::/10
@@ -26,12 +24,16 @@
 !Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
 ipv6config /all
 
-!SEGUNDA ETAPA: Configuração do Servidor Generico de DHCPv6 Stateful
-!OBSERVAÇÃO: por padrão o serviço do Servidor DHCPv6 no Cisco Packet Tracer está desativado
+!SEGUNDA ETAPA: Configuração do Servidor Genérico de DHCPv6 Stateful
+!OBSERVAÇÃO: por padrão o serviço do Servidor DHCPv6 no Cisco Packet Tracer está desativado, recomendo fazer a criação do 
+!Pool Local e depois a criação do Pool do DHCPv6 Stateful
 Interface:		FasEthernet0
 Service:		On
 DHCPv6 Pool:	dhcpv6_generic
 Pool List:		dhcpv6_generic
+Create Local:	IPv6 Local Pool:	dhcpv6_generic
+				IPv6 Pool Prefix:	2001:abcd:1234:3::/64
+				Prefix Length:		64
 Create Pool:	Pool Name:			dhcpv6_generic
 				DNS Name:			2001:abcd:1234:3::1
 				Domain Name:		vaamonde.pti
@@ -42,9 +44,6 @@ Create Pool:	Pool Name:			dhcpv6_generic
 				Local Pool Name:	dhcpv6_generic
 				Valid Lifetime:		2592000
 				Prefered Lifetime:	604800
-Create Local:	IPv6 Local Pool:	dhcpv6_generic
-				IPv6 Pool Prefix:	2001:abcd:1234:3::/64
-				Prefix Length:		64
 
 !Verificação dos Endereços IPv6 nos Desktop
 ipv6config /all
