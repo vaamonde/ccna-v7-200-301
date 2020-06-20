@@ -566,11 +566,11 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **047 Configuração do Servidor DHCPv6 - Laboratório Prático Cisco CCNAv7 200-301**
+## **047 Configuração do Servidor DHCPv6 Stateful - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor DHCPv6, essa configuração será no Servidor da Segunda Topologia, o Servidor DHCPv6 Genérico segue as mesmas configurações do Router Stateful (com estado) ou Stateless (sem estado), sua  configuração muda em relação do Servidor DHCPv4, a criação dos Escopo Global e Local segue os mesmos padrão do Router ou Switch Layer 3.
 
-As configurações do Servidor DHCPv6 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-047-ConfiguracaoDoDHCPv6_Server.txt
+As configurações do Servidor DHCPv6 Stateful será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-047-ConfiguracaoDoDHCPv6_Server.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-047.pkt
 

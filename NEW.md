@@ -62,7 +62,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 046 Configuração do DHCPv6 Stateful no Router 2911<br>
-047 Configuração do Servidor Genérico DHCPv6 Statefull<br>
+047 Configuração do Servidor Genérico DHCPv6 Stateful<br>
 048 Configuração do DHCPv6 Stateless no Switch Layer 3 3560
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
@@ -84,7 +84,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 059 Configuração da Rede SOHO Tri-Band Wireless<br>
 060 Configuração do Router Meraki MX65W<br>
 061 Configuração do Router Home Gateway DLC-100<br>
-062 Configuração do Router 4321 e do WLC-3504 e do LWAP-3702i<br>
+062 Configuração do Router 4321 Switch 3650 e do WLC-3504 e LWAP-3702i<br>
 063 Configuração do NAT Estático no Router 4321<br>
 064 Configuração do NAT Dinâmico no Router 4321<br>
 065 Configuração do NAT Overload no Router 4321<br>
