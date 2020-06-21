@@ -11,6 +11,10 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
+!A configuração do DHCPv6 Stateless no Switch Layer 3 3560 segue o mesmo padrão das configurações feita no Router 1941 ou 2911,
+!nesse cenário, o Switch Layer 3 vai informar o Prefixo Padrão da Rede IPv6 para o Hosts, as configurações dos Endereços IPv6
+!será feita utilizando o conceito do SLAAC e EUI-64
+
 !OBSERVAÇÃO: AS CONFIGURAÇÕES DO PROTOCOLO IPv6 NO SWITCH LAYER 3 3560 NO CISCO PACKET TRACER SÃO LIMITADAS, NESSE CENÁRIO
 !SERÁ CONFIGURADO APENAS OS ENDEREÇOS IPv6 DE GLOBAL UNICAST E LINK LOCAL, SERÁ HABILITADO O RECURSO DO DHCPv6 STATELESS
 !NA INTERFACE DE SVI DA VLAN 1 PARA A CONFIGURAÇÃO DOS HOSTS DA REDE OBTEREM CORRETAMENTE O ENDEREÇO DE GATEWAY DA SVI

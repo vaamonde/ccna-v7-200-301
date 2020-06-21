@@ -566,12 +566,22 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Link da vídeo aula: 
 
-## **047 Configuração do Servidor DHCPv6 Stateful - Laboratório Prático Cisco CCNAv7 200-301**
+## **047 Configuração do Servidor DHCPv6 Genérico Stateful - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor DHCPv6, essa configuração será no Servidor da Segunda Topologia, o Servidor DHCPv6 Genérico segue as mesmas configurações do Router Stateful (com estado) ou Stateless (sem estado), sua  configuração muda em relação do Servidor DHCPv4, a criação dos Escopo Global e Local segue os mesmos padrão do Router ou Switch Layer 3.
+Nessa aula, vou fazer a configuração do Servidor DHCPv6 Genérico, essa configuração será feita no Servidor da Segunda Topologia, o Servidor DHCPv6 Genérico segue as mesmas configurações do DHCPv6 Stateful (com estado) ou Stateless (sem estado), sua configuração muda em relação ao Servidor DHCPv4, a criação dos Pools de Global Unicast e Local segue o mesmos padrão do Router ou Switch Layer 3, o Servidor DHCPv6 Genérico trabalha com o Protocolo UDP na Porta Padrão: 547
 
 As configurações do Servidor DHCPv6 Stateful será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-047-ConfiguracaoDoDHCPv6_Server.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-047.pkt
+
+Link da vídeo aula:
+
+## **048 Configuração do DHCPv6 Stateless no Switch Layer 3 3560 - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do DHCPv6 Stateless no Switch Layer 3 3560, essa configuração será feita na Segunda Topologia, a configuração do DHCPv6 Stateless no Switch Layer 3 3560 segue o mesmo padrão das configurações feita no Router 1941 ou 2911, nesse cenário, o Switch Layer 3 vai informar o Prefixo Padrão da Rede IPv6 para o Hosts, as configurações dos Endereços IPv6 será feita utilizando o conceito do SLAAC e EUI-64
+
+As configurações do DHCPv6 Stateless no Switch Layer 3 3560 será feita utilizando o Script: 
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-048.pkt
 
 Link da vídeo aula:
