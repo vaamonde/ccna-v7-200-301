@@ -20,7 +20,7 @@
 
 !OBSERVAÇÃO IMPORTANTE: A CONFIGURAÇÃO DO DHCPv6 STATEFUL EM ROTEADORES NÃO É RECOMENDADA PELA CISCO, NEM TODOS OS ROUTER E 
 !SWITCH LAYER 3 TEM ESSA FUNÇÃO, ESSE SERVIÇO É INDICADO PARA SER CONFIGURADO EM SERVIDORES LINUX OU MICROSOFT WINDOWS SERVER.
-!PRINCIPALMENTE PELA SUA INTEGRAÇÃO COM O SERVIÇO DO DNS, QUE É FUNDAMENTAL PARA AS REDES IPv6.
+!PRINCIPALMENTE PELA SUA INTEGRAÇÃO COM O SERVIÇO DO DNS SERVER, QUE É FUNDAMENTAL PARA AS REDES IPv6.
 
 !OBSERVAÇÃO IMPORTANTE: NO CISCO PACKET TRACER VERSÃO 7.3 AS CONFIGURAÇÕES DO DHCPv6 STATEFUL SÃO LIMITADAS, É RECOMENDADO 
 !UTILIZAR AS VERSÕES DO IOS 15.x NO ROUTER E NOS SWITCHES LAYER 2 OU 3.
@@ -29,13 +29,13 @@
 !CORRETAMENTE NA VERSÃO 15.x DO IOS, RECOMENDO FAZER O UPGRADE DO IOS ANTES DA CONFIGURAÇÃO, MESMO EXECUTANDO A ATUALIZAÇÃO, 
 !FAZENDO A CONFIGURAÇÃO DO SDM PREFER, O PING DO DESKTOP PARA OS SWITCHES LAYER 2 2960 NÃO É CONCLUÍDO COM SUCESSO (Request 
 !timed out.), O PING DO SWITCH LAYER 2 PARA O DESKTOP TEM A MESMA FALHA (% Unrecognized host or address, or protocol not 
-!running.) A FALHA ESTÁ RELACIONADA APARENTEMENTE AO SIMULADOR (executando testes é analisando comentários no Fórum da Cisco),
-!NOS EQUIPAMENTOS REAIS ESSA FALHA NÃO ACONTECE.
+!running.) ESSA FALHA ESTÁ RELACIONADA APARENTEMENTE AO SIMULADOR (executando testes é analisando comentários no Fórum da 
+!Cisco), NOS EQUIPAMENTOS REAIS ESSA FALHA NÃO ACONTECE. RECOMENDO NÃO PERDER TEMPO NAS CONFIGURAÇÕES DO SWITCH LAYER 2 2960.
 
 !PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
 !Faixa Link Local: FE80::/10
 !Faixa Global Unicast: 2001:abcd:1234:100::/64
-!Endereço IPv6 Unicast Global: 2001:abcd:1234:100::1/64
+!Endereço IPv6 Global Unicast: 2001:abcd:1234:100::1/64
 !Endereço IPv6 Link Local: FE80::1
 !Endereço IPv6 do Gateway: FE80::100
 !Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
@@ -77,8 +77,14 @@ enable
 			prefix-delegation pool stateful_vlan10
 			exit
 
+		!Configurando o Pool Local do DHCPv6 Stateful
+		!DICA: configurar o Pool Local que será associado ao Pool do DHCPv6 Stateful de ofertas dos endereços IPv6 para a VLAN 10
+		!OBSERVAÇÃO: nas opções do Pool Local é configurado o Prefixo Padrão é também o tamanho do Prefixo que será disponibilizado
+		!para os hosts da rede da VLAN 10
+		ipv6 local pool stateful_vlan10 2001:abcd:1234:10::/64 64
+
 		!Configurando o Endereço IPv6 da Sub-Interface da VLAN 10 é habilitando o DHCPv6 Stateful
-		interface gigabitEthernet0/0.10
+		interface gigabitEthernet 0/0.10
 			ipv6 enable
 			ipv6 address fe80::10 link-local
 			!OBSERVAÇÃO: para o DHCPv6 Stateful funcionar corretamente no Router 2911 é indicado que o Endereço de Global 
@@ -96,17 +102,11 @@ enable
 			ipv6 nd managed-config-flag
 			exit
 
-		!Configurando o Pool Local do DHCPv6 Stateful
-		!DICA: configurar o Pool Local que será associado ao Pool do DHCPv6 Stateful de ofertas dos endereços IPv6 para a VLAN 10
-		!OBSERVAÇÃO: nas opções do Pool Local é configurado o Prefixo Padrão é também o tamanho do Prefixo que será disponibilizado
-		!para os hosts da rede da VLAN 10
-		ipv6 local pool stateful_vlan10 2001:abcd:1234:10::/64 64
-
-		!Configurando a Rota Padrão para a Rede da VLAN-10
+		!Configurando a Rota Padrão para a Rede da VLAN 10
 		!DICA: configurar o aprendizado da rede da VLAN 10 indicando a Sub-Interface da VLAN
 		!OBSERVAÇÃO: essa configuração é necessária pois o Endereço de Global Unicast da Interface da VLAN 10 é diferente do Pool
-		!configurado, sem essa configuração dos Hosts da VLAN 10 não conseguiram acessar outras VLAN ou outras Redes
-		ipv6 route 2001:abcd:1234:10::/64 GigabitEthernet0/0.10
+		!configurado, sem essa configuração os Hosts da VLAN 10 não conseguiram acessar outras VLAN ou outras Redes
+		ipv6 route 2001:abcd:1234:10::/64 gigabitEthernet 0/0.10
 
 		ipv6 dhcp pool stateful_vlan20
 			domain-name vaamonde.pti
@@ -114,7 +114,7 @@ enable
 			address prefix 2001:abcd:1234:20::/64 lifetime 1800 600
 			prefix-delegation pool stateful_vlan20
 			exit
-		interface gigabitEthernet0/0.20
+		interface gigabitEthernet 0/0.20
 			ipv6 enable
 			ipv6 address fe80::20 link-local
 			ipv6 address 2001:abcd:1234:2020::20/64
@@ -122,7 +122,7 @@ enable
 			ipv6 nd managed-config-flag
 			exit
 		ipv6 local pool stateful_vlan20 2001:abcd:1234:20::/64 64
-		ipv6 route 2001:abcd:1234:20::/64 gigabitEthernet0/0.20
+		ipv6 route 2001:abcd:1234:20::/64 gigabitEthernet 0/0.20
 
 		ipv6 dhcp pool stateful_vlan30
 			domain-name vaamonde.pti
@@ -130,7 +130,7 @@ enable
 			address prefix 2001:abcd:1234:30::/64 lifetime 1800 600
 			prefix-delegation pool stateful_vlan30
 			exit
-		interface gigabitEthernet0/0.30
+		interface gigabitEthernet 0/0.30
 			ipv6 enable
 			ipv6 address fe80::30 link-local
 			ipv6 address 2001:abcd:1234:3030::30/64
@@ -138,7 +138,7 @@ enable
 			ipv6 nd managed-config-flag
 			exit		
 		ipv6 local pool stateful_vlan30 2001:abcd:1234:30::/64 64
-		ipv6 route 2001:abcd:1234:30::/64 gigabitEthernet0/0.30
+		ipv6 route 2001:abcd:1234:30::/64 gigabitEthernet 0/0.30
 
 		ipv6 dhcp pool stateful_vlan40
 			domain-name vaamonde.pti
@@ -146,7 +146,7 @@ enable
 			address prefix 2001:abcd:1234:40::/64 lifetime 1800 600
 			prefix-delegation pool stateful_vlan40
 			exit
-		interface gigabitEthernet0/0.40
+		interface gigabitEthernet 0/0.40
 			ipv6 enable
 			ipv6 address fe80::40 link-local
 			ipv6 address 2001:abcd:1234:4040::40/64
@@ -154,7 +154,7 @@ enable
 			ipv6 nd managed-config-flag
 			exit
 		ipv6 local pool stateful_vlan40 2001:abcd:1234:40::/64 64
-		ipv6 route 2001:abcd:1234:40::/64 gigabitEthernet0/0.40
+		ipv6 route 2001:abcd:1234:40::/64 gigabitEthernet 0/0.40
 
 		ipv6 dhcp pool stateful_vlan50
 			domain-name vaamonde.pti
@@ -162,7 +162,7 @@ enable
 			address prefix 2001:abcd:1234:50::/64 lifetime 1800 600
 			prefix-delegation pool stateful_vlan50
 			exit
-		interface gigabitEthernet0/0.50
+		interface gigabitEthernet 0/0.50
 			ipv6 enable
 			ipv6 address fe80::50 link-local
 			ipv6 address 2001:abcd:1234:5050::50/64
@@ -170,15 +170,15 @@ enable
 			ipv6 nd managed-config-flag
 			exit
 		ipv6 local pool stateful_vlan50 2001:abcd:1234:50::/64 64
-		ipv6 route 2001:abcd:1234:50::/64 gigabitEthernet0/0.50
+		ipv6 route 2001:abcd:1234:50::/64 gigabitEthernet 0/0.50
 
-		interface gigabitEthernet0/0.99
+		interface gigabitEthernet 0/0.99
 			ipv6 enable
 			ipv6 address fe80::99 link-local
 			ipv6 address 2001:abcd:1234:99::99/64
 			exit
 			
-		interface gigabitEthernet0/0.100
+		interface gigabitEthernet 0/0.100
 			ipv6 enable
 			ipv6 address fe80::100 link-local
 			ipv6 address 2001:abcd:1234:100::100/64

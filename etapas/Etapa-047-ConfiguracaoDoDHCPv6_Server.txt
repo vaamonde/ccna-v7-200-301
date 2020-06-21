@@ -12,19 +12,23 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !O Servidor DHCPv6 Genérico segue as mesmas configurações do DHCPv6 Stateful (com estado) ou Stateless (sem estado), sua 
-!configuração muda em relação do Servidor DHCPv4, a criação dos Pool Global Unicast e Local segue o mesmos padrão do Router
-!ou Switch Layer 3, o DHCPv6 Genérico trabalha com o Protocolo UDP (User Datagram Protocol) na Porta Padrão: 547
+!configuração muda em relação ao Servidor DHCPv4, a criação dos Pools de Global Unicast e Local segue o mesmos padrão do
+!Router ou Switch Layer 3, o Servidor DHCPv6 Genérico trabalha com o Protocolo UDP na Porta Padrão: 547
+
+!Para configurar o Servidor DHCPv6 Genérico é necessário obter as informações do DUID (DHCP Unique Identifier), o DUID são
+!usados no Servidor DHCPv6 para identificar hosts e servidores, também, utilizado para identificar o valor de duplicidade
+!exclusivo do hosts na rede, referenciado nas RFC 3315 e RFC 8415.
 
 !PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
 !Faixa Link Local: FE80::/10
 !Faixa Global Unicast: 2001:abcd:1234:3::/64
-!Endereço IPv6 Unicast Global: 2001:abcd:1234:3::1/64
+!Endereço IPv6 Global Unicast: 2001:abcd:1234:3::1/64
 !Endereço IPv6 Link Local: FE80::1
 !Endereço IPv6 do Gateway: FE80::254
 !Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
 ipv6config /all
 
-!SEGUNDA ETAPA: Configuração do Servidor Genérico de DHCPv6 Stateful
+!SEGUNDA ETAPA: Configuração do Servidor DHCPv6 Genérico Stateful
 !OBSERVAÇÃO: por padrão o serviço do Servidor DHCPv6 no Cisco Packet Tracer está desativado, recomendo fazer a criação do 
 !Pool Local e depois a criação do Pool do DHCPv6 Stateful
 Interface:		FasEthernet0
