@@ -39,7 +39,7 @@
 !Endereço IPv6 Link Local: FE80::1
 !Endereço IPv6 do Gateway: FE80::100
 !Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
-ipv6config
+ipv6config /all
 
 !SEGUNDA ETAPA: Atualização do Rota de Retorno do Router 1941 do DNS do Google
 !OBSERVAÇÃO: configurar o Rota Padrão de Retorno totalmente Declarada no Router após a configuração do SLAAC no Router 2911
@@ -204,20 +204,26 @@ enable
 			end
 write
 
-!Visualizando as configurações da memória RAM
+!Visualizando as configurações da memória RAM do Router e Switch
 show running-config | section interface
 show running-config | section ipv6 dhcp
 
-!Visualizando as informações dos endereços IPv6
+!Visualizando as informações dos endereços IPv6 no Router 2911
 show ipv6 interface brief
 show ipv6 interface gigabitEthernet 0/0.10
 show ipv6 dhcp pool
 show ipv6 dhcp interface
 show ipv6 dhcp binding
 show ipv6 route
+show ipv6 route summary
 
+!Visualizando as informações dos endereços IPv6 no Switch Layer 3 3560
 show sdm prefer
+show ipv6 interface brief
 show ipv6 interface vlan 99
-ping FE80::254
+ping FE80::99 (vlan99)
+ping 2001:abcd:1234:99::99
+
+!Testado a conectividade do Protocolo IPv6 nos Hosts
 ping 2001:ABCD:1234:8::8
 tracert 2001:ABCD:1234:8::8

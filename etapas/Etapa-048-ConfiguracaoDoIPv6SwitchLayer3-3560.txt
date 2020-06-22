@@ -13,19 +13,32 @@
 
 !A configuração do DHCPv6 Stateless no Switch Layer 3 3560 segue o mesmo padrão das configurações feita no Router 1941 ou 2911,
 !nesse cenário, o Switch Layer 3 vai informar o Prefixo Padrão da Rede IPv6 para o Hosts, as configurações dos Endereços IPv6
-!será feita utilizando o conceito do SLAAC e EUI-64
+!seram feitas utilizando o conceito do SLAAC e EUI-64
 
 !OBSERVAÇÃO: AS CONFIGURAÇÕES DO PROTOCOLO IPv6 NO SWITCH LAYER 3 3560 NO CISCO PACKET TRACER SÃO LIMITADAS, NESSE CENÁRIO
 !SERÁ CONFIGURADO APENAS OS ENDEREÇOS IPv6 DE GLOBAL UNICAST E LINK LOCAL, SERÁ HABILITADO O RECURSO DO DHCPv6 STATELESS
-!NA INTERFACE DE SVI DA VLAN 1 PARA A CONFIGURAÇÃO DOS HOSTS DA REDE OBTEREM CORRETAMENTE O ENDEREÇO DE GATEWAY DA SVI
+!NA INTERFACE DE SVI DA VLAN 1 PARA QUE OS HOSTS DA REDE SEJAM CONFIGURADOS CORRETAMENTE COM O O ENDEREÇO DE GATEWAY DA SVI, O
+!ENDEREÇO DE DNS SERVER NÃO SERÁ CONFIGUADO NOS HOSTS POIS O SWITCH LAYER 3 3560 NO CISCO PACKET TRACER NÃO POSSUI A OPÇÃO DA
+!CONFIGURAÇÃO DO ESCOPO DO DHCPv6.
+
+!OBSERVAÇÃO IMPORANTE: para essa configuração funcionar será nescessário desligar o Servidor DHCPv6 Genérico Statefull que foi
+!configurado na última aula.
+
+!ADENDO IMPORTANTE: MESMO CONFIGURANDO AS OPÇÕES DO SDM PREFER, CONFIGURANDO AS INTERFACES DE VLAN 1 E FASTETHERNET0/24, O PING 
+!PARA O ROTEADOR 1941 NÃO E EXECUTADO COM SUCESSO (IPv6 isn't enabled on this interface) APARENTEMENTE A FALHA ESTÁ RELACIONADA
+!A VERSÃO DO CISCO IOS (12.x) É PRINCIPALMENTE NO SIMULADOR CISCO PACKET TRACER, EM EQUIPAMENTOS REAIS, COM A ÚLTIMA VERSÃO DO
+!CISCO IOS >= 15.x ESSA FALHA NÃO ACONTECE.
 
 !PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático no Switch Layer 3 3560
 enable
 	configure terminal
+		!OBSERVAÇÃO: diferente da configuração do Switch Layer 3 da Terceira Topologia, nesse cenário será habilitado o recurso de
+		!routing (roteamento), pois a Interface fastEthernet 0/24 do Switch está configurada como Porta Roteada para o Router 1941
 		sdm prefer dual-ipv4-and-ipv6 routing
 		end
 write
 reload
+show sdm prefer
 
 enable
 	configure terminal
@@ -50,6 +63,7 @@ enable
 	configure terminal
 		ipv6 unicast-routing
 		interface gigabitEthernet 0/0
+			ipv6 enable
 			ipv6 address FE80::254 link-local
 			ipv6 address 2001:abcd:1234:2::254/64
 			exit
@@ -58,10 +72,13 @@ enable
 write
 
 !Visualizando as configurações da memória RAM
-show running-config | section interface
+show running-config | section interface FastEthernet0/24
+show running-config | section interface Vlan1
+show running-config | section interface GigabitEthernet0/0
 
 !Visualizando as informações dos endereços IPv6
 show ipv6 interface brief
+show ipv6 interface gigabitEthernet 0/0
 show ipv6 route
 ping 2001:abcd:1234:2::254
 tracert 2001:abcd:1234:2::254

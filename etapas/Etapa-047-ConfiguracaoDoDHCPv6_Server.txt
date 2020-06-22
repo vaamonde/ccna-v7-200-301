@@ -23,8 +23,8 @@
 !Faixa Link Local: FE80::/10
 !Faixa Global Unicast: 2001:abcd:1234:3::/64
 !Endereço IPv6 Global Unicast: 2001:abcd:1234:3::1/64
-!Endereço IPv6 Link Local: FE80::1
-!Endereço IPv6 do Gateway: FE80::254
+!Endereço IPv6 Link Local: FE80::31
+!Endereço IPv6 do Gateway: FE80::3
 !Endereço IPv6 do DNS Server: 2001:abcd:1234:3::1
 ipv6config /all
 
@@ -51,3 +51,5 @@ Create Pool:	Pool Name:			dhcpv6_generic
 
 !Verificação dos Endereços IPv6 nos Desktop
 ipv6config /all
+ping FE80::1
+ping 2001:abcd:1234:3::1
