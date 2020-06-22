@@ -12,7 +12,7 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !O Servidor DHCPv6 Genérico segue as mesmas configurações do DHCPv6 Stateful (com estado) ou Stateless (sem estado), sua 
-!configuração muda em relação ao Servidor DHCPv4, a criação dos Pools de Global Unicast e Local segue o mesmos padrão do
+!configuração muda em relação ao Servidor DHCPv4, a criação dos Pools de Global Unicast e Local segue o mesmos padrões do
 !Router ou Switch Layer 3, o Servidor DHCPv6 Genérico trabalha com o Protocolo UDP na Porta Padrão: 547
 
 !Para configurar o Servidor DHCPv6 Genérico é necessário obter as informações do DUID (DHCP Unique Identifier), o DUID são
@@ -42,7 +42,7 @@ Create Pool:	Pool Name:			dhcpv6_generic
 				DNS Name:			2001:abcd:1234:3::1
 				Domain Name:		vaamonde.pti
 				IPv6 Prefix:		2001:abcd:1234:3::/64
-				DHCPv6 DUI:			000100011886ECE90001637BD5E2
+				DHCPv6 DUID:		000100011886ECE90001637BD5E2
 				Valid Lifetime:		2592000
 				Prefered Lifetime:	604800
 				Local Pool Name:	dhcpv6_generic
