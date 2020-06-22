@@ -65,7 +65,7 @@ enable
 			dns-server 2001:abcd:1234:3::1
 
 			!Configurando o Prefixo Padrão do Endereço IPv6 no Pool do DHCPv6 Stateful
-			!DICA: essa opção configurar o endereço de prefixo padrão que será utilizado na VLAN 10
+			!DICA: essa opção configura o endereço de prefixo padrão que será utilizado na VLAN 10
 			!OBSERVAÇÃO: nas configurações da delegação do endereço de prefixo é determinado o tempo de vida (lifetime) do
 			!Prefixo e da Preferência dos endereços atribuídos os hosts em segundos
 			address prefix 2001:abcd:1234:10::/64 lifetime 1800 600
@@ -77,7 +77,7 @@ enable
 			prefix-delegation pool stateful_vlan10
 			exit
 
-		!Configurando o Pool Local do DHCPv6 Stateful
+		!Configurando a Delegação de Prefixo Local do Pool do DHCPv6 Stateful
 		!DICA: configurar o Pool Local que será associado ao Pool do DHCPv6 Stateful de ofertas dos endereços IPv6 para a VLAN 10
 		!OBSERVAÇÃO: nas opções do Pool Local é configurado o Prefixo Padrão é também o tamanho do Prefixo que será disponibilizado
 		!para os hosts da rede da VLAN 10
@@ -94,18 +94,18 @@ enable
 
 			!Configurando a opção de Gerenciamento do Pool do DHCPv6 Stateful
 			!DICA: essa opção é diferente da configuração do DHCPv6 Stateless que usamos a Flag O (other-config-flag) é os
-			!Hosts configurados com o SLAAC e EUI-64
-			!OBSERVAÇÃO: nas configurações do DHCPv6 Stateful utilizamos a opção: managed-config-flag que habilita a Flag M,
-			!com essa opção configurada junto com o Pool Local os hosts DHCPv6 Client serão configurados com o Prefixo do 
-			!Global Unicast corretamente, todas as informações de leasing dos endereços IPv6 ficaram armazenadas no roteador
-			!a porção do Sufixo será configurada utilizando o EUI-64 nas Interfaces dos Hosts
+			!Hosts configurados com o SLAAC é a configuração do Sufixo utilizando o EUI-64
+			!OBSERVAÇÃO: nas configurações do DHCPv6 Stateful utilizamos a opção da Flag M (managed-config-flag), com essa opção
+			!configurada junto com o Pool Local os hosts DHCPv6 Client serão configurados com o Prefixo do Global Unicast
+			!corretamente, todas as informações de aluguel (leasing) dos endereços IPv6 ficaram armazenadas no roteador a porção
+			!do Sufixo será configurada utilizando o EUI-64 nas Interfaces dos Hosts e registradas no roteador após a configuração
 			ipv6 nd managed-config-flag
 			exit
 
 		!Configurando a Rota Padrão para a Rede da VLAN 10
-		!DICA: configurar o aprendizado da rede da VLAN 10 indicando a Sub-Interface da VLAN
+		!DICA: configurar o aprendizado da rede da VLAN 10 indicando a Sub-Interface da VLAN 10
 		!OBSERVAÇÃO: essa configuração é necessária pois o Endereço de Global Unicast da Interface da VLAN 10 é diferente do Pool
-		!configurado, sem essa configuração os Hosts da VLAN 10 não conseguiram acessar outras VLAN ou outras Redes
+		!configurado, sem essa configuração os Hosts da VLAN 10 não conseguiram acessar outras VLAN ou outras Redes (Internet)
 		ipv6 route 2001:abcd:1234:10::/64 gigabitEthernet 0/0.10
 
 		ipv6 dhcp pool stateful_vlan20
@@ -189,7 +189,7 @@ write
 enable
 	configure terminal
 
-		!OBSERVAÇÃO: no Switch Layer 3, diferente do Switch Layer 2 2960, temos as opções de configuração do SDM de:
+		!OBSERVAÇÃO: no Switch Layer 3, diferente do Switch Layer 2 2960, temos as opções de configuração da Preferência do SDM de:
 		!default (padrão), routing (roteamento) e vlan (virtual LAN)
 		sdm prefer dual-ipv4-and-ipv6 default
 		end
@@ -211,11 +211,11 @@ show running-config | section ipv6 dhcp
 !Visualizando as informações dos endereços IPv6 no Router 2911
 show ipv6 interface brief
 show ipv6 interface gigabitEthernet 0/0.10
+show ipv6 route
+show ipv6 route summary
 show ipv6 dhcp pool
 show ipv6 dhcp interface
 show ipv6 dhcp binding
-show ipv6 route
-show ipv6 route summary
 
 !Visualizando as informações dos endereços IPv6 no Switch Layer 3 3560
 show sdm prefer
