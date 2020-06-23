@@ -19,6 +19,19 @@
 !usados no Servidor DHCPv6 para identificar hosts e servidores, também, utilizado para identificar o valor de duplicidade
 !exclusivo do hosts na rede, referenciado nas RFC 3315 e RFC 8415.
 
+!ADENDO DE INFORMAÇÕES IMPORTATES DO SERVIDOR DHCPv6 QUE NÃO CONSTA NO VÍDEO:
+!DHCPv6 IAID: IAID significa "Identity Association Identifier". Uma Associação de Identidade (IA) é uma construção através
+!da qual um servidor e um cliente identificam, agrupam e gerenciam um conjunto de endereços IPv6 relacionados. Cada IA 
+!consiste em uma IAID e em informações de configuração associadas.
+
+!DHCPv6 IAPD: IAPD significa "Identity Association for Prefix Delegation". Uma Associação de Identidade para Delegação de 
+!Prefixo (IAPD) é uma coleção de prefixos atribuídos a um dispositivo solicitante. Um dispositivo solicitante pode ter mais 
+!de uma IAPD; por exemplo, um para cada uma de suas interfaces.
+
+!Cada IAPD é identificada por um IAID. O IAID é escolhido pelo dispositivo solicitante e é único entre os IAID da IAPD no 
+!dispositivo solicitante. Os IAIDs são consistentes nas reinicializações usando as informações da interface de rede associada, 
+!que se supõe estar permanentemente conectada ao dispositivo.
+
 !PRIMEIRA ETAPA: Configuração do Endereço IPv6 Estático do Servidor
 !Faixa Link Local: FE80::/10
 !Faixa Global Unicast: 2001:abcd:1234:3::/64

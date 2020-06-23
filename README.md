@@ -564,7 +564,7 @@ As configurações do DHCPv6 Stateful no Router 2911 será feita utilizando o Sc
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-046.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=QADVQM6oo1g
 
 ## **047 Configuração do Servidor DHCPv6 Genérico Stateful - Laboratório Prático Cisco CCNAv7 200-301**
 
