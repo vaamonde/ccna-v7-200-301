@@ -590,7 +590,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração da Rota Estática, Padrão e Flutuante do IPv6, essas configurações serão feitas na Primeira e Segunda Topologia, as configurações da Rota Estática, Padrão e Flutuante do Protocolo IPv6 segue o mesmo padrão do Protocolo IPv4, sendo configurada de forma semelhante, utilizando o comando ipv6 route e declarando as redes Global Unicast manualmente em cada equipamento na rede.
 
-As configurações da Rota Estática, Padrão e Flutuante do IPv6 será feita utilizando o Script: 
+As configurações da Rota Estática, Padrão e Flutuante do IPv6 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-049-ConfiguracaoDaRotaEstaticaPadraoFlutuanteIPv6.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-049.pkt
 
@@ -600,7 +600,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911, essas configurações serão feitas na Segunda e Terceira Topologia, as configurações do RIPng IPv6 nos Routers segue o mesmo padrão da configuração do RIPv2, a principalmente diferença está relacionada ao suporte ao Protocolo IPv6 e sua configuração e feita nas Interfaces que possui as Redes Global Unicast.
 
-As configurações do Protocolo RIPng IPv6 nos Router 1941 e 2911 será feita utilizando o Script: 
+As configurações do Protocolo RIPng IPv6 nos Router 1941 e 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-050-ConfiguracaoDoRIPng-IPv6.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-050.pkt
 
