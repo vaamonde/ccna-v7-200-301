@@ -56,17 +56,17 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 042 Configurando o Encaminhamento de Solicitações DHCPv4<br>
 043 Redistribuindo a Rota Padrão no RIPv2 do Router 2911<br>
 044 Configuração do Endereçamento IPv6 Estático<br>
-045 Configuração do DHCPv6 Statless no Router 1941
+045 Configuração do DHCPv6 Statless no Router 1941<br>
+046 Configuração do DHCPv6 Stateful no Router 2911
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-
-## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-046 Configuração do DHCPv6 Stateful no Router 2911<br>
 047 Configuração do Servidor Genérico DHCPv6 Stateful<br>
 048 Configuração do DHCPv6 Stateless no Switch Layer 3 3560
 
-## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
+## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 049 Configuração da Rota Estática, Padrão e Flutuante do IPv6<br>
+
+## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
 050 Configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**

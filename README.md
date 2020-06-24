@@ -68,7 +68,7 @@ Material de Apoio-01: https://drive.google.com/file/d/1BxUXh8Vf82_Ze7p3ZDYZsjHxH
 Material de Apoio-02: https://drive.google.com/file/d/1hujPpL7Jd_C1hNMb_GM9RmQxbQstnBrV/view<br>
 Material de Apoio-03: https://drive.google.com/file/d/1IKKm_U9anbwuUCwq1mFU9WG-MFFXXQht/view<br>
 Material de Apoio-04: https://drive.google.com/file/d/1LBQWS7IS1CMWRpGT074uahFSA32qa9PC/view<br>
-Tabela ASCII: https://drive.google.com/file/d/1NS5qDgem0lJhq6O6aIE1sX5e5IedKjeT/view<br>
+Tabela ASCII: https://drive.google.com/file/d/1NS5qDgem0lJhq6O6aIE1sX5e5IedKjeT/view
 
 ## **Material de Apoio do Protocolo IPv4 e IPv6**
 IPv4 Subnetting: https://drive.google.com/file/d/1iQk5oda16J68GEn7pQP1oY3v_Hzfgbrw/view<br>
@@ -568,13 +568,13 @@ Link da vídeo aula: https://www.youtube.com/watch?v=QADVQM6oo1g
 
 ## **047 Configuração do Servidor DHCPv6 Genérico Stateful - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Servidor DHCPv6 Genérico, essa configuração será feita no Servidor da Segunda Topologia, o Servidor DHCPv6 Genérico segue as mesmas configurações do DHCPv6 Stateful (com estado) ou Stateless (sem estado), sua configuração muda em relação ao Servidor DHCPv4, a criação dos Pools de Global Unicast e Local segue o mesmos padrão do Router ou Switch Layer 3, o Servidor DHCPv6 Genérico trabalha com o Protocolo UDP na Porta Padrão: 547
+Nessa aula, vou fazer a configuração do Servidor DHCPv6 Genérico Stateful, essa configuração será feita no Servidor da Segunda Topologia, o Servidor DHCPv6 Genérico Stateful segue as mesmas configurações do DHCPv6 Stateful (com estado) ou Stateless (sem estado), sua configuração muda em relação ao Servidor DHCPv4, a criação dos Pools de Global Unicast e Local segue o mesmos padrões do Router ou Switch Layer 3, o Servidor DHCPv6 Genérico Stateful trabalha com o Protocolo UDP na Porta Padrão: 547
 
-As configurações do Servidor DHCPv6 Stateful será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-047-ConfiguracaoDoDHCPv6_Server.txt
+As configurações do Servidor DHCPv6 Genérico Stateful será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-047-ConfiguracaoDoDHCPv6_Server.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-047.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=tl1aNCnkd9M
 
 ## **048 Configuração do DHCPv6 Stateless no Switch Layer 3 3560 - Laboratório Prático Cisco CCNAv7 200-301**
 

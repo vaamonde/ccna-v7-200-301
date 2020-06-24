@@ -1,0 +1,73 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 31/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!As Rotas Estática, Padrão e Flutuante do Protocolo IPv6 segue o mesmo padrão do Protocolo IPv4, sua principal diferença está 
+!na configuração da Rota Totalmente Declarada em alguns cenários, indicando a Interface de Saída e o Endereço de Link Local de 
+!Próximo Salto nas configurações. Em rotas estáticas é somente configurado o endereço de Global Unicast na declaração das rotas
+!por padrão, caso não esteja utilizando os endereços de ULA.
+
+!OBSERVAÇÃO: nas configurações dos cenários das Etapas: 045, 046, 047 e 048 já foi configurado Rotas Estática e Rota Padrão nos
+!cenários configurados utilizando VLAN e com o acesso a Internet. 
+
+!Exemplo de configuração da Rota Estática Simples: ipv6 route 2001:abcd:1234::/64 GigabitEthernet 0/0
+!Exemplo de configuração da Rota Estática Totalmente Declarada: ipv6 route 2001:abcd:1234::/64 GigabitEthernet 0/0 FE80::1
+
+!Exemplo de configuração da Rota Padrão: ipv6 route ::/0 GigabitEthernet 0/0
+!Exemplo de configuração da Rota Padrão Totalmente Declarada: ipv6 route ::/0 GigabitEthernet 0/0 FE80::1
+
+!Exemplo de configuração da Rota Flutuante (AD alterado): ipv6 route 2001:abcd:1234::/64 GigabitEthernet 0/0 FE80::1 5
+
+!PRIMEIRA ETAPA: Configuração do Router 1941-1 da Primeira Topologia
+enable
+	configure terminal
+		interface gigabitEthernet 0/1
+			ipv6 enable
+			ipv6 address FE80::1001 link-local
+			ipv6 address 2001:abcd:1234:1001::1/64
+			exit
+		interface serial 0/0/0
+			ipv6 enable
+			ipv6 address FE80::1005 link-local
+			ipv6 address 2001:abcd:1234:1005::5/64
+			exit
+		ipv6 route ::/0 gigabitEthernet 0/1 FE80::1002
+		ipv6 route ::/0 serial 0/0/0 FE80::1006 5
+		end
+write
+
+!SETUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
+enable
+	configure terminal
+		interface gigabitEthernet 0/1
+			ipv6 enable
+			ipv6 address FE80::1002 link-local
+			ipv6 address 2001:abcd:1234:1001::2/64
+			exit
+		interface serial 0/0/0
+			ipv6 enable
+			ipv6 address FE80::1006 link-local
+			ipv6 address 2001:abcd:1234:1005::6/64
+			exit
+		ipv6 route 2001:abcd:1234:1::/64 gigabitEthernet 0/1 FE80::1001
+		ipv6 route 2001:abcd:1234:1::/64 serial 0/0/0 FE80::1005 5
+		end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section ipv6 route
+
+!Visualizando as informações dos endereços IPv6
+show ipv6 route
+ping 2001:abcd:1234:1::1
+traceroute 2001:abcd:1234:1::1
+tracert 2001:abcd:1234:1::1
