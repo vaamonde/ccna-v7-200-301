@@ -1,0 +1,131 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 31/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!O EIGRP (Enhanced Interior Gateway Routing Protocol) é um Potocolo Avançado Híbrido de Roteamento por Vetor de Distância
+!(Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm), 
+!desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas
+!para o Padrão Aberto em 2013, e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP
+!(Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
+
+!O EIGRP trabalha com a Distância Administrativa (AD) Interna no mesmo Sistema Autônomo (AS) de 90 e Externa de 170 quando
+!está conectado em AS's diferentes é AD de 5 para rotas sumarizadas.
+
+!O EIGRP trabalha com o Algoritmo DUAL para escolher o melhor caminho da origem até o destino, possui suporte para roteamento
+!de Rede Classful (Classe Cheia) e Classless (Sem Classe), suporte para Sumarização de Redes automática ou manual, suporte a 
+!VLSM (Variable Length Subnet Masking) e CIDR (Classless Inter-Domain Routing), suporte a autenticação MD5, contagem máxima de
+!saltos de 255 (por padrão, é definido como 100, superior ao RIP que o máximo é 15), suporta Balanceamento de Carga com custo 
+!igual (má de 32 caminhos com o mesmo custo, por padrão, são 4) ou caminho com custo não igual.
+
+!O EIGRP forma Adjacência com Link State mais utiliza o Split Horizon como mecanismo de Prevenção de Loops, utiliza o Multicast
+!224.0.0.10 para estabelecer adjacências, depois utiliza Unicast para sincronizar a Topologia, utiliza o seu próprio protocolo
+!de Transporte IP 88 (utilizado nas comunicações Multicast e Unciast, não confundir com a Porta do Kerberos 88) junto com o Método
+!de Transporte via RTP (Reliable Transport Protocol), diferente do Protocolo RIP/RIPv2, o EIGRP só faz Updates somente se for
+!necessário (quando acontece mundanças na Topologia, Falhas de Links ou novas Rotas com melhores caminhos).
+
+!O EIGRP suporta vários Processos no mesmo equipamento, e o Número do AS é significante para toda a rede (precisar ser igual para
+!todos os Router ou Switch Layer 3 que fazem parte do Domínio do EIGRP), o EIGRP utiliza o Wilcard Mask (Máscara Curinga) que é
+!diferente da Subnet Mask (Máscara de Sub-Rede) Exemplo: CIDR /24 - Máscara Padrão: 255.255.255.0 Máscara Curinga: 0.0.0.255
+
+!O EIGRP utiliza o Multicast para: HELLO, QUERY e UPDATE, e o Unicast para: UPDATE, ACK e REPLY, o tempos do EIGRP são: Hello de
+!5/60 segundos (Low-speed e NBMA 60s | Demais 5s) e Hold Time de 15/180 segundos (Low-speed e NBMA 180s | Demais 15s)
+
+!O EIGRP suporta somente autenticação MD5 (diferente do RIP que suporte MD5 e Clean Text), utiliza Sistema de Key Chain (Chaveiro)
+!que precisam ser iguais em todos os Neighbors (Vizinhos) do Domínio do EIGRP para forma adjacência.
+
+!O EIGRP utiliza a Métrica Composta por: Bandwith (Largura de Banda), Delay (Atraso), Load (Carga) e Reliability (Confiabilidade),
+!Fórmula da Métrica Composta do EIGRP = [K1*BW + (K2*BW)/(256 — load) +K3*Delay] *[K5/(Reliability*k4)] (OBSERVAÇÃO: esse cálculo 
+!ou a fórmula não é obrigatório decorar e não será cobrado de forma detalhada no Exame 200-301, somente nos Exames CCNP e CCIE R&S), 
+!os Valores de K permitem uma administração manual do Peso de cada Variável (os valores Default para os K's são: K1=1 Update, K2=0 
+!Query, K3=1 Reply, K4=0 Hello e K5=0 Acknowledge/ACK). OBSERVAÇÃO IMPORTANTE: os valores de K devem ser iguais em todos os Router
+!ou Switch Layer 3 do Domínio do Protocolo EIGRP para forma adjacência entre os Neighbors.
+
+!O EIGRP utiliza as Terminologias: Successor (Sucessor: melhor caminho para o destino), Feasible Distance FD (Distância Viável: é a
+!métrica do melhor para o Successor), Feasible Successor FS (Successor Viável: rota backup e livre de Loops), Advertised Distance 
+!AD (Distância Anunciada: FD do neighbor que é a métrica composta e aprendida do upstream neighbor), Local Distance LD (Distância 
+!Local: métrica composta para o upstream neighbor), Feasibility Condition FC (Condição de Viabilidade: critério para validar 
+!caminhos de backup), Reported Distance RD (Distância Relatada: métrica anunciada por um vizinho), Passive Interface PI (Interface
+!Passiva: uma interface que não participa do Domínio do EIGRP) e Stub Router SR (Roteador Raiz: um roteador que anuncia apenas um 
+!subconjunto de rotas e é omitido no processo de consulta de rota).
+
+!O EIGRP cria três Tabelas separadas que são: Neighbors Table NT (Tabela de Vizinhança), Topology Table TT (Tabela de Topologia) e 
+!Routing Table RT (Tabela de Roteamento).
+
+!PRIMEIRA ETAPA: Configuração do Router 2911 da Terceira Topologia
+enable
+	configure terminal
+		interface loopback 0
+			ip address 172.16.0.4 255.255.255.255
+			exit
+		router eigrp 10
+			eigrp router-id 172.16.0.4
+			network 
+			no auto-summary
+			passive-interface gigabitEthernet 0/0
+			passive-interface gigabitEthernet 0/1
+			redistribute static
+			exit
+		end 
+write
+
+!SEGUNDA ETAPA: Configuração do Router 1941 da Segunda Topologia
+enable
+	configure terminal
+		interface loopback 0
+			ip address 172.16.0.3 255.255.255.255
+			exit
+		router eigrp 10
+			eigrp router-id 172.16.0.3
+			network 
+			no auto-summary
+			passive-interface gigabitEthernet 0/0
+			exit
+		end 
+write
+
+!TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
+enable
+	configure terminal
+		interface loopback 0
+			ip address 172.16.0.2 255.255.255.255
+			exit
+		router eigrp 10
+			eigrp router-id 172.16.0.2
+			network 
+			no auto-summary
+			exit
+		end 
+write
+
+!QUARTA ETAPA: Configuração do Router 1941 da Primeira Topologia
+enable
+	configure terminal
+		interface loopback 0
+			ip address 172.16.0.1 255.255.255.255
+			exit
+		router eigrp 10
+			eigrp router-id 172.16.0.1
+			network 
+			no auto-summary
+			passive-interface gigabitEthernet 0/0
+			exit
+		end 
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section router eigrp
+show running-config | section interface loopback0
+
+!Visualizando as informações do Protocolo EIGRP
+show ip eigrp neighbor
+show ip eigrp topology
+show ip route eigrp

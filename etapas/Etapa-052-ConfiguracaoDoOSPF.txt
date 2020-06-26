@@ -1,0 +1,123 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 31/05/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!O OSPF (Open Shortest Path First) é um Protocolo de Roteamento Dinâmico para redes que operam com o Protocolo IPv4
+!(possui suporte ao Protocolo IPv6 utilizando a versão OSPFv3), desenvolvido pelo Grupo de Trabalho dos IGPs 
+!(Interior Gateway Protocols) da IETF (Internet Engineering Task Force) e descrito inicialmente em 1989 pela RFC 
+!1131 (versão atual nas RFC 2328 e 2740 do OSPFv2).
+
+!O OSPF é um Protocolo de Roteamento Link State (Estado do Link), utiliza o Algoritmo SPF Dijkstra para determinar
+!o melhor caminho na Topologia do OSPF, por padrão o OSPF é Classless (Sem Classe), tem suporte a Sumarização NLRI 
+!(Network Layer Reachability Information), tem suporte a Múltiplos Processos no mesmo equipamento (igual ao EIGRP),
+!os Process-ID (Indentificação do Processo) são localmente significativos (diferente do EIGRP que é globalmente 
+!significativos) e utiliza uma Inteface como Router-ID (Indentificação do Roteador, preferência para Interfaces de 
+!Loopback).
+
+!O OSPF trabalha com Áreas (Standard Area, Single Area ou Multi Area) sendo a Área 0 (Backbone) a padrão, possui 
+!Distância Administrativa (AD) de 110, utiliza Métrica baseada no Custo da Largura de Banda (Bandwidth) da Interface,
+!utiliza o seu próprio protocolo de Transporte IP 89, utiliza as Redes Multicast 224.0.0.5 e 224.0.0.6 para o envio 
+!dos Hellos, possui suporte para Autenticação utilizando Texto Plano (Plain Text) ou MD5, utiliza a Fórmula para o 
+!Cálculo da Métrica do Custo do melhor caminho de: Cost = 100.000Kbps/Link Speed (Custo Padrão: 64 kbps = 1562, 
+!128 kbps = 781, 1.544 Mbps = 64, 10 Mbps = 10, 100 Mbps = 1, 1 Gbps = 1, 10 Gbps = 1 e 40 Gbps = 1), OBSERVAÇÃO
+!IMPORTANTE: é recomendo alterar os valores de Custo Padrão do Protocolo OSPF pois Interface de 100Mbps tem o mesmo
+!valor de custo padrão de uma Interface de 40Gbps.
+
+!
+
+!PRIMEIRA ETAPA: Configuração do Router 2911 da Terceira Topologia
+enable
+	configure terminal
+		interface loopback 0
+			ip address 172.16.0.4 255.255.255.255
+			exit
+		router ospf 10
+			router-id 172.16.0.4
+			network x.x.x.0 0.0.0.255 area 0
+			no auto-summary
+			passive-interface gigabitEthernet 0/0
+			passive-interface gigabitEthernet 0/1
+			auto-cost reference-bandwidth 10000
+			log-adjacency-changes detail
+			redistribute static
+			exit
+		end 
+write
+
+!SEGUNDA ETAPA: Configuração do Router 1941 da Segunda Topologia
+enable
+	configure terminal
+		interface loopback 0
+			ip address 172.16.0.3 255.255.255.255
+			exit
+		router ospf 10
+			router-id 172.16.0.4
+			network x.x.x.0 0.0.0.255 area 0
+			no auto-summary
+			passive-interface gigabitEthernet 0/0
+			passive-interface gigabitEthernet 0/1
+			auto-cost reference-bandwidth 10000
+			log-adjacency-changes detail
+			redistribute static
+			exit
+		end 
+write
+
+!TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
+enable
+	configure terminal
+		interface loopback 0
+			ip address 172.16.0.2 255.255.255.255
+			exit
+		router ospf 10
+			router-id 172.16.0.4
+			network x.x.x.0 0.0.0.255 area 0
+			no auto-summary
+			passive-interface gigabitEthernet 0/0
+			passive-interface gigabitEthernet 0/1
+			auto-cost reference-bandwidth 10000
+			log-adjacency-changes detail
+			redistribute static
+			exit
+		end 
+write
+
+!QUARTA ETAPA: Configuração do Router 1941 da Primeira Topologia
+enable
+	configure terminal
+		interface loopback 0
+			ip address 172.16.0.1 255.255.255.255
+			exit
+		router ospf 10
+			router-id 172.16.0.4
+			network x.x.x.0 0.0.0.255 area 0
+			no auto-summary
+			passive-interface gigabitEthernet 0/0
+			passive-interface gigabitEthernet 0/1
+			auto-cost reference-bandwidth 10000
+			log-adjacency-changes detail
+			redistribute static
+			exit
+		end 
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section router ospf
+
+!Visualizando as informações do Protocolo OSPF
+show ip protocols
+show ip route ospf 
+show ip route ospf 10
+show ip ospf neighbor
+show ip ospf database
+show ip ospf database router
+show ip ospf inteface
