@@ -584,7 +584,7 @@ As configurações do DHCPv6 Stateless no Switch Layer 3 3560 será feita utiliz
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-048.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=pon1ltGvzY4
 
 ## **049 Configuração da Rota Estática, Padrão e Flutuante do IPv6 - Laboratório Prático Cisco CCNAv7 200-301**
 
