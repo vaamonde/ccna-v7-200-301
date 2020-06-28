@@ -21,9 +21,9 @@
 !(Network Layer Reachability Information), tem suporte a Múltiplos Processos no mesmo equipamento (igual ao EIGRP),
 !os Process-ID (Indentificação do Processo) são localmente significativos (diferente do EIGRP que é globalmente 
 !significativos) e utiliza uma Inteface como Router-ID (Indentificação do Roteador, preferência para Interfaces de 
-!Loopback).
+!Loopback, igual no AS do Protocolo do EIGRP).
 
-!O OSPF trabalha com Áreas (Standard Area, Single Area ou Multi Area) sendo a Área 0 (Backbone) a padrão, possui 
+!O OSPF trabalha com Áreas (Standard Area, Stub Area, Totally Stubby Area) sendo a Área 0 (Backbone) a padrão, possui 
 !Distância Administrativa (AD) de 110, utiliza Métrica baseada no Custo da Largura de Banda (Bandwidth) da Interface,
 !utiliza o seu próprio protocolo de Transporte IP 89, utiliza as Redes Multicast 224.0.0.5 e 224.0.0.6 para o envio 
 !dos Hellos, possui suporte para Autenticação utilizando Texto Plano (Plain Text) ou MD5, utiliza a Fórmula para o 
@@ -32,7 +32,40 @@
 !IMPORTANTE: é recomendo alterar os valores de Custo Padrão do Protocolo OSPF pois Interface de 100Mbps tem o mesmo
 !valor de custo padrão de uma Interface de 40Gbps.
 
-!
+!As Áreas do OSPF adiciona o recurso de Hierarquia e Escalabilidade da Rede, cada Área do OSPF é um LSA (Link State
+!Advertisement) Flooding Domain (Domínio de Inundações), todas as Áreas do Domínio do OSPF precisam ser Contíguas, 
+!Área 0 é usada para sumarizar informações entre áreas, todo tráfego entre áreas precisa passar pela Área 0, outras
+!Áreas sem ser a Área 0 são chamadas Non Backbone Area (Área sem Backbone).
+
+!O OSPF possui os seguintes Tipos de Áreas: Standard Area (Área Padrão), Stub Area (Área Stub), Totally Stubby Area 
+!(Área Totalmente Stub), Not So Stubby Area NSSA (Área não tão Stub).
+
+!O OSPF possui os Tipos de Roteadores: Backbone Router BR (Roteador de Backbone: possui pelo menos um link na Área 0),
+!Internal Router IR (Roteador Interno: possui links apenas em uma Área, sem ser a Área 0), Area Border Router ABR (
+!Roteador de Borda de Área: possui links na Área 0 e em outra Áreas, usado para sumarizar informações entre Áreas) e
+!Autonomous System Boundary Router ASBR (Roteador de Fronteira de Sistema Autônomo: possui link em qualquer Área e
+!links fora do Domínio do OSPF, exemplo: RIPv2, EIGRP, etc, utilizado para fazer redistribuição de rotas).
+
+!O OSPF trabalha com os Tempos de Hello de 10 segundos e 4x o valor do Hello Timer para o Dead Timer: 40 segundos
+
+!O OSPF trabalha com o Estado da Adjacência das Vizinhança (Adjacency States Neighbor) de: Down (Baixo: estado 
+!inicial do OSPF), Attempt (Tentativa: estado válido apenas em redes NBMA ou Point-to-Multipoint Non-Broadcast), 
+!Init (Iniciar: quando o roteador recebe um Hello, mas seu próprio RID não está no Hello), 2-Way (2 Maneiras: quando
+!o roteador recebe um Hello e seu próprio RID está no Hello), Exstart (Antes de Começar: quando o roteador sai de 
+!Init/2-way significa que deverão ficar Full Adjacentes), Exchange (Trocar: nesta fase o Database Description é 
+!trocado), Loading (Carregando: o roteador está fazendo o download dos LSAs dos vizinhos) e Full (Completo: todos os
+!LSAs foram baixados dos vizinhos).
+
+!O OSPF trabalha com Eleições de Roteadores que são: Designed Router DR (Roteador Designado), Backup Designed Router
+!BDR (Roteador Designado Backup) e o Designated Router Other DROTHER (Outro Roteador designado).
+
+!O OSPF trabalha com as LSA's dos Tipos: Router Link Type 1 (Tipo 1: Link do Roteador), Network Link Type 2 (Tipo 2:
+!Link da Rede), Network Summary Type 3 (Tipo 3: Resumo da Rede), ASBR Summary Type 4 (Tipo 4: Resumo do ASBR), External
+!Link Type 5 (Tipo 5: Link Externo) e NSSA External Link Type 7 (Tipo 7: Link Externo NSSA).
+
+!O OSPF trabalha com os Tipos de Rede de: Broadcast, Non-Broadcast Multiple-Access Network NBMA (Rede de Múltiplo Acesso
+!sem Transmissão), Point-to-Point (Ponto-a-Ponto), Point-to-Multipoint (Ponto-para-Multiponto), Point-to-Multipoint NBMA
+!(Ponto-para-Multiponto NBMA) e Loopback.
 
 !PRIMEIRA ETAPA: Configuração do Router 2911 da Terceira Topologia
 enable
@@ -49,6 +82,7 @@ enable
 			auto-cost reference-bandwidth 10000
 			log-adjacency-changes detail
 			redistribute static
+			default-information originate
 			exit
 		end 
 write

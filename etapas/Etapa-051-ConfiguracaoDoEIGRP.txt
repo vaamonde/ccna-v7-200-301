@@ -43,19 +43,21 @@
 !que precisam ser iguais em todos os Neighbors (Vizinhos) do Domínio do EIGRP para forma adjacência.
 
 !O EIGRP utiliza a Métrica Composta por: Bandwith (Largura de Banda), Delay (Atraso), Load (Carga) e Reliability (Confiabilidade),
-!Fórmula da Métrica Composta do EIGRP = [K1*BW + (K2*BW)/(256 — load) +K3*Delay] *[K5/(Reliability*k4)] (OBSERVAÇÃO: esse cálculo 
-!ou a fórmula não é obrigatório decorar e não será cobrado de forma detalhada no Exame 200-301, somente nos Exames CCNP e CCIE R&S), 
-!os Valores de K permitem uma administração manual do Peso de cada Variável (os valores Default para os K's são: K1=1 Update, K2=0 
+
+!Fórmula da Métrica Composta do EIGRP = [K1*BW + (K2*BW)/(256 — load) +K3*Delay] *[K5/(Reliability*k4)]
+!OBSERVAÇÃO IMPORTANTE: esse cálculo ou a fórmula não é obrigatório decorar e não será cobrado de forma detalhada no Exame 200-301,
+!somente nos Exames CCNP e CCIE R&S, recomendo apenas lembrar os Valores dos K's que são importante.
+!Os Valores de K permitem uma administração manual do Peso de cada Variável (os valores Default para os K's são: K1=1 Update, K2=0 
 !Query, K3=1 Reply, K4=0 Hello e K5=0 Acknowledge/ACK). OBSERVAÇÃO IMPORTANTE: os valores de K devem ser iguais em todos os Router
 !ou Switch Layer 3 do Domínio do Protocolo EIGRP para forma adjacência entre os Neighbors.
 
 !O EIGRP utiliza as Terminologias: Successor (Sucessor: melhor caminho para o destino), Feasible Distance FD (Distância Viável: é a
-!métrica do melhor para o Successor), Feasible Successor FS (Successor Viável: rota backup e livre de Loops), Advertised Distance 
-!AD (Distância Anunciada: FD do neighbor que é a métrica composta e aprendida do upstream neighbor), Local Distance LD (Distância 
-!Local: métrica composta para o upstream neighbor), Feasibility Condition FC (Condição de Viabilidade: critério para validar 
-!caminhos de backup), Reported Distance RD (Distância Relatada: métrica anunciada por um vizinho), Passive Interface PI (Interface
-!Passiva: uma interface que não participa do Domínio do EIGRP) e Stub Router SR (Roteador Raiz: um roteador que anuncia apenas um 
-!subconjunto de rotas e é omitido no processo de consulta de rota).
+!métrica do melhor caminho para o Sucessor), Feasible Successor FS (Sucessor Viável: melhor rota backup e livre de Loops na topologia),
+!Advertised Distance AD (Distância Anunciada: distância viável do Neighbor que é a métrica composta e aprendida do Upstream Neighbor),
+!Local Distance LD (Distância Local: métrica composta para o Upstream Neighbor), Feasibility Condition FC (Condição de Viabilidade: 
+!critério para validar os caminhos de backup), Reported Distance RD (Distância Relatada: métrica anunciada por um vizinho), Passive 
+!Interface PI (Interface Passiva: uma interface que não participa do Domínio do EIGRP) e Stub Router SR (Roteador Raiz: um roteador
+!que anuncia apenas um subconjunto de rotas e é omitido no processo de consulta de rota).
 
 !O EIGRP cria três Tabelas separadas que são: Neighbors Table NT (Tabela de Vizinhança), Topology Table TT (Tabela de Topologia) e 
 !Routing Table RT (Tabela de Roteamento).
