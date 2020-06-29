@@ -58,45 +58,46 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 044 Configuração do Endereçamento IPv6 Estático<br>
 045 Configuração do DHCPv6 Statless no Router 1941<br>
 046 Configuração do DHCPv6 Stateful no Router 2911<br>
-047 Configuração do Servidor Genérico DHCPv6 Stateful
-
-## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
+047 Configuração do Servidor Genérico DHCPv6 Stateful<br>
 048 Configuração do DHCPv6 Stateless no Switch Layer 3 3560
 
-## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
+## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
 049 Configuração da Rota Estática, Padrão e Flutuante do IPv6<br>
+
+## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 050 Configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911<br>
 051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral<br>
 052 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
 053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral<br>
-054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral
+054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral<br>
+055 Substituindo o Router 1941 da Segunda Topologia pelo Router 2911
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-055 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers<br>
-056 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers
+056 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers<br>
+057 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-057 Criação do Cenário de Conexão com a Internet SOHO<br>
-058 Configuração do Protocolo PPPoE Server no ISP<br>
-059 Configuração do Protocolo PPPoE Client ADSL no SOHO WRT-300N<br>
-060 Configuração da Rede SOHO Tri-Band Wireless<br>
-061 Configuração do Router Meraki MX65W<br>
-062 Configuração do Router Home Gateway DLC-100<br>
-063 Configuração do Router 4321 Switch 3650 e do WLC-3504 e LWAP-3702i<br>
-064 Configuração do NAT Estático no Router 4321<br>
-065 Configuração do NAT Dinâmico no Router 4321<br>
-066 Configuração do NAT Overload no Router 4321<br>
-067 Configuração do PAT Estático no Router 4321<br>
-068 Configuração do FHRP HSRP nos Router 4321<br>
-069 Configuração do FHRP VRRP nos Router 4321<br>
-070 Configuração do FHRP GLBP nos Router 4321<br>
-071 Configuração do Etherchannel PAgP nos Switches 3650<br>
-072 Configuração do Etherchannel LACP nos Switches 3650<br>
-073 Configuração do Firewall no ASA 5506<br>
-074 Configuração da VPN Site-to-Site<br>
-075 Configuração da VPN Site-to-Client
+058 Criação do Cenário de Conexão com a Internet SOHO<br>
+059 Configuração do Protocolo PPPoE Server no ISP<br>
+060 Configuração do Protocolo PPPoE Client ADSL no SOHO WRT-300N<br>
+061 Configuração da Rede SOHO Tri-Band Wireless<br>
+062 Configuração do Router Meraki MX65W<br>
+063 Configuração do Router Home Gateway DLC-100<br>
+064 Configuração do Router 4321 Switch 3650 e do WLC-3504 e LWAP-3702i<br>
+065 Configuração do NAT Estático no Router 4321<br>
+066 Configuração do NAT Dinâmico no Router 4321<br>
+067 Configuração do NAT Overload no Router 4321<br>
+068 Configuração do PAT Estático no Router 4321<br>
+069 Configuração do FHRP HSRP nos Router 4321<br>
+070 Configuração do FHRP VRRP nos Router 4321<br>
+071 Configuração do FHRP GLBP nos Router 4321<br>
+072 Configuração do Etherchannel PAgP nos Switches 3650<br>
+073 Configuração do Etherchannel LACP nos Switches 3650<br>
+074 Configuração do Firewall no ASA 5506<br>
+075 Configuração da VPN Site-to-Site<br>
+076 Configuração da VPN Site-to-Client
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
 OSPF Multi Area, BGP, PPP, Frame-Relay, MPLS, QoS, PYTHON, JSON, SD-WAN,<br>
