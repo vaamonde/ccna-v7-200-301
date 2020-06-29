@@ -57,8 +57,12 @@ enable
 			!OBSERVAÇÃO: redistribuindo a rota padrão estática aprendida pelo Router 2911 para acessar a Rede do DNS do Google
 			redistribute static
 			exit
-
-		interface gigabitEthernet 0/1
+			
+		!Configurando o Endereço IPv6 de Interligação com o Router 1941-2 e Habilitando o RIPng na Sub-Interface
+		interface gigabitEthernet 0/0/0.999
+			ipv6 enable
+			ipv6 address FE80::1009 link-local
+			ipv6 address 2001:abcd:1234:1009::9/64
 
 			!Habilitando o Protocolo RIPng na Interface
 			!DICA: habilitando o protocolo RIPng diretamente na Interface que tem os Endereços de Link Local e Global Unicast
@@ -67,42 +71,27 @@ enable
 			!serem enviadas para todos os Roteadores que fazem parte da Configuração do Domínio do Protocolo RIPng 
 			!OBSERVAÇÃO: é recomendo indicar o número do processo local que foi configurado anteriormente
 			ipv6 rip 10 enable
-
-			!Configurando a Redistribuição da Rota Padrão do Protocolo RIPng na Interface
+			
+			!Configurando a Redistribuição da Origem da Rota Padrão do Protocolo RIPng na Interface
 			!DICA: habilitando o recurso de redistribuição da rota padrão do IPv6 aprendida na Interface
-			!OBSERVAÇÃO: essa opção possibilita dizer que essa interface aprendeu as informações da rota padrão, que foi 
-			!configurada no roteador de borda com a Internet
-			!OBSERVAÇÃO IMPORTANTE: nesse cenário a Rota Padrão foi aprendida Estáticamente, essa opção é utilizada quando
-			!a Interface está configurada para obter o endereço IPv6 de Global Unicast via DHCPv6 Stateful, nesse cenário a
-			!rota padrão é aprendida de forma dinâmica, procedimento igual ao Protocolo IPv4 utilizando o Protocolo RIPv2.
+			!OBSERVAÇÃO: essa opção possibilita dizer que essa interface possui as informações da rota padrão que foi aprendida
+			!e configurada nesse roteador, essa interface informa para os demais roteadores do Domínio do Protocolo RIPng que
+			!esse roteado tem a Rota Padrão para a Interface (procedimento igual ao Protocolo IPv4 utilizando o Protocolo RIPv2).
 			ipv6 rip 10 default-information originate
 			exit
 
-		interface gigabitEthernet 0/0.10
-			ipv6 rip 10 enable
-			exit
-		interface gigabitEthernet 0/0.20
-			ipv6 rip 10 enable
-			exit		
-		interface gigabitEthernet 0/0.30
-			ipv6 rip 10 enable
-			exit
-		interface gigabitEthernet 0/0.40
-			ipv6 rip 10 enable
-			exit
-		interface gigabitEthernet 0/0.50
+		!OBSERVAÇÃO IMPORTANTE: nessa topologia não e habilitado o Protocolo IPv6 nas Sub-Interfaces das VLAN's 10, 20, 30 é 40
+		!pois essas Interfaces estão configuradas como DHCPv6 Statefull, o Endereço de Global Unicast é diferente do Escopo criado,
+		!o acesso a essas redes e feito utilizando Rota Estática, no processo do RIPng essas redes já seram publicadas no Domínio
+		!do Protocolo do RIPng utilizando o recurso de Redistribuição de Rotas
+		
+		interface gigabitEthernet 0/1
 			ipv6 rip 10 enable
 			exit
 		interface gigabitEthernet 0/0.99
 			ipv6 rip 10 enable
 			exit
 		interface gigabitEthernet 0/0.100
-			ipv6 rip 10 enable
-			exit
-		interface gigabitEthernet 0/0/0.999
-			ipv6 enable
-			ipv6 address FE80::1009 link-local
-			ipv6 address 2001:abcd:1234:1009::9/64
 			ipv6 rip 10 enable
 			end
 write
@@ -113,19 +102,19 @@ enable
 		ipv6 router rip 10
 			redistribute static
 			exit
-		interface gigabitEthernet 0/0
-			ipv6 rip 10 enable
-			exit
-		interface gigabitEthernet 0/1
-			no ipv6 rip 10 enable
-			exit
-		interface serial 0/0/0
-			ipv6 rip 10 enable
-			exit
 		interface gigabitEthernet 0/1/0.999
 			ipv6 enable
 			ipv6 address FE80::1010 link-local
 			ipv6 address 2001:abcd:1234:1009::10/64
+			ipv6 rip 10 enable
+			exit
+		interface gigabitEthernet 0/0
+			ipv6 rip 10 enable
+			exit
+		interface gigabitEthernet 0/1
+			ipv6 rip 10 enable
+			exit
+		interface serial 0/0/0
 			ipv6 rip 10 enable
 			end
 write
