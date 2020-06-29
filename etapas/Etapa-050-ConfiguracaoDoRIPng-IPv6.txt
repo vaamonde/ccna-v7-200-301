@@ -17,16 +17,16 @@
 !NA INTERNET, MAIS RECOMENDO O SEU ESTUDO, POIS O RIP FOI O PRIMEIRO PROTOCOLO DE ROTEAMENTO DINÂMICO DESENVOLVIDO 
 !E O RIPng É SUA EVOLUÇÃO PARA O SUPORTE AO PROTOCOLO IPv6.
 
-!O RIPng (Next Generation) é um protocolo de roteamento baseado no algoritmo do Vetor de Distância como o RIPv2 
-!(seu antecessor), o RIPng usa o contagem de saltos para medir a distância de um destino (possui a mesma limitação
-!do RIPv2, máximo de 15 saltos, também, os mesmos temporizadores 30s Update, 180s Holddown, 180s Invalid e 240s Flush
-!e Distância Administrativa de 120), o RIPng é usado tipicamente para redes que estão configuradas com a versão 6 do
-!protocolo de internet (IPv6). O RIPng foi especificado na RFC 2080.
+!O RIPng (Next Generation) é um protocolo de Roteamento Dinâmico baseado no Algoritmo do Vetor de Distância igual ao
+!Portocolo RIPv2 (seu antecessor), o RIPng usa o contagem de saltos para medir a distância de um destino (possui a 
+!mesma limitação do RIPv2, máximo de 15 saltos, também, os mesmos temporizadores 30s Update, 180s Holddown, 180s 
+!Invalid e 240s Flush e Distância Administrativa de 120), o RIPng é usado em redes que estão configuradas com a versão
+!6 do Protocolo de Internet (IPv6). O RIPng foi especificado na RFC 2080.
 
 !O RIPng envia é recebe mensagens utilizando o Protocolo UDP (User Datagram Protocol) na Porta Padrão 521 no Endereço
-!de Multicast FF02::09, os endereços de Próximo Salto do Protocolo RIPng é o Endereço de Link Local (FE80::/10) da 
-!Interface, a pricipal diferença do RIPng para o RIPv2 é que sua configuração e feita diretamente na Interface 
-!configurada com os Endereços IPv6 de Link Local e Global Unicast.
+!de Multicast FF02::9, os endereços de Próximo Salto do Protocolo RIPng são os Endereço de Link Local (FE80::/10) da 
+!Interface, a principal diferença do RIPng para o RIPv2 é que sua configuração e feita diretamente na Interface de Rede 
+!configurada com os Endereços IPv6 de Link Local e Global Unicast (os protocolos EIGRP e OSPF segue o mesmo padrão).
 
 !ADENDO IMPORTANTE: RESPOSTA DO DESAFIO DA ETAPA: 043 Redistribuindo a Rota Padrão no RIPv2 no Router 2911
 !Configuração do Router 1941-1 da Primeira Topologia
@@ -48,7 +48,7 @@ enable
 
 		!Configurando o Processo Local do Protocolo RIPng
 		!DICA: configuração do processo local do protocolo RIPng habilita recursos de redistribuição de rotas e 
-		!alteração da distância administratia do protocolo
+		!alteração da distância administrativa do protocolo
 		!OBSERVAÇÃO: diferente do RIPv2, muito parecido com o protocolo EIGRP que trabalha com número do processo
 		!local, essa opção não é obrigatória para o funcionamento do RIPng, somente se for utilizar recursos de 
 		!redistribuição ou mundança do AD
@@ -66,16 +66,17 @@ enable
 			!Unicast configurados
 			!OBSERVAÇÃO: diferente do RIPv2 que e feita a declaração das Redes com a opção Network, no RIPng automaticamente
 			!ele indentifica as redes configuradas na Interface é já informa no processo do protocolo as Redes Conhecidas para
-			!serem enviadas para todos os roteados que fazem parte da Configuração do Protocolo do RIPng 
+			!serem enviadas para todos os roteadores que fazem parte da Configuração do Protocolo do RIPng 
+			!OBSERVAÇÃO: é recomendo indicado o número do processo que foi configurado anteriormente
 			ipv6 rip 10 enable
 
 			!Configurando a Redistribuição do Rota Padrão do Protocolo RIPng na Interface
 			!DICA: habilitando o recurso de redistribuição da rota padrão do IPv6 aprendida na Interface
 			!OBSERVAÇÃO: essa opção possibilita dizer que essa interface aprendeu as informações da rota padrão, que foi 
-			!configuradas no  roteador de borda
+			!configurada no roteador de borda com a Internet
 			!OBSERVAÇÃO IMPORTANTE: nesse cenário a Rota Padrão foi aprendida Estáticamente, essa opção é utilizada quando
-			!a Interface está configurada para obter o endereço IPv6 de Global Unicast via DHCPv6 Stateful, que nesse cenário
-			!e aprendido a rota padrão de forma dinâmica, procedimento igual ao Protocolo IPv4 utilizando o Protocolo RIPv2.
+			!a Interface está configurada para obter o endereço IPv6 de Global Unicast via DHCPv6 Stateful, nesse cenário a
+			!rota padrão é aprendida de forma dinâmica, procedimento igual ao Protocolo IPv4 utilizando o Protocolo RIPv2.
 			ipv6 rip 10 default-information originate
 			exit
 

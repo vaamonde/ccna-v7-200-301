@@ -16,8 +16,8 @@
 !Próximo Salto nas configurações. Em rotas estáticas é somente configurado o endereço de Global Unicast na declaração das rotas
 !por padrão, caso não esteja utilizando os endereços de ULA.
 
-!OBSERVAÇÃO: nas configurações dos cenários das Etapas: 045, 046, 047 e 048 já foi configurado Rotas Estática e Rota Padrão nos
-!cenários configurados utilizando VLAN e com o acesso a Internet. 
+!OBSERVAÇÃO: nas configurações dos cenários das Etapas: 045, 046, 047 é 048 já foi configurado Rotas Estática e Rota Padrão nas
+!topologias, quando configuramos as Rotas das VLAN, Acesso a Internet e Switch Layer 3 quando foi configurado a Interface Roteada. 
 
 !Exemplo de configuração da Rota Estática Simples: ipv6 route 2001:abcd:1234::/64 GigabitEthernet 0/0
 !Exemplo de configuração da Rota Estática Totalmente Declarada: ipv6 route 2001:abcd:1234::/64 GigabitEthernet 0/0 FE80::1
@@ -25,6 +25,7 @@
 !Exemplo de configuração da Rota Padrão: ipv6 route ::/0 GigabitEthernet 0/0
 !Exemplo de configuração da Rota Padrão Totalmente Declarada: ipv6 route ::/0 GigabitEthernet 0/0 FE80::1
 
+!Exemplo de configuração da Rota Flutuante (AD alterado): ipv6 route 2001:abcd:1234::/64 GigabitEthernet 0/0 5
 !Exemplo de configuração da Rota Flutuante (AD alterado): ipv6 route 2001:abcd:1234::/64 GigabitEthernet 0/0 FE80::1 5
 
 !PRIMEIRA ETAPA: Configuração do Router 1941-1 da Primeira Topologia
