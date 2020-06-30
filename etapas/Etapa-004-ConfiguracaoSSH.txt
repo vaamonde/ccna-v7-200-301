@@ -18,16 +18,21 @@ enable
 	configure terminal
 	
 		!Configuração do nome de domínio FQDN (Nome de Domínio Totalmente Qualificado)
-		!DICA: o nome de domínio e utilizado pelo serviço do SSH e outros serviços de rede, como autenticação
+		!DICA: o nome de domínio é utilizado pelo serviço do SSH e outros serviços de rede, como autenticação
 		ip domain-name vaamonde.pti
 
 		!Criação da chave de criptografia e habilitar o serviço do SSH Server local
 		!DICA: por padrão o serviço de SSH Server está desabilitado no switch
 		!DICA: por padrão todas as conexões remotas utilizando o protocolo SSH são criptografadas
-		!OBSERVAÇÃO: e recomendo utilizar módulo de criptografia de 1024 bits (360 até 2048)
-		!OBSERVAÇÃO: no switch real utilizamos o comando: crypto key generate rsa usage-keys modulus 1024
+		!OBSERVAÇÃO: é recomendado utilizar módulos de criptografia de 1024 bits (360 até 2048)
+		!OBSERVAÇÃO: no Switch ou Router Real utilizamos o comando: crypto key generate rsa usage-keys modulus 1024
 		!OBSERVAÇÃO: existe vários modos de geração das chaves públicas criptografadas, o padrão e utilizar o RSA
 		!OBSERVAÇÃO: porta padrão de conexão do serviço de SSH e 22
+		!ADENDO: nessa versão do Cisco Packet Tracer 7.3 tem suporte ao comando completo para a geração dos módulos
+		!RSA nos Switches ou Router, utilizando o comando: crypto key generate rsa usage-keys modulus 1024
+		!OBSERVAÇÃO IMPORTANTE: caso queira desativar o serviço do SSH ou remover os Módulos RSA, digite o comando:
+		!crypto key zeroize rsa, caso você digite novamente o comando: crypto key generate rsa ele vai solicitar se
+		!você quer substituir os Módulos atuais (Do you really want to replace them? [yes/no])
 		crypto key generate rsa
 
 		!Habilitando a versão 2 do serviço de SSH Server
