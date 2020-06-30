@@ -99,7 +99,7 @@ TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
 
 **ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dicas de alunos;<br>
-**DESAFIO:** desafio proposto para o aluno, com o objetivo de estimular o raciocínio lógica para a resolução de um problema de rede ou mudança das configurações;<br> 
+**DESAFIO:** desafio proposto para o aluno, com o objetivo de estimular o raciocínio lógico para a resolução de um problema de rede ou mudança das configurações;<br> 
 **DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração no exame;<br>
 **ERRATA:** correções dos script, correções de falas, correções de configurações, etc;<br>
 **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou OBSERVAÇÃO;<br>
@@ -594,7 +594,7 @@ As configurações da Rota Estática, Padrão e Flutuante do IPv6 será feita ut
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-049.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=9qDjzcKO6XU&t
 
 ## **050 Configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
