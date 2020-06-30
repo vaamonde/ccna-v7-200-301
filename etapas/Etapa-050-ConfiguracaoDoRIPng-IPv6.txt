@@ -47,11 +47,11 @@ enable
 	configure terminal
 
 		!Configurando o Processo Local do Protocolo RIPng
-		!DICA: configuração do processo local do protocolo RIPng habilita os recursos de Redistribuição de Rotas e 
+		!DICA: configuração do processo local do protocolo RIPng para habilitar os recursos de Redistribuição de Rotas e 
 		!alteração da Distância Administrativa do protocolo
-		!OBSERVAÇÃO: diferente do RIPv2, muito parecido com o Protocolo EIGRP que trabalha com Número de Processo
-		!Local (no EIGRP é chamado de AS Autonomous System), essa opção não é obrigatória para o funcionamento do RIPng, 
-		!somente se for utilizar os recursos de Redistribuição de Rotas ou mundança do AD
+		!OBSERVAÇÃO: diferente do RIPv2, muito parecido com o Protocolo EIGRP que trabalha com Número de Processo Local 
+		!(no EIGRP é chamado de AS Autonomous System), essa opção não é obrigatória para o funcionamento do RIPng, somente 
+		!se for utilizar os recursos de Redistribuição de Rotas ou mundança do AD
 		ipv6 router rip 10
 
 			!OBSERVAÇÃO: redistribuindo a rota padrão estática aprendida pelo Router 2911 para acessar a Rede do DNS do Google
@@ -69,18 +69,18 @@ enable
 			!OBSERVAÇÃO: diferente do RIPv2 que e feita a declaração das Redes com a opção Network, no RIPng automaticamente
 			!ele indentifica as redes configuradas na Interface é já informa no Processo do Protocolo as Redes conhecidas para
 			!serem enviadas para todos os Roteadores que fazem parte da Configuração do Domínio do Protocolo RIPng 
-			!OBSERVAÇÃO: é recomendo indicar o número do processo local que foi configurado anteriormente
+			!OBSERVAÇÃO: é recomendado indicar o número do processo local que foi configurado anteriormente
 			ipv6 rip 10 enable
 			
 			!Configurando a Redistribuição da Origem da Rota Padrão do Protocolo RIPng na Interface
 			!DICA: habilitando o recurso de redistribuição da rota padrão do IPv6 aprendida na Interface
 			!OBSERVAÇÃO: essa opção possibilita dizer que essa interface possui as informações da rota padrão que foi aprendida
 			!e configurada nesse roteador, essa interface informa para os demais roteadores do Domínio do Protocolo RIPng que
-			!esse roteado tem a Rota Padrão para a Interface (procedimento igual ao Protocolo IPv4 utilizando o Protocolo RIPv2).
+			!esse roteado tem a Rota Padrão para a Internet (procedimento igual ao Protocolo IPv4 utilizando o Protocolo RIPv2).
 			ipv6 rip 10 default-information originate
 			exit
 
-		!OBSERVAÇÃO IMPORTANTE: nessa topologia não e habilitado o Protocolo IPv6 nas Sub-Interfaces das VLAN's 10, 20, 30 é 40
+		!OBSERVAÇÃO IMPORTANTE: nessa topologia não é habilitado o Protocolo IPv6 nas Sub-Interfaces das VLAN's 10, 20, 30 e 40
 		!pois essas Interfaces estão configuradas como DHCPv6 Statefull, o Endereço de Global Unicast é diferente do Escopo criado,
 		!o acesso a essas redes e feito utilizando Rota Estática, no processo do RIPng essas redes já seram publicadas no Domínio
 		!do Protocolo do RIPng utilizando o recurso de Redistribuição de Rotas
