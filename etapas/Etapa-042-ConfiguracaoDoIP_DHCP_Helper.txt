@@ -59,8 +59,8 @@ Service HTTPS	On
 </html>
 
 !TERCEIRA ETAPA: Configuração do Router DNSGoogle
-!OBSERVAÇÃO: nesse roteador eu não configurar todos os recursos BASE, apenas as configurações necessárias para o 
-!funcionamento e comunicação dos dispositivos, recomendo você aplicar os recursos BASE depois da configuração.
+!OBSERVAÇÃO: nesse roteador eu não configurei todos os recursos BASE, apenas as configurações necessárias para o funcionamento
+!e comunicação dos dispositivos de rede, recomendo você aplicar os recursos BASE depois da configuração do cenário.
 !Acessando o modo EXEC Privilégiado
 enable
 	configure terminal

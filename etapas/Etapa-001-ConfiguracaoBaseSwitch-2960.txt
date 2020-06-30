@@ -15,14 +15,14 @@
 switch>
 
 !Acessando o modo EXEC Privilégiado # (caracter Sustenido)
-!DICA: utilizar sempre a tecla TAB para auto-completar o comando
+!DICA: utilizar sempre a tecla TAB para auto-completar os comandos
 !DICA: se estiver com dúvida do comando, utilizar o caracter: ? (interrogação)
 !EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
-!DICA: se você está estudando para o CCNA, recomendo digitar os comandos completos, não abreviados
+!DICA: se você está estudando para o CCNAv7, recomendo digitar os comandos completos, não abreviados
 !EXEMPLO: enable = en | show running-config = sh runn | interface fastethernet0/0 int = fa0/0
 enable
 
-!Configuração de Data/Hora em inglês, você pode usar abreviado ou completo
+!Configuração de Data/Hora em Inglês, você pode usar abreviado ou completo
 !EXEMPLO: April ou Apr | December ou Dec
 !EXEMPLO: Hora no formato: 00:00:00 - Data no formato: Dia Mês Ano
 !DICA: Recomendado utilizar o Protocolo NTP (Network Time Protocol)
@@ -50,11 +50,11 @@ clock set 14:00:00 16 April 2020
 	!DICA: desabilitar esse recurso resolve o problema de travamento de comandos
 	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255))
 	!DICA: para desbloquear ou parar o comando você preciona: Ctrl+Shift+6 ou espera a liberação do terminal
-	!DICA: o comando: no e usado para desabilitar ou remover configurações feitas no switch
+	!DICA: o comando: no é usado para desabilitar ou remover configurações feitas no switch ou router
 	no ip domain-lookup
   
 	!Configuração do banner da mensagem do dia
-	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD e o mais usado
+	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD é o mais usado
 	!DICA: não utilizar acentuação, textos longos ou complexos
 	!DESAFIO: Buscar na Internet imagens ASCII Art para colocar no Banner MOTD
 	!CUIDADO: utilizar o mesmo caracter de delimitador de início e fim do Banner
@@ -62,13 +62,13 @@ clock set 14:00:00 16 April 2020
   
 	!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado
 	!DICA: senhas do Tipo-5 por padrão são criptografadas
-	!OBSERVAÇÃO: por padrão o acesso ao modo EXEC Privilegiado e liberado sem segurança
+	!OBSERVAÇÃO: por padrão o acesso ao modo EXEC Privilegiado é liberado sem segurança
 	enable secret vaamonde@pti
   
-	!Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 e privilégios diferenciados
+	!Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 é privilégios diferenciados
 	!DICA: existe 16 níveis de privilégios no Cisco IOS (0 até 15)
-	!DICA: não e recomendo criar usuários utilizando senhas do Tipo-7
-	!DICA: existe a possibilidade de se autenticar no switch utilizando o protocolos RADIUS ou TACACS
+	!DICA: não é recomendado criar usuários utilizando senhas do Tipo-7
+	!DICA: existe a possibilidade de se autenticar no switch utilizando os protocolos RADIUS ou TACACS
 	!DICA: usuários como Privilégio 15 não precisa digitar o comando enable
 	!OBSERVAÇÃO: Criação de usuários comuns para administrar o switch, privilégio padrão 1
 	username robson secret vaamonde@pti
@@ -76,28 +76,28 @@ clock set 14:00:00 16 April 2020
 	username admin privilege 15 secret vaamonde@pti
 	
 	!Acessando a linha console, porta padrão de acesso Out-of-Band (Fora da Banda)
-	!DICA: conexão utilizando o Cabo Console RS232/DB9 ou USB e software de Console (PuTTY)
+	!DICA: conexão utilizando o Cabo Console RS232/DB9 ou USB é software de Console (PuTTY)
 	!DICA: em switch temos apenas uma porta console RS232/DB9 ou USB
 	line console 0
 		
-		!Forçando fazer login local utilizando usuário e senha locais do switch
-		!DICA: padrão da configuração e permiti acesso sem autenticação
+		!Forçando fazer login local utilizando usuário é senha locais do switch
+		!DICA: padrão da configuração e permitir acesso sem autenticação
 		login local
 		
 		!Habilitando senha de acesso do Tipo-7 Password
 		!DICA: na porta console não temos a opção de criar senhas do Tipo-5
-		!OBSERVAÇÃO: porta console e considerada porta/interface física não remota ou virtual
+		!OBSERVAÇÃO: porta console é considerada porta/interface física não remota ou virtual
 		!OBSERVAÇÃO: esse recurso só será utilizado caso não exista usuários locais
 		password vaamonde@pti
 		
 		!Sincronizando as mensagens de logs na tela
 		!DICA: esse recurso facilita bastante, pois não atrapalha na digitação de comandos
-		!OBSERVAÇÃO: por padrão todas as mensagens de status do switch e mostrada na tela
+		!OBSERVAÇÃO: por padrão todas as mensagens de status do switch são mostradas na tela
 		logging synchronous
 		
 		!Habilitando o tempo de inatividade de uso do console
 		!DICA: configuração de minutos e segundos
-		!OBSERVAÇÃO: não recomendo deixar o tempo muito curto e nem muito longo
+		!OBSERVAÇÃO: não é recomendado deixar o tempo muito curto e nem muito longo
 		exec-timeout 5 30
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado

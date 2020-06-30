@@ -58,7 +58,7 @@ enable
 		
 		!Configurando a senha do Domínio do VTP no Switch Layer 3
 		!DICA: é recomendado configurar a senha do domínio do VTP para não enviar ou receber anúncios de outros domínios VTP
-		!OBSERVAÇÃO: a senha por padrão não é criptografa, criada em ASCII padrão, podendo utilizar caracteres especiais
+		!OBSERVAÇÃO: a senha por padrão não é criptografada, criada em ASCII padrão, podendo utilizar caracteres especiais
 		vtp password vaamonde@pti
 		
 		!Habilitando o recurso de Poda (Pruning) no VTP Server no Switch Layer 3

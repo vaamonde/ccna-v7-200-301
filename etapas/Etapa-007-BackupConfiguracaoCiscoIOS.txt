@@ -15,9 +15,9 @@
 !Acessando o modo EXEC Privilégiado
 enable
 	
-	!Visualizando a versão do Cisco IOS e informações do Hardware do Switch 2960
-	!DICA: esse comando é utilizado para verificar a versão de hardware e IOS do Switch
-	!DICA: atualmente a versão utilizada nos hardware da Cisco e 15.x
+	!Visualizando a versão do Cisco IOS é informações do Hardware do Switch 2960
+	!DICA: esse comando é utilizado para verificar a versão de hardware e do IOS do Switch
+	!DICA: atualmente a versão utilizada nos hardware da Cisco é 15.x (ou superior, dependo do modelo)
 	!OBSERVAÇÃO: as informações de memórias em equipamentos da Cisco estão em Kbytes ou Bytes
 	!OBSERVAÇÃO: esse comando fornece informações referente a Configuração do Registro de Inicialização
 	show version
@@ -30,8 +30,8 @@ enable
 	show boot
 	
 	!Visualizando informações do Flash Card (Memória de Massa) do Switch 2960
-	!DICA: a memória de massa em Switch geralmente são Chips soldados ou módulo interno
-	!OBSERVAÇÃO: diferente do Router, a memória Flash em Switch não pode ser acessada sem desmontar o equipamentos
+	!DICA: a memória de massa em Switch geralmente são Chips soldados ou módulos interno
+	!OBSERVAÇÃO: diferente do Router, a memória Flash em Switch não pode ser acessada sem desmontar o equipamento
 	show flash:
 	dir flash:
 		64016384 Bytes Total = 64 MB
@@ -45,16 +45,16 @@ enable
 	dir flash:
 	
 	!Salvando as configurações da memória NVRAM para o Servidor TFTP 
-	!DICA: o serviço de TFTP (Trivial File Transfer Protocol) utiliza o Protocolo UDP na Porta 69
+	!DICA: o serviço de TFTP (Trivial File Transfer Protocol) utiliza o Protocolo UDP na Porta Padrão 69
 	!OBSERVAÇÃO: o protocolo UDP (User Datagram Protocol) não é confiável, pois não exige confirmação
-	!OBSERVAÇÃO: o protocolo TFTP foi escolhido pela Cisco para ser o sistema padrão de atualização e Backup
+	!OBSERVAÇÃO: o protocolo TFTP foi escolhido pela Cisco para ser o sistema padrão de atualização é Backup
 	dir nvram:
 	ping 192.168.1.1
 	copy startup-config tftp:
 		192.168.1.1
 	
 	!Salvando a imagem do Cisco IOS do Switch 2960 para o Servidor TFTP
-	!DICA: as imagens do Cico IOS estão no formato BIN (binário) e compactado (m=RAM | z=zip)
+	!DICA: as imagens do Cico IOS estão no formato BIN (binário) e compactadas (m=RAM | z=zip)
 	!OBSERVAÇÃO: não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura
 	!CUIDADO: como o Cisco IOS é uma sub-derivação do Unix/BSD, ele é Case Sensitive (Maiúscula/Minúscula)
 	copy flash: tftp:
@@ -85,7 +85,7 @@ enable
 	
 	!Visualizando informações do Flash Card (Memória de Massa) do Router 1941
 	!DICA: em roteadores temos vários módulos de memória Flash Card
-	!OBSERVAÇÃO: o acesso a memória Flash em roteadores e feito utilizando módulos externos
+	!OBSERVAÇÃO: o acesso a memória Flash em roteadores é feito utilizando módulos externos
 	show flash:
 	dir flash0:
 		255744000 Bytes Total = 256MB

@@ -16,7 +16,7 @@
 
 !O protocolo padrão utilizado pelo SMTP Server é o TCP (Transmission Control Protocol) na porta padrão: 25
 !OBSERVAÇÃO: desde 01/01/2013 o CGI.br solicitou o bloqueio do envio de e-mails na porta 25 
-!OBSERVAÇÃO: atualmente a porta utilizada pelo SMTP e a 587, essa mudança tem o foco na diminuição de SPAM
+!OBSERVAÇÃO: atualmente a porta utilizada pelo SMTP é a 587, essa mudança tem o foco na diminuição de SPAM
 !DICA: a porta 587 utiliza TLS (segurança) já a porta 465 utiliza SSL (segurança) mais foi depreciada (desuso)
 !ERRATA: no vídeo eu falho: 01/01/2003 o correto é: 01/01/2013
 
@@ -25,25 +25,25 @@
 !ser transferidas sequencialmente para um software cliente de e-mail em outro dispositivo.
 
 !O protocolo padrão utilizado pelo POP3 é o TCP (Transmission Control Protocol) na porta padrão: 110
-!DICA: a porta 995 utiliza SSL/TLS (segurança) ela e também conhecida como POP3S
+!DICA: a porta 995 utiliza SSL/TLS (segurança) ela é também conhecida como POP3S
 
 !IMAP (Internet Message Access Protocol) é um protocolo de gerenciamento de correio eletrônico (e-mail). O mais 
 !interessante é que as mensagens ficam armazenadas no servidor de hospedagem de e-mail. Trabalhando com
-!sincronismo entre a caixa postal e o cliente de e-mail.
+!sincronismo entre a caixa postal é o cliente de e-mail.
 
 !O protocolo padrão utilizado pelo IMAP é o TCP (Transmission Control Protocol) na porta padrão: 143
-!DICA: a porta 993 utiliza SSL/TLS (segurança) ela e também conhecida como IMAPS
+!DICA: a porta 993 utiliza SSL/TLS (segurança) ela é também conhecida como IMAPS
 
 !MAPI (Messaging API) é um protocolo proprietário desenvolvido pela Microsoft. Ele é usado como interface de
 !comunicação entre as aplicações e o servidor Microsoft Exchange.
 
 !O protocolo MAPI utiliza um conjunto de protocolos TCP (Transmission Control Protocol) nas portas:
-!80 (HTTP), 443 (HTTPS), 143 (IMAP), 993 (IMAPS), 110 (POP3), 995 (POP3S) e 587 (SMTP) 
+!80 (HTTP), 443 (HTTPS), 143 (IMAP), 993 (IMAPS), 110 (POP3), 995 (POP3S) é 587 (SMTP) 
 
 !PRIMEIRA ETAPA: Configurações do Serviço de SMTP e POP3 Server no Cisco Packet Tracer:
 !OBSERVAÇÃO: por padrão o Serviço de SMTP e POP3 no Cisco Packet Tracer está ligado
-!DICA: em servidores de e-mail geralmente no Servidor de DNS e feito a criação do Registro MX (Mail Exchanger Record)
-!DICA: nesse servidor também e criado os arquivos do Tipo TXT com informações de Black List (Sender Policy Framework)
+!DICA: em servidores de e-mail geralmente no Servidor de DNS é feito a criação do Registro MX (Mail Exchanger Record)
+!DICA: nesse servidor também é criado os arquivos do Tipo TXT com informações de Black List (Sender Policy Framework)
 !OBSERVAÇÃO: esses recursos no Cisco Packet Tracer são limitados.
 
 SMTP Service		On
@@ -59,7 +59,7 @@ User Setup			User: robsonvaamonde	Password: 123456	(+)		Email: robsonvaamonde@va
 					User: vaamonde			Password: 123456	(+)		Email: vaamonde@vaamonde.pti
 
 !SEGUNDA ETAPA:Configurações do Clientes de SMTP e POP3 no Cisco Packet Tracer
-!DICA: o principal cliente de e-mail utilizado hoje em dia no mercado corporativo e o: Microsoft Outlook
+!DICA: o principal cliente de e-mail utilizado hoje em dia no mercado corporativo é o: Microsoft Outlook
 !OBSERVAÇÃO: existe outros clientes como: Thunderbid, Evolution, SeaMonkey, eM Client, etc
 
 nslookup smtp.vaamonde.pti

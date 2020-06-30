@@ -20,12 +20,12 @@ enable
 		!Habilitando o recurso de Resolução de Nomes de Domínio no Switch e Router
 		!OBSERVAÇÃO: esse recurso vem habilitado por padrão no Switch ou Router
 		!OBSERVAÇÃO: por padrão o endereço IPv4 de resolução de nomes e: 255.255.255.255 (Broadcast)
-		!DICA: habilitar esse recurso somente quando o Servidor DNS estiver configurando, caso contrário, desabilitar
+		!DICA: habilitar esse recurso somente quando o Servidor DNS estiver configurado, caso contrário, desabilitar
 		ip domain-lookup
 		
 		!Configurando o Nome de Domínio no Switch e Router
 		!OBSERVAÇÃO: esse recurso já foi configurado, ele é necessário para o serviço do SSH Server
-		!DICA: a configuranção do Nome de Domínio e recomendada, mesmo que não seja utilizado no Switch e Router
+		!DICA: a configuranção do Nome de Domínio é recomendada, mesmo que não seja utilizado no Switch ou Router
 		!ip domain-name vaamonde.pti
 		
 		!Configurando o Endereço IPv4 do Servidor de DNS no Switch e Router
@@ -36,7 +36,7 @@ enable
 		!Adicionando manualmente a Resolução de Nomes e Endereços no Switch e Router
 		!DICA: por padrão o Switch e Router consulta primeiro a Base Dados Locais de Nomes e depois o DNS Server
 		!OBSERVAÇÃO: a criação de nomes locais facilita o acesso a equipamentos sem a dependência do servidor de DNS
-		!OBSERVAÇÃO: desvantagem, que esse e um procedimento manual, sua atualização não e dinânica.
+		!OBSERVAÇÃO: desvantagem, que esse é um procedimento manual, sua atualização não é dinânica.
 		ip host servidor 192.168.3.1
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
@@ -47,7 +47,7 @@ write
 
 !Visualizando as configurações da memória RAM
 !DICA: utilização dos Filtros | (Pipe) para filtrar informações do running-config
-!DICA: muito utilizado no dia-a-dia para filtshow running-config | include iprar informações rápidas das configurações
+!DICA: muito utilizado no dia-a-dia para filtrar informações rápidas das configurações
 !OBSERVAÇÃO: opções de filtros: show running-config | ? (begin, exclude, include e section)
 show running-config | include ip
 

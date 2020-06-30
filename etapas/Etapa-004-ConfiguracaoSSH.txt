@@ -17,17 +17,17 @@ enable
 	!Acessando o modo de Configuração Global de comandos
 	configure terminal
 	
-		!Configuração do nome de domínio FQDN (Nome de Domínio Totalmente Qualificado)
-		!DICA: o nome de domínio é utilizado pelo serviço do SSH e outros serviços de rede, como autenticação
+		!Configuração do nome de Domínio FQDN (Nome de Domínio Totalmente Qualificado)
+		!DICA: o nome de Domínio é utilizado pelo Serviço do SSH e outros serviços de rede, como autenticação
 		ip domain-name vaamonde.pti
 
-		!Criação da chave de criptografia e habilitar o serviço do SSH Server local
-		!DICA: por padrão o serviço de SSH Server está desabilitado no switch
+		!Criação da chave de criptografia e habilitando o serviço do SSH Server local
+		!DICA: por padrão o serviço do SSH Server está desabilitado no Switch
 		!DICA: por padrão todas as conexões remotas utilizando o protocolo SSH são criptografadas
 		!OBSERVAÇÃO: é recomendado utilizar módulos de criptografia de 1024 bits (360 até 2048)
 		!OBSERVAÇÃO: no Switch ou Router Real utilizamos o comando: crypto key generate rsa usage-keys modulus 1024
-		!OBSERVAÇÃO: existe vários modos de geração das chaves públicas criptografadas, o padrão e utilizar o RSA
-		!OBSERVAÇÃO: porta padrão de conexão do serviço de SSH e 22
+		!OBSERVAÇÃO: existe vários modos de geração das chaves públicas criptografadas, o padrão é utilizar o RSA
+		!OBSERVAÇÃO: porta padrão de conexão do serviço de SSH é 22 no Protocolo TCP
 		!ADENDO: nessa versão do Cisco Packet Tracer 7.3 tem suporte ao comando completo para a geração dos módulos
 		!RSA nos Switches ou Router, utilizando o comando: crypto key generate rsa usage-keys modulus 1024
 		!OBSERVAÇÃO IMPORTANTE: caso queira desativar o serviço do SSH ou remover os Módulos RSA, digite o comando:
@@ -36,16 +36,16 @@ enable
 		crypto key generate rsa
 
 		!Habilitando a versão 2 do serviço de SSH Server
-		!DICA: a versão 2 do serviço de SSH Server corrigi falhas de segurança
+		!DICA: a versão 2 do serviço do SSH Server corrigi várias falhas de segurança
 		ip ssh version 2
 
 		!Habilitando o tempo de inatividade para novas conexões do SSH Server
-		!DICA: configuração de inatividade e feita somente em segundos (1 até 120)
-		!OBSERVAÇÃO: essa configuração está relacionada ao tempo para autenticação
+		!DICA: configuração de inatividade é feita somente em segundos (1 até 120)
+		!OBSERVAÇÃO: essa configuração está relacionada ao tempo para se autenticar no switch
 		ip ssh time-out 60
 
 		!Habilitando o número máximo de tentativas de conexões simultâneas no SSH Server
-		!DICA: essa opção aumenta o nível de segurança com Força Bruta (Brute-Force)
+		!DICA: essa opção aumenta o nível de segurança contra Força Bruta (Brute-Force)
 		!OBSERVAÇÃO: limites de conexões simultâneas vai de: 0 até 5
 		ip ssh authentication-retries 2
 

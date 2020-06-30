@@ -18,11 +18,11 @@ enable
 	configure terminal
 	
 		!Acessando as linhas virtuais de acesso remoto do Switch
-		!DICA: por padrão o switch cisco possui 16 (0 até 15) linhas virtuais de acesso remoto
+		!DICA: por padrão o Switch Cisco possui 16 (0 até 15) linhas virtuais de acesso remoto
 		!OBSERVAÇÃO: as linhas virtuais são utilizadas para acessar remotamente o console do switch
 		!OBSERVAÇÃO: linhas virtuais não são utilizadas para monitoramento, para isso usamos o Protocolo SNMP com SVI
-		!DICA: não e recomendo habilitar poucas linhas ou todas as linhas virtuais
-		!OBSERVAÇÃO: as linhas virtuais são bem parecidas com a linha console, a diferença que o acesso e remoto
+		!DICA: não é recomendado habilitar poucas linhas ou todas as linhas virtuais
+		!OBSERVAÇÃO: as linhas virtuais são bem parecidas com a linha console, a diferença é que o acesso e feito remoto
 		!DICA: por padrão as linhas virtuais estão desabilitadas, elas dependem da configuraçao do SVI
 		line vty 0 4
 
@@ -41,7 +41,7 @@ enable
 			!Configuração do tipo de protocolo de transporte de entrada
 			!DICA: na linha virtual você pode controlar o tipo de acesso remoto de entrada ou saída
 			!OBSERVAÇÃO: existe vários protocolos de acesso remoto, os mais usados são: Telnet e SSH
-			!OBSERVAÇÃO: por motivo de segurança, acesso remoto utilizando o protocolo Telnet não e mais usado
+			!OBSERVAÇÃO: por motivo de segurança, acesso remoto utilizando o protocolo Telnet não é mais usado
 			!DICA: existe várias opções de configuração do protocolo de transporte, a opção all permite todos
 			transport input all
 

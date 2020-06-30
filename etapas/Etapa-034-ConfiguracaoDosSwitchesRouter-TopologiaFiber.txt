@@ -42,7 +42,9 @@ terminal monitor
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
-		crypto key generate rsa
+		!ADENDO: pode copiar o script completo e aplicar nos equipamentos, usando a linha
+		!de geração das chaves do módulo do SSH Server completa
+		crypto key generate rsa usage-keys modulus 1024
 		ip ssh version 2
 		ip ssh time-out 60
 		ip ssh authentication-retries 2
@@ -92,7 +94,7 @@ terminal monitor
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
-		crypto key generate rsa
+		crypto key generate rsa usage-keys modulus 1024
 		ip ssh version 2
 		ip ssh time-out 60
 		ip ssh authentication-retries 2
@@ -144,7 +146,7 @@ terminal monitor
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
-		crypto key generate rsa
+		crypto key generate rsa usage-keys modulus 1024
 		ip ssh version 2
 		ip ssh time-out 60
 		ip ssh authentication-retries 2
@@ -200,7 +202,7 @@ terminal monitor
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
-		crypto key generate rsa
+		crypto key generate rsa usage-keys modulus 1024
 		ip ssh version 2
 		ip ssh time-out 60
 		ip ssh authentication-retries 2

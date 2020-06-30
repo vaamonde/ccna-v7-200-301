@@ -18,9 +18,9 @@
 !O protocolo padrão utilizado pelo SNMP é o UDP (User Datagram Protocol) na porta padrão: 161
 !OBSERVAÇÃO: o protoclo SNMP também utiliza a Porta 162 para Trap e portas seguras: 10161 e 10162
 
-!Versões do SNMP: SNMPv1, SNMPv2c (c=comunidade), SNMPv3
+!Versões do SNMP: SNMPv1, SNMPv2c (c=comunidade) e SNMPv3
 
-!O SNMP e dividido em: SNMP Manager (Gerente), SNMP Agent (Agente), MIB (Managed Information Base)
+!O SNMP é dividido em: SNMP Manager (Gerente), SNMP Agent (Agente), MIB (Managed Information Base)
 !e OID (Object Identifier)
 
 !PRIMEIRA ETAPA: Configuração dos Switches e Router para permiti acesso as informações SNMP
@@ -31,7 +31,7 @@ enable
 	configure terminal
 		
 		!Configurando a Comunidade do SNMP com direito a Leitura
-		!DICA: o nome da comunidade de leitura tem que ser diferente da comunidade que tem direitos de escrita
+		!DICA: o nome da comunidade de leitura tem que ser diferente da comunidade que tem direito de escrita
 		!OBSERVAÇÃO: no Cisco Packet Tracer as configurações de SNMP são limitadas
 		!OBSERVAÇÃO: o recurso de somente leitura consegue apenas ler as informações da MIB e OID
 		!ERRATA: no vídeo eu falo MID, o correto e MIB
@@ -39,7 +39,7 @@ enable
 		
 		!Configurando a Comunidade do SNMP com direito a Leitura e Escrita
 		!DICA: o SNMPv3 possui recursos de segurança, criptografia e autenticação
-		!OBSERVAÇÃO: e aconselhável configurar a segurança do SNMP no Switch e Router com uso de ACL
+		!OBSERVAÇÃO: é aconselhável configurar a segurança do SNMP no Switch e Router com uso de ACL
 		snmp-server community ptirw rw
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
@@ -74,5 +74,5 @@ Advanced:		Address: 			192.168.3.252
 !SEGUNDA ETAPA: acessando informações da MIB utilizando Prompt de Comando
 OBSERVAÇÕES: /v = version, /a = agent, /c = community, /o = OID, /d = display
 snmpget /v 3 /a 192.168.3.252 /c ptiro /o .1.3.6.1.2.1.1.1.0
-!ERRATA: no vídeo eu falo -d, correto e /d
+!ERRATA: no vídeo eu falo -d, correto é /d
 snmpget /d

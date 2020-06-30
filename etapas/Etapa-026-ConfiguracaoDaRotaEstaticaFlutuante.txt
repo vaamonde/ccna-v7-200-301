@@ -11,15 +11,16 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS EM
+!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO É MAIS COBRADO CONHECIMENTOS EM
 !CONFIGURAÇÕES DE PLACA DE REDE SERIAL OU LINK DE WAN SERIAL, UMA VEZ QUE ESSAS TECNOLOGIAS JÁ CAIRAM EM DESUSO, 
 !OUTRAS TECNOLOGIAS COMO: FRAME RELAY, FAX MODEM ISDN (Integrated Services Digital Network), ATM (Asynchronous 
 !Transfer Mode), X.25, HDLC (High-Level Data Link Control), SDLC (Synchronous Data Link Control), PPP (Point to
 !Point Protocol), ETC. TAMBÉM ENTRAM NA LISTA.
 
 !PRIMEIRA ETAPA: Adicionando o Módulo HWIC-2T (High-Speed WAN Interface Card) nos Router 1941
-!DICA: Router 1941-2 será o DCE (Data Circuit-Terminating Equipment) e Router 1941-1 será o DTE (Data Terminal Equipment)
-!OBSERVAÇÃO: nessa topologia não será configurado o Modem CSU/DSU (Channel Service Unit/Data Service Unit)
+!DICA: Router 1941-2 será o DCE (Data Circuit-Terminating Equipment) e o Router 1941-1 será o DTE (Data Terminal Equipment)
+!OBSERVAÇÃO: nessa topologia não será configurado o Modem CSU/DSU (Channel Service Unit/Data Service Unit), pois no Cisco
+!Packet Tracer essa opção não está disponível
 
 !SEGUNDA ETAPA: Configuração do Router 1941-2
 !Acessando o modo EXEC Privilégiado
@@ -50,10 +51,10 @@ show ip interface brief
 			clock rate 2000000
 			
 			!Configuração do Bandwidth (Largura de Banda) da Interface Serial
-			!DICA: o Bandwidth é uma indicação de largura de banda que a interface é capaz de transmitir, é uma definição que não interface no hardware 
-			!OBSERVAÇÃO: essa informação e utilizada nos protocolos de roteamento dinâmico para determinar a Métrica (Custo) do Link
+			!DICA: o Bandwidth é uma indicação de largura de banda que a interface é capaz de transmitir, é uma definição que não interfere no hardware 
+			!OBSERVAÇÃO: essa informação é utilizada nos protocolos de roteamento dinâmico para determinar a Métrica (Custo) do Link
 			!OBSERVAÇÃO: as configurações de largura de banda vária de: 1 até 10000000  (Kilo Bits por Segundo - Kbps ou 10.000Mbps)
-			!OBSERVAÇÃO: o valor do bandwidth e determinado da seguinte forma: valor do clock rate / 1000 = valor Kbps
+			!OBSERVAÇÃO: o valor do bandwidth é determinado da seguinte forma: valor do clock rate / 1000 = valor Kbps
 			bandwidth 2000
 			
 			!Configuração do Encapsulamento Back-to-Back (Ida e Volta) da Interface Serial

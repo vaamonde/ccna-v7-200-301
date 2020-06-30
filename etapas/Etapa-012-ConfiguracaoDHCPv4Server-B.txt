@@ -13,7 +13,7 @@
 
 !DHCPv4 (Dynamic Host Configuration Protocol) é um protocolo de serviço TCP/IP que oferece configuração dinâmica de
 !dispositivos finais, com concessão de endereços IP de host, máscara de sub-rede, gateway padrão, servidores DNS,
-!sufixos de pesquisa do DNS, servidores WINS, servidores NTP e muito mais.
+!sufixos de pesquisa do DNS, servidores WINS, servidores NTP é muito mais.
 
 !O protocolo padrão utilizado pelo DHCP Server é o UDP (User Datagram Protocol) na porta padrão: 67
 
@@ -23,10 +23,10 @@
 !Configurações do Serviço de DHCP Server no Cisco Packet Tracer:
 !OBSERVAÇÃO: por padrão o Serviço de DHCP Server no Cisco Packet Tracer está desligado
 !OBSERVAÇÃO: o nome do escopo padrão do DHCP Server no Cisco Packet Tracer tem que ser: serverPool
-!DICA: o escopo inicial está sempre relacionado a Placa de Rede e sua Configuração do Endereçamento IPv4
+!DICA: o escopo inicial está sempre relacionado a Placa de Rede é sua Configuração do Endereçamento IPv4
 !DICA: geralmente em Servidores Microsoft ou GNU/Linux, após a instalação do Serviço do DHCP ele está desligado
 !CUIDADO: é recomendado ter apenas 1 (um) Servidor DHCP na rede, em redes mais complexas existe a possibilidade de mais servidores
-!OBSERVAÇÃO: o Switch Layer 3 ou Router possui o recursos de DHCP Server que será explorado em breve.
+!OBSERVAÇÃO: o Switch Layer 3 ou Router possui os recursos de DHCP Server que será explorado em breve.
 
 !Interface:					FastEthernet0
 !Service:					On

@@ -16,8 +16,8 @@
 !a aplicação ou biblioteca de envio de mensagens no protocolo syslog.
 
 !O protocolo padrão utilizado pelo Syslog é o UDP (User Datagram Protocol) na porta padrão: 514
-!OBSERVAÇÃO: O Servidor de Syslog também utiliza o Protocolo TCP na porta 514 ou com suporte a 
-!Criptografia na Porta 6514
+!OBSERVAÇÃO: O Servidor de Syslog também utiliza o Protocolo TCP na porta 514, com suporte a Criptografia
+!na Porta 6514
 
 !O Syslog trabalha com Níveis de Severidade (Traps) que inicia de: 0 até 7 utilizando palavras chaves como:
 !0=emergency, 1=alert, 2=critical, 3=error, 4=warning, 5=notice, 6=info e 7=debugging
@@ -42,25 +42,25 @@ enable
 		logging on
 		
 		!Configurando o Endereço IPv4 do Servidor de Syslog
-		!OBSERVAÇÃO: não e possível utilizar nomes para servidores de Syslog no Cisco Packet Tracer, somente IPv4
+		!OBSERVAÇÃO: não é possível utilizar nomes para servidores de Syslog no Cisco Packet Tracer, somente IPv4
 		logging host 192.168.3.1
 		
 		!Configurando o Nível de Log que será enviado para o Servidor de Syslog
-		!DICA: o nível de detalhamento do Log facilita a análise de erros e possíveis falhas
+		!DICA: o nível de detalhamento do Log facilita a análise de erros é possíveis falhas de segurança
 		!OBSERVAÇÃO: no Cisco Packet Tracer temos apenas a opção: Debugging (severity=7)
 		logging trap debugging
 		
 		!Habilitando os Logs de Autenticação que será enviado para o Servidro de Syslog
-		!DICA: esse recurso aumenta o nível de segurança e auditoria da rede
+		!DICA: esse recurso aumenta o nível de segurança é auditoria da rede
 		!OBSERVAÇÃO: recomendo habilitar o recursos de sucesso e falhas de autenticação
 		!OBSERVAÇÃO: essas informações em conjunto com as regras de segurança aumenta nível de confiabilidade da rede
 		!OBSERVAÇÃO: esse recurso não está disponível no Switch Layer 2 2960
 		login on-success log
 		login on-failure log
 		
-		!Habilitando os Logs de Nível de Privilegio de Autenticação do Usuário
-		!DICA: esse recurso mostrar no momento da autenticação qual e o privilégio do usuário
-		!OBSERVAÇÃO: esse recurso facilita a administração e monitoramento dos equipamentos	utilizados
+		!Habilitando os Logs de Nível de Privilégio de Autenticação do Usuário
+		!DICA: esse recurso mostrar no momento da autenticação qual é o privilégio do usuário
+		!OBSERVAÇÃO: esse recurso facilita a administração é o monitoramento dos equipamentos utilizados na rede
 		!OBSERVAÇÃO: esse recurso não está disponível no Switch Layer 2 2960
 		logging userinfo
 		
@@ -74,8 +74,9 @@ write
 show running-config | include log
 
 !Comandos para verificar do envio das Mensagens para o Syslog Server
-!DICA: o comando Debug e muito utilizado para analisar informações detalhadas de recursos ou comandos
-!OBSERVAÇÃO: muito cuidado quando habilitar o Debug, não esquecer de desabilitar, pois consome recursos de hardware
+!DICA: o comando Debug é muito utilizado para analisar informações detalhadas de recursos ou comandos
+!OBSERVAÇÃO: muito cuidado quando habilitar o Debug, não esqueça de desabilitar no final da análise, pois esse recurso
+!consome muita memória e processo do hardware
 debug ip icmp
 ping server-02
 no debug ip icmp

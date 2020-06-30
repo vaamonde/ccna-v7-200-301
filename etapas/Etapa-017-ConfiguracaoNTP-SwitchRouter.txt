@@ -38,10 +38,11 @@ show clock
 	configure terminal
 		
 		!Configuração do Fuso Horário (Timezone) do Switch e Router
-		!DICA: configurar o Fuso Horário nos equipamentos e obrigatório para a Data/Hora ficar correta
-		!OBSERVAÇÃO: a configuração do Fuso Horário e dividida em: Nome da Zona (BR) e o UTC (Coordinated Universal Time)
+		!DICA: configurar o Fuso Horário nos equipamentos é obrigatório para a Data/Hora ficar correta
+		!OBSERVAÇÃO: a configuração do Fuso Horário é dividida em: Nome da Zona (BR) e o UTC (Coordinated Universal Time)
 		!OBSERVAÇÃO: no Brasil utilizamos quatro UTC diferentes, em São Paulo utilizamos o UTC de Brasília -3
-		!ERRATA: no Cisco Packe Tracer tem um Bug em relação ao UTC, mesmo configurado com o show clock tem erro na Hora
+		!ERRATA: no Cisco Packe Tracer tem um Bug em relação ao UTC, mesmo configurado com o comando: show clock temos o
+		!erro na configuração da Hora
 		clock timezone BR -3
 		
 		!Habilitando o recurso de Autenticação do Servidor NTP
@@ -49,14 +50,14 @@ show clock
 		ntp authenticate
 		
 		!Configurando a Chave e Senha de autenticação do Servidor NTP
-		!DICA: a chave por padrão é uma sequência numérica já a senha e criptografada utilizando o MD5
+		!DICA: a chave por padrão é uma sequência numérica já a senha é criptografada utilizando o MD5
 		!OBSERVAÇÃO: essas informações são configuradas no Servidor de NTP Local
 		ntp authentication-key 123456 md5 vaamonde
 		
 		!Configurando o Endereço IPv4 do Servidor de NTP
-		!DICA: por padrão apenas um servidor de NTP e configurado no Cisco Packet Tracer, em equipamentos reais permite mais
+		!DICA: por padrão apenas um servidor de NTP é configurado no Cisco Packet Tracer, em equipamentos reais permite mais
 		!DICA: Switch Layer 3 ou Router pode ser Servidor de NTP na Rede usando a opção: ntp master 1 (stratum)
-		!OBSERVAÇÃO: não e possível utilizar nomes para servidores de NTP no Cisco Packet Tracer, somente IPv4
+		!OBSERVAÇÃO: não é possível utilizar nomes para servidores de NTP no Cisco Packet Tracer, somente IPv4
 		ntp server 192.168.3.1
 		
 		!Habilitando o sincronismo da Data e Hora do NTP com o Hardware

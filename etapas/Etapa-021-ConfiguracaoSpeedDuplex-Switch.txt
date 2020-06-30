@@ -53,7 +53,7 @@ enable
 			
 		!Acessando a Interface (Porta de Rede) da Conexão do Access Point
 		interface FastEthernet 0/2
-			description Porta de Conexão do Access Point N APT-01
+			description Porta de Conexao do Access Point N APT-01
 			speed 100
 			duplex full
 			no mdix auto
@@ -61,7 +61,7 @@ enable
 
 		!Acessando a Interface (Porta de Rede) da Conexão do Router 1941
 		interface FastEthernet 0/24
-			description Porta de Conexão do Router 1941
+			description Porta de Conexao do Router 1941
 			speed 100
 			duplex full
 			exit
@@ -82,7 +82,7 @@ enable
 			
 		!Configurando as Interfaces de Trunk (Tronco) e Backbone (Cascateamento) dos Switches Layer 2 2960
 		interface range GigabitEthernet 0/1 - 2
-			description Porta de Conexão com o Switch Layer 2 2960
+			description Porta de Conexao com o Switch Layer 2 2960
 			speed 1000
 			no mdix auto
 			
@@ -97,7 +97,7 @@ write
 enable
 	configure terminal
 		interface range FastEthernet 0/1 - 2
-			description Porta de Conexão dos Desktop
+			description Porta de Conexao dos Desktop
 			speed 100
 			duplex full
 			no mdix auto

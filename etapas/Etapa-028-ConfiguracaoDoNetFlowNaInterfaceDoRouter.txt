@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS EM
+!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO É MAIS COBRADO CONHECIMENTOS EM
 !NETFLOW, HOJE UTILIZAMOS NOVAS TECNOLOGIAS PARA O MONITORAMENTO E GERENCIAMENTO DO FLUXO DE DADOS EM REDE
 
 !NetFlow (Fluxo da Rede) é um recurso que foi introduzido em roteadores Cisco cuja função é coletar características
@@ -20,9 +20,9 @@
 !NetFlow foi implementado inicialmente pela Cisco, descrito na RFC 3954, sendo substituido pelo IPFIX (Internet Protocol
 !Flow Information eXport) com base na versão 9 do NetFlow em 2008
 
-!A versão atual do NetFlow no Cisco Packet Tracer e v9, a partir da versão v10 foi substituido pelo IPFIX
+!A versão atual do NetFlow no Cisco Packet Tracer é: v9, a partir da versão v10 foi substituido pelo IPFIX
 
-!O NetFlow e dividido em: Flow exporter (Exportador de Fluxo), Flow collector (Coletor de Fluxo) e Analysis application 
+!O NetFlow é dividido em: Flow exporter (Exportador de Fluxo), Flow collector (Coletor de Fluxo) e Analysis application 
 !(Aplicativo de Análise)
 
 !O protocolo padrão utilizado pelo NetFlow é o UDP (User Datagram Protocol) na porta padrão: 9996
@@ -39,30 +39,30 @@ enable
 	
 		!Configurando o endereço IPv4 do Destino do Coletor das Informações do NetFlow
 		!DICA: essa opção configura o endereço de destino do Coletor de Dados e Análise do NetFlow
-		!OBSERVAÇÃO: no Cisco Packet Tracer o endereço de Destino é somente em IPv4 e porta padrão é UDP 9996
+		!OBSERVAÇÃO: no Cisco Packet Tracer o endereço de Destino é somente em IPv4 é a porta padrão é UDP 9996
 		ip flow-export destination 192.168.3.1 9996
 		
 		!Configurando a origem dos dados do Fluxo do NetFlow
 		!DICA: selecionar a interface de origem facilita na análise do fluxo de dados do NetFlow
-		!OBSERVAÇÃO: esse recurso e importante principalmente se o Router utilizar NAT (Network Address Translation)
+		!OBSERVAÇÃO: esse recurso é importante, principalmente se o Router utilizar NAT (Network Address Translation)
 		ip flow-export source gigabitEthernet 0/0
 		
 		!Configurando a versão do NetFlow
 		!DICA: é importante configurar a versão do NetFlow, essa opção habilitar os recursos existente dessa versão
-		!OBSERVAÇÃO: no Cisco Packet Tracer e limitado somente na versão 9 do NetFlow, sem suporte a versão v10 IPFIX
+		!OBSERVAÇÃO: no Cisco Packet Tracer é limitado somente na versão 9 do NetFlow, sem suporte a versão v10 IPFIX
 		ip flow-export version 9
 		
 		!Configurando a Interface de Rede de Monitoramento do NetFlow
 		interface gigabitEthernet 0/0
 			
 			!Configurando a análise de Fluxo de Saída do NetFlow da Interface
-			!DICA: análise do fluxo de saída está relacionado aos pacotes que saem da Interface para outros Destinos
-			!OBSERVAÇÃO: esse recurso e muito utilizado quando estamos analisando fluxo vindo da WAN para nossa LAN
+			!DICA: análise do fluxo de saída está relacionada aos pacotes que saem da Interface para outros Destinos
+			!OBSERVAÇÃO: esse recurso é muito utilizado quando estamos analisando fluxo vindo da WAN para nossa LAN
 			ip flow egress
 			
 			!Configurando a análise de Fluxo de Entrada do NetFlow na Interface
-			!DICA: análise do fluxo de entrada está relacionado aos pacotes que entram na Interface
-			!OBSERVAÇÃO: esse recurso e muito utilizado quando estamos analisando fluxo vindo da LAN para outras REDES
+			!DICA: análise do fluxo de entrada está relacionada aos pacotes que entram na Interface
+			!OBSERVAÇÃO: esse recurso é muito utilizado quando estamos analisando fluxo vindo da LAN para outras REDES
 			ip flow ingress
 			end
 	

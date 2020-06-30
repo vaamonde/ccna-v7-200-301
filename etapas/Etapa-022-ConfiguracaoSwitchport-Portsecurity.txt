@@ -24,13 +24,13 @@ enable
 			!Configurando a Interface (Porta de Rede) para o Modo de Acesso (Access)
 			!DICA: uma Interface de Acesso pertence e trafega dados de uma única VLAN
 			!OBSERVAÇÃO: por padrão todos os Switch tem a VLAN 1 que não pode ser removida e está associada a todas as Interfaces
-			!OBSERVAÇÃO: e recomendo sempre configurar as Interfaces dos dispositivos finais para o Modo Acesso (Access)
+			!OBSERVAÇÃO: é recomendado sempre configurar as Interfaces dos dispositivos finais para o Modo Acesso (Access)
 			!OBSERVAÇÃO: tipos de configuração: access (porta de acesso), trunk (porta de tronco) e dynamic (porta dinâmica)
 			switchport mode access
 			
 			!Desabilitando o recurso de auto-negociação da Interface (Porta de Rede)
 			!DICA: por padrão todas as Interfaces do Switch está com o recurso do DTP (Dynacmic Trunk Protocol) habilitado
-			!OBSERVAÇÃO: é recomendo desabilitar o recurso de DTP nas Interfaces que são do tipo Acesso (Access)
+			!OBSERVAÇÃO: é recomendado desabilitar o recurso de DTP nas Interfaces que são do tipo Acesso (Access)
 			switchport nonegotiate
 			
 			!Habilitando o recurso de Port-Security na Interface (Porta de Rede)
@@ -52,14 +52,14 @@ enable
 			!OBSERVAÇÃO: existe duas formas de configurar o endereço MAC na Interface: static (estático) ou stick (dinâmico)
 			!OBSERVAÇÃO: configurando o modo estático: switchport port-security mac-address H.H.H (0002.16d2.da19)
 			!OBSERVAÇÃO: configurando o modo dinâmico: switchport port-security mac-address sticky
-			!DICA: o endereço MAC e aprendido quando o quadro entra pela primeira vez na Porta do Switch
+			!DICA: o endereço MAC é aprendido quando o quadro entra pela primeira vez na Porta do Switch
 			switchport port-security mac-address sticky
 			
 			!Configurando a violação de segurança da Interface (Porta de Rede)
 			!DICA: o recurso de violação da Interface será executado quando algum MAC Address não constar nas configurações
 			!ou quando exceder a quantidade de MAC Address associado a uma Interface
 			!OBSERVAÇÃO: existe três tipos de violação: protect (proteger), restrict (restringir) e shutdown (bloquear)
-			!OBSERVAÇÃO: por padrão a opção de violação do Switch Cisco e: shutdown (bloquear a Interface)
+			!OBSERVAÇÃO: por padrão a opção de violação do Switch Cisco é: shutdown (bloquear a Interface)
 			!OBSERVAÇÃO: o modo shutdown restringe a interface com o serviço habilitado, descartando todo tráfego, enviando 
 			!mensagens informativas de SNMP Trap, não informando Log's para o Syslog e não incrementando a contagem de violação
 			switchport port-security violation shutdown
@@ -80,7 +80,7 @@ enable
 			!OBSERVAÇÃO: alterando o modo de violação da Interface para protect
 			!OBSERVAÇÃO: o modo protect recusa os quadros com endereços desconhecidos (drop) sem bloquear a porta.
 			!não incrementa a contagem de violação e não envia uma mensagem informativa SNMP Trap, não informando Log's
-			!para o Syslog, mantém os MAC aprendindo transmitindo normalmente.
+			!para o Syslog, mantém os MAC aprendindos transmitindo normalmente.
 			switchport port-security violation protect
 			
 			!Configurando a validade de envelhecimento dos endereços MAC na Interface (Porta de Rede)
@@ -95,7 +95,7 @@ enable
 			
 		!Configurando a Auto-Recuperação da Configuração da Interface (Porta de Rede)
 		!DICA: caso tenha alguma violação de segurança na Interface, o processo de retorno da configuração e manual
-		!DICA: o recurso de errdisable e configurado com base na violação e o tempo para retorno em minutos
+		!DICA: o recurso de errdisable é configurado com base na violação e o tempo para retorno em minutos
 		!OBSERVAÇÃO: no Cisco Packet Tracer esse recurso não está disponível nos Switches Layer 2 2960 e Layer 3 3560
 		!errdisable recovery cause psecure-violation
 		!errdisable recovery interval 60
@@ -138,16 +138,16 @@ interface fastEthernet 0/2
 	shutdown
 	no shutdown
 	
-	!OBSERVAÇÃO: as opções do comando clean no Cisco Packet Tracer não estão disponíveis
+	!OBSERVAÇÃO: as opções do comando clean no Cisco Packet Tracer não está disponível
 	!clear port-security all
 	!clear port-security dinamic
-	1clear port-security stick
+	!clear port-security stick
 
-!OBSERVAÇÃO: as opções do comando clean no Cisco Packet Tracer não estão disponíveis
+!OBSERVAÇÃO: as opções do comando clean no Cisco Packet Tracer não está disponível
 !configure terminal
 	!clear port-security dynamic interface fastethernet0/2
 
-!OBSERVAÇÃO: as opções do comando errdisable no Cisco Packet Tracer não estão disponíveis
+!OBSERVAÇÃO: as opções do comando errdisable no Cisco Packet Tracer não está disponível
 !configure terminal
 	!errdisable recovery cause psecure-violation
 	!errdisable recovery interval 6

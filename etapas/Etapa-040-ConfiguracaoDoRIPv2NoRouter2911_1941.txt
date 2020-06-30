@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO O CCNAv7 EXAME 200-301 NÃO E MAIS COBRADO CONHECIMENTOS NO
+!OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO O CCNAv7 EXAME 200-301 NÃO É MAIS COBRADO CONHECIMENTOS NO
 !PROTOCOLO DE ROTEAMENTO DINÂMICO RIP OU RIPv2, UMA VEZ QUE SUA IMPLEMENTAÇÃO EM REDES CORPORATIVAS ATUAIS CAIU
 !EM DESUSO, DEVIDO AO SEU ALGORITMO DE VETOR DE DISTÂNCIA SER LIMITADO EM REDES MAIS COMPLEXAS, PRINCIPALMENTE
 !NA INTERNET, MAIS RECOMENDO O SEU ESTUDO, POIS O RIP FOI O PRIMEIRO PROTOCOLO DE ROTEAMENTO DINÂMICO DESENVOLVIDO.
@@ -21,7 +21,7 @@
 !máximo de 15 saltos (Hopes, Routers, Gateway), a primeira versão do RIP foi descrita na RFC 1058 em 1988.
 
 !O Protocolo RIP possui basicamente três versões: RIPv1 implementação original, limitado ao roteamento de Rede de Classe
-!Cheia/Completa (classful), considerado obsoleto, RIPv2 introduziu o suporte para roteamento de Rede Sem Classe (classless), 
+!Cheia/Completa (Classful), considerado obsoleto, RIPv2 introduziu o suporte para roteamento de Rede Sem Classe (Classless), 
 !autenticação, atualizações dinâmicas e anúncios Multicast (RFC 2453) e o RIPng (RIP Next Generation) que estende o RIPv2
 !para oferecer suporte ao roteamento do Protocolo IPv6 (RFC 2080).
 
@@ -52,8 +52,8 @@ enable
 		
 		!Configurando a Interface Lógica de Interligação com o Router 1941-2
 		interface gigabitEthernet 0/0/0.999
-			!OBSERVAÇÃO: esse tipo de configuração é muito comum em Rede WAN Privadas como PAP-L2
-			description Interface Logica de Interligação da WAN Fiber com o Router 1941-2
+			!OBSERVAÇÃO: esse tipo de configuração é muito comum em Redes WAN Privadas como PAP-L2
+			description Interface Logica de Interligacao da WAN Fiber com o Router 1941-2
 			encapsulation dot1Q 999
 			ip address 10.0.0.9 255.255.255.252
 			exit
@@ -103,7 +103,7 @@ write
 enable
 	configure terminal
 		interface gigabitEthernet 0/1/0
-			description Interface de Interligação Fisica da WAN Fiber com o Router 2911
+			description Interface de Interligacao Fisica da WAN Fiber com o Router 2911
 			no shutdown
 			exit
 		interface gigabitEthernet 0/1/0.999

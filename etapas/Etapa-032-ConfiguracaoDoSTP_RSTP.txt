@@ -47,8 +47,9 @@
 !Os 3 estágios da Negociação do RSTP são: Discarding (Descartando), Learning (Aprendendo) e Forwarding (Encaminhamento)
 !Os 4 status da Negociação das Portas do RSTP são: Root Port (Porta Raiz), Designated Port (Porta Designadas), Alternate Port (Porta 
 !Alternativa) e Backup Port (Porta Backup)
-!A vantagem do RSTP em conjunto com o PVST ou PVRST+ é a possibilidade de criar instâncias individuais para cada VLAN na Topologia do STP,
-!facilitando a administração e configuração dos melhores caminhos para cada VLAN na Topologida da rede.
+!A vantagem do RSTP em conjunto com o PVST (Per VLAN Spanning-Tree) ou PVST+ (Per VLAN Spanning-Tree Plus )é a possibilidade de criar 
+!instâncias individuais para cada VLAN na Topologia do STP, facilitando a administração e configuração dos melhores caminhos para cada VLAN
+!na Topologida da rede.
 
 !PRIMEIRA ETAPA: Configuração do Switch Layer 3 3560
 !OBSERVAÇÃO: utilizar o cabo Console para essa configuração

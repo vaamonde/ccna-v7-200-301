@@ -65,7 +65,8 @@ Service HTTPS	On
 !PRIMEIRA ETAPA: testando localmente no servidor
 nslookup ftp.vaamonde.pti
 ping ftp.vaamonde.pti
-!ERRATA: no vídeo eu falo o nome do usuário vaamonde, mais utilizo o usuário robson, qualquer um dos dois usuários vai funcionar o teste
+!ERRATA: no vídeo eu falo o nome do usuário vaamonde, mais utilizo o usuário robson, qualquer um dos dois usuários vai 
+!funcionar no teste
 ftp ftp.vaamonde.pti
 	Username: vaamonde
 	Password: vaamonde

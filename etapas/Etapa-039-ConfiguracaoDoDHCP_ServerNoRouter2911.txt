@@ -42,7 +42,7 @@ enable
 			!Configurando o Gateway padrão do Pool da VLAN 10
 			!DICA: essa será a configuração do Endereço de Gateway Padrão dos dispositivos finais da VLAN 10
 			!OBSERVAÇÃO: no Cisco Packet Tracer só temos a possibilidade de configurar um Gateway Padrão no Pool do DHCP
-			!OBSERVAÇÃO: em equipamentos reais temos a possibilidade de configurar mais Gateway, separados por espaço
+			!OBSERVAÇÃO: em equipamentos reais temos a possibilidade de configurar mais Gateways, separados por espaço
 			default-router 192.168.10.254
 			
 			!Configurando o Endereço IPv4 do Servidor de DNS do Pool da VLAN 10
@@ -57,7 +57,7 @@ enable
 			domain-name vaamonde.pti
 			
 			!Configurando as Opções do DHCP do Pool da VLAN 10
-			!DICA: em servidores DHCP tem os recursos de Opções (Option), que possibilita fazer configurações de parâmetros
+			!DICA: em servidores DHCP temos os recursos de Opções (Option), que possibilita fazer configurações de parâmetros
 			!do Pool do Servidor DHCP
 			!OBSERVAÇÃO: no Cisco Packet Tracer só temos as possibilidades de configurar as Opções: 43 (Vendor Specific) e
 			!150 (TFTP Server)

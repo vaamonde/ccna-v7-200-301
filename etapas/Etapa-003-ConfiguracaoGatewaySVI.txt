@@ -19,36 +19,36 @@ enable
 	
 	!Configuração do Gateway padrão IPv4 no Switch
 	!DICA: configuração do Gateway IPv4 em Switch Layer 2 serve somente para acesso remoto
-	!DICA: switch Layer 3 o recurso de Gateway e utilizado tanto para acesso remoto como roteamento
-	!OBSERVAÇÃO: esse recurso e necessário para administração remota ou monitoramento
-	!OBSERVAÇÃO: esse a possibilidade de configuração de endereço IPv6
+	!DICA: switch Layer 3 o recurso de Gateway é utilizado tanto para acesso remoto como roteamento
+	!OBSERVAÇÃO: esse recurso é necessário para administração remota ou monitoramento
+	!OBSERVAÇÃO: existe também a possibilidade de configuração de endereço IPv6 em Switch
 	ip default-gateway 192.168.1.254
   
 	!Configuração da Interface Virtual do Switch SVI
 	!DICA: interfaces virtuais são criadas utilizando o recurso de VLAN (Virtual-LAN)
-	!DICA: e recomendo utilizar outra VLAN para o SVI, não recomendo utilizar a VLAN padrão 1 para isso
+	!DICA: é recomendado utilizar outra VLAN para o SVI, não é recomendado utilizar a VLAN padrão 1 para isso
 	!OBSERVAÇÃO: em switch Layer 2 utilizamos o SVI para administração remota ou monitoramento
-	!OBSERVAÇÃO: o SVI e necessário para o acesso via linhas virtuais utilizando o protocolo Telnet ou SSH
+	!OBSERVAÇÃO: o SVI é necessário para o acesso via linhas virtuais utilizando o protocolo Telnet ou SSH
 	interface vlan 1
 		
 		!Configuração da Descrição da Interface Virtual
-		!DICA: sempre utilizar o comando description nas interface para documentação
+		!DICA: sempre utilizar o comando description nas Interfaces para efeito de documentação
 		!OBSERVAÇÃO: documentação de interfaces facilita o processo de indentificação e função na rede
 		description Interface de Gerenciamento do Switch SW-L2-2960-1
 		
 		!Configuração do Endereçamento IPv4 da Interface Virtual
-		!DICA: o endereço IPv4 deve ser da mesma rede do Gateway
-		!DICA: e recomendo que os endereços de rede dos Switch devem ser de redes diferentes dos desktops
-		!OBSERVAÇÃO: configuração do endereço IPv4 de ser: IP + Máscara de Rede completa, não utilizar CIDR
+		!DICA: o endereço IPv4 deve ser da mesma faixa de rede do Gateway
+		!DICA: é recomendado que os endereços de rede dos Switches devem ser de redes diferentes dos desktops
+		!OBSERVAÇÃO: configuração do endereço IPv4 deve ser: IP + Máscara de Rede completa, não utilizar CIDR
 		ip address 192.168.1.250 255.255.255.0
 		
 		!Inicializando a Interface Virtual do Switch
 		!DICA: por padrão todas as interfaces estão no status desligada (Shutdown)
 		!DICA: por padrão todas as portas de redes estão no status ligada (No-Shutdown)
-		!OBSERVAÇÃO: o comando: no também e utilizado para ligar as interfaces tirando do status shutdown
+		!OBSERVAÇÃO: o comando: no também é utilizado para ligar as interfaces tirando do status shutdown
 		no shutdown
 		
-		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+		!Saindo de todos os níveis é voltando para o modo EXEC Privilegiado
 		!DICA: somente no modo EXEC Privilegiado você tem o comando copy para salvar as configurações
 		!DICA: existe o comando: do, esse recurso permite executar comandos fora do seu nível padrão
 		!EXEMPLO: sw-l2-2960-1(config-line)# do copy running-config startup-config | sw-l2-2960-1(config-line)# do show running-config

@@ -42,8 +42,8 @@ User Setup
 Username		pti		Password	pti
 
 !SEGUNDA ETAPA: Configuração do Switch Layer 3 3560
-!OBSERVAÇÃO IMPORTANTE: No Switch Layer 3 temos apenas o recurso de AAA TACACS+, não está disponível no
-!Cisco Packet Tracer a possibilidade de configuração do AAA RADIUS
+!OBSERVAÇÃO IMPORTANTE: No Switch Layer 3 temos apenas o recurso de AAA TACACS+, não está disponível no Cisco Packet
+ Tracer a possibilidade de configuração do AAA RADIUS
 !Acessando o modo EXEC Privilégiado
 enable
 
@@ -59,10 +59,12 @@ enable
 		!Configuração da Autenticação AAA de Login do Console e VTY
 		!DICA: configurando essa opção, o acesso ao modo EXEC será feito consultando o servidor de AAA
 		!OBSERVAÇÃO: o comando aaa authentication login autentica os usuários que querem o acesso ao modo EXEC
-		!OBSERVAÇÃO: e recomendado configurar a autenticação AAA com Backup de usuários locais: AAA + Local
+		!OBSERVAÇÃO: é recomendado configurar a autenticação AAA com Backup de usuários locais: AAA + Local
 		!OBSERVAÇÃO: será criado uma lista padrão (default) de autenticação dos usuários, podemos criar nossa lista
 		!EXEMPLO: aaa authentication login boraparapratica group tacacs+ local
 		!OBSERVAÇÃO: utilizando a opção grupo (group) configuramos a possibilidade de usar o TACACS+ e Local
+		!ADENDO IMPORTANTE: os usuáriso locais só seram utilizados quando os Servidores AAA TACACS+ ou RADIUS estiverem
+		!Off-Line (fora de serviço)
 		aaa authentication login default group tacacs+ local
 		
 		!Configuração da Autenticação AAA de Login do Modo EXEC Privilegiado
@@ -71,13 +73,13 @@ enable
 		aaa authentication enable default group tacacs+ local
 		
 		!Configuração da Autorização AAA do Modo EXEC
-		!DICA: as configurações de autorização está relacionada ao nível de privilegio de acesso ao Shell
+		!DICA: as configurações de autorização está relacionada ao nível de privilégio de acesso ao Shell
 		!OBSERVAÇÃO: no Cisco Packet Tracer os níveis de privilégios de acesso são limitados
 		!OBSERVAÇÃO: nas configurações de autorização temos as opções: exec e network (Protocolos SLIP, PPP, e ARAP)
 		aaa authorization exec default group tacacs+ local
 		
 		!Configuração dos Avisos de Contabilização AAA
-		!DICA: as configurações de contabilização está relacionada aos tipos de aviso enviados para contabilização
+		!DICA: as configurações de contabilização está relacionada aos tipos de avisos enviados para contabilização
 		!OBSERVAÇÃO: no Cisco Packet Tracer os níveis de contabilização são limitados
 		!OBSERVAÇÃO: nas configurações da contabilização temos as opções: start-stop e stop-only
 		aaa accounting exec default start-stop group tacacs+
@@ -113,7 +115,7 @@ write
 
 !TERCEIRA ETAPA: Configuração dos Switches Layer 2 2960
 !OBSERVAÇÃO IMPORTANTE: O recurso de AAA só está disponível no Switch Layer 2 2960 na versão do IOS 15,
-!para essa configuração e necessário fazer o Upgrade do IOS. No Switch Layer 2 temos apenas o recurso
+!para essa configuração é necessário fazer o Upgrade do IOS. No Switch Layer 2 temos apenas o recurso
 !de AAA TACACS+, não está disponível no Cisco Packet Tracer a possibilidade de configuração do AAA RADIUS
 enable
 	copy tftp: flash:

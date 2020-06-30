@@ -51,8 +51,8 @@ enable
 
 		!Configurando o recurso de TLV (Type, Lenght, Value) do LLDP Globalmente
 		!DICA: o LLDP oferece uma flexibilidade maior em termos de quantidade de informações que podem ser enviadas entre os vizinhos
-		!DICA: o LLDP utiliza o TLV para codificar informações que serão enviadas e recebidas, customizando a quantidade
-		!de dados enviados, filtrando apenas as informações importantes entre os vizinhos
+		!DICA: o LLDP utiliza o TLV para codificar informações que serão enviadas e recebidas, customizando a quantidade de dados 
+		!enviados, filtrando apenas as informações importantes entre os vizinhos
 		!OBSERVAÇÃO: no Cisco Packet Tracer os recursos de TLV do LLDP não está disponível para a sua configuração
 		!lldp tlv-select
 		end
@@ -63,7 +63,7 @@ enable
 	configure terminal
 		
 		!OBSERVAÇÃO: igual ao Switch Layer 2 2960 ou CDP está habilitado é o LLDP está desabilitado
-		!DICA: em Switch Layer 2 ou 3, o recurso do CDP e muito importante para dispositivos VoIP, esse recurso permite
+		!DICA: em Switch Layer 2 ou 3, o recurso do CDP é muito importante para dispositivos VoIP, esse recurso permite
 		!fazer a configuração automática da VLAN de VoIP nesses equipamentos.
 		cdp run
 		lldp run
@@ -75,12 +75,12 @@ enable
 	configure terminal
 		
 		!Desabilitando os recursos de descoberta do CDP e LLDP Globalmente
-		!DICA: em Roteadores que estão diretamente conectados na Internet ou em Redes desconhecidas, e recomendado 
+		!DICA: em Roteadores que estão diretamente conectados na Internet ou em Redes desconhecidas, é recomendado 
 		!desabilitar os recursos de CDP ou LLDP para não enviar informações do equipamento, prejudicando a segurança
-		!da rede e comprometendo a confiabilidade da topologia
+		!da rede é comprometendo a confiabilidade da topologia
 		!OBSERVAÇÃO: no Cisco Packet Tracer, desabilitar o CDP ou LLDP globalmente e configurar apenas as Interfaces
 		!que vão enviar anúncios entre os vizinhos, infelizmente não funciona, sendo necessário deixar habilitado
-		!globalmente o CDP e LLDP, para desabilitar só digitar os comandos: no cdp run ou: no lldp run
+		!globalmente o CDP e o LLDP, para desabilitar só digitar os comandos: no cdp run ou: no lldp run
 		cdp run
 		lldp run
 

@@ -28,9 +28,9 @@
 !são chamadas de sintaxe DNS (Exemplo: A, AAAA, CNAME, MX, PTR, NS, SOA, SRV, TXT, etc).
 
 !Registro Tipo A: Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio.
-!Registro Tipo CNAME: Significa o Nome Canônico e seu papel é fazer com de um domínio um alias de outro domínio.
+!Registro Tipo CNAME: Significa o Nome Canônico e seu papel é fazer com de um domínio use um alias de outro domínio.
 !Registro Tipo SOA: Significa Início de Autoridade. Obviamente é um dos registros de DNS mais importantes.
-!Registro Tipo NS: Significa Name Server e indica qual nome de servidor é autoritativo para o domínio.
+!Registro Tipo NS: Significa Name Server ele indica qual nome de servidor é autoritativo para o domínio.
 
 !Configurações do Serviço de DNS Server no Cisco Packet Tracer:
 !OBSERVAÇÃO: por padrão o Serviço de DNS Server no Cisco Packet Tracer está desligado
