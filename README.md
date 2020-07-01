@@ -598,10 +598,10 @@ Link da vídeo aula: https://www.youtube.com/watch?v=9qDjzcKO6XU&t
 
 ## **050 Configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911, essas configurações serão feitas na Segunda e Terceira Topologia, as configurações do RIPng IPv6 nos Routers segue o mesmo padrão da configuração do RIPv2, a principalmente diferença está relacionada ao suporte ao Protocolo IPv6 e sua configuração e feita nas Interfaces que possui as Redes Global Unicast.
+Nessa aula, vou fazer a configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911, essas configurações serão feitas na Segunda e Terceira Topologia, as configurações do RIPng IPv6 nos Routers segue o mesmo padrão da configuração do RIPv2, a principalmente diferença está relacionada ao suporte ao Protocolo IPv6 e sua configuração é feita nas Interfaces que possui as Redes Global Unicast.
 
 As configurações do Protocolo RIPng IPv6 nos Router 1941 e 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-050-ConfiguracaoDoRIPng-IPv6.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-050.pkt
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=vSAx2JzHtVI
