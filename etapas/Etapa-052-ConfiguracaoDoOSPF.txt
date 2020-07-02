@@ -63,28 +63,106 @@
 !Link da Rede), Network Summary Type 3 (Tipo 3: Resumo da Rede), ASBR Summary Type 4 (Tipo 4: Resumo do ASBR), External
 !Link Type 5 (Tipo 5: Link Externo) e NSSA External Link Type 7 (Tipo 7: Link Externo NSSA).
 
-!O OSPF trabalha com os Tipos de Rede de: Broadcast, Non-Broadcast Multiple-Access Network NBMA (Rede de Múltiplo Acesso
+!O OSPF trabalha com os Tipos de Rede: Broadcast, Non-Broadcast Multiple-Access Network NBMA (Rede de Múltiplo Acesso
 !sem Transmissão), Point-to-Point (Ponto-a-Ponto), Point-to-Multipoint (Ponto-para-Multiponto), Point-to-Multipoint NBMA
 !(Ponto-para-Multiponto NBMA) e Loopback.
 
 !PRIMEIRA ETAPA: Configuração do Router 2911 da Terceira Topologia
 enable
 	configure terminal
-		interface loopback 0
+		interface loopback 10
+			!OBSERVAÇÃO IMPORTANTE: o endereço da Loopback será utilizado no processo de Eleições do Protocolo OSPF
 			ip address 172.16.0.4 255.255.255.255
 			exit
+
+		!Configurando o Processo Local do Protocolo OSPF
+		!DICA: a configuração do Processo Local do OSPF e significativo localmente no Router ou Switch Layer 3
+		!OBSERVAÇÃO: diferente do protocolo EIGRP o número do Processo do OSPF pode ser diferente em cada Router ou
+		!Switch Layer 3, mais recomendo ser igual (isso pode mudar dependendo da topologia) para facilitar a análise
+		!de erros e principalmente facilitar a administração do Protocolo localmente
 		router ospf 10
+
+			!Configurando a Indentificação do Roteador no Processo do OSPF
+			!DICA:
+			!OBSERVAÇÃO:
 			router-id 172.16.0.4
-			network x.x.x.0 0.0.0.255 area 0
-			no auto-summary
+
+			!Configurando a o Custo de Referência da Largura de Banda no Processo do OSPF 
+			!DICA:
+			!OBSERVAÇÃO:
+			auto-cost reference-bandwidth 10000
+
+			!Configurando a Redistribuição de Rotas Estática no Processo do OSPF
+			!DICA
+			!OBSERVAÇÃO:
+			redistribute static
+
+			!Configurando a Origem da Rota Padrão para os outros roteadores no Processo do OSPF
+			!DICA:
+			!OBSERVAÇÃO:
+			default-information originate
+
+			!Configurando as Interfaces Passivas no Processo do OSPF
+			!DICA: 
+			!OBSERVAÇÃO: 
 			passive-interface gigabitEthernet 0/0
 			passive-interface gigabitEthernet 0/1
-			auto-cost reference-bandwidth 10000
+			passive-interface gigabitEthernet 0/0.10
+			passive-interface gigabitEthernet 0/0.20
+			passive-interface gigabitEthernet 0/0.30
+			passive-interface gigabitEthernet 0/0.40
+			passive-interface gigabitEthernet 0/0.50
+			passive-interface gigabitEthernet 0/0.99
+			passive-interface gigabitEthernet 0/0.100
+
+			!Configurando os Logs dos Detalhes das Mundaças da Adjacência no Processo do OSPF
+			!DICA:
+			!OBSERVAÇÃO:
 			log-adjacency-changes detail
-			redistribute static
-			default-information originate
+
+			!Desabilitando o recurso de Auto-Sumarização no Processo do OSPF
+			!DICA: 
+			!OBSERVAÇÃO: 
+			no auto-summary
+
+			!Declarando as Redes Fisicamente Conectadas do Router 2911-1 na Área 0 no Processo do OSPF
+			!DICA:
+			!OBSERVAÇÃO:
+			network 192.168.10.0 0.0.0.255 area 0
+			network 192.168.20.0 0.0.0.255 area 0
+			network 192.168.30.0 0.0.0.255 area 0
+			network 192.168.40.0 0.0.0.255 area 0
+			network 192.168.50.0 0.0.0.255 area 0
+			network 192.168.99.0 0.0.0.255 area 0
+			network 192.168.100.0 0.0.0.255 area 0
+			network 10.0.0.8 0.0.0.3 area 0
+
+			!Configurando a Vizinhança Estática no Processo do OSPF
+			!DICA:
+			!OBSERVAÇÃO: diferente do protocolo EIGRP, no protocolo OSPF não é necessário informar a Interface que o
+			!Vizinho está conectado diretamente, somente o Endereço IPv4 da Vizinhança
+			neighbor 10.0.0.10
+
+			!Configurando o recurso de Autenticação na Área 0 no Processo do OSPF
+			!DICA: essa opção habilita o recurso de autenticação do protocolo OSPF no processo local da Área 0
+			!OBSERVAÇÃO: diferente do Protocolo EIGRP que utiliza o Chaveiro, no protocolo OSPF é habilitado o recurso
+			!de autenticação é o processo da criação das Chaves e feita na Interface de Rede de Vizinhança
+			area 0 authentication message-digest
 			exit
-		end 
+
+		!Configurando a Interface de Vizinhança do Protocolo OSPF
+		interface gigabitEthernet 0/0/0.999
+
+			!Configurando a Chave de Autenticação MD5 do Protocolo OSPF
+			!DICA:
+			!OBSERVAÇÃO:
+			ip ospf message-digest-key 1 md5 ospf10
+
+			!Configurando a Mensagem Resumida de Autenticação do Protocolo OSPF
+			!DICA:
+			!OBSERVAÇÃO:
+			ip ospf authentication message-digest
+			end
 write
 
 !SEGUNDA ETAPA: Configuração do Router 1941 da Segunda Topologia
