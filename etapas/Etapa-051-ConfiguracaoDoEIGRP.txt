@@ -65,19 +65,70 @@
 !PRIMEIRA ETAPA: Configuração do Router 2911 da Terceira Topologia
 enable
 	configure terminal
+
+		!Configurando a Interface de Loopback para o Router-ID do AS do EIGRP
 		interface loopback 10
 			description Interface de Router-ID do EIGRP AS 10
+			!OBSERVAÇÃO:  o endereço IPv4 da Interface de Loopback é utilizado como Router-ID do AS do EIGRP, nesse cenário é
+			!recomendado utilizar uma Máscara de Rede /32 = 255.255.255.255 (conhecidas como Host Subnet), utilizadas para 
+			!endereçar um Host em específico, principalmente em Interfaces de Loopback.
 			ip address 172.16.0.4 255.255.255.255
 			exit
+		
+		!Configurando o Processo Local do Protocolo EIGRP
+		!DICA: para o EIGRP funcionar corretamente, todos os Router ou Switch Layer precisa está configurado na mesma AS
+		!OBSERVAÇÃO: existe a possibilidade de configurar vários processos locais do EIGRP utilizando AS diferentes
+		!OBSERVAÇÃO IMPORTANTE: cuidado com o número do AS utilizado, nesse cenário estou fazendo uma referência com o número
+		! da Interface de Loopback para facilitar a Administração do Protocolo EIGRP  
 		router eigrp 10
+
+			!Configurando a Indentificação do Roteador no AS do EIGRP
+			!DICA: a indentificação do roteador será utilizada para forma a adjacência entre os Router ou Switch do AS do EIGRP
+			!OBSERVAÇÃO: nessa configuração e feita a referência com o endereço IPv4 configurado na Interface da Loopback
+			!OBSERVAÇÃO IMPORTANTE: a configuração do Router-ID segue o mesmo padrão do Endereço IPv4, separados por octetos
 			eigrp router-id 172.16.0.4
-			network 
-			no auto-summary
+
+			!Configurando a Redistribuição de Rotas Estáticas no AS do EIGRP
+			!DICA: essa opção vai redistribuir a rota padrão aprendida no Router 2911 na Interface conectada com a Internet
+			!OBSERVAÇÃO: diferente do Protocolo RIPv2 que temos a opção: default-information originate, no EIGRP utilizamos a
+			!redistribuição de rota estática (podendo mudar os valores de métrica com a opção metric: Bandwidth em Kbits, Delay
+			!em unidade de 10 Microsegundos, Confiabilidade 0 até 255 onde 255 é 100% confiável, Bandwidth Efetivo 1 até 255
+			!onde 255 é 100% de Loading e o MTU (Maximum Transmission Unit) do Caminho de 1 até 65535)
+			!OBSERVAÇÃO IMPORTANTE: existe a possibilidade de Redistribuir a Rota Padrão declarando a Rede: network 0.0.0.0 ou 
+			!utilizando as configurações na Interface de Rede com o comando: ip summary-address eigrp 10 0.0.0.0 0.0.0.0
+			redistribute static
+
+			!Configurando a Interface Passiva no AS do EIGRP
+			!DICA: as interface passivas do roteador não envia e nem recebe anúncios (Hellos) do Domínio do Protocolo EIGRP
+			!OBSERVAÇÃO: diferente das Interfaces Passivas do RIPv2 que recebem anúncios, as Interfaces passivas do EIGRP não
+			!estabelece adjacência com outros vizinhos nessas Interfaces, caso seja configurado acidentalmente um AS igual.
+			!OBSERVAÇÃO IMPORTANTE: essa opção aumenta o nível de segurança, principalmente contra ataques de Hellos do EIGRP
 			passive-interface gigabitEthernet 0/0
 			passive-interface gigabitEthernet 0/1
-			redistribute static
-			exit
-		end 
+
+			!Desabilitando o recurso de Auto-Sumarização no AS do EIGRP
+			!DICA: desabilitar o recurso de auto-sumarização do protocolo EIGRP facilita na análise de erros das rede declaradas
+			!OBSERVAÇÃO: esse recurso é utilizando em grandes redes para diminuir o tamanho da tabela de roteamento, esse recurso
+			!pode causar problemas em Redes Descontínuas (erro comum em utilizar máscara de rede padrão para as configurações das
+			!redes), por esse motivo (igual ao RIPv2) é recomendado desabilitar a Auto-Sumarização Automática do Protocolo EIGRP
+			no auto-summary
+
+			!Declarando as Redes Fisicamente Conectadas no Router 2911-1 no AS do EIGR
+			!DICA: declarar todas as Redes Fisicamente conectadas no Router ou Switch Layer 3 que serão anúnciadas para todos os
+			!AS que fazem parte do Domínio do Protocolo EIGRP (igual no Protocolo RIPv2)
+			!OBSERVAÇÃO: diferente do Protocolo RIPv2 que não é declarado a Máscara de Subrede nas configurações, já no processo
+			!do EIGRP é necessário Declarar a Máscara Curinga (Wildcard Mask) geralmente chamada de Máscara Invertida, essa máscara
+			!permite uma maior flexibilidade nas configurações de redes, muito utilizada nas configurações de ACL, OSPF e BGP
+			!EXEMPLO: cálculo simples da máscara curinga: Sub-Rede /24 fórmula: 255.255.255.255 - 255.255.255.0 = 0.0.0.255
+			network 192.168.10.0 0.0.0.255
+			network 192.168.20.0 0.0.0.255
+			network 192.168.30.0 0.0.0.255
+			network 192.168.40.0 0.0.0.255
+			network 192.168.50.0 0.0.0.255
+			network 192.168.99.0 0.0.0.255
+			network 192.168.100.0 0.0.0.255
+			network 10.0.0.8 0.0.0.3
+			end 
 write
 
 !SEGUNDA ETAPA: Configuração do Router 1941 da Segunda Topologia
@@ -89,11 +140,13 @@ enable
 			exit
 		router eigrp 10
 			eigrp router-id 172.16.0.3
-			network 
 			no auto-summary
-			passive-interface gigabitEthernet 0/0
-			exit
-		end 
+			network 192.168.2.0 0.0.0.255
+			network 10.0.0.0 0.0.0.3
+			network 10.0.0.4 0.0.0.3
+			network 10.0.0.8 0.0.0.3
+			network 10.0.0.252 0.0.0.3
+			end 
 write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
@@ -105,10 +158,10 @@ enable
 			exit
 		router eigrp 10
 			eigrp router-id 172.16.0.2
-			network 
 			no auto-summary
-			exit
-		end 
+			network 192.168.2.0 0.0.0.255
+			network 192.168.3.0 0.0.0.255
+			end 
 write
 
 !QUARTA ETAPA: Configuração do Router 1941 da Primeira Topologia
@@ -120,18 +173,25 @@ enable
 			exit
 		router eigrp 10
 			eigrp router-id 172.16.0.1
-			network 
-			no auto-summary
 			passive-interface gigabitEthernet 0/0
-			exit
-		end 
+			no auto-summary
+			network 192.168.1.0 0.0.0.255
+			network 10.0.0.0 0.0.0.3
+			network 10.0.0.4 0.0.0.3
+			end 
 write
 
 !Visualizando as configurações da memória RAM
+show running-config | section interface Loopback10
 show running-config | section router eigrp
-show running-config | section interface loopback0
 
 !Visualizando as informações do Protocolo EIGRP
-show ip eigrp neighbor
-show ip eigrp topology
+show ip eigrp interfaces 10
+show ip eigrp neighbor 10
+show ip eigrp topology 10
+show ip eigrp traffic 10
 show ip route eigrp
+ping 8.8.8.8
+tracert 8.8.8.8
+ping 192.168.3.1
+ping 192.168.100.1

@@ -46,7 +46,7 @@ enable
 
 		!Inicializando a Interface Física de Interligação com o Router 1941-2
 		interface gigabitEthernet 0/0/0
-			description Interface de Interligação Fisica da WAN Fiber com o Router 1941-2
+			description Interface de Interligacao Fisica da WAN Fiber com o Router 1941-2
 			no shutdown
 			exit
 		
