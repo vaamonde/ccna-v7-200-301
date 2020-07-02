@@ -7,14 +7,14 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 31/05/2020
-!Data de atualização: 31/05/2020
+!Data de atualização: 02/07/2020
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !O EIGRP (Enhanced Interior Gateway Routing Protocol) é um Potocolo Avançado Híbrido de Roteamento por Vetor de Distância
 !(Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm), 
 !desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas
-!para o Padrão Aberto em 2013, e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP
+!para o Padrão Aberto em 2013 e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP
 !(Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
 
 !O EIGRP trabalha com a Distância Administrativa (AD) Interna no mesmo Sistema Autônomo (AS) de 90 e Externa de 170 quando
@@ -69,17 +69,17 @@ enable
 		!Configurando a Interface de Loopback para o Router-ID do AS do EIGRP
 		interface loopback 10
 			description Interface de Router-ID do EIGRP AS 10
-			!OBSERVAÇÃO:  o endereço IPv4 da Interface de Loopback é utilizado como Router-ID do AS do EIGRP, nesse cenário é
+			!OBSERVAÇÃO: o endereço IPv4 da Interface de Loopback é utilizado como Router-ID do AS do EIGRP, nesse cenário é
 			!recomendado utilizar uma Máscara de Rede /32 = 255.255.255.255 (conhecidas como Host Subnet), utilizadas para 
-			!endereçar um Host em específico, principalmente em Interfaces de Loopback.
+			!endereçar um Host em específico, principalmente em Interfaces de Loopback utilizadas em Protocolos de Roteamento.
 			ip address 172.16.0.4 255.255.255.255
 			exit
 		
 		!Configurando o Processo Local do Protocolo EIGRP
-		!DICA: para o EIGRP funcionar corretamente, todos os Router ou Switch Layer precisa está configurado na mesma AS
-		!OBSERVAÇÃO: existe a possibilidade de configurar vários processos locais do EIGRP utilizando AS diferentes
+		!DICA: para o EIGRP funcionar corretamente, todos os Router ou Switch Layer 3 precisa está configurado na mesma AS
+		!OBSERVAÇÃO: existe a possibilidade de configurar vários processos locais do EIGRP utilizando AS's diferentes
 		!OBSERVAÇÃO IMPORTANTE: cuidado com o número do AS utilizado, nesse cenário estou fazendo uma referência com o número
-		! da Interface de Loopback para facilitar a Administração do Protocolo EIGRP  
+		!da Interface de Loopback para facilitar a Administração do Protocolo EIGRP  
 		router eigrp 10
 
 			!Configurando a Indentificação do Roteador no AS do EIGRP
@@ -88,7 +88,7 @@ enable
 			!OBSERVAÇÃO IMPORTANTE: a configuração do Router-ID segue o mesmo padrão do Endereço IPv4, separados por octetos
 			eigrp router-id 172.16.0.4
 
-			!Configurando a Redistribuição de Rotas Estáticas no AS do EIGRP
+			!Configurando a Redistribuição de Rotas Estática no AS do EIGRP
 			!DICA: essa opção vai redistribuir a rota padrão aprendida no Router 2911 na Interface conectada com a Internet
 			!OBSERVAÇÃO: diferente do Protocolo RIPv2 que temos a opção: default-information originate, no EIGRP utilizamos a
 			!redistribuição de rota estática (podendo mudar os valores de métrica com a opção metric: Bandwidth em Kbits, Delay
@@ -98,13 +98,20 @@ enable
 			!utilizando as configurações na Interface de Rede com o comando: ip summary-address eigrp 10 0.0.0.0 0.0.0.0
 			redistribute static
 
-			!Configurando a Interface Passiva no AS do EIGRP
-			!DICA: as interface passivas do roteador não envia e nem recebe anúncios (Hellos) do Domínio do Protocolo EIGRP
+			!Configurando as Interfaces Passivas no AS do EIGRP
+			!DICA: as interfaces passivas do roteador não envia e nem recebe anúncios (Hellos) do Domínio do Protocolo EIGRP
 			!OBSERVAÇÃO: diferente das Interfaces Passivas do RIPv2 que recebem anúncios, as Interfaces passivas do EIGRP não
 			!estabelece adjacência com outros vizinhos nessas Interfaces, caso seja configurado acidentalmente um AS igual.
 			!OBSERVAÇÃO IMPORTANTE: essa opção aumenta o nível de segurança, principalmente contra ataques de Hellos do EIGRP
 			passive-interface gigabitEthernet 0/0
 			passive-interface gigabitEthernet 0/1
+			passive-interface gigabitEthernet 0/0.10
+			passive-interface gigabitEthernet 0/0.20
+			passive-interface gigabitEthernet 0/0.30
+			passive-interface gigabitEthernet 0/0.40
+			passive-interface gigabitEthernet 0/0.50
+			passive-interface gigabitEthernet 0/0.99
+			passive-interface gigabitEthernet 0/0.100
 
 			!Desabilitando o recurso de Auto-Sumarização no AS do EIGRP
 			!DICA: desabilitar o recurso de auto-sumarização do protocolo EIGRP facilita na análise de erros das rede declaradas
@@ -113,13 +120,14 @@ enable
 			!redes), por esse motivo (igual ao RIPv2) é recomendado desabilitar a Auto-Sumarização Automática do Protocolo EIGRP
 			no auto-summary
 
-			!Declarando as Redes Fisicamente Conectadas no Router 2911-1 no AS do EIGR
-			!DICA: declarar todas as Redes Fisicamente conectadas no Router ou Switch Layer 3 que serão anúnciadas para todos os
-			!AS que fazem parte do Domínio do Protocolo EIGRP (igual no Protocolo RIPv2)
+			!Declarando as Redes Fisicamente Conectadas no Router 2911-1 no AS do EIGRP
+			!DICA: declarar todas as Redes Fisicamente conectadas no Router ou Switch Layer 3 que serão anúnciadas no AS do Domínio
+			!do Protocolo EIGRP (igual no Protocolo RIPv2)
 			!OBSERVAÇÃO: diferente do Protocolo RIPv2 que não é declarado a Máscara de Subrede nas configurações, já no processo
 			!do EIGRP é necessário Declarar a Máscara Curinga (Wildcard Mask) geralmente chamada de Máscara Invertida, essa máscara
-			!permite uma maior flexibilidade nas configurações de redes, muito utilizada nas configurações de ACL, OSPF e BGP
+			!permite uma maior flexibilidade nas configurações de rede, muito utilizada nas configurações de ACL, OSPF e BGP
 			!EXEMPLO: cálculo simples da máscara curinga: Sub-Rede /24 fórmula: 255.255.255.255 - 255.255.255.0 = 0.0.0.255
+			!OBSERVAÇÃO IMPORTANTE: quando declaramos Redes Classful a configuração da Máscara Curinga e removida do Running-Config
 			network 192.168.10.0 0.0.0.255
 			network 192.168.20.0 0.0.0.255
 			network 192.168.30.0 0.0.0.255
@@ -128,10 +136,57 @@ enable
 			network 192.168.99.0 0.0.0.255
 			network 192.168.100.0 0.0.0.255
 			network 10.0.0.8 0.0.0.3
-			end 
+
+			!Configurando as Vizinhança Estática no AS do EIGRP para utilizar o Unicast ao invés do Multicast
+			!DICA: o protocolo EIGRP, por padrão, utiliza Multicast para descoberta de Vizinhos, essa configuração desabilita o 
+			!Multicast do Protocolo EIGRP e configura o Unicast Estático do Vizinho na Interface selecionada.
+			!OBSERVAÇÃO: esse recurso pode ser útil em certas topologias em que o Multicast não é suportado ou quando você deseja
+			!reduzir a sobrecarga do Tráfego Multicast do Protocolo EIGRP, essa opção aumenta a segurança do Protocolo.
+			!OBSERVAÇÃO IMPORTANTE: no Cisco Packet Tracer esse recurso está limitado somente para Interfaces GigabitEthernet ou
+			!Serial, nas Interfaces Serial é possível utilizar a opção de indicar o Módulo: 0/0/0, nas Interfaces GigabitEthernet
+			!essa opção de indicar o Módulo ou Sub-Interface não está disponível para configuração.
+			!neighbor 10.0.0.10 gigabitEthernet 0/0
+			exit
+
+		!Configurando o Gerenciador do Chaveiro que será utilizado na Autenticação do Protocolo EIGRP
+		!DICA: para utilizar autenticação no EIGRP é recomendado fazer a criação das chaves de autenticação primeiro
+		!OBSERVAÇÃO: o nome do Chaveiro pode ser diferente entre os equipamentos mais recomendado ser igual para facilitar a 
+		!administração e também o gerenciamento das chaves de autenticação entre os equipamentos do Domínio do EIGRP
+		!OBSERVAÇÃO IMPORTANTE: você pode criar vários Chaveiros diferentes no Router ou Switch Layer 3, utilizando Texto ou
+		!números (é recomendado mesclar texto com números, não usar caracteres especiais e nem espaço, cuidado com Maiúscula e 
+		!Minúscula, é recomendado que o nome do chaveiro seja digitado igual nas configurações da Interface)
+		key chain eigrp10
+
+			!Configurando a Chave no Chaveiro que será utilizada na Autenticação no Protocolo EIGRP
+			!DICA: essa opção criar a Indentificação da Chave dentro do chaveiro que será utilizada como referência nas 
+			!configurações de autenticação na Interface de Rede do Protocolo EIGRP
+			!OBSERVAÇÃO: a criação da chave é feita utilizando números (de 0 até 2.147.483.647)
+			key 10
+
+				!Configurando a Senha (cadeia de caracteres) da Chave que será utilizada no Protocolo EIGRP
+				!DICA: a String da chave deve ser a mesma em todos os Router ou Switch Layer 3 do Domínio do Protocolo EIGRP
+				!OBSERVAÇÃO: a String de autenticação no Running-Config ou Startup-Config não fica criptografada (Texto Plano)
+				key-string vaamonde@pti
+				exit
+			exit
+
+		!Configurando a Interface de Vizinhança do Protocolo EIGRP
+		interface gigabitEthernet 0/0/0.999
+
+			!Configurando o Modo de Autenticação do Protocolo EIGRP
+			!DICA: essa opção habilita o recurso de criptografia da Chave utilizada na Autenticação do Protocolo EIGRP
+			!OBSERVAÇÃO: nessa configuração indicamos o Protocolo EIGRP, sua AS e o modo de criptografia MD5
+			ip authentication mode eigrp 10 md5
+
+			!Configurando o Chaveiro e a Chave que será utilizada na Autenticação do Protocolo EIGRP
+			!DICA: essa opção habilita utilizar o Chaveiro criado e indicar a Chave que será utilizada no processo de autenticação
+			!OBSERVAÇÃO: nessa configuração indicamos o Chaveiro, o Protocolo, o Número do AS e no final a Chaveiro de Autenticação
+			!OBSERVAÇÃO IMPORTANTE: a utilização de autenticação aumenta o nível de segurança do Protocolo EIGRP
+			ip authentication key-chain eigrp 10 eigrp10
+			end
 write
 
-!SEGUNDA ETAPA: Configuração do Router 1941 da Segunda Topologia
+!SEGUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
 enable
 	configure terminal
 		interface loopback 10
@@ -146,8 +201,21 @@ enable
 			network 10.0.0.4 0.0.0.3
 			network 10.0.0.8 0.0.0.3
 			network 10.0.0.252 0.0.0.3
-			end 
+			neighbor 10.0.0.1 gigabitEthernet 0/1
+			neighbor 10.0.0.5 serial 0/0/0
+			exit
+		key chain eigrp10
+			key 10
+				key-string vaamonde@pti
+				exit
+			exit
+		interface gigabitEthernet 0/1/0.999
+			ip authentication mode eigrp 10 md5
+			ip authentication key-chain eigrp 10 eigrp10
+			end
 write
+debug eigrp packets
+no debug eigrp packets
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
 enable
@@ -164,7 +232,7 @@ enable
 			end 
 write
 
-!QUARTA ETAPA: Configuração do Router 1941 da Primeira Topologia
+!QUARTA ETAPA: Configuração do Router 1941-1 da Primeira Topologia
 enable
 	configure terminal
 		interface loopback 10
@@ -178,12 +246,15 @@ enable
 			network 192.168.1.0 0.0.0.255
 			network 10.0.0.0 0.0.0.3
 			network 10.0.0.4 0.0.0.3
+			neighbor 10.0.0.2 gigabitEthernet 0/1
+			neighbor 10.0.0.6 serial 0/0/0
 			end 
 write
 
 !Visualizando as configurações da memória RAM
 show running-config | section interface Loopback10
 show running-config | section router eigrp
+show running-config | section key chain
 
 !Visualizando as informações do Protocolo EIGRP
 show ip eigrp interfaces 10
