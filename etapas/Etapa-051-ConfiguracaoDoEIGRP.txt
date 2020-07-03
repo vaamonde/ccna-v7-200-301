@@ -18,7 +18,7 @@
 !(Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
 
 !O EIGRP trabalha com a Distância Administrativa (AD) Interna no mesmo Sistema Autônomo (AS) de 90 e Externa de 170 quando
-!está conectado em AS's diferentes é AD de 5 para rotas sumarizadas.
+!está conectado em AS's diferentes (ou quando está redistribuindo rotas) é AD de 5 para rotas sumarizadas.
 
 !O EIGRP trabalha com o Algoritmo DUAL para escolher o melhor caminho da origem até o destino, possui suporte para roteamento
 !de Rede Classful (Classe Cheia) e Classless (Sem Classe), suporte para Sumarização de Redes automática ou manual, suporte a 
@@ -116,7 +116,7 @@ enable
 
 			!Desabilitando o recurso de Auto-Sumarização no AS do EIGRP
 			!DICA: desabilitar o recurso de auto-sumarização do protocolo EIGRP facilita na análise de erros das rede declaradas
-			!OBSERVAÇÃO: esse recurso é utilizando em grandes redes para diminuir o tamanho da tabela de roteamento, esse recurso
+			!OBSERVAÇÃO: esse recurso é utilizado em grandes redes para diminuir o tamanho da tabela de roteamento, esse recurso
 			!pode causar problemas em Redes Descontínuas (erro comum em utilizar máscara de rede padrão para as configurações das
 			!redes), por esse motivo (igual ao RIPv2) é recomendado desabilitar a Auto-Sumarização Automática do Protocolo EIGRP
 			no auto-summary
@@ -152,13 +152,13 @@ enable
 		!Configurando o Gerenciador do Chaveiro que será utilizado na Autenticação do Protocolo EIGRP
 		!DICA: para utilizar autenticação no EIGRP é recomendado fazer a criação das chaves de autenticação primeiro
 		!OBSERVAÇÃO: é recomendo que o nome do Chaveiro seja igual para todos os equipamentos que vão fazer parte do Domínio do EIGRP
-		!OBSERVAÇÃO IMPORTANTE: você pode criar vários Chaveiros diferentes no Router ou Switch Layer 3 utilizando Texto ou números 
+		!OBSERVAÇÃO IMPORTANTE: você pode criar vários Chaveiros diferentes no Router ou Switch Layer 3 utilizando Texto ou Números 
 		!(é recomendado mesclar texto com números, não usar caracteres especiais e nem espaço, cuidado com Maiúscula e Minúscula, é 
 		!recomendado que o nome do chaveiro seja digitado igual nas configurações da Interface)
 		key chain eigrp10
 
 			!Configurando a Chave no Chaveiro que será utilizada na Autenticação no Protocolo EIGRP
-			!DICA: essa opção criar a Indentificação da Chave dentro do chaveiro que será utilizada como referência nas 
+			!DICA: essa opção criar a Indentificação da Chave dentro do Chaveiro que será utilizada como referência nas 
 			!configurações de autenticação na Interface de Rede do Protocolo EIGRP
 			!OBSERVAÇÃO: a criação da chave é feita utilizando números (de 0 até 2.147.483.647)
 			key 10
@@ -175,19 +175,24 @@ enable
 
 			!Configurando o Modo de Autenticação do Protocolo EIGRP
 			!DICA: essa opção habilita o recurso de criptografia da Chave utilizada na Autenticação do Protocolo EIGRP
-			!OBSERVAÇÃO: nessa configuração indicamos o Protocolo EIGRP, sua AS e o modo de criptografia MD5
+			!OBSERVAÇÃO: nessa configuração indicamos o Protocolo EIGRP, sua AS e o modo de Criptografia MD5
 			ip authentication mode eigrp 10 md5
 
 			!Configurando o Chaveiro e a Chave que será utilizada na Autenticação do Protocolo EIGRP
 			!DICA: essa opção habilita o uso do Chaveiro criado e indica a Chave que será utilizada no processo de autenticação
-			!OBSERVAÇÃO: nessa configuração indicamos o Chaveiro, o Protocolo, o Número do AS e no final o Chaveiro de Autenticação
-			!OBSERVAÇÃO IMPORTANTE: a utilização de autenticação aumenta o nível de segurança do Protocolo EIGRP
+			!OBSERVAÇÃO: nessa configuração indicamos que vamos utilizar um Chaveiro, o Protocolo EIGRP, o Número do AS do EIGRP 
+			!e no final falamos o nome do Chaveiro que possui as Chaves de Autenticação
+			!OBSERVAÇÃO IMPORTANTE: a utilização da autenticação aumenta o nível de segurança do Protocolo EIGRP
 			ip authentication key-chain eigrp 10 eigrp10
 			end
 write
 
 !SEGUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
 enable
+	!OBSERVAÇÃO: utilizar o comando de debug do EIGRP para auxiliar na análise de pacotes e falhas do protocolo, não esqueça de
+	!desativar o debug no final da análise, pois esse recurso consumo CPU e RAM do equipamento.
+	debug eigrp packets
+	
 	configure terminal
 		interface loopback 10
 			description Interface de Router-ID do EIGRP AS 10
@@ -201,8 +206,9 @@ enable
 			network 10.0.0.4 0.0.0.3
 			network 10.0.0.8 0.0.0.3
 			network 10.0.0.252 0.0.0.3
-			!OBSERVAÇÃO: nesse roteador estou desativando o Multicast nas Interfaces e utilizando o Unicast para forma
-			!adjacência com os vizinhos do Domínio do Protocolo EIGRP 
+			
+			!OBSERVAÇÃO: nesse roteador estou desativando o Multicast nas Interfaces e utilizando o Unicast para forma adjacência 
+			!com os vizinhos do Domínio do Protocolo EIGRP da Primeira Topologia
 			neighbor 10.0.0.1 gigabitEthernet 0/1
 			neighbor 10.0.0.5 serial 0/0/0
 			exit
@@ -216,7 +222,6 @@ enable
 			ip authentication key-chain eigrp 10 eigrp10
 			end
 write
-debug eigrp packets
 no debug eigrp packets
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
@@ -255,6 +260,7 @@ write
 
 !Visualizando as configurações da memória RAM
 show running-config | section interface Loopback10
+show running-config | section interface GigabitEthernet0/0/0.999
 show running-config | section router eigrp
 show running-config | section key chain
 
