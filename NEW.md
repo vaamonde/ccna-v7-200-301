@@ -64,9 +64,9 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 050 Configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
+051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral<br>
 052 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**

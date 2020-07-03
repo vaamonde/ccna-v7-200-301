@@ -44,7 +44,7 @@
 
 !O EIGRP utiliza a Métrica Composta por: Bandwith (Largura de Banda), Delay (Atraso), Load (Carga) e Reliability (Confiabilidade),
 
-!Fórmula da Métrica Composta do EIGRP = [K1*BW + (K2*BW)/(256 — load) +K3*Delay] *[K5/(Reliability*k4)]
+!Fórmula da Métrica Composta do EIGRP = [K1 * BW + (K2 * BW) / (256 — load) + K3 * Delay] * [K5 / (Reliability * k4)]
 !OBSERVAÇÃO IMPORTANTE: esse cálculo ou a fórmula não é obrigatório decorar e não será cobrado de forma detalhada no Exame 200-301,
 !somente nos Exames CCNP e CCIE R&S, recomendo apenas lembrar os Valores dos K's que são importante.
 !Os Valores de K permitem uma administração manual do Peso de cada Variável (os valores Default para os K's são: K1=1 Update, K2=0 
@@ -79,7 +79,8 @@ enable
 		!DICA: para o EIGRP funcionar corretamente, todos os Router ou Switch Layer 3 precisa está configurado na mesma AS
 		!OBSERVAÇÃO: existe a possibilidade de configurar vários processos locais do EIGRP utilizando AS's diferentes
 		!OBSERVAÇÃO IMPORTANTE: cuidado com o número do AS utilizado, nesse cenário estou fazendo uma referência com o número
-		!da Interface de Loopback para facilitar a Administração do Protocolo EIGRP  
+		!da Interface de Loopback para facilitar a Administração do Protocolo EIGRP, no Cisco Packet Tracer você pode criar as
+		!AS de: 1 até 65535 
 		router eigrp 10
 
 			!Configurando a Indentificação do Roteador no AS do EIGRP
@@ -150,11 +151,10 @@ enable
 
 		!Configurando o Gerenciador do Chaveiro que será utilizado na Autenticação do Protocolo EIGRP
 		!DICA: para utilizar autenticação no EIGRP é recomendado fazer a criação das chaves de autenticação primeiro
-		!OBSERVAÇÃO: o nome do Chaveiro pode ser diferente entre os equipamentos mais recomendado ser igual para facilitar a 
-		!administração e também o gerenciamento das chaves de autenticação entre os equipamentos do Domínio do EIGRP
-		!OBSERVAÇÃO IMPORTANTE: você pode criar vários Chaveiros diferentes no Router ou Switch Layer 3, utilizando Texto ou
-		!números (é recomendado mesclar texto com números, não usar caracteres especiais e nem espaço, cuidado com Maiúscula e 
-		!Minúscula, é recomendado que o nome do chaveiro seja digitado igual nas configurações da Interface)
+		!OBSERVAÇÃO: é recomendo que o nome do Chaveiro seja igual para todos os equipamentos que vão fazer parte do Domínio do EIGRP
+		!OBSERVAÇÃO IMPORTANTE: você pode criar vários Chaveiros diferentes no Router ou Switch Layer 3 utilizando Texto ou números 
+		!(é recomendado mesclar texto com números, não usar caracteres especiais e nem espaço, cuidado com Maiúscula e Minúscula, é 
+		!recomendado que o nome do chaveiro seja digitado igual nas configurações da Interface)
 		key chain eigrp10
 
 			!Configurando a Chave no Chaveiro que será utilizada na Autenticação no Protocolo EIGRP
@@ -179,8 +179,8 @@ enable
 			ip authentication mode eigrp 10 md5
 
 			!Configurando o Chaveiro e a Chave que será utilizada na Autenticação do Protocolo EIGRP
-			!DICA: essa opção habilita utilizar o Chaveiro criado e indicar a Chave que será utilizada no processo de autenticação
-			!OBSERVAÇÃO: nessa configuração indicamos o Chaveiro, o Protocolo, o Número do AS e no final a Chaveiro de Autenticação
+			!DICA: essa opção habilita o uso do Chaveiro criado e indica a Chave que será utilizada no processo de autenticação
+			!OBSERVAÇÃO: nessa configuração indicamos o Chaveiro, o Protocolo, o Número do AS e no final o Chaveiro de Autenticação
 			!OBSERVAÇÃO IMPORTANTE: a utilização de autenticação aumenta o nível de segurança do Protocolo EIGRP
 			ip authentication key-chain eigrp 10 eigrp10
 			end
@@ -201,6 +201,8 @@ enable
 			network 10.0.0.4 0.0.0.3
 			network 10.0.0.8 0.0.0.3
 			network 10.0.0.252 0.0.0.3
+			!OBSERVAÇÃO: nesse roteador estou desativando o Multicast nas Interfaces e utilizando o Unicast para forma
+			!adjacência com os vizinhos do Domínio do Protocolo EIGRP 
 			neighbor 10.0.0.1 gigabitEthernet 0/1
 			neighbor 10.0.0.5 serial 0/0/0
 			exit
