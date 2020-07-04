@@ -201,10 +201,15 @@ enable
 			network 10.0.0.4 0.0.0.3
 			network 10.0.0.8 0.0.0.3
 			network 10.0.0.252 0.0.0.3
-			!OBSERVAÇÃO: nesse roteador estou desativando o Multicast nas Interfaces e utilizando o Unicast para forma
+
+			!OBSERVAÇÃO: nesse roteador estou desativando o Multicast nas Interfaces e utilizando o Unicast para formar
 			!adjacência com os vizinhos do Domínio do Protocolo EIGRP 
 			neighbor 10.0.0.1 gigabitEthernet 0/1
 			neighbor 10.0.0.5 serial 0/0/0
+			
+			!ADENDO: no vídeo e no script faltou configurar a Interface Passiva de Loopback 0 que foi configurada no
+			!Script da Etapa 027, essa Interface não é utilizada no AS do EIGRP, foi criada somente para teste de rede
+			passive-interface interface loopback 0
 			exit
 		key chain eigrp10
 			key 10
