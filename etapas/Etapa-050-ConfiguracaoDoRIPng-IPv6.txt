@@ -50,8 +50,11 @@ enable
 		!DICA: a configuração do processo local do protocolo RIPng possibilita habilitar os recursos de Redistribuição de Rotas
 		!e alteração da Distância Administrativa do protocolo
 		!OBSERVAÇÃO: diferente do RIPv2, muito parecido com o Protocolo EIGRP que trabalha com Número de Processo Local 
-		!(no EIGRP é chamado de AS Autonomous System), essa opção não é obrigatória para o funcionamento do RIPng, somente 
-		!se for utilizar os recursos de Redistribuição de Rotas ou mundança do AD
+		!(no EIGRP é chamado de AS Autonomous System), essa opção é obrigatória para o funcionamento do RIPng, essa opção permite 
+		!configurar os recursos de Redistribuição de Rotas ou mundança da Distância Administrativa do Protocolo.
+		!ADENDO IMPORTANTE: NO VÍDEO EU FALO "QUE NÃO É OBRIGATÓRIO ESSA CONFIGURAÇÃO" O CORRETO É: CRIAR O PROCESSO LOCAL DO RIPng
+		!PARA QUE SEJA POSSÍVEL INFORMAR NAS INTERFACES O RECURSO DO PROTOCOLO, O QUE NÃO É OBRIGATŔIO É AS CONFIGURAÇÕES DA
+		!REDISTRIBUIÇÃO DE ROTAS OU MUNDAÇA DO AD.
 		ipv6 router rip 10
 
 			!OBSERVAÇÃO: redistribuindo a rota padrão estática aprendida pelo Router 2911 para acessar a Rede do DNS do Google
