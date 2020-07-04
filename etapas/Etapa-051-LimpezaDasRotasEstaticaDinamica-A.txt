@@ -11,8 +11,8 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!Remoção das Rotas Estática, Padrão e Flutuante dos Protocolos IPv4 e IPv6 e remoção das
-!configurações dos Protocolos de Roteamento Dinâmico RIPv2 e RIPng.
+!Remoção das Rotas Estática, Padrão e Flutuante dos Protocolos IPv4 e IPv6 e remoção das configurações dos Protocolos de 
+!Roteamento Dinâmico RIPv2 e RIPng.
 
 #Router 1941-1 da Primeira Topologia
 enable
