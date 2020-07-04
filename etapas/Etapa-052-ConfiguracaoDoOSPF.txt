@@ -29,7 +29,7 @@
 !dos Hellos, possui suporte para Autenticação utilizando Texto Plano (Plain Text) ou MD5, utiliza a Fórmula para o 
 !Cálculo da Métrica do Custo do melhor caminho de: Cost = 100.000Kbps/Link Speed (Custo Padrão: 64 kbps = 1562, 
 !128 kbps = 781, 1.544 Mbps = 64, 10 Mbps = 10, 100 Mbps = 1, 1 Gbps = 1, 10 Gbps = 1 e 40 Gbps = 1), OBSERVAÇÃO
-!IMPORTANTE: é recomendo alterar os valores de Custo Padrão do Protocolo OSPF pois Interface de 100Mbps tem o mesmo
+!IMPORTANTE: é recomendado alterar os valores de Custo Padrão do Protocolo OSPF pois Interface de 100Mbps tem o mesmo
 !valor de custo padrão de uma Interface de 40Gbps.
 
 !As Áreas do OSPF adiciona o recurso de Hierarquia e Escalabilidade da Rede, cada Área do OSPF é um LSA (Link State
@@ -76,10 +76,11 @@ enable
 			exit
 
 		!Configurando o Processo Local do Protocolo OSPF
-		!DICA: a configuração do Processo Local do OSPF e significativo localmente no Router ou Switch Layer 3
+		!DICA: a configuração do Processo Local do OSPF é significativo localmente no Router ou Switch Layer 3
 		!OBSERVAÇÃO: diferente do protocolo EIGRP o número do Processo do OSPF pode ser diferente em cada Router ou
-		!Switch Layer 3, mais recomendo ser igual (isso pode mudar dependendo da topologia) para facilitar a análise
-		!de erros e principalmente facilitar a administração do Protocolo localmente
+		!Switch Layer 3, mais é recomendado ser igual (isso pode mudar dependendo da topologia) para facilitar a análise
+		!de erros e principalmente facilitar a administração do Protocolo localmente, a quantidade de números de Identificação
+		!de Processos Locais do OSPF vai de 1 até 65535 no Cisco Packet Tracer
 		router ospf 10
 
 			!Configurando a Indentificação do Roteador no Processo do OSPF
@@ -89,13 +90,19 @@ enable
 
 			!Configurando a o Custo de Referência da Largura de Banda no Processo do OSPF 
 			!DICA:
-			!OBSERVAÇÃO:
-			auto-cost reference-bandwidth 10000
+			!OBSERVAÇÃO: os valores de referência da largura de banda do OSPF vai de: 1 até 4.294.967 Mbits por segundo no
+			!Cisco Packet Tracer, nesse cenário uma Interface de Rede FastEthernet de 100Mbps terá um custo de 10000 já uma
+			!Interface GigabitEthernet de 1000Mbps terá um custo de 1000 é uma Interface GigabitEthernet de 10Gbps terá um
+			!custo de 100 (Fórmula do cálculo de custo da Interface, exemplo FastEthernet: 10 ^ 12 / 100.000.000 bps)
+			!OBSERVAÇÃO IMPORTANTE: o valor de Largura de Banda deve ser igual em todos os Router ou Switch Layer 3 da topologia
+			auto-cost reference-bandwidth 100000
 
 			!Configurando a Redistribuição de Rotas Estática no Processo do OSPF
 			!DICA
-			!OBSERVAÇÃO:
-			redistribute static
+			!OBSERVAÇÃO: 
+			!OBSERVAÇÃO IMPORTANTE: por padrão o OSPF só redistribui rotas estática Classful (% Only classful networks will be 
+			!redistributed), para redistribuir rotas estática Classless e necessário utilizar a opção subnets
+			redistribute static subnets
 
 			!Configurando a Origem da Rota Padrão para os outros roteadores no Processo do OSPF
 			!DICA:
@@ -120,14 +127,9 @@ enable
 			!OBSERVAÇÃO:
 			log-adjacency-changes detail
 
-			!Desabilitando o recurso de Auto-Sumarização no Processo do OSPF
-			!DICA: 
-			!OBSERVAÇÃO: 
-			no auto-summary
-
 			!Declarando as Redes Fisicamente Conectadas do Router 2911-1 na Área 0 no Processo do OSPF
 			!DICA:
-			!OBSERVAÇÃO:
+			!OBSERVAÇÃO: a quantidade de Áreas no Cisco Packet Tracer é de: 0 até 4.294.967.295, sendo a Área 0 obrigatória
 			network 192.168.10.0 0.0.0.255 area 0
 			network 192.168.20.0 0.0.0.255 area 0
 			network 192.168.30.0 0.0.0.255 area 0
@@ -139,8 +141,8 @@ enable
 
 			!Configurando a Vizinhança Estática no Processo do OSPF
 			!DICA:
-			!OBSERVAÇÃO: diferente do protocolo EIGRP, no protocolo OSPF não é necessário informar a Interface que o
-			!Vizinho está conectado diretamente, somente o Endereço IPv4 da Vizinhança
+			!OBSERVAÇÃO: diferente do protocolo EIGRP, no protocolo OSPF não é necessário informar a Interface que o Vizinho 
+			!está conectado diretamente, somente o Endereço IPv4 da Vizinhança
 			neighbor 10.0.0.10
 
 			!Configurando o recurso de Autenticação na Área 0 no Processo do OSPF
@@ -172,16 +174,22 @@ enable
 			ip address 172.16.0.3 255.255.255.255
 			exit
 		router ospf 10
-			router-id 172.16.0.4
-			network x.x.x.0 0.0.0.255 area 0
-			no auto-summary
-			passive-interface gigabitEthernet 0/0
-			passive-interface gigabitEthernet 0/1
-			auto-cost reference-bandwidth 10000
+			router-id 172.16.0.3
+			auto-cost reference-bandwidth 100000
+			passive-interface loopback 0
 			log-adjacency-changes detail
-			redistribute static
+			network 192.168.2.0 0.0.0.255 area 0
+			network 10.0.0.0 0.0.0.3 area 0
+			network 10.0.0.4 0.0.0.3 area 0
+			network 10.0.0.8 0.0.0.3 area 0
+			network 10.0.0.252 0.0.0.3 area 0
+			neighbor 10.0.0.9
+			area 0 authentication message-digest
 			exit
-		end 
+		interface gigabitEthernet 0/1/0.999
+			ip ospf message-digest-key 1 md5 ospf10
+			ip ospf authentication message-digest
+			end
 write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
@@ -227,9 +235,14 @@ show running-config | section router ospf
 
 !Visualizando as informações do Protocolo OSPF
 show ip protocols
-show ip route ospf 
 show ip route ospf 10
+show ip ospf border-routers 
 show ip ospf neighbor
+show ip ospf neighbor detail
+show ip ospf interface
+show ip ospf interface gigabitEthernet 0/0/0.999
 show ip ospf database
 show ip ospf database router
-show ip ospf inteface
+show ip ospf database external
+show ip ospf database network
+show ip ospf database summary

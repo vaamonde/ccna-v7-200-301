@@ -206,15 +206,9 @@ enable
 			network 10.0.0.4 0.0.0.3
 			network 10.0.0.8 0.0.0.3
 			network 10.0.0.252 0.0.0.3
-<<<<<<< HEAD
 
 			!OBSERVAÇÃO: nesse roteador estou desativando o Multicast nas Interfaces e utilizando o Unicast para formar
 			!adjacência com os vizinhos do Domínio do Protocolo EIGRP 
-=======
-			
-			!OBSERVAÇÃO: nesse roteador estou desativando o Multicast nas Interfaces e utilizando o Unicast para forma adjacência 
-			!com os vizinhos do Domínio do Protocolo EIGRP da Primeira Topologia
->>>>>>> c852e1f6d352dbdff487cb6be2eb2ea848577f6c
 			neighbor 10.0.0.1 gigabitEthernet 0/1
 			neighbor 10.0.0.5 serial 0/0/0
 			
