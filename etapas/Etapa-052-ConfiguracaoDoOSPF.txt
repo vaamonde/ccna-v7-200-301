@@ -85,6 +85,7 @@
 enable
 	configure terminal
 		interface loopback 10
+			description Interface de Router-ID do OSPF 10
 			!OBSERVAÇÃO IMPORTANTE: o endereço da Loopback será utilizado no processo de Eleição do Protocolo OSPF
 			ip address 172.16.0.4 255.255.255.255
 			exit
@@ -204,6 +205,7 @@ write
 enable
 	configure terminal
 		interface loopback 10
+			description Interface de Router-ID do OSPF 10
 			ip address 172.16.0.3 255.255.255.255
 			exit
 		router ospf 10
@@ -245,6 +247,7 @@ write
 enable
 	configure terminal
 		interface loopback 10
+			description Interface de Router-ID do OSPF 10
 			ip address 172.16.0.2 255.255.255.255
 			exit
 		router ospf 10
@@ -266,6 +269,7 @@ write
 enable
 	configure terminal
 		interface loopback 10
+			description Interface de Router-ID do OSPF 10
 			ip address 172.16.0.1 255.255.255.255
 			exit
 		router ospf 10
