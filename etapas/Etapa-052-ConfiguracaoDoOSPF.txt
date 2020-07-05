@@ -31,14 +31,14 @@
 !(a largura de banda padrão de referência para o cálculo do custo da Interface é de: 100Mbps, Custo Padrão: 64 Kbps = 
 !1562, 128 Kbps = 781, T1 1.544 Mbps = 64, 10 Mbps = 10, 100 Mbps = 1, 1 Gbps = 1, 10 Gbps = 1 e 40 Gbps = 1).
 !OBSERVAÇÃO IMPORTANTE: é recomendado alterar os valores de Custo Padrão do Protocolo OSPF pois Interface de 100Mbps 
-!tem o mesmo valor de custo padrão de uma Interface de 1.0Gbps, 10Gbps ou 40Gbps ou superior (por exemplo 100Gbps).
+!tem o mesmo valor de custo padrão de uma Interface de 1.0Gbps, 10Gbps e 40Gbps ou superior (por exemplo 100Gbps).
 !É recomendado que o valor da Referência de Largura de Banda seja igual ou superior a Maior Largura de Banda da sua 
 !Rede, por exemplo: Link de Backbone de 10Gbps, valor de referência de: 10000 ou superior, exemplo: 20000
 !OBSERVAÇÃO IMPORTANTE: a métrica do Protocolo OSPF possui apenas 16 bits (no seu pacote), fornecendo um valor máximo
 !de custo por Link de 65535, links com cálculo de Métrica superior a 65535, por exemplo: link serial de 56Kbps terá um 
 !custo de 178.571 (exemplo de um custo levando em consideração que o valor de Largura de Banda está configurado para 
 !Interfaces 10Gbps = 10000), como isso não é possível, o OSPF utiliza o valor máximo do Link para 65.535 para todas as
-!Interface que o valor for superior a 65535 (isso e ruim em Link de WAN ou Internet de baixa latência).
+!Interfaces que o valor for superior a 65.535 (isso e ruim em Link de WAN ou Internet de baixa latência).
 
 !As Áreas do OSPF adiciona o recurso de Hierarquia e Escalabilidade da Rede, cada Área do OSPF é um LSA (Link State
 !Advertisement - Anúncio do Estado do Link) Flooding Domain (Domínio de Inundações), todas as Áreas do Domínio do OSPF 
@@ -56,11 +56,11 @@
 
 !O OSPF trabalha com os Tempos de Hello de 10 segundos e 4x o valor do Hello Timer para o Dead Timer: 40 segundos
 
-!O OSPF trabalha com o Estado da Adjacência das Vizinhança (Adjacency States Neighbor) de: Down (Baixo: estado 
-!inicial do OSPF), Attempt (Tentativa: estado válido apenas em redes NBMA ou Point-to-Multipoint Non-Broadcast), 
-!Init (Iniciar: quando o roteador recebe um Hello, mas seu próprio RID não está no Hello), 2-Way (2 Maneiras: quando
+!O OSPF trabalha com o Estado da Adjacência das Vizinhança (Adjacency States Neighbor) de: Down (Desligado: estado 
+!inicial do OSPF), Attempt (Tentando: estado válido apenas em redes NBMA ou Point-to-Multipoint Non-Broadcast), 
+!Init (Iniciando: quando o roteador recebe um Hello, mas seu próprio RID não está no Hello), 2-Way (2 Maneiras: quando
 !o roteador recebe um Hello e seu próprio RID está no Hello), Exstart (Antes de Começar: quando o roteador sai de 
-!Init/2-way significa que deverão ficar Full Adjacentes), Exchange (Trocar: nesta fase o Database Description é 
+!Init/2-way significa que deverão ficar Full Adjacentes), Exchange (Trocando: nesta fase o Database Description é 
 !trocado), Loading (Carregando: o roteador está fazendo o download dos LSAs dos vizinhos) e Full (Completo: todos os
 !LSAs foram baixados dos vizinhos).
 
@@ -81,7 +81,7 @@
 !sem Transmissão), Point-to-Point (Ponto-a-Ponto), Point-to-Multipoint (Ponto-para-Multiponto), Point-to-Multipoint 
 !NBMA (Ponto-para-Multiponto NBMA) e Loopback.
 
-!PRIMEIRA ETAPA: Configuração do Router 2911 da Terceira Topologia
+!PRIMEIRA ETAPA: Configuração do Router 2911-1 da Terceira Topologia
 enable
 	configure terminal
 		interface loopback 10
@@ -94,7 +94,7 @@ enable
 		!OBSERVAÇÃO: diferente do protocolo EIGRP o número do Processo do OSPF pode ser diferente em cada Router ou
 		!Switch Layer 3, mais é recomendado ser igual (isso pode mudar dependendo da topologia) para facilitar a 
 		!análise de erros e principalmente facilitar a administração do Protocolo localmente, a quantidade de números
-		!de Identificação dos Processos Locais do OSPF vai de: 1 até 65535 no Cisco Packet Tracer
+		!de Identificação dos Processos Locais do OSPF vai de: 1 até 65.535 no Cisco Packet Tracer
 		router ospf 10
 
 			!Configurando a Indentificação do Roteador no Processo do OSPF
@@ -149,10 +149,10 @@ enable
 			passive-interface gigabitEthernet 0/0.100
 
 			!Configurando o Envio de Logs Detalhados das Mundaças da Adjacência no Processo do OSPF
-			!DICA: essa opção habilita o recurso do envio dos Log's detalhados de adjacência do protocolo OSPF para o Syslog
+			!DICA: essa opção habilita o recurso do envio dos Log's detalhados da adjacência do protocolo OSPF para o Syslog
 			!OBSERVAÇÃO: essa opção está habilita por padrão no Protocolo OSPF, somente a opção simples não detalhada, caso 
 			!você não esteja utilizando o Syslog, as mensagens detalhadas serão armazenadas no Buffer local do Router ou Switch 
-			!Layer 3 da Topologia, esse recurso e importante para análise de erros e falhas de segurança do Protocolo
+			!Layer 3 da Topologia, esse recurso é importante para análise de erros e falhas de segurança do Protocolo
 			log-adjacency-changes detail
 
 			!Declarando as Redes Fisicamente Conectadas do Router 2911-1 na Área 0 no Processo do OSPF
@@ -171,7 +171,7 @@ enable
 
 			!Configurando a Vizinhança Estática no Processo do OSPF
 			!DICA: essa opção funciona igual ao Protocolo EIGRP, desativando o Multicast e habilitando o Unicast na Vizinhança
-			!para formar adjacência, utilizado principalmente em redes NBMA.
+			!para formar adjacência, usado principalmente em redes NBMA (não funciona em link GigabitEthernet diretamente conectado).
 			!OBSERVAÇÃO: diferente do protocolo EIGRP, no protocolo OSPF não é necessário informar a Interface que o Vizinho 
 			!está conectado diretamente, somente o Endereço IPv4 da Vizinhança que faz parte da Subrede configurada na Interface
 			neighbor 10.0.0.10
@@ -195,15 +195,15 @@ enable
 			!Configurando a Chave de Autenticação MD5 do Protocolo OSPF
 			!DICA: essa opção habilita o recurso de criptografia MD5 da autenticação do protocolo OSPF
 			!OBSERVAÇÃO: nessa configuração indicamos que vamos utilizar o número da Chave, o tipo de criptografia e falamos
-			!no final a chave de autenticação do protocolo OSPF
+			!no final a chave de autenticação do protocolo OSPF utilizada (a senha fica em texto plano no running-config)
 			ip ospf message-digest-key 1 md5 ospf10
 			end
 write
 
-!SEGUNDA ETAPA: Configuração do Router 1941 da Segunda Topologia
+!SEGUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
 enable
 	configure terminal
-		interface loopback 0
+		interface loopback 10
 			ip address 172.16.0.3 255.255.255.255
 			exit
 		router ospf 10
@@ -224,6 +224,10 @@ enable
 			ip ospf message-digest-key 1 md5 ospf10
 			exit
         interface gigabitEthernet 0/0
+			!OBSERVAÇÃO: a porta GigabitEthernet 0/0 do Router 1941-2 está conectada na porta FastEthernet 0/24
+			!do Switch Layer 3, que tem uma Largura de Banda de 100Mbps, nesse cenário é recomendado alterar o
+			!valor do Custo da Largura de Banda da Interface manualmente.
+			ip ospf cost 100
 			ip ospf authentication message-digest
 			ip ospf message-digest-key 1 md5 ospf10
 			exit
@@ -240,7 +244,7 @@ write
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
 enable
 	configure terminal
-		interface loopback 0
+		interface loopback 10
 			ip address 172.16.0.2 255.255.255.255
 			exit
 		router ospf 10
@@ -261,7 +265,7 @@ write
 !QUARTA ETAPA: Configuração do Router 1941 da Primeira Topologia
 enable
 	configure terminal
-		interface loopback 0
+		interface loopback 10
 			ip address 172.16.0.1 255.255.255.255
 			exit
 		router ospf 10
@@ -294,10 +298,14 @@ show ip route ospf 10
 show ip ospf border-routers 
 show ip ospf neighbor
 show ip ospf neighbor detail
-show ip ospf interface
 show ip ospf interface gigabitEthernet 0/0/0.999
 show ip ospf database
 show ip ospf database router
 show ip ospf database external
 show ip ospf database network
 show ip ospf database summary
+show ip route ospf
+
+!Opções de Debug do Protocolo OSPF
+debug ip ospf events
+debug ip ospf adj
