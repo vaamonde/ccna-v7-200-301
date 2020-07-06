@@ -1,0 +1,153 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 02/07/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!PRIMEIRA ETAPA: Configuração do Router 2911-1 da Terceira Topologia
+enable
+	configure terminal
+		ipv6 unicast-routing
+		interface loopback 10
+			description Interface de Router-ID do OSPF 10
+			ip address 172.16.0.4 255.255.255.255
+			exit
+		ipv6 router ospf 10
+			router-id 172.16.0.4
+			auto-cost reference-bandwidth 1000
+			redistribute static subnets
+			default-information originate
+			passive-interface default
+			no passive-interface gigabitEthernet 0/0/0.999
+			log-adjacency-changes detail
+			neighbor FE80::
+			area 0 authentication message-digest
+			exit
+		interface gigabitEthernet 0/0/0.999
+			ipv6 ospf 10 area 0
+			ipv6 ospf authentication message-digest
+			ipv6 ospf message-digest-key 1 md5 ospf10
+			exit
+		interface gigabitEthernet 0/0.10
+			ipv6 ospf 10 area 0
+			exit
+		interface gigabitEthernet 0/0.20
+			ipv6 ospf 10 area 0
+			exit
+		interface gigabitEthernet 0/0.30
+			ipv6 ospf 10 area 0
+			exit
+		interface gigabitEthernet 0/0.40
+			ipv6 ospf 10 area 0
+			exit
+		interface gigabitEthernet 0/0.50
+			ipv6 ospf 10 area 0
+			exit
+		interface gigabitEthernet 0/0.99
+			ipv6 ospf 10 area 0
+			exit
+		interface gigabitEthernet 0/0.100
+			ipv6 ospf 10 area 0
+			exit
+write
+
+!SEGUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
+enable
+	configure terminal
+		interface loopback 10
+			description Interface de Router-ID do OSPF 10
+			ip address 172.16.0.3 255.255.255.255
+			exit
+		ipv6 router ospf 10
+			router-id 172.16.0.3
+			auto-cost reference-bandwidth 1000
+			passive-interface loopback 0
+			log-adjacency-changes detail
+			neighbor FE80::
+			area 0 authentication message-digest
+			exit
+		interface gigabitEthernet 0/1/0.999
+			ipv6 ospf 10 area 0
+			ipv6 ospf authentication message-digest
+			ipv6 ospf message-digest-key 1 md5 ospf10
+			exit
+        interface gigabitEthernet 0/0
+			ipv6 ospf 10 area 0
+			ipv6 ospf cost 100
+			ipv6 ospf authentication message-digest
+			ipv6 ospf message-digest-key 1 md5 ospf10
+			exit
+        interface gigabitEthernet 0/1
+			ipv6 ospf 10 area 0
+			ipv6 ospf authentication message-digest
+			ipv6 ospf message-digest-key 1 md5 ospf10
+			exit
+        interface serial 0/0/0
+			ipv6 ospf 10 area 0
+			ipv6 ospf authentication message-digest
+			ipv6 ospf message-digest-key 1 md5 ospf10
+			end
+write
+
+!TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
+enable
+	configure terminal
+		interface loopback 10
+			description Interface de Router-ID do OSPF 10
+			ip address 172.16.0.2 255.255.255.255
+			exit
+		ipv6 router ospf 10
+			router-id 172.16.0.2
+			auto-cost reference-bandwidth 1000
+            passive-interface vlan 1
+			log-adjacency-changes detail
+            area 0 authentication message-digest
+            exit
+        interface fastEthernet 0/24
+			ipv6 ospf 10 area 0
+			ipv6 ospf authentication message-digest
+			ipv6 ospf message-digest-key 1 md5 ospf10
+			exit
+		interface vlan 1
+			ipv6 ospf 10 area 0
+			end
+write
+
+!QUARTA ETAPA: Configuração do Router 1941 da Primeira Topologia
+enable
+	configure terminal
+		interface loopback 10
+			description Interface de Router-ID do OSPF 10
+			ip address 172.16.0.1 255.255.255.255
+			exit
+		ipv6 router ospf 10
+			router-id 172.16.0.1
+			auto-cost reference-bandwidth 1000
+			log-adjacency-changes detail
+			passive-interface gigabitEthernet 0/0
+            area 0 authentication message-digest
+            exit
+        interface gigabitEthernet 0/1
+			ipv6 ospf 10 area 0
+			ipv6 ospf authentication message-digest
+			ipv6 ospf message-digest-key 1 md5 ospf10
+			exit
+        interface serial 0/0/0
+			ipv6 ospf 10 area 0
+        	ipv6 ospf authentication message-digest
+			ipv6 ospf message-digest-key 1 md5 ospf10
+			exit
+		interface gigabitEthernet 0/0
+			ipv6 ospf 10 area 0
+			end
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | ipv6 router ospf

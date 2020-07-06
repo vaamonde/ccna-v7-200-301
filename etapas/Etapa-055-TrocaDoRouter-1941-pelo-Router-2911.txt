@@ -1,0 +1,235 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 02/07/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!Executar o Backup do Router 1941-2 e Aplicar as Configurações no Router 2911
+!CUIDADO: adicionar os comandos: enable e configure terminal antes de aplicar o Script no Router 2911
+!CUIDADO: alterar o Hostname: 2911-2 antes de aplicar o Script no Router 2911
+!CUIDADO: alterar as senhas: Tipo-5 e Tipo-7 antes de aplicar o Script no Router 2911
+!CUIDADO: remover a linha: license udi pid CISCO1941/K9 sn FTX1524E30V antes de aplicar o Script no Router 2911
+!CUIDADO: adicionar o comando: no shutdown nas Interfaces antes de aplicar o Script no Router 2911
+!CUIDADO: alterar a senha do: NTP antes de aplicar o Script no Router 2911
+!CUIDADO: alterar o Delimitador do: Banner antes de aplicar o Script no Router 2911
+!CUIDADO: remover a linha: ip classless antes de aplicar o Script no Router 2911
+!OBSERVAÇÃO: executar os comandos abaixo depois de aplicar o Script no Router 2911
+
+!Modo ENABLE:
+!01: terminal history size 256
+!02: terminal monitor 
+!03: #clock set 13:00:00 29 June 2020
+
+!Modo EXEC PRIVILEGIADO
+!04: crypto key generate rsa general-keys modulus 1024
+
+enable
+configure terminal
+!
+version 15.1
+service timestamps log datetime msec
+service timestamps debug datetime msec
+service password-encryption
+security passwords min-length 10
+!
+hostname rt-2911-2
+!
+logging userinfo
+login block-for 120 attempts 2 within 60
+login on-failure log
+login on-success log
+!
+!
+enable secret 5 vaamonde@pti
+!
+!
+!
+!
+!
+aaa new-model
+!
+aaa authentication login default group radius local 
+aaa authentication enable default group radius local 
+!
+!
+aaa authorization exec default group radius local
+!
+aaa accounting exec default start-stop group radius
+!
+clock timezone BR -3
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+username admin privilege 15 secret 5 vaamonde@pti
+username robson secret 5 vaamonde@pti
+username vaamonde password 7 vaamonde@pti
+!
+!
+!
+!
+!
+lldp run
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip ssh authentication-retries 2
+ip ssh time-out 60
+ip domain-name vaamonde.pti
+ip host servidor 192.168.3.1 
+ip name-server 192.168.3.1
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ description Interface de Loopback do Router 1941-2
+ ip address 10.0.0.253 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet0/0
+ description Interface de LAN com o Switch Layer 3 3560
+ ip flow egress
+ ip flow ingress
+ ip address 192.168.2.254 255.255.255.0
+ duplex full
+ speed 100
+ ipv6 address FE80::254 link-local
+ ipv6 address 2001:ABCD:1234:2::254/64
+ ipv6 enable
+ no shutdown
+!
+interface GigabitEthernet0/1
+ description Interface de WAN com o Router 1941-1
+ ip address 10.0.0.2 255.255.255.252
+ duplex auto
+ speed auto
+ ipv6 address FE80::1002 link-local
+ ipv6 address 2001:ABCD:1234:1001::2/64
+ ipv6 enable
+ no shutdown
+!
+interface Serial0/0/0
+ description Interface de Backup WAN Serial com o Router 1941-1
+ bandwidth 2000
+ ip address 10.0.0.6 255.255.255.252
+ ipv6 address FE80::1006 link-local
+ ipv6 address 2001:ABCD:1234:1005::6/64
+ ipv6 enable
+ clock rate 2000000
+ no shutdown
+!
+interface Serial0/0/1
+ no ip address
+ clock rate 2000000
+!
+interface GigabitEthernet0/1/0
+ description Interface de Interligao Fisica da WAN Fiber com o Router 2911
+ no ip address
+ no shutdown
+!
+interface GigabitEthernet0/1/0.999
+ description Interface Logica de Interligao da WAN Fiber com o Router 2911
+ encapsulation dot1Q 999
+ ip address 10.0.0.10 255.255.255.252
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router rip
+ version 2
+ redistribute static metric transparent 
+ passive-interface GigabitEthernet0/0
+ passive-interface GigabitEthernet0/1
+ passive-interface Serial0/0/0
+ network 10.0.0.0
+ network 192.168.2.0
+ no auto-summary
+!
+ip classless
+ip route 192.168.1.0 255.255.255.0 10.0.0.1 
+ip route 192.168.3.0 255.255.255.0 192.168.2.1 
+ip route 192.168.1.0 255.255.255.0 Serial0/0/0 5
+!
+ip flow-export destination 192.168.3.1 9996
+ip flow-export version 9
+ip flow-export source GigabitEthernet0/0
+!
+ipv6 route 2001:ABCD:1234:3::/64 GigabitEthernet0/0 FE80::1
+ipv6 route 2001:ABCD:1234:1::/64 GigabitEthernet0/1 FE80::1001
+ipv6 route 2001:ABCD:1234:1::/64 Serial0/0/0 FE80::1005 5
+!
+ip access-list extended sl_def_acl
+ deny tcp any any eq telnet
+ deny tcp any any eq www
+ deny tcp any any eq 22
+ permit tcp any any eq 22
+!
+banner motd #AVISO: acesso autorizado somente a funcionarios#
+!
+radius-server host 192.168.3.1 auth-port 1645 key pti
+!
+!
+!
+snmp-server community ptiro RO
+snmp-server community ptirw RW
+!
+logging trap debugging
+logging 192.168.3.1
+line con 0
+ accounting exec default
+ exec-timeout 5 30
+ password 7 vaamonde@pti
+ logging synchronous
+ login authentication default
+!
+line aux 0
+ exec-timeout 5 30
+ speed 115200
+ password 7 vaamonde@pti
+ logging synchronous
+ flowcontrol hardware
+!
+line vty 0 4
+ exec-timeout 5 30
+ password 7 vaamonde@pti
+ logging synchronous
+ login authentication default
+ accounting exec default
+ transport input ssh
+line vty 5
+ login authentication default
+ accounting exec default
+!
+!
+ntp authentication-key 123456 md5 vaamonde
+ntp authenticate
+ntp server 192.168.3.1
+ntp update-calendar
+!
+end

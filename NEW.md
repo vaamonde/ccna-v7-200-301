@@ -67,12 +67,12 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-052 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral
-
-## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
+052 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral<br>
 053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral<br>
 054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral<br>
-055 Substituindo o Router 1941 da Segunda Topologia pelo Router 2911<br>
+055 Substituindo o Router 1941 da Segunda Topologia pelo Router 2911
+
+## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
 056 Redistribuindo Rotas do RIPv2, EIGRP e OSPF na Topologia Geral
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**

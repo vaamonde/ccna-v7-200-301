@@ -214,7 +214,7 @@ enable
 			
 			!ADENDO: no vídeo e no script faltou configurar a Interface Passiva de Loopback 0 que foi configurada no
 			!Script da Etapa 027, essa Interface não é utilizada no AS do EIGRP, foi criada somente para teste de rede
-			passive-interface interface loopback 0
+			passive-interface loopback 0
 			exit
 		key chain eigrp10
 			key 10
