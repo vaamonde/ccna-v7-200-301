@@ -115,10 +115,14 @@ enable
 			!Custo das Interfaces GigabitEthernet não sejam iguais na Topologia do Domínio do Protocolo do OSPF 
 			!OBSERVAÇÃO: os valores de referência da largura de banda do OSPF vai de: 1 até 4.294.967 Mbits por segundo 
 			!no Cisco Packet Tracer, nesse cenário uma Interface de Rede FastEthernet de 100Mbps terá um custo de 100 
-			!já uma Interface GigabitEthernet de 1000Mbps terá um custo de 10 é uma Interface GigabitEthernet de 10000Mbps 
+			!já uma Interface GigabitEthernet de 1.0Gbps terá um custo de 10 é uma Interface GigabitEthernet de 10Gbps 
 			!terá um custo de 1 (Fórmula do cálculo de custo da Interface, exemplo FastEthernet: 10^8/100000000bps)
-			!OBSERVAÇÃO IMPORTANTE: o valor de Referência da Largura de Banda deve ser igual em todos os Router ou Switch
-			!Layer 3 da topologia do Domínio do Protocolo OSPF
+			!OBSERVAÇÃO IMPORTANTE: o valor de Referência da Largura de Banda deve ser igual em todos os Router ou 
+			!Switch Layer 3 da topologia do Domínio do Protocolo OSPF
+			!ADENDO IMPORTANTE: aparentemente no Cisco Packet Tracer existe um BUG em relação a Mudança do Custo da 
+			!Interface, mesmo alterando o valor, a referência de cálculo não é alterada, precisando acessar novamente o
+			!processo local do OSPF, alterar o valor para 10000 em todos os equipametos, e depois alterar para 1000 em
+			!todos os equipamentos para que o custo seja alterado.
 			auto-cost reference-bandwidth 1000
 
 			!Configurando a Redistribuição de Rotas Estática no Processo do OSPF
@@ -131,34 +135,36 @@ enable
 
 			!Configurando a Origem da Rota Padrão para os outros Roteadores no Processo do OSPF
 			!DICA: essa opção possibilita informar no processo local do OSPF que esse roteador possui a rota padrão
-			!OBSERVAÇÃO: igual ao Protocolo RIPv2, o roteador de Borda com a Internet que possui a Rota Padrão será anunciado 
-			!no processo do Protocolo OSPF, essa rota será propagada para todos os Router ou Switch Layer 3 do Domínio do OSPF 
-			!na Área Normal (em nosso exemplo Area 0), o OSPF, por padrão, não gera uma rota padrão para o Domínio do OSPF.
+			!OBSERVAÇÃO: igual ao Protocolo RIPv2, o roteador de Borda com a Internet que possui a Rota Padrão será 
+			!anunciado no processo do Protocolo OSPF, essa rota será propagada para todos os Router ou Switch Layer 3 
+			!do Domínio do OSPF na Área Normal (em nosso exemplo Area 0), o OSPF, por padrão, não gera uma rota padrão 
+			!para o Domínio do OSPF.
 			default-information originate
 
 			!Configurando as Interfaces Passivas no Processo do OSPF
-			!DICA: essa opção configura as Interfaces que não enviaram mensagens de Hellos para formar Adjacência do OSPF
-			!OBSERVAÇÃO: diferente dos Protocolos RIPv2 e EIGRP, uma interface passiva do OSPF não participará do Domínio 
-			!do OSPF para formar adjacência ou enviará atualizações de roteamento (Hello), no entanto, a interface é anunciada 
-			!como parte da rede de roteamento do Domínio do Protocolo OSPF
-			!OBSERVAÇÃO IMPORTANTE: existe o comando: passive-interface default que coloca todas as interfaces em modo passivo,
-			!para declarar as interfaces não passivas você utiliza o comando: no passive-interface gigabitEthernet 0/0, esse 
-			!recurso também está disponível no Protocolo EIGRP para facilitar a administração.
+			!DICA: essa opção configura as Interfaces que não enviaram mensagens de Hellos para formar Adjacência
+			!OBSERVAÇÃO: diferente dos Protocolos RIPv2 e EIGRP, uma interface passiva do OSPF não participará do 
+			!Domínio do OSPF para formar adjacência ou enviará atualizações de roteamento (Hello), no entanto, a 
+			!interface é anunciada como parte da rede de roteamento do Domínio do Protocolo OSPF
+			!OBSERVAÇÃO IMPORTANTE: existe o comando: passive-interface default que coloca todas as interfaces em modo 
+			!passivo, para declarar as interfaces não passivas você utiliza o comando: no passive-interface 
+			!gigabitEthernet 0/0, esse recurso também está disponível no Protocolo EIGRP para facilitar a administração.
 			passive-interface default
 			no passive-interface gigabitEthernet 0/0/0.999
 
 			!Configurando o Envio de Logs Detalhados das Mundaças da Adjacência no Processo do OSPF
-			!DICA: essa opção habilita o recurso do envio dos Log's detalhados da adjacência do protocolo OSPF para o Syslog
-			!OBSERVAÇÃO: essa opção está habilita por padrão no Protocolo OSPF, somente a opção simples não detalhada, caso 
-			!você não esteja utilizando o Syslog, as mensagens detalhadas serão armazenadas no Buffer local do Router ou Switch 
-			!Layer 3 da Topologia, esse recurso é importante para análise de erros e falhas de segurança do Protocolo
+			!DICA: essa opção habilita o recurso do envio dos Log's detalhados da adjacência do OSPF para o Syslog
+			!OBSERVAÇÃO: essa opção está habilita por padrão no Protocolo OSPF, somente a opção simples não detalhada, 
+			!caso você não esteja utilizando o Syslog, as mensagens detalhadas serão armazenadas no Buffer local do 
+			!Router ou Switch Layer 3 da Topologia, esse recurso é importante para análise de erros e falhas de 
+			!segurança do Protocolo
 			log-adjacency-changes detail
 
 			!Declarando as Redes Fisicamente Conectadas do Router 2911-1 na Área 0 no Processo do OSPF
-			!DICA: configurando todas as redes fisicamente conectadas no Router que serão declaradas no Domínio do OSPF
-			!OBSERVAÇÃO: a quantidade de Áreas no Cisco Packet Tracer é de: 0 até 4.294.967.295, sendo a Área 0 obrigatória.
-			!OBSERVAÇÃO IMPORTANTE: diferente do Protocolo EIGRP, no OSPF depois das configurações da Máscara Curinga indicamos
-			!em qual Área a Rede pertence para ser declarada no Processo Local do Protocolo OSPF
+			!DICA: configurando todas as redes fisicamente conectadas no Router que serão anunciadas no Domínio do OSPF
+			!OBSERVAÇÃO: a quantidade de Áreas no Cisco Packet Tracer é de: 0 até 4294967295, sendo a Área 0 obrigatória.
+			!OBSERVAÇÃO IMPORTANTE: diferente do Protocolo EIGRP, no OSPF depois das configurações da Máscara Curinga 
+			!indicamos em qual Área a Rede pertence para ser declarada no Processo Local do Protocolo OSPF
 			network 192.168.10.0 0.0.0.255 area 0
 			network 192.168.20.0 0.0.0.255 area 0
 			network 192.168.30.0 0.0.0.255 area 0
@@ -169,16 +175,18 @@ enable
 			network 10.0.0.8 0.0.0.3 area 0
 
 			!Configurando a Vizinhança Estática no Processo do OSPF
-			!DICA: essa opção funciona igual ao Protocolo EIGRP, desativando o Multicast e habilitando o Unicast na Vizinhança
-			!para formar adjacência, usado principalmente em redes NBMA (não funciona em link GigabitEthernet diretamente conectado).
-			!OBSERVAÇÃO: diferente do protocolo EIGRP, no protocolo OSPF não é necessário informar a Interface que o Vizinho 
-			!está conectado diretamente, somente o Endereço IPv4 da Vizinhança que faz parte da Subrede configurada na Interface
+			!DICA: essa opção funciona igual ao Protocolo EIGRP, desativando o Multicast e habilitando o Unicast na 
+			!Vizinhança para formar adjacência, usado principalmente em redes NBMA (não funciona em link GigabitEthernet 
+			!diretamente conectado).
+			!OBSERVAÇÃO: diferente do protocolo EIGRP, no protocolo OSPF não é necessário informar a Interface que o 
+			!Vizinho está conectado diretamente, somente o Endereço IPv4 da Vizinhança que faz parte da Subrede 
+			!configurada na Interface
 			neighbor 10.0.0.10
 
 			!Configurando o recurso de Autenticação na Área 0 no Processo do OSPF
 			!DICA: essa opção habilita o recurso de autenticação do protocolo OSPF no processo local da Área 0
-			!OBSERVAÇÃO: diferente do Protocolo EIGRP que utiliza o Chaveiro, no protocolo OSPF é habilitado somente o recurso 
-			!de autenticação e o processo de criação das Chaves é feito na Interface de Rede das Vizinhanças
+			!OBSERVAÇÃO: diferente do Protocolo EIGRP que utiliza o Chaveiro, no protocolo OSPF é habilitado somente o
+			!recurso de autenticação e o processo de criação das Chaves é feito na Interface de Rede das Vizinhanças
 			area 0 authentication message-digest
 			exit
 
@@ -187,14 +195,15 @@ enable
 
 			!Configurando a Mensagem Resumida de Autenticação do Protocolo OSPF
 			!DICA: essa opção habilita o recurso de resumo de mensagens de autenticação do protocolo OSPF
-			!OBSERVAÇÃO: nessa configuração indicamos que essa interface vai utilizar o recurso de autenticação para formar
-			!adjacência entre as vizinhanças
+			!OBSERVAÇÃO: nessa configuração indicamos que essa interface vai utilizar o recurso de autenticação para 
+			!formar adjacência entre as vizinhanças
 			ip ospf authentication message-digest
 
 			!Configurando a Chave de Autenticação MD5 do Protocolo OSPF
 			!DICA: essa opção habilita o recurso de criptografia MD5 da autenticação do protocolo OSPF
-			!OBSERVAÇÃO: nessa configuração indicamos que vamos utilizar o número da Chave, o tipo de criptografia e falamos
-			!no final a chave de autenticação do protocolo OSPF utilizada (a senha fica em texto plano no running-config)
+			!OBSERVAÇÃO: nessa configuração indicamos que vamos utilizar o número da Chave, o tipo de criptografia e 
+			!falamos no final a chave de autenticação do protocolo OSPF utilizada (a senha fica em texto plano no 
+			!running-config e startup-config)
 			ip ospf message-digest-key 1 md5 ospf10
 			end
 write
@@ -308,7 +317,6 @@ show ip ospf database router
 show ip ospf database external
 show ip ospf database network
 show ip ospf database summary
-show ip route ospf
 
 !Opções de Debug do Protocolo OSPF
 debug ip ospf events
