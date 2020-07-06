@@ -14,7 +14,8 @@
 !O OSPF (Open Shortest Path First) é um Protocolo de Roteamento Dinâmico para redes que operam com o Protocolo IPv4
 !(possui suporte ao Protocolo IPv6 utilizando a versão OSPFv3), desenvolvido pelo Grupo de Trabalho dos IGPs 
 !(Interior Gateway Protocols) da IETF (Internet Engineering Task Force) e descrito inicialmente em 1989 pela RFC 
-!1131 (versão atual nas RFC 2328 e 2740 do OSPFv2).
+!1131 (versão atual nas RFC 2328 e 2740 do OSPFv2). É um protocolo IGP desenvolvido para ser usado em um Sistema
+!Autônomo Interno (Intra-AS)
 
 !O OSPF é um Protocolo de Roteamento Link State (Estado do Link), utiliza o Algoritmo SPF Dijkstra para determinar
 !o melhor caminho na Topologia do OSPF, por padrão o OSPF é Classless (Sem Classe), tem suporte a Sumarização NLRI 
@@ -27,13 +28,16 @@
 !Distância Administrativa (AD) de 110, utiliza Métrica baseada no Custo da Largura de Banda (Bandwidth) da Interface,
 !utiliza o seu próprio protocolo de Transporte IP 89, utiliza as Redes Multicast 224.0.0.5 e 224.0.0.6 para o envio 
 !dos Hellos, possui suporte para Autenticação utilizando Texto Plano (Plain Text) ou MD5, utiliza a Fórmula para o 
-!Cálculo da Métrica do Custo do melhor caminho de: Custo = Referência de Largura Banda / Largura de Banda da Interface
-!(a largura de banda padrão de referência para o cálculo do custo da Interface é de: 100Mbps, Custo Padrão: 64 Kbps = 
-!1562, 128 Kbps = 781, T1 1.544 Mbps = 64, 10 Mbps = 10, 100 Mbps = 1, 1 Gbps = 1, 10 Gbps = 1 e 40 Gbps = 1).
+!Cálculo da Métrica do Custo do melhor caminho de: Custo = Referência de Largura Banda/Largura de Banda da Interface
+!(a largura de banda padrão de referência para o cálculo do custo da Interface é de: 100Mbps - Custo=10^8/Banda bps, 
+!Custo Padrão: 64 Kbps = 1562, 128 Kbps = 781, T1 1.544 Mbps = 64, 10 Mbps = 10, 100 Mbps = 1, 1 Gbps = 1, 10 Gbps = 1
+!40 Gbps = 1 e 100Gbps = 1).
+
 !OBSERVAÇÃO IMPORTANTE: é recomendado alterar os valores de Custo Padrão do Protocolo OSPF pois Interface de 100Mbps 
 !tem o mesmo valor de custo padrão de uma Interface de 1.0Gbps, 10Gbps e 40Gbps ou superior (por exemplo 100Gbps).
 !É recomendado que o valor da Referência de Largura de Banda seja igual ou superior a Maior Largura de Banda da sua 
 !Rede, por exemplo: Link de Backbone de 10Gbps, valor de referência de: 10000 ou superior, exemplo: 20000
+
 !OBSERVAÇÃO IMPORTANTE: a métrica do Protocolo OSPF possui apenas 16 bits (no seu pacote), fornecendo um valor máximo
 !de custo por Link de 65535, links com cálculo de Métrica superior a 65535, por exemplo: link serial de 56Kbps terá um 
 !custo de 178.571 (exemplo de um custo levando em consideração que o valor de Largura de Banda está configurado para 
@@ -98,7 +102,7 @@ enable
 		!de Identificação dos Processos Locais do OSPF vai de: 1 até 65.535 no Cisco Packet Tracer
 		router ospf 10
 
-			!Configurando a Indentificação do Roteador no Processo do OSPF
+			!Configurando a Indentificação do Router no Processo do OSPF
 			!DICA: essa opção configura o recurso do Router-ID que será utilizado na Eleição é também para formar 
 			!adjacência entre os vizinhos do Domínio do OSPF
 			!OBSERVAÇÃO: no processo local do Protocolo OSPF, essa opção é muito importante para a escolha do roteador 
@@ -111,8 +115,8 @@ enable
 			!Custo das Interfaces GigabitEthernet não sejam iguais na Topologia do Domínio do Protocolo do OSPF 
 			!OBSERVAÇÃO: os valores de referência da largura de banda do OSPF vai de: 1 até 4.294.967 Mbits por segundo 
 			!no Cisco Packet Tracer, nesse cenário uma Interface de Rede FastEthernet de 100Mbps terá um custo de 100 
-			!já uma Interface GigabitEthernet de 1000Mbps terá um custo de 10 é uma Interface GigabitEthernet de 10Gbps 
-			!terá um custo de 1 (Fórmula do cálculo de custo da Interface, exemplo FastEthernet: 10^12/100.000.000bps)
+			!já uma Interface GigabitEthernet de 1000Mbps terá um custo de 10 é uma Interface GigabitEthernet de 10000Mbps 
+			!terá um custo de 1 (Fórmula do cálculo de custo da Interface, exemplo FastEthernet: 10^8/100000000bps)
 			!OBSERVAÇÃO IMPORTANTE: o valor de Referência da Largura de Banda deve ser igual em todos os Router ou Switch
 			!Layer 3 da topologia do Domínio do Protocolo OSPF
 			auto-cost reference-bandwidth 1000
@@ -138,16 +142,10 @@ enable
 			!do OSPF para formar adjacência ou enviará atualizações de roteamento (Hello), no entanto, a interface é anunciada 
 			!como parte da rede de roteamento do Domínio do Protocolo OSPF
 			!OBSERVAÇÃO IMPORTANTE: existe o comando: passive-interface default que coloca todas as interfaces em modo passivo,
-			!para declarar as interfaces não passivas você utiliza o comando: no passive-interface gigabitEthernet 0/0
-			passive-interface gigabitEthernet 0/0
-			passive-interface gigabitEthernet 0/1
-			passive-interface gigabitEthernet 0/0.10
-			passive-interface gigabitEthernet 0/0.20
-			passive-interface gigabitEthernet 0/0.30
-			passive-interface gigabitEthernet 0/0.40
-			passive-interface gigabitEthernet 0/0.50
-			passive-interface gigabitEthernet 0/0.99
-			passive-interface gigabitEthernet 0/0.100
+			!para declarar as interfaces não passivas você utiliza o comando: no passive-interface gigabitEthernet 0/0, esse 
+			!recurso também está disponível no Protocolo EIGRP para facilitar a administração.
+			passive-interface default
+			no passive-interface gigabitEthernet 0/0/0.999
 
 			!Configurando o Envio de Logs Detalhados das Mundaças da Adjacência no Processo do OSPF
 			!DICA: essa opção habilita o recurso do envio dos Log's detalhados da adjacência do protocolo OSPF para o Syslog
@@ -228,7 +226,8 @@ enable
         interface gigabitEthernet 0/0
 			!OBSERVAÇÃO: a porta GigabitEthernet 0/0 do Router 1941-2 está conectada na porta FastEthernet 0/24
 			!do Switch Layer 3, que tem uma Largura de Banda de 100Mbps, nesse cenário é recomendado alterar o
-			!valor do Custo da Largura de Banda da Interface manualmente.
+			!valor do Custo da Largura de Banda da Interface manualmente (essa Interface foi configurada com a 
+			!velocidade = speed 100 e modo de Transmissão duplex full).
 			ip ospf cost 100
 			ip ospf authentication message-digest
 			ip ospf message-digest-key 1 md5 ospf10
@@ -276,6 +275,7 @@ enable
 			router-id 172.16.0.1
 			auto-cost reference-bandwidth 1000
 			log-adjacency-changes detail
+			passive-interface gigabitEthernet 0/0
 			network 192.168.1.0 0.0.0.255 area 0
 			network 10.0.0.0 0.0.0.3 area 0
 			network 10.0.0.4 0.0.0.3 area 0
