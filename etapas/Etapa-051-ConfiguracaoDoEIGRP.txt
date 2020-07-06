@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O EIGRP (Enhanced Interior Gateway Routing Protocol) é um Potocolo Avançado Híbrido de Roteamento por Vetor de Distância
+!O EIGRP (Enhanced Interior Gateway Routing Protocol) é um Protocolo Avançado Híbrido de Roteamento por Vetor de Distância
 !(Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm), 
 !desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas
 !para o Padrão Aberto em 2013 e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP

@@ -605,3 +605,17 @@ As configurações do Protocolo RIPng IPv6 nos Router 1941 e 2911 será feita ut
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-050.pkt
 
 Link da vídeo aula: https://www.youtube.com/watch?v=vSAx2JzHtVI
+
+## **051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv4 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, 0 EIGRP (Enhanced Interior Gateway Routing Protocol) é um Protocolo Avançado Híbrido de Roteamento por Vetor de Distância (Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas para o Padrão Aberto em 2013 e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP (Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
+
+As configurações do Protocolo EIGRP IPv4 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-050-ConfiguracaoDoRIPng-IPv6.txt
+
+Script utilizado para a Limpeza das Rotas Estática, Padrão, Flutuante e dos Protocolos de Roteamento Dinâmico RIPv2 e RIPng: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-051-LimpezaDasRotasEstaticaDinamica-A.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-051-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-051-Z.pkt
+
+Link da vídeo aula: https://www.youtube.com/watch?v=ezRkSY5UJQI
