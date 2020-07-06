@@ -151,7 +151,7 @@ enable
 
 		!Configurando o Gerenciador do Chaveiro que será utilizado na Autenticação do Protocolo EIGRP
 		!DICA: para utilizar autenticação no EIGRP é recomendado fazer a criação das chaves de autenticação primeiro
-		!OBSERVAÇÃO: é recomendo que o nome do Chaveiro seja igual para todos os equipamentos que vão fazer parte do Domínio do EIGRP
+		!OBSERVAÇÃO: é recomendado que o nome do Chaveiro seja igual para todos os equipamentos que vão fazer parte do Domínio do EIGRP
 		!OBSERVAÇÃO IMPORTANTE: você pode criar vários Chaveiros diferentes no Router ou Switch Layer 3 utilizando Texto ou Números 
 		!(é recomendado mesclar texto com números, não usar caracteres especiais e nem espaço, cuidado com Maiúscula e Minúscula, é 
 		!recomendado que o nome do chaveiro seja digitado igual nas configurações da Interface)
