@@ -62,10 +62,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 048 Configuração do DHCPv6 Stateless no Switch Layer 3 3560<br>
 049 Configuração da Rota Estática, Padrão e Flutuante do IPv6<br>
 050 Configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911<br>
-051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral
+051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral<br>
+052 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-052 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral<br>

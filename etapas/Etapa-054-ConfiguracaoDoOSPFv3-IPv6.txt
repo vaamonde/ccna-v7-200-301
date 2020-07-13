@@ -11,30 +11,71 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
+!O OSPFv3 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmo recursos
+!e configurações do Protocolo OSPF para IPv4.
+
+!As principais mundanças do OSPFv3 IPv6 para o OSPFv2 IPv4 são: processamento do protcolo por link (interface),
+!supote a multiplos links por instância, utiliza o endereço de Link Local para troca de informações, alteração
+!nos métodos de autenticação (suporte ao IPSec, suporte de autenticação por Link ou Área), suporte a LSA do tipo
+!desconhecido (unknowm LSA), suporte a escopo de Flooding e formatados de pacotes de tipos de LSA modificados 
+!(novos LSA Tipo-8 e Tipo-9).
+
+!O OSPFv3 IPv6 utiliza Multicast para enviar e receber pacotes de Hellos com os vizinhos, utilizando o endereço 
+!de Multicast FF02::5 e FF02::6 
+
 !PRIMEIRA ETAPA: Configuração do Router 2911-1 da Terceira Topologia
 enable
 	configure terminal
-		ipv6 unicast-routing
-		interface loopback 10
-			description Interface de Router-ID do OSPF 10
-			ip address 172.16.0.4 255.255.255.255
-			exit
+		!OBSERVAÇÃO IMPORTANTE: para o roteamente em Redes IPv6 é necessário habilitar o recurso de Unicast 
+		!Routing no Router ou Switch Layer 3, essa configuração já foi executada nas configurações dos endereços
+		!IPv6 das etapas anteriores
+		!ipv6 unicast-routing
+
+		!OBSERVAÇÃO IMPORTANTE: o OSPFv3 IPv6 também precisa de uma Interface de Loopback para o Router-ID, essa
+		!configuração já foi executada nas configurações do OSPF IPv4
+		!interface loopback 10
+			!description Interface de Router-ID do EIGRP AS 10
+			!ipv6 address 172.16.0.4 255.255.255.255
+			!exit
+		
+		!Configurando o Processo Local do OSPFv3 IPv6 no Router 2911-1
+		!OBSERVAÇÃO: essa configuração é igual ao OSPF IPv4, possuindo os mesmos recursos e configurações, somente
+		!o recurso de autenticação não está disponível no Cisco Packet Tracer
 		ipv6 router ospf 10
+			
+			!OBSERVAÇÃO: o Router-ID do OSPFv3 IPv6 ainda é configurado no Formato de Octeto do Endereço IPv4
 			router-id 172.16.0.4
 			auto-cost reference-bandwidth 1000
-			redistribute static subnets
 			default-information originate
-			passive-interface default
-			no passive-interface gigabitEthernet 0/0/0.999
+			redistribute static
+			
+			!OBSERVAÇÃO IMPORTANTE: no Cisco Packet Tracer não temos suporte a configuração de Sub-Interface 
+			!utilizando Módulos em Interface GigabitEthernet, somente Interface física do Router configurada
+			!como Sub-Interface, por esse motivo o recurso de: passive-interface default não será utilizado
+			passive-interface gigabitEthernet 0/0
+			passive-interface gigabitEthernet 0/1
+			passive-interface gigabitEthernet 0/0.10
+			passive-interface gigabitEthernet 0/0.20
+			passive-interface gigabitEthernet 0/0.30
+			passive-interface gigabitEthernet 0/0.40
+			passive-interface gigabitEthernet 0/0.50
+			passive-interface gigabitEthernet 0/0.99
+			passive-interface gigabitEthernet 0/0.100
 			log-adjacency-changes detail
-			neighbor FE80::
-			area 0 authentication message-digest
 			exit
+		
+		!Configurando a Interface de Vizinhança do Protocolo OSPFv3 IPv6
 		interface gigabitEthernet 0/0/0.999
+
+			!Configurando o suporte ao processo local do OSPFv3 e habilitando a Interface na Área 0
 			ipv6 ospf 10 area 0
-			ipv6 ospf authentication message-digest
-			ipv6 ospf message-digest-key 1 md5 ospf10
+
+			!Configurando o suporte a Vizinhança Estática na Interface do Router 2911
+			!DICA: esse recurso é utilizando principalmente em Redes NBMA, onde a detecção da vizinhança precisa
+			!ser feita manualmente
+			ipv6 ospf neighbor FE80::1010
 			exit
+
 		interface gigabitEthernet 0/0.10
 			ipv6 ospf 10 area 0
 			exit
@@ -55,65 +96,45 @@ enable
 			exit
 		interface gigabitEthernet 0/0.100
 			ipv6 ospf 10 area 0
-			exit
+			end
 write
 
 !SEGUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
 enable
 	configure terminal
-		interface loopback 10
-			description Interface de Router-ID do OSPF 10
-			ip address 172.16.0.3 255.255.255.255
-			exit
 		ipv6 router ospf 10
 			router-id 172.16.0.3
 			auto-cost reference-bandwidth 1000
 			passive-interface loopback 0
 			log-adjacency-changes detail
-			neighbor FE80::
-			area 0 authentication message-digest
 			exit
 		interface gigabitEthernet 0/1/0.999
 			ipv6 ospf 10 area 0
-			ipv6 ospf authentication message-digest
-			ipv6 ospf message-digest-key 1 md5 ospf10
+			ipv6 ospf neighbor FE80::1009
 			exit
         interface gigabitEthernet 0/0
 			ipv6 ospf 10 area 0
 			ipv6 ospf cost 100
-			ipv6 ospf authentication message-digest
-			ipv6 ospf message-digest-key 1 md5 ospf10
 			exit
         interface gigabitEthernet 0/1
 			ipv6 ospf 10 area 0
-			ipv6 ospf authentication message-digest
-			ipv6 ospf message-digest-key 1 md5 ospf10
 			exit
         interface serial 0/0/0
 			ipv6 ospf 10 area 0
-			ipv6 ospf authentication message-digest
-			ipv6 ospf message-digest-key 1 md5 ospf10
 			end
 write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
 enable
 	configure terminal
-		interface loopback 10
-			description Interface de Router-ID do OSPF 10
-			ip address 172.16.0.2 255.255.255.255
-			exit
 		ipv6 router ospf 10
 			router-id 172.16.0.2
 			auto-cost reference-bandwidth 1000
             passive-interface vlan 1
 			log-adjacency-changes detail
-            area 0 authentication message-digest
             exit
         interface fastEthernet 0/24
 			ipv6 ospf 10 area 0
-			ipv6 ospf authentication message-digest
-			ipv6 ospf message-digest-key 1 md5 ospf10
 			exit
 		interface vlan 1
 			ipv6 ospf 10 area 0
@@ -123,26 +144,17 @@ write
 !QUARTA ETAPA: Configuração do Router 1941 da Primeira Topologia
 enable
 	configure terminal
-		interface loopback 10
-			description Interface de Router-ID do OSPF 10
-			ip address 172.16.0.1 255.255.255.255
-			exit
 		ipv6 router ospf 10
 			router-id 172.16.0.1
 			auto-cost reference-bandwidth 1000
 			log-adjacency-changes detail
 			passive-interface gigabitEthernet 0/0
-            area 0 authentication message-digest
             exit
         interface gigabitEthernet 0/1
 			ipv6 ospf 10 area 0
-			ipv6 ospf authentication message-digest
-			ipv6 ospf message-digest-key 1 md5 ospf10
 			exit
         interface serial 0/0/0
 			ipv6 ospf 10 area 0
-        	ipv6 ospf authentication message-digest
-			ipv6 ospf message-digest-key 1 md5 ospf10
 			exit
 		interface gigabitEthernet 0/0
 			ipv6 ospf 10 area 0
@@ -151,3 +163,16 @@ write
 
 !Visualizando as configurações da memória RAM
 show running-config | ipv6 router ospf
+
+show ipv6 ospf border-routers 
+show ipv6 ospf interface
+show ipv6 ospf neighbor 
+show ipv6 ospf neighbor detail
+show ipv6 ospf database
+show ipv6 ospf database external 
+show ipv6 ospf database router
+show ipv6 ospf database link
+show ipv6 ospf database network 
+show ipv6 ospf database prefix 
+show ipv6 route ospf 
+show ipv6 route ospf summary

@@ -630,7 +630,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-052-Z.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=JLHSaBC8UHk
 
 ## **053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
