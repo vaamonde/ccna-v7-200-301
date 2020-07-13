@@ -19,6 +19,9 @@
 !O EIGRP IPv6 segue o mesmo padrão de configuração do RIPng, as redes anunciadas são configuradas nas Interfaces
 !que possui os Endereços de Global Unicast que serão propagadas no Domínio do Protocolo EIGRP.
 
+!O EIGRP IPv6 utiliza Multicast para enviar e receber pacotes de Hellos com os vizinhos, utilizando o endereço 
+!de Multicast FF02::A 
+
 !PRIMEIRA ETAPA: Configuração do Router 2911-1 da Terceira Topologia
 enable
 	configure terminal
@@ -87,7 +90,8 @@ enable
 			passive-interface loopback 0
 			!OBSERVAÇÃO: para formar vizinhança é utilizado do Endereço de Link Local do vizinho é a Interface que
 			!está conectada diretamente, no Cisco Packet Tracer só tem suporte ao Unicast em Interfaces Seriais.
-			neighbor FE80:: serial 0/0/0
+			neighbor FE80::1005 serial 0/0/0
+			no shutdown
 			exit
 		interface gigabitEthernet 0/1/0.999
 			ipv6 eigrp 10
@@ -106,10 +110,15 @@ enable
 write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
+#OBSERVAÇÃO IMPORTANTE: no Cisco Packet Tracer, o Switch Layer 3 3560 não possui suporte para a configuração do
+!Protocolo EIGRP IPv6 (somente aos protocolos RIPng e OSPF), aparentemente essa falha está associada a versão do
+!IOS utilizada no simulador (versão 12.2, recomendado no mínimo a versão 15.x, diferente do Switch Layer 2 2960
+!no Cisco Packet Tracer não temos a opção de atualizar o IOS do Switch Layer 3)
 enable
 	configure terminal
 		ipv6 router eigrp 10
 			eigrp router-id 172.16.0.2
+			no shutdown
 			exit
 		interface fastEthernet 0/24
 			ipv6 eigrp 10
@@ -125,7 +134,8 @@ enable
 		ipv6 router eigrp 10
 			eigrp router-id 172.16.0.1
 			passive-interface gigabitEthernet 0/0
-			neighbor FE80:: serial 0/0/0
+			neighbor FE80::1006 serial 0/0/0
+			no shutdown
 		interface gigabitEthernet 0/0
 			ipv6 eigrp 10
 			exit
@@ -138,4 +148,18 @@ enable
 write
 
 !Visualizando as configurações da memória RAM
-show running-config | ipv6 router eigrp
+show running-config | section interface Loopback10
+show running-config | section interface GigabitEthernet0/0/0.999
+show running-config | section ipv6 router
+show running-config | section key chain
+
+!Visualizando informações do Protocolo EIGRP IPv6
+show ipv6 protocols
+show ipv6 eigrp interfaces
+show ipv6 eigrp topology
+show ipv6 eigrp neighbors
+show ipv6 eigrp traffic
+show ipv6 route eigrp
+show ipv6 route summary 
+ping 2001:abcd:1234:8::8
+traceroute 2001:abcd:1234:8::8
