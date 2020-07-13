@@ -608,7 +608,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=vSAx2JzHtVI
 
 ## **051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv4 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, 0 EIGRP (Enhanced Interior Gateway Routing Protocol) é um Protocolo Avançado Híbrido de Roteamento por Vetor de Distância (Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas para o Padrão Aberto em 2013 e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP (Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
+Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv4 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, o EIGRP (Enhanced Interior Gateway Routing Protocol) é um Protocolo Avançado Híbrido de Roteamento por Vetor de Distância (Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas para o Padrão Aberto em 2013 e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP (Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
 
 As configurações do Protocolo EIGRP IPv4 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-050-ConfiguracaoDoRIPng-IPv6.txt
 
@@ -619,3 +619,15 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-051-Z.pkt
 
 Link da vídeo aula: https://www.youtube.com/watch?v=ezRkSY5UJQI
+
+## **052 Configuração do Protocolo OSPF IPv4 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do Protocolo OSPF IPv4 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, o OSPF (Open Shortest Path First) é um Protocolo de Roteamento Dinâmico para redes que operam com o Protocolo IPv4 (possui suporte ao Protocolo IPv6 utilizando a versão OSPFv3), desenvolvido pelo Grupo de Trabalho dos IGPs (Interior Gateway Protocols) da IETF (Internet Engineering Task Force) e descrito inicialmente em 1989 pela RFC  1131 (versão atual nas RFC 2328 e 2740 do OSPFv2). É um protocolo IGP desenvolvido para ser usado em um Sistema Autônomo Interno (Intra-AS)
+
+As configurações do Protocolo OSPF IPv4 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-052-ConfiguracaoDoOSPF.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-052-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-052-Z.pkt
+
+Link da vídeo aula: 

@@ -11,22 +11,32 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O EIGRP para o IPv6 trabalha da mesma forma como o EIGRP para o IPv4, onde podem ser configurados e controlado 
-!separadamente utilizando Sistemas Autônomos indepêndentes. O diferencial do EIGRP para IPv6 em relação ao IPv4
-!é que o Processo Local do EIGRP IPv6 por padrão está desligado (shutdown) sendo necessário inicializar o AS do
-!EIGRP (no shutdown) no final das configurações para que seja possível estabelecer adjacências entre os vizinhos
+!O EIGRP para o IPv6 trabalha igual ao EIGRP para o IPv4, você pode configurar e controlar o Sistema Autônomo 
+!indepêndente (separadamente). O diferencial do EIGRP para IPv6 em relação ao IPv4 é que o Processo Local do 
+!EIGRP IPv6 por padrão está desligado (shutdown) sendo necessário inicializar o AS do EIGRP (no shutdown) no 
+!final das configurações para que seja possível estabelecer adjacências entre os vizinhos
 
-!O EIGRP IPv6 segue o mesmo padrão de configuração do RIPng, as redes declaradas serão configuradas nas Interfaces
-!que possui os Endereços de Global Unicast para serem propagadas no Domínio do Protocolo EIGRP.
+!O EIGRP IPv6 segue o mesmo padrão de configuração do RIPng, as redes anunciadas são configuradas nas Interfaces
+!que possui os Endereços de Global Unicast que serão propagadas no Domínio do Protocolo EIGRP.
 
 !PRIMEIRA ETAPA: Configuração do Router 2911-1 da Terceira Topologia
 enable
 	configure terminal
-		ipv6 unicast-routing
-		interface loopback 10
-			description Interface de Router-ID do EIGRP AS 10
-			ipv6 address 172.16.0.4 255.255.255.255
-			exit
+		
+		!OBSERVAÇÃO IMPORTANTE: para o roteamente em Redes IPv6 é necessário habilitar o recurso de Unicast 
+		!Routing no Router ou Switch Layer 3, essa configuração já foi executada nas configurações dos endereços
+		!IPv6 das etapas anteriores
+		!ipv6 unicast-routing
+
+		!OBSERVAÇÃO IMPORTANTE: o EIGRP IPv6 também precisa de uma Interface de Loopback para o Router-ID, essa
+		!configuração já foi executada nas configurações do EIGRP IPv4
+		!interface loopback 10
+			!description Interface de Router-ID do EIGRP AS 10
+			!ipv6 address 172.16.0.4 255.255.255.255
+			!exit
+
+		!Configurando o AS do EIGRP IPv6 no Router 2911-1
+		!OBSERVAÇÃO: essa configuração é igual ao EIGRP IPv4, possuindo os mesmos recursos e configurações
 		ipv6 router eigrp 10
 			!OBSERVAÇÃO: o Router-ID do EIGRP IPv6 ainda é configurado no Formato de Octeto do Endereço IPv4
 			eigrp router-id 172.16.0.4
@@ -36,55 +46,68 @@ enable
 			!OBSERVAÇÃO: não esquecer de inicializar o processo local do EIGRP IPv6 no Router ou Switch Layer 3
 			no shutdown
 			exit
-		key chain eigrp10
-			key 10
-				key-string vaamonde@pti
-				exit
-			exit
+		
+		!OBSERVAÇÃO IMPORTANTE: o chaveiro será o mesmo que foi utilizado na autenticação do EIGRP IPv4
+		!key chain eigrp10
+			!key 10
+				!key-string vaamonde@pti
+				!exit
+			!exit
+
+		!Configurando a Interface de Vizinhança do EIGRP IPv6
 		interface gigabitEthernet 0/0/0.999
 			!OBSERVAÇÃO: configurando e habilitando o AS do EIGRP IPv6 na Interface que tem os Endereço de Global
-			!Unicast para serem propagados no Domínio do EIGRP
+			!Unicast para serem anunciados no Domínio do EIGRP e configurando a autenticação MD5 da vizinhança.
 			ipv6 eigrp 10
 			ipv6 authentication mode eigrp 10 md5
 			ipv6 authentication key-chain eigrp 10 eigrp10
+			exit
+
+		!OBSERVAÇÃO IMPORTANTE: nessa topologia não é habilitado o Protocolo IPv6 nas Sub-Interfaces das VLAN's 10, 
+		!20, 30, 40 e 50, essas Interfaces estão configuradas como DHCPv6 Statefull, o Endereço de Global Unicast é 
+		!diferente do Escopo criado, o acesso a essas redes e feito utilizando Rotas Estática, no AS do EIGRP IPv6 
+		!essas redes serão anunciadas para todos os Router ou Switch Layer 3 no Domínio do EIGRP utilizando o recurso 
+		!de Redistribuição de Rotas.
+		interface gigabitEthernet 0/1
+			ipv6 eigrp 10
+			exit
+		interface gigabitEthernet 0/0.99
+			ipv6 eigrp 10
+			exit
+		interface gigabitEthernet 0/0.100
+			ipv6 eigrp 10
 			end
 write
 
 !SEGUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
 enable
 	configure terminal
-		ipv6 unicast-routing
-		interface loopback 10
-			description Interface de Router-ID do EIGRP AS 10
-			ip address 172.16.0.3 255.255.255.255
-			exit
 		ipv6 router eigrp 10
 			eigrp router-id 172.16.0.3
 			passive-interface loopback 0
 			!OBSERVAÇÃO: para formar vizinhança é utilizado do Endereço de Link Local do vizinho é a Interface que
-			!está conectado, no Cisco Packet Tracer só tem suporte ao Unicast em Interfaces Seriais.
+			!está conectada diretamente, no Cisco Packet Tracer só tem suporte ao Unicast em Interfaces Seriais.
 			neighbor FE80:: serial 0/0/0
-			exit
-		key chain eigrp10
-			key 10
-				key-string vaamonde@pti
-				exit
 			exit
 		interface gigabitEthernet 0/1/0.999
 			ipv6 eigrp 10
 			ipv6 authentication mode eigrp 10 md5
 			ipv6 authentication key-chain eigrp 10 eigrp10
+			exit
+		interface gigabitEthernet 0/0
+			ipv6 eigrp 10
+			exit
+		interface gigabitEthernet 0/1
+			ipv6 eigrp 10
+			exit
+		interface serial 0/0/0
+			ipv6 eigrp 10
 			end
 write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
 enable
 	configure terminal
-		ipv6 unicast-routing
-		interface loopback 10
-			description Interface de Router-ID do EIGRP AS 10
-			ip address 172.16.0.2 255.255.255.255
-			exit
 		ipv6 router eigrp 10
 			eigrp router-id 172.16.0.2
 			exit
@@ -99,16 +122,19 @@ write
 !QUARTA ETAPA: Configuração do Router 1941-1 da Primeira Topologia
 enable
 	configure terminal
-		ipv6 unicast-routing
-		interface loopback 10
-			description Interface de Router-ID do EIGRP AS 10
-			ip address 172.16.0.1 255.255.255.255
-			exit
 		ipv6 router eigrp 10
 			eigrp router-id 172.16.0.1
 			passive-interface gigabitEthernet 0/0
 			neighbor FE80:: serial 0/0/0
-			end 
+		interface gigabitEthernet 0/0
+			ipv6 eigrp 10
+			exit
+		interface gigabitEthernet 0/1
+			ipv6 eigrp 10
+			exit
+		interface serial 0/0/0
+			ipv6 eigrp 10
+			end
 write
 
 !Visualizando as configurações da memória RAM
