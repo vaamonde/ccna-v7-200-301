@@ -11,26 +11,23 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!Executar o Backup do Router 1941-2 e Aplicar as Configurações no Router 2911
-!CUIDADO: adicionar os comandos: enable e configure terminal antes de aplicar o Script no Router 2911
-!CUIDADO: alterar o Hostname: 2911-2 antes de aplicar o Script no Router 2911
-!CUIDADO: alterar as senhas: Tipo-5 e Tipo-7 antes de aplicar o Script no Router 2911
-!CUIDADO: remover a linha: license udi pid CISCO1941/K9 sn FTX1524E30V antes de aplicar o Script no Router 2911
-!CUIDADO: adicionar o comando: no shutdown nas Interfaces antes de aplicar o Script no Router 2911
-!CUIDADO: alterar a senha do: NTP antes de aplicar o Script no Router 2911
-!CUIDADO: alterar o Delimitador do: Banner antes de aplicar o Script no Router 2911
-!CUIDADO: remover a linha: ip classless antes de aplicar o Script no Router 2911
-!OBSERVAÇÃO: executar os comandos abaixo depois de aplicar o Script no Router 2911
-
-!Modo ENABLE:
-!01: terminal history size 256
-!02: terminal monitor 
-!03: #clock set 13:00:00 29 June 2020
-
-!Modo EXEC PRIVILEGIADO
-!04: crypto key generate rsa general-keys modulus 1024
+!Executar o Backup do Router 1941-2 e Aplicar as Configurações no Router 2911-2
+!CUIDADO: adicionar os comandos: enable e configure terminal antes de aplicar o Script no Router 2911-2
+!CUIDADO: adicionar os comando: terminal history size 256 e terminal monitor antes de aplicar o Script no Router 2911-2
+!CUIDADO: alterar a data e hora: clock set 13:00:00 29 June 2020 antes de aplicar o Script no Router 2911-2
+!CUIDADO: alterar o Hostname: rt-2911-2 antes de aplicar o Script no Router 2911-2
+!CUIDADO: alterar as senhas: Tipo-5 e Tipo-7 antes de aplicar o Script no Router 2911-2
+!CUIDADO: remover a linha: license udi pid CISCO1941/K9 sn FTX1524E30V antes de aplicar o Script no Router 2911-2
+!CUIDADO: adicionar o comando: no shutdown nas Interfaces antes de aplicar o Script no Router 2911-2
+!CUIDADO: alterar a senha do: NTP antes de aplicar o Script no Router 2911-2
+!CUIDADO: alterar o Delimitador do: Banner antes de aplicar o Script no Router 2911-2
+!CUIDADO: remover a linha: ip classless antes de aplicar o Script no Router 2911-2
+!CUIDADO: adicionar o comando: crypto key generate rsa general-keys modulus 1024 antes de aplicar o Script no Router 2911-2
 
 enable
+terminal history size 256
+terminal monitor
+clock set 13:00:00 29 June 2020
 configure terminal
 !
 version 15.1
@@ -91,6 +88,7 @@ lldp run
 !
 !
 !
+crypto key generate rsa general-keys modulus 1024
 ip ssh version 2
 ip ssh authentication-retries 2
 ip ssh time-out 60

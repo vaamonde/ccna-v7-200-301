@@ -1,0 +1,57 @@
+#Autor: Robson Vaamonde
+#Procedimentos em TI: http://procedimentosemti.com.br
+#Bora para Prática: http://boraparapratica.com.br
+#Robson Vaamonde: http://vaamonde.com.br
+#Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+#Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+#Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+#YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+#Data de criação: 14/07/2020
+#Data de atualização: 14/07/2020
+#Versão: 0.01
+#Testado e homologado no Linux Mint 20 e Ubuntu 20.04
+
+#Site do Netacad: Treinamento do Cisco Packet Tracer: https://www.netacad.com/pt-br/courses/packet-tracer
+#Site do Packet Tracer Network: https://www.packettracernetwork.com/
+#Site do Mega.nz do BoraParaPrática: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI
+#Site do AulaEAD Curso Cisco: https://www.aulaead.com/courses/laboratorio-pratico-cisco-ccnav7-exame-200-301
+#Site do Github Curso Cisco: https://github.com/vaamonde/ccna-v7-200-301
+#Playlist do Curso Cisco: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
+
+#OBSERVAÇÃO IMPORTANTE: ESSE PROCEDIMENTO FOI EXECUTADO EM MÁQUINA VIRTUAL, NO LINUX MINT 20, A INSTALAÇÃO
+#DAS DEPEDÊNCIAS DEPENDE DA REMOÇÃO DE ALGUNS PACOTES DO QT NA VERSÃO 5, NÃO FOI TESTADO OU HOMOLOGADO SE 
+#ESSAS REMOÇÕES PODE AFETA A ESTABILIDADE DO SISTEMA OU PREJUDICAR OUTROS SOFTWARE. O CISCO PACKET TRACER 
+#VERSÃO 7.3.0.x AINDA NÃO FOI HOMOLOGADO PARA AS VERSÕES MAIS NOVAS DO UBUNTU OU LINUX MINT, CASO VOCÊ
+#UTILIZE ESSA SOLUÇÃO, E POR CONTA E RISCO SEU, FAÇA BACKUP DO AMBIENTE ANTES DE INSTALAR O PACKET TRACER.
+
+#Resolvendo as dependências do Cisco Packet Tracer 7.3.0.x no Linux Mint 20
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+sudo apt dist-upgrade
+sudo apt autoremove
+sudo apt autoclean
+sudo apt clean
+sudo apt-add-repository 'deb http://cz.archive.ubuntu.com/ubuntu bionic main universe'
+sudo apt update
+sudo apt install libicu60
+sudo aptitude install qt-at-spi
+cd /opt/pt/bin
+ldd PacketTracer7
+
+#Resolvendo as dependências do Cisco Packet Tracer 7.3.0.x no Ubuntu 20.04 LTS
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+sudo apt dist-upgrade
+sudo apt autoremove
+sudo apt autoclean
+sudo apt clean
+sudo apt-add-repository 'deb http://cz.archive.ubuntu.com/ubuntu bionic main universe'
+sudo apt install libicu60
+sudo apt install qt-at-spi
+sudo apt install libdouble-conversion1
+cd Downloads
+sudo dpkg -i CiscoPacketTracer-7.3.0-linux.deb
+cd /opt/pt/bin
+ldd PacketTracer7

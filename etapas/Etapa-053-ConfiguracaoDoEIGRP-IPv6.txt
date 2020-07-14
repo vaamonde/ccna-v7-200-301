@@ -110,23 +110,23 @@ enable
 write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
-#OBSERVAÇÃO IMPORTANTE: no Cisco Packet Tracer, o Switch Layer 3 3560 não possui suporte para a configuração do
+!OBSERVAÇÃO IMPORTANTE: no Cisco Packet Tracer, o Switch Layer 3 3560 não possui suporte para a configuração do
 !Protocolo EIGRP IPv6 (somente aos protocolos RIPng e OSPF), aparentemente essa falha está associada a versão do
 !IOS utilizada no simulador (versão 12.2, recomendado no mínimo a versão 15.x, diferente do Switch Layer 2 2960
 !no Cisco Packet Tracer não temos a opção de atualizar o IOS do Switch Layer 3)
-enable
-	configure terminal
-		ipv6 router eigrp 10
-			eigrp router-id 172.16.0.2
-			no shutdown
-			exit
-		interface fastEthernet 0/24
-			ipv6 eigrp 10
-			exit
-		interface vlan 1
-			ipv6 eigrp 10
-			end
-write
+!enable
+	!configure terminal
+		!ipv6 router eigrp 10
+			!eigrp router-id 172.16.0.2
+			!no shutdown
+			!exit
+		!interface fastEthernet 0/24
+			!ipv6 eigrp 10
+			!exit
+		!interface vlan 1
+			!ipv6 eigrp 10
+			!end
+!write
 
 !QUARTA ETAPA: Configuração do Router 1941-1 da Primeira Topologia
 enable
