@@ -55,3 +55,8 @@ cd Downloads
 sudo dpkg -i CiscoPacketTracer-7.3.0-linux.deb
 cd /opt/pt/bin
 ldd PacketTracer7
+
+#Próximas homologações das derivações do Linux Mint e versão baseada no Debian 10 Buster 
+Linux Mint XFCE;
+Linux Mint MATE;
+Linux Mint LMDE.
