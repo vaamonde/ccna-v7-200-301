@@ -114,6 +114,10 @@ Link para download das versões do Cisco Packet Tracer no MEGA.nz: https://mega.
 
 Link da vídeo aula: https://www.youtube.com/watch?v=4EIO6Ma0foA&t
 
+Atualização da vídeo aula com os procedimentos para instalar no Linux Mint 20 e no Ubuntu 20.04: https://www.youtube.com/watch?v=wEk0oBzGC6M
+
+Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-000-PT-7.3-no-LinuxMint20.txt
+
 ## **001 Configuração Base dos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3.x, utilizado apenas 02 (dois) Cisco Switches Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
