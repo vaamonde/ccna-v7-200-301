@@ -59,18 +59,18 @@ enable
 
 		!Configurando a Interface de Vizinhança do EIGRP IPv6
 		interface gigabitEthernet 0/0/0.999
-			!OBSERVAÇÃO: configurando e habilitando o AS do EIGRP IPv6 na Interface que tem os Endereço de Global
-			!Unicast para serem anunciados no Domínio do EIGRP e configurando a autenticação MD5 da vizinhança.
+			!OBSERVAÇÃO: configurando e habilitando o AS do EIGRP IPv6 nas Interfaces que tem os Endereços de Global
+			!Unicast para serem anunciados no Domínio do EIGRP IPv6 e configurando a autenticação MD5 da vizinhança.
 			ipv6 eigrp 10
 			ipv6 authentication mode eigrp 10 md5
 			ipv6 authentication key-chain eigrp 10 eigrp10
 			exit
 
-		!OBSERVAÇÃO IMPORTANTE: nessa topologia não é habilitado o Protocolo IPv6 nas Sub-Interfaces das VLAN's 10, 
-		!20, 30, 40 e 50, essas Interfaces estão configuradas como DHCPv6 Statefull, o Endereço de Global Unicast é 
-		!diferente do Escopo criado, o acesso a essas redes e feito utilizando Rotas Estática, no AS do EIGRP IPv6 
-		!essas redes serão anunciadas para todos os Router ou Switch Layer 3 no Domínio do EIGRP utilizando o recurso 
-		!de Redistribuição de Rotas.
+		!OBSERVAÇÃO IMPORTANTE: nessa topologia não é habilitado o Protocolo EIGRP IPv6 nas Sub-Interfaces das VLAN's 
+		!10, 20, 30, 40 e 50, essas Interfaces estão configuradas como DHCPv6 Statefull, o Endereço de Global Unicast 
+		!é diferente do Escopo criado, o acesso a essas redes e feito utilizando Rotas Estática, no AS do EIGRP IPv6 
+		!essas redes serão anunciadas para todos os Router ou Switch Layer 3 no Domínio do EIGRP IPv6 utilizando o 
+		!recurso de Redistribuição de Rotas.
 		interface gigabitEthernet 0/1
 			ipv6 eigrp 10
 			exit

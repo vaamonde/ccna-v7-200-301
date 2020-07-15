@@ -11,14 +11,14 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O OSPFv3 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmos recursos
-!e configurações do Protocolo OSPF para IPv4.
+!O OSPFv3 IPv6 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmos 
+!recursos e configurações do Protocolo OSPFv2 para IPv4.
 
-!As principais mundanças do OSPFv3 IPv6 para o OSPFv2 IPv4 são: processamento do protcolo por link (interface),
-!supote a multiplos links por instância, utiliza o endereço de Link Local para troca de informações, alteração
+!As principais mundanças do OSPFv3 IPv6 para o OSPFv2 IPv4 são: processamento do protocolo por link (interface),
+!suporte a múltiplos links por instância, utiliza o endereço de Link Local para troca de informações, alteração
 !nos métodos de autenticação (suporte ao IPSec, suporte de autenticação por Link ou Área), suporte a LSA do tipo
-!desconhecido (unknowm LSA), suporte a escopo de Flooding e formatados de pacotes de tipos de LSA modificados 
-!(novos LSA Tipo-8 e Tipo-9).
+!desconhecido (unknowm LSA), suporte a escopo de Flooding e formato dos pacotes de tipos de LSA modificados (novos
+!LSA dos Tipo-8 e Tipo-9).
 
 !O OSPFv3 IPv6 utiliza Multicast para enviar e receber pacotes de Hellos com os vizinhos, utilizando o endereço 
 !de Multicast FF02::5 e FF02::6 
@@ -32,14 +32,14 @@ enable
 		!ipv6 unicast-routing
 
 		!OBSERVAÇÃO IMPORTANTE: o OSPFv3 IPv6 também precisa de uma Interface de Loopback para o Router-ID, essa
-		!configuração já foi executada nas configurações do OSPF IPv4
+		!configuração já foi executada nas configurações do OSPFv2 IPv4
 		!interface loopback 10
 			!description Interface de Router-ID do EIGRP AS 10
 			!ipv6 address 172.16.0.4 255.255.255.255
 			!exit
 		
 		!Configurando o Processo Local do OSPFv3 IPv6 no Router 2911-1
-		!OBSERVAÇÃO: essa configuração é igual ao OSPF IPv4, possuindo os mesmos recursos e configurações, somente
+		!OBSERVAÇÃO: essa configuração é igual ao OSPFv2 IPv4, possuindo os mesmos recursos e configurações, somente
 		!o recurso de autenticação não está disponível no Cisco Packet Tracer
 		ipv6 router ospf 10
 			
@@ -125,6 +125,9 @@ enable
 write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
+!OBSERVAÇÃO IMPORTANTE: igual nas configurações dos Protocolos RIPng e EIGRP IPv6, o suporte do Protocolo IPv6 do
+!Switch Layer 3 3560 no Cisco Packet Tracer é limitado, nessa versão temos a falha até o momento da Interface Roteada
+!do Switch, que não faz comunicação com o Router 1941-2.
 enable
 	configure terminal
 		ipv6 router ospf 10
