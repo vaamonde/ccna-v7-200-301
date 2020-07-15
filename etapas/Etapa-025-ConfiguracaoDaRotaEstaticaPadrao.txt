@@ -28,7 +28,7 @@ enable
 			!DICA: configuração das Interface de WAN, os endereços IPv4/IPv6 devem pertencer a mesma rede
 			!OBSERVAÇÃO: configuração de Link Ponto-a-Ponto (Point-to-Point) é recomendado utilizar endereços IPv4 /30
 			!OBSERVAÇÃO: o CIDR /30 permite apenas 4 endereços IPv4 válidos: ID Rede, Primeiro e Último endereço IPv4 e Broadcast
-			!EXEMPLO: 2^2-2=2 (2 = Base | ^2 = Exponênciação de 2 bits emprestados | -2 = Subtração do ID de Rede e Broadcast)
+			!EXEMPLO: 2^2-2=2 (2 = Base | ^2 = Exponenciação de 2 bits emprestados | -2 = Subtração do ID de Rede e Broadcast)
 			!OBSERVAÇÃO: por padrão todas as Interfaces de Roteador está com o Status Shutdown (Desligadas)
 			ip address 10.0.0.2 255.255.255.252
 			no shutdown

@@ -50,7 +50,7 @@ enable
 		!OBSERVAÇÃO: no Cisco Packet Tracer temos apenas a opção: Debugging (severity=7)
 		logging trap debugging
 		
-		!Habilitando os Logs de Autenticação que será enviado para o Servidro de Syslog
+		!Habilitando os Logs de Autenticação que será enviado para o Servidor de Syslog
 		!DICA: esse recurso aumenta o nível de segurança é auditoria da rede
 		!OBSERVAÇÃO: recomendo habilitar o recursos de sucesso e falhas de autenticação
 		!OBSERVAÇÃO: essas informações em conjunto com as regras de segurança aumenta nível de confiabilidade da rede

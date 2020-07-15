@@ -28,7 +28,7 @@
 !padrão em todas as Portas do Switch, você não pode deletar essa VLAN), 2 até 1001 Nativas (Normal - usadas para as
 !VLANs Ethernet, você pode criar, usar e excluir essas VLANs, são armazenadas no arquivo vlan.dat), 1002 até 1005 Nativa
 !(Normal - padrões da Cisco para Redes FDDI (Fiber Distributed Data Interface) e Token Ring, você não pode excluir essas
-!VLANs) e 1006 até 4094 Extendidas (Extended elas são usadas principalmente em redes de provedores de serviços para 
+!VLANs) e 1006 até 4094 Estendidas (Extended elas são usadas principalmente em redes de provedores de serviços para 
 !permitir o provisionamento do número do assinante).
 
 !Exite também dois tipos de associações de VLANs: VLANs Estáticas (Static - configurada manualmente na porta de rede do

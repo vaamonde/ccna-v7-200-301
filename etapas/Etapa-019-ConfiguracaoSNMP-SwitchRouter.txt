@@ -16,7 +16,7 @@
 !servidores, estações de trabalho, impressoras, nobreaks, racks modernos e etc.
 
 !O protocolo padrão utilizado pelo SNMP é o UDP (User Datagram Protocol) na porta padrão: 161
-!OBSERVAÇÃO: o protoclo SNMP também utiliza a Porta 162 para Trap e portas seguras: 10161 e 10162
+!OBSERVAÇÃO: o protocolo SNMP também utiliza a Porta 162 para Trap e portas seguras: 10161 e 10162
 
 !Versões do SNMP: SNMPv1, SNMPv2c (c=comunidade) e SNMPv3
 
@@ -66,7 +66,7 @@ Advanced:		Address: 			192.168.3.252
 .sysUpTime		OID: .1.3.6.1.2.1.1.3.0		GET
 .sysDescr		OID: .1.3.6.1.2.1.1.1.0		GET
 
-!Atualizandos os dados da MIB do Switch Multilayer
+!Atualizando os dados da MIB do Switch Multilayer
 .sysContact		OID: .1.3.6.1.2.1.1.4.0		SET: Robson Vaamonde	OctetString
 !ERRATA: no vídeo eu configuro o campo de Localização como: Financeiro, correto é: Switch Layer 3
 .sysLocation	OID: .1.3.6.1.2.1.1.6.0		SET: Switch Layer 3		OctetString

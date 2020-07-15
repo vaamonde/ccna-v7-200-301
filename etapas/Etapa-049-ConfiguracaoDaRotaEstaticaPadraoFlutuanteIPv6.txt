@@ -46,7 +46,7 @@ enable
 		end
 write
 
-!SETUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
+!SEGUNDA ETAPA: Configuração do Router 1941-2 da Segunda Topologia
 enable
 	configure terminal
 		interface gigabitEthernet 0/1

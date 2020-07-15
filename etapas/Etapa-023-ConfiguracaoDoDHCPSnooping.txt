@@ -56,7 +56,7 @@ enable
 			!Configurando o limite de requisições de DHCP Client por Interface
 			!DICA: limitar a quantidade de requisições de solicitações de DHCP aumenta a segurança da rede
 			!OBSERVAÇÃO: cuidado com portas que possuem vários equipamentos associadas a mesma, como Access Point, Hub, etc
-			!OBSERVAÇÃO: o limite de configuração das requisições simultaneas de DHCP Client é de: 1 até 2048
+			!OBSERVAÇÃO: o limite de configuração das requisições simultâneas de DHCP Client é de: 1 até 2048
 			ip dhcp snooping limit rate 10
 			end
 

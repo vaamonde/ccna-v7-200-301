@@ -19,7 +19,7 @@
 !usados no Servidor DHCPv6 para identificar hosts e servidores, também, utilizado para identificar o valor de duplicidade
 !exclusivo do hosts na rede, referenciado nas RFC 3315 e RFC 8415.
 
-!ADENDO DE INFORMAÇÕES IMPORTATES DO SERVIDOR DHCPv6 QUE NÃO CONSTA NO VÍDEO:
+!ADENDO DE INFORMAÇÕES IMPORTANTES DO SERVIDOR DHCPv6 QUE NÃO CONSTA NO VÍDEO:
 !DHCPv6 IAID: IAID significa "Identity Association Identifier". Uma Associação de Identidade (IA) é uma construção através
 !da qual um servidor e um cliente identificam, agrupam e gerenciam um conjunto de endereços IPv6 relacionados. Cada IA 
 !consiste em uma IAID e em informações de configuração associadas.

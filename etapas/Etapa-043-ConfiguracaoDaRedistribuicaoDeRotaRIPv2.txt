@@ -21,7 +21,7 @@
 !DESAFIO: Na Primeira Topologia da Rede, os Desktops e Servidor só acessam a Segunda Topologia, quando configuramos a Terceira 
 !Topologia somente os Desktops e Servidor da Segunda Topologia tem acesso, agora configuramos a Quarta Topologia, nesse cenário
 !somente a Terceira e a Segunda Topologia tem conectividade total. Qual a forma mais simples de resolver o Problema de Acesso da
-!Primeira Topologia com as demais redes, sem alterar a forma de emprendizado da Rede que é Rota Estática e Rota Flutuante.
+!Primeira Topologia com as demais redes, sem alterar a forma de aprendizado da Rede que é Rota Estática e Rota Flutuante.
 
 !PRIMEIRA ETAPA: Configuração do Router 2911-1
 enable

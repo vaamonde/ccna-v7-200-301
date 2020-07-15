@@ -14,7 +14,7 @@
 !O OSPFv3 IPv6 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmos 
 !recursos e configurações do Protocolo OSPFv2 para IPv4.
 
-!As principais mundanças do OSPFv3 IPv6 para o OSPFv2 IPv4 são: processamento do protocolo por link (interface),
+!As principais mudanças do OSPFv3 IPv6 para o OSPFv2 IPv4 são: processamento do protocolo por link (Interface),
 !suporte a múltiplos links por instância, utiliza o endereço de Link Local para troca de informações, alteração
 !nos métodos de autenticação (suporte ao IPSec, suporte de autenticação por Link ou Área), suporte a LSA do tipo
 !desconhecido (unknowm LSA), suporte a escopo de Flooding e formato dos pacotes de tipos de LSA modificados (novos
@@ -26,7 +26,7 @@
 !PRIMEIRA ETAPA: Configuração do Router 2911-1 da Terceira Topologia
 enable
 	configure terminal
-		!OBSERVAÇÃO IMPORTANTE: para o roteamente em Redes IPv6 é necessário habilitar o recurso de Unicast 
+		!OBSERVAÇÃO IMPORTANTE: para o roteamento em Redes IPv6 é necessário habilitar o recurso de Unicast 
 		!Routing no Router ou Switch Layer 3, essa configuração já foi executada nas configurações dos endereços
 		!IPv6 das etapas anteriores
 		!ipv6 unicast-routing
@@ -39,15 +39,12 @@ enable
 			!exit
 		
 		!Configurando o Processo Local do OSPFv3 IPv6 no Router 2911-1
-		!OBSERVAÇÃO: essa configuração é igual ao OSPFv2 IPv4, possuindo os mesmos recursos e configurações, somente
-		!o recurso de autenticação não está disponível no Cisco Packet Tracer
+		!OBSERVAÇÃO: essa configuração é igual ao OSPFv2 IPv4, possuindo os mesmos recursos e configurações, 
+		!somente o recurso de autenticação não está disponível no Cisco Packet Tracer
 		ipv6 router ospf 10
 			
 			!OBSERVAÇÃO: o Router-ID do OSPFv3 IPv6 ainda é configurado no Formato de Octeto do Endereço IPv4
 			router-id 172.16.0.4
-			auto-cost reference-bandwidth 1000
-			default-information originate
-			redistribute static
 			
 			!OBSERVAÇÃO IMPORTANTE: no Cisco Packet Tracer não temos suporte a configuração de Sub-Interface 
 			!utilizando Módulos em Interface GigabitEthernet, somente Interface física do Router configurada
@@ -61,7 +58,11 @@ enable
 			passive-interface gigabitEthernet 0/0.50
 			passive-interface gigabitEthernet 0/0.99
 			passive-interface gigabitEthernet 0/0.100
+
 			log-adjacency-changes detail
+			auto-cost reference-bandwidth 1000
+			redistribute static
+			default-information originate
 			exit
 		
 		!Configurando a Interface de Vizinhança do Protocolo OSPFv3 IPv6
@@ -71,26 +72,11 @@ enable
 			ipv6 ospf 10 area 0
 
 			!Configurando o suporte a Vizinhança Estática na Interface do Router 2911
-			!DICA: esse recurso é utilizando principalmente em Redes NBMA, onde a detecção da vizinhança precisa
+			!DICA: esse recurso é utilizado principalmente em Redes NBMA, onde a detecção da vizinhança precisa
 			!ser feita manualmente
 			ipv6 ospf neighbor FE80::1010
 			exit
 
-		interface gigabitEthernet 0/0.10
-			ipv6 ospf 10 area 0
-			exit
-		interface gigabitEthernet 0/0.20
-			ipv6 ospf 10 area 0
-			exit
-		interface gigabitEthernet 0/0.30
-			ipv6 ospf 10 area 0
-			exit
-		interface gigabitEthernet 0/0.40
-			ipv6 ospf 10 area 0
-			exit
-		interface gigabitEthernet 0/0.50
-			ipv6 ospf 10 area 0
-			exit
 		interface gigabitEthernet 0/0.99
 			ipv6 ospf 10 area 0
 			exit
@@ -125,9 +111,10 @@ enable
 write
 
 !TERCEIRA ETAPA: Configuração do Switch Layer 3 da Segunda Topologia
-!OBSERVAÇÃO IMPORTANTE: igual nas configurações dos Protocolos RIPng e EIGRP IPv6, o suporte do Protocolo IPv6 do
-!Switch Layer 3 3560 no Cisco Packet Tracer é limitado, nessa versão temos a falha até o momento da Interface Roteada
-!do Switch, que não faz comunicação com o Router 1941-2.
+!OBSERVAÇÃO IMPORTANTE: igual nas configurações dos Protocolos RIPng e EIGRP IPv6, o suporte ao Protocolo IPv6 do
+!Switch Layer 3 3560 no Cisco Packet Tracer é limitado, a falha da Interface Roteada do Switch não permite fazer a
+!comunicação com o Router 1941-2. Nesse cenário será feito a troca de LSA entre o Switch e Router, mais a troca da
+!tabela de roteamento não será feita.
 enable
 	configure terminal
 		ipv6 router ospf 10
@@ -167,9 +154,11 @@ write
 !Visualizando as configurações da memória RAM
 show running-config | section interface Loopback10
 show running-config | section interface GigabitEthernet0/0/0.999
-show running-config | section ipv6 router
+show running-config | section ipv6 router ospf
 
 !Visualizando informações do Protocolo OSPFv3 IPv6
+show ipv6 protocols
+show ipv6 ospf
 show ipv6 ospf border-routers 
 show ipv6 ospf interface
 show ipv6 ospf neighbor 

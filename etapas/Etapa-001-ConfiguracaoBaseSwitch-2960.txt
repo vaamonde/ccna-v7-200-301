@@ -14,9 +14,9 @@
 !Primeiro acesso no modo EXEC de Comandos > (caracter Maior)
 switch>
 
-!Acessando o modo EXEC Privilégiado # (caracter Sustenido)
+!Acessando o modo EXEC Privilégiado # (carácter Sustenido)
 !DICA: utilizar sempre a tecla TAB para auto-completar os comandos
-!DICA: se estiver com dúvida do comando, utilizar o caracter: ? (interrogação)
+!DICA: se estiver com dúvida do comando, utilizar o carácter: ? (interrogação)
 !EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
 !DICA: se você está estudando para o CCNAv7, recomendo digitar os comandos completos, não abreviados
 !EXEMPLO: enable = en | show running-config = sh runn | interface fastethernet0/0 int = fa0/0
@@ -49,7 +49,7 @@ clock set 14:00:00 16 April 2020
 	!Desativando a resolução de nomes de domínio
 	!DICA: desabilitar esse recurso resolve o problema de travamento de comandos
 	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255))
-	!DICA: para desbloquear ou parar o comando você preciona: Ctrl+Shift+6 ou espera a liberação do terminal
+	!DICA: para desbloquear ou parar o comando você pressiona: Ctrl+Shift+6 ou espera a liberação do terminal
 	!DICA: o comando: no é usado para desabilitar ou remover configurações feitas no switch ou router
 	no ip domain-lookup
   
@@ -57,7 +57,7 @@ clock set 14:00:00 16 April 2020
 	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD é o mais usado
 	!DICA: não utilizar acentuação, textos longos ou complexos
 	!DESAFIO: Buscar na Internet imagens ASCII Art para colocar no Banner MOTD
-	!CUIDADO: utilizar o mesmo caracter de delimitador de início e fim do Banner
+	!CUIDADO: utilizar o mesmo carácter de delimitador de início e fim do Banner
 	banner motd #AVISO: acesso autorizado somente a funcionarios#
   
 	!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado

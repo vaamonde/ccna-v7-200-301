@@ -85,7 +85,7 @@ enable
 write
 
 !Visualizando as configurações da memória RAM
-!OBSERVÇÃO IMPORTANTE: no Cisco Packet Tracer no ruuning-config não aparece as informações do VTP
+!OBSERVAÇÃO IMPORTANTE: no Cisco Packet Tracer no ruuning-config não aparece as informações do VTP
 show running-config | section vtp
 
 !Verificando do Servidor e Cliente do VTP nos Switches Layer 2 e 3

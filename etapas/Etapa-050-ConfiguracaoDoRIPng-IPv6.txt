@@ -20,7 +20,7 @@
 !O RIPng (Next Generation) é um protocolo de Roteamento Dinâmico baseado no Algoritmo de Vetor de Distância igual ao
 !Protocolo RIPv2 (seu antecessor), o RIPng usa a Contagem de Saltos para medir a distância de um destino como Métrica
 !Padrão (possui a mesma limitação do RIPv2, máximo de 15 saltos, também, os mesmos temporizadores 30s Update, 180s 
-!Holddown, 180s Invalid e 240s Flush e a mesam Distância Administrativa de 120), o RIPng é usado em redes que estão 
+!Holddown, 180s Invalid e 240s Flush e a mesma Distância Administrativa de 120), o RIPng é usado em redes que estão 
 !configuradas com a versão 6 do Protocolo de Internet (IPv6). O RIPng foi especificado na RFC 2080.
 
 !O RIPng envia é recebe mensagens utilizando o Protocolo UDP (User Datagram Protocol) na Porta Padrão 521 no Endereço
@@ -53,8 +53,8 @@ enable
 		!(no EIGRP é chamado de AS Autonomous System), essa opção é obrigatória para o funcionamento do RIPng, essa opção permite 
 		!configurar os recursos de Redistribuição de Rotas ou mundança da Distância Administrativa do Protocolo.
 		!ADENDO IMPORTANTE: NO VÍDEO EU FALO "QUE NÃO É OBRIGATÓRIO ESSA CONFIGURAÇÃO" O CORRETO É: CRIAR O PROCESSO LOCAL DO RIPng
-		!PARA QUE SEJA POSSÍVEL INFORMAR NAS INTERFACES O RECURSO DO PROTOCOLO, O QUE NÃO É OBRIGATŔIO É AS CONFIGURAÇÕES DA
-		!REDISTRIBUIÇÃO DE ROTAS OU MUNDAÇA DO AD.
+		!PARA QUE SEJA POSSÍVEL INFORMAR NAS INTERFACES O RECURSO DO PROTOCOLO, O QUE NÃO É OBRIGATÓRIO É AS CONFIGURAÇÕES DA
+		!REDISTRIBUIÇÃO DE ROTAS OU MUDANÇA DO AD.
 		ipv6 router rip 10
 
 			!OBSERVAÇÃO: redistribuindo a rota padrão estática aprendida pelo Router 2911 para acessar a Rede do DNS do Google
@@ -70,7 +70,7 @@ enable
 			!Habilitando o Protocolo RIPng na Interface
 			!DICA: habilitando o protocolo RIPng diretamente na Interface que tem os Endereços de Link Local e Global Unicast
 			!OBSERVAÇÃO: diferente do RIPv2 que e feita a declaração das Redes com a opção Network, no RIPng automaticamente
-			!indentifica as redes configuradas na Interface é já informa no Processo do Protocolo as Redes conhecidas para
+			!identifica as redes configuradas na Interface é já informa no Processo do Protocolo as Redes conhecidas para
 			!serem enviadas para todos os Roteadores que fazem parte da Configuração do Domínio do Protocolo RIPng 
 			!OBSERVAÇÃO: é recomendado indicar o número do processo local que foi configurado anteriormente
 			ipv6 rip 10 enable
@@ -85,7 +85,7 @@ enable
 
 		!OBSERVAÇÃO IMPORTANTE: nessa topologia não é habilitado o Protocolo IPv6 nas Sub-Interfaces das VLAN's 10, 20, 30, 40 e 50
 		!pois essas Interfaces estão configuradas como DHCPv6 Statefull, o Endereço de Global Unicast é diferente do Escopo criado,
-		!o acesso a essas redes e feito utilizando Rotas Estática, no processo do RIPng essas redes já seram publicadas no Domínio
+		!o acesso a essas redes e feito utilizando Rotas Estática, no processo do RIPng essas redes já serão publicadas no Domínio
 		!do Protocolo do RIPng utilizando o recurso de Redistribuição de Rotas
 		
 		interface gigabitEthernet 0/1

@@ -26,7 +26,7 @@
 enable
 	configure terminal
 		
-		!OBSERVAÇÃO IMPORTANTE: para o roteamente em Redes IPv6 é necessário habilitar o recurso de Unicast 
+		!OBSERVAÇÃO IMPORTANTE: para o roteamento em Redes IPv6 é necessário habilitar o recurso de Unicast 
 		!Routing no Router ou Switch Layer 3, essa configuração já foi executada nas configurações dos endereços
 		!IPv6 das etapas anteriores
 		!ipv6 unicast-routing

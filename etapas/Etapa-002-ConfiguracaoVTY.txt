@@ -23,7 +23,7 @@ enable
 		!OBSERVAÇÃO: linhas virtuais não são utilizadas para monitoramento, para isso usamos o Protocolo SNMP com SVI
 		!DICA: não é recomendado habilitar poucas linhas ou todas as linhas virtuais
 		!OBSERVAÇÃO: as linhas virtuais são bem parecidas com a linha console, a diferença é que o acesso e feito remoto
-		!DICA: por padrão as linhas virtuais estão desabilitadas, elas dependem da configuraçao do SVI
+		!DICA: por padrão as linhas virtuais estão desabilitadas, elas dependem da configuração do SVI
 		line vty 0 4
 
 			!Forçando fazer login local utilizando usuário e senha locais do switch

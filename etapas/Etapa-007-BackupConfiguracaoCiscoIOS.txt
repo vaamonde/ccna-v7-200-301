@@ -54,7 +54,7 @@ enable
 		192.168.1.1
 	
 	!Salvando a imagem do Cisco IOS do Switch 2960 para o Servidor TFTP
-	!DICA: as imagens do Cico IOS estão no formato BIN (binário) e compactadas (m=RAM | z=zip)
+	!DICA: as imagens do Cisco IOS estão no formato BIN (binário) e compactadas (m=RAM | z=zip)
 	!OBSERVAÇÃO: não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura
 	!CUIDADO: como o Cisco IOS é uma sub-derivação do Unix/BSD, ele é Case Sensitive (Maiúscula/Minúscula)
 	copy flash: tftp:

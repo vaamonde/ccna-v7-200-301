@@ -43,7 +43,7 @@ enable
 			!DICA: por padrão o Switch Cisco suporte até 1025 endereços físicos de MAC em uma Interface
 			!OBSERVAÇÃO: cuidado com Interfaces de Servidores ou Access Point, nessas interfaces temos vários endereços MAC
 			!OBSERVAÇÃO: no Cisco Packet Tracer temos a limitação de: 1 até 132 endereços MAC por Interface
-			!OBSERVAÇAO: no Cisco Packet Tracer temos a limitação de configuração de VLAN de Acesso e VoIP
+			!OBSERVAÇÃO: no Cisco Packet Tracer temos a limitação de configuração de VLAN de Acesso e VoIP
 			!OBSERVAÇÃO: o recurso de port-security maximum por padrão e configurado para apenas 1 (um) endereço MAC
 			switchport port-security maximum 1
 			
@@ -80,7 +80,7 @@ enable
 			!OBSERVAÇÃO: alterando o modo de violação da Interface para protect
 			!OBSERVAÇÃO: o modo protect recusa os quadros com endereços desconhecidos (drop) sem bloquear a porta.
 			!não incrementa a contagem de violação e não envia uma mensagem informativa SNMP Trap, não informando Log's
-			!para o Syslog, mantém os MAC aprendindos transmitindo normalmente.
+			!para o Syslog, mantém os MAC aprendidos transmitindo normalmente.
 			switchport port-security violation protect
 			
 			!Configurando a validade de envelhecimento dos endereços MAC na Interface (Porta de Rede)
@@ -117,7 +117,7 @@ enable
 			!OBSERVAÇÃO: alterado o modo de violação da Interface para restrict
 			!OBSERVAÇÃO: o modo restrict recusa os quadros com endereços desconhecidos (drop) sem bloquear a porta,
 			!e incrementa a contagem de violação (Security Violation) enviando uma mensagem informativa (logs, Syslog
-			!e SNMP Trap), mantém os MAC aprendindos transmitindo normalmente.
+			!e SNMP Trap), mantém os MAC aprendidos transmitindo normalmente.
 			switchport port-security violation restrict
 			end
 write

@@ -17,10 +17,10 @@
 !NetFlow (Fluxo da Rede) é um recurso que foi introduzido em roteadores Cisco cuja função é coletar características
 !e informações sobre o tráfego de redes IPv4/IPv6, tanto na saída quanto na entrada de uma interface.
 
-!NetFlow foi implementado inicialmente pela Cisco, descrito na RFC 3954, sendo substituido pelo IPFIX (Internet Protocol
+!NetFlow foi implementado inicialmente pela Cisco, descrito na RFC 3954, sendo substituído pelo IPFIX (Internet Protocol
 !Flow Information eXport) com base na versão 9 do NetFlow em 2008
 
-!A versão atual do NetFlow no Cisco Packet Tracer é: v9, a partir da versão v10 foi substituido pelo IPFIX
+!A versão atual do NetFlow no Cisco Packet Tracer é: v9, a partir da versão v10 foi substituído pelo IPFIX
 
 !O NetFlow é dividido em: Flow exporter (Exportador de Fluxo), Flow collector (Coletor de Fluxo) e Analysis application 
 !(Aplicativo de Análise)

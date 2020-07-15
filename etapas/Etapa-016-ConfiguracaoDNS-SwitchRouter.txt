@@ -25,7 +25,7 @@ enable
 		
 		!Configurando o Nome de Domínio no Switch e Router
 		!OBSERVAÇÃO: esse recurso já foi configurado, ele é necessário para o serviço do SSH Server
-		!DICA: a configuranção do Nome de Domínio é recomendada, mesmo que não seja utilizado no Switch ou Router
+		!DICA: a configuração do Nome de Domínio é recomendada, mesmo que não seja utilizado no Switch ou Router
 		!ip domain-name vaamonde.pti
 		
 		!Configurando o Endereço IPv4 do Servidor de DNS no Switch e Router
@@ -36,7 +36,7 @@ enable
 		!Adicionando manualmente a Resolução de Nomes e Endereços no Switch e Router
 		!DICA: por padrão o Switch e Router consulta primeiro a Base Dados Locais de Nomes e depois o DNS Server
 		!OBSERVAÇÃO: a criação de nomes locais facilita o acesso a equipamentos sem a dependência do servidor de DNS
-		!OBSERVAÇÃO: desvantagem, que esse é um procedimento manual, sua atualização não é dinânica.
+		!OBSERVAÇÃO: desvantagem, que esse é um procedimento manual, sua atualização não é dinâmica.
 		ip host servidor 192.168.3.1
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado

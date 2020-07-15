@@ -63,7 +63,7 @@ enable
 		!OBSERVAÇÃO: será criado uma lista padrão (default) de autenticação dos usuários, podemos criar nossa lista
 		!EXEMPLO: aaa authentication login boraparapratica group tacacs+ local
 		!OBSERVAÇÃO: utilizando a opção grupo (group) configuramos a possibilidade de usar o TACACS+ e Local
-		!ADENDO IMPORTANTE: os usuáriso locais só seram utilizados quando os Servidores AAA TACACS+ ou RADIUS estiverem
+		!ADENDO IMPORTANTE: os usuários locais só serão utilizados quando os Servidores AAA TACACS+ ou RADIUS estiverem
 		!Off-Line (fora de serviço)
 		aaa authentication login default group tacacs+ local
 		

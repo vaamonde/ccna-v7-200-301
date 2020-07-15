@@ -12,7 +12,7 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO É MAIS COBRADO CONHECIMENTOS EM
-!CONFIGURAÇÕES DE PLACA DE REDE SERIAL OU LINK DE WAN SERIAL, UMA VEZ QUE ESSAS TECNOLOGIAS JÁ CAIRAM EM DESUSO, 
+!CONFIGURAÇÕES DE PLACA DE REDE SERIAL OU LINK DE WAN SERIAL, UMA VEZ QUE ESSAS TECNOLOGIAS JÁ CAÍRAM EM DESUSO, 
 !OUTRAS TECNOLOGIAS COMO: FRAME RELAY, FAX MODEM ISDN (Integrated Services Digital Network), ATM (Asynchronous 
 !Transfer Mode), X.25, HDLC (High-Level Data Link Control), SDLC (Synchronous Data Link Control), PPP (Point to
 !Point Protocol), ETC. TAMBÉM ENTRAM NA LISTA.
@@ -68,13 +68,13 @@ show ip interface brief
 			no shutdown
 			exit
 			
-		!Configurando a Rota Estática Fluante para atingir a Rede 192.168.1.0/24
-		!DICA: rota estática fluante é igual a rota estática normal, a diferença está no valor do AD (Distância Administrativa)
-		!DICA: rota estática fluante é muito utilizada em Links de Backup e Redundância nas Conexões de WAN ou Internet
+		!Configurando a Rota Estática Flutuante para atingir a Rede 192.168.1.0/24
+		!DICA: rota estática flutuante é igual a rota estática normal, a diferença está no valor do AD (Distância Administrativa)
+		!DICA: rota estática flutuante é muito utilizada em Links de Backup e Redundância nas Conexões de WAN ou Internet
 		!OBSERVAÇÃO: quando o roteador aprende duas rotas para o mesmo destino, ele dará preferência para a menor Distância Administrativa
 		!OBSERVAÇÃO: os valores de Distância Administrativa pode variar de: 1 até 255 (Rota estática padrão tem AD de 1 (um))
 		!OBSERVAÇÃO: caso os AD's sejam iguais, será análisado os valores de Métrica (Custo) para o desempate e preferência da rota
-		!OBSERVAÇÃO: rota estática fluante para o mesmo destino não aparece na tabela de roteamento, somente quando a interface ou endereço
+		!OBSERVAÇÃO: rota estática flutuante para o mesmo destino não aparece na tabela de roteamento, somente quando a interface ou endereço
 		!de próximo salto estiver inacessível ou down
 		ip route 192.168.1.0 255.255.255.0 serial 0/0/0 5
 		end

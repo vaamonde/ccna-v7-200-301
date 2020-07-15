@@ -21,7 +21,7 @@
 !o melhor caminho na Topologia do OSPF, por padrão o OSPF é Classless (Sem Classe), tem suporte a Sumarização NLRI 
 !(Network Layer Reachability Information), tem suporte a Múltiplos Processos no mesmo equipamento (igual ao EIGRP),
 !os Process-ID (Indentificação do Processo) são localmente significativos (diferente do EIGRP que é globalmente 
-!significativos) e também utiliza uma Inteface como Router-ID (Indentificação do Roteador, preferência para Interfaces
+!significativos) e também utiliza uma Interface como Router-ID (Indentificação do Roteador, preferência para Interfaces
 !de Loopback, igual no AS do Protocolo do EIGRP).
 
 !O OSPF trabalha com Áreas (Standard Area, Stub Area, Totally Stubby Area) sendo a Área 0 (Backbone) a padrão, possui 

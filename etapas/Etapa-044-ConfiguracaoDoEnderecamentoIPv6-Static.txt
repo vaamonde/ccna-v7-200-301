@@ -19,7 +19,7 @@
 !Comparação do IPv6 em relação ao IPv4: IPv6 2 ^ 128 bits = +340 undecilhões de possibilidades, IPv4 2 ^ 32 bits = 
 !+4.2 bilhões de possibilidades, em comparação com o MAC Address 2 ^ 48 bits = +281 trilhões de possibilidades.
 
-!Diferança básica do Protocolo IPv6 para IPv4: IPv6 é configurado em Hexadecimal - IPv4 é configurado em Decimal
+!Diferença básica do Protocolo IPv6 para IPv4: IPv6 é configurado em Hexadecimal - IPv4 é configurado em Decimal
 !OBSERVAÇÃO: vale lembrar que o Endereço MAC também é em Hexadecimal (00:00:00:00:00:00 ou FF:FF:FF:FF:FF:FF)
 
 !Possibilidades de trabalhar o IPv6 junto com o IPv4: Pilha Dupla (os dois protocolos trabalhando simultaneamente), 
@@ -69,7 +69,7 @@ ping 2001:ABCD:1234:1::1
 enable
 	configure terminal
 		
-		!Habilitando o Recurso de Ecaminhamento do Protocolo IPv6
+		!Habilitando o Recurso de Encaminhamento do Protocolo IPv6
 		!DICA: habilitando o recurso do IPv6 Unicast Routing no roteador, ele vai suportar o encaminhamento de pacotes IPv6
 		!OBSERVAÇÃO: por padrão esse recurso está desabilitado no roteador, recomendo habilitar somente se for necessário
 		!IMPORTANTE: com esse recurso habilitado essa topologia vai trabalhar com Pilha Dupla (Dual Stack Topology)
@@ -119,7 +119,7 @@ enable
 	configure terminal
 
 		!Habilitando o suporte ao Protocolo IPv6 no Switch Layer 2
-		!DICA: por padrão os Switches Layer 2 e 3 não tem suporte ao protocolo IPv6 habiltiado no IOS
+		!DICA: por padrão os Switches Layer 2 e 3 não tem suporte ao protocolo IPv6 habilitado no IOS
 		!OBSERVAÇÃO: para habilitar o recurso do IPv6 nos Switches Layer 2 ou 3 utilizamos o SDM (Switching Database Manager)
 		!que tem o objetivo de gerenciar o uso da Memória TCAM (Ternary Content Addressable Memory) que é diferente da Tabela
 		!CAM (Content Addressable Memory) usado para configurar os recursos de Roteamente, ACL e QoS em Switches Catalyst

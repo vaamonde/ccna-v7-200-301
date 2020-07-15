@@ -42,7 +42,7 @@
 !O EIGRP suporta somente autenticação MD5 (diferente do RIP que suporte MD5 e Clean Text), utiliza Sistema de Key Chain (Chaveiro)
 !que precisam ser iguais em todos os Neighbors (Vizinhos) do Domínio do EIGRP para forma adjacência.
 
-!O EIGRP utiliza a Métrica Composta por: Bandwith (Largura de Banda), Delay (Atraso), Load (Carga) e Reliability (Confiabilidade),
+!O EIGRP utiliza a Métrica Composta por: Bandwidth (Largura de Banda), Delay (Atraso), Load (Carga) e Reliability (Confiabilidade),
 
 !Fórmula da Métrica Composta do EIGRP = [K1 * BW + (K2 * BW) / (256 — load) + K3 * Delay] * [K5 / (Reliability * k4)]
 !OBSERVAÇÃO IMPORTANTE: esse cálculo ou a fórmula não é obrigatório decorar e não será cobrado de forma detalhada no Exame 200-301,
@@ -83,8 +83,8 @@ enable
 		!AS de: 1 até 65535 
 		router eigrp 10
 
-			!Configurando a Indentificação do Roteador no AS do EIGRP
-			!DICA: a indentificação do roteador será utilizada para forma a adjacência entre os Router ou Switch do AS do EIGRP
+			!Configurando a Identificação do Roteador no AS do EIGRP
+			!DICA: a identificação do roteador será utilizada para forma a adjacência entre os Router ou Switch do AS do EIGRP
 			!OBSERVAÇÃO: nessa configuração e feita a referência com o endereço IPv4 configurado na Interface da Loopback
 			!OBSERVAÇÃO IMPORTANTE: a configuração do Router-ID segue o mesmo padrão do Endereço IPv4, separados por octetos
 			eigrp router-id 172.16.0.4
@@ -93,7 +93,7 @@ enable
 			!DICA: essa opção vai redistribuir a rota padrão aprendida no Router 2911 na Interface conectada com a Internet
 			!OBSERVAÇÃO: diferente do Protocolo RIPv2 que temos a opção: default-information originate, no EIGRP utilizamos a
 			!redistribuição de rota estática (podendo mudar os valores de métrica com a opção metric: Bandwidth em Kbits, Delay
-			!em unidade de 10 Microsegundos, Confiabilidade 0 até 255 onde 255 é 100% confiável, Bandwidth Efetivo 1 até 255
+			!em unidade de 10 Microssegundos, Confiabilidade 0 até 255 onde 255 é 100% confiável, Bandwidth Efetivo 1 até 255
 			!onde 255 é 100% de Loading e o MTU (Maximum Transmission Unit) do Caminho de 1 até 65535)
 			!OBSERVAÇÃO IMPORTANTE: existe a possibilidade de Redistribuir a Rota Padrão declarando a Rede: network 0.0.0.0 ou 
 			!utilizando as configurações na Interface de Rede com o comando: ip summary-address eigrp 10 0.0.0.0 0.0.0.0

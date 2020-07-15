@@ -88,7 +88,7 @@ enable
 		interface gigabitEthernet 0/0
 
 			!Habilitando o recurso de descoberta de vizinhos CDP na Interface
-			!DICA: o CDP permite enviar dados de informações entre vizinhos independente do tipoo de enlace físico utilizado
+			!DICA: o CDP permite enviar dados de informações entre vizinhos independente do tipo de enlace físico utilizado
 			!EXEMPLO: conexões Ethernet (FastEthernet, GigabitEthernet), Serial, etc
 			!IMPORTANTE: mesmo configurando essa opção no Cisco Packet Tracer ela não aparece no running-config
 			cdp enable
