@@ -160,7 +160,7 @@ show ipv6 eigrp interfaces
 show ipv6 eigrp topology
 show ipv6 eigrp neighbors
 show ipv6 eigrp traffic
-show ipv6 route eigrp
+show ipv6 route
 show ipv6 route summary 
 ping 2001:abcd:1234:8::8
 traceroute 2001:abcd:1234:8::8
