@@ -210,7 +210,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=vC6fIQAX1N8&t=
 
 ## **010 Documentação da Topologia de Rede - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou mostrar como fazer a documentação básica da topologia de rede, utilizando os recursos de Bloco de Notas (Notes) do Cisco Packetr Tracer, documentando os equipamentos de rede, desktop, servidores, conexões de rede e endereços IPv4/IPv6.
+Nessa aula, vou mostrar como fazer a documentação básica da topologia de rede, utilizando os recursos de Bloco de Notas (Notes) do Cisco Packet Tracer, documentando os equipamentos de rede, desktop, servidores, conexões de rede e endereços IPv4/IPv6.
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-010.pkt
 
