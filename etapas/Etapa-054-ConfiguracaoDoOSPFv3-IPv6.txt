@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!O OSPFv3 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmo recursos
+!O OSPFv3 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmos recursos
 !e configurações do Protocolo OSPF para IPv4.
 
 !As principais mundanças do OSPFv3 IPv6 para o OSPFv2 IPv4 são: processamento do protcolo por link (interface),
@@ -162,8 +162,11 @@ enable
 write
 
 !Visualizando as configurações da memória RAM
-show running-config | ipv6 router ospf
+show running-config | section interface Loopback10
+show running-config | section interface GigabitEthernet0/0/0.999
+show running-config | section ipv6 router
 
+!Visualizando informações do Protocolo OSPFv3 IPv6
 show ipv6 ospf border-routers 
 show ipv6 ospf interface
 show ipv6 ospf neighbor 
@@ -176,3 +179,5 @@ show ipv6 ospf database network
 show ipv6 ospf database prefix 
 show ipv6 route ospf 
 show ipv6 route ospf summary
+ping 2001:abcd:1234:8::8
+traceroute 2001:abcd:1234:8::8

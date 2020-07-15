@@ -647,3 +647,15 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-053-Z.pkt
 
 Link da vídeo aula: 
+
+## **054 Configuração do Protocolo OSPFv3 IPv6 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração do Protocolo OSPFv3 IPv6 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, o OSPFv3 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmos recursos e configurações do Protocolo OSPF para IPv4.
+
+As configurações do Protocolo OSPFv3 IPv6 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-054-ConfiguracaoDoOSPFv3-IPv6.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-054-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-054-Z.pkt
+
+Link da vídeo aula: 
