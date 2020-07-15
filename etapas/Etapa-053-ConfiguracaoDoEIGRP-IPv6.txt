@@ -12,7 +12,7 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !O EIGRP para o IPv6 trabalha igual ao EIGRP para o IPv4, você pode configurar e controlar o Sistema Autônomo 
-!indepêndente (separadamente). O diferencial do EIGRP para IPv6 em relação ao IPv4 é que o Processo Local do 
+!independente (separadamente). O diferencial do EIGRP para IPv6 em relação ao IPv4 é que o Processo Local do 
 !EIGRP IPv6 por padrão está desligado (shutdown) sendo necessário inicializar o AS do EIGRP (no shutdown) no 
 !final das configurações para que seja possível estabelecer adjacências entre os vizinhos
 
