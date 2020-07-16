@@ -612,7 +612,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=vSAx2JzHtVI
 
 ## **051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv4 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, o EIGRP (Enhanced Interior Gateway Routing Protocol) é um Protocolo Avançado Híbrido de Roteamento por Vetor de Distância (Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas para o Padrão Aberto em 2013 e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP (Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
+Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv4 na Topologia Geral, essas configurações serão feitas na Primeira, Segunda e Terceira Topologia, o EIGRP (Enhanced Interior Gateway Routing Protocol) é um Protocolo Avançado Híbrido de Roteamento por Vetor de Distância (Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas para o Padrão Aberto em 2013 e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP (Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
 
 As configurações do Protocolo EIGRP IPv4 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-050-ConfiguracaoDoRIPng-IPv6.txt
 
@@ -626,7 +626,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=ezRkSY5UJQI
 
 ## **052 Configuração do Protocolo OSPF IPv4 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Protocolo OSPF IPv4 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, o OSPF (Open Shortest Path First) é um Protocolo de Roteamento Dinâmico para redes que operam com o Protocolo IPv4 (possui suporte ao Protocolo IPv6 utilizando a versão OSPFv3), desenvolvido pelo Grupo de Trabalho dos IGPs (Interior Gateway Protocols) da IETF (Internet Engineering Task Force) e descrito inicialmente em 1989 pela RFC  1131 (versão atual nas RFC 2328 e 2740 do OSPFv2). É um protocolo IGP desenvolvido para ser usado em um Sistema Autônomo Interno (Intra-AS)
+Nessa aula, vou fazer a configuração do Protocolo OSPF IPv4 na Topologia Geral, essas configurações serão feitas na Primeira, Segunda e Terceira Topologia, o OSPF (Open Shortest Path First) é um Protocolo de Roteamento Dinâmico para redes que operam com o Protocolo IPv4 (possui suporte ao Protocolo IPv6 utilizando a versão OSPFv3), desenvolvido pelo Grupo de Trabalho dos IGPs (Interior Gateway Protocols) da IETF (Internet Engineering Task Force) e descrito inicialmente em 1989 pela RFC  1131 (versão atual nas RFC 2328 e 2740 do OSPFv2). É um protocolo IGP desenvolvido para ser usado em um Sistema Autônomo Interno (Intra-AS)
 
 As configurações do Protocolo OSPF IPv4 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-052-ConfiguracaoDoOSPF.txt
 
@@ -638,7 +638,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=JLHSaBC8UHk
 
 ## **053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv6 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, o EIGRP para o IPv6 trabalha igual ao EIGRP para o IPv4, você pode configurar e controlar o Sistema Autônomo independente (separadamente). O diferencial do EIGRP para IPv6 em relação ao IPv4 é que o Processo Local do EIGRP IPv6 por padrão está desligado (shutdown) sendo necessário inicializar o AS do EIGRP (no shutdown) no final das configurações para que seja possível estabelecer adjacências entre os vizinhos.
+Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv6 na Topologia Geral, essas configurações serão feitas na Primeira, Segunda e Terceira Topologia, o EIGRP para o IPv6 trabalha igual ao EIGRP para o IPv4, você pode configurar e controlar o Sistema Autônomo independente (separadamente). O diferencial do EIGRP para IPv6 em relação ao IPv4 é que o Processo Local do EIGRP IPv6 por padrão está desligado (shutdown) sendo necessário inicializar o AS do EIGRP (no shutdown) no final das configurações para que seja possível estabelecer adjacências entre os vizinhos.
 
 As configurações do Protocolo EIGRP IPv6 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-053-ConfiguracaoDoEIGRP-IPv6.txt
 
@@ -650,7 +650,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=uPs8WYYczI8
 
 ## **054 Configuração do Protocolo OSPFv3 IPv6 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Protocolo OSPFv3 IPv6 na Topologia Geral, essas configurações serão feitas na Primeira Segunda e Terceira Topologia, o OSPFv3 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmos recursos e configurações do Protocolo OSPF para IPv4.
+Nessa aula, vou fazer a configuração do Protocolo OSPFv3 IPv6 na Topologia Geral, essas configurações serão feitas na Primeira, Segunda e Terceira Topologia, o OSPFv3 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmos recursos e configurações do Protocolo OSPFv2 para IPv4.
 
 As configurações do Protocolo OSPFv3 IPv6 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-054-ConfiguracaoDoOSPFv3-IPv6.txt
 
