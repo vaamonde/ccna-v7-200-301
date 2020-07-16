@@ -356,7 +356,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=VqjnM85f-z4
 
 ## **025 Configuração da Rota Estática e Padrão no Router e Switch Layer 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração da Rota Estática (static route) nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática é o método mais simples de roteamento que temos nos Roteadores e Switches Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes com pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos a rota padrão em Links de ISP (Internet Service Provider), WAN (Wide Área Network), VPN (Virtual Private Networ), Internet, etc.
+Nessa aula, vou fazer a configuração da Rota Estática (static route) nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática é o método mais simples de roteamento que temos nos Roteadores e Switches Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes com pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos a rota padrão em Links de ISP (Internet Service Provider), WAN (Wide Área Network), VPN (Virtual Private Network), Internet, etc.
 
 As configurações da Rota Estática e Padrão no Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-025-ConfiguracaoDaRotaEstaticaPadrao.txt
 
@@ -368,7 +368,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=i2DRjhiHewA
 
 Nessa aula, vou fazer a configuração da Rota Estática Flutuante (floating static route) no Router 1941, a utilização da rota estática flutuante é um dos métodos mais simples de configuração de rota backup e redundância de Links de WAN, utilizada principalmente em redes Ponto-a-Ponto (Point-to-Point), para a configuração da Rota Estática Flutuante funcionar corretamente na nossa Topologia, será necessário manipular o valor da Distância Administrativa (AD Administrative Distance - Confiabilidade do Link), nesse cenário vou mostrar o processo de configuração nas Interfaces Seriais e a criação da Rota Estática Flutuante nesse Link.
 
-As configurações da Rota Estática Fluante no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-026-ConfiguracaoDaRotaEstaticaFlutuante.txt
+As configurações da Rota Estática Flutuante no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-026-ConfiguracaoDaRotaEstaticaFlutuante.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-026.pkt
 
@@ -404,7 +404,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=2B_skmB_Ucs&t=
 
 ## **030 Configuração do CDP e LLDP nos Switches Layer 2 e 3 e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do CDP (Cisco Discovery Portocol) que é um protocolo proprietário da camada de ligação de dados desenvolvido pela Cisco que tem como principal função a descoberta de equipamentos na rede, facilitando a compreensão da topologia da rede e de sua arquitetura, também, vou fazer a configuração do protocolo LLDP (Link-Layer Discovery Protocol) que tem a mesma finalidade do CDP, com a diferença de ser um padrão da indústria (IEEE 802.1AB) que pode ser implementado por qualquer fabricante, o que faz dele uma solução bem mais flexível do que o CDP em ambientes com dispositivos de múltiplos fabricantes.
+Nessa aula, vou fazer a configuração do CDP (Cisco Discovery Protocol) que é um protocolo proprietário da camada de ligação de dados desenvolvido pela Cisco que tem como principal função a descoberta de equipamentos na rede, facilitando a compreensão da topologia da rede e de sua arquitetura, também, vou fazer a configuração do protocolo LLDP (Link-Layer Discovery Protocol) que tem a mesma finalidade do CDP, com a diferença de ser um padrão da indústria (IEEE 802.1AB) que pode ser implementado por qualquer fabricante, o que faz dele uma solução bem mais flexível do que o CDP em ambientes com dispositivos de múltiplos fabricantes.
 
 As configurações do CDP e LLDP nos Switches Layer 2 e 3 e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-030-ConfiguracaoDoCDP_LLDP.txt
 
@@ -657,5 +657,17 @@ As configurações do Protocolo OSPFv3 IPv6 na Topologia Geral será feita utili
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-054-C.pkt
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-054-Z.pkt
+
+Link da vídeo aula: 
+
+## **055 Substituição do Router 1941-2 pelo Router 2911-2 na Segunda Topologia - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a substituição do Router 1941-2 pelo Router 2911-2, essa substituição será feita na Segunda Topologia, nessa simulação de troca de equipamento, muito comum no dia-a-dia, quando temos a necessidade de trocar os equipamentos antigos da rede por equipamento mais novos ou quando o equipamento utilizado é danificado ou não aguenta mais o tráfego de dados, sendo necessário substituir por outro equipamento de maior capacidade de processamento e memória RAM.
+
+As configurações da Substituição dos Routers será feita utilizando o Script: 
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-Z.pkt
 
 Link da vídeo aula: 
