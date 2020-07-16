@@ -11,24 +11,68 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!Executar o Backup do Router 1941-2 e Aplicar as Configurações no Router 2911-2
-!CUIDADO: adicionar os comandos: enable e configure terminal antes de aplicar o Script no Router 2911-2
-!CUIDADO: adicionar os comando: terminal history size 256 e terminal monitor antes de aplicar o Script no Router 2911-2
-!CUIDADO: alterar a data e hora: clock set 13:00:00 29 June 2020 antes de aplicar o Script no Router 2911-2
-!CUIDADO: alterar o Hostname: rt-2911-2 antes de aplicar o Script no Router 2911-2
-!CUIDADO: alterar as senhas: Tipo-5 e Tipo-7 antes de aplicar o Script no Router 2911-2
-!CUIDADO: remover a linha: license udi pid CISCO1941/K9 sn FTX1524E30V antes de aplicar o Script no Router 2911-2
-!CUIDADO: adicionar o comando: no shutdown nas Interfaces antes de aplicar o Script no Router 2911-2
-!CUIDADO: alterar a senha do: NTP antes de aplicar o Script no Router 2911-2
-!CUIDADO: alterar o Delimitador do: Banner antes de aplicar o Script no Router 2911-2
-!CUIDADO: remover a linha: ip classless antes de aplicar o Script no Router 2911-2
-!CUIDADO: adicionar o comando: crypto key generate rsa general-keys modulus 1024 antes de aplicar o Script no Router 2911-2
+!PRIMEIRA ETAPA: fazer o backup do Running-Config e Startup-Config do Router 1941-2
+enable
+    copy running-config startup-config
+    copy startup-config flash:
+        Destination filename [startup-config]?
+    copy startup-config tftp:
+        Address or name of remote host []? 192.168.3.1
+        Destination filename [rt-1941-2-confg]? 
+    show running-config
+        selecionar depois de: Current configuration : 4672 bytes até: end
+logout
 
+!SEGUNDA ETAPA: adicionar o Router 2911-2 com os Módulos de Interfaces WAN
+!OBSERVAÇÃO: desligar o Router 2911-2 antes de adicionar os módulos WAN
+!Módulos:   eHWIC 0 - Módulo HWIC-2T
+            eHWIC 1 - Módulo HWIC-1GE-SFP + GLC-LH-SMD
+            eHWIC 2 - Módulo WIC-Cover
+            eHWIC 3 - Módulo WIC-Cover
+
+!TERCEIRA ETAPA: desligar o Router 1941-2 e remover todas as Conexões WAN
+!OBSERVAÇÃO: recomendo desligar o Router 1941-2 antes de remover as conexões WAN
+
+!QUARTA ETAPA: substituir o Router 1941-2 pelo Router 2911-2
+!OBSERVAÇÃO: refazer as conexões WAN com o Router desligado, depois ligar o Router com cabo Console
+!PRIMEIRO: Link da LAN;
+!SEGUNDO: Link da WAN Serial;
+!TERCEIRO: Link da WAN GigabitEthernet;
+!QUARTO: Link da WAN Fiber.
+
+!QUINTA ETAPA: aplicando o Running-Config modificado para o Router 2911-2
+!OBSERVAÇÃO IMPORTANTE: muito cuidado nessa etapa, pois os Router ou Switch Layer 3 da Cisco uma vez configurado
+!já vai propagar suas informações de redes para os demais Router ou Switch Layer 3 da topologia, esse Router foi 
+!configurado com os Protocolos de Roteamento Dinâmico OSPFv2 IPv4 e OSPFv3 IPv6.
+
+!CUIDADO 01: adicionar os comandos: enable e configure terminal (esses comandos não são obrigatórios)
+!CUIDADO 02: adicionar os comando: terminal history size 256 e terminal monitor (esses comandos não são obrigatórios)
+!CUIDADO 03: alterar a data e hora: clock set 13:00:00 29 June 2020 (esse comando não é obrigatório)
+!CUIDADO 04: alterar o Hostname: rt-2911-2 (alteração mais importante do script)
+!CUIDADO 05: alterar as senhas: Tipo-5 e Tipo-7 vaamonde@pti (por padrão as senhas estão criptografadas)
+!CUIDADO 06: remover a linha: license udi pid CISCO1941/K9 sn FTX1524E30V (essa informação não é necessária)
+!CUIDADO 07: adicionar o comando: no shutdown nas Interfaces (por padrão as Interfaces estão desligadas no Router)
+!CUIDADO 08: alterar a senha do: NTP vaamonde (por padrão a senha está criptografada)
+!CUIDADO 09: alterar o Delimitador do: Banner # (recomendado alterar o delimitador para #)
+!CUIDADO 10: remover a linha: ip classless (esse recurso é configurado automáticamente no Router)
+!CUIDADO 11: adicionar o comando: crypto key generate rsa general-keys modulus 1024 (por padrão o serviço do SSH está desligado)
+!CUIDADO 12: adicionar o comando: write no final do script
+
+!SEXTA ETAPA: comandos de verificação da configuração e teste de conectividade
+show ip interface brief 
+show ipv6 interface brief 
+show ip route
+show ipv6 route
+ping 8.8.8.8
+ping 2001:abcd:1234:8::8
+
+!==================================== INÍCIO DE SCRIPT ====================================
 enable
 terminal history size 256
 terminal monitor
-clock set 13:00:00 29 June 2020
+clock set 13:00:00 17 July 2020
 configure terminal
+
 !
 version 15.1
 service timestamps log datetime msec
@@ -109,35 +153,51 @@ interface Loopback0
  ip address 10.0.0.253 255.255.255.252
  no shutdown
 !
+interface Loopback10
+ description Interface de Router-ID do OSPF 10
+ ip address 172.16.0.3 255.255.255.255
+ no shutdown
+!
 interface GigabitEthernet0/0
  description Interface de LAN com o Switch Layer 3 3560
  ip flow egress
  ip flow ingress
  ip address 192.168.2.254 255.255.255.0
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 ospf10
+ ip ospf cost 100
  duplex full
  speed 100
  ipv6 address FE80::254 link-local
  ipv6 address 2001:ABCD:1234:2::254/64
  ipv6 enable
+ ipv6 ospf cost 100
+ ipv6 ospf 10 area 0
  no shutdown
 !
 interface GigabitEthernet0/1
  description Interface de WAN com o Router 1941-1
  ip address 10.0.0.2 255.255.255.252
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 ospf10
  duplex auto
  speed auto
  ipv6 address FE80::1002 link-local
  ipv6 address 2001:ABCD:1234:1001::2/64
  ipv6 enable
+ ipv6 ospf 10 area 0
  no shutdown
 !
 interface Serial0/0/0
  description Interface de Backup WAN Serial com o Router 1941-1
  bandwidth 2000
  ip address 10.0.0.6 255.255.255.252
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 ospf10
  ipv6 address FE80::1006 link-local
  ipv6 address 2001:ABCD:1234:1005::6/64
  ipv6 enable
+ ipv6 ospf 10 area 0
  clock rate 2000000
  no shutdown
 !
@@ -146,41 +206,50 @@ interface Serial0/0/1
  clock rate 2000000
 !
 interface GigabitEthernet0/1/0
- description Interface de Interligao Fisica da WAN Fiber com o Router 2911
+ description Interface de Interligacao Fisica da WAN Fiber com o Router 2911
  no ip address
  no shutdown
 !
 interface GigabitEthernet0/1/0.999
- description Interface Logica de Interligao da WAN Fiber com o Router 2911
+ description Interface Logica de Interligacao da WAN Fiber com o Router 2911
  encapsulation dot1Q 999
  ip address 10.0.0.10 255.255.255.252
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 ospf10
+ ipv6 address FE80::1010 link-local
+ ipv6 address 2001:ABCD:1234:1009::10/64
+ ipv6 enable
+ ipv6 ospf 10 area 0
+ ipv6 ospf neighbor FE80::1009
 !
 interface Vlan1
  no ip address
  shutdown
 !
-router rip
- version 2
- redistribute static metric transparent 
- passive-interface GigabitEthernet0/0
- passive-interface GigabitEthernet0/1
- passive-interface Serial0/0/0
- network 10.0.0.0
- network 192.168.2.0
- no auto-summary
+router ospf 10
+ router-id 172.16.0.3
+ log-adjacency-changes detail
+ area 0 authentication message-digest
+ passive-interface Loopback0
+ auto-cost reference-bandwidth 1000
+ network 192.168.2.0 0.0.0.255 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+ network 10.0.0.4 0.0.0.3 area 0
+ network 10.0.0.8 0.0.0.3 area 0
+ network 10.0.0.252 0.0.0.3 area 0
+ neighbor 10.0.0.9
 !
-ip classless
-ip route 192.168.1.0 255.255.255.0 10.0.0.1 
-ip route 192.168.3.0 255.255.255.0 192.168.2.1 
-ip route 192.168.1.0 255.255.255.0 Serial0/0/0 5
+ipv6 router ospf 10
+ router-id 172.16.0.3
+ log-adjacency-changes detail
+ passive-interface Loopback0
+ auto-cost reference-bandwidth 1000
+!
 !
 ip flow-export destination 192.168.3.1 9996
 ip flow-export version 9
 ip flow-export source GigabitEthernet0/0
 !
-ipv6 route 2001:ABCD:1234:3::/64 GigabitEthernet0/0 FE80::1
-ipv6 route 2001:ABCD:1234:1::/64 GigabitEthernet0/1 FE80::1001
-ipv6 route 2001:ABCD:1234:1::/64 Serial0/0/0 FE80::1005 5
 !
 ip access-list extended sl_def_acl
  deny tcp any any eq telnet
@@ -231,3 +300,6 @@ ntp server 192.168.3.1
 ntp update-calendar
 !
 end
+write
+
+!==================================== FIM DE SCRIPT ====================================

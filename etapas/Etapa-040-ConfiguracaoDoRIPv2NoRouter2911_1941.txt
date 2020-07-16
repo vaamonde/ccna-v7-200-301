@@ -107,7 +107,7 @@ enable
 			no shutdown
 			exit
 		interface gigabitEthernet 0/1/0.999
-			description Interface Logica de Interligação da WAN Fiber com o Router 2911
+			description Interface Logica de Interligacao da WAN Fiber com o Router 2911
 			encapsulation dot1Q 999
 			ip address 10.0.0.10 255.255.255.252
 			exit
