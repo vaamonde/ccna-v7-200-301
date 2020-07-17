@@ -660,14 +660,26 @@ Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/ma
 
 Link da vídeo aula: 
 
-## **055 Substituição do Router 1941-2 pelo Router 2911-2 na Segunda Topologia - Laboratório Prático Cisco CCNAv7 200-301**
+## **055 Redistribuição de Rotas Dinâmicas RIPv2 RIPng OSPFv2 OSPFv3 e EIGRP - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a redistribuição de rotas dinâmicas utilizando os protocolos de roteamento RIPv2, RIPng, OSPFv2, OSPFv3 e EIGRP, essa redistribuição será feita na Primeira, Segunda e Terceira Topologia, redistribuição de Rotas é o recurso utilizado para trocar as Tabelas de Roteamento entre diferentes Protocolos de Roteamento Dinâmico, cada protocolo de roteamento dinâmico possui suas Métricas e sua Distância Administrativa, por isso não é possível fazer com que um Router ou Switch Layer 3 usando o protocolo EIGRP forme vizinhança com outro Router ou Switch Layer 3 usando os protocolos OSPFv2 ou RIPv2.
+
+As configurações da Redistribuição de RRotas Dinâmicas RIPv2 RIPng OSPFv2 OSPFv3 e EIGRP será feita utilizando o Script: 
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-Z.pkt
+
+Link da vídeo aula: 
+
+## **056 Substituição do Router 1941-2 pelo Router 2911-2 na Segunda Topologia - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a substituição do Router 1941-2 pelo Router 2911-2, essa substituição será feita na Segunda Topologia, nessa simulação de troca de equipamento, muito comum no dia-a-dia, quando temos a necessidade de trocar os equipamentos antigos da rede por equipamento mais novos ou quando o equipamento utilizado é danificado ou não aguenta mais o tráfego de dados, sendo necessário substituir por outro equipamento de maior capacidade de processamento e memória RAM.
 
 As configurações da Substituição dos Routers será feita utilizando o Script: 
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-C.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-056-C.pkt
 
-Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-Z.pkt
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-056-Z.pkt
 
 Link da vídeo aula: 

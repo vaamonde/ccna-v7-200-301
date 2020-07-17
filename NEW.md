@@ -70,10 +70,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral<br>
-055 Substituindo o Router 1941 da Segunda Topologia pelo Router 2911
+055 Redistribuição de Rotas Dinâmicas RIPv2 RIPng OSPFv2 OSPFv3 e EIGRP<br>
+056 Substituindo o Router 1941 da Segunda Topologia pelo Router 2911
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
-056 Redistribuindo Rotas do RIPv2, EIGRP e OSPF na Topologia Geral
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
 057 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers<br>

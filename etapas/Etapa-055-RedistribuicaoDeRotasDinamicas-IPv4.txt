@@ -1,0 +1,159 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 31/05/2020
+!Data de atualização: 17/07/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!Redistribuição de Rotas é o recurso utilizado para trocar as Tabelas de Roteamento entre diferentes Protocolos de 
+!Roteamento Dinâmico, cada protocolo de roteamento dinâmico possui suas Métricas e sua Distância Administrativa, por
+!isso não é possível fazer com que um Router ou Switch Layer 3 usando o protocolo EIGRP forme vizinhança com outro 
+!Router ou Switch Layer 3 usando os protocolos OSPFv2 ou RIPv2.
+
+!Apesar dessa restrição, existe a possibilidade de configurar um Router (ou Switch Layer 3 dependendo do caso) no 
+!meio desses dois domínios administrativos, de forma que ele execute ambos os protocolos de roteamento dinâmico e 
+!estabeleça a vizinhança com os dois Routers (ou mais) que estão usando os protocolo OSPFv2 e EIGRP ou RIPv2. Dessa
+!forma esse Router intermediário vai ter em sua tabela de roteamento toda as rotas anunciadas por ambos os protocolos.
+
+!Redistribuição de Rotas entre RIPv2/RIPng e OSPFv2/OSPFv3: essa redistribuição de rotas e bem simples, ambos os 
+!protocolos possuem métricas de fácil configuração.
+
+!Redistribuição de Rotas entre OSPFv2/OSPFv3 e EIGRP: essa redistribuição de rotas você precisa tomar muito cuidado em 
+!relação as métricas utilizadas pelo protocolo EIGRP
+
+!Redistribuição de Rotas entre RIPv2/RIPng e EIGRP: essa redistribuição de rotas segue os mesmos cuidados da 
+!redistribuição entre o protocolo OSPFv2.
+
+!As rotas redistribuídas são tratadas de maneira diferente, dependendo do protocolo de roteamento em que estão sendo 
+!redistribuídas, cada protocolo de roteamento tem sua própria métrica que é atribuída por padrão às rotas redistribuídas 
+!quando nenhuma métrica é configurada manualmente. 
+
+!PRIMEIRA ETAPA: Configuração do Router 1941-2 com o Protocolo OSPFv2
+enable
+	configure terminal
+		interface loopback 10
+			description Interface de Router-ID do OSPF 10 e EIGRP 10
+			ip address 172.16.0.3 255.255.255.255
+			exit
+
+        !Configuração do Processo Local do OSPFv2
+		router ospf 10
+			router-id 172.16.0.3
+			auto-cost reference-bandwidth 1000
+			passive-interface loopback 0
+			log-adjacency-changes detail
+			network 192.168.2.0 0.0.0.255 area 0
+			network 10.0.0.252 0.0.0.3 area 0
+            default-information originate 
+            
+            !Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e RIPv2
+            !DICA: na redistribuição de rotas OSPFv2 a métrica e baseada em custo
+            redistribute rip metric 50000 subnets
+            !redistribute connected subnets
+
+            !Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e EIGRP
+            redistribute eigrp 10 metric 50000 subnets
+			exit
+
+        
+        interface gigabitEthernet 0/0
+			ip ospf cost 100
+			exit
+
+        !Configuração do Processo Local do RIPv2
+        router rip
+            version 2
+            passive-interface default
+            no passive-interface gigabitEthernet 0/1
+            no passive-interface serial 0/0/0
+            no auto-summary
+            network 10.0.0.0
+            network 10.0.0.4
+
+            !Configurando a Redistribuição de Rotas entre os protocolos RIPv2 e OSPFv2
+            !DICA: na redistribuição de rotas RIPv2 a métrica e baseada em saltos
+            redistribute ospf 10 metric 3
+            !redistribute connected
+
+            !Configurando a Redistribuição de Rotas entre os protocolos RIPv2 e EIGRP
+            redistribute eigrp 10 metric 3
+            exit
+
+        !Configurando o Sistema Autônomo do Protocolo EIGRP
+		router eigrp 10
+            eigrp router-id 172.16.0.3
+            passive-interface default
+            no passive-interface gigabitEthernet 0/1/0.999
+            no auto-summary
+            network 10.0.0.8 0.0.0.3
+
+            !Configurando a Redistribuição de Rotas entre os protocolos EIGRP e OSPFv2
+            !DICA: na redistribuição de rotas EIGRP a métrica é composta por: Bandwidth (Kbps), Delay (Microssegundos),
+            !Reliability (Confiabilidade em % - 255=100%), Loading (Carga em % - 255=100%) e Path MTU (1 até 65535)
+            redistribute ospf 1 metric 1544 2000 255 1 1500
+
+            !Configurando a Redistribuição de Rotas entre os protocolos EIGRP e RIPv2
+            redistribute rip metric 1544 2000 255 1 1500
+            end
+write
+
+!SEGUNDA ETAPA: Configuração do Switch Layer 3 3560 com o Protocolo OSPFv2
+enable
+	configure terminal
+		interface loopback 10
+			description Interface de Router-ID do OSPF 10
+			ip address 172.16.0.2 255.255.255.255
+			exit
+		router ospf 10
+			router-id 172.16.0.2
+			auto-cost reference-bandwidth 1000
+            passive-interface vlan 1
+			log-adjacency-changes detail
+			network 192.168.2.0 0.0.0.255 area 0
+            network 192.168.3.0 0.0.0.255 area 0
+			end
+write
+
+!TERCEIRA ETAPA: Configuração do Router 1941-1 com o Protocolo RIPv2
+enable
+    configure terminal
+        router rip
+            version 2
+            passive-interface gigabitEthernet 0/0
+            no auto-summary
+            network 10.0.0.0
+            network 10.0.0.4
+            network 192.168.1.0
+            end
+write
+
+!QUARTA ETAPA: Configuração do Router 2911-1 com o Protocolo EIGRP
+enable
+	configure terminal
+		interface loopback 10
+			ip address 172.16.0.4 255.255.255.255
+			exit
+		
+		!Configurando o Processo Local do Protocolo EIGRP
+		router eigrp 10
+            eigrp router-id 172.16.0.4
+            redistribute static
+            passive-interface default
+            no passive-interface gigabitEthernet 0/0/0.999
+            no auto-summary
+            network 192.168.10.0 0.0.0.255
+            network 192.168.20.0 0.0.0.255
+            network 192.168.30.0 0.0.0.255
+            network 192.168.40.0 0.0.0.255
+            network 192.168.50.0 0.0.0.255
+            network 192.168.99.0 0.0.0.255
+            network 192.168.100.0 0.0.0.255
+            network 10.0.0.8 0.0.0.3
+            end
+write
