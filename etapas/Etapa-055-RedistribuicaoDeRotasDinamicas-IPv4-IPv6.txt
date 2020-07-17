@@ -34,7 +34,7 @@
 !redistribuídas, cada protocolo de roteamento tem sua própria métrica que é atribuída por padrão às rotas redistribuídas 
 !quando nenhuma métrica é configurada manualmente. 
 
-!PRIMEIRA ETAPA: Configuração do Router 1941-2 com o Protocolo OSPFv2
+!PRIMEIRA ETAPA: Configuração do Router 1941-2 com o Protocolo OSPFv2, OSPFv3, RIPv2, RIPng e EIGRP
 enable
 	configure terminal
 		interface loopback 10
@@ -42,65 +42,113 @@ enable
 			ip address 172.16.0.3 255.255.255.255
 			exit
 
-        !Configuração do Processo Local do OSPFv2
+		!Configuração do Processo Local do OSPFv2 IPv4
 		router ospf 10
 			router-id 172.16.0.3
 			auto-cost reference-bandwidth 1000
-			passive-interface loopback 0
+			passive-interface default
+			no passive-interface gigabitEthernet 0/0
 			log-adjacency-changes detail
 			network 192.168.2.0 0.0.0.255 area 0
 			network 10.0.0.252 0.0.0.3 area 0
-            default-information originate 
-            
-            !Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e RIPv2
-            !DICA: na redistribuição de rotas OSPFv2 a métrica e baseada em custo
-            redistribute rip metric 50000 subnets
-            !redistribute connected subnets
+			default-information originate 
 
-            !Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e EIGRP
-            redistribute eigrp 10 metric 50000 subnets
+			!Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e RIPv2
+			!DICA: na redistribuição de rotas OSPFv2 a métrica e baseada no custo
+			redistribute rip metric 50000 subnets
+
+			!Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e EIGRP
+			redistribute eigrp 10 metric 50000 subnets
 			exit
 
-        
-        interface gigabitEthernet 0/0
+		!Configuração do Processo Local do OSPFv3 IPv6
+ 		ipv6 router ospf 10
+			router-id 172.16.0.3
+			auto-cost reference-bandwidth 1000
+			passive-interface default
+			no passive-interface gigabitEthernet 0/0
+			log-adjacency-changes detail
+			default-information originate
+			
+			!Configurando a Redistribuição de Rotas entre o Protocolo OSPFv3 e os protocolos RIPng e EIGRP
+			!redistribute rip 10
+			!redistribute eigrp 10 
+			exit
+
+		!Configurando a Interface Local do Protocolo OSPFv2 e OSPFv3
+		interface gigabitEthernet 0/0
 			ip ospf cost 100
+			ipv6 ospf 10 area 0
+			ipv6 ospf cost 100
 			exit
 
-        !Configuração do Processo Local do RIPv2
-        router rip
-            version 2
-            passive-interface default
-            no passive-interface gigabitEthernet 0/1
-            no passive-interface serial 0/0/0
-            no auto-summary
-            network 10.0.0.0
-            network 10.0.0.4
+		!Configuração do Processo Local do RIPv2 IPv4
+		router rip
+			version 2
+			passive-interface default
+			no passive-interface gigabitEthernet 0/1
+			no passive-interface serial 0/0/0
+			no auto-summary
+			network 10.0.0.0
+			 network 10.0.0.4
 
-            !Configurando a Redistribuição de Rotas entre os protocolos RIPv2 e OSPFv2
-            !DICA: na redistribuição de rotas RIPv2 a métrica e baseada em saltos
-            redistribute ospf 10 metric 3
-            !redistribute connected
+			!Configurando a Redistribuição de Rotas entre os protocolos RIPv2 e OSPFv2
+			!DICA: na redistribuição de rotas RIPv2 a métrica e baseada em saltos
+			redistribute ospf 10 metric 3
 
-            !Configurando a Redistribuição de Rotas entre os protocolos RIPv2 e EIGRP
-            redistribute eigrp 10 metric 3
-            exit
+			!Configurando a Redistribuição de Rotas entre os protocolos RIPv2 e EIGRP
+			redistribute eigrp 10 metric 3
+			exit
 
-        !Configurando o Sistema Autônomo do Protocolo EIGRP
+		!Configuração do Processo Local do RIPng IPv6
+		ipv6 router rip 10
+
+			!Configurando a Redistribuição de Rotas entre o Protocolo RIPng e os protocolos OSPF e EIGRP
+			redistribute ospf 10 metric 3
+			redistribute eigrp 10 metric 3
+			exit
+		
+		!Configurando as Interfaces Locais do Protocolo RIPng
+		interface gigabitEthernet 0/1
+			ipv6 rip 10 enable
+			exit
+		interface serial 0/0/0
+			ipv6 rip 10 enable
+			exit
+
+		!Configurando o Sistema Autônomo do Protocolo EIGRP IPv4
 		router eigrp 10
-            eigrp router-id 172.16.0.3
-            passive-interface default
-            no passive-interface gigabitEthernet 0/1/0.999
-            no auto-summary
-            network 10.0.0.8 0.0.0.3
+			eigrp router-id 172.16.0.3
+			passive-interface default
+			no passive-interface gigabitEthernet 0/1/0.999
+			no auto-summary
+			network 10.0.0.8 0.0.0.3
 
-            !Configurando a Redistribuição de Rotas entre os protocolos EIGRP e OSPFv2
-            !DICA: na redistribuição de rotas EIGRP a métrica é composta por: Bandwidth (Kbps), Delay (Microssegundos),
-            !Reliability (Confiabilidade em % - 255=100%), Loading (Carga em % - 255=100%) e Path MTU (1 até 65535)
-            redistribute ospf 1 metric 1544 2000 255 1 1500
+			!Configurando a Redistribuição de Rotas entre os protocolos EIGRP e OSPFv2
+			!DICA: na redistribuição de rotas EIGRP a métrica é composta por: Bandwidth (Kbps), Delay (Microssegundos),
+			!Reliability (Confiabilidade em % - 255=100%), Loading (Carga em % - 255=100%) e Path MTU (1 até 65535)
+			redistribute ospf 1 metric 1544 2000 255 1 1500
 
-            !Configurando a Redistribuição de Rotas entre os protocolos EIGRP e RIPv2
-            redistribute rip metric 1544 2000 255 1 1500
-            end
+			!Configurando a Redistribuição de Rotas entre os protocolos EIGRP e RIPv2
+			redistribute rip metric 1544 2000 255 1 1500
+			exit
+
+		!Configurando o Sistema Autônomo do Protocolo EIGRP IPv6
+		ipv6 router eigrp 10
+			eigrp router-id 172.16.0.3
+			passive-interface default
+			no passive-interface gigabitEthernet 0/1/0.999
+
+			!Configurando a Redistribuição de Rotas entre o Protocolo EIGRP e os protocolos OSPF e RIPng
+			redistribute ospf 1 metric 1544 2000 255 1 1500
+			redistribute rip metric 1544 2000 255 1 1500
+			no shutdown
+			exit
+
+		!Configurando a Interface Local do Protocolo EIGRP
+		interface gigabitEthernet 0/1/0.999
+			ipv6 eigrp 10
+			end
 write
 
 !SEGUNDA ETAPA: Configuração do Switch Layer 3 3560 com o Protocolo OSPFv2
@@ -110,50 +158,108 @@ enable
 			description Interface de Router-ID do OSPF 10
 			ip address 172.16.0.2 255.255.255.255
 			exit
-		router ospf 10
+		
+        !Configuração do Processo Local do OSPFv2 IPv4
+        router ospf 10
 			router-id 172.16.0.2
 			auto-cost reference-bandwidth 1000
-            passive-interface vlan 1
+			passive-interface vlan 1
 			log-adjacency-changes detail
 			network 192.168.2.0 0.0.0.255 area 0
-            network 192.168.3.0 0.0.0.255 area 0
+			 network 192.168.3.0 0.0.0.255 area 0
+			exit
+		
+        !Configuração do Processo Local do OSPFv3 IPv6
+        ipv6 router ospf 10
+			router-id 172.16.0.2
+			auto-cost reference-bandwidth 1000
+			passive-interface vlan 1
+			log-adjacency-changes detail
+			exit
+		
+        !Configurando as Interfaces Locais do Protocolo OSPFv3 IPv6
+        interface fastEthernet 0/24
+			ipv6 ospf 10 area 0
+			exit
+		interface vlan 1
+			ipv6 ospf 10 area 0
 			end
 write
 
-!TERCEIRA ETAPA: Configuração do Router 1941-1 com o Protocolo RIPv2
+!TERCEIRA ETAPA: Configuração do Router 1941-1 com o Protocolo RIPv2 e RIPng
 enable
-    configure terminal
-        router rip
-            version 2
-            passive-interface gigabitEthernet 0/0
-            no auto-summary
-            network 10.0.0.0
-            network 10.0.0.4
-            network 192.168.1.0
-            end
+	configure terminal
+
+		!Configurando o Processo Local do Protocolo RIPv2 IPv4
+		router rip
+			version 2
+			passive-interface gigabitEthernet 0/0
+			no auto-summary
+			network 10.0.0.0
+			network 10.0.0.4
+			network 192.168.1.0
+			exit
+
+		!Configurando o Processo Local do Protocolo RIPng IPv6
+		ipv6 router rip 10
+			exit
+		
+        !Configurando as Interfaces Locais do Protocolo RIPng IPv6
+        interface gigabitEthernet 0/0
+			ipv6 rip 10 enable
+			exit
+		interface gigabitEthernet 0/1
+			ipv6 rip 10 enable
+			exit
+		interface serial 0/0/0
+			ipv6 rip 10 enable
+			end
 write
 
-!QUARTA ETAPA: Configuração do Router 2911-1 com o Protocolo EIGRP
+!QUARTA ETAPA: Configuração do Router 2911-1 com o Protocolo EIGRP IPv4 e IPv6
 enable
 	configure terminal
 		interface loopback 10
 			ip address 172.16.0.4 255.255.255.255
 			exit
 		
-		!Configurando o Processo Local do Protocolo EIGRP
+		!Configurando o Processo Local do Protocolo EIGRP IPv4
 		router eigrp 10
-            eigrp router-id 172.16.0.4
-            redistribute static
-            passive-interface default
-            no passive-interface gigabitEthernet 0/0/0.999
-            no auto-summary
-            network 192.168.10.0 0.0.0.255
-            network 192.168.20.0 0.0.0.255
-            network 192.168.30.0 0.0.0.255
-            network 192.168.40.0 0.0.0.255
-            network 192.168.50.0 0.0.0.255
-            network 192.168.99.0 0.0.0.255
-            network 192.168.100.0 0.0.0.255
-            network 10.0.0.8 0.0.0.3
-            end
+			eigrp router-id 172.16.0.4
+			redistribute static
+			passive-interface default
+			no passive-interface gigabitEthernet 0/0/0.999
+			no auto-summary
+			network 192.168.10.0 0.0.0.255
+			network 192.168.20.0 0.0.0.255
+			network 192.168.30.0 0.0.0.255
+			network 192.168.40.0 0.0.0.255
+			network 192.168.50.0 0.0.0.255
+			network 192.168.99.0 0.0.0.255
+			network 192.168.100.0 0.0.0.255
+			network 10.0.0.8 0.0.0.3
+			exit
+
+		!Configurando o Processo Local do Protocolo EIGRP IPv6
+		ipv6 router eigrp 10
+			eigrp router-id 172.16.0.4
+			redistribute static
+			passive-interface default
+			no passive-interface gigabitEthernet 0/0/0.999
+			no shutdown
+			exit
+
+        !Configurando as Interfaces Locais do Protocolo EIGRP IPv6
+		interface gigabitEthernet 0/0/0.999
+			ipv6 eigrp 10
+			exit
+		interface gigabitEthernet 0/1
+			ipv6 eigrp 10
+			exit
+		interface gigabitEthernet 0/0.99
+			ipv6 eigrp 10
+			exit
+		interface gigabitEthernet 0/0.100
+			ipv6 eigrp 10
+			end
 write
