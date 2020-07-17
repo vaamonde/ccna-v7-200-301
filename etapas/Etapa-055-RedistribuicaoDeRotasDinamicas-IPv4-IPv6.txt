@@ -55,10 +55,10 @@ enable
 
 			!Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e RIPv2
 			!DICA: na redistribuição de rotas OSPFv2 a métrica e baseada no custo
-			redistribute rip metric 50000 subnets
+			redistribute rip metric 5000 subnets
 
 			!Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e EIGRP
-			redistribute eigrp 10 metric 50000 subnets
+			redistribute eigrp 10 metric 4000 subnets
 			exit
 
 		!Configuração do Processo Local do OSPFv3 IPv6
@@ -71,8 +71,8 @@ enable
 			default-information originate
 			
 			!Configurando a Redistribuição de Rotas entre o Protocolo OSPFv3 e os protocolos RIPng e EIGRP
-			!redistribute rip 10
-			!redistribute eigrp 10 
+			redistribute rip 10 metric 5000
+			redistribute eigrp 10 metric 4000
 			exit
 
 		!Configurando a Interface Local do Protocolo OSPFv2 e OSPFv3
@@ -90,14 +90,14 @@ enable
 			no passive-interface serial 0/0/0
 			no auto-summary
 			network 10.0.0.0
-			 network 10.0.0.4
+			network 10.0.0.4
 
 			!Configurando a Redistribuição de Rotas entre os protocolos RIPv2 e OSPFv2
 			!DICA: na redistribuição de rotas RIPv2 a métrica e baseada em saltos
 			redistribute ospf 10 metric 3
 
 			!Configurando a Redistribuição de Rotas entre os protocolos RIPv2 e EIGRP
-			redistribute eigrp 10 metric 3
+			redistribute eigrp 10 metric 5
 			exit
 
 		!Configuração do Processo Local do RIPng IPv6
@@ -105,7 +105,7 @@ enable
 
 			!Configurando a Redistribuição de Rotas entre o Protocolo RIPng e os protocolos OSPF e EIGRP
 			redistribute ospf 10 metric 3
-			redistribute eigrp 10 metric 3
+			redistribute eigrp 10 metric 5
 			exit
 		
 		!Configurando as Interfaces Locais do Protocolo RIPng
@@ -127,7 +127,7 @@ enable
 			!Configurando a Redistribuição de Rotas entre os protocolos EIGRP e OSPFv2
 			!DICA: na redistribuição de rotas EIGRP a métrica é composta por: Bandwidth (Kbps), Delay (Microssegundos),
 			!Reliability (Confiabilidade em % - 255=100%), Loading (Carga em % - 255=100%) e Path MTU (1 até 65535)
-			redistribute ospf 1 metric 1544 2000 255 1 1500
+			redistribute ospf 10 metric 1544 2000 255 1 1500
 
 			!Configurando a Redistribuição de Rotas entre os protocolos EIGRP e RIPv2
 			redistribute rip metric 1544 2000 255 1 1500
@@ -140,8 +140,8 @@ enable
 			no passive-interface gigabitEthernet 0/1/0.999
 
 			!Configurando a Redistribuição de Rotas entre o Protocolo EIGRP e os protocolos OSPF e RIPng
-			redistribute ospf 1 metric 1544 2000 255 1 1500
-			redistribute rip metric 1544 2000 255 1 1500
+			redistribute ospf 10 metric 1544 2000 255 1 1500
+			redistribute rip 10 metric 1544 2000 255 1 1500
 			no shutdown
 			exit
 
@@ -159,26 +159,25 @@ enable
 			ip address 172.16.0.2 255.255.255.255
 			exit
 		
-        !Configuração do Processo Local do OSPFv2 IPv4
-        router ospf 10
+		!Configuração do Processo Local do OSPFv2 IPv4
+		router ospf 10
 			router-id 172.16.0.2
 			auto-cost reference-bandwidth 1000
 			passive-interface vlan 1
 			log-adjacency-changes detail
 			network 192.168.2.0 0.0.0.255 area 0
-			 network 192.168.3.0 0.0.0.255 area 0
+			network 192.168.3.0 0.0.0.255 area 0
 			exit
 		
-        !Configuração do Processo Local do OSPFv3 IPv6
-        ipv6 router ospf 10
+		!Configuração do Processo Local do OSPFv3 IPv6
+		ipv6 router ospf 10
 			router-id 172.16.0.2
 			auto-cost reference-bandwidth 1000
-			passive-interface vlan 1
 			log-adjacency-changes detail
 			exit
 		
-        !Configurando as Interfaces Locais do Protocolo OSPFv3 IPv6
-        interface fastEthernet 0/24
+		!Configurando as Interfaces Locais do Protocolo OSPFv3 IPv6
+		interface fastEthernet 0/24
 			ipv6 ospf 10 area 0
 			exit
 		interface vlan 1
@@ -204,8 +203,8 @@ enable
 		ipv6 router rip 10
 			exit
 		
-        !Configurando as Interfaces Locais do Protocolo RIPng IPv6
-        interface gigabitEthernet 0/0
+		!Configurando as Interfaces Locais do Protocolo RIPng IPv6
+		interface gigabitEthernet 0/0
 			ipv6 rip 10 enable
 			exit
 		interface gigabitEthernet 0/1
