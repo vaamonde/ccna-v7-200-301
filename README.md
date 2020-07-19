@@ -700,7 +700,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração da ACL Padrão (Standard) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs padrão podem ser usadas para permitir ou negar tráfego somente dos endereços IPv4 de origem, o destino do pacote e as portas envolvidas não são avaliados, devido ao “deny any” implícito no final, todo o tráfego restante é bloqueado com esta ACL, as ACLs padrão são criadas no modo de configuração global (configure terminal).
 
-As configurações da ACL Standard IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: 
+As configurações da ACL Standard IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-058-ConfiguracaoACL-Padrao.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-058.pkt
 
@@ -710,7 +710,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração da ACL Estendida (Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs estendidas filtram os pacotes IPv4 com base em vários recursos que são: Tipo de Protocolo, Endereço IPv4 de origem, Endereço IPv4 de destino, Portas TCP ou UDP de origem, Portas TCP ou UDP de destino e Informações opcionais do Tipo de Protocolo para o melhor controle.
 
-As configurações da ACL Extended IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: 
+As configurações da ACL Extended IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-059-ConfiguracaoACL-Estendida.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-059.pkt
 
