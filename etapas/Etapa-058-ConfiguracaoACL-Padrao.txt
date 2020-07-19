@@ -1,0 +1,84 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 19/07/2020
+!Data de atualização: 19/07/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!Uma ACL (Access Control List) é uma série de comandos de IOS que controlam se um roteador encaminha 
+!ou elimina pacotes com base nas informações encontradas no cabeçalho do pacote. Por padrão, um roteador 
+!não tem ACLs configuradas, portanto, por padrão um roteador não filtra o tráfego, as ACL's atuam nas 
+!camadas 3 e 4 do modelo OSI ou nas camadas 2 e 3 do modelo TCP.
+
+!Uma ACL é uma lista sequencial de instruções de permissão ou de negação, conhecidas como entradas de 
+!controle de acesso ACEs (Access Control Entry), as ACEs podem ser criadas para filtrar o tráfego com 
+!base em certos critérios, como o endereço de origem, endereço de destino, protocolo e números de porta.
+
+!Portas TCP/UDP comuns: 1 a 1023 (Portas Conhecidas), 1024 a 49151 (Portas Registradas) e 49152 a 65535 
+!(Portas Dinâmicas e/ou Privadas).
+
+!ACLs de entrada (Inbound): os pacotes de entrada são processados antes de serem roteados para a 
+!interface de saída. As ACLs de entrada são mais usadas para filtrar pacotes quando a rede conectada a 
+!uma interface de entrada é a única origem dos pacotes que deve ser examinada.
+
+!ACLs de saída (Outbound): os pacotes de entrada são encaminhados para a interface de saída e processados 
+!em seguida por meio da ACL de saída. As ACLs de saída são mais usadas quando o mesmo filtro é aplicado 
+!aos pacotes que vêm de várias interfaces de entrada antes de saírem da mesma interface de saída.
+
+!ACL negar (deny) implícito: esta instrução é automaticamente inserida no final de cada ACL, embora não 
+!esteja fisicamente presente, o deny implícito bloqueia todo o tráfego, devido a este deny implícito, uma 
+!ACL que não tenha pelo menos uma instrução de permissão bloqueará todo o tráfego (de entrada ou saída).
+
+!ACLs padrão (Standard): as ACLs padrão podem ser usadas para permitir ou negar tráfego somente dos 
+!endereços IPv4 de origem, o destino do pacote e as portas envolvidas não são avaliados, devido ao 
+!“deny any” implícito no final, todo o tráfego restante é bloqueado com esta ACL, as ACLs padrão são 
+!criadas no modo de configuração global (configure terminal).
+
+!Opções das ACLs padrão: Permit (Permitir), Deny (Negar), Remark (Comentário), Source Address Network 
+!(Origem do Endereço da Rede - Network, Host=0.0.0.0 ou Any=255.255.255.255) e Wildcard Mask (Máscara 
+!Curinga)
+
+!Sintaxe da ACL padrão: access-list [1-99] [permit/deny] [any/host {IP} (origem)] [endereço IP / subrede]
+!Exemplo Network: access-list 10 permit 192.168.10.0 0.0.0.255
+!Exemplo Host: access-list 10 permit 192.168.10.10 0.0.0.0
+!Exemplo Host: access-list 10 permit host 192.168.10.10
+!Exemplo Any: access-list 10 permit 0.0.0.0 255.255.255.255
+!Exemplo Any: access-list 10 permit any
+
+!Numeração da ACL Padrão: 1 a 99 e 1300 a 1999
+!Nomeação da ACL Padrão: atribuição de nomes para a ACL independente se ela é Padrão ou Estendida, 
+!seguindo algumas regras: os nomes podem conter caracteres alfanuméricos, recomendo que o nome seja 
+!criado com LETRAS MAIÚSCULA, os nomes não podem conter espaço ou acentuação, é possível adicionar ou 
+!excluir entradas na ACL facilmente (diferente das ACL's numeradas).
+
+!Uma regra geral para aplicar ACLs em um roteador pode ser lembrada com base nos "Três Ps". Você pode 
+!configurar uma ACL por Protocolo (IPv4, IPv6, TCP, UDP, ICMP, etc), por Direção (IN ou OUT) e por 
+!Interface de Rede Física ou Virtual (ou Linhas Virtuais)
+
+!Uma ACL por Protocolo: para controlar o fluxo de tráfego em uma interface, deve-se definir uma ACL 
+!para cada protocolo ativado na interface.
+
+!Uma ACL por direção: as ACLs controlam o tráfego em uma direção de cada vez em uma interfaces, duas 
+!ACLs separadas devem ser criadas para controlar o tráfego de entrada e de saída.
+
+!Uma ACL por interface: as ACLs controlam o tráfego de uma interface, por exemplo, GigabitEthernet0/0.
+
+!Posicionamento da ACL Padrão: como as ACLs padrão não especificam endereços de destino, coloque-as o 
+!"Mais perto possível do destino". Colocar uma ACL padrão na origem do tráfego impedirá, com eficiência, 
+!que o tráfego acesse todas as outras redes através da interface onde é aplicada a ACL. Uma ACL padrão 
+!só pode filtrar o tráfego baseado em um endereço origem. 
+
+!OBSERVAÇÃO IMPORTANTE: sempre utilize um Editor de Texto para a criação ou alteração das ACLs, isso
+!facilita a administração e modificação das regras aplicadas em um Router ou Switch Layer 3. Utilize
+!também a opção: Remark (Comentário) das ACL para facilitar a documentação das regras. Para remover uma
+!entrada de ACL utilize o comando: no, existe também o comando: ip access-list standard para edição de
+!uma ACL criada, para isso você precisa saber o Número da Posição da ACL para editar, com o comando:
+!show access-list
+
+!PRIMEIRA ETAPA: 

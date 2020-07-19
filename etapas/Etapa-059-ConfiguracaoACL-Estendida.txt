@@ -1,0 +1,51 @@
+!Autor: Robson Vaamonde
+!Procedimentos em TI: http://procedimentosemti.com.br
+!Bora para Prática: http://boraparapratica.com.br
+!Robson Vaamonde: http://vaamonde.com.br
+!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+!Data de criação: 19/07/2020
+!Data de atualização: 19/07/2020
+!Versão: 0.01
+!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+
+!ACLs estendidas (Extended): as ACLs estendidas filtram os pacotes IPv4 com base em vários recursos que 
+!são: Tipo de Protocolo, Endereço IPv4 de origem, Endereço IPv4 de destino, Portas TCP ou UDP de origem, 
+!Portas TCP ou UDP de destino e Informações opcionais do Tipo de Protocolo para o melhor controle.
+
+!Opções das ACLs estendidas: Permit (Permitir), Deny (Negar), Remark (Comentário), Protocol (Protocolo - 
+!TCP, UDP, IP, ICMP, OSPF, EIGRP, etc), Source Address Network (Origem do Endereço da Rede - Network, 
+!Host=0.0.0.0 ou Any=255.255.255.255), Wildcard Mask (Máscara Curinga), Destination Address Network 
+!(Endereço de Rede de Destino - Network, Host=0.0.0.0, Any=255.255.255.255, EQ=equal, GT=greater than, 
+!LT=less than, NEQ=not equal ou Range), Wildcard Mask (Máscara Curinga), Additional Parameters (Parâmetros 
+!Adicionais - Precedence, Established, DSCP=Differentiated Services Code Point QoS, Q=equal, GT=greater 
+!than, LT=less than, NEQ=not equal ou Range) e Port Number (Número de Porta - 0 até 65535 ou nomes: ftp, 
+!pop3, smtp, www, telnet, bootps, bootpc, domain, etc).
+
+!Sintaxe da ACL estendida: access-list [100-199] [permit/deny] [protocolo] [any/host {IP} (origem)] 
+![endereço IP / subrede] [any/host {IP} (destino)] [endereço IP / subrede] [parâmetros adicionais]
+!Exemplo: access-list 101 permit tcp 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255 eq 80
+!Exemplo: access-list 101 permit tcp any eq 53 any
+
+!Numeração da ACL Estendida: 100 a 199 e 2000 a 2699.
+!Nomeação da ACL Estendida: segue a mesma configuração da ACL Padrão
+
+!Posicionamento da ACL Estendida: Diferente da ACL Padrão, localize as ACLs estendidas o "Mais perto 
+!possível da origem de tráfego a ser filtrado". Dessa forma, o tráfego não desejado é negado perto da 
+!rede de origem sem atravessar a infraestrutura de rede.
+
+!Igual a uma ACL padrão, uma ACL estendida pode filtrar o tráfego com base no endereço origem. No 
+!entanto, uma ACL estendida também pode filtrar o tráfego baseado no endereço de destino, protocolo e 
+!número de porta. Isso permite aos administradores de rede maior flexibilidade quanto ao tipo de tráfego 
+!que pode ser filtrado e ao posicionamento da ACL. 
+
+!OBSERVAÇÃO IMPORTANTE: sempre utilize um Editor de Texto para a criação ou alteração das ACLs, isso
+!facilita a administração e modificação das regras aplicadas em um Router ou Switch Layer 3. Utilize
+!também a opção: Remark (Comentário) das ACL para facilitar a documentação das regras. Para remover uma
+!entrada de ACL utilize o comando: no, existe também o comando: ip access-list standard para edição de
+!uma ACL criada, para isso você precisa saber o Número da Posição da ACL para editar, com o comando:
+!show access-list
+
+!PRIMEIRA ETAPA: 

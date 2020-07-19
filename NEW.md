@@ -78,28 +78,29 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
 058 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers<br>
-059 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers
+059 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers<br>
+060 Configuração da ACL Nomeada Standard e Extended nos Switches e Routers
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-060 Criação do Cenário de Conexão com a Internet SOHO<br>
-061 Configuração do Protocolo PPPoE Server no ISP<br>
-062 Configuração do Protocolo PPPoE Client ADSL no SOHO WRT-300N<br>
-063 Configuração da Rede SOHO Tri-Band Wireless<br>
-064 Configuração do Router Meraki MX65W<br>
-065 Configuração do Router Home Gateway DLC-100<br>
-066 Configuração do Router 4321 Switch 3650 e do WLC-3504 e LWAP-3702i<br>
-067 Configuração do NAT Estático no Router 4321<br>
-068 Configuração do NAT Dinâmico no Router 4321<br>
-069 Configuração do NAT Overload no Router 4321<br>
-070 Configuração do PAT Estático no Router 4321<br>
-071 Configuração do FHRP HSRP nos Router 4321<br>
-072 Configuração do FHRP VRRP nos Router 4321<br>
-073 Configuração do FHRP GLBP nos Router 4321<br>
-074 Configuração do Etherchannel PAgP nos Switches 3650<br>
-075 Configuração do Etherchannel LACP nos Switches 3650<br>
-076 Configuração do Firewall no ASA 5506<br>
-077 Configuração da VPN Site-to-Site<br>
-078 Configuração da VPN Site-to-Client
+061 Criação do Cenário de Conexão com a Internet SOHO<br>
+062 Configuração do Protocolo PPPoE Server no ISP<br>
+063 Configuração do Protocolo PPPoE Client ADSL no SOHO WRT-300N<br>
+064 Configuração da Rede SOHO Tri-Band Wireless<br>
+065 Configuração do Router Meraki MX65W<br>
+066 Configuração do Router Home Gateway DLC-100<br>
+067 Configuração do Router 4321 Switch 3650 e do WLC-3504 e LWAP-3702i<br>
+068 Configuração do NAT Estático no Router 4321<br>
+069 Configuração do NAT Dinâmico no Router 4321<br>
+070 Configuração do NAT Overload no Router 4321<br>
+071 Configuração do PAT Estático no Router 4321<br>
+072 Configuração do FHRP HSRP nos Router 4321<br>
+073 Configuração do FHRP VRRP nos Router 4321<br>
+074 Configuração do FHRP GLBP nos Router 4321<br>
+075 Configuração do Etherchannel PAgP nos Switches 3650<br>
+076 Configuração do Etherchannel LACP nos Switches 3650<br>
+077 Configuração do Firewall no ASA 5506<br>
+078 Configuração da VPN Site-to-Site<br>
+079 Configuração da VPN Site-to-Client
 
 ## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
 OSPF Multi Area, BGP, PPP, Frame-Relay, MPLS, QoS, PYTHON, JSON, SD-WAN,<br>
