@@ -54,7 +54,7 @@ enable
 			default-information originate 
 
 			!Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e RIPv2
-			!DICA: na redistribuição de rotas OSPFv2 a métrica e baseada no custo
+			!DICA: na redistribuição de rotas OSPFv2 a métrica e baseada no custo da largura de banda
 			redistribute rip metric 1000 subnets
 
 			!Configurando a Redistribuição de Rotas entre os protocolos OSPFv2 e EIGRP

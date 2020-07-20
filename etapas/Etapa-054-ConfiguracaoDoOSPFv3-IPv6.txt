@@ -34,7 +34,7 @@ enable
 		!OBSERVAÇÃO IMPORTANTE: o OSPFv3 IPv6 também precisa de uma Interface de Loopback para o Router-ID, essa
 		!configuração já foi executada nas configurações do OSPFv2 IPv4
 		!interface loopback 10
-			!description Interface de Router-ID do EIGRP AS 10
+			!description Interface de Router-ID do OSPFv3 IPv6
 			!ipv6 address 172.16.0.4 255.255.255.255
 			!exit
 		
@@ -61,6 +61,10 @@ enable
 
 			log-adjacency-changes detail
 			auto-cost reference-bandwidth 1000
+			
+			!OBSERVAÇÃO IMPORTANTE: aparentemente no Cisco Packet Tracer existe um Bug em relação a Redistribuição
+			!de Rotas Estática e Origem da Informação Padrão, mesmo executando no Script as Rotas não são redistri-
+			!buídas corretamente, sendo necessário executar os dois comandos novamente após aplicar o script.
 			redistribute static
 			default-information originate
 			exit
@@ -120,10 +124,11 @@ enable
 		ipv6 router ospf 10
 			router-id 172.16.0.2
 			auto-cost reference-bandwidth 1000
-            passive-interface vlan 1
-			log-adjacency-changes detail
-            exit
-        interface fastEthernet 0/24
+			!ADENDO IMPORTANTE: no script utilizado no vídeo você pode perceber a falha da Interface Passiva Vlan1
+			!no Cisco Packet Tracer o Switch Layer 3 não possui suporte a Interface Passiva em VLANs
+            log-adjacency-changes detail
+			exit
+			interface fastEthernet 0/24
 			ipv6 ospf 10 area 0
 			exit
 		interface vlan 1
@@ -131,7 +136,7 @@ enable
 			end
 write
 
-!QUARTA ETAPA: Configuração do Router 1941 da Primeira Topologia
+!QUARTA ETAPA: Configuração do Router 1941-1 da Primeira Topologia
 enable
 	configure terminal
 		ipv6 router ospf 10
@@ -139,7 +144,7 @@ enable
 			auto-cost reference-bandwidth 1000
 			log-adjacency-changes detail
 			passive-interface gigabitEthernet 0/0
-            exit
+			exit
         interface gigabitEthernet 0/1
 			ipv6 ospf 10 area 0
 			exit
