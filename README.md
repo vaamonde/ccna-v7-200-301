@@ -720,7 +720,7 @@ Link da vídeo aula:
 
 Nessa aula, vou fazer a configuração da ACL Nomeada (Stadnard e Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs nomeadas faz a atribuição de nomes para a ACL independente se ela é Padrão ou Estendida, seguindo algumas regras: os nomes podem conter caracteres alfanuméricos, recomendo que o nome seja criado com LETRAS MAIÚSCULA, os nomes não podem conter espaço ou acentuação, é possível adicionar ou excluir entradas na ACL facilmente (diferente das ACL's numeradas).
 
-As configurações da ACL Nomeada Standard e Extended nos Switches e Routers será feita utilizando o Script: 
+As configurações da ACL Nomeada Standard e Extended nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-060-ConfiguracaoACL-Nomeada.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-060.pkt
 

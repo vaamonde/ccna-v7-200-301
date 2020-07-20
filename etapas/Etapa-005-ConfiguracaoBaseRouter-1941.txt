@@ -53,7 +53,7 @@ enable
 
 		!Criação da chave de criptografia e habilitando o serviço do SSH Server local
 		!CUIDADO: não copiar todo o script na hora de colar no Router
-		!ADENDO IMPORTANTE: você pode substituir a linha pelo comando completo, que hoje e suportado no
+		!ADENDO IMPORTANTE: você pode substituir a linha pelo comando completo que hoje e suportado no
 		!Cisco PAcket Tracer: crypto key generate rsa usage-keys modulus 1024
 		crypto key generate rsa
 
@@ -71,7 +71,8 @@ enable
 		!OBSERVAÇÃO: períodos de tempo de bloqueio configurados em segundos (1 até 65535)
 		!OBSERVAÇÃO: tentativas de falhas de conexões em quantidade (1 até 65535)
 		!OBSERVAÇÃO: dentro do período de tempo configurado em segundos (1 até 65535)
-		!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 mais está disponível em Switch Layer 3 3560
+		!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 mais está disponível em 
+		!Switch Layer 3 3560
 		login block-for 120 attempts 2 within 60
 
 		!Acessando a linha console, porta padrão de acesso Out-of-Band (Fora da Banda)
@@ -95,7 +96,7 @@ enable
 		!Acessando a linha auxiliar, utilizada como acesso remoto utilizando Modem
 		!DICA: a porta auxiliar permite configurações do suporte de discagem (Modem)
 		!OBSERVAÇÃO: no simulador Cisco Packet Tracer as configurações são limitadas
-		!OBSERVAÇÃO: essa configuração não é cobrada no CCNAv7 hoje em dia não mais utilizada
+		!OBSERVAÇÃO: essa configuração não é cobrada no CCNAv7, hoje em dia não é mais utilizada
 		line aux 0
 
 			!Forçando fazer login local utilizando usuário e senha locais do switch

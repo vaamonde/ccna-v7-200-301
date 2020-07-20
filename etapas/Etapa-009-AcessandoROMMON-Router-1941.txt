@@ -18,8 +18,8 @@
 
 !ADENDO: No vídeo não foi comentando sobre a inicialização das Interfaces, por padrão nos arquivos running-config ou
 !startup-config o comando: no shutdown não está presente, quando você retorna um backup das configurações do Router
-!as Interfaces vão está no Status Shutdown, você pode adicionar no arquivos de configurações o comando para inicializar
-!as Interfaces
+!as Interfaces vão está no Status Shutdown, você pode adicionar nos arquivos de configurações o comando para inicializar
+!as Interfaces: no shutdown
 
 !PRIMEIRA ETAPA: parar a inicialização do Cisco IOS do Router 1941
 !DICA: no Cisco Packet Tracer utilizamos a combinação de teclas: Ctrl+C

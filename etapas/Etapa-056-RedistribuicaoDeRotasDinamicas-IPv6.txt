@@ -136,3 +136,36 @@ enable
 			ipv6 eigrp 10
 			end
 write
+
+!Visualizando as configurações da memória RAM
+show running-config | section ipv6 router
+
+!Visualizando informações do Protocolo OSPFv3 IPv6
+show ipv6 protocols
+show ipv6 route
+ping 2001:abcd:1234:8::8
+traceroute 2001:abcd:1234:8::8
+tracert 2001:abcd:1234:8::8
+
+!DICA IMPORTANTE: utilizar todos os comandos de verificação dos Protocolos Dinâmicos:
+!Protocolo RIPng
+show ipv6 rip database
+
+!Protocolo EIGRP
+show ipv6 eigrp interfaces 10
+show ipv6 eigrp topology 10
+show ipv6 eigrp neighbors 10
+show ipv6 eigrp traffic 10
+
+!Protocolo OSPFv3
+show ipv6 ospf
+show ipv6 ospf border-routers 
+show ipv6 ospf interface
+show ipv6 ospf neighbor 
+show ipv6 ospf neighbor detail
+show ipv6 ospf database
+show ipv6 ospf database external 
+show ipv6 ospf database router
+show ipv6 ospf database link
+show ipv6 ospf database network 
+show ipv6 ospf database prefix 
