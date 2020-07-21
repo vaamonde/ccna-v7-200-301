@@ -67,19 +67,19 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
+054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral<br>
+055 Redistribuição de Rotas Dinâmicas RIPv2 OSPFv2 e EIGRP
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral<br>
-055 Redistribuição de Rotas Dinâmicas RIPv2 OSPFv2 e EIGRP<br>
 056 Redistribuição de Rotas Dinâmicas RIPng OSPFv3 e EIGRP<br>
-057 Substituindo o Router 1941 da Segunda Topologia pelo Router 2911
+057 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers<br>
+058 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers<br>
+059 Configuração da ACL Nomeada Standard e Extended nos Switches e Routers<br>
+060 Substituindo o Router 1941 da Segunda Topologia pelo Router 2911
 
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
-058 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers<br>
-059 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers<br>
-060 Configuração da ACL Nomeada Standard e Extended nos Switches e Routers
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
 061 Criação do Cenário de Conexão com a Internet SOHO<br>

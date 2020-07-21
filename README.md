@@ -684,44 +684,44 @@ Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/ma
 
 Link da vídeo aula: 
 
-## **057 Substituição do Router 1941-2 pelo Router 2911-2 na Segunda Topologia - Laboratório Prático Cisco CCNAv7 200-301**
-
-Nessa aula, vou fazer a substituição do Router 1941-2 pelo Router 2911-2, essa substituição será feita na Segunda Topologia, nessa simulação de troca de equipamento, muito comum no dia-a-dia, quando temos a necessidade de trocar os equipamentos antigos da rede por equipamento mais novos ou quando o equipamento utilizado é danificado ou não aguenta mais o tráfego de dados, sendo necessário substituir por outro equipamento de maior capacidade de processamento e memória RAM.
-
-As configurações da Substituição dos Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-057-TrocaDoRouter-1941-pelo-Router-2911.txt
-
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-057-C.pkt
-
-Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-057-Z.pkt
-
-Link da vídeo aula: 
-
-## **058 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
+## **057 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da ACL Padrão (Standard) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs padrão podem ser usadas para permitir ou negar tráfego somente dos endereços IPv4 de origem, o destino do pacote e as portas envolvidas não são avaliados, devido ao “deny any” implícito no final, todo o tráfego restante é bloqueado com esta ACL, as ACLs padrão são criadas no modo de configuração global (configure terminal).
 
-As configurações da ACL Standard IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-058-ConfiguracaoACL-Padrao.txt
+As configurações da ACL Standard IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-057-ConfiguracaoACL-Padrao.txt
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-057.pkt
+
+Link da vídeo aula: 
+
+## **058 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
+
+Nessa aula, vou fazer a configuração da ACL Estendida (Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs estendidas filtram os pacotes IPv4 com base em vários recursos que são: Tipo de Protocolo, Endereço IPv4 de origem, Endereço IPv4 de destino, Portas TCP ou UDP de origem, Portas TCP ou UDP de destino e Informações opcionais do Tipo de Protocolo para o melhor controle.
+
+As configurações da ACL Extended IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-058-ConfiguracaoACL-Estendida.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-058.pkt
 
 Link da vídeo aula: 
 
-## **059 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
+## **059 Configuração da ACL Nomeada Standard e Extended nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração da ACL Estendida (Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs estendidas filtram os pacotes IPv4 com base em vários recursos que são: Tipo de Protocolo, Endereço IPv4 de origem, Endereço IPv4 de destino, Portas TCP ou UDP de origem, Portas TCP ou UDP de destino e Informações opcionais do Tipo de Protocolo para o melhor controle.
+Nessa aula, vou fazer a configuração da ACL Nomeada (Stadnard e Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs nomeadas faz a atribuição de nomes para a ACL independente se ela é Padrão ou Estendida, seguindo algumas regras: os nomes podem conter caracteres alfanuméricos, recomendo que o nome seja criado com LETRAS MAIÚSCULA, os nomes não podem conter espaço ou acentuação, é possível adicionar ou excluir entradas na ACL facilmente (diferente das ACL's numeradas).
 
-As configurações da ACL Extended IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-059-ConfiguracaoACL-Estendida.txt
+As configurações da ACL Nomeada Standard e Extended nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-059-ConfiguracaoACL-Nomeada.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-059.pkt
 
 Link da vídeo aula: 
 
-## **060 Configuração da ACL Nomeada Standard e Extended nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
+## **060 Substituição do Router 1941-2 pelo Router 2911-2 na Segunda Topologia - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração da ACL Nomeada (Stadnard e Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs nomeadas faz a atribuição de nomes para a ACL independente se ela é Padrão ou Estendida, seguindo algumas regras: os nomes podem conter caracteres alfanuméricos, recomendo que o nome seja criado com LETRAS MAIÚSCULA, os nomes não podem conter espaço ou acentuação, é possível adicionar ou excluir entradas na ACL facilmente (diferente das ACL's numeradas).
+Nessa aula, vou fazer a substituição do Router 1941-2 pelo Router 2911-2, essa substituição será feita na Segunda Topologia, nessa simulação de troca de equipamento, muito comum no dia-a-dia, quando temos a necessidade de trocar os equipamentos antigos da rede por equipamento mais novos ou quando o equipamento utilizado é danificado ou não aguenta mais o tráfego de dados, sendo necessário substituir por outro equipamento de maior capacidade de processamento e memória RAM.
 
-As configurações da ACL Nomeada Standard e Extended nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-060-ConfiguracaoACL-Nomeada.txt
+As configurações da Substituição dos Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-060-TrocaDoRouter-1941-pelo-Router-2911.txt
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-060.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-060-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-060-Z.pkt
 
 Link da vídeo aula: 

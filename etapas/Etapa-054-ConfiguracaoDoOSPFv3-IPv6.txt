@@ -124,8 +124,8 @@ enable
 		ipv6 router ospf 10
 			router-id 172.16.0.2
 			auto-cost reference-bandwidth 1000
-			!ADENDO IMPORTANTE: no script utilizado no vídeo você pode perceber a falha da Interface Passiva Vlan1
-			!no Cisco Packet Tracer o Switch Layer 3 não possui suporte a Interface Passiva em VLANs
+			!ADENDO IMPORTANTE: no script utilizado no vídeo você pode perceber a falha da Interface Passiva Vlan1,
+			!no Cisco Packet Tracer o Switch Layer 3 3560 não possui suporte a Interface Passiva em VLANs
             log-adjacency-changes detail
 			exit
 			interface fastEthernet 0/24
