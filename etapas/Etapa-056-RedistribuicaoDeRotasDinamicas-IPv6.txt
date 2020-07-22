@@ -22,7 +22,7 @@ enable
 			passive-interface default
 			no passive-interface gigabitEthernet 0/0
 			log-adjacency-changes detail
-			!default-information originate
+			default-information originate
 			
 			!Configurando a Redistribuição de Rotas entre o Protocolo OSPFv3 e os protocolos RIPng e EIGRP
 			redistribute rip 10 metric 1000
@@ -70,6 +70,10 @@ enable
 write
 
 !SEGUNDA ETAPA: Configuração do Switch Layer 3 3560 com o Protocolo OSPFv2
+!OBSERVAÇÃO IMPORTANTE: igual nas configurações dos Protocolos RIPng e EIGRP IPv6, o suporte ao Protocolo 
+!IPv6 do Switch Layer 3 3560 no Cisco Packet Tracer é limitado, a falha da Interface Roteada do Switch não 
+!permite fazer a comunicação com o Router 1941-2. Nesse cenário será feito a troca de LSA entre o Switch e 
+!Router, mais a troca da tabela de roteamento não será feita.
 enable
 	configure terminal
 		

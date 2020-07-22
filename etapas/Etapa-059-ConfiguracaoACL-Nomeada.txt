@@ -11,6 +11,12 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!.
+!Nomeação da ACL Padrão: atribuição de nomes para a ACL independente se ela é Padrão ou Estendida, 
+!seguindo algumas regras: os nomes podem conter caracteres alfanuméricos, recomendado que o nome seja 
+!criado com LETRAS MAIÚSCULA, os nomes não podem conter espaço ou acentuação, é possível adicionar ou 
+!excluir entradas na ACL facilmente (diferente das ACL's numeradas).
+
+!OBSERVAÇÃO IMPORTANTE: na nova Certificação da Cisco o CCNAv7 Exame 200-301 não é cobrado ACLs Padrão 
+!ou Estendida Nomeadas, somente ACLs numeradas.
 
 !PRIMEIRA ETAPA: 

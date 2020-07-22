@@ -52,10 +52,6 @@
 !Exemplo Any: access-list 10 permit any
 
 !Numeração da ACL Padrão: 1 a 99 e 1300 a 1999
-!Nomeação da ACL Padrão: atribuição de nomes para a ACL independente se ela é Padrão ou Estendida, 
-!seguindo algumas regras: os nomes podem conter caracteres alfanuméricos, recomendado que o nome seja 
-!criado com LETRAS MAIÚSCULA, os nomes não podem conter espaço ou acentuação, é possível adicionar ou 
-!excluir entradas na ACL facilmente (diferente das ACL's numeradas).
 
 !Uma regra geral para aplicar ACLs em um roteador pode ser lembrada com base nos "Três Ps". Você pode 
 !configurar uma ACL por Protocolo (IPv4, IPv6, TCP, UDP, ICMP, etc), por Direção (IN ou OUT) e por 
@@ -85,94 +81,91 @@
 enable
 	configure terminal
 
-        !Criando a ACL Padrão de Permissão do Host 192.168.1.10 de acessar o VTY do Router 1941-1
-        !DICA: a criação e aplicação das ACLs são sequenciais, verificando a correspondências (Match)
-        !da regra de Cima para Baixo
-        !OBSERVAÇÃO: a opção Remark só e mostrada no comando: show running-config, não aparecendo no
-        !comando: show access-list
-        access-list 1 remark Permitindo o Host 192.168.1.10 para acessar a VTY
+		!Criando a ACL Padrão de Permissão do Host 192.168.1.10 de acessar o VTY do Router 1941-1
+		!DICA: a criação e aplicação das ACLs são sequenciais, verificando a correspondências (Match)
+		!da regra de Cima para Baixo (top-down)
+		!OBSERVAÇÃO: a opção Remark só é mostrada no comando: show running-config, não aparecendo no
+		!comando: show access-list
+		access-list 1 remark Permitindo o Host 192.168.1.10 para acessar a VTY
 		access-list 1 permit host 192.168.1.10
-        access-list 1 remark Negando todos Hosts e Redes de acessar a VTY
+		access-list 1 remark Negando todos Hosts e Redes de acessar a VTY
 		access-list 1 deny any
 
-        !Configurando a Line VTY para permitir o acesso remoto do Host 192.168.1.10
-	    line vty 0 4
+		!Configurando a Line VTY para permitir o acesso remoto do Host 192.168.1.10
+		line vty 0 4
 
-            !Configurando a Classe de Filtro de Acesso da ACL na Line VTY
-            !DICA: aplicando a ACL Padrão nas configurações da Line VTY
-            !OBSERVAÇÃO: as ACLs em VTY permite negar ou liberar o acesso de Entrada (in - incoming) ou 
-            !Saída (out - outgoing) das conexões remotas.
-		    access-class 1 in
-		    end
+			!Configurando a Classe de Filtro de Acesso da ACL na Line VTY
+			!DICA: aplicando a ACL Padrão nas configurações da Line VTY
+			 !OBSERVAÇÃO: as ACLs em VTY permite negar ou liberar o acesso de Entrada (in - incoming) ou 
+			!Saída (out - outgoing) das conexões remotas.
+			access-class 1 in
+			end
 write
 
 !SEGUNDA ETAPA: Configuração da ACL Padrão no Router 1941-2 da Segunda Topologia
 enable
 	configure terminal
 
-        access-list 3 remark Permitindo o Host 192.168.1.10 para acessar a VTY
+		access-list 3 remark Permitindo o Host 192.168.1.10 para acessar a VTY
 		access-list 3 permit host 192.168.1.10
-        access-list 3 remark Permitindo o Host 192.168.3.1 para acessar a VTY
-        access-list 3 permit host 192.168.3.1
-        access-list 3 remark Negando todos os Hosts e Redes de acessar a VTY
+		access-list 3 remark Permitindo o Host 192.168.3.1 para acessar a VTY
+		access-list 3 permit host 192.168.3.1
+		access-list 3 remark Negando todos os Hosts e Redes de acessar a VTY
 		access-list 3 deny any
 
-	    line vty 0 5
-		    access-class 3 in
-		    end
+		line vty 0 5
+			access-class 3 in
+			end
 write
 
 !TERCEIRA ETAPA: Configuração da ACL Padrão no Switch Layer 3 3560 da Segunda Topologia
 enable
 	configure terminal
 
-        access-list 2 remark Permitindo a Rede 192.168.3.0 para acessar a VTY
+		access-list 2 remark Permitindo a Rede 192.168.3.0 para acessar a VTY
 		access-list 2 permit 192.168.3.0 0.0.0.255
-        access-list 2 remark Negando todos Hosts e Redes de acessar a VTY
+		access-list 2 remark Negando todos Hosts e Redes de acessar a VTY
 		access-list 2 deny any
 
-	    line vty 0 5
-		    access-class 2 in
-		    end
+		line vty 0 5
+			access-class 2 in
+			end
 write
 
 !QUARTA ETAPA: Configuração da ACL Padrão no Router 2911 da Terceira Topologia
 enable
 	configure terminal
 
-        access-list 4 remark Permitindo a Rede 192.168.100.0 para acessar a VTY
+		access-list 4 remark Permitindo a Rede 192.168.100.0 para acessar a VTY
 		access-list 4 permit 192.168.100.0 0.0.0.255
-        access-list 4 remark Permitindo o Host 192.168.1.10 para acessar a VTY
+		access-list 4 remark Permitindo o Host 192.168.1.10 para acessar a VTY
 		access-list 4 permit host 192.168.1.10
-        access-list 4 remark Permitindo o Host 192.168.3.1 para acessar a VTY
+		access-list 4 remark Permitindo o Host 192.168.3.1 para acessar a VTY
 		access-list 4 permit host 192.168.3.1
-        access-list 4 remark Negando todos os Hosts e Redes de acessar a VTY
+		access-list 4 remark Negando todos os Hosts e Redes de acessar a VTY
 		access-list 4 deny any
 
-        access-list 5 remark Negando todos os Hosts e Redes de saírem do VTY
-		access-list 5 deny any
+		access-list 5 remark Negando a Rede Sem-Fio Wi-Fi de acessar a Rede do Servidor
+		access-list 5 deny 192.168.50.0 0.0.0.255
+		access-list 5 remark Permitindo todas as Redes de acessar a Rede do Servidor
+		access-list 5 permit any
 
-        access-list 6 remark Negando a Rede Sem-Fio Wi-Fi de acessar a Rede do Servidor
-        access-list 6 deny 192.168.50.0 0.0.0.255
-        access-list 6 remark Permitindo todas as Redes de acessar a Rede do Servidor
-        access-list 6 permit any
+		!Configurando a Line VTY para permitir o acesso e negar a saída da VTY
+		line vty 0 4
 
-        !Configurando a Line VTY para permitir o acesso e negar a saída da VTY
-	    line vty 0 4
+			!Configurando a Classe de Filtro de Acesso da ACL de Entrada e Saída na Line VTY
+			access-class 4 in
+			exit
 
-            !Configurando a Classe de Filtro de Acesso da ACL de Entrada e Saída na Line VTY
-		    access-class 4 in
-            access-class 5 out
-		    exit
+		!Configurando a Sub-Interface da VLAN 100 para negar o acesso a Rede Sem-Fio Wi-Fi
+		interface gigabitEthernet 0/0.100
 
-        !Configurando a Sub-Interface da VLAN 100 para negar o acesso a Rede Sem-Fio Wi-Fi
-        interface gigabitEthernet 0/0.100
-
-            !Configurando o Grupo de Acesso da ACL Padrão na Interface
-            !DICA: essa opção controla o Fluxo de Acesso da ACL na Interface
-            !OBSERVAÇÃO: igual as Lines VTY temos as opções de Entrada (in - inbound) e Saída (out - outbound)
-            !dos pacotes na Interface
-            ip access-group 6 out
+			!Configurando o Grupo de Acesso da ACL Padrão na Interface
+			!DICA: essa opção controla o Fluxo de Acesso da ACL na Interface
+			!OBSERVAÇÃO: igual as Lines VTY temos as opções de Entrada (in - inbound) e Saída (out - 
+			!outbound) dos pacotes na Interface
+			ip access-group 5 out
+			end
 write
 
 !Visualizando as configurações da memória RAM

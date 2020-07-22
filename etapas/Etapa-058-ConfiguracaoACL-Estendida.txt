@@ -30,7 +30,6 @@
 !Exemplo: access-list 101 permit tcp any eq 53 any
 
 !Numeração da ACL Estendida: 100 a 199 e 2000 a 2699.
-!Nomeação da ACL Estendida: segue a mesma configuração da ACL Padrão
 
 !Posicionamento da ACL Estendida: Diferente da ACL Padrão, localize as ACLs estendidas o "Mais perto 
 !possível da origem de tráfego a ser filtrado". Dessa forma, o tráfego não desejado é negado perto da 
