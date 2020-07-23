@@ -122,7 +122,7 @@ enable
 		!DICA: por padrão os Switches Layer 2 e 3 não tem suporte ao protocolo IPv6 habilitado no IOS
 		!OBSERVAÇÃO: para habilitar o recurso do IPv6 nos Switches Layer 2 ou 3 utilizamos o SDM (Switching Database Manager)
 		!que tem o objetivo de gerenciar o uso da Memória TCAM (Ternary Content Addressable Memory) que é diferente da Tabela
-		!CAM (Content Addressable Memory) usado para configurar os recursos de Roteamente, ACL e QoS em Switches Catalyst
+		!CAM (Content Addressable Memory) usado para configurar os recursos de Roteamento, ACL e QoS em Switches Catalyst
 		!IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO O CCNAv7 EXAME 200-301 NÃO É COBRADO CONFIGURAÇÕES DO PROTOCOLO IPv6 NOS
 		!SWITCHES LAYER 2 OU 3, TAMBÉM, CONHECIMENTOS PROFUNDOS EM SDM E TCAM, ESSES TÓPICOS SÃO ABORDADOS NO CCNP R&S.
 		sdm prefer dual-ipv4-and-ipv6 default

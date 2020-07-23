@@ -42,7 +42,7 @@ enable
 		end
 write
 
-!PRIMEIRA ETAPA: Configuração do Router 2911 da Terceira Topologia
+!PRIMEIRA ETAPA: Configuração do Router 2911-1 da Terceira Topologia
 enable
 	configure terminal
 
@@ -51,7 +51,7 @@ enable
 		!e alteração da Distância Administrativa do protocolo
 		!OBSERVAÇÃO: diferente do RIPv2, muito parecido com o Protocolo EIGRP que trabalha com Número de Processo Local 
 		!(no EIGRP é chamado de AS Autonomous System), essa opção é obrigatória para o funcionamento do RIPng, essa opção permite 
-		!configurar os recursos de Redistribuição de Rotas ou mundança da Distância Administrativa do Protocolo.
+		!configurar os recursos de Redistribuição de Rotas ou mudança da Distância Administrativa do Protocolo.
 		!ADENDO IMPORTANTE: NO VÍDEO EU FALO "QUE NÃO É OBRIGATÓRIO ESSA CONFIGURAÇÃO" O CORRETO É: CRIAR O PROCESSO LOCAL DO RIPng
 		!PARA QUE SEJA POSSÍVEL INFORMAR NAS INTERFACES O RECURSO DO PROTOCOLO, O QUE NÃO É OBRIGATÓRIO É AS CONFIGURAÇÕES DA
 		!REDISTRIBUIÇÃO DE ROTAS OU MUDANÇA DO AD.
@@ -118,6 +118,9 @@ enable
 			ipv6 rip 10 enable
 			exit
 		interface serial 0/0/0
+			ipv6 rip 10 enable
+		!ADENDO IMPORTANTE: adicionando a Interface de Loopback 0 nas configurações do RIPng
+		interface loopback 0
 			ipv6 rip 10 enable
 			end
 write

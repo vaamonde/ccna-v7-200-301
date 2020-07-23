@@ -20,8 +20,8 @@
 !O OSPF é um Protocolo de Roteamento Link State (Estado do Link), utiliza o Algoritmo SPF Dijkstra para determinar
 !o melhor caminho na Topologia do OSPF, por padrão o OSPF é Classless (Sem Classe), tem suporte a Sumarização NLRI 
 !(Network Layer Reachability Information), tem suporte a Múltiplos Processos no mesmo equipamento (igual ao EIGRP),
-!os Process-ID (Indentificação do Processo) são localmente significativos (diferente do EIGRP que é globalmente 
-!significativos) e também utiliza uma Interface como Router-ID (Indentificação do Roteador, preferência para Interfaces
+!os Process-ID (Identificação do Processo) são localmente significativos (diferente do EIGRP que é globalmente 
+!significativos) e também utiliza uma Interface como Router-ID (Identificação do Roteador, preferência para Interfaces
 !de Loopback, igual no AS do Protocolo do EIGRP).
 
 !O OSPF trabalha com Áreas (Standard Area, Stub Area, Totally Stubby Area) sendo a Área 0 (Backbone) a padrão, possui 
@@ -102,7 +102,7 @@ enable
 		!de Identificação dos Processos Locais do OSPF vai de: 1 até 65.535 no Cisco Packet Tracer
 		router ospf 10
 
-			!Configurando a Indentificação do Router no Processo do OSPF
+			!Configurando a Identificação do Router no Processo do OSPF
 			!DICA: essa opção configura o recurso do Router-ID que será utilizado na Eleição é também para formar 
 			!adjacência entre os vizinhos do Domínio do OSPF
 			!OBSERVAÇÃO: no processo local do Protocolo OSPF, essa opção é muito importante para a escolha do roteador 
@@ -121,14 +121,14 @@ enable
 			!Switch Layer 3 da topologia do Domínio do Protocolo OSPF
 			!ADENDO IMPORTANTE: aparentemente no Cisco Packet Tracer existe um BUG em relação a Mudança do Custo da 
 			!Interface, mesmo alterando o valor, a referência de cálculo não é alterada, precisando acessar novamente o
-			!processo local do OSPF, alterar o valor para 10000 em todos os equipametos, e depois alterar para 1000 em
+			!processo local do OSPF, alterar o valor para 10000 em todos os equipamentos, e depois alterar para 1000 em
 			!todos os equipamentos para que o custo seja alterado.
 			auto-cost reference-bandwidth 1000
 
 			!Configurando a Redistribuição de Rotas Estática no Processo do OSPF
 			!DICA: essa opção redistribui no processo do OSPF as rotas estática aprendida pelo Router 2911
 			!OBSERVAÇÃO: as rotas estática e padrão aprendidas pelo Router 2911 que está conectado na Internet serão 
-			!adicionadas no processo local do Protocolo OSPF e redistribuida para todos os Router da Topologia
+			!adicionadas no processo local do Protocolo OSPF é redistribuída para todos os Router da Topologia
 			!OBSERVAÇÃO IMPORTANTE: por padrão o OSPF só redistribuí rotas estática Classful (% Only classful networks 
 			!will be redistributed), para redistribuir rotas estática Classless é necessário utilizar a opção subnets
 			redistribute static subnets
@@ -152,7 +152,7 @@ enable
 			passive-interface default
 			no passive-interface gigabitEthernet 0/0/0.999
 
-			!Configurando o Envio de Logs Detalhados das Mundaças da Adjacência no Processo do OSPF
+			!Configurando o Envio de Logs Detalhados das Mudanças da Adjacência no Processo do OSPF
 			!DICA: essa opção habilita o recurso do envio dos Log's detalhados da adjacência do OSPF para o Syslog
 			!OBSERVAÇÃO: essa opção está habilita por padrão no Protocolo OSPF, somente a opção simples não detalhada, 
 			!caso você não esteja utilizando o Syslog, as mensagens detalhadas serão armazenadas no Buffer local do 

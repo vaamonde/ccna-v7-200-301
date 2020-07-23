@@ -61,7 +61,7 @@ enable
 		end
 write
 
-!SEGUNDA ETAPA: Configuração do Endereço IPv6 Estático no Router 1941
+!SEGUNDA ETAPA: Configuração do Endereço IPv6 Estático no Router 1941-2
 enable
 	configure terminal
 		ipv6 unicast-routing
@@ -69,6 +69,14 @@ enable
 			ipv6 enable
 			ipv6 address FE80::254 link-local
 			ipv6 address 2001:abcd:1234:2::254/64
+			exit
+		!ADENDO IMPORTANTE: ficou faltando a configuração da Interface de Loopback 0 com os endereços de Link Local e Global
+		!Unicast para serem configurados nessa topologia, essa Interface será utilizada futuramente nos Protocolos de Roteamento
+		!Dinâmico RIPng, OSPFv3 e EIGRP
+		interface loopback 0
+			ipv6 enable
+			ipv6 address FE80::253 link-local
+			ipv6 address 2001:abcd:1234:253::253/64
 			exit
 		ipv6 route 2001:abcd:1234:3::/64 gigabitEthernet 0/0 FE80::1
 		end

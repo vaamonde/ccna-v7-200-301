@@ -94,7 +94,7 @@ enable
 			!DICA: essa configuração informa para os hosts do DHCPv6 que as informações complementares devem
 			!ser aprendidas pelo serviço do DHCPv6 Server (Domain Name, DNS Server, etc) configuradas no Pool
 			!OBSERVAÇÃO: através do recurso do protocolo ICMPv6, o host utiliza o recurso do Protocolo ND que
-			!ativa a Flag O (other-config-flag) nas solitações das configurações dos endereços IPv6 
+			!ativa a Flag O (other-config-flag) nas solicitações das configurações dos endereços IPv6 
 			ipv6 nd other-config-flag
 			exit
 		

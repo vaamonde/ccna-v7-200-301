@@ -33,11 +33,12 @@ enable
 			exit
 
 		!Configurando a Interface Local do Protocolo OSPFv3
-		!ADENDO IMPORTANTE: retirado a configuação da Interface de Loopback, essa Interface não foi configurada
-		!com os Endereços IPv6 de Link Local ou Global Unicast
 		interface gigabitEthernet 0/0
 			ipv6 ospf 10 area 0
 			ipv6 ospf cost 100
+			exit
+		interface loopback 0
+			ipv6 ospf 10 area 0
 			exit
 
 		!Configuração do Processo Local do RIPng IPv6
@@ -100,8 +101,8 @@ write
 
 !TERCEIRA ETAPA: Configuração do Router 1941-1 com o Protocolo RIPng IPv6
 !ADENDO IMPORTANTE: aparentemente existe um Bug no Cisco Packet Tracer quando você tenta pingar o endereço
-!IPv6 do Google quando está trabalhando com Redistribuição de Rotas, o ping não é executado com sucesso, nos
-!Desktops esse procedimento funciona corretamente.
+!IPv6 Global Unicast do Google quando está trabalhando com Redistribuição de Rotas, o ping não é executado 
+!com sucesso no Router, nos Desktops esse procedimento funciona corretamente.
 enable
 	configure terminal
 

@@ -106,6 +106,9 @@ enable
 			exit
 		interface serial 0/0/0
 			ipv6 eigrp 10
+		!ADENDO IMPORTANTE: adicionando a Interface de Loopback 0 nas configurações do EIGRP
+		interface loopback 0
+			ipv6 eigrp 10
 			end
 write
 
