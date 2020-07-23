@@ -16,6 +16,9 @@ enable
 	configure terminal
 
 		!Configuração do Processo Local do OSPFv3 IPv6
+		!ADENDO IMPORTANTE: devido ao erro da Interface Roteada do Switch Layer 3, o Prefixo da Rede do
+		!Segundo Router 1941-2 2001:abcd:1234:2::/64 não será propagada para os Routers 1941-1 e 2911-1,
+		!devido ao fato da Tabela de Roteamento do OSPFv3 está vazia.
  		ipv6 router ospf 10
 			router-id 172.16.0.3
 			auto-cost reference-bandwidth 1000
@@ -30,6 +33,8 @@ enable
 			exit
 
 		!Configurando a Interface Local do Protocolo OSPFv3
+		!ADENDO IMPORTANTE: retirado a configuação da Interface de Loopback, essa Interface não foi configurada
+		!com os Endereços IPv6 de Link Local ou Global Unicast
 		interface gigabitEthernet 0/0
 			ipv6 ospf 10 area 0
 			ipv6 ospf cost 100
@@ -69,7 +74,7 @@ enable
 			end
 write
 
-!SEGUNDA ETAPA: Configuração do Switch Layer 3 3560 com o Protocolo OSPFv2
+!SEGUNDA ETAPA: Configuração do Switch Layer 3 3560 com o Protocolo OSPFv3
 !OBSERVAÇÃO IMPORTANTE: igual nas configurações dos Protocolos RIPng e EIGRP IPv6, o suporte ao Protocolo 
 !IPv6 do Switch Layer 3 3560 no Cisco Packet Tracer é limitado, a falha da Interface Roteada do Switch não 
 !permite fazer a comunicação com o Router 1941-2. Nesse cenário será feito a troca de LSA entre o Switch e 
@@ -94,6 +99,9 @@ enable
 write
 
 !TERCEIRA ETAPA: Configuração do Router 1941-1 com o Protocolo RIPng IPv6
+!ADENDO IMPORTANTE: aparentemente existe um Bug no Cisco Packet Tracer quando você tenta pingar o endereço
+!IPv6 do Google quando está trabalhando com Redistribuição de Rotas, o ping não é executado com sucesso, nos
+!Desktops esse procedimento funciona corretamente.
 enable
 	configure terminal
 
