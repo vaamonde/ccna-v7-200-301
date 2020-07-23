@@ -47,4 +47,37 @@
 !uma ACL criada, para isso você precisa saber o Número da Posição da ACL para editar, com o comando:
 !show access-list
 
-!PRIMEIRA ETAPA: 
+!PRIMEIRA ETAPA: Configuração da ACL Estendida no Router 1941-1
+enable
+	configure terminal
+
+	end 
+write
+
+!SEGUNDA ETAPA: Configuração da ACL Estendida no Router 1941-2
+enable
+	configure terminal
+
+	end 
+write
+
+!TERCEIRA ETAPA: Configuração da ACL Estendida no Switch Layer 3 3560
+enable
+	configure terminal
+
+	end 
+write
+
+!QUARTA ETAPA: Configuração da ACL Estendida no Router 2911-1
+enable
+	configure terminal
+
+	end 
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section access-list
+
+!Visualizando informações das ACLs Padrão
+show access-list
+show ip interface gigabitEthernet 0/0.100

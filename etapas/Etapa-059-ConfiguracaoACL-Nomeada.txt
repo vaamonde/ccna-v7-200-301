@@ -19,4 +19,37 @@
 !OBSERVAÇÃO IMPORTANTE: na nova Certificação da Cisco o CCNAv7 Exame 200-301 não é cobrado ACLs Padrão 
 !ou Estendida Nomeadas, somente ACLs numeradas.
 
-!PRIMEIRA ETAPA: 
+!PRIMEIRA ETAPA: Configuração da ACL Estendida no Router 1941-1
+enable
+	configure terminal
+
+	end 
+write
+
+!SEGUNDA ETAPA: Configuração da ACL Estendida no Router 1941-2
+enable
+	configure terminal
+
+	end 
+write
+
+!TERCEIRA ETAPA: Configuração da ACL Estendida no Switch Layer 3 3560
+enable
+	configure terminal
+
+	end 
+write
+
+!QUARTA ETAPA: Configuração da ACL Estendida no Router 2911-1
+enable
+	configure terminal
+
+	end 
+write
+
+!Visualizando as configurações da memória RAM
+show running-config | section access-list
+
+!Visualizando informações das ACLs Padrão
+show access-list
+show ip interface gigabitEthernet 0/0.100

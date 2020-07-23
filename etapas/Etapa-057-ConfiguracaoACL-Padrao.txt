@@ -13,7 +13,7 @@
 
 !Uma ACL (Access Control List) é uma série de comandos de IOS que controlam se um roteador encaminha 
 !ou elimina pacotes com base nas informações encontradas no cabeçalho do pacote. Por padrão, um roteador 
-!não tem ACLs configuradas, portanto, por padrão um roteador não filtra o tráfego, as ACL's atuam nas 
+!não tem ACLs configuradas, portanto, por padrão um roteador não filtra o tráfego, as ACLs atuam nas 
 !camadas 3 e 4 do modelo OSI ou nas camadas 2 e 3 do modelo TCP.
 
 !Uma ACL é uma lista sequencial de instruções de permissão ou de negação, conhecidas como entradas de 
@@ -96,7 +96,7 @@ enable
 
 			!Configurando a Classe de Filtro de Acesso da ACL na Line VTY
 			!DICA: aplicando a ACL Padrão nas configurações da Line VTY
-			 !OBSERVAÇÃO: as ACLs em VTY permite negar ou liberar o acesso de Entrada (in - incoming) ou 
+			!OBSERVAÇÃO: as ACLs em VTY permite negar ou liberar o acesso de Entrada (in - incoming) ou 
 			!Saída (out - outgoing) das conexões remotas.
 			access-class 1 in
 			end

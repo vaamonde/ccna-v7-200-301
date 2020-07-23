@@ -31,7 +31,7 @@ logout
             eHWIC 3 - Módulo WIC-Cover
 
 !TERCEIRA ETAPA: desligar o Router 1941-2 e remover todas as Conexões WAN
-!OBSERVAÇÃO: recomendo desligar o Router 1941-2 antes de remover as conexões WAN
+!OBSERVAÇÃO: recomendado desligar o Router 1941-2 antes de remover as conexões WAN
 
 !QUARTA ETAPA: substituir o Router 1941-2 pelo Router 2911-2
 !OBSERVAÇÃO: refazer as conexões WAN com o Router desligado, depois ligar o Router com cabo Console
@@ -41,26 +41,27 @@ logout
 !QUARTO: Link da WAN Fiber.
 
 !QUINTA ETAPA: aplicando o Running-Config modificado para o Router 2911-2
-!OBSERVAÇÃO IMPORTANTE: muito cuidado nessa etapa, pois os Router ou Switch Layer 3 da Cisco uma vez configurado
-!já vai propagar suas informações de redes para os demais Router ou Switch Layer 3 da topologia, esse Router foi 
-!configurado com os Protocolos de Roteamento Dinâmico OSPFv2 IPv4 e OSPFv3 IPv6.
+!OBSERVAÇÃO IMPORTANTE: muito cuidado nessa etapa, pois os Router ou Switch Layer 3 da Cisco uma vez 
+!configurado já vai propagar suas informações de redes para os demais Router ou Switch Layer 3 da 
+!topologia, esse Router foi configurado com os Protocolos de Roteamento Dinâmico RIPv2, RIPng, OSPFv2,
+!OSPFv3 e EIGRP.
 
-!CUIDADO 01: adicionar os comandos: enable e configure terminal (esses comandos não são obrigatórios)
-!CUIDADO 02: adicionar os comando: terminal history size 256 e terminal monitor (esses comandos não são obrigatórios)
-!CUIDADO 03: alterar a data e hora: clock set 13:00:00 29 June 2020 (esse comando não é obrigatório)
-!CUIDADO 04: alterar o Hostname: rt-2911-2 (alteração mais importante do script)
-!CUIDADO 05: alterar as senhas: Tipo-5 e Tipo-7 vaamonde@pti (por padrão as senhas estão criptografadas)
-!CUIDADO 06: remover a linha: license udi pid CISCO1941/K9 sn FTX1524E30V (essa informação não é necessária)
-!CUIDADO 07: adicionar o comando: no shutdown nas Interfaces (por padrão as Interfaces estão desligadas no Router)
-!CUIDADO 08: alterar a senha do: NTP vaamonde (por padrão a senha está criptografada)
-!CUIDADO 09: alterar o Delimitador do: Banner # (recomendado alterar o delimitador para #)
-!CUIDADO 10: remover a linha: ip classless (esse recurso é configurado automáticamente no Router)
-!CUIDADO 11: adicionar o comando: crypto key generate rsa general-keys modulus 1024 (por padrão o serviço do SSH está desligado)
-!CUIDADO 12: adicionar o comando: write no final do script
+!CUIDADO 01: adicionar os comandos: enable e configure terminal (recomendado)
+!CUIDADO 02: adicionar os comando: terminal history size 256 e terminal monitor (recomendado)
+!CUIDADO 03: alterar a data e hora: clock set 13:00:00 29 June 2020 (recomendado)
+!CUIDADO 04: alterar o Hostname: rt-2911-2 (obrigatório)
+!CUIDADO 05: alterar as senhas: Tipo-5 e Tipo-7 vaamonde@pti (obrigatório)
+!CUIDADO 06: remover a linha: license udi pid CISCO1941/K9 sn FTX1524E30V (recomendado)
+!CUIDADO 07: adicionar o comando: no shutdown nas Interfaces (obrigatório)
+!CUIDADO 08: alterar a senha do: NTP vaamonde (obrigatório)
+!CUIDADO 09: alterar o Delimitador do: Banner # (recomendado)
+!CUIDADO 10: remover a linha: ip classless (recomendado)
+!CUIDADO 11: adicionar o comando: crypto key generate rsa general-keys modulus 1024 (obrigatório)
+!CUIDADO 12: adicionar o comando: write no final do script (recomendado)
 
-!SEXTA ETAPA: comandos de verificação da configuração e teste de conectividade
-show ip interface brief 
-show ipv6 interface brief 
+!SEXTA ETAPA: comandos de verificação da configuração e teste de conectividade de LAN e WAN
+show ip interface brief
+show ipv6 interface brief
 show ip route
 show ipv6 route
 ping 8.8.8.8

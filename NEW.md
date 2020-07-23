@@ -65,10 +65,10 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral<br>
 052 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral<br>
 053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral<br>
-054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral
+054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral<br>
+055 Redistribuição de Rotas Dinâmicas RIPv2 OSPFv2 e EIGRP
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
-055 Redistribuição de Rotas Dinâmicas RIPv2 OSPFv2 e EIGRP
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
 056 Redistribuição de Rotas Dinâmicas RIPng OSPFv3 e EIGRP<br>
@@ -80,9 +80,9 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 ## **ETAPA-03: Aulas Finalizadas os Estudos e Iniciado a Criação dos Scripts, não Disponível no Github:**
 
 ## **ETAPA-04: Aulas em Testes e Criação dos Scripts, não Disponível no Github:**
+061 Criação do Cenário de Conexão com a Internet SOHO<br>
 
 ## **ETAPA-05: Planejamento de Aulas para a Continuidade do Curso, não Disponível no Github:**
-061 Criação do Cenário de Conexão com a Internet SOHO<br>
 062 Configuração do Protocolo PPPoE Server no ISP<br>
 063 Configuração do Protocolo PPPoE Client ADSL no SOHO WRT-300N<br>
 064 Configuração da Rede SOHO Tri-Band Wireless<br>

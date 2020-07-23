@@ -670,7 +670,7 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-Z.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=CKERhz3VjSw
 
 ## **056 Redistribuição de Rotas Dinâmicas RIPng OSPFv3 e EIGRP - Laboratório Prático Cisco CCNAv7 200-301**
 
