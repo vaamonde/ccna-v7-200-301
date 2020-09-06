@@ -11,6 +11,10 @@ Facebook Bora para Prática: https://www.facebook.com/boraparapratica<br>
 Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
+Durante o curso você aprenderá passo a passo na prática a instalar e configurar o software de Simulação de Redes Cisco Packet Tracer v7.3 na Plataforma Microsoft ou GNU/Linux.
+
+Você vai aprender a criar todos os cenários e tecnologias que serão cobrados no Exame de Certificação da Cisco CCNAv7 200-301. Configurações dos Protocolos de Redes IPv4 e IPv6 serão aplicados em todos os cenários, sempre com foco nos conceitos técnico/teóricos, visando sempre o profissional de redes e infraestrutura quando for aplicar os seus conhecimentos em campo.
+
 ## **Links Oficiais da Cisco CCNAv7 200-301:**
 Cisco Certified Network Associate (200-301 CCNA): https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html<br>
 Implementing and Administering Cisco Solutions (CCNA) v1.0: https://www.cisco.com/c/en/us/training-events/training-certifications/training/training-services/courses/implementing-and-administering-cisco-solutions-ccna.html<br>
@@ -104,11 +108,11 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCt
 **ERRATA:** correções dos script, correções de falas, correções de configurações, etc;<br>
 **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou OBSERVAÇÃO;<br>
 **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação.<br>
-**OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação,
+**OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
 ## **000 Apresentação do Curso, da Nova Certificação CCNAv7 Exame 200-301, Download e Instalação do Cisco Packet Tracer v7.3**
 
-Nessa aula, será apresentado o Treinamento Oficial da Certificação da Cisco o CCNAv7 do Netacad, divido em três módulos: CCNAv7 Switching, Routing, and Wireless (Switch, Roteador e Rede Sem-Fio) CCNAv7 Introduction to Networks (Introdução a Redes de Computadores), CCNAv7 Enterprise Networking, Security and Automation (Redes Empresariais, Segurança e Automação), apresentação do novo Exame 200-301, download do Cisco Packet Tracer versão 7.3.
+Nessa aula, será apresentado o Treinamento Oficial do Netacad para a nova Certificação da Cisco o CCNAv7 Exame 200-301, dividido em três módulos: CCNAv7 Switching, Routing, and Wireless (Switch, Roteador e Rede Sem-Fio) CCNAv7 Introduction to Networks (Introdução a Redes de Computadores), CCNAv7 Enterprise Networking, Security and Automation (Redes Empresariais, Segurança e Automação), procedimentos para fazer o download e instalação do Cisco Packet Tracer versão 7.3. no GNU/Linux.
 
 Link para download das versões do Cisco Packet Tracer no MEGA.nz: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI 
 
@@ -120,9 +124,9 @@ Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamo
 
 ## **001 Configuração Base dos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, será utilizado o Simulador de Redes Cisco Packet Tracer versão 7.3.x, utilizado apenas 02 (dois) Cisco Switches Layer 2 2960 com acesso via Porta Console RS232/DB9 utilizando um Desktop e software de Terminal.
+Nessa aula, será criado a primeira topologia no Simulador de Redes Cisco Packet Tracer versão 7.3.x, utilizando apenas 02 (dois) Cisco Switches Layer 2 2960 com conexão via Porta Console RS232/DB9 conectados em um Desktop e acessados remotamente via software de Terminal.
 
-As configurações básicas dos Switches será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-001-ConfiguracaoBaseSwitch-2960.txt
+As configurações básicas dos Switches 2960 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-001-ConfiguracaoBaseSwitch-2960.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-001.pkt
 
@@ -130,7 +134,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 
 ## **002 Configuração das Linhas Virtuais VTY nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso de Linhas Virtuais VTY, que será utilizado para o acesso remoto dos equipamentos quando as Interface SVI estiverem configuradas e os Switches já entrar em produção na rede.
+Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso de Linhas Virtuais VTY (Virtual Terminal lines), que será utilizado para o acesso remoto dos equipamentos quando as Interface SVI (Switch Virtual Interface) estiverem configuradas e os Switches já entrar em produção na rede.
 
 As configurações dos VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-002-ConfiguracaoVTY.txt
 
