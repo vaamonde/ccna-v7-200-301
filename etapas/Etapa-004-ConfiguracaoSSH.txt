@@ -17,6 +17,10 @@ enable
 	!Acessando o modo de Configuração Global de comandos
 	configure terminal
 	
+		!Criando usuário local.
+		!usuário cisco para fins didaticos.
+		username cisco password cisco
+			
 		!Configuração do nome de Domínio FQDN (Nome de Domínio Totalmente Qualificado)
 		!DICA: o nome de Domínio é utilizado pelo Serviço do SSH e outros serviços de rede, como autenticação
 		ip domain-name vaamonde.pti
@@ -51,6 +55,9 @@ enable
 
 		!Acessando as linhas virtuais de acesso remoto do Switch
 		line vty 0 4
+		
+			!Definindo que acesso será feito com usuário local no Router.
+			login local
 		
 			!Configuração do protocolo de transporte somente SSH
 			transport input ssh
@@ -101,6 +108,10 @@ enable
 	!Acessando o modo de Configuração Global de comandos
 	configure terminal
 	
+		!Criando usuário local.
+		!usuário cisco para fins didaticos.
+		username cisco password cisco
+	
 		!Configuração do nome de domínio FQDN (Nome de Domínio Totalmente Qualificado)
 		ip domain-name vaamonde.pti
 
@@ -118,6 +129,9 @@ enable
 
 		!Acessando as linhas virtuais de acesso remoto do Switch
 		line vty 0 4
+		
+			!Definindo que acesso será feito com usuário local no Router.
+			login local
 		
 			!Configuração do protocolo de transporte somente SSH
 			transport input ssh
