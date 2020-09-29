@@ -34,7 +34,7 @@ enable
 		
 		!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Switch e Router
 		!OBSERVAÇÃO: a configuração da Marcação de Data/Hora detalhado nos Log já foi executada no Script Base
-		!service timestamps log datetime msec
+		service timestamps log datetime msec
 		
 		!Habilitando o Recurso de Log no Switch e Router
 		!DICA: por padrão todos os Logs habilitadoS no Switch ou Router são volátil
@@ -51,16 +51,16 @@ enable
 		logging trap debugging
 		
 		!Habilitando os Logs de Autenticação que será enviado para o Servidor de Syslog
-		!DICA: esse recurso aumenta o nível de segurança é auditoria da rede
-		!OBSERVAÇÃO: recomendo habilitar o recursos de sucesso e falhas de autenticação
+		!DICA: esse recurso aumenta o nível de segurança e auditoria da rede
+		!OBSERVAÇÃO: recomendo habilitar os recursos de sucesso e falhas de autenticação
 		!OBSERVAÇÃO: essas informações em conjunto com as regras de segurança aumenta nível de confiabilidade da rede
 		!OBSERVAÇÃO: esse recurso não está disponível no Switch Layer 2 2960
 		login on-success log
 		login on-failure log
 		
 		!Habilitando os Logs de Nível de Privilégio de Autenticação do Usuário
-		!DICA: esse recurso mostrar no momento da autenticação qual é o privilégio do usuário
-		!OBSERVAÇÃO: esse recurso facilita a administração é o monitoramento dos equipamentos utilizados na rede
+		!DICA: esse recurso mostra no momento da autenticação qual é o privilégio do usuário
+		!OBSERVAÇÃO: esse recurso facilita a administração e o monitoramento dos equipamentos utilizados na rede
 		!OBSERVAÇÃO: esse recurso não está disponível no Switch Layer 2 2960
 		logging userinfo
 		
