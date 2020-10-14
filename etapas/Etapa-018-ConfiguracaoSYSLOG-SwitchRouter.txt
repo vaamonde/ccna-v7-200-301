@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 02/05/2020
-!Data de atualização: 02/05/2020
-!Versão: 0.01
+!Data de atualização: 29/09/2020
+!Versão: 0.02
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !SYSLOG é um padrão criado pela IETF (Internet Engineering Task Force) para a transmissão de mensagens
@@ -51,16 +51,16 @@ enable
 		logging trap debugging
 		
 		!Habilitando os Logs de Autenticação que será enviado para o Servidor de Syslog
-		!DICA: esse recurso aumenta o nível de segurança é auditoria da rede
-		!OBSERVAÇÃO: recomendo habilitar o recursos de sucesso e falhas de autenticação
+		!DICA: esse recurso aumenta o nível de segurança e auditoria da rede
+		!OBSERVAÇÃO: recomendo habilitar os recursos de sucesso e falhas de autenticação
 		!OBSERVAÇÃO: essas informações em conjunto com as regras de segurança aumenta nível de confiabilidade da rede
 		!OBSERVAÇÃO: esse recurso não está disponível no Switch Layer 2 2960
 		login on-success log
 		login on-failure log
 		
 		!Habilitando os Logs de Nível de Privilégio de Autenticação do Usuário
-		!DICA: esse recurso mostrar no momento da autenticação qual é o privilégio do usuário
-		!OBSERVAÇÃO: esse recurso facilita a administração é o monitoramento dos equipamentos utilizados na rede
+		!DICA: esse recurso mostra no momento da autenticação qual é o privilégio do usuário
+		!OBSERVAÇÃO: esse recurso facilita a administração e o monitoramento dos equipamentos utilizados na rede
 		!OBSERVAÇÃO: esse recurso não está disponível no Switch Layer 2 2960
 		logging userinfo
 		
