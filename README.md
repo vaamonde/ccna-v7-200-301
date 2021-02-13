@@ -682,11 +682,11 @@ Nessa aula, vou fazer a redistribuição de rotas dinâmicas utilizando os proto
 
 As configurações da Redistribuição de Rotas Dinâmicas RIPng OSPFv3 e EIGRP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-056-RedistribuicaoDeRotasDinamicas-IPv6.txt
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-C.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-056-C.pkt
 
-Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-Z.pkt
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-056-Z.pkt
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=atQTXHXu5Uc
 
 ## **057 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
 
