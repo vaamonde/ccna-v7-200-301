@@ -11,7 +11,7 @@ Facebook Bora para Prática: https://www.facebook.com/boraparapratica<br>
 Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 
-Durante o curso você aprenderá passo a passo na prática a instalar e configurar o software de Simulação de Redes Cisco Packet Tracer v7.3 na Plataforma Microsoft ou GNU/Linux.
+Durante o curso você aprenderá passo a passo na prática a instalar e configurar o software de Simulação de Redes Cisco Packet Tracer v7.3, 7.3.1 ou 8.0 na Plataforma Microsoft ou GNU/Linux.
 
 Você vai aprender a criar todos os cenários e tecnologias que serão cobrados no Exame de Certificação da Cisco CCNAv7 200-301. Configurações dos Protocolos de Redes IPv4 e IPv6 serão aplicados em todos os cenários, sempre com foco nos conceitos técnico/teóricos, visando sempre o profissional de redes e infraestrutura quando for aplicar os seus conhecimentos em campo.
 
@@ -39,7 +39,7 @@ Laboratórios de Tecnologias Cisco, Samuel Henrique (Português): https://novate
 IPv6 - O Novo Protocolo da Internet, Samuel Henrique (Português): https://www.novatec.com.br/livros/ipv6/<br>
 Laboratório de IPv6, Equipe IPv6 (Português): http://ipv6.br/pagina/livro-ipv6/<br>
 CCNA 6.0 - Guia Completo de Estudo, Marco Aurelio Filippetti (Português): https://www.americanas.com.br/produto/100208315/ccna-6-0-guia-completo-de-estudo-1<br>
-Certificaçao CCNA - Guia Preparatório para o Exame 200-120, Alexandre Vieria de Oliveira, Jefferson Lisboa Melo (Português): https://www.americanas.com.br/produto/16372263/certificacao-ccna-guia-preparatorio-para-o-exame-200-120<br>
+Certificação CCNA - Guia Preparatório para o Exame 200-120, Alexandre Vieria de Oliveira, Jefferson Lisboa Melo (Português): https://www.americanas.com.br/produto/16372263/certificacao-ccna-guia-preparatorio-para-o-exame-200-120<br>
 Configurando Switches e Roteadores de Cisco: Guia para a Certificação CCENT/CCNA, César Felipe G. Silva (Português): https://www.americanas.com.br/produto/116404584/livro-configurando-switches-e-roteadores-de-cisco-guia-para-a-certificacao-ccent-ccna
 
 ## **Site com Questões da Prova de CCNAv7 200-301 - CCNAv6 200-125:**
@@ -96,8 +96,8 @@ GNU/Linux: Notepadqq: https://notepadqq.com/s/
 
 ## **Indicação de Software de TFTP (Trivial File Transfer Protocol):**
 SolarWinds TFTP Server Free: https://www.solarwinds.com/free-tools/free-tftp-server/registration<br>
-TFTP32 Opensource: http://tftpd32.jounin.net/tftpd32_download.html<br>
-TFTP Opensource GNU/Linux: https://wiki.debian.org/TFTP
+TFTP32 Open Source: http://tftpd32.jounin.net/tftpd32_download.html<br>
+TFTP Open Source GNU/Linux: https://wiki.debian.org/TFTP
 
 ## **Playlist do YouTUBE de todos os Vídeos do Curso de CCNAv7 200-301:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
@@ -114,11 +114,15 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCt
 
 Nessa aula, será apresentado o Treinamento Oficial do Netacad para a nova Certificação da Cisco o CCNAv7 Exame 200-301, dividido em três módulos: CCNAv7 Switching, Routing, and Wireless (Switch, Roteador e Rede Sem-Fio) CCNAv7 Introduction to Networks (Introdução a Redes de Computadores), CCNAv7 Enterprise Networking, Security and Automation (Redes Empresariais, Segurança e Automação), procedimentos para fazer o download e instalação do Cisco Packet Tracer versão 7.3. no GNU/Linux.
 
-Link para download das versões do Cisco Packet Tracer no MEGA.nz: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI 
+[![Packet Tracer 7.3](http://img.youtube.com/vi/4EIO6Ma0foA/0.jpg)](http://www.youtube.com/watch?v=4EIO6Ma0foA "Packet Tracer 7.3")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=4EIO6Ma0foA&t
 
+[![Packet Tracer 7.3.1](http://img.youtube.com/vi/wEk0oBzGC6M/0.jpg)](http://www.youtube.com/watch?v=wEk0oBzGC6M "Packet Tracer 7.3.1")
+
 Atualização da vídeo aula com os procedimentos para instalar no Linux Mint 20 e no Ubuntu 20.04: https://www.youtube.com/watch?v=wEk0oBzGC6M
+
+Link para download das versões do Cisco Packet Tracer no MEGA.nz: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI
 
 Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-000-PT-7.3-no-LinuxMint20.txt
 
@@ -126,111 +130,137 @@ Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamo
 
 Nessa aula, será criado a primeira topologia no Simulador de Redes Cisco Packet Tracer versão 7.3.x, utilizando apenas 02 (dois) Cisco Switches Layer 2 2960 com conexão via Porta Console RS232/DB9 conectados em um Desktop e acessados remotamente via software de Terminal.
 
+[![Aula 001](http://img.youtube.com/vi/Zj04S_UOYzw/0.jpg)](http://www.youtube.com/watch?v=Zj04S_UOYzw "Aula 001")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
+
 As configurações básicas dos Switches 2960 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-001-ConfiguracaoBaseSwitch-2960.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-001.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=Zj04S_UOYzw
 
 ## **002 Configuração das Linhas Virtuais VTY nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso de Linhas Virtuais VTY (Virtual Terminal lines), que será utilizado para o acesso remoto dos equipamentos quando as Interface SVI (Switch Virtual Interface) estiverem configuradas e os Switches já entrar em produção na rede.
 
+[![Aula 002](http://img.youtube.com/vi/i3vWPr0xvDU/0.jpg)](http://www.youtube.com/watch?v=i3vWPr0xvDU "Aula 002")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
+
 As configurações dos VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-002-ConfiguracaoVTY.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-002.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=i3vWPr0xvDU&t
 
 ## **003 Configuração do Gateway e SVI nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso de Switch Virtual Interface SVI e Gateway, essas configurações são utilizadas junto com o VTY (linhas virtuais) para o acesso remoto e o gerenciamento dos equipamentos.
 
+[![Aula 003](http://img.youtube.com/vi/cOZDezhef3o/0.jpg)](http://www.youtube.com/watch?v=cOZDezhef3o "Aula 003")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=cOZDezhef3o&t
+
 As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-003-ConfiguracaoGatewaySVI.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-003.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=cOZDezhef3o&t
 
 ## **004 Configuração do SSH Server nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações dos Switches Layer 2 2960, agora habilitando o recurso do serviço de acesso remoto seguro utilizando o protocolo SSH (Secure Shell), essas configurações são utilizadas junto com o VTY (linhas virtuais) e o SVI (interface virtual do switch) para o acesso remoto e o gerenciamento dos equipamentos de forma segura.
 
+[![Aula 004](http://img.youtube.com/vi/uP9DdcipNvg/0.jpg)](http://www.youtube.com/watch?v=uP9DdcipNvg "Aula 004")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
+
 As configurações do VTY será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-004-ConfiguracaoSSH.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-004.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=uP9DdcipNvg
 
 ## **005 Configuração Base do Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração Base do Cisco Router 1941, nesse cenário, utilizando os conhecimentos adquiridos até agora, seu processo de configuração será mais rápido, será aplicado o script base com apenas alguns recursos a mais em relação ao Switch Layer 2 2960 que não tem suporte, nesse Router será configurado a Porta Aux (Auxiliar).
 
+[![Aula 005](http://img.youtube.com/vi/hNlAzBushZ0/0.jpg)](http://www.youtube.com/watch?v=hNlAzBushZ0 "Aula 005")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=hNlAzBushZ0
+
 As configurações do Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-005-ConfiguracaoBaseRouter-1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-005.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=hNlAzBushZ0
 
 ## **006 Configuração da Interface no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, daremos continuidade nas configurações do Router 1941, agora configurando a Interface GigabitEthernet que será utilizada como Gateway da Rede LAN.
 
+[![Aula 006](http://img.youtube.com/vi/WfvVUL-WQVs/0.jpg)](http://www.youtube.com/watch?v=WfvVUL-WQVs "Aula 006")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=WfvVUL-WQVs&t
+
 As configurações da Interface será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-006-ConfiguracaoInterfaceRouter-1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-006.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=WfvVUL-WQVs&t
 
 ## **007 Backup das Configurações e do Cisco IOS dos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer o backup das configurações dos Switches Layer 2 2960 e do Router 1941 para o Servidor de TFTP (Trivial File Transfer Protocol), o backup consiste das configurações do Running-Config ou Startup-Config de cada equipamento na rede e do Cisco IOS (Internetwork Operating System) utilizados nos Switches e Router.
 
+[![Aula 007](http://img.youtube.com/vi/giOOtn4AQxE/0.jpg)](http://www.youtube.com/watch?v=giOOtn4AQxE "Aula 007")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=giOOtn4AQxE&t
+
 As configurações do Backup será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-007-BackupConfiguracaoCiscoIOS.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-007.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=giOOtn4AQxE&t
 
 ## **008 Atualização do Cisco IOS nos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a atualização da versão do Cisco IOS (Internetwork Operating System) utilizando o Servidor TFTP (Trivial File Transfer Protocol) dos Switches Layer 2 2960.
 
+[![Aula 008](http://img.youtube.com/vi/NbqqlAwChOQ/0.jpg)](http://www.youtube.com/watch?v=NbqqlAwChOQ "Aula 008")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=NbqqlAwChOQ&t
+
 As configurações da Atualização será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-008-UpdateCiscoIOS-Switch-2960.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-008.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=NbqqlAwChOQ&t
 
 ## **009 Acessando o Modo ROMMON do Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou mostrar como acessar o Modo ROMMON (Monitor da ROM) utilizado para fazer a manutenção do equipamento, atualização do sistema, quebra de senhas, reset do equipamento e muitas vezes, caso tenha falha de inicialização do POST (Power-on Selt-Test) é nesse modo que os equipamentos da Cisco fica parado, com recursos limitados e apenas com ferramentas de manutenção.
 
+[![Aula 009](http://img.youtube.com/vi/vC6fIQAX1N8/0.jpg)](http://www.youtube.com/watch?v=vC6fIQAX1N8 "Aula 009")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=vC6fIQAX1N8&t=
+
 As configurações para o acesso ao ROMMON será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-009-AcessandoROMMON-Router-1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-009.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=vC6fIQAX1N8&t=
 
 ## **010 Documentação da Topologia de Rede - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou mostrar como fazer a documentação básica da topologia de rede, utilizando os recursos de Bloco de Notas (Notes) do Cisco Packet Tracer, documentando os equipamentos de rede, desktop, servidores, conexões de rede e endereços IPv4/IPv6.
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-010.pkt
+[![Aula 010](http://img.youtube.com/vi/MTH9bEkBm9w/0.jpg)](http://www.youtube.com/watch?v=MTH9bEkBm9w "Aula 010")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=MTH9bEkBm9w
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-010.pkt
 
 ## **011 Expandindo a Topologia em 3 Camadas - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou expandir a Topologia de Rede no modelo de Hierarquia de Três Camadas, adicionando um Router 1941 como Núcleo (Core), um Switch Layer 3 3560 como Distribuição (Distribuition) e dois Switches Layer 2 2960 como Acesso (Access), adicionando um Servidor na Distribuição (Não Indicado), um Ponto de Acesso (Access Point) para Rede Sem-Fio (Wireless - Wi-Fi) 802.11-N na Distribuição (Não Indicado) e Desktops nos Switches de Acesso, será feito a interligação dos Switches com Caminhos Redundantes (Loop de Camada 2).
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-011.pkt
+[![Aula 011](http://img.youtube.com/vi/_YVXarhu-io/0.jpg)](http://www.youtube.com/watch?v=_YVXarhu-io "Aula 011")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=_YVXarhu-io&t
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-011.pkt
 
 ## **012 Configuração do Servidor DHCPv4 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de DHCPv4 (Dynamic Host Configuration Protocol IPv4), essa configuração será feita no Servidor, lembrando que o Switch Layer 3 ou Router possui esse recurso, o uso do serviço de DHCP facilita á configuração dinâmica dos endereçamentos IPv4 em todos os dispositivos finais da rede.
+
+[![Aula 012](http://img.youtube.com/vi/4meY7WSk2-Y/0.jpg)](http://www.youtube.com/watch?v=4meY7WSk2-Y "Aula 012")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=4meY7WSk2-Y&t
 
 As configurações Base dos Switches e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-012-ConfiguracaoBaseCenario.txt
 
@@ -238,385 +268,463 @@ As configurações do DHCPv4 Server será feita utilizando o Script: https://git
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-012.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=4meY7WSk2-Y&t
-
 ## **013 Configuração do Servidor DNSv4 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de DNSv4 (Domain Name System IPv4), essa configuração será feita no Servidor, esse recurso facilita o acesso a equipamentos, serviços de rede ou computadores da nossa topologia utilizando nomes, o servidor de DNS é o principal serviço utilizado nas redes locais e principalmente no acesso a internet, como por exemplo Sites Web.
+
+[![Aula 013](http://img.youtube.com/vi/qE76uyWSLR8/0.jpg)](http://www.youtube.com/watch?v=qE76uyWSLR8 "Aula 013")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=qE76uyWSLR8&t
 
 As configurações do DNSv4 Server será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-013-ConfiguracaoDNSv4Server.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-013.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=qE76uyWSLR8&t
-
 ## **014 Configuração do Servidor FTP e HTTP/HTTPS - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de FTP (File Transfer Protocol) e do Servidor HTTP/HTTPS (Hypertext Transfer Protocol - Hypertext Transfer Protocol Secure), essa configuração será feita no Servidor, o FTP é um dos principais serviços de transferência de arquivos na Internet (hoje substituído pelo SFTP Secure File Transfer Protocol ou SSH Secure Shell), o HTTP/HTTPS é o principal serviço de Hospedagem de Páginas Web na Internet, utilizando principalmente a Linguagem de Marcação de Texto HTML (Hypertext Markup Language) para hospedar páginas HTML dinâmicas ou estáticas. 
+
+[![Aula 014](http://img.youtube.com/vi/krHwI-nlloM/0.jpg)](http://www.youtube.com/watch?v=krHwI-nlloM "Aula 014")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=krHwI-nlloM&t
 
 As configurações do FTP e HTTP/HTTPS Server será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-014-ConfiguracaoFTP-HTTP.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-014.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=krHwI-nlloM&t
-
 ## **015 Configuração do Servidor SMTP e POP3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de SMTP (Simple Mail Transfer Protocol) e do Servidor POP3 (Post Office Protocol v3), essa configuração será feita no Servidor, o SMTP é o principal serviço de envio de mensagens de emails na Internet já o POP3 é o principal serviço para acessar remotamente os Mail Box e baixar as mensagens de e-mail em clientes ou gerenciados de e-mail como o Microsoft Office Outlook.
+
+[![Aula 015](http://img.youtube.com/vi/_aoi9GurBNE/0.jpg)](http://www.youtube.com/watch?v=_aoi9GurBNE "Aula 015")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=_aoi9GurBNE&t
 
 As configurações do SMTP e POP3 Server será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-015-ConfiguracaoSMTP-POP3.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-015.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=_aoi9GurBNE&t
-
 ## **016 Configuração do DNS nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DNS (Domain Name System) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita o acesso remoto utilizando o protocolo SSH ou testes de rede com o protocolo ICMP (Internet Control Message Protocol - ping, traceroute, tracert, etc) por nomes, fazendo a tradução dos nomes dos equipamentos para o endereço IPv4 correspondente, utilizando o serviço de DNS configurado no Servidor ou consultando a base de nomes locais do equipamento.
+
+[![Aula 016](http://img.youtube.com/vi/q6AblFEplEQ/0.jpg)](http://www.youtube.com/watch?v=q6AblFEplEQ "Aula 016")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=q6AblFEplEQ&t
 
 As configurações do DNS nos Switches e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-016-ConfiguracaoDNS-SwiotchRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-016.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=q6AblFEplEQ&t
-
 ## **017 Configuração do NTP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do NTP (Network Time Protocol) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração faz o sincronismo e alteração de Data/Hora nos equipamentos de rede, facilitando a administração, padronização e confiabilidade nos registros de Logs e eventos dos equipamentos de rede, registrando as informações com Data/Hora corretas.
+
+[![Aula 017](http://img.youtube.com/vi/X1f7bHZTSGs/0.jpg)](http://www.youtube.com/watch?v=X1f7bHZTSGs "Aula 017")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=X1f7bHZTSGs
 
 As configurações do NTP nos Switches e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-017-ConfiguracaoNTP-SwitchRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-017.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=X1f7bHZTSGs
-
 ## **018 Configuração do SYSLOG nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do SYSLOG (System Logging) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita a centralização de todos os Logs de eventos dos equipamentos de rede, ajudando no processo de resolução de problemas e análise das falhas ou mudanças nos equipamentos.
+
+[![Aula 018](http://img.youtube.com/vi/zlFcWwAOY54/0.jpg)](http://www.youtube.com/watch?v=zlFcWwAOY54 "Aula 018")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=zlFcWwAOY54&t
 
 As configurações do SYSLOG nos Switches e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-018-ConfiguracaoSYSLOG-SwitchRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-018.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=zlFcWwAOY54&t
-
 ## **019 Configuração do SNMP nos Switches e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do SNMP (Simple Network Management Protocol) nos Switches Layer 2 2960, Switch Layer 3 3560 e no Router 1941, essa configuração facilita a administração e monitoramento dos equipamentos da rede, utilizando o protocolo SNMP podemos obter dados de estatísticas das interfaces de rede, status das interfaces e alteração das informações ou configurações remotas. 
+
+[![Aula 019](http://img.youtube.com/vi/jxWzbjhihtg/0.jpg)](http://www.youtube.com/watch?v=jxWzbjhihtg "Aula 019")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=jxWzbjhihtg
 
 As configurações do SNMP nos Switches e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-019-ConfiguracaoSNMP-SwitchRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-019.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=jxWzbjhihtg
-
 ## **020 Configuração do WPA2 no Access Point 802.11-N - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do WPA2 (Wi-Fi Protected Access v2) no Ponto de Acesso (Access Point) modelo 802.11-N utilizado para conectar os dispositivos de rede Sem-Fio (Wireless - Wi-Fi) da topologia (Notebook, Smartphone e Tablet), na nova certificação da Cisco CCNA v7 200-301 a configuração de dispositivos de rede sem-fio e a grande novidade, nas versões anteriores era cobrado somente a parte teórica, agora e cobrado a parte prática. Nessa primeira etapa será configurado os conceitos básicos do Ponto de Acesso, depois será acrescentado os equipamentos WLC (Wireless Lan Controller) que são cobrados na nova certificação. 
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-020.pkt
+[![Aula 020](http://img.youtube.com/vi/-qExeM_Xk3s/0.jpg)](http://www.youtube.com/watch?v=-qExeM_Xk3s "Aula 020")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=-qExeM_Xk3s&t
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-020.pkt
 
 ## **021 Configuração do Speed, Duplex e MDIX nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Speed (Velocidade da Interface/Porta de Rede), Duplex (Modo de Transmissão - Half-Duplex, Full-Duplex ou Auto) e o recurso do MDIX (Medium-Dependent Interface), todos os recursos das configurações de Interface/Porta de Rede são necessários em casos onde a auto-negociação da Interface/Porta de Rede não esteja disponível ou quando temos necessidade de atender pré-requisitos de uma determinada tecnologia, nessa aula vou mostrar os conceitos de segurança para desabilitar as Interface/Porta de Redes que não estão em uso nos nossos Switches.
 
+[![Aula 021](http://img.youtube.com/vi/obRpiRL2Fns/0.jpg)](http://www.youtube.com/watch?v=obRpiRL2Fns "Aula 021")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=obRpiRL2Fns
+
 As configurações do Speed, Duplex e MDIX no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-021-ConfiguracaoSpeedDuplex-Switch.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-021.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=obRpiRL2Fns
 
 ## **022 Configuração do Switchport e Port-Security nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Switchport e Port-Security no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de Switchport permite mudar o Tipo de Porta que usamos no nosso Switch, como por exemplo Access (Porta de Acesso) ou Trunk (Porta de Tronco), já o Port-Security tem o objetivo de mitigar um ataque do Tipo MAC Flood (Inundação de Endereços MAC), aplicando políticas de segurança baseadas em endereços Físicos de Placa de Rede (MAC Address) e bloqueando ou desativando a porta em caso de violação.
 
+[![Aula 022](http://img.youtube.com/vi/qA4Rl8sPKAk/0.jpg)](http://www.youtube.com/watch?v=qA4Rl8sPKAk "Aula 022")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=qA4Rl8sPKAk&t
+
 As configurações do Switchport e Port-Security no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-022-ConfiguracaoSwitchport-Portsecurity.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-022.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=qA4Rl8sPKAk&t
 
 ## **023 Configuração do DHCP Snooping nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação) no Switch Layer 3 3560 e nos Switches Layer 2960, os recursos de DHCP Snooping tem como objetivo mitigar ataques do tipo Man In The Middle (Homem no Meio), ele é um recurso de camada 2, que age filtrando mensagens DHCP não confiáveis/inválidas, criando um banco de dados de informações (DHCP Snooping Binding Table) e configurado Portas Confiáveis e Portas não Confiáveis.
 
+[![Aula 023](http://img.youtube.com/vi/JjKn7deNcvU/0.jpg)](http://www.youtube.com/watch?v=JjKn7deNcvU "Aula 023")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=JjKn7deNcvU&t
+
 As configurações do DHCP Snooping/Spoofing no Switch Layer 3 e nos Switches Layer 2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-023-ConfiguracaoDoDHCPSnooping.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-023.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=JjKn7deNcvU&t
 
 ## **024 Configuração da Interface Roteada no Switch Layer 3 3560 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Interface (Porta de Rede) Roteada do Switch Layer 3 3560, utilizando o recurso de Switchport na Porta de Rede e transformando uma porta de Switch em uma Interface de Rede, permitindo a configuração do endereçamento IPv4 ou IPv6, habilitando o recurso de ip routing o nosso Switch Layer 3 se torna uma Roteador para a rede LAN, fazendo o roteamento na cada de hardware.
 
+[![Aula 024](http://img.youtube.com/vi/VqjnM85f-z4/0.jpg)](http://www.youtube.com/watch?v=VqjnM85f-z4 "Aula 024")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=VqjnM85f-z4
+
 As configurações da Porta Roteada no Switch Layer 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-024-ConfiguracaoDaInterfaceRoteada.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-024.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=VqjnM85f-z4
 
 ## **025 Configuração da Rota Estática e Padrão no Router e Switch Layer 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Rota Estática (static route) nos Roteadores 1941 e da Rota Padrão no Switch Layer 3 3560, a utilização da rota estática é o método mais simples de roteamento que temos nos Roteadores e Switches Layer 3, geralmente a rota estática e utilizada em Links Ponto-a-Ponto ou em redes com pouca complexidade, já a rota padrão e utilizada quando queremos atingir redes que não estão no nosso alcance ou não consta na tabela de roteamento local, usamos a rota padrão em Links de ISP (Internet Service Provider), WAN (Wide Área Network), VPN (Virtual Private Network), Internet, etc.
 
+[![Aula 025](http://img.youtube.com/vi/i2DRjhiHewA/0.jpg)](http://www.youtube.com/watch?v=i2DRjhiHewA "Aula 025")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=i2DRjhiHewA
+
 As configurações da Rota Estática e Padrão no Switch e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-025-ConfiguracaoDaRotaEstaticaPadrao.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-025.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=i2DRjhiHewA
 
 ## **026 Configuração da Rota Estática Flutuante no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Rota Estática Flutuante (floating static route) no Router 1941, a utilização da rota estática flutuante é um dos métodos mais simples de configuração de rota backup e redundância de Links de WAN, utilizada principalmente em redes Ponto-a-Ponto (Point-to-Point), para a configuração da Rota Estática Flutuante funcionar corretamente na nossa Topologia, será necessário manipular o valor da Distância Administrativa (AD Administrative Distance - Confiabilidade do Link), nesse cenário vou mostrar o processo de configuração nas Interfaces Seriais e a criação da Rota Estática Flutuante nesse Link.
 
+[![Aula 026](http://img.youtube.com/vi/V7sk4ttVzkk/0.jpg)](http://www.youtube.com/watch?v=V7sk4ttVzkk "Aula 026")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=V7sk4ttVzkk
+
 As configurações da Rota Estática Flutuante no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-026-ConfiguracaoDaRotaEstaticaFlutuante.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-026.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=V7sk4ttVzkk
 
 ## **027 Configuração da Interface de Loopback no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Interface de Loopback no Router 1941, á Interface de Loopback é uma interface lógica e virtual em um Roteador ou Switch Layer 3 da Cisco, uma interface de loopback não é uma interface física como as interfaces FastEthernet ou GigabitEthernet, as Interfaces de Loopback estão sempre ativas e sempre disponíveis, mesmo se outras interfaces físicas no roteador estiverem inativas (down), utilizadas principalmente para teste de rede e nos protocolos de roteamento dinâmico, como o OSPF (Open Shortest Path First), BGP (Border Gateway Protocol), RSRB (Remote Source-Route Bridging) e DLSW+ (Data-Link Switching Plus) entre outros.
 
+[![Aula 027](http://img.youtube.com/vi/vb4ZZwBBlCk/0.jpg)](http://www.youtube.com/watch?v=vb4ZZwBBlCk "Aula 027")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=vb4ZZwBBlCk
+
 As configurações da Interface de Loopback no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-027-ConfiguracaoDaInterfaceLoopback.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-027.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=vb4ZZwBBlCk
 
 ## **028 Configuração do NetFlow no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do NetFlow (Fluxo da Rede) no Router 1941, a utilização do recurso de NetFlow em nossa topologia tem como objetivo analisar os Fluxos de Dados em nossa Rede, obtendo dados de protocolos, endereços IPv4 ou IPv6 de origem e destino, monitorando a utilização da largura de banda, rastreando tráfegos de rede e ajudando no planejamento de capacidade de Links ou recursos da rede.
 
+[![Aula 028](http://img.youtube.com/vi/xTmZIDfrQVE/0.jpg)](http://www.youtube.com/watch?v=xTmZIDfrQVE "Aula 028")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=xTmZIDfrQVE&t
+
 As configurações do NetFlow no Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-028-ConfiguracaoDoNetFlowNaInterfaceDoRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-028.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=xTmZIDfrQVE&t
 
 ## **029 Configuração do Servidor IoT Manager Registrator - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de IoT Manager Registrator (Internet of Things - IoE Internet of Everything), essa configuração será feita no Servidor da Primeira Topologia, o Servidor de Registro e Gerenciamento de Dispositivos de Internet das Coisas, tem como objetivo gerenciar todos os dispositivos de automação analógico ou digital da nossa infraestrutura de rede, oferecendo a centralização e controle dos dispositivos e automatizando as tarefas de monitoramento consumo de recursos da rede, nesse cenário vou simular um ambiente de CFTV (Circuito Fechado de TV).
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-029.pkt
+[![Aula 029](http://img.youtube.com/vi/2B_skmB_Ucs/0.jpg)](http://www.youtube.com/watch?v=2B_skmB_Ucs "Aula 029")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=2B_skmB_Ucs&t=
+
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-029.pkt
 
 ## **030 Configuração do CDP e LLDP nos Switches Layer 2 e 3 e Router - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do CDP (Cisco Discovery Protocol) que é um protocolo proprietário da camada de ligação de dados desenvolvido pela Cisco que tem como principal função a descoberta de equipamentos na rede, facilitando a compreensão da topologia da rede e de sua arquitetura, também, vou fazer a configuração do protocolo LLDP (Link-Layer Discovery Protocol) que tem a mesma finalidade do CDP, com a diferença de ser um padrão da indústria (IEEE 802.1AB) que pode ser implementado por qualquer fabricante, o que faz dele uma solução bem mais flexível do que o CDP em ambientes com dispositivos de múltiplos fabricantes.
 
+[![Aula 030](http://img.youtube.com/vi/SA4d8nd5rxM/0.jpg)](http://www.youtube.com/watch?v=SA4d8nd5rxM "Aula 030")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=SA4d8nd5rxM
+
 As configurações do CDP e LLDP nos Switches Layer 2 e 3 e Router será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-030-ConfiguracaoDoCDP_LLDP.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-030.pkt
-
-Link da vídeo aula: https://www.youtube.com/watch?v=SA4d8nd5rxM
 
 ## **031 Configuração do Dynamic ARP Inspection DAI nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Dynamic ARP Inspection DAI (Inspeção Dinâmica do ARP) nos Switches Layer 2 e 3, o DAI é um recurso de segurança que protege o Protocolo ARP (Address Resolution Protocol) contra possíveis vulnerabilidades de ataques como ARP Poisoning (Envenenamento por ARP), o DAI trabalha em conjunto com o DHCP Snooping/Spoofing (Bisbilhotar-Bisbilhotando/Falsificação), quando o DAI está habilitado no Switch ele descarta os pacotes ARP se o endereço MAC e IP do remetente não correspondem a uma entrada válida no banco de dados do DHCP Snooping. 
 
+[![Aula 031](http://img.youtube.com/vi/qUU_JNBbN7A/0.jpg)](http://www.youtube.com/watch?v=qUU_JNBbN7A "Aula 031")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=qUU_JNBbN7A&t
+
 As configurações do Dynamic ARP Inspection nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-031-ConfiguracaoDoDynamicARP_Inspection.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-031.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=qUU_JNBbN7A&t
-
 ## **032 Configuração do STP e RSTP BÁSICO nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do STP (Spanning Tree Protocol) e do RSTP (Rapid Spanning Tree - rapid-pvst Per-Vlan rapid spanning tree mode) nos Switches Layer 2 e 3, o STP é um protocolo da camada 2 que é executado em interligações dos Switches na nossa topologia. A especificação para o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede. O protocolo RSTP detecta topologias de rede para fornecer uma convergência mais rápida em relação ao STP e cria uma rede sem loop de camada 2. 
+Nessa aula, vou fazer a configuração do STP (Spanning Tree Protocol) e do RSTP (Rapid Spanning Tree - Rapid-PVST Per-Vlan Rapid Spanning Tree Mode) nos Switches Layer 2 e 3, o STP é um protocolo da camada 2 que é executado em interligações dos Switches na nossa topologia. A especificação para o STP é IEEE 802.1D, o propósito principal do STP é assegurar-se que você não crie ou exista caminhos redundantes (loop) em sua rede. O protocolo RSTP detecta topologias de rede para fornecer uma convergência mais rápida em relação ao STP e cria uma rede sem loop de camada 2. 
+
+[![Aula 032](http://img.youtube.com/vi/usoZfyFhcGw/0.jpg)](http://www.youtube.com/watch?v=usoZfyFhcGw "Aula 032")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=usoZfyFhcGw&t
 
 As configurações do STP e RSTP BÁSICO nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-032-ConfiguracaoDoSTP_RSTP.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-032.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=usoZfyFhcGw&t
-
 ## **033 Configuração do Servidor RADIUS e TACACS+ - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor de AAA (Authentication, Authorization and Accounting), essa configuração será feita no Servidor, utilizando os serviços do RADIUS (Remote Authentication Dial In User Service) e do TACACS+ (Terminal Access Controller Access-Control System), esse recurso tem o objetivo de permitir a autenticação nos equipamentos de rede ou serviços de rede utilizando uma base de dados centralizada de usuários e senhas, permitindo aplicar políticas de segurança, criação de grupos, geração de relatórios para auditória e muito mais.
+
+[![Aula 033](http://img.youtube.com/vi/L-c6c3cLQSA/0.jpg)](http://www.youtube.com/watch?v=L-c6c3cLQSA "Aula 033")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=L-c6c3cLQSA
 
 As configurações do Servidor de RADIUS e TACACS+ será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-033-ConfiguracaoDoTacacsRadiusNoSwitchRouter.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-033.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=L-c6c3cLQSA
-
 ## **034 Interligando uma Nova Rede WAN Fiber na Topologia - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou interligar uma nova Rede WAN Fiber (Fibra Óptica) mantendo o modelo de Hierarquia de Três Camadas, adicionando um Router 2911 como Núcleo (Core), um Switch Layer 3 3560 como Distribuição (Distribuition) e dois Switches Layer 2 2960 como Acesso (Access), adicionando um Servidor na Distribuição (Não Indicado), um Ponto de Acesso (Access Point) para Rede Sem-Fio (Wireless - Wi-Fi) 802.11-AC 5.0Ghz na Distribuição (Não Indicado) e Desktops nos Switches de Acesso, será feito a interligação dos Switches com Caminhos Redundantes (Loop de Camada 2). Nessa topologia o diferencial vai ser a configuração da simulação de uma Rede GPON (Gigabit Passive Optical Network), simulando as OLT's (Optical Line Terminal) ou ONU's (Optical Network Unit) e ONT's (Optical Network Terminal), adicionando Módulo SFP (Small Form Pluggable) para suporte a GBIC (Gigabit Interface Converter).
+
+[![Aula 034](http://img.youtube.com/vi/gwgLz6P7a24/0.jpg)](http://www.youtube.com/watch?v=gwgLz6P7a24 "Aula 034")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=gwgLz6P7a24
 
 Configuração base do cenário será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-034-ConfiguracaoDosSwitchesRouter-TopologiaFiber.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-034.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=gwgLz6P7a24
-
 ## **035 Configuração do VTP Server e Client nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Serviços de VTP (VLAN Trunk Protocol), essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, o VTP é um protocolo proprietário da Cisco de Camada 2 que está disponível na maioria dos produtos da série de Switches Catalyst. O VTP reduz a administração em uma rede de Switches, quando você configura uma VLAN nova em um servidor VTP, a VLAN será distribuída através de todos os Switches no domínio VTP, isso reduz a necessidade de configurar a mesma VLAN em todos os Switches manualmente.
+
+[![Aula 035](http://img.youtube.com/vi/NZ3yW7h9Xjw/0.jpg)](http://www.youtube.com/watch?v=NZ3yW7h9Xjw "Aula 035")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=NZ3yW7h9Xjw
 
 As configurações do VTP Server e Client nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-035-ConfiguracaoVTP_ServerClient.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-035.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=NZ3yW7h9Xjw
-
 ## **036 Configuração da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração das VLAN (Virtual-LAN - Local Area Network) e das Portas de Tronco (Trunk), essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, as VLANs é uma rede logicamente independente, várias VLANs podem coexistir em um mesmo Switch, de forma a dividir uma rede local em mais de uma rede, criando domínios de Broadcast separados. Uma Porta de Tronco, normalmente usada para interligação de Switches ou ligação a Roteadores, ela permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no Switch podem passar por ela, no entanto o administrador pode limitar ao número de VLANs que podem passar pelo Trunk.
+
+[![Aula 036](http://img.youtube.com/vi/HuAGMPQlTZ4/0.jpg)](http://www.youtube.com/watch?v=HuAGMPQlTZ4 "Aula 036")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=HuAGMPQlTZ4&t
 
 As configurações da VLAN e Trunk BÁSICO nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-036-ConfiguracaoDasVLAN_Trunk.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-036.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=HuAGMPQlTZ4&t
-
 ## **037 Configuração do STP Portfast BÁSICO nos Switches Layer 2 e 3 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do STP Portfast, Portfast Trunk, Portfast BPDU Guard e do Switchport Trunk Allowed, essa configuração será feita no Switch Layer 3 e nos Switches Layer 2, STP Portfast é o recurso do STP que faz com que uma Porta do Switch entre imediatamente no estado de encaminhamento (Forwarding), ignorando os estados de ouvindo (Listening) e aprendendo (learning). O recurso de STP Portfast Trunk tem a mesma finalidade do STP Portfast, mais é somente configurado em Portas de Tronco (Trunk) com dispositivos que não são Switches, como por exemplo: Roteadores (Router), Servidores, Pontes (Bridge) e etc. O recurso de BPDU Guard é usado para proteger a topologia do protocolo STP contra ataques relacionados ao BPDU. O recurso do Switchport Trunk Allowed permite fazer a Poda/Filtro (Pruning) nas Interfaces configuradas como Tronco (Trunk), permitindo passar ou negar o tráfego das VLANs configuradas, aumentando o nível de segurança da topologia de rede e filtrando tráfegos de VLANs desnecessárias na rede.
+
+[![Aula 037](http://img.youtube.com/vi/7_ipamH2ok4/0.jpg)](http://www.youtube.com/watch?v=7_ipamH2ok4 "Aula 037")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=7_ipamH2ok4&t
 
 As configurações do STP Portfast nos Switches Layer 2 e 3 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-037-ConfiguracaoSTP_Portfast.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-037.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=7_ipamH2ok4&t
-
 ## **038 Configuração do Router-on-a-Stick no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do Router-on-a-Stick, essa configuração será feita no Router 2911, o Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede, é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma subinterface em um roteador Cisco usa a interface física para enviar e receber quadros (frames) e as subinterface virtuais para enviar e receber pacotes (packets), as subinterfaces são usadas para vários propósitos, principalmente para o roteamento entre VLANs, quando não temos o recurso do Switche Layer 3 na rede.
+Nessa aula, vou fazer a configuração do Router-on-a-Stick, essa configuração será feita no Router 2911, o Router-on-a-Stick (Roteador em um Bastão) é um roteador que possui uma única conexão física ou lógica a uma rede, é frequentemente usado para encaminhar tráfego entre computadores conectados localmente em domínios de roteamento lógicos separados ou para facilitar a administração, distribuição e retransmissão da tabela de roteamento. Uma Subinterface é uma interface virtual criada pela divisão de uma interface física em várias interfaces lógicas, uma subinterface em um roteador Cisco usa a interface física para enviar e receber quadros (frames) e as subinterface virtuais para enviar e receber pacotes (packets), as subinterfaces são usadas para vários propósitos, principalmente para o roteamento entre VLANs, quando não temos o recurso do Switch Layer 3 na rede.
+
+[![Aula 038](http://img.youtube.com/vi/85Y2TdjpNRE/0.jpg)](http://www.youtube.com/watch?v=85Y2TdjpNRE "Aula 038")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=85Y2TdjpNRE
 
 As configurações do Router-on-a-Stick no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-038-ConfiguracaoDoRouterOn-a-Stick.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-038.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=85Y2TdjpNRE
-
 ## **039 Configuração do DHCPv4 Server no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCPv4 Server, essa configuração será feita no Router 2911, os recursos de DHCP Server em Roteadores ou Switches Layer 3 da Cisco são limitados, é recomendado utilizar Servidores Microsoft ou GNU/Linux em uma rede corporativa, as principais limitações dos servidores DHCP em Router e Switch são: opções de configurações avançadas, integrações de serviços de rede, relatórios, etc. 
+
+[![Aula 039](http://img.youtube.com/vi/Idbmi03D7Hs/0.jpg)](http://www.youtube.com/watch?v=Idbmi03D7Hs "Aula 039")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=Idbmi03D7Hs
 
 As configurações do DHCPv4 Server no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-039-ConfiguracaoDoDHCP_ServerNoRouter2911.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-039.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=Idbmi03D7Hs
-
 ## **040 Configuração do Protocolo RIPv2 nos Router 1941 e 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Protocolo de Roteamento Dinâmico RIPv2 (Routing Information Protocol), essas configurações serão feitas nos Router 2911 e 1941, o RIPv2 é um protocolo de roteamento baseado no algoritmo de Vetor de Distância, ele foi projetado para ser usado como um IGP (Interior Gateway Protocol) em redes de abrangência moderada com tamanho máximo de 15 saltos (Hopes, Routers, Gateway), a primeira versão do RIP foi descrita na RFC 1058 em 1988.
+
+[![Aula 040](http://img.youtube.com/vi/vFBiRRc5TLw/0.jpg)](http://www.youtube.com/watch?v=vFBiRRc5TLw "Aula 040")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=vFBiRRc5TLw
 
 As configurações do Protocolo RIPv2 nos Router 1941 e 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-040-ConfiguracaoDoRIPv2NoRouter2911_1941.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-040.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=vFBiRRc5TLw
-
 ## **041 Conectando com a Internet ADSL no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou interligar uma nova Rede ADSL (Asymmetric Digital Subscriber Line) interligando com o Router 2911 da Terceira Topologia, adicionando um Modem ADSL que será conectado utilizando o Cabeamento Telefônico na WAN Emulation (Emulador de WAN), será adicionado um Router 1941 que será conectado diretamente no Servidor de DNS da Google. Nessa topologia o diferencial vai ser a configuração da simulação de uma Rede xDSL (Digital Subscriber Line), simulando por exemplo uma conexão do Antigo Vivo Speedy ADSL, nesse cenário não será configurado o serviço de PPPoE (Point-to-Point Protocol over Ethernet) que ficará para um próximo cenário, apenas a interligação e configuração das Redes WAN e LAN e simulando o Servidor de DNS do Google.
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-041.pkt
+[![Aula 041](http://img.youtube.com/vi/gslS_zNLnuk/0.jpg)](http://www.youtube.com/watch?v=gslS_zNLnuk "Aula 041")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=gslS_zNLnuk
 
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-041.pkt
+
 ## **042 Configurando o IP Helper Address e DHCPv4 Client no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração do IP Helper Address (Ajuda de Endereço IP), essas configurações serão feitas no Router 1941 do DNS Google, o IP Helper são endereços IP configurados em uma Interface Roteada como uma Interface de VLAN ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc) de roteadores que permite que esse dispositivo específico atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
+Nessa aula, vou fazer a configuração do IP Helper Address (Ajuda de Endereço IP), essas configurações serão feitas no Router 1941 do DNS Google, o IP Helper são endereços IP configurados em uma Interface Roteada como uma Interface de VLAN ou uma Interface Ethernet (FastEthernet, GigabitEthernet, etc...) de roteadores que permite que esse dispositivo específico atue como um intermediário (middle man) que encaminha a solicitação DHCP do BOOTP (Broadcast) que recebe em uma interface para o Servidor DHCP especificado pelo endereço IP Helper via Unicast.
+
+[![Aula 042](http://img.youtube.com/vi/y4veNnLzDE8/0.jpg)](http://www.youtube.com/watch?v=y4veNnLzDE8 "Aula 042")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=y4veNnLzDE8
 
 As configurações do IP Helper Address e DHCPv4 Client no Router 1941 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-042-ConfiguracaoDoIP_DHCP_Helper.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-042.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=y4veNnLzDE8
-
 ## **043 Redistribuindo a Rota Padrão no RIPv2 no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Redistribuição da Rota Padrão no Protocolo de Roteamento Dinâmico RIPv2, essa configuração será feita no Router 2911, a configuração de Rotas Padrão Estáticas em todos os dispositivos de rede da infraestrutura é complicada e de difícil administração, essa função pode ser executada automaticamente com a propagação de rota padrão no RIPv2, conhecida como Default Information Originate (Origem de Informações Padrão).
+
+[![Aula 043](http://img.youtube.com/vi/yiaIp41yYVc/0.jpg)](http://www.youtube.com/watch?v=yiaIp41yYVc "Aula 043")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=yiaIp41yYVc
 
 As configurações da Redistribuição de Rota Padrão no RIPv2 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-043-ConfiguracaoDaRedistribuicaoDeRotaRIPv2.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-043.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=yiaIp41yYVc
-
 ## **044 Configuração do Endereçamento IPv6 Estático - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Endereçamento IPv6 Estático, essas configurações serão feitas nos Desktop, Servidor,  Router 1941 e nos Switches Layer 2 2960, O IPv6 (Internet Protocol Version 6) é a versão mais atual do Protocolo de Internet, originalmente oficializada em 6 de Junho de 2012, é fruto do esforço do IETF (Internet Engineering Task Force) para criar a "nova geração do IP", cujas linhas mestras foram descritas por Scott Bradner e Allison Marken, em 1994, na RFC 1752. Sua principal especificação encontra-se na RFC 2460.
+
+[![Aula 044](http://img.youtube.com/vi/_FkKHay7FrY/0.jpg)](http://www.youtube.com/watch?v=_FkKHay7FrY "Aula 044")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=_FkKHay7FrY
 
 As configurações do Endereçamento IPv6 Estático será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-044-ConfiguracaoDoEnderecamentoIPv6-Static.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-044.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=_FkKHay7FrY
-
 ## **045 Configuração do DHCPv6 Stateless no Router 1941 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCPv6 Stateless, essa configuração será feita no Router 1941 do DNS do Google, o servidor DHCPv6 Stateless não atribui endereços IPv6 aos hosts e nem conserva o estado dos dispositivos a que ele atribui os prefixos de endereços IPv6. Um host se auto-configura com um endereço IPv6 enquanto o servidor DHCPv6 Stateless oferece outras informações de rede, como nome de domínio, servidor DNS, servidor NTP, etc.
+
+[![Aula 045](http://img.youtube.com/vi/cOjLiZzGSqs/0.jpg)](http://www.youtube.com/watch?v=cOjLiZzGSqs "Aula 045")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=cOjLiZzGSqs
 
 As configurações do DHCPv6 Stateless no Router 1941 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-045-ConfiguracaoDoDHCPv6_Stateless.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-045.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=cOjLiZzGSqs
-
 ## **046 Configuração do DHCPv6 Stateful no Router 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCPv6 Stateful, essa configuração será feita no Router 2911 da Terceira Topologia, o DHCPv6 Stateful é muito parecido com o funcionamento do Servidor DHCPv4. O servidor DHCPv6 Stateful atribui endereços IPv6 a todos os hosts com o DHCPv6 Client configurado, mantendo o controle de qual endereço IPv6 foi atribuído ao host. O servidor também pode oferecer outros parâmetros de rede, como servidores DNS, um nome de domínio ou qualquer outra opção fornecida por um Servidor DHCPv6.
+
+[![Aula 046](http://img.youtube.com/vi/QADVQM6oo1g/0.jpg)](http://www.youtube.com/watch?v=QADVQM6oo1g "Aula 046")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=QADVQM6oo1g
 
 As configurações do DHCPv6 Stateful no Router 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-046-ConfiguracaoDoDHCPv6_Stateful.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-046.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=QADVQM6oo1g
-
 ## **047 Configuração do Servidor DHCPv6 Genérico Stateful - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Servidor DHCPv6 Genérico Stateful, essa configuração será feita no Servidor da Segunda Topologia, o Servidor DHCPv6 Genérico Stateful segue as mesmas configurações do DHCPv6 Stateful (com estado) ou Stateless (sem estado), sua configuração muda em relação ao Servidor DHCPv4, a criação dos Pools de Global Unicast e Local segue o mesmos padrões do Router ou Switch Layer 3, o Servidor DHCPv6 Genérico Stateful trabalha com o Protocolo UDP na Porta Padrão: 547
+
+[![Aula 047](http://img.youtube.com/vi/tl1aNCnkd9M/0.jpg)](http://www.youtube.com/watch?v=tl1aNCnkd9M "Aula 047")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=tl1aNCnkd9M
 
 As configurações do Servidor DHCPv6 Genérico Stateful será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-047-ConfiguracaoDoDHCPv6_Server.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-047.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=tl1aNCnkd9M
-
 ## **048 Configuração do DHCPv6 Stateless no Switch Layer 3 3560 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do DHCPv6 Stateless no Switch Layer 3 3560, essa configuração será feita na Segunda Topologia, a configuração do DHCPv6 Stateless no Switch Layer 3 3560 segue o mesmo padrão das configurações feita no Router 1941 ou 2911, nesse cenário, o Switch Layer 3 vai informar o Prefixo Padrão da Rede IPv6 para o Hosts, as configurações dos Endereços IPv6 será feita utilizando o conceito do SLAAC e EUI-64
+
+[![Aula 048](http://img.youtube.com/vi/pon1ltGvzY4/0.jpg)](http://www.youtube.com/watch?v=pon1ltGvzY4 "Aula 048")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=pon1ltGvzY4
 
 As configurações do DHCPv6 Stateless no Switch Layer 3 3560 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-048-ConfiguracaoDoIPv6SwitchLayer3-3560.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-048.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=pon1ltGvzY4
-
 ## **049 Configuração da Rota Estática, Padrão e Flutuante do IPv6 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da Rota Estática, Padrão e Flutuante do IPv6, essas configurações serão feitas na Primeira e Segunda Topologia, as configurações da Rota Estática, Padrão e Flutuante do Protocolo IPv6 segue o mesmo padrão do Protocolo IPv4, sendo configurada de forma semelhante, utilizando o comando ipv6 route e declarando as redes Global Unicast manualmente em cada equipamento na rede.
+
+[![Aula 049](http://img.youtube.com/vi/9qDjzcKO6XU/0.jpg)](http://www.youtube.com/watch?v=9qDjzcKO6XU "Aula 049")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=9qDjzcKO6XU&t
 
 As configurações da Rota Estática, Padrão e Flutuante do IPv6 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-049-ConfiguracaoDaRotaEstaticaPadraoFlutuanteIPv6.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-049.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=9qDjzcKO6XU&t
-
 ## **050 Configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911 - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Protocolo RIPng IPv6 nos Router 1941 e 2911, essas configurações serão feitas na Segunda e Terceira Topologia, as configurações do RIPng IPv6 nos Routers segue o mesmo padrão da configuração do RIPv2, a principalmente diferença está relacionada ao suporte ao Protocolo IPv6 e sua configuração é feita nas Interfaces que possui as Redes Global Unicast.
+
+[![Aula 050](http://img.youtube.com/vi/vSAx2JzHtVI/0.jpg)](http://www.youtube.com/watch?v=vSAx2JzHtVI "Aula 050")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=vSAx2JzHtVI
 
 As configurações do Protocolo RIPng IPv6 nos Router 1941 e 2911 será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-050-ConfiguracaoDoRIPng-IPv6.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-050.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=vSAx2JzHtVI
-
 ## **051 Configuração do Protocolo EIGRP IPv4 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv4 na Topologia Geral, essas configurações serão feitas na Primeira, Segunda e Terceira Topologia, o EIGRP (Enhanced Interior Gateway Routing Protocol) é um Protocolo Avançado Híbrido de Roteamento por Vetor de Distância (Distance Vector) e Estado do Link (Link State) utilizando o Algoritmo DUAL (Algoritmo Diffused Update Algorithm desenvolvido primeiramente como um Protocolo Proprietário da Cisco, suas funcionalidades básicas do EIGRP foram convertidas para o Padrão Aberto em 2013 e foram especificadas na RFC 7868 em 2016, o EIGRP é uma evolução do seu antecessor, o IGRP (Interior Gateway Routing Protocol) proprietário da Cisco (análogo ao RIP).
+
+[![Aula 051](http://img.youtube.com/vi/ezRkSY5UJQI/0.jpg)](http://www.youtube.com/watch?v=ezRkSY5UJQI "Aula 051")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=ezRkSY5UJQI
 
 As configurações do Protocolo EIGRP IPv4 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-050-ConfiguracaoDoRIPng-IPv6.txt
 
@@ -626,11 +734,13 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-051-Z.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=ezRkSY5UJQI
-
 ## **052 Configuração do Protocolo OSPF IPv4 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Protocolo OSPF IPv4 na Topologia Geral, essas configurações serão feitas na Primeira, Segunda e Terceira Topologia, o OSPF (Open Shortest Path First) é um Protocolo de Roteamento Dinâmico para redes que operam com o Protocolo IPv4 (possui suporte ao Protocolo IPv6 utilizando a versão OSPFv3), desenvolvido pelo Grupo de Trabalho dos IGPs (Interior Gateway Protocols) da IETF (Internet Engineering Task Force) e descrito inicialmente em 1989 pela RFC  1131 (versão atual nas RFC 2328 e 2740 do OSPFv2). É um protocolo IGP desenvolvido para ser usado em um Sistema Autônomo Interno (Intra-AS)
+
+[![Aula 052](http://img.youtube.com/vi/JLHSaBC8UHk/0.jpg)](http://www.youtube.com/watch?v=JLHSaBC8UHk "Aula 052")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=JLHSaBC8UHk
 
 As configurações do Protocolo OSPF IPv4 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-052-ConfiguracaoDoOSPF.txt
 
@@ -638,11 +748,13 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-052-Z.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=JLHSaBC8UHk
-
 ## **053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Protocolo EIGRP IPv6 na Topologia Geral, essas configurações serão feitas na Primeira, Segunda e Terceira Topologia, o EIGRP para o IPv6 trabalha igual ao EIGRP para o IPv4, você pode configurar e controlar o Sistema Autônomo independente (separadamente). O diferencial do EIGRP para IPv6 em relação ao IPv4 é que o Processo Local do EIGRP IPv6 por padrão está desligado (shutdown) sendo necessário inicializar o AS do EIGRP (no shutdown) no final das configurações para que seja possível estabelecer adjacências entre os vizinhos.
+
+[![Aula 053](http://img.youtube.com/vi/uPs8WYYczI8/0.jpg)](http://www.youtube.com/watch?v=uPs8WYYczI8 "Aula 053")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=uPs8WYYczI8
 
 As configurações do Protocolo EIGRP IPv6 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-053-ConfiguracaoDoEIGRP-IPv6.txt
 
@@ -650,11 +762,13 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-053-Z.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=uPs8WYYczI8
-
 ## **054 Configuração do Protocolo OSPFv3 IPv6 na Topologia Geral - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração do Protocolo OSPFv3 IPv6 na Topologia Geral, essas configurações serão feitas na Primeira, Segunda e Terceira Topologia, o OSPFv3 é descrito na RFC 2740 (atual RFC 5838) oferecendo suporte ao Protocolo IPv6, possui os mesmos recursos e configurações do Protocolo OSPFv2 para IPv4.
+
+[![Aula 054](http://img.youtube.com/vi/W2-n9o463Qc/0.jpg)](http://www.youtube.com/watch?v=W2-n9o463Qc "Aula 054")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=W2-n9o463Qc
 
 As configurações do Protocolo OSPFv3 IPv6 na Topologia Geral será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-054-ConfiguracaoDoOSPFv3-IPv6.txt
 
@@ -662,11 +776,13 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-054-Z.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=W2-n9o463Qc
-
 ## **055 Redistribuição de Rotas Dinâmicas RIPv2 OSPFv2 e EIGRP - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a redistribuição de rotas dinâmicas utilizando os protocolos de roteamento RIPv2, OSPFv2 e EIGRP, essa redistribuição será feita na Primeira, Segunda e Terceira Topologia, redistribuição de Rotas é o recurso utilizado para trocar as Tabelas de Roteamento entre diferentes Protocolos de Roteamento Dinâmico, cada protocolo de roteamento dinâmico possui suas Métricas e sua Distância Administrativa, por isso não é possível fazer com que um Router ou Switch Layer 3 usando o protocolo EIGRP forme vizinhança com outro Router ou Switch Layer 3 usando os protocolos OSPFv2 ou RIPv2.
+
+[![Aula 055](http://img.youtube.com/vi/CKERhz3VjSw/0.jpg)](http://www.youtube.com/watch?v=CKERhz3VjSw "Aula 055")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=CKERhz3VjSw
 
 As configurações da Redistribuição de Rotas Dinâmicas RIPv2 OSPFv2 e EIGRP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-055-RedistribuicaoDeRotasDinamicas-IPv4.txt
 
@@ -674,11 +790,13 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-055-Z.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=CKERhz3VjSw
-
 ## **056 Redistribuição de Rotas Dinâmicas RIPng OSPFv3 e EIGRP - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a redistribuição de rotas dinâmicas utilizando os protocolos de roteamento RIPng, OSPFv3 e EIGRP, essa redistribuição será feita na Primeira, Segunda e Terceira Topologia, redistribuição de Rotas é o recurso utilizado para trocar as Tabelas de Roteamento entre diferentes Protocolos de Roteamento Dinâmico, cada protocolo de roteamento dinâmico possui suas Métricas e sua Distância Administrativa, por isso não é possível fazer com que um Router ou Switch Layer 3 usando o protocolo EIGRP forme vizinhança com outro Router ou Switch Layer 3 usando os protocolos OSPFv3 ou RIPng.
+
+[![Aula 056](http://img.youtube.com/vi/atQTXHXu5Uc/0.jpg)](http://www.youtube.com/watch?v=atQTXHXu5Uc "Aula 056")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=atQTXHXu5Uc
 
 As configurações da Redistribuição de Rotas Dinâmicas RIPng OSPFv3 e EIGRP será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-056-RedistribuicaoDeRotasDinamicas-IPv6.txt
 
@@ -686,46 +804,44 @@ Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/bl
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-056-Z.pkt
 
-Link da vídeo aula: https://www.youtube.com/watch?v=atQTXHXu5Uc
-
 ## **057 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da ACL Padrão (Standard) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs padrão podem ser usadas para permitir ou negar tráfego somente dos endereços IPv4 de origem, o destino do pacote e as portas envolvidas não são avaliados, devido ao “deny any” implícito no final, todo o tráfego restante é bloqueado com esta ACL, as ACLs padrão são criadas no modo de configuração global (configure terminal).
+
+Link da vídeo aula: 
 
 As configurações da ACL Standard IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-057-ConfiguracaoACL-Padrao.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-057.pkt
 
-Link da vídeo aula: 
-
 ## **058 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a configuração da ACL Estendida (Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs estendidas filtram os pacotes IPv4 com base em vários recursos que são: Tipo de Protocolo, Endereço IPv4 de origem, Endereço IPv4 de destino, Portas TCP ou UDP de origem, Portas TCP ou UDP de destino e Informações opcionais do Tipo de Protocolo para o melhor controle.
+
+Link da vídeo aula: 
 
 As configurações da ACL Extended IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-058-ConfiguracaoACL-Estendida.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-058.pkt
 
-Link da vídeo aula: 
-
 ## **059 Configuração da ACL Nomeada Standard e Extended nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
 
-Nessa aula, vou fazer a configuração da ACL Nomeada (Stadnard e Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs nomeadas faz a atribuição de nomes para a ACL independente se ela é Padrão ou Estendida, seguindo algumas regras: os nomes podem conter caracteres alfanuméricos, recomendo que o nome seja criado com LETRAS MAIÚSCULA, os nomes não podem conter espaço ou acentuação, é possível adicionar ou excluir entradas na ACL facilmente (diferente das ACL's numeradas).
+Nessa aula, vou fazer a configuração da ACL Nomeada (Standard e Extended) IPv4, essas configurações será feita na Primeira, Segunda e Terceira Topologia, as ACLs nomeadas faz a atribuição de nomes para a ACL independente se ela é Padrão ou Estendida, seguindo algumas regras: os nomes podem conter caracteres alfanuméricos, recomendo que o nome seja criado com LETRAS MAIÚSCULA, os nomes não podem conter espaço ou acentuação, é possível adicionar ou excluir entradas na ACL facilmente (diferente das ACL's numeradas).
+
+Link da vídeo aula: 
 
 As configurações da ACL Nomeada Standard e Extended nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-059-ConfiguracaoACL-Nomeada.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-059.pkt
 
-Link da vídeo aula: 
-
 ## **060 Substituição do Router 1941-2 pelo Router 2911-2 na Segunda Topologia - Laboratório Prático Cisco CCNAv7 200-301**
 
 Nessa aula, vou fazer a substituição do Router 1941-2 pelo Router 2911-2, essa substituição será feita na Segunda Topologia, nessa simulação de troca de equipamento, muito comum no dia-a-dia, quando temos a necessidade de trocar os equipamentos antigos da rede por equipamento mais novos ou quando o equipamento utilizado é danificado ou não aguenta mais o tráfego de dados, sendo necessário substituir por outro equipamento de maior capacidade de processamento e memória RAM.
+
+Link da vídeo aula: 
 
 As configurações da Substituição dos Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-060-TrocaDoRouter-1941-pelo-Router-2911.txt
 
 Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-060-C.pkt
 
 Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-060-Z.pkt
-
-Link da vídeo aula: 
