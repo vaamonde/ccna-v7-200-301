@@ -120,13 +120,15 @@ Link da vídeo aula: https://www.youtube.com/watch?v=4EIO6Ma0foA&t
 
 [![Packet Tracer 7.3.1](http://img.youtube.com/vi/wEk0oBzGC6M/0.jpg)](http://www.youtube.com/watch?v=wEk0oBzGC6M "Packet Tracer 7.3.1")
 
-[![Packet Tracer 8.0](http://img.youtube.com/vi/-F-knMQzgWU/0.jpg)](http://www.youtube.com/watch?v=-F-knMQzgWU "Packet Tracer 8.0")
-
-Atualização da vídeo aula com os procedimentos para instalar no Linux Mint 20 e no Ubuntu 20.04: https://www.youtube.com/watch?v=wEk0oBzGC6M
-
-Link para download das versões do Cisco Packet Tracer no MEGA.nz: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI
+Link da vídeo aula: https://www.youtube.com/watch?v=wEk0oBzGC6M
 
 Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-000-PT-7.3-no-LinuxMint20.txt
+
+[![Packet Tracer 8.0](http://img.youtube.com/vi/-F-knMQzgWU/0.jpg)](http://www.youtube.com/watch?v=-F-knMQzgWU "Packet Tracer 8.0")
+
+Link da vídeo aula: http://www.youtube.com/watch?v=-F-knMQzgWU
+
+Link para fazer o download de todas as versões do Cisco Packet Tracer no MEGA.nz: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI
 
 ## **001 Configuração Base dos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**
 
