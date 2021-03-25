@@ -10,6 +10,7 @@ Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi<br>
 Facebook Bora para Prática: https://www.facebook.com/boraparapratica<br>
 Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
+LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
 
 Durante o curso você aprenderá passo a passo na prática a instalar e configurar o software de Simulação de Redes Cisco Packet Tracer v7.3, 7.3.1 ou 8.0 na Plataforma Microsoft ou GNU/Linux.
 
