@@ -56,7 +56,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 042 Configurando o Encaminhamento de Solicitações DHCPv4<br>
 043 Redistribuindo a Rota Padrão no RIPv2 do Router 2911<br>
 044 Configuração do Endereçamento IPv6 Estático<br>
-045 Configuração do DHCPv6 Statless no Router 1941<br>
+045 Configuração do DHCPv6 Stateless no Router 1941<br>
 046 Configuração do DHCPv6 Stateful no Router 2911<br>
 047 Configuração do Servidor Genérico DHCPv6 Stateful<br>
 048 Configuração do DHCPv6 Stateless no Switch Layer 3 3560<br>
@@ -66,12 +66,12 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 052 Configuração do Protocolo OSPF IPv4 Single Area na Topologia Geral<br>
 053 Configuração do Protocolo EIGRP IPv6 na Topologia Geral<br>
 054 Configuração do Protocolo OSPFv3 IPv6 Single Area na Topologia Geral<br>
-055 Redistribuição de Rotas Dinâmicas RIPv2 OSPFv2 e EIGRP
+055 Redistribuição de Rotas Dinâmicas RIPv2 OSPFv2 e EIGRP<br>
+056 Redistribuição de Rotas Dinâmicas RIPng OSPFv3 e EIGRP
 
 ## **ETAPA-01: Aulas já Gravadas esperando Publicação no YouTUBE, já Disponível no Github os Scripts:**
 
 ## **ETAPA-02: Aulas Preparadas para Gravação e Edição, já Disponível no Github os Scripts:**
-056 Redistribuição de Rotas Dinâmicas RIPng OSPFv3 e EIGRP<br>
 057 Configuração da ACL Standard IPv4 BÁSICA nos Switches e Routers<br>
 058 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers<br>
 059 Configuração da ACL Nomeada Standard e Extended nos Switches e Routers<br>
@@ -88,7 +88,9 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 064 Configuração da Rede SOHO Tri-Band Wireless<br>
 065 Configuração do Router Meraki MX65W<br>
 066 Configuração do Router Home Gateway DLC-100<br>
-067 Configuração do Router 4321 Switch 3650 e do WLC-3504 e LWAP-3702i<br>
+067 Configuração do Router 4321 Switch 3650 e do WLC-3504 e LWAP-3702i
+
+## **ETAPA-06: Criação da nova Topologia de Rede, não Disponível no Github:**
 068 Configuração do NAT Estático no Router 4321<br>
 069 Configuração do NAT Dinâmico no Router 4321<br>
 070 Configuração do NAT Overload no Router 4321<br>
@@ -102,6 +104,18 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 078 Configuração da VPN Site-to-Site<br>
 079 Configuração da VPN Site-to-Client
 
-## **ETAPA-06: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
-OSPF Multi Area, BGP, PPP, Frame-Relay, MPLS, QoS, PYTHON, JSON, SD-WAN,<br>
-Inter-VLAN Routing Switch Layer 3, VoIP, ARDUINO, IoT/IoE
+## **ETAPA-07: Temas de Aulas para as Etapas: 04 e 05, não Disponível no Github:**
+080 OSPF Multi Area,<br>
+081 BGP,<br>
+082 PPP,<br>
+083 Frame-Relay,<br>
+084 MPLS,<br>
+085 QoS,<br>
+086 Inter-VLAN Routing Switch Layer 3,<br>
+087 PYTHON,<br>
+088 JSON,<br>
+089 SD-WAN,<br>
+090 VoIP,<br>
+091 ARDUINO,<br>
+092 IoT/IoE,<br>
+093 ...

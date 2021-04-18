@@ -817,7 +817,9 @@ Link da vídeo aula:
 
 As configurações da ACL Standard IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-057-ConfiguracaoACL-Padrao.txt
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-057.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-057-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-057-Z.pkt
 
 ## **058 Configuração da ACL Extended IPv4 BÁSICA nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
 
@@ -827,7 +829,9 @@ Link da vídeo aula:
 
 As configurações da ACL Extended IPv4 BÁSICA nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-058-ConfiguracaoACL-Estendida.txt
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-058.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-058-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-058-Z.pkt
 
 ## **059 Configuração da ACL Nomeada Standard e Extended nos Switches e Routers - Laboratório Prático Cisco CCNAv7 200-301**
 
@@ -837,7 +841,9 @@ Link da vídeo aula:
 
 As configurações da ACL Nomeada Standard e Extended nos Switches e Routers será feita utilizando o Script: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-059-ConfiguracaoACL-Nomeada.txt
 
-Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-059.pkt
+Download do cenário configurado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-059-C.pkt
+
+Download do cenário zerado: https://github.com/vaamonde/ccna-v7-200-301/blob/master/packettracer/etapa-059-Z.pkt
 
 ## **060 Substituição do Router 1941-2 pelo Router 2911-2 na Segunda Topologia - Laboratório Prático Cisco CCNAv7 200-301**
 
