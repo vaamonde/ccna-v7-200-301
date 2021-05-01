@@ -34,7 +34,7 @@ enable
 		
 		!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Switch e Router
 		!OBSERVAÇÃO: a configuração da Marcação de Data/Hora detalhado nos Log já foi executada no Script Base
-		!service timestamps log datetime msec
+		service timestamps log datetime msec
 		
 		!Habilitando o Recurso de Log no Switch e Router
 		!DICA: por padrão todos os Logs habilitadoS no Switch ou Router são volátil
