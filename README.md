@@ -129,6 +129,10 @@ Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamo
 
 Link da vídeo aula: http://www.youtube.com/watch?v=-F-knMQzgWU
 
+[![Packet Tracer 8.0.1](http://img.youtube.com/vi/AXyBAIrfuO8/0.jpg)](https://www.youtube.com/watch?v=AXyBAIrfuO8 "Packet Tracer 8.0.1")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=AXyBAIrfuO8
+
 Link para fazer o download de todas as versões do Cisco Packet Tracer no MEGA.nz: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI
 
 ## **001 Configuração Base dos Switches 2960 - Laboratório Prático Cisco CCNAv7 200-301**

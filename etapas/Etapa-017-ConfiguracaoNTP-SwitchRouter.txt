@@ -41,7 +41,7 @@ show clock
 		!DICA: configurar o Fuso Horário nos equipamentos é obrigatório para a Data/Hora ficar correta
 		!OBSERVAÇÃO: a configuração do Fuso Horário é dividida em: Nome da Zona (BR) e o UTC (Coordinated Universal Time)
 		!OBSERVAÇÃO: no Brasil utilizamos quatro UTC diferentes, em São Paulo utilizamos o UTC de Brasília -3
-		!ERRATA: no Cisco Packe Tracer tem um Bug em relação ao UTC, mesmo configurado com o comando: show clock temos o
+		!ERRATA: no Cisco Packet Tracer tem um Bug em relação ao UTC, mesmo configurado com o comando: show clock temos o
 		!erro na configuração da Hora
 		clock timezone BR -3
 		
