@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de comandos
@@ -70,7 +70,7 @@ show ip interface brief
 
 !Automação da configuração do Switch 2
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de comandos
