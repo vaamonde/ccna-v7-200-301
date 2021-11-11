@@ -11,7 +11,7 @@
 !Versão: 0.01
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de comandos
@@ -71,8 +71,7 @@ enable
 		!OBSERVAÇÃO: períodos de tempo de bloqueio configurados em segundos (1 até 65535)
 		!OBSERVAÇÃO: tentativas de falhas de conexões em quantidade (1 até 65535)
 		!OBSERVAÇÃO: dentro do período de tempo configurado em segundos (1 até 65535)
-		!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 mais está disponível em 
-		!Switch Layer 3 3560
+		!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 mais está disponível no Switch Layer 3 3560
 		login block-for 120 attempts 2 within 60
 
 		!Acessando a linha console, porta padrão de acesso Out-of-Band (Fora da Banda)
