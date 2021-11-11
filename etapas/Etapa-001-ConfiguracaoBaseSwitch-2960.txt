@@ -14,12 +14,12 @@
 !Primeiro acesso no modo EXEC de Comandos > (caracter Maior)
 switch>
 
-!Acessando o modo EXEC Privilégiado # (carácter Sustenido)
+!Acessando o modo EXEC Privilegiado # (carácter Sustenido)
 !DICA: utilizar sempre a tecla TAB para auto-completar os comandos
 !DICA: se estiver com dúvida do comando, utilizar o carácter: ? (interrogação)
 !EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
 !DICA: se você está estudando para o CCNAv7, recomendo digitar os comandos completos, não abreviados
-!EXEMPLO: enable = en | show running-config = sh runn | interface fastethernet0/0 int = fa0/0
+!EXEMPLO: enable = en | show running-config = sh runn | interface FastEthernet0/0 = int fa0/0
 enable
 
 !Configuração de Data/Hora em Inglês, você pode usar abreviado ou completo
