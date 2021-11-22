@@ -33,7 +33,7 @@ enable
 		!OBSERVAÇÃO IMPORTANTE: caso queira desativar o serviço do SSH ou remover os Módulos RSA, digite o comando:
 		!crypto key zeroize rsa, caso você digite novamente o comando: crypto key generate rsa ele vai solicitar se
 		!você quer substituir os Módulos atuais (Do you really want to replace them? [yes/no])
-		crypto key generate rsa
+		crypto key generate rsa general-keys modulus 1024
 
 		!Habilitando a versão 2 do serviço de SSH Server
 		!DICA: a versão 2 do serviço do SSH Server corrigi várias falhas de segurança

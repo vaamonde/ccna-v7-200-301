@@ -17,7 +17,7 @@ enable
 	
 	!Visualizando a versão do Cisco IOS é informações do Hardware do Switch 2960
 	!DICA: esse comando é utilizado para verificar a versão de hardware e do IOS do Switch
-	!DICA: atualmente a versão utilizada nos hardware da Cisco é 15.x (ou superior, dependo do modelo)
+	!DICA: atualmente a versão utilizada nos hardware da Cisco é 15.x (ou superior, dependendo do modelo)
 	!OBSERVAÇÃO: as informações de memórias em equipamentos da Cisco estão em Kbytes ou Bytes
 	!OBSERVAÇÃO: esse comando fornece informações referente a Configuração do Registro de Inicialização
 	show version
@@ -30,7 +30,7 @@ enable
 	show boot
 	
 	!Visualizando informações do Flash Card (Memória de Massa) do Switch 2960
-	!DICA: a memória de massa em Switch geralmente são Chips soldados ou módulos interno
+	!DICA: a memória de massa em Switch geralmente são Chips soldados ou módulos internos
 	!OBSERVAÇÃO: diferente do Router, a memória Flash em Switch não pode ser acessada sem desmontar o equipamento
 	show flash:
 	dir flash:
