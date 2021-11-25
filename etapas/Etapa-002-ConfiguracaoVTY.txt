@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 18/04/2020
-!Data de atualização: 18/04/2020
-!Versão: 0.01
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 24/11/2020
+!Versão: 0.02
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilegiado
 enable
@@ -17,41 +17,42 @@ enable
 	!Acessando o modo de Configuração Global de comandos
 	configure terminal
 	
-		!Acessando as linhas virtuais de acesso remoto do Switch
+		!Acessando as Linhas (Lines) Virtuais de acesso remoto do Switch
 		!DICA: por padrão o Switch Cisco possui 16 (0 até 15) linhas virtuais de acesso remoto
-		!OBSERVAÇÃO: as linhas virtuais são utilizadas para acessar remotamente o console do switch
+		!OBSERVAÇÃO: as linhas virtuais são utilizadas para acessar remotamente o terminal do switch
 		!OBSERVAÇÃO: linhas virtuais não são utilizadas para monitoramento, para isso usamos o Protocolo SNMP com SVI
-		!DICA: não é recomendado habilitar poucas linhas ou todas as linhas virtuais
+		!DICA: não é recomendado habilitar poucas linhas ou todas as linhas virtuais no Cisco IOS
 		!OBSERVAÇÃO: as linhas virtuais são bem parecidas com a linha console, a diferença é que o acesso e feito remoto
-		!DICA: por padrão as linhas virtuais estão desabilitadas, elas dependem da configuração do SVI
+		!DICA: por padrão as linhas virtuais estão desabilitadas no Cisco IOS, elas dependem da configuração do SVI para funcionar
 		line vty 0 4
 
-			!Forçando fazer login local utilizando usuário e senha locais do switch
+			!Forçando fazer login local utilizando os usuários é senha locais criado no Switch
 			login local
 
-			!Habilitando senha de acesso do Tipo-7 Password
+			!Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
+			!DICA: igual na configuração da Line Console, essa regra só irá funcionar se não existir usuários no Switch
 			password vaamonde@pti
 
-			!Sincronizando as mensagens de logs na tela
+			!Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco IOS
 			logging synchronous
 
-			!Habilitando o tempo de inatividade de uso da linha virtual
+			!Habilitando o tempo de inatividade de uso do linha virtual
 			exec-timeout 5 30
 
-			!Configuração do tipo de protocolo de transporte de entrada
+			!Configuração do tipo de protocolo de transporte de entrada ou saída da linha virtual
 			!DICA: na linha virtual você pode controlar o tipo de acesso remoto de entrada ou saída
-			!OBSERVAÇÃO: existe vários protocolos de acesso remoto, os mais usados são: Telnet e SSH
-			!OBSERVAÇÃO: por motivo de segurança, acesso remoto utilizando o protocolo Telnet não é mais usado
-			!DICA: existe várias opções de configuração do protocolo de transporte, a opção all permite todos
+			!OBSERVAÇÃO: existe vários protocolos de acesso remoto, os mais utilizados são: Telnet (ão seguro) e SSH (seguro)
+			!OBSERVAÇÃO: por motivo de segurança, acesso remoto utilizando o protocolo Telnet não é mais recomendado
+			!DICA: existe várias opções de configuração do protocolo de transporte, a opção: all permite todos os protocolos
 			transport input all
 
 			!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 			end
 
-!Salvando as configurações da memória RAM para a memória NVRAM
+!Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
 copy running-config startup-config
 
-!Visualizando as configurações da memória RAM
+!Visualizando as configurações da memória RAM (Running-Config)
 show running-config
 
 ==============================================================================================

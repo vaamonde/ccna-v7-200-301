@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 18/04/2020
-!Data de atualização: 18/04/2020
-!Versão: 0.01
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 24/11/2020
+!Versão: 0.02
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilegiado
 enable
@@ -18,33 +18,33 @@ enable
 	configure terminal
 	
 	!Configuração do Gateway padrão IPv4 no Switch
-	!DICA: configuração do Gateway IPv4 em Switch Layer 2 serve somente para acesso remoto
-	!DICA: Switch Layer 3 o recurso de Gateway é utilizado tanto para acesso remoto como roteamento
-	!OBSERVAÇÃO: esse recurso é necessário para administração remota ou monitoramento
-	!OBSERVAÇÃO: existe também a possibilidade de configuração de endereço IPv6 em Switch
+	!DICA: configuração do Gateway IPv4 em Switch Layer 2 serve somente para acesso remoto (monitoramento/gerenciamento)
+	!DICA: Switch Layer 3 o recurso de Gateway é utilizado tanto para acesso remoto ou como roteamento de redes e Gateway
+	!OBSERVAÇÃO: esse recurso é necessário para administração remota ou monitoramento do Switch
+	!OBSERVAÇÃO: existe a possibilidade da configuração de endereço IPv6 em Switch Layer
 	ip default-gateway 192.168.1.254
   
-	!Configuração da Interface Virtual do Switch SVI
-	!DICA: interfaces virtuais são criadas utilizando o recurso de VLAN (Virtual-LAN)
-	!DICA: é recomendado utilizar outra VLAN para o SVI, não é recomendado utilizar a VLAN padrão 1 para isso
-	!OBSERVAÇÃO: em switch Layer 2 utilizamos o SVI para administração remota ou monitoramento
-	!OBSERVAÇÃO: o SVI é necessário para o acesso via linhas virtuais utilizando o protocolo Telnet ou SSH
+	!Configuração da Interface Virtual do Switch SVI (Switch Virtual Interface)
+	!DICA: interfaces virtuais são criadas utilizando o recurso de VLAN (Virtual-LAN) do Switch
+	!DICA: é recomendado utilizar outra VLAN para o SVI, não é recomendado utilizar a VLAN padrão 1 para essa finalidade
+	!OBSERVAÇÃO: em Switch Layer 2 utilizamos o SVI somente para administração remota ou monitoramento
+	!OBSERVAÇÃO: o SVI é necessário para o acesso remoto via Linhas Virtuais (VTY) utilizando os protocolos Telnet ou SSH
 	interface vlan 1
 		
-		!Configuração da Descrição da Interface Virtual
-		!DICA: sempre utilizar o comando description nas Interfaces para efeito de documentação
-		!OBSERVAÇÃO: documentação de interfaces facilita o processo de identificação e função na rede
+		!Configuração da Descrição da Interface Virtual VLAN-1
+		!DICA: sempre utilizar o comando: description nas Interfaces para efeito de documentação
+		!OBSERVAÇÃO: documentação de Interfaces facilita o processo de identificação e função dela na rede
 		description Interface de Gerenciamento do Switch SW-L2-2960-1
 		
-		!Configuração do Endereçamento IPv4 da Interface Virtual
-		!DICA: o endereço IPv4 deve ser da mesma faixa de rede do Gateway
-		!DICA: é recomendado que os endereços de rede dos Switches devem ser de redes diferentes dos desktops
-		!OBSERVAÇÃO: configuração do endereço IPv4 deve ser: IP + Máscara de Rede completa, não utilizar CIDR
+		!Configuração do Endereçamento IPv4 da Interface Virtual VLAN-1
+		!DICA: o endereço IPv4 deve ser da mesma faixa de rede do Gateway utilizado na rede
+		!DICA: é recomendado que os endereços de rede dos Switches sejam de redes diferentes dos desktops
+		!OBSERVAÇÃO: configuração do endereço IPv4 deve ser: IP + Máscara de Rede Completa, não utilizar CIDR
 		ip address 192.168.1.250 255.255.255.0
 		
-		!Inicializando a Interface Virtual do Switch
+		!Inicializando a Interface Virtual da VLAN-1
 		!DICA: por padrão todas as interfaces estão no status desligada (Shutdown)
-		!DICA: por padrão todas as portas de redes estão no status ligada (No-Shutdown)
+		!DICA: por padrão todas as portas de rede estão no status ligada (No-Shutdown)
 		!OBSERVAÇÃO: o comando: no também é utilizado para ligar as interfaces tirando do status shutdown
 		no shutdown
 		
@@ -54,13 +54,13 @@ enable
 		!EXEMPLO: sw-l2-2960-1(config-line)# do copy running-config startup-config | sw-l2-2960-1(config-line)# do show running-config
 		end
 
-!Salvando as configurações da memória RAM para a memória NVRAM
+!Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
 copy running-config startup-config
 	
-!Visualizando as configurações da memória RAM
+!Visualizando as configurações da memória RAM (Running-Config)
 show running-config
 
-!Visualizando as configurações das VLAN padrão do Switch
+!Visualizando as configurações das VLAN's padrão do Switch
 show vlan brief
 
 !Visualizando as configurações das interfaces e portas de rede do Switch

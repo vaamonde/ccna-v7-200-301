@@ -7,111 +7,115 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 16/04/2020
-!Data de atualização: 17/04/2020
-!Versão: 0.02
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 24/11/2020
+!Versão: 0.03
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
-!Primeiro acesso no modo EXEC de Comandos > (caracter Maior)
+!Primeiro acesso ao modo EXEC de Comandos > (sinal de Maior)
 switch>
 
-!Acessando o modo EXEC Privilegiado # (carácter Sustenido)
-!DICA: utilizar sempre a tecla TAB para auto-completar os comandos
-!DICA: se estiver com dúvida do comando, utilizar o carácter: ? (interrogação)
+!Acessando o modo EXEC Privilegiado # (sinal de Sustenido/Hashtag)
+!DICA: utilizar sempre a tecla TAB para auto-completar os comandos no Cisco IOS
+!DICA: se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto com o comando
 !EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
-!DICA: se você está estudando para o CCNAv7, recomendo digitar os comandos completos, não abreviados
+!DICA: se você está estudando para o CCNAv7, é recomendado digitar os comandos completos, não abreviados
 !EXEMPLO: enable = en | show running-config = sh runn | interface FastEthernet0/0 = int fa0/0
 enable
 
-!Configuração de Data/Hora em Inglês, você pode usar abreviado ou completo
-!EXEMPLO: April ou Apr | December ou Dec
-!EXEMPLO: Hora no formato: 00:00:00 - Data no formato: Dia Mês Ano
-!DICA: Recomendado utilizar o Protocolo NTP (Network Time Protocol)
+!Configuração de Data/Hora em Inglês, você pode usar o Mês abreviado ou completo na configuração
+!EXEMPLO: April ou Apr | November ou Nov | December ou Dec
+!EXEMPLO: Hora no formato universal: Hora:Minutos:Segundo 00:00:00 - Data no formato: Dia Mês Ano
+!DICA: é recomendado utilizar o Protocolo NTP (Network Time Protocol) para sincroniza a Data e Hora no Switch
 clock set 14:00:00 16 April 2020
 
-	!Acessando o modo de configuração global de comandos
+	!Acessando o modo de Configuração Global de comandos
 	configure terminal
   
 	!Configuração do nome do switch
-	!OBSERVAÇÃO: obrigatório para a configuração do SSH e demais serviços de redes
-	!DICA: utilizar nomes curtos e objetivos, não usar caracteres especiais ou espaço
+	!OBSERVAÇÃO: essa configuração é obrigatória para o serviço de acesso remoto SSH e demais serviços de rede
+	!DICA: utilizar nomes curtos e objetivos, não usar caracteres especiais, espaço, acentuação, etc...
 	hostname sw-l2-2960-1
   
-	!Habilitando o serviço de criptografia de senhas do Tipo-7 Password 
-	!DICA: senhas do Tipo-7 por padrão não são criptografadas
-	!OBSERVAÇÃO: senhas do Tipo-7 são fáceis de serem quebradas
+	!Habilitando o serviço de criptografia de senhas do Tipo-7 Password
+	!DICA: senhas do Tipo-7 por padrão não são criptografadas no Cisco IOS (serviço desabilitado)
+	!OBSERVAÇÃO: senhas do Tipo-7 são fáceis de serem quebradas e não são mais usadas nos equipamentos da Cisco
 	!DESAFIO: site para quebrar senhas do Tipo-7 https://packetlife.net/toolbox/type7/
 	service password-encryption
 	
-	!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs
-	!DICA: recurso utilizado em sistemas de monitoramento e desempenho de rede
+	!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Cisco IOS
+	!DICA: esse recurso é utilizado nos sistemas de monitoramento, desempenho e consumo de rede
 	service timestamps log datetime msec
   
-	!Desativando a resolução de nomes de domínio
-	!DICA: desabilitar esse recurso resolve o problema de travamento de comandos
+	!Desativando o serviço de resolução de nomes de domínio (serviço habilitado por padrão)
+	!DICA: se você desabilitar esse recurso, ele resolve o problema de travamento de comandos no Cisco IOS
 	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255))
-	!DICA: para desbloquear ou parar o comando você pressiona: Ctrl+Shift+6 ou espera a liberação do terminal
+	!DICA: para desbloquear o terminal, você pressiona: Ctrl+Shift+6 ou espera a liberação do terminal
 	!DICA: o comando: no é usado para desabilitar ou remover configurações feitas no switch ou router
 	no ip domain-lookup
   
-	!Configuração do banner da mensagem do dia
-	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD é o mais usado
-	!DICA: não utilizar acentuação, textos longos ou complexos
-	!DESAFIO: Buscar na Internet imagens ASCII Art para colocar no Banner MOTD
-	!CUIDADO: utilizar o mesmo carácter de delimitador de início e fim do Banner
+	!Configuração do banner da mensagem do dia no Cisco IOS
+	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD (Mensagem do Dia) é o mais utilizado
+	!DICA: é recomendado não utilizar acentuação, textos longos ou complexos no Banner MOTD
+	!DESAFIO: buscar na Internet imagens ASCII Art para colocar no Banner MOTD
+	!OBSERVAÇÃO: imagens ASCII Art no Banner não pode ser muito grande, recomendado ser <= 1024 pixels
+	!CUIDADO: utilizar o mesmo sinal de delimitador de Início e Fim do Banner na imagem ASCII (# Sustenido/Hashtag)
 	banner motd #AVISO: acesso autorizado somente a funcionarios#
   
 	!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado
-	!DICA: senhas do Tipo-5 por padrão são criptografadas
+	!DICA: senhas do Tipo-5 por padrão utilizam criptografia forte (Algoritimo MD5)
 	!OBSERVAÇÃO: por padrão o acesso ao modo EXEC Privilegiado é liberado sem segurança
 	enable secret vaamonde@pti
   
-	!Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 é privilégios diferenciados
-	!DICA: existe 16 níveis de privilégios no Cisco IOS (0 até 15)
-	!DICA: não é recomendado criar usuários utilizando senhas do Tipo-7
+	!Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 e privilégios diferenciados
+	!DICA: existe 16 níveis de privilégios no Cisco IOS (0 mais baixo até 15 mais alto)
+	!DICA: não é recomendado criar usuários utilizando senhas do Tipo-7 (senhas fracas, fácil de quebrar)
 	!DICA: existe a possibilidade de se autenticar no switch utilizando os protocolos RADIUS ou TACACS
-	!DICA: usuários como Privilégio 15 não precisa digitar o comando enable
-	!OBSERVAÇÃO: Criação de usuários comuns para administrar o switch, privilégio padrão 1
+	!DICA: usuários com Privilégio 15 não precisa digitar o comando enable após se logar no Switch
+	!OBSERVAÇÃO: criação de usuários comuns para administrar o switch, privilégio padrão recomendo: 1
 	username robson secret vaamonde@pti
 	username vaamonde password vaamonde@pti
 	username admin privilege 15 secret vaamonde@pti
 	
-	!Acessando a linha console, porta padrão de acesso Out-of-Band (Fora da Banda)
-	!DICA: conexão utilizando o Cabo Console RS232/DB9 ou USB é software de Console (PuTTY)
-	!DICA: em switch temos apenas uma porta console RS232/DB9 ou USB
+	!Acessando a Linha (line) Console, porta padrão de acesso Out-of-Band (Fora da Banda) do Switch Cisco
+	!DICA: conexão feita utilizando o Cabo Console RS232/DB9 ou USB e software de Acesso ao Console (PuTTY)
+	!DICA: em Switch Cisco temos apenas uma porta console RS232/DB9 ou USB
 	line console 0
 		
-		!Forçando fazer login local utilizando usuário é senha locais do switch
-		!DICA: padrão da configuração e permitir acesso sem autenticação
+		!Forçando fazer login local utilizando os usuários é senha locais criado no Switch
+		!DICA: por padrão a configuração da Linha Console é permitir acesso sem autenticação
 		login local
 		
-		!Habilitando senha de acesso do Tipo-7 Password
-		!DICA: na porta console não temos a opção de criar senhas do Tipo-5
-		!OBSERVAÇÃO: porta console é considerada porta/interface física não remota ou virtual
-		!OBSERVAÇÃO: esse recurso só será utilizado caso não exista usuários locais
+		!Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
+		!DICA: na porta console não temos a opção de criar senhas do Tipo-5 somente Tipo-7
+		!OBSERVAÇÃO: a porta console é considerada uma porta/interface física não remota ou virtual
+		!por esse movito ele não tem suporte a senhas do Tipo-5, pois o acesso e feito fisicamente no
+		!Switch ou Router (se você tem a possibilidade de acessa fisicamente um equipamento, o nível de
+		!segurança da criptografia não importa mais, pois é uma invasão física não lógica)
+		!OBSERVAÇÃO: essa configuração só será utilizado caso não exista usuários locais
 		password vaamonde@pti
 		
-		!Sincronizando as mensagens de logs na tela
-		!DICA: esse recurso facilita bastante, pois não atrapalha na digitação de comandos
-		!OBSERVAÇÃO: por padrão todas as mensagens de status do switch são mostradas na tela
+		!Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco IOS
+		!DICA: esse recurso ajuda bastante, pois as mensagens na tela não irão atrapalha na digitação
+		!OBSERVAÇÃO: por padrão todas as mensagens de status ou logs do Switch são mostradas na tela
 		logging synchronous
 		
-		!Habilitando o tempo de inatividade de uso do console
-		!DICA: configuração de minutos e segundos
-		!OBSERVAÇÃO: não é recomendado deixar o tempo muito curto e nem muito longo
+		!Habilitando o tempo de inatividade de uso do linha de console
+		!DICA: configuração do tempo de inatividade em minutos e segundos
+		!OBSERVAÇÃO: não é recomendado deixar o tempo de inatividade muito curto e nem muito longo
 		exec-timeout 5 30
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
-		!DICA: você pode utilizar a tecla de atalho: Ctrl+Z
+		!DICA: você pode utilizar a tecla de atalho: Ctrl+Z para sair de todos os níveis
 		!DICA: o comando: exit sai nível por nível, o comando: end sai de todos os níveis
-		!OBSERVAÇÃO: os dois comandos são utilizados em scripts
+		!OBSERVAÇÃO: os dois comandos são utilizados principalmente em scripts de automação
 		end
 
-!Salvando as configurações da memória RAM para a memória NVRAM
+!Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
 !DICA: no Cisco IOS temos vários tipos de memórias: RAM, NVRAM, Flash, etc.
-!DICA: você pode utilizar o comando: write, indicado para criação de scripts
+!DICA: você pode utilizar o comando: write, indicado para criação de scripts e considerado obsoleto pela cisco
 copy running-config startup-config
 	
-!Visualizando as configurações da memória RAM
+!Visualizando as configurações da memória RAM (Running-Config)
 show running-config
 
 ==============================================================================================
