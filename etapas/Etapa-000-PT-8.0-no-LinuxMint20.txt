@@ -1,0 +1,20 @@
+#Autor: Robson Vaamonde
+#Procedimentos em TI: http://procedimentosemti.com.br
+#Bora para Prática: http://boraparapratica.com.br
+#Robson Vaamonde: http://vaamonde.com.br
+#Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+#Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+#Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+#YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+#Data de criação: 25/11/2021
+#Data de atualização: 25/11/2021
+#Versão: 0.02
+#Testado e homologado no Linux Mint 20.2 Uma e Ubuntu 20.04.3
+
+#Site do Netacad: Treinamento do Cisco Packet Tracer: https://www.netacad.com/pt-br/courses/packet-tracer
+#Site do Packet Tracer Network: https://www.packettracernetwork.com/
+#Site do Mega.nz do BoraParaPrática: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI
+#Site do AulaEAD Curso Cisco: https://www.aulaead.com/courses/laboratorio-pratico-cisco-ccnav7-exame-200-301
+#Site do Github Curso Cisco: https://github.com/vaamonde/ccna-v7-200-301
+#Playlist do Curso Cisco: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
+

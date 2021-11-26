@@ -24,7 +24,7 @@ enable
 
 !Configuração de Data/Hora em Inglês, você pode usar o Mês abreviado ou completo na configuração
 !EXEMPLO: April ou Apr | November ou Nov | December ou Dec
-!EXEMPLO: Hora no formato universal: Hora:Minutos:Segundo 00:00:00 - Data no formato: Dia Mês Ano
+!EXEMPLO: Hora no formato universal: Hora:Minutos:Segundos 00:00:00 - Data no formato: Dia Mês Ano
 !DICA: é recomendado utilizar o Protocolo NTP (Network Time Protocol) para sincroniza a Data e Hora no Switch
 clock set 14:00:00 16 April 2020
 
@@ -55,6 +55,7 @@ clock set 14:00:00 16 April 2020
   
 	!Configuração do banner da mensagem do dia no Cisco IOS
 	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD (Mensagem do Dia) é o mais utilizado
+	!EXEMPLO: banner motd, banner login (Mensagem de Login), banner exec (Mensagem de Modo EXEC), banner incoming (Mensagem de Entrada)
 	!DICA: é recomendado não utilizar acentuação, textos longos ou complexos no Banner MOTD
 	!DESAFIO: buscar na Internet imagens ASCII Art para colocar no Banner MOTD
 	!OBSERVAÇÃO: imagens ASCII Art no Banner não pode ser muito grande, recomendado ser <= 1024 pixels
@@ -70,8 +71,8 @@ clock set 14:00:00 16 April 2020
 	!DICA: existe 16 níveis de privilégios no Cisco IOS (0 mais baixo até 15 mais alto)
 	!DICA: não é recomendado criar usuários utilizando senhas do Tipo-7 (senhas fracas, fácil de quebrar)
 	!DICA: existe a possibilidade de se autenticar no switch utilizando os protocolos RADIUS ou TACACS
-	!DICA: usuários com Privilégio 15 não precisa digitar o comando enable após se logar no Switch
-	!OBSERVAÇÃO: criação de usuários comuns para administrar o switch, privilégio padrão recomendo: 1
+	!DICA: usuários com Privilégio 15 não precisa digitar o comando enable após se logar no Switch ou Router
+	!OBSERVAÇÃO: criação de usuários comuns para administrar o switch, privilégio padrão recomendado: 1
 	username robson secret vaamonde@pti
 	username vaamonde password vaamonde@pti
 	username admin privilege 15 secret vaamonde@pti
@@ -88,10 +89,10 @@ clock set 14:00:00 16 April 2020
 		!Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
 		!DICA: na porta console não temos a opção de criar senhas do Tipo-5 somente Tipo-7
 		!OBSERVAÇÃO: a porta console é considerada uma porta/interface física não remota ou virtual
-		!por esse movito ele não tem suporte a senhas do Tipo-5, pois o acesso e feito fisicamente no
-		!Switch ou Router (se você tem a possibilidade de acessa fisicamente um equipamento, o nível de
+		!por esse movito ela não tem suporte a senhas do Tipo-5, pois o acesso e feito fisicamente no
+		!Switch ou Router (se você tem a possibilidade de acessar fisicamente um equipamento, o nível de
 		!segurança da criptografia não importa mais, pois é uma invasão física não lógica)
-		!OBSERVAÇÃO: essa configuração só será utilizado caso não exista usuários locais
+		!OBSERVAÇÃO: essa configuração só será utilizada caso não exista usuários locais criados
 		password vaamonde@pti
 		
 		!Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco IOS
@@ -112,7 +113,7 @@ clock set 14:00:00 16 April 2020
 
 !Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
 !DICA: no Cisco IOS temos vários tipos de memórias: RAM, NVRAM, Flash, etc.
-!DICA: você pode utilizar o comando: write, indicado para criação de scripts e considerado obsoleto pela cisco
+!DICA: você pode utilizar o comando: write, indicado para criação de scripts e considerado obsoleto pela Cisco
 copy running-config startup-config
 	
 !Visualizando as configurações da memória RAM (Running-Config)
