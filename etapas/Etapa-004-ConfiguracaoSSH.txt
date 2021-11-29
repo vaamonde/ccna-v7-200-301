@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 18/04/2020
-!Data de atualização: 18/04/2020
-!Versão: 0.01
+!Data de atualização: 29/11/2021
+!Versão: 0.02
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !Acessando o modo EXEC Privilegiado
@@ -18,17 +18,18 @@ enable
 	configure terminal
 	
 		!Configuração do nome de Domínio FQDN (Nome de Domínio Totalmente Qualificado)
-		!DICA: o nome de Domínio é utilizado pelo Serviço do SSH e outros serviços de rede, como autenticação
+		!DICA: o nome de Domínio é utilizado pelo Serviço do SSH e outros serviços de rede, como o serviço de 
+		!autenticação remota ou monitoramento do Switch ou Router utilizando os protocolos RADIUS ou TACACS
 		ip domain-name vaamonde.pti
 
-		!Criação da chave de criptografia e habilitando o serviço do SSH Server local
-		!DICA: por padrão o serviço do SSH Server está desabilitado no Switch
+		!Criação/Geração da chave de criptografia e habilitando o serviço do SSH Server local
+		!DICA: por padrão o serviço do SSH Server está desabilitado no Switch ou Router
 		!DICA: por padrão todas as conexões remotas utilizando o protocolo SSH são criptografadas
 		!OBSERVAÇÃO: é recomendado utilizar módulos de criptografia de 1024 bits (360 até 2048)
 		!OBSERVAÇÃO: no Switch ou Router Real utilizamos o comando: crypto key generate rsa usage-keys modulus 1024
 		!OBSERVAÇÃO: existe vários modos de geração das chaves públicas criptografadas, o padrão é utilizar o RSA
-		!OBSERVAÇÃO: porta padrão de conexão do serviço de SSH é 22 no Protocolo TCP
-		!ADENDO: nessa versão do Cisco Packet Tracer 7.3 tem suporte ao comando completo para a geração dos módulos
+		!OBSERVAÇÃO: a porta padrão de conexão do serviço de SSH é a: 22 utilizando o Protocolo TCP
+		!ADENDO: versões do Cisco Packet Tracer >=7.3 possui o suporte para o comando completo de geração das chaves SSH
 		!RSA nos Switches ou Router, utilizando o comando: crypto key generate rsa usage-keys modulus 1024
 		!OBSERVAÇÃO IMPORTANTE: caso queira desativar o serviço do SSH ou remover os Módulos RSA, digite o comando:
 		!crypto key zeroize rsa, caso você digite novamente o comando: crypto key generate rsa ele vai solicitar se
@@ -36,23 +37,24 @@ enable
 		crypto key generate rsa general-keys modulus 1024
 
 		!Habilitando a versão 2 do serviço de SSH Server
-		!DICA: a versão 2 do serviço do SSH Server corrigi várias falhas de segurança
+		!DICA: a versão 2 do serviço do SSH Server corrigi várias falhas de segurança existe na versão 1.99
+		!OBSERVAÇÃO: após a criação da chave RSA do SSH o serviço habilita a versão 1.99 por padrão
 		ip ssh version 2
 
 		!Habilitando o tempo de inatividade para novas conexões do SSH Server
-		!DICA: configuração de inatividade é feita somente em segundos (1 até 120)
-		!OBSERVAÇÃO: essa configuração está relacionada ao tempo para se autenticar no switch
+		!DICA: configuração de inatividade é feita somente em segundos (1 até 120 - 2 minutos)
+		!OBSERVAÇÃO: essa configuração está relacionada ao tempo para se autenticar no serviço do SSH no Switch ou Router
 		ip ssh time-out 60
 
 		!Habilitando o número máximo de tentativas de conexões simultâneas no SSH Server
-		!DICA: essa opção aumenta o nível de segurança contra Força Bruta (Brute-Force)
+		!DICA: essa opção aumenta o nível de segurança contra ataques de Força Bruta (Brute-Force)
 		!OBSERVAÇÃO: limites de conexões simultâneas vai de: 0 até 5
 		ip ssh authentication-retries 2
 
 		!Acessando as linhas virtuais de acesso remoto do Switch
 		line vty 0 4
 		
-			!Configuração do protocolo de transporte somente SSH
+			!Configuração do protocolo de transporte de entrada para aceitar somente o SSH
 			transport input ssh
 
 			!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
@@ -85,6 +87,7 @@ telnet 192.168.1.250
 telnet 192.168.1.251
 
 !Acessando remotamente o Switch utilizando o protocolo SSH
+!OBSERVAÇÃO: -l (não é o número "1" e sim "l" minúsculo)
 ssh -l admin 192.168.1.250
 ssh -l admin 192.168.1.251
 

@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 21/04/2020
-!Data de atualização: 21/04/2020
-!Versão: 0.01
+!Data de atualização: 29/11/2021
+!Versão: 0.02
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !Acessando o modo EXEC Privilegiado
@@ -55,7 +55,7 @@ enable
 		!CUIDADO: não copiar todo o script na hora de colar no Router
 		!ADENDO IMPORTANTE: você pode substituir a linha pelo comando completo que hoje e suportado no
 		!Cisco PAcket Tracer: crypto key generate rsa usage-keys modulus 1024
-		crypto key generate rsa
+		crypto key generate rsa usage-keys modulus 1024
 
 		!Habilitando a versão 2 do serviço de SSH Server
 		ip ssh version 2
@@ -92,8 +92,8 @@ enable
 			!Saindo da configuração da linha console
 			exit
 
-		!Acessando a linha auxiliar, utilizada como acesso remoto utilizando Modem
-		!DICA: a porta auxiliar permite configurações do suporte de discagem (Modem)
+		!Acessando a linha auxiliar, acesso remoto feito utilizando o Fax-Modem
+		!DICA: a porta auxiliar permite configurações do suporte de discagem (Fax-Modem)
 		!OBSERVAÇÃO: no simulador Cisco Packet Tracer as configurações são limitadas
 		!OBSERVAÇÃO: essa configuração não é cobrada no CCNAv7, hoje em dia não é mais utilizada
 		line aux 0
