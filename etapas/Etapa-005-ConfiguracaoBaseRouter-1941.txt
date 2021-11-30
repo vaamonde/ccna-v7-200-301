@@ -9,7 +9,7 @@
 !Data de criação: 21/04/2020
 !Data de atualização: 29/11/2021
 !Versão: 0.02
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilegiado
 enable

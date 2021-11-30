@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 22/04/2020
-!Data de atualização: 23/04/2020
-!Versão: 0.02
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 30/11/2021
+!Versão: 0.03
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilégiado
 enable
@@ -20,16 +20,16 @@ enable
 		!Configurando a Interface Física GigabitEthernet 0/0
 		interface gigabitEthernet 0/0
 		
-			!Configuração da Descrição da Interface Virtual
+			!Configuração da Descrição da Interface Física do Router
 			description Interface de Gateway da Rede LAN Router rt-1941-1
 		
-			!Configuração do Endereçamento IPv4 da Interface Física
+			!Configuração do Endereçamento IPv4 da Interface Física do Router
 			!OBSERVAÇÃO: essa interface será o endereço de Gateway da Rede LAN
 			ip address 192.168.1.254 255.255.255.0
 		
 			!Inicializando a Interface Física do Router
-			!DICA: por padrão todas as interfaces de roteadores estão no status desligada (Shutdown)
-			!OBSERVAÇÃO: todas as interfaces do roteador estão com o status Administratively Down
+			!DICA: por padrão todas as Interfaces dos roteadores estão no status desligada (Shutdown)
+			!OBSERVAÇÃO: por padrão todas as Interfaces do roteador estão com o status Administratively Down
 			!ERRATA: no vídeo eu falo: Desligada pelo Administrador, correto é: Desligada Administrativamente.
 			no shutdown
   

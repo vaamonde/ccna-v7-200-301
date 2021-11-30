@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 02/05/2020
-!Data de atualização: 02/5/2020
-!Versão: 0.01
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 30/11/2021
+!Versão: 0.02
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilégiado
 enable
@@ -24,19 +24,19 @@ enable
 		ip domain-lookup
 		
 		!Configurando o Nome de Domínio no Switch e Router
-		!OBSERVAÇÃO: esse recurso já foi configurado, ele é necessário para o serviço do SSH Server
-		!DICA: a configuração do Nome de Domínio é recomendada, mesmo que não seja utilizado no Switch ou Router
+		!OBSERVAÇÃO: esse recurso já foi configurado no Switch e Router, ele é necessário para o serviço do SSH Server
+		!DICA: a configuração do Nome de Domínio é recomendada mesmo que não seja utilizado no Switch ou Router
 		!ip domain-name vaamonde.pti
 		
 		!Configurando o Endereço IPv4 do Servidor de DNS no Switch e Router
 		!DICA: após a configuração do endereço IPv4 do Servidor de DNS no Switch ou Router ele não usará mais o Broadcast
-		!OBSERVAÇÃO: você só pode configurar apenas um Servidor de Resolução de Nomes de DNS
+		!OBSERVAÇÃO: você só pode configurar apenas um Servidor de Resolução de Nomes de DNS no Switch ou Router
 		ip name-server 192.168.3.1
 		
 		!Adicionando manualmente a Resolução de Nomes e Endereços no Switch e Router
-		!DICA: por padrão o Switch e Router consulta primeiro a Base Dados Locais de Nomes e depois o DNS Server
+		!DICA: por padrão o Switch e Router consulta primeiro a Base Dados Local de Nomes e depois o DNS Server
 		!OBSERVAÇÃO: a criação de nomes locais facilita o acesso a equipamentos sem a dependência do servidor de DNS
-		!OBSERVAÇÃO: desvantagem, que esse é um procedimento manual, sua atualização não é dinâmica.
+		!OBSERVAÇÃO: uma desvantagem desse método é que essa configuração é feita de forma manual, sua atualização não é dinâmica.
 		ip host servidor 192.168.3.1
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado

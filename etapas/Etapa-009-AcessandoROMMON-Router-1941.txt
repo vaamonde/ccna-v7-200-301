@@ -7,14 +7,14 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 26/04/2020
-!Data de atualização: 26/04/2020
-!Versão: 0.01
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 30/11/2021
+!Versão: 0.02
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !ADENDO: No vídeo não foi comentando sobre a inicialização do serviço do SSH Server depois que o Router ou Switch
 !é resetado. Para resolver essa falha, recomendo digitar os comandos: crypto key zeroize rsa (zerar as chaves) e
-!depois o comando: crypto key generate rsa (gerar as chaves novamente), você também pode digitar o comando completo
-!crypto key generate rsa usage-keys modulus 1024.
+!depois o comando: crypto key generate rsa (gerar as chaves novamente), você pode digitar o comando completo
+!crypto key generate rsa usage-keys modulus 1024 que hoje e suporte na versão mais nova do Cisco IOS do Packet Tracer
 
 !ADENDO: No vídeo não foi comentando sobre a inicialização das Interfaces, por padrão nos arquivos running-config ou
 !startup-config o comando: no shutdown não está presente, quando você retorna um backup das configurações do Router
@@ -33,9 +33,11 @@ rommon 1 >?
 !Alterando o modo de inicialização do Cisco IOS do Router 1941
 !DICA: o comando confreg altera a forma como a inicialização do Cisco IOS ler os arquivos de configuração
 !DICA: no modo ROMMON a opção do TAB não funciona, precisando digitar o comando completo
-!OBSERVAÇÃO: essa opção é utilizada para forçar o Router não ler as configurações do startup-config
+!OBSERVAÇÃO: essa opção força o Router a não ler as configurações do startup-config na inicialização
 !OBSERVAÇÃO: chave de registro em hexadecimal: 0x2142 (não ler as configurações do startup-config)
 !OBSERVAÇÃO: chave de registro em hexadecimal: 0x2102 (ler as configurações do startup-config - padrão)
+!CUIDADO: existe várias chaves de registro do Cisco IOS, se você errar a chave pode acontecer do Cisco IOS 
+!inicializar de forma incorreta ou com caracteres irreconhecível.
 rommon 2 >confreg 0x2142
 
 !Reinicializando o Router 1941 do Modo ROMMON
@@ -86,10 +88,10 @@ enable
 	show startup-config
 	
 	!Aplicando as configurações da NVRAM (startup-config) para a RAM (running-config)
-	!OBSERVAÇÃO: no vídeo após a cópia da configuração da NVRAM para RAM, por padrão as interfaces não são inicializadas
-	!OBSERVAÇÃO: sendo necessário inicializar manualmente cada interface, pois no arquivo running-config não tem o comando
-	!no shutdown
-	!ERRATA: no vídeo não foi falado ou comentado sobre isso, não esqueça de inicializar as interfaces
+	!OBSERVAÇÃO: no vídeo após a cópia da configuração da NVRAM para RAM, por padrão as Interfaces não estão 
+	!inicializadas sendo necessário inicializar manualmente cada Interface, no arquivo running-config por 
+	!padrão não tem o comando: no shutdown
+	!ERRATA: no vídeo não foi falado ou comentado sobre isso, não esqueça de inicializar as Interfaces após o Backup
 	copy startup-config running-config
 	
 	!Salvando as configurações da memória RAM para a memória NVRAM
@@ -98,15 +100,16 @@ enable
 	!Reinicializando o Router 1941
 	reload
 	
-!SEGUNDA ETAPA: parar a inicialização do Cisco IOS do Switch 2960 ou 3560
-!OBSERVAÇÃO: no Cisco Packet Tracer esse procedimento é limitado, não sendo possível demonstrar.
+!SEGUNDA ETAPA: parar a inicialização do Cisco IOS do Switch Layer 2 2960 ou Layer 3 3560
+!OBSERVAÇÃO: no Cisco Packet Tracer esse procedimento é limitado, não sendo possível demonstrar, somente em equipamentos reais.
 
 _01# Deixar o Switch 2960 ou 3560 inicializar normalmente;
-_02# Após a inicialização, pressionar o Botão MODE por apróximadamente 15/20 segundos;
-_03# Os LED's do Switch vai piscar é entrar no modo de ROMMON é será reinicializado automaticamente;
-_04# Após a reinicialização o Switch será resetado.
+_02# Após a inicialização, pressionar o Botão MODE por aproximadamente 15/20 segundos;
+_03# Os LED's do Switch vai piscar e entrar no modo de ROMMON, o Switch será reinicializado automaticamente;
+_04# Após a reinicialização o Switch será resetado para o modo de fábrica (fabric mode).
 
 !Caso o Switch 2960 ou 3560 não volte para o estado de Fábrica (Reset), utilizar os procedimentos abaixo:
+!CUIDADO: só utilizar esse procedimento se for realmente necessário ou se os equipamentos não voltar
 
 1. Pressionar o botão MODE até o Switch ser reinicializado;
 2. Na tela de inicialização, na mensagem de hardware, pressionar o botão MODE para cancelar o carregamento do IOS;

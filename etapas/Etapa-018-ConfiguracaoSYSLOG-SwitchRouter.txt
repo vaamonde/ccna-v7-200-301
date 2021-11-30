@@ -7,17 +7,17 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 02/05/2020
-!Data de atualização: 29/09/2020
-!Versão: 0.02
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 30/11/2021
+!Versão: 0.03
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !SYSLOG é um padrão criado pela IETF (Internet Engineering Task Force) para a transmissão de mensagens
-!de log em redes IP. O termo é geralmente usado para identificar tanto o protocolo de rede quanto para 
+!de Log em redes IP. O termo é geralmente usado para identificar tanto o protocolo de rede quanto para 
 !a aplicação ou biblioteca de envio de mensagens no protocolo syslog.
 
 !O protocolo padrão utilizado pelo Syslog é o UDP (User Datagram Protocol) na porta padrão: 514
-!OBSERVAÇÃO: O Servidor de Syslog também utiliza o Protocolo TCP na porta 514, com suporte a Criptografia
-!na Porta 6514
+!OBSERVAÇÃO: O Servidor de Syslog também utiliza o Protocolo TCP na porta 514, e com suporte a Criptografia
+!na Porta padrão: 6514
 
 !O Syslog trabalha com Níveis de Severidade (Traps) que inicia de: 0 até 7 utilizando palavras chaves como:
 !0=emergency, 1=alert, 2=critical, 3=error, 4=warning, 5=notice, 6=info e 7=debugging
@@ -25,7 +25,7 @@
 !PRIMEIRA ETAPA: Configuração do Servidor de Syslog
 !OBSERVAÇÃO: por padrão o Servidor de Syslog do Cisco Packet Tracer está ligado
 
-!SEGUNDA ETAPA: Configuração dos Switch e Router para enviar os Logs para o Servidor de Syslog
+!SEGUNDA ETAPA: Configuração do Switch e Router para enviar os Logs para o Servidor de Syslog
 !Acessando o modo EXEC Privilégiado
 enable
 
@@ -34,10 +34,10 @@ enable
 		
 		!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Switch e Router
 		!OBSERVAÇÃO: a configuração da Marcação de Data/Hora detalhado nos Log já foi executada no Script Base
-		!service timestamps log datetime msec
+		service timestamps log datetime msec
 		
 		!Habilitando o Recurso de Log no Switch e Router
-		!DICA: por padrão todos os Logs habilitadoS no Switch ou Router são volátil
+		!DICA: por padrão todos os Logs habilitadoS no Switch ou Router são volátil (desligou, perdeu tudo)
 		!OBSERVAÇÃO: salvar os Logs no Servidor de Syslog garante a auditoria de falhas nos equipamentos
 		logging on
 		
@@ -46,13 +46,13 @@ enable
 		logging host 192.168.3.1
 		
 		!Configurando o Nível de Log que será enviado para o Servidor de Syslog
-		!DICA: o nível de detalhamento do Log facilita a análise de erros é possíveis falhas de segurança
+		!DICA: o nível de detalhamento do Log facilita a análise de erros e possíveis falhas de segurança
 		!OBSERVAÇÃO: no Cisco Packet Tracer temos apenas a opção: Debugging (severity=7)
 		logging trap debugging
 		
 		!Habilitando os Logs de Autenticação que será enviado para o Servidor de Syslog
-		!DICA: esse recurso aumenta o nível de segurança e auditoria da rede
-		!OBSERVAÇÃO: recomendo habilitar os recursos de sucesso e falhas de autenticação
+		!DICA: esse recurso aumenta o nível de segurança e auditoria da rede em relação a autenticação física ou remota
+		!OBSERVAÇÃO: recomendado habilitar os recursos de sucesso e falhas de autenticação física ou remota
 		!OBSERVAÇÃO: essas informações em conjunto com as regras de segurança aumenta nível de confiabilidade da rede
 		!OBSERVAÇÃO: esse recurso não está disponível no Switch Layer 2 2960
 		login on-success log
@@ -75,8 +75,8 @@ show running-config | include log
 
 !Comandos para verificar do envio das Mensagens para o Syslog Server
 !DICA: o comando Debug é muito utilizado para analisar informações detalhadas de recursos ou comandos
-!OBSERVAÇÃO: muito cuidado quando habilitar o Debug, não esqueça de desabilitar no final da análise, pois esse recurso
-!consome muita memória e processo do hardware
+!OBSERVAÇÃO: muito cuidado quando habilitar o Debug, não esqueça de desabilitar no final da análise, 
+!pois esse recurso consome muita memória e processo do hardware
 debug ip icmp
 ping server-02
 no debug ip icmp

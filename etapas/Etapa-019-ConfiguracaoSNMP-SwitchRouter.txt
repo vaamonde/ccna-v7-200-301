@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 02/05/2020
-!Data de atualização: 02/05/2020
-!Versão: 0.01
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 30/11/2021
+!Versão: 0.02
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !SNMP (Simple Network Management Protocol) é um protocolo padrão da Internet para o gerenciamento de
 !dispositivos em redes IP. Dispositivos que normalmente suportam SNMP incluem roteadores, computadores,
@@ -23,7 +23,8 @@
 !O SNMP é dividido em: SNMP Manager (Gerente), SNMP Agent (Agente), MIB (Managed Information Base)
 !e OID (Object Identifier)
 
-!PRIMEIRA ETAPA: Configuração dos Switches e Router para permiti acesso as informações SNMP
+!PRIMEIRA ETAPA: Configuração do Switch e Router para permiti o acesso das informações via SNMP
+
 !Acessando o modo EXEC Privilégiado
 enable
 

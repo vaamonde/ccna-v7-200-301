@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 02/05/2020
-!Data de atualização: 02/05/2020
-!Versão: 0.01
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 30/11/2021
+!Versão: 0.02
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !NTP (Network Time Protocol) é um protocolo para sincronização dos relógios dos computadores. É utilizado para
 !sincronização do relógio de um conjunto de computadores e dispositivos em redes de dados com latência variável.
@@ -57,12 +57,12 @@ show clock
 		!Configurando o Endereço IPv4 do Servidor de NTP
 		!DICA: por padrão apenas um servidor de NTP é configurado no Cisco Packet Tracer, em equipamentos reais permite mais
 		!DICA: Switch Layer 3 ou Router pode ser Servidor de NTP na Rede usando a opção: ntp master 1 (stratum)
-		!OBSERVAÇÃO: não é possível utilizar nomes para servidores de NTP no Cisco Packet Tracer, somente IPv4
+		!OBSERVAÇÃO: não é possível utilizar nomes para servidores de NTP no Cisco Packet Tracer, somente endereços IPv4
 		ntp server 192.168.3.1
 		
-		!Habilitando o sincronismo da Data e Hora do NTP com o Hardware
+		!Habilitando o sincronismo da Data e Hora do NTP Server com o Hardware
 		!DICA: essa opção habilitar o recurso de sincronização de Data/Hora de Software e Hardware
-		!OBSERVAÇÃO: no Switch 2960 esse recurso não está disponível para configuração
+		!OBSERVAÇÃO: no Switch Layer 2 2960 esse recurso não está disponível para configuração
 		ntp update-calendar
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
