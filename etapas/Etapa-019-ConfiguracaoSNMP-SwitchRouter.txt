@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 02/05/2020
-!Data de atualização: 30/11/2021
-!Versão: 0.02
+!Data de atualização: 07/12/2021
+!Versão: 0.03
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !SNMP (Simple Network Management Protocol) é um protocolo padrão da Internet para o gerenciamento de
@@ -62,7 +62,7 @@ Advanced:		Address: 			192.168.3.252
 				Write Community:	ptirw
 				SNMP Version: 		v3
 
-!Obtendo dados da MIB do Switch Multilayer			
+!Obtendo dados da MIB do Switch Multilayer		
 .sysName		OID: .1.3.6.1.2.1.1.5.0		GET
 .sysUpTime		OID: .1.3.6.1.2.1.1.3.0		GET
 .sysDescr		OID: .1.3.6.1.2.1.1.1.0		GET

@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 30/04/2020
-!Data de atualização: 30/11/2021
-!Versão: 0.02
+!Data de atualização: 07/12/2021
+!Versão: 0.03
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !SMTP (Simple Mail Transfer Protocol) é o protocolo padrão de envio de mensagens de correio eletrônico (e-mail)
@@ -58,10 +58,10 @@ User Setup			User: robsonvaamonde	Password: 123456	(+)		Email: robsonvaamonde@va
 					User: denisnovais		Password: 123456	(+)		Email: denisnovais@vaamonde.pti
 					User: vaamonde			Password: 123456	(+)		Email: vaamonde@vaamonde.pti
 
-!SEGUNDA ETAPA:Configurações do Clientes de SMTP e POP3 no Cisco Packet Tracer
+!SEGUNDA ETAPA: Configurações do Clientes de SMTP e POP3 no Cisco Packet Tracer
 !DICA: o principal cliente de e-mail utilizado hoje em dia no mercado corporativo é o: Microsoft Outlook
 !OBSERVAÇÃO: existe outros clientes de e-mail como: Thunderbid, Evolution, SeaMonkey, eM Client, etc
-!OBSERVAÇÃO: não confundir Cliente de Email como Webmail, nesse caso o acesso e feito via Navegador
+!OBSERVAÇÃO: não confundir Cliente de Email com Webmail, nesse caso o acesso e feito via Navegador
 
 !Testando as resoluções de nome do SMTP e POP3
 nslookup smtp.vaamonde.pti

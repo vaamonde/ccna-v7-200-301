@@ -7,19 +7,21 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 16/04/2020
-!Data de atualização: 29/11/2021
-!Versão: 0.04
+!Data de atualização: 07/12/2021
+!Versão: 0.05
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
-!Primeiro acesso ao modo EXEC de Comandos de usuários > (sinal de Maior - user EXEC commands mode)
+!Primeiro acesso ao modo EXEC de Comandos de usuário (> sinal de Maior - user EXEC commands mode)
 !Use o modo EXEC para definir, visualizar e testar as operações do sistema. 
 !Em geral, os comandos EXEC do usuário permitem que você se conecte a dispositivos remotos, 
-!altere as configurações da linha do terminal temporariamente, execute testes básicos e liste 
-!informações do sistema.
-!O modo EXEC é dividido em dois níveis de acesso: usuário e privilegiado. 
+!altere as configurações da linha do terminal temporariamente, executar os testes básicos e listar 
+!informações do Cisco IOS.
+!O modo EXEC é dividido em dois níveis de acesso: usuário e privilegiado.
+!OBSERVAÇÃO: sempre que você acessar o modo EXEC pela primeira vez no Switch ou Router será mostrado
+!o nome (hostname) padrão dos equipamentos: Switch = switch> e Router = router>
 switch>
 
-!Acessando o modo EXEC Privilegiado # (sinal de Sustenido/Hashtag - privileged EXEC mode)
+!Acessando o modo EXEC Privilegiado (# sinal de Sustenido/Hashtag - privileged EXEC mode)
 !DICA: utilizar sempre a tecla TAB para auto-completar os comandos no Cisco IOS
 !DICA: se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto com o comando
 !EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
@@ -35,24 +37,26 @@ enable
 clock set 14:00:00 29 November 2021
 
 	!Acessando o modo de Configuração Global de comandos do Cisco IOS
+	!DICA: nesse modo que e feita a maioria das configurações do Cisco IOS tanto no Switch como no Router
 	configure terminal
   
-	!Configuração do nome do switch
+	!Configuração do nome do Switch (configuração principal e a mais importante)
 	!OBSERVAÇÃO: essa configuração é obrigatória para o serviço de acesso remoto SSH e demais serviços de rede
 	!DICA: utilizar nomes curtos e objetivos, não usar caracteres especiais, espaço, acentuação, etc...
 	hostname sw-l2-2960-1
   
-	!Habilitando o serviço de criptografia de senhas do Tipo-7 Password do Cisco IOS
+	!Habilitando o serviço de criptografia de senha do Tipo-7 Password do Cisco IOS
 	!DICA: senhas do Tipo-7 por padrão não são criptografadas no Cisco IOS (serviço desabilitado)
 	!OBSERVAÇÃO: senhas do Tipo-7 são fáceis de serem quebradas e não são mais usadas nos equipamentos da Cisco
 	!DESAFIO: site para quebrar senhas do Tipo-7 https://packetlife.net/toolbox/type7/
 	service password-encryption
 	
 	!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Cisco IOS
-	!DICA: esse recurso é utilizado nos sistemas de monitoramento, desempenho e consumo de rede
+	!DICA: esse recurso é utilizado nos sistemas de monitoramento, desempenho e consumo de rede principalmente
+	!no sistemas de auditoria de acesso ou recursos/serviços de rede e protocolos de rede na geração de logs
 	service timestamps log datetime msec
   
-	!Desativando o serviço de resolução de nomes de domínio (serviço habilitado por padrão) do Cisco IOS
+	!Desativando o serviço de resolução de nomes de domínio (serviço habilitado por padrão) no Cisco IOS
 	!DICA: se você desabilitar esse recurso, ele resolve o problema de travamento de comandos no Cisco IOS
 	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255))
 	!DICA: para desbloquear o terminal, você pressiona: Ctrl+Shift+6 ou espera a liberação do terminal
@@ -89,7 +93,7 @@ clock set 14:00:00 29 November 2021
 	line console 0
 		
 		!Forçando fazer login local utilizando os usuários é senha locais criados no Switch
-		!DICA: por padrão a configuração da Linha Console é permitir acesso sem autenticação
+		!DICA: por padrão a configuração da Linha Console é permitir acesso físico sem autenticação
 		login local
 		
 		!Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
@@ -98,7 +102,8 @@ clock set 14:00:00 29 November 2021
 		!por esse movito ela não tem suporte a senhas do Tipo-5, pois o acesso e feito fisicamente no
 		!Switch ou Router (se você tem a possibilidade de acessar fisicamente um equipamento, o nível de
 		!segurança da criptografia não importa mais, pois é uma invasão física não lógica)
-		!OBSERVAÇÃO: essa configuração só será utilizada caso não exista usuários locais criados
+		!OBSERVAÇÃO: essa configuração só será utilizada caso não exista usuários locais criados e se 
+		!a opção do comando: login local não for configurada.
 		password vaamonde@pti
 		
 		!Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco IOS
@@ -107,7 +112,7 @@ clock set 14:00:00 29 November 2021
 		logging synchronous
 		
 		!Habilitando o tempo de inatividade de uso do linha de console do Cisco IOS
-		!DICA: configuração do tempo de inatividade em minutos e segundos
+		!DICA: configuração do tempo de inatividade em minutos e segundos da linha console
 		!OBSERVAÇÃO: não é recomendado deixar o tempo de inatividade muito curto e nem muito longo
 		exec-timeout 5 30
 		

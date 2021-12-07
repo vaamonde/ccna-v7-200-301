@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 18/04/2020
-!Data de atualização: 29/11/2021
-!Versão: 0.02
+!Data de atualização: 07/12/2021
+!Versão: 0.03
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilegiado
@@ -17,7 +17,7 @@ enable
 	!Acessando o modo de Configuração Global de comandos
 	configure terminal
 	
-		!Acessando as Linhas (Lines) Virtuais de acesso remoto do Switch do Cisco IOS
+		!Acessando as Linhas (Lines) Virtuais de acesso remoto do Switch no Cisco IOS
 		!DICA: por padrão o Switch Cisco possui 16 (0 até 15) linhas virtuais de acesso remoto
 		!OBSERVAÇÃO: as linhas virtuais são utilizadas para acessar remotamente o terminal do Switch ou Router
 		!OBSERVAÇÃO: linhas virtuais não são utilizadas para monitoramento, para isso usamos o Protocolo SNMP 

@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 26/04/2020
-!Data de atualização: 30/11/2021
-!Versão: 0.02
+!Data de atualização: 07/12/2021
+!Versão: 0.03
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !ADENDO: No vídeo não foi comentando sobre a inicialização do serviço do SSH Server depois que o Router ou Switch
@@ -108,7 +108,7 @@ _02# Após a inicialização, pressionar o Botão MODE por aproximadamente 15/20
 _03# Os LED's do Switch vai piscar e entrar no modo de ROMMON, o Switch será reinicializado automaticamente;
 _04# Após a reinicialização o Switch será resetado para o modo de fábrica (fabric mode).
 
-!Caso o Switch 2960 ou 3560 não volte para o estado de Fábrica (Reset), utilizar os procedimentos abaixo:
+!Caso o Switch 2960 ou 3560 não volte para o modo de Fábrica (Reset), utilizar os procedimentos abaixo:
 !CUIDADO: só utilizar esse procedimento se for realmente necessário ou se os equipamentos não voltar
 
 1. Pressionar o botão MODE até o Switch ser reinicializado;

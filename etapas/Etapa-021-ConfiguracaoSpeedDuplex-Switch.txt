@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 04/05/2020
-!Data de atualização: 04/05/2020
-!Versão: 0.01
-!Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
+!Data de atualização: 07/12/2021
+!Versão: 0.02
+!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !PRIMEIRA ETAPA: Configuração do Switch Layer 3 3560
 !Acessando o modo EXEC Privilégiado
@@ -26,14 +26,14 @@ enable
 
 			!Configurando a velocidade da Interface (Porta de Rede)
 			!DICA: conexões Ethernet em Switch possui velocidades padrão de: 10, 100 e 1000Mbps
-			!OBSERVAÇÃO: existe velocidades maiores que 1000Mbps como por exemplo 10000Mbps (10Gbps)
+			!OBSERVAÇÃO: existe velocidades maiores que 1000Mbps como por exemplo: 10000Mbps (10Gbps)
 			!OBSERVAÇÃO: quando configurado a velocidade na Interface ela não ficará UP se a outra Interface estiver 
 			!configurada com velocidades diferentes
 			speed 100
 
 			!Configuração do Modo de Transmissão da Interface (Porta de Rede)
 			!DICA: conexões FastEthernet em Switch podem trabalhar com os modos: Half-Duplex, Full-Duplex e Auto
-			!DICA: por padrão o recurso de Duplex está configurado como auto em todas as interfaces
+			!DICA: por padrão o recurso de Duplex está configurado como auto em todas as Interfaces (Porta de Rede)
 			!OBSERVAÇÃO: Half-Duplex era o modo de transmissão em redes Ethernet 10Mbps com colisão (CSMA-CD)
 			!OBSERVAÇÃO: Full-Duplex é o modo transmissão em Redes FastEthernet e GigabitEthernet sem colisão
 			!OBSERVAÇÃO: quando configurado o Duplex na Interface ela não ficará UP se a outra Interface estiver
@@ -48,7 +48,7 @@ enable
 			!EXEMPLO: utilizar cabo direto ou cabo cross-over para fazer o cascateamento entre Switches
 			no mdix auto
 			
-			!Saindo da configuranção da Interface (Porta de Rede)
+			!Saindo da configuração da Interface (Porta de Rede)
 			exit
 			
 		!Acessando a Interface (Porta de Rede) da Conexão do Access Point
@@ -76,7 +76,7 @@ enable
 			!DICA: para aumentar a segurança é recomendado desligar todas as interfaces que não estão sendo utilizadas
 			!OBSERVAÇÃO: desligar as interfaces faz parte da segurança física da rede
 			!OBSERVAÇÃO: todas as interfaces dos Switches estão no status: no shutdown e na VLAN padrão 1 com DTP ativado
-			!OBSERVAÇÃO: o DTP (Dynamic Trunking Protocol) será estudo nas configurações de STP, VLAN e TRUNK
+			!OBSERVAÇÃO: o DTP (Dynamic Trunking Protocol) será estudado nas configurações de STP, VLAN e TRUNK
 			shutdown
 			exit
 			

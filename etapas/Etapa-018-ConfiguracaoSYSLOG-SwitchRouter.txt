@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 02/05/2020
-!Data de atualização: 30/11/2021
-!Versão: 0.03
+!Data de atualização: 07/12/2021
+!Versão: 0.04
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !SYSLOG é um padrão criado pela IETF (Internet Engineering Task Force) para a transmissão de mensagens
@@ -76,7 +76,7 @@ show running-config | include log
 !Comandos para verificar do envio das Mensagens para o Syslog Server
 !DICA: o comando Debug é muito utilizado para analisar informações detalhadas de recursos ou comandos
 !OBSERVAÇÃO: muito cuidado quando habilitar o Debug, não esqueça de desabilitar no final da análise, 
-!pois esse recurso consome muita memória e processo do hardware
+devido que esse recurso consome muita memória RAM e processamento CPU do hardware
 debug ip icmp
 ping server-02
 no debug ip icmp
