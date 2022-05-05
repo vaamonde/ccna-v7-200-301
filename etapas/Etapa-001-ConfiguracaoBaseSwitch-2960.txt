@@ -73,7 +73,7 @@ clock set 14:00:00 29 November 2021
 	banner motd #AVISO: acesso autorizado somente a funcionarios#
   
 	!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado do Cisco IOS
-	!DICA: senhas do Tipo-5 por padrão utilizam criptografia forte (Algoritimo MD5)
+	!DICA: senhas do Tipo-5 por padrão utilizam criptografia forte (Algorítimo MD5)
 	!OBSERVAÇÃO: por padrão o acesso ao modo EXEC Privilegiado é liberado sem segurança
 	enable secret vaamonde@pti
   
@@ -99,7 +99,7 @@ clock set 14:00:00 29 November 2021
 		!Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
 		!DICA: na porta console não temos a opção de criar senhas do Tipo-5 somente Tipo-7
 		!OBSERVAÇÃO: a porta console é considerada uma porta/interface física não remota ou virtual
-		!por esse movito ela não tem suporte a senhas do Tipo-5, pois o acesso e feito fisicamente no
+		!por esse motivo ela não tem suporte a senhas do Tipo-5, pois o acesso e feito fisicamente no
 		!Switch ou Router (se você tem a possibilidade de acessar fisicamente um equipamento, o nível de
 		!segurança da criptografia não importa mais, pois é uma invasão física não lógica)
 		!OBSERVAÇÃO: essa configuração só será utilizada caso não exista usuários locais criados e se 

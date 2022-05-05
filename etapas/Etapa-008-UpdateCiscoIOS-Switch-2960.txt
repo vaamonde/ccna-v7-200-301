@@ -14,7 +14,7 @@
 !OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO É MAIS COBRADO 
 !CONHECIMENTOS EM LICENCIAMENTO DO CISCO IOS OU UPGRADES DE CISCO IOS NO SWITCH OU ROUTERS
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 	
 	!Atualizando o Cisco IOS (Firmware) do Switch Layer 2 2960
