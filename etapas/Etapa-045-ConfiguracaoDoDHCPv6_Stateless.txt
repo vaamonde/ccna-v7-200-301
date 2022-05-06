@@ -116,7 +116,7 @@ enable
 		
 		!Configurando a Interface do Router 2911-1 para configurar o Endereço IPv6 via SLAAC
 		!DICA: interface configurada com o recurso de Auto-Configuração geralmente são utilizadas em Link de
-		!Conexão com a Internet ou configurações de Redes WAN especifícas (Links Privados, VPN, etc)
+		!Conexão com a Internet ou configurações de Redes WAN específicas (Links Privados, VPN, etc)
 		!OBSERVAÇÃO: nesse cenário a Interface de WAN do Router 2911 vai obter o Prefixo de Rede Global Unicast
 		!do Router 1941 é as configurações de Domínio é DNS, o Sufixo de Rede será configurado utilizando o 
 		!recurso do EUI-64 (MAC Address + FF:FE), essa configuração também será feita no Link Local da Interface

@@ -30,7 +30,7 @@
 !que se deseja enviar e receber informações sobre os equipamentos vizinho (neighbors).
 
 !PRIMEIRA ETAPA: Configuração do CDP e LLDP nos Switches Layer 2 2960
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

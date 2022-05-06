@@ -15,7 +15,7 @@
 !Servidores Microsoft ou GNU/Linux em uma Rede Corporativa, as principais limitações dos servidores DHCP em Router e Switch
 !são: opções de configurações avançadas, integrações de serviços de rede, relatórios, monitoramento, etc. 
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

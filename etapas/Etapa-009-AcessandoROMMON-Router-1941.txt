@@ -43,7 +43,7 @@ rommon 2 >confreg 0x2142
 !Reinicializando o Router 1941 do Modo ROMMON
 rommon 3 >reset
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Visualizando as configurações de inicialização do Router 1941
@@ -71,7 +71,7 @@ write
 !Reinicializando o Router 1941
 reload
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Visualizando as configurações de inicialização do Router 1941

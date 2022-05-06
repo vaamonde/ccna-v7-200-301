@@ -26,7 +26,7 @@
 !OBSERVAÇÃO: por padrão o Servidor de Syslog do Cisco Packet Tracer está ligado
 
 !SEGUNDA ETAPA: Configuração do Switch e Router para enviar os Logs para o Servidor de Syslog
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

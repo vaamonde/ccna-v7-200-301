@@ -32,7 +32,7 @@
 !não estão configuradas nas Interfaces dos Switches)
 
 !PRIMEIRA ETAPA: Configuração do Servidor VTP no Switch Layer 3 3560
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

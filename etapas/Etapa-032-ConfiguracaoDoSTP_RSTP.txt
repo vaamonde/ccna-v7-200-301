@@ -64,7 +64,7 @@ enable
 		!OBSERVAÇÃO: na configuração do Switch Root Bridge do STP, temos as opções de: primary (Primário) ou secondary (Secundário)
 		!OBSERVAÇÃO: podemos adicionar mais VLAN's para a árvore do STP, utilizando as mesmas opções do comando: ip arp inspection ou
 		!dhcp snooping - EXEMPLO: spanning-tree vlan 10 20 30 | spanning-tree vlan 10-30 | spanning-tree vlan 1,5,8,10-30
-		!IMPORTANTE: com essa configuração, automáticamente o Bridge ID da Switch será decrementado, sendo eleito o Root Bridge com a
+		!IMPORTANTE: com essa configuração, automaticamente o Bridge ID da Switch será decrementado, sendo eleito o Root Bridge com a
 		!menor Priority entre os demais Switches Layer 2 da Rede
 		spanning-tree vlan 1 root primary
 

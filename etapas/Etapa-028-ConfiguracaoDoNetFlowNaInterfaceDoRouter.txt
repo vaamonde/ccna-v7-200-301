@@ -31,7 +31,7 @@
 !OBSERVAÇÃO: no Cisco Packet Tracer por padrão o Serviço do Coletor do NetFlow está desligado
 
 !SEGUNDA ETAPA: Configuração do Router 1941-2
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

@@ -21,7 +21,7 @@
 !SERVER NÃO SERÁ CONFIGURADO NOS HOSTS POIS O SWITCH LAYER 3 3560 NO CISCO PACKET TRACER NÃO POSSUI A OPÇÃO DA CONFIGURAÇÃO DO 
 !ESCOPO DO DHCPv6.
 
-!OBSERVAÇÃO IMPORTANTE: para essa configuração funcionar será necessário desligar o Servidor DHCPv6 Genérico Statefull que foi
+!OBSERVAÇÃO IMPORTANTE: para essa configuração funcionar será necessário desligar o Servidor DHCPv6 Genérico Stateful que foi
 !configurado na última aula.
 
 !ADENDO IMPORTANTE: MESMO CONFIGURANDO AS OPÇÕES DO SDM PREFER, CONFIGURANDO AS INTERFACES DE VLAN 1 E FASTETHERNET 0/24, O PING 

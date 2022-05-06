@@ -17,7 +17,7 @@
 !As principais mudanças do OSPFv3 IPv6 para o OSPFv2 IPv4 são: processamento do protocolo por link (Interface),
 !suporte a múltiplos links por instância, utiliza o endereço de Link Local para troca de informações, alteração
 !nos métodos de autenticação (suporte ao IPSec, suporte de autenticação por Link ou Área), suporte a LSA do tipo
-!desconhecido (unknowm LSA), suporte a escopo de Flooding e formato dos pacotes de tipos de LSA modificados (novos
+!desconhecido (unknown LSA), suporte a escopo de Flooding e formato dos pacotes de tipos de LSA modificados (novos
 !LSA dos Tipo-8 e Tipo-9).
 
 !O OSPFv3 IPv6 utiliza Multicast para enviar e receber pacotes de Hellos com os vizinhos, utilizando o endereço 

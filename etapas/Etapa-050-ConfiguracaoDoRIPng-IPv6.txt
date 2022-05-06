@@ -84,7 +84,7 @@ enable
 			exit
 
 		!OBSERVAÇÃO IMPORTANTE: nessa topologia não é habilitado o Protocolo IPv6 nas Sub-Interfaces das VLAN's 10, 20, 30, 40 e 50
-		!pois essas Interfaces estão configuradas como DHCPv6 Statefull, o Endereço de Global Unicast é diferente do Escopo criado,
+		!pois essas Interfaces estão configuradas como DHCPv6 Stateful, o Endereço de Global Unicast é diferente do Escopo criado,
 		!o acesso a essas redes e feito utilizando Rotas Estática, no processo do RIPng essas redes já serão publicadas no Domínio
 		!do Protocolo do RIPng utilizando o recurso de Redistribuição de Rotas
 		

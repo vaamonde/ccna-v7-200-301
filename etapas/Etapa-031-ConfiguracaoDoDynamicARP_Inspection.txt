@@ -21,7 +21,7 @@
 !O DAI trabalha igual e integrado com o DHCP Snooping, monitorando portas Confiáveis (Trusted) ou Não Confiáveis (Untrusted)
 
 !PRIMEIRA ETAPA: Configuração do Dynamic ARP Inspection no Switch Layer 3 3560
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

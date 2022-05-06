@@ -57,10 +57,10 @@ Create Pool:	Pool Name:			dhcpv6_generic
 				IPv6 Prefix:		2001:abcd:1234:3::/64
 				DHCPv6 DUID:		000100011886ECE90001637BD5E2
 				Valid Lifetime:		2592000
-				Prefered Lifetime:	604800
+				Preferred Lifetime:	604800
 				Local Pool Name:	dhcpv6_generic
 				Valid Lifetime:		2592000
-				Prefered Lifetime:	604800
+				Preferred Lifetime:	604800
 
 !Verificação dos Endereços IPv6 nos Desktop
 ipv6config /all

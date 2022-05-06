@@ -32,7 +32,7 @@ enable
 			!DICA: na vida real utilizamos essa opção somente em Roteadores de Borda com a Internet ou Redes Específicas
 			!OBSERVAÇÃO: cuidado com o comando default-information originate quando utilizado em Roteadores ou Switch Layer 3 que
 			!tem rotas padrão para outras redes, utilizando por exemplo o comando: ip route 0.0.0.0 0.0.0.0 gigabitEthernet 0/0
-			!IMPORTANTE: a Rota Padrão do Roteador 2911-1 foi aprendida é configurada dinâmicamente pelo DHCP Client.
+			!IMPORTANTE: a Rota Padrão do Roteador 2911-1 foi aprendida é configurada dinamicamente pelo DHCP Client.
 			default-information originate
 			end
 write
@@ -40,7 +40,7 @@ write
 !Visualizando as configurações da memória RAM
 show running-config | section router rip
 
-!Verificando as informações do Protocolo RIPv2 nos Routeres 2911 e 1941
+!Verificando as informações do Protocolo RIPv2 nos Routers 2911 e 1941
 show ip router rip
 show ip router static
 show ip rip database

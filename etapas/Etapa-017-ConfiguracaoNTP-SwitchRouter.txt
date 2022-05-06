@@ -28,7 +28,7 @@
 !Hour:				15:00:00 PM
 
 !SEGUNDA ETAPA: Configuração dos Clientes de NTP no Switch e Router
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 !Verificando a Data e Hora do Switch e Router

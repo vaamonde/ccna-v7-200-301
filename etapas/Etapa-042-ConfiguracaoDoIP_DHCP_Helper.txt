@@ -24,7 +24,7 @@
 !OBSERVAÇÃO: vale lembrar que o Roteador por padrão não encaminha Mensagens de Broadcast para outras Redes conectadas.
 
 !O IP DHCP Client (Cliente do DHCP) é uma das formas de configuração do endereço IPv4 ou IPv6 em uma Interface de Rede, 
-!esse recurso permite configurar uma interface dinâmicamente, obtendo o endereço IPv4 ou IPv6 dos Servidores de DHCP da Rede.
+!esse recurso permite configurar uma interface dinamicamente, obtendo o endereço IPv4 ou IPv6 dos Servidores de DHCP da Rede.
 !Interfaces configuradas com o DHCP Client geralmente são utilizadas para se conectar com o ISP (Internet Service Provider).
 
 !PRIMEIRA ETAPA: Configuração do Escopo do DHCPv4 Server no Servidor do DNSGoogle
@@ -61,7 +61,7 @@ Service HTTPS	On
 !TERCEIRA ETAPA: Configuração do Router DNSGoogle
 !OBSERVAÇÃO: nesse roteador eu não configurei todos os recursos BASE, apenas as configurações necessárias para o funcionamento
 !e comunicação dos dispositivos de rede, recomendo você aplicar os recursos BASE depois da configuração do cenário.
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 	configure terminal
 		hostname dnsgoogle

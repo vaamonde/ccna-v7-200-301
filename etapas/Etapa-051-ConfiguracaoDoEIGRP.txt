@@ -28,12 +28,12 @@
 
 !O EIGRP forma Adjacência com Link State mais utiliza o Split Horizon como mecanismo de Prevenção de Loops, utiliza o Multicast
 !224.0.0.10 para estabelecer adjacências, depois utiliza Unicast para sincronizar a Topologia, utiliza o seu próprio protocolo
-!de Transporte IP 88 (utilizado nas comunicações Multicast e Unciast, não confundir com a Porta do Kerberos 88) junto com o Método
+!de Transporte IP 88 (utilizado nas comunicações Multicast e Unicast, não confundir com a Porta do Kerberos 88) junto com o Método
 !de Transporte via RTP (Reliable Transport Protocol), diferente do Protocolo RIP/RIPv2, o EIGRP só faz Updates somente se for
 !necessário (quando acontece mudanças na Topologia, Falhas de Links ou novas Rotas com melhores caminhos).
 
 !O EIGRP suporta vários Processos no mesmo equipamento, e o Número do AS é significante para toda a rede (precisar ser igual para
-!todos os Router ou Switch Layer 3 que fazem parte do Domínio do EIGRP), o EIGRP utiliza o Wilcard Mask (Máscara Curinga) que é
+!todos os Router ou Switch Layer 3 que fazem parte do Domínio do EIGRP), o EIGRP utiliza o Wildcard Mask (Máscara Curinga) que é
 !diferente da Subnet Mask (Máscara de Sub-Rede) Exemplo: CIDR /24 - Máscara Padrão: 255.255.255.0 Máscara Curinga: 0.0.0.255
 
 !O EIGRP utiliza o Multicast para: HELLO, QUERY e UPDATE, e o Unicast para: UPDATE, ACK e REPLY, o tempos do EIGRP são: Hello de
@@ -122,7 +122,7 @@ enable
 			no auto-summary
 
 			!Declarando as Redes Fisicamente Conectadas no Router 2911-1 no AS do EIGRP
-			!DICA: declarar todas as Redes Fisicamente conectadas no Router ou Switch Layer 3 que serão anúnciadas no AS do Domínio
+			!DICA: declarar todas as Redes Fisicamente conectadas no Router ou Switch Layer 3 que serão anunciadas no AS do Domínio
 			!do Protocolo EIGRP (igual no Protocolo RIPv2)
 			!OBSERVAÇÃO: diferente do Protocolo RIPv2 que não é declarado a Máscara de Subrede nas configurações, já no processo
 			!do EIGRP é necessário Declarar a Máscara Curinga (Wildcard Mask) geralmente chamada de Máscara Invertida, essa máscara

@@ -25,7 +25,7 @@
 !DE ROTEAMENTO NOS ROTEADORES SÃO EXECUTADO VIA SOFTWARE, JÁ NOS SWITCHES LAYER 3 ESSE PROCESSO DE ROTEAMENTO E EXECUTADO
 !VIA HARDWARE.
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

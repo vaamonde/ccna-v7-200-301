@@ -23,7 +23,7 @@
 !Packet Tracer essa opção não está disponível
 
 !SEGUNDA ETAPA: Configuração do Router 1941-2
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 !Verificando se o módulo foi adicionado corretamente
@@ -73,7 +73,7 @@ show ip interface brief
 		!DICA: rota estática flutuante é muito utilizada em Links de Backup e Redundância nas Conexões de WAN ou Internet
 		!OBSERVAÇÃO: quando o roteador aprende duas rotas para o mesmo destino, ele dará preferência para a menor Distância Administrativa
 		!OBSERVAÇÃO: os valores de Distância Administrativa pode variar de: 1 até 255 (Rota estática padrão tem AD de 1 (um))
-		!OBSERVAÇÃO: caso os AD's sejam iguais, será análisado os valores de Métrica (Custo) para o desempate e preferência da rota
+		!OBSERVAÇÃO: caso os AD's sejam iguais, será analisado os valores de Métrica (Custo) para o desempate e preferência da rota
 		!OBSERVAÇÃO: rota estática flutuante para o mesmo destino não aparece na tabela de roteamento, somente quando a interface ou endereço
 		!de próximo salto estiver inacessível ou down
 		ip route 192.168.1.0 255.255.255.0 serial 0/0/0 5
@@ -83,7 +83,7 @@ show ip interface brief
 write
 
 !TERCEIRA ETAPA: Configuração do Router 1941-1
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 	configure terminal
 		interface serial 0/0/0

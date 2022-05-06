@@ -44,7 +44,7 @@
 !no Switch podem passar por ela, no entanto o administrador pode limitar o número de VLANs que podem passar pelo Trunk.
 
 !PRIMEIRA ETAPA: Configuração das VLANs e Trunk no Switch Layer 3 3560
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

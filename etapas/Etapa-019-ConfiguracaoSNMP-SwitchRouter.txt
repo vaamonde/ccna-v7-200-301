@@ -25,7 +25,7 @@
 
 !PRIMEIRA ETAPA: Configuração do Switch e Router para permiti o acesso das informações via SNMP
 
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos

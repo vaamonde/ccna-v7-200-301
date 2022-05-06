@@ -67,7 +67,7 @@ enable
 			exit
 
 		!OBSERVAÇÃO IMPORTANTE: nessa topologia não é habilitado o Protocolo EIGRP IPv6 nas Sub-Interfaces das VLAN's 
-		!10, 20, 30, 40 e 50, essas Interfaces estão configuradas como DHCPv6 Statefull, o Endereço de Global Unicast 
+		!10, 20, 30, 40 e 50, essas Interfaces estão configuradas como DHCPv6 Stateful, o Endereço de Global Unicast 
 		!é diferente do Escopo criado, o acesso a essas redes e feito utilizando Rotas Estática, no AS do EIGRP IPv6 
 		!essas redes serão anunciadas para todos os Router ou Switch Layer 3 no Domínio do EIGRP IPv6 utilizando o 
 		!recurso de Redistribuição de Rotas.

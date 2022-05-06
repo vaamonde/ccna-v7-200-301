@@ -73,7 +73,7 @@ enable
 			!Configurando a Delegação do Prefixo Padrão do Pool do DHCPv6 Stateful
 			!DICA: associar o Pool Local dos endereços IPv6 que serão ofertados para os hosts da rede da VLAN 10
 			!OBSERVAÇÃO: a configuração da Delegação do Pool é feita no Modo EXEC Privilegiado, recomendo criar o Pool com
-			!o mesmo nome do Pool do DHCPv6 Statefull para facilitar a administração
+			!o mesmo nome do Pool do DHCPv6 Stateful para facilitar a administração
 			prefix-delegation pool stateful_vlan10
 			exit
 

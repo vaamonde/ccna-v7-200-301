@@ -166,7 +166,7 @@ show running-config | section interface
 
 !Visualizando as informações dos endereços IPv6
 show ipv6 interface brief
-show ipv6 interface gigabitethernet 0/0
+show ipv6 interface gigabitEthernet 0/0
 show ipv6 route
 show sdm prefer
 show ipv6 interface vlan 1

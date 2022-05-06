@@ -12,7 +12,7 @@
 !Testado e homologado no Cisco Packet Tracer 7.3 e GNS3 2.2.7
 
 !PRIMEIRA ETAPA: Configuração do Router 1941-2
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos
@@ -69,7 +69,7 @@ enable
 write
 
 !SEGUNDA ETAPA: Configuração do Switch Layer 3 3560
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 	configure terminal
 	
@@ -84,7 +84,7 @@ enable
 write
 
 !TERCEIRA ETAPA: Configuração do Router 1941-1
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 	configure terminal
 		!Configurando a Interface de Interligação com o Router 1941-2

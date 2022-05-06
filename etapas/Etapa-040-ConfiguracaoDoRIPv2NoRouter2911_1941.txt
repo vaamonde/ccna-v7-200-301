@@ -38,7 +38,7 @@
 !passar antes que a rota seja removida da tabela de roteamento)
 
 !PRIMEIRA ETAPA: Configuração do Roteador 2911-1
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos
@@ -46,14 +46,14 @@ enable
 
 		!Inicializando a Interface Física de Interligação com o Router 1941-2
 		interface gigabitEthernet 0/0/0
-			description Interface de Interligacao Fisica da WAN Fiber com o Router 1941-2
+			description Interface de Interligação Física da WAN Fiber com o Router 1941-2
 			no shutdown
 			exit
 		
 		!Configurando a Interface Lógica de Interligação com o Router 1941-2
 		interface gigabitEthernet 0/0/0.999
 			!OBSERVAÇÃO: esse tipo de configuração é muito comum em Redes WAN Privadas como PAP-L2
-			description Interface Logica de Interligacao da WAN Fiber com o Router 1941-2
+			description Interface Logica de Interligação da WAN Fiber com o Router 1941-2
 			encapsulation dot1Q 999
 			ip address 10.0.0.9 255.255.255.252
 			exit
@@ -83,7 +83,7 @@ enable
 			no auto-summary
 
 			!Declarando as Redes Fisicamente Conectadas no Router 2911-1
-			!DICA: declarar as redes fisicamente conectadas no router que serão anúnciadas para todos os roteadores que
+			!DICA: declarar as redes fisicamente conectadas no router que serão anunciadas para todos os roteadores que
 			!fazem parte do domínio do protocolo RIP
 			!OBSERVAÇÃO: na declaração de rede do protocolo RIP não é necessário especificar a máscara de rede, o CIDR 
 			!ou máscara de rede coringa (wildcard mask)
@@ -103,11 +103,11 @@ write
 enable
 	configure terminal
 		interface gigabitEthernet 0/1/0
-			description Interface de Interligacao Fisica da WAN Fiber com o Router 2911
+			description Interface de Interligação Física da WAN Fiber com o Router 2911
 			no shutdown
 			exit
 		interface gigabitEthernet 0/1/0.999
-			description Interface Logica de Interligacao da WAN Fiber com o Router 2911
+			description Interface Logica de Interligação da WAN Fiber com o Router 2911
 			encapsulation dot1Q 999
 			ip address 10.0.0.10 255.255.255.252
 			exit

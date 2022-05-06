@@ -37,7 +37,7 @@
 !OBSERVAÇÃO IMPORTANTE: O STP Loop Guard é o UDLD não está disponível para configurações no Cisco Packet Tracer.
 
 !PRIMEIRA ETAPA: Configuração do STP Portfast e RSTP no Switch Layer 3 3560
-!Acessando o modo EXEC Privilégiado
+!Acessando o modo EXEC Privilegiado
 enable
 
 	!Acessando o modo de Configuração Global de Comandos
