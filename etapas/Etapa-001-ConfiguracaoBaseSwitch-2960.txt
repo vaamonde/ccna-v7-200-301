@@ -11,21 +11,23 @@
 !Versão: 0.05
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
-!Primeiro acesso ao modo EXEC de Comandos de usuário (> sinal de Maior - user EXEC commands mode)
-!Use o modo EXEC para definir, visualizar e testar as operações do sistema. 
+!Primeiro acesso ao modo EXEC de Comandos de usuário (> sinal de Maior - user EXEC commands
+!mode) Use o modo EXEC para definir, visualizar e testar as operações do sistema. 
 !Em geral, os comandos EXEC do usuário permitem que você se conecte a dispositivos remotos, 
-!altere as configurações da linha do terminal temporariamente, executar os testes básicos e listar 
-!informações do Cisco IOS.
+!altere as configurações da linha do terminal temporariamente, executar os testes básicos e 
+!listar informações do Cisco IOS.
 !O modo EXEC é dividido em dois níveis de acesso: usuário e privilegiado.
-!OBSERVAÇÃO: sempre que você acessar o modo EXEC pela primeira vez no Switch ou Router será mostrado
-!o nome (hostname) padrão dos equipamentos: Switch = switch> e Router = router>
+!OBSERVAÇÃO: sempre que você acessar o modo EXEC pela primeira vez no Switch ou Router será 
+!mostrado o nome (hostname) padrão dos equipamentos: Switch = switch> e Router = router>
 switch>
 
 !Acessando o modo EXEC Privilegiado (# sinal de Sustenido/Hashtag - privileged EXEC mode)
 !DICA: utilizar sempre a tecla TAB para auto-completar os comandos no Cisco IOS
-!DICA: se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto com o comando
+!DICA: se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto 
+!com o comando
 !EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
-!DICA: se você está estudando para o CCNAv7, é recomendado digitar os comandos completos, não abreviados
+!DICA: se você está estudando para o CCNAv7, é recomendado digitar os comandos completos, 
+!não abreviados
 !EXEMPLO: enable = en | show running-config = sh runn | interface FastEthernet0/0 = int fa0/0
 !Para sair do modo EXEC Privilegiado você pode digitar o comando: disable ou exit
 enable
@@ -37,35 +39,47 @@ enable
 clock set 14:00:00 29 November 2021
 
 	!Acessando o modo de Configuração Global de comandos do Cisco IOS
-	!DICA: nesse modo que e feita a maioria das configurações do Cisco IOS tanto no Switch como no Router
+	!DICA: nesse modo que e feita a maioria das configurações do Cisco 
+	!IOS tanto no Switch como no Router
 	configure terminal
   
 	!Configuração do nome do Switch (configuração principal e a mais importante)
-	!OBSERVAÇÃO: essa configuração é obrigatória para o serviço de acesso remoto SSH e demais serviços de rede
-	!DICA: utilizar nomes curtos e objetivos, não usar caracteres especiais, espaço, acentuação, etc...
+	!OBSERVAÇÃO: essa configuração é obrigatória para o serviço de acesso remoto 
+	!SSH e demais serviços de rede
+	!DICA: utilizar nomes curtos e objetivos, não usar caracteres especiais, espaço,
+	!acentuação, etc...
 	hostname sw-l2-2960-1
   
 	!Habilitando o serviço de criptografia de senha do Tipo-7 Password do Cisco IOS
-	!DICA: senhas do Tipo-7 por padrão não são criptografadas no Cisco IOS (serviço desabilitado)
-	!OBSERVAÇÃO: senhas do Tipo-7 são fáceis de serem quebradas e não são mais usadas nos equipamentos da Cisco
+	!DICA: senhas do Tipo-7 por padrão não são criptografadas no Cisco IOS (serviço 
+	!desabilitado)
+	!OBSERVAÇÃO: senhas do Tipo-7 são fáceis de serem quebradas e não são mais usadas 
+	!nos equipamentos da Cisco
 	!DESAFIO: site para quebrar senhas do Tipo-7 https://packetlife.net/toolbox/type7/
 	service password-encryption
 	
 	!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Cisco IOS
-	!DICA: esse recurso é utilizado nos sistemas de monitoramento, desempenho e consumo de rede principalmente
-	!no sistemas de auditoria de acesso ou recursos/serviços de rede e protocolos de rede na geração de logs
+	!DICA: esse recurso é utilizado nos sistemas de monitoramento, desempenho e consumo 
+	!de rede principalmente no sistemas de auditoria de acesso ou recursos/serviços de 
+	!rede e protocolos de rede na geração de logs
 	service timestamps log datetime msec
   
-	!Desativando o serviço de resolução de nomes de domínio (serviço habilitado por padrão) no Cisco IOS
-	!DICA: se você desabilitar esse recurso, ele resolve o problema de travamento de comandos no Cisco IOS
+	!Desativando o serviço de resolução de nomes de domínio (serviço habilitado por 
+	!padrão) no Cisco IOS
+	!DICA: se você desabilitar esse recurso, ele resolve o problema de travamento de 
+	!comandos no Cisco IOS
 	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255))
-	!DICA: para desbloquear o terminal, você pressiona: Ctrl+Shift+6 ou espera a liberação do terminal
-	!DICA: o comando: no é usado para desabilitar ou remover configurações feitas no switch ou router
+	!DICA: para desbloquear o terminal, você pressiona: Ctrl+Shift+6 ou espera a 
+	!liberação do terminal
+	!DICA: o comando: no é usado para desabilitar ou remover configurações feitas no 
+	!switch ou router
 	no ip domain-lookup
   
 	!Configuração do banner da mensagem do dia no Cisco IOS
-	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD (Mensagem do Dia) é o mais utilizado
-	!EXEMPLO: banner motd, banner login (Mensagem de Login), banner exec (Mensagem de Modo EXEC), banner incoming (Mensagem de Entrada)
+	!DICA: existe vários tipos de Banner no Cisco IOS, o MOTD (Mensagem do Dia) é o 
+	!mais utilizado
+	!EXEMPLO: banner motd, banner login (Mensagem de Login), banner exec (Mensagem 
+	!de Modo EXEC), banner incoming (Mensagem de Entrada)
 	!DICA: é recomendado não utilizar acentuação, textos longos ou complexos no Banner MOTD
 	!DESAFIO: buscar na Internet imagens ASCII Art para colocar no Banner MOTD
 	!OBSERVAÇÃO: imagens ASCII Art no Banner não pode ser muito grande, recomendado ser <= 1024 pixels
