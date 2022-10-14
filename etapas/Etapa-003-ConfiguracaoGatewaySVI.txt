@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 18/04/2020
-!Data de atualização: 07/12/2021
-!Versão: 0.04
+!Data de atualização: 14/10/2022
+!Versão: 0.05
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilegiado
@@ -40,6 +40,7 @@ enable
 		!DICA: o endereço IPv4 deve ser da mesma faixa de rede do Gateway Padrão utilizado na rede
 		!DICA: é recomendado que os endereços de rede dos Switches sejam de redes diferentes dos desktops
 		!OBSERVAÇÃO: configuração do endereço IPv4 deve ser: IP + Máscara de Rede Completa, não utilizar CIDR
+		!(Classes Inter-Domain Routing)
 		ip address 192.168.1.250 255.255.255.0
 		
 		!Inicializando a Interface Virtual da VLAN-1
@@ -48,7 +49,7 @@ enable
 		!OBSERVAÇÃO: o comando: no também é utilizado para ligar as interfaces tirando do status shutdown
 		no shutdown
 		
-		!Saindo de todos os níveis é voltando para o modo EXEC Privilegiado
+		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 		!DICA: somente no modo EXEC Privilegiado você tem o comando copy para salvar as configurações
 		!DICA: existe o comando: do, esse recurso permite executar comandos fora do seu nível padrão
 		!EXEMPLO: sw-l2-2960-1(config-line)# do copy running-config startup-config |

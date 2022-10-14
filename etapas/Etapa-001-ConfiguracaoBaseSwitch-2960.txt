@@ -7,15 +7,17 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 16/04/2020
-!Data de atualização: 07/12/2021
-!Versão: 0.05
+!Data de atualização: 14/10/2022
+!Versão: 0.06
 !Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
 
 !Primeiro acesso ao modo EXEC de Comandos de usuário (> sinal de Maior - user EXEC commands
 !mode) Use o modo EXEC para definir, visualizar e testar as operações do sistema. 
+
 !Em geral, os comandos EXEC do usuário permitem que você se conecte a dispositivos remotos, 
 !altere as configurações da linha do terminal temporariamente, executar os testes básicos e 
-!listar informações do Cisco IOS.
+!listar as informações do Cisco IOS.
+
 !O modo EXEC é dividido em dois níveis de acesso: usuário e privilegiado.
 !OBSERVAÇÃO: sempre que você acessar o modo EXEC pela primeira vez no Switch ou Router será 
 !mostrado o nome (hostname) padrão dos equipamentos: Switch = switch> e Router = router>
@@ -27,7 +29,7 @@ switch>
 !com o comando
 !EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
 !DICA: se você está estudando para o CCNAv7, é recomendado digitar os comandos completos, 
-!não abreviados
+!não abreviados, utilize comandos abreviados quando você já domina o Cisco IOS.
 !EXEMPLO: enable = en | show running-config = sh runn | interface FastEthernet0/0 = int fa0/0
 !Para sair do modo EXEC Privilegiado você pode digitar o comando: disable ou exit
 enable
@@ -39,11 +41,11 @@ enable
 clock set 14:00:00 29 November 2021
 
 	!Acessando o modo de Configuração Global de comandos do Cisco IOS
-	!DICA: nesse modo que e feita a maioria das configurações do Cisco 
-	!IOS tanto no Switch como no Router
+	!DICA: nesse modo que e feita a maioria das configurações do Cisco IOS tanto no 
+	!Switch como no Router
 	configure terminal
-  
-	!Configuração do nome do Switch (configuração principal e a mais importante)
+
+	!Configuração do nome do Switch (configuração principal é a mais importante)
 	!OBSERVAÇÃO: essa configuração é obrigatória para o serviço de acesso remoto 
 	!SSH e demais serviços de rede
 	!DICA: utilizar nomes curtos e objetivos, não usar caracteres especiais, espaço,
@@ -106,16 +108,16 @@ clock set 14:00:00 29 November 2021
 	!DICA: em Switch Cisco temos apenas uma porta console RS232/DB9 ou USB
 	line console 0
 		
-		!Forçando fazer login local utilizando os usuários é senha locais criados no Switch
-		!DICA: por padrão a configuração da Linha Console é permitir acesso físico sem autenticação
+		!Forçando fazer login local utilizando os usuários e senha local criados no Switch
+		!DICA: por padrão a configuração da Linha Console é permitir o acesso físico sem autenticação
 		login local
 		
 		!Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
 		!DICA: na porta console não temos a opção de criar senhas do Tipo-5 somente Tipo-7
 		!OBSERVAÇÃO: a porta console é considerada uma porta/interface física não remota ou virtual
-		!por esse motivo ela não tem suporte a senhas do Tipo-5, pois o acesso e feito fisicamente no
+		!por esse motivo ela não tem suporte a senhas do Tipo-5, pois o acesso é feito fisicamente no
 		!Switch ou Router (se você tem a possibilidade de acessar fisicamente um equipamento, o nível de
-		!segurança da criptografia não importa mais, pois é uma invasão física não lógica)
+		!segurança da criptografia não importa mais, pois é uma invasão física e não lógica)
 		!OBSERVAÇÃO: essa configuração só será utilizada caso não exista usuários locais criados e se 
 		!a opção do comando: login local não for configurada.
 		password vaamonde@pti
@@ -125,7 +127,7 @@ clock set 14:00:00 29 November 2021
 		!OBSERVAÇÃO: por padrão todas as mensagens de status ou logs do Switch são mostradas na tela
 		logging synchronous
 		
-		!Habilitando o tempo de inatividade de uso do linha de console do Cisco IOS
+		!Habilitando o tempo de inatividade de uso da linha de console do Cisco IOS
 		!DICA: configuração do tempo de inatividade em minutos e segundos da linha console
 		!OBSERVAÇÃO: não é recomendado deixar o tempo de inatividade muito curto e nem muito longo
 		exec-timeout 5 30
