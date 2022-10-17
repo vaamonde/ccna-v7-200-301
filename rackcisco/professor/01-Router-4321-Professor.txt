@@ -1,0 +1,118 @@
+!
+hostname rt-vaamonde
+!
+ip dhcp excluded-address 200.200.200.30
+ip dhcp excluded-address 200.200.200.62
+ip dhcp excluded-address 200.200.200.94
+ip dhcp excluded-address 200.200.200.126
+ip dhcp excluded-address 200.200.200.158
+ip dhcp excluded-address 200.200.200.190
+!
+ip dhcp pool DHCP-Grupo-01
+ network 200.200.200.0 255.255.255.224
+ default-router 200.200.200.30
+!
+ip dhcp pool DHCP-Grupo-02
+ network 200.200.200.32 255.255.255.224
+ default-router 200.200.200.62
+!
+ip dhcp pool DHCP-Grupo-03
+ network 200.200.200.64 255.255.255.224
+ default-router 200.200.200.94
+!
+ip dhcp pool DHCP-Grupo-04
+ network 200.200.200.96 255.255.255.224
+ default-router 200.200.200.126
+!
+ip dhcp pool DHCP-Grupo-05
+ network 200.200.200.128 255.255.255.224
+ default-router 200.200.200.158
+!
+ip dhcp pool DHCP-Grupo-06
+ network 200.200.200.160 255.255.255.224
+ default-router 200.200.200.190
+!
+interface GigabitEthernet0/0/0
+ description Interface LAN dos Grupos
+ no ip address
+ negotiation auto
+!
+interface GigabitEthernet0/0/0.501
+ encapsulation dot1Q 501
+ ip address 200.200.200.30 255.255.255.224
+ ip nat inside
+!
+interface GigabitEthernet0/0/0.502
+ encapsulation dot1Q 502
+ ip address 200.200.200.62 255.255.255.224
+ ip nat inside
+!
+interface GigabitEthernet0/0/0.503
+ encapsulation dot1Q 503
+ ip address 200.200.200.94 255.255.255.224
+ ip nat inside
+!
+interface GigabitEthernet0/0/0.504
+ encapsulation dot1Q 504
+ ip address 200.200.200.126 255.255.255.224
+ ip nat inside
+!
+interface GigabitEthernet0/0/0.505
+ encapsulation dot1Q 505
+ ip address 200.200.200.158 255.255.255.224
+ ip nat inside
+!
+interface GigabitEthernet0/0/0.506
+ encapsulation dot1Q 506
+ ip address 200.200.200.190 255.255.255.224
+ ip nat inside
+!
+interface GigabitEthernet0/0/1
+ description Interface com a Rede do SENAC
+ ip address dhcp
+ ip nat outside
+ negotiation auto
+!
+ip nat inside source list 1 interface GigabitEthernet0/0/1 overload
+ip forward-protocol nd
+!
+ip route 172.16.1.0 255.255.255.0 GigabitEthernet0/0/0.501
+ip route 172.16.10.0 255.255.255.0 GigabitEthernet0/0/0.501
+!
+ip route 172.16.2.0 255.255.255.0 GigabitEthernet0/0/0.502
+ip route 172.16.20.0 255.255.255.0 GigabitEthernet0/0/0.502
+!
+ip route 172.16.3.0 255.255.255.0 GigabitEthernet0/0/0.503
+ip route 172.16.300.0 255.255.255.0 GigabitEthernet0/0/0.503
+!
+ip route 172.16.4.0 255.255.255.0 GigabitEthernet0/0/0.504
+ip route 172.16.40.0 255.255.255.0 GigabitEthernet0/0/0.504
+!
+ip route 172.16.5.0 255.255.255.0 GigabitEthernet0/0/0.505
+ip route 172.16.50.0 255.255.255.0 GigabitEthernet0/0/0.505
+!
+ip route 172.16.6.0 255.255.255.0 GigabitEthernet0/0/0.506
+ip route 172.16.60.0 255.255.255.0 GigabitEthernet0/0/0.506
+!
+access-list 1 permit 172.16.1.0 0.0.0.255
+access-list 1 permit 172.16.2.0 0.0.0.255
+access-list 1 permit 172.16.3.0 0.0.0.255
+access-list 1 permit 172.16.4.0 0.0.0.255
+access-list 1 permit 172.16.5.0 0.0.0.255
+access-list 1 permit 172.16.6.0 0.0.0.255
+!
+access-list 1 permit 172.16.10.0 0.0.0.255
+access-list 1 permit 172.16.20.0 0.0.0.255
+access-list 1 permit 172.16.30.0 0.0.0.255
+access-list 1 permit 172.16.40.0 0.0.0.255
+access-list 1 permit 172.16.50.0 0.0.0.255
+access-list 1 permit 172.16.60.0 0.0.0.255
+!
+access-list 1 permit 200.200.200.0 0.0.0.31
+access-list 1 permit 200.200.200.32 0.0.0.31
+access-list 1 permit 200.200.200.64 0.0.0.31
+access-list 1 permit 200.200.200.96 0.0.0.31
+access-list 1 permit 200.200.200.128 0.0.0.31
+access-list 1 permit 200.200.200.160 0.0.0.31
+!
+end

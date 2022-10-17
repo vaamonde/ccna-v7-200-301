@@ -1,0 +1,43 @@
+!
+501	Grupo-01	active	Gi1/0/1
+502	Grupo-02	active	Gi1/0/2
+503	Grupo-03	active	Gi1/0/3
+504	Grupo-04	active	Gi1/0/4
+505	Grupo-05	active	Gi1/0/5
+!
+hostname sw-vaamonde
+!
+interface GigabitEthernet1/0/1
+ description Link de Internet Grupo-01
+ switchport access vlan 501
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+ description Link de Internet Grupo-02
+ switchport access vlan 502
+ switchport mode access
+!
+interface GigabitEthernet1/0/3
+ description Link de Internet Grupo-03
+ switchport access vlan 503
+ switchport mode access
+!
+interface GigabitEthernet1/0/4
+ description Link de Internet Grupo-04
+ switchport access vlan 504
+ switchport mode access
+!
+interface GigabitEthernet1/0/5
+ description Link de Internet Grupo-05
+ switchport access vlan 505
+ switchport mode access
+!
+interface GigabitEthernet1/0/6
+ description Link de Internet Grupo-06
+ switchport access vlan 506
+ switchport mode access
+!
+interface GigabitEthernet1/0/24
+ switchport mode trunk
+!
+end
