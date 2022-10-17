@@ -1,0 +1,35 @@
+!Acessando o modo exec privilegiado
+enable
+
+	!Acessar modo de configuração global
+	configure terminal
+	
+	!Configuração do gateway padrão IPv4 do SVI
+	!Utilizado para acessar remotamente o equipamento
+	!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
+	ip default-gateway 172.16.??.254
+  
+	!Configuração da interface virtual VLAN SVI
+	!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
+	interface vlan ??
+		
+		!Configuração da descrição
+		description Interface SVI de Gerenciamento do Grupo-0?
+		
+		!Configuração do endereçamento IPv4 do SVI
+		ip address 172.16.??.253 255.255.255.0
+		
+		!Inicializando a interface
+		no shutdown
+		
+		!Saindo de todos os níveis
+		end
+
+!Salvando as informações
+copy running-config startup-config
+	
+!Comandos para visualização das informações:
+show running-config
+show ip interface brief
+show vlan brief
+show vlan id ??
