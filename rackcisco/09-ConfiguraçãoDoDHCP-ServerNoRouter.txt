@@ -1,0 +1,63 @@
+!Acessando o modo EXEC Privilegiado
+enable
+
+	!Acessando o modo de Configuração Global de Comandos
+	configure terminal
+
+		!Configurando o Pool do DHCP Server da VLAN do Primeiro Usuário
+		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
+		ip dhcp excluded-address 172.16.??.1 172.16.??.100
+		ip dhcp excluded-address 172.16.??.200 172.16.??.254
+		ip dhcp pool vlan-??
+			network 172.16.??.0 255.255.255.0
+			default-router 172.16.??.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
+
+		!Configurando o Pool do DHCP Server da VLAN do Segundo Usuário	
+		ip dhcp excluded-address 172.16.??.1 172.16.??.100
+		ip dhcp excluded-address 172.16.??.200 172.16.??.254
+		ip dhcp pool vlan-??
+			network 172.16.??.0 255.255.255.0
+			default-router 172.16.??.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
+
+		!Configurando o Pool do DHCP Server da VLAN do Terceiro Usuário	
+		ip dhcp excluded-address 172.16.??.1 172.16.??.100
+		ip dhcp excluded-address 172.16.??.200 172.16.??.254
+		ip dhcp pool vlan-??
+			network 172.16.??.0 255.255.255.0
+			default-router 172.16.??.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
+
+		!Configurando o Pool do DHCP Server da VLAN do Quarto Usuário	
+		ip dhcp excluded-address 172.16.??.1 172.16.??.100
+		ip dhcp excluded-address 172.16.??.200 172.16.??.254
+		ip dhcp pool vlan-??
+			network 172.16.??.0 255.255.255.0
+			default-router 172.16.??.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
+
+		!Configurando o Pool do DHCP Server da VLAN Wireless
+		ip dhcp excluded-address 172.16.??.1 172.16.??.100
+		ip dhcp excluded-address 172.16.??.200 172.16.??.254
+		ip dhcp pool vlan-??
+			network 172.16.??.0 255.255.255.0
+			default-router 172.16.??.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			end
+
+!Salvando as configurações
+copy running-config startup-config
+
+!Verificando as informações do Pool DHCP Server
+show ip dhcp pool
+show ip dhcp binding
