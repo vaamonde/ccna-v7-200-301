@@ -18,3 +18,56 @@
 #Site do Github Curso Cisco: https://github.com/vaamonde/ccna-v7-200-301
 #Playlist do Curso Cisco: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCtfG1WptrRN5
 
+#00_ Verificando as Informações do Sistema Operacional Linux Mint<br>
+
+	OBSERVAÇÃO IMPORTANTE: Linux Mint 20.3 Una é derivado do Ubuntu Desktop 20.04.4 Focal Fossa, outro detalhe
+	muito importante do Linux Mint com o Ambiente Gráfico Cinnamon é que ele possui a maioria das dependência do
+	Qt e GTK por causo disso que o Cisco Packet Tracer funciona muito bem no Mint com o ambiente gráfico Cinnamon, 
+	isso não acontece nos Ambientes Gráficos MATE ou XFCE ou na versão LMDE que não possui essas dependências.
+	sudo cat /etc/os-release
+	sudo cinnamon --version
+
+#01_ Atualização do Sistema Operacional Linux Mint<br>
+
+	_ Atualização do sistema utilizando o MintUpdate;
+	_ Atualização do sistema utilizando o Apt;
+
+	Terminal: Ctrl + Alt + T
+	sudo apt update
+	sudo apt upgrade
+	sudo apt full-upgrade
+	sudo apt dist-upgrade
+	sudo apt autoremove
+	sudo apt autoclean
+
+#02_ Download do Cisco Packet Tracer 8.1.1<br>
+
+	Link Oficial do Netacad: https://www.netacad.com/pt-br/courses/packet-tracer
+	Link Oficial do Packet Tracer Network: https://www.packettracernetwork.com/
+	Link do Mega.nz do Bora para Prática: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI
+
+#03_ Instalando o Cisco Packet Tracer 8.1.1 no Linux Mint<br>
+
+	01_ Na pasta de Download, clicar duas vezes no Instalador do Cisco Packet Tracer;
+	02_ Seguir os procedimentos na tela.
+
+#04_ Verificando se todas as Bibliotecas do Cisco Packet foram instaladas no Linux Mint<br>
+
+	#opção do comando ldd: -v (verbose)
+	sudo ldd -v /opt/pt/bin/PacketTracer
+
+	#opção do comando ldd: -v (verbose), | (piper = Conecta a saída padrão com a entrada padrão de outro comando)
+	sudo ldd /opt/pt/bin/PacketTracer | grep "not found"
+
+	#Instalação das dependências do Cisco Packet Tracer no Linux Mint
+	sudo apt install libqt5networkauth5 libqt5script5 libqt5scripttools5
+	sudo ldd /opt/pt/bin/PacketTracer | grep "not found"
+
+	OBSERVAÇÃO IMPORTANTE: as dependências: libQt5QmlModels.so.5 e o erro: /lib/x86_64-linux-gnu/libQt5Core.so.5: 
+	version `Qt_5.15' not found não interfere diretamente no funcionamento do Cisco Packet Tracer 8.1.1 no Linux 
+	Mint 20.3, essas dependências fazem parte da versão do Ubuntu >= 21.04, verifique a versão do Qt5Core instalada
+	no Linux Mint 20.3 com o comando: sudo locate libQt5Core
+
+#05_ Atualização para a Versão 8.2.0 do Cisco Packet Tracer
+
+	Atualização feita em Julho/2022 - procedimento no Linux Mint versões 20.x continua a mesma coisa.

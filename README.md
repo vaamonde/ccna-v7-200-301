@@ -118,23 +118,33 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMWiSiVrcihCt
 
 Nessa aula, será apresentado o Treinamento Oficial do Netacad para a nova Certificação da Cisco o CCNAv7 Exame 200-301, dividido em três módulos: CCNAv7 Switching, Routing, and Wireless (Switch, Roteador e Rede Sem-Fio) CCNAv7 Introduction to Networks (Introdução a Redes de Computadores), CCNAv7 Enterprise Networking, Security and Automation (Redes Empresariais, Segurança e Automação), procedimentos para fazer o download e instalação do Cisco Packet Tracer versão 7.3. no GNU/Linux.
 
-[![Packet Tracer 7.3](http://img.youtube.com/vi/4EIO6Ma0foA/0.jpg)](http://www.youtube.com/watch?v=4EIO6Ma0foA "Packet Tracer 7.3")
+[![Packet Tracer 8.2](http://img.youtube.com/vi/hLU-9NWmcno/0.jpg)](https://www.youtube.com/watch?v=hLU-9NWmcno "Packet Tracer 8.2")
 
-Link da vídeo aula: https://www.youtube.com/watch?v=4EIO6Ma0foA&t
+Link da vídeo aula: https://www.youtube.com/watch?v=hLU-9NWmcno
 
-[![Packet Tracer 7.3.1](http://img.youtube.com/vi/wEk0oBzGC6M/0.jpg)](http://www.youtube.com/watch?v=wEk0oBzGC6M "Packet Tracer 7.3.1")
+[![Packet Tracer 8.1](http://img.youtube.com/vi/yFS2d93-hbw/0.jpg)](https://www.youtube.com/watch?v=yFS2d93-hbw "Packet Tracer 8.1")
 
-Link da vídeo aula: https://www.youtube.com/watch?v=wEk0oBzGC6M
+Link da vídeo aula: https://www.youtube.com/watch?v=yFS2d93-hbw
 
-Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-000-PT-7.3-no-LinuxMint20.txt
+[![Packet Tracer 8.0.1](http://img.youtube.com/vi/AXyBAIrfuO8/0.jpg)](https://www.youtube.com/watch?v=AXyBAIrfuO8 "Packet Tracer 8.0.1")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=AXyBAIrfuO8
 
 [![Packet Tracer 8.0](http://img.youtube.com/vi/-F-knMQzgWU/0.jpg)](http://www.youtube.com/watch?v=-F-knMQzgWU "Packet Tracer 8.0")
 
 Link da vídeo aula: http://www.youtube.com/watch?v=-F-knMQzgWU
 
-[![Packet Tracer 8.0.1](http://img.youtube.com/vi/AXyBAIrfuO8/0.jpg)](https://www.youtube.com/watch?v=AXyBAIrfuO8 "Packet Tracer 8.0.1")
+[![Packet Tracer 7.3.1](http://img.youtube.com/vi/wEk0oBzGC6M/0.jpg)](http://www.youtube.com/watch?v=wEk0oBzGC6M "Packet Tracer 7.3.1")
 
-Link da vídeo aula: https://www.youtube.com/watch?v=AXyBAIrfuO8
+Link da vídeo aula: https://www.youtube.com/watch?v=wEk0oBzGC6M
+
+[![Packet Tracer 7.3](http://img.youtube.com/vi/4EIO6Ma0foA/0.jpg)](http://www.youtube.com/watch?v=4EIO6Ma0foA "Packet Tracer 7.3")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=4EIO6Ma0foA&t
+
+Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-000-PT-8.0-no-LinuxMint20.txt
+
+Link do arquivo dos procedimentos utilizados no vídeo: https://github.com/vaamonde/ccna-v7-200-301/blob/master/etapas/Etapa-000-PT-7.3-no-LinuxMint20.txt
 
 Link para fazer o download de todas as versões do Cisco Packet Tracer no MEGA.nz: https://mega.nz/folder/Co9GHIyK#2kzNnN7XzImP01M1SyRm2g/folder/vll2iSDI
 
