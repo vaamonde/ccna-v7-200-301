@@ -32,8 +32,8 @@ Terminal: Ctrl + Alt + T
 	
 	#Linha do SSH para acessar o Switch
 	#OBSERVAÇÃO IMPORTANTE: existe somente a Primeira Sub-Rede para acessar o Switch
-	ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc seu_usuario@172.16.???.253
+	ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.253
 	
 	#Linha do SSH para acessar o Router
 	#OBSERVAÇÃO IMPORTANTE: alterar a Sub-Rede para cada usuário a Rede
-	ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc seu_usuario@172.16.???.254
+	ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.254
