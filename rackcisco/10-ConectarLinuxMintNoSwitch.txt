@@ -26,3 +26,12 @@ QUARTA ETAPA: Testar o ping no Router e Switch
 Terminal: Ctrl + Alt + T 
 	ping 172.16.xxx.253
 	ping 172.16.xxx.254
+
+QUINTA ETAPA: Acessar remotamente o Switch e Router utilizando o SSH
+Terminal: Ctrl + Alt + T 
+	
+	#Linha do SSH para acessar o Switch
+	ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc seu_usuario@172.16.???.253
+	
+	#Linha do SSH para acessar o Router
+	ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc seu_usuario@172.16.???.254
