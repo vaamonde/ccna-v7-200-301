@@ -11,7 +11,7 @@
 #04_ No Rack Cisco existe 2 (dois) Patch Panel que serão utilizados para o espelhamento das 
 portas dos Switch Cisco Layer 3 3560.
 
-#05_ O Kits do Rack Cisco são divididos em 6 (seis) Grupos:
+#05_ Os Kits do Rack Cisco são divididos em 6 (seis) Grupos:
      Grupo-01: 1 (um) Switch Layer 3 3560 e 1 (um) Router 2911
      Grupo-02: 1 (um) Switch Layer 3 3560 e 1 (um) Router 2911
      Grupo-03: 1 (um) Switch Layer 3 3560 e 1 (um) Router 2911
@@ -29,14 +29,14 @@ grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto para a Rede S
 
 !SEGUNDA ETAPA: Usuário e Senha padrão dos Switches e Routers Cisco de cada Grupo.
 
-#01_ Nos scripts de configuração Base dos Switches e Router existe as linhas de configuração da
-senha e usuários conforme abaixo:
+#01_ Nos scripts de configuração Base do Switch e Router existe as linhas de configuração dos
+usuários e senhas conforme abaixo:
     Senha padrão: 123@senac
     Usuário: seguir o padrão da documentação dos scripts alterando o seu valor.
     username ??nomealuno?? privilege 15 secret 123@senac
     OBSERVAÇÃO IMPORTANTE: sempre que aparecer o carácter: ? (interrogação), alterar o seu valor
 
-#02_ Nos scripts dos Switches e Routers você precisa prestar atenção nas linhas de configuração.
+#02_ Nos scripts do Switch e Router você precisa prestar atenção nas linhas de configuração.
 Essas linhas precisa ser alterada antes de executar o comando no Switch ou Router.
     clock set
     hostname
@@ -44,17 +44,26 @@ Essas linhas precisa ser alterada antes de executar o comando no Switch ou Route
     username
     password
 
+#03_ No dos Switches, Routers e Access Point de Cada Grupo
+
+Grupo-01: 	Hostname Switch 3560: sw-g01	Hostname Router 2911: rt-01	  Access Point: ap-01
+Grupo-02: 	Hostname Switch 3560: sw-g02	Hostname Router 2911: rt-02	  Access Point: ap-02
+Grupo-03: 	Hostname Switch 3560: sw-g02	Hostname Router 2911: rt-03	  Access Point: ap-03
+Grupo-04: 	Hostname Switch 3560: sw-g02	Hostname Router 2911: rt-04	  Access Point: ap-04
+Grupo-05: 	Hostname Switch 3560: sw-g03	Hostname Router 2911: rt-05	  Access Point: ap-05
+Grupo-06: 	Hostname Switch 3560: sw-g04	Hostname Router 2911: rt-06	  Access Point: ap-06
+
 ==============================================================================================
 
-!TERCEIRA ETAPA: Determinação das Redes (Subrede) e VLAN de Cada Grupo
+!TERCEIRA ETAPA: Determinação das Redes (Sub-Rede) e VLAN (Virtual-LAN) de Cada Grupo
 
 #01_ Todo o cenário será configurado utilizando VLAN (Virtual-LAN), será determinado 6 (seis)
 VLAN's por Grupo, sendo elas
-    01_ VLAN de SVI (Switch Virtual Interface)
-    02_ VLAN's para cada usuário na rede (4 integrantes)
-    03_ VLAN de Rede Sem-Fio (Wi-Fi/Wireless)
+    01_ 01 (uma) VLAN de SVI (Switch Virtual Interface)
+    02_ 04 (Quatro) VLAN's para cada usuário na rede (4 integrantes)
+    03_ 01 (uma) VLAN de Rede Sem-Fio (Wi-Fi/Wireless)
 
-#02_ Determinação das Subredes e VLAN de cada Grupo.
+#02_ Determinação das Sub-Redes e VLAN de cada Grupo.
     Grupo-01:   Subredes:   172.16.10.0/24   VLAN:  10  -   utilizada no SVI do Switch Layer 3
                 Subredes:   172.16.11.0/24   VLAN:  11  -   utilizada pelo primeiro usuário da rede
                 Subredes:   172.16.12.0/24   VLAN:  12  -   utilizada pelo segundo usuário da rede
@@ -99,7 +108,7 @@ VLAN's por Grupo, sendo elas
 
 ==============================================================================================
 
-!QUARTA ETAPA: Determinação dos Endereços de SVI e Gateway de cada Grupo
+!QUARTA ETAPA: Determinação dos Endereços de SVI (Switch Virtual Interface) e Gateway de cada Grupo
 
 #01_ Determinação do endereço IPv4 da VLAN de SVI e Gateway do Switch Layer 3
     Grupo-01:  SVI:    172.16.10.253/24    -   Gateway: 172.16.10.254/24
@@ -112,6 +121,8 @@ VLAN's por Grupo, sendo elas
 ==============================================================================================
 
 !QUINTA ETAPA: Determinação das Portas de Rede de cada VLAN dos Usuários dos Grupos
+
+OBSERVAÇÃO IMPORTANTE: a porta de rede FastEthernet 0/1 não será utilizada nas configurações.
 
 #01_ Determinação das Portas de Rede das VLAN do Switch 3560
     Grupo-01:   Porta: 2    VLAN: 11    Nome: ??nomealuno??
@@ -149,6 +160,8 @@ VLAN's por Grupo, sendo elas
                 Porta: 4    VLAN: 63    Nome: ??nomealuno??
                 Porta: 5    VLAN: 64    Nome: ??nomealuno??
                 Porta: 6    VLAN: 65    Nome: wifi
+
+==============================================================================================
 
 !SEXTA ETAPA: Determinação da Sub-Interfaces de Gateway de cada VLAN dos Grupos
 
@@ -200,7 +213,7 @@ VLAN's por Grupo, sendo elas
 
 Endereçamento IP para Rede de Interligação (WAN) - (GP=Grupo | PI=Primeiro IP | UP=Último IP)
 Interface Serial 0/0/0 e Serial 0/0/1  - Rede Classfull: 192.168.1.0/24 - 255.255.255.0
-OBSERVAÇÃO IMPORTANTE: a rede Classfull 192.168.1.0/24 será segmentada em: 64 Subredes
+OBSERVAÇÃO IMPORTANTE: a rede Classfull 192.168.1.0/24 será segmentada em: 64 Sub-Redes
 
 Grupo-01:	Rede: 192.168.1.0	 PI: 192.168.1.1 - UP: 192.168.1.2    Broadcast: 192.168.1.3
 Grupo-01:   Serial0/0/0 IP: 192.168.1.1/30 --> Grupo-02 Serial0/0/1 IP: 192.168.1.2/30
@@ -222,7 +235,18 @@ Grupo-06:   Serial0/0/0 IP: 192.168.1.21/30 --> Grupo-01 Serial0/0/1 IP: 192.168
 
 ==============================================================================================
 
-!OITAVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF
+!OITAVA ETAPA: Determinação da Interface do Switch do Professor para a Conexão com a Internet
+
+Grupo-01 - Porta do Switch: 01
+Grupo-02 - Porta do Switch: 02
+Grupo-03 - Porta do Switch: 03
+Grupo-04 - Porta do Switch: 04
+Grupo-05 - Porta do Switch: 05
+Grupo-06 - Porta do Switch: 06
+
+==============================================================================================
+
+!NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF
 
 #01_ Configuração do OSPF e Endereçamento IPv4 da Interface Loopback 0 dos Grupos
 Grupo-01    Endereço IPv4 Loopback: 1.1.1.1 255.255.255.255
@@ -310,12 +334,3 @@ Grupo-06
 192.168.1.16 0.0.0.3	 (Grupo 06 para Grupo 01)
 
 ==============================================================================================
-
-!NOVA ETAPA: Determinação da Interface do Switch do Professor para a Conexão com a Internet
-
-Grupo-01 - Porta do Switch: 01
-Grupo-02 - Porta do Switch: 02
-Grupo-03 - Porta do Switch: 03
-Grupo-04 - Porta do Switch: 04
-Grupo-05 - Porta do Switch: 05
-Grupo-06 - Porta do Switch: 06

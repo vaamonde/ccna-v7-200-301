@@ -12,6 +12,7 @@ clock set ??:??:?? ?? ???????? ????
 	!Configuração do nome do equipamento
 	!Obrigatório para a configuração do SSH e demais serviços de redes
 	!Mudar o nome do switch para cada equipamento do seu grupo
+	!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
 	hostname sw-g??
   
 	!Habilitar o serviço de Criptografia de Senhas do tipo Password Tipo-7
@@ -38,6 +39,8 @@ clock set ??:??:?? ?? ???????? ????
 	!Consultar Planilha de Nomes de Usuários
 	username ???nome_do_primeiro_integrante privilege 15 secret 123@senac
 	username ???nome_do_segundo_integrante privilege 15 secret 123@senac
+	username ???nome_do_terceiro_integrante privilege 15 secret 123@senac
+	username ???nome_do_quarto_integrante privilege 15 secret 123@senac
 	
 	!Acessando a linha console
 	line console 0
