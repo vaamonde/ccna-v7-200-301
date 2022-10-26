@@ -1,6 +1,41 @@
+!Configuração do Router Cisco ISR4321/K9 - Professor
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
 !
 hostname rt-vaamonde
 !
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+! card type command needed for slot/bay 0/2
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
 ip dhcp excluded-address 200.200.200.30
 ip dhcp excluded-address 200.200.200.62
 ip dhcp excluded-address 200.200.200.94
@@ -31,6 +66,37 @@ ip dhcp pool DHCP-Grupo-05
 ip dhcp pool DHCP-Grupo-06
  network 200.200.200.160 255.255.255.224
  default-router 200.200.200.190
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+multilink bundle-name authenticated
+!
+!
+!
+!
+license udi pid ISR4321/K9 sn TSP22360107
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+ mode none
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
 !
 interface GigabitEthernet0/0/0
  description Interface LAN dos Grupos
@@ -73,46 +139,110 @@ interface GigabitEthernet0/0/1
  ip nat outside
  negotiation auto
 !
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ no ip address
+ negotiation auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
 ip nat inside source list 1 interface GigabitEthernet0/0/1 overload
 ip forward-protocol nd
-!
-ip route 172.16.1.0 255.255.255.0 GigabitEthernet0/0/0.501
+no ip http server
+no ip http secure-server
 ip route 172.16.10.0 255.255.255.0 GigabitEthernet0/0/0.501
-!
-ip route 172.16.2.0 255.255.255.0 GigabitEthernet0/0/0.502
+ip route 172.16.11.0 255.255.255.0 GigabitEthernet0/0/0.501
+ip route 172.16.12.0 255.255.255.0 GigabitEthernet0/0/0.501
+ip route 172.16.13.0 255.255.255.0 GigabitEthernet0/0/0.501
+ip route 172.16.14.0 255.255.255.0 GigabitEthernet0/0/0.501
+ip route 172.16.15.0 255.255.255.0 GigabitEthernet0/0/0.501
 ip route 172.16.20.0 255.255.255.0 GigabitEthernet0/0/0.502
-!
-ip route 172.16.3.0 255.255.255.0 GigabitEthernet0/0/0.503
-ip route 172.16.300.0 255.255.255.0 GigabitEthernet0/0/0.503
-!
-ip route 172.16.4.0 255.255.255.0 GigabitEthernet0/0/0.504
+ip route 172.16.21.0 255.255.255.0 GigabitEthernet0/0/0.502
+ip route 172.16.22.0 255.255.255.0 GigabitEthernet0/0/0.502
+ip route 172.16.23.0 255.255.255.0 GigabitEthernet0/0/0.502
+ip route 172.16.24.0 255.255.255.0 GigabitEthernet0/0/0.502
+ip route 172.16.25.0 255.255.255.0 GigabitEthernet0/0/0.502
+ip route 172.16.30.0 255.255.255.0 GigabitEthernet0/0/0.503
+ip route 172.16.31.0 255.255.255.0 GigabitEthernet0/0/0.503
+ip route 172.16.32.0 255.255.255.0 GigabitEthernet0/0/0.503
+ip route 172.16.33.0 255.255.255.0 GigabitEthernet0/0/0.503
+ip route 172.16.34.0 255.255.255.0 GigabitEthernet0/0/0.503
+ip route 172.16.35.0 255.255.255.0 GigabitEthernet0/0/0.503
 ip route 172.16.40.0 255.255.255.0 GigabitEthernet0/0/0.504
-!
-ip route 172.16.5.0 255.255.255.0 GigabitEthernet0/0/0.505
+ip route 172.16.41.0 255.255.255.0 GigabitEthernet0/0/0.504
+ip route 172.16.42.0 255.255.255.0 GigabitEthernet0/0/0.504
+ip route 172.16.43.0 255.255.255.0 GigabitEthernet0/0/0.504
+ip route 172.16.44.0 255.255.255.0 GigabitEthernet0/0/0.504
+ip route 172.16.45.0 255.255.255.0 GigabitEthernet0/0/0.504
 ip route 172.16.50.0 255.255.255.0 GigabitEthernet0/0/0.505
-!
-ip route 172.16.6.0 255.255.255.0 GigabitEthernet0/0/0.506
+ip route 172.16.51.0 255.255.255.0 GigabitEthernet0/0/0.505
+ip route 172.16.52.0 255.255.255.0 GigabitEthernet0/0/0.505
+ip route 172.16.53.0 255.255.255.0 GigabitEthernet0/0/0.505
+ip route 172.16.54.0 255.255.255.0 GigabitEthernet0/0/0.505
+ip route 172.16.55.0 255.255.255.0 GigabitEthernet0/0/0.505
 ip route 172.16.60.0 255.255.255.0 GigabitEthernet0/0/0.506
+ip route 172.16.61.0 255.255.255.0 GigabitEthernet0/0/0.506
+ip route 172.16.62.0 255.255.255.0 GigabitEthernet0/0/0.506
+ip route 172.16.63.0 255.255.255.0 GigabitEthernet0/0/0.506
+ip route 172.16.64.0 255.255.255.0 GigabitEthernet0/0/0.506
+ip route 172.16.65.0 255.255.255.0 GigabitEthernet0/0/0.506
 !
-access-list 1 permit 172.16.1.0 0.0.0.255
-access-list 1 permit 172.16.2.0 0.0.0.255
-access-list 1 permit 172.16.3.0 0.0.0.255
-access-list 1 permit 172.16.4.0 0.0.0.255
-access-list 1 permit 172.16.5.0 0.0.0.255
-access-list 1 permit 172.16.6.0 0.0.0.255
-!
-access-list 1 permit 172.16.10.0 0.0.0.255
-access-list 1 permit 172.16.20.0 0.0.0.255
-access-list 1 permit 172.16.30.0 0.0.0.255
-access-list 1 permit 172.16.40.0 0.0.0.255
-access-list 1 permit 172.16.50.0 0.0.0.255
-access-list 1 permit 172.16.60.0 0.0.0.255
 !
 access-list 1 permit 200.200.200.0 0.0.0.31
 access-list 1 permit 200.200.200.32 0.0.0.31
 access-list 1 permit 200.200.200.64 0.0.0.31
 access-list 1 permit 200.200.200.96 0.0.0.31
 access-list 1 permit 200.200.200.128 0.0.0.31
-access-list 1 permit 200.200.200.160 0.0.0.31
+access-list 1 permit 172.16.10.0 0.0.0.255
+access-list 1 permit 172.16.11.0 0.0.0.255
+access-list 1 permit 172.16.12.0 0.0.0.255
+access-list 1 permit 172.16.13.0 0.0.0.255
+access-list 1 permit 172.16.14.0 0.0.0.255
+access-list 1 permit 172.16.15.0 0.0.0.255
+access-list 1 permit 172.16.20.0 0.0.0.255
+access-list 1 permit 172.16.21.0 0.0.0.255
+access-list 1 permit 172.16.22.0 0.0.0.255
+access-list 1 permit 172.16.23.0 0.0.0.255
+access-list 1 permit 172.16.24.0 0.0.0.255
+access-list 1 permit 172.16.25.0 0.0.0.255
+access-list 1 permit 172.16.30.0 0.0.0.255
+access-list 1 permit 172.16.31.0 0.0.0.255
+access-list 1 permit 172.16.32.0 0.0.0.255
+access-list 1 permit 172.16.33.0 0.0.0.255
+access-list 1 permit 172.16.34.0 0.0.0.255
+access-list 1 permit 172.16.35.0 0.0.0.255
+access-list 1 permit 172.16.40.0 0.0.0.255
+access-list 1 permit 172.16.41.0 0.0.0.255
+access-list 1 permit 172.16.42.0 0.0.0.255
+access-list 1 permit 172.16.43.0 0.0.0.255
+access-list 1 permit 172.16.44.0 0.0.0.255
+access-list 1 permit 172.16.45.0 0.0.0.255
+access-list 1 permit 172.16.50.0 0.0.0.255
+access-list 1 permit 172.16.51.0 0.0.0.255
+access-list 1 permit 172.16.52.0 0.0.0.255
+access-list 1 permit 172.16.53.0 0.0.0.255
+access-list 1 permit 172.16.54.0 0.0.0.255
+access-list 1 permit 172.16.55.0 0.0.0.255
+access-list 1 permit 172.16.60.0 0.0.0.255
+access-list 1 permit 172.16.61.0 0.0.0.255
+access-list 1 permit 172.16.62.0 0.0.0.255
+access-list 1 permit 172.16.63.0 0.0.0.255
+access-list 1 permit 172.16.64.0 0.0.0.255
+access-list 1 permit 172.16.65.0 0.0.0.255
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ login
+!
 !
 end
