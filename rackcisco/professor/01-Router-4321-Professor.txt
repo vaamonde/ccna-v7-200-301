@@ -195,6 +195,7 @@ access-list 1 permit 200.200.200.32 0.0.0.31
 access-list 1 permit 200.200.200.64 0.0.0.31
 access-list 1 permit 200.200.200.96 0.0.0.31
 access-list 1 permit 200.200.200.128 0.0.0.31
+access-list 1 permit 200.200.200.160 0.0.0.31
 access-list 1 permit 172.16.10.0 0.0.0.255
 access-list 1 permit 172.16.11.0 0.0.0.255
 access-list 1 permit 172.16.12.0 0.0.0.255

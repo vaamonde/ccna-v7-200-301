@@ -1,0 +1,37 @@
+!Configuração do Access Point TP-Link
+
+Modelo D-Link DIR-809
+Segurar o Botão WPS/Reset por 10 segundos
+Após soltar, todos os LED´s deve piscar e
+os LED´s de rede ficar ligados e depois apagar
+Manual: https://www.dlink.com.br/wp-content/uploads/2018/10/DIR-809_A2_Manual_v1.00DI.pdf
+
+Modelo D-Link DIR-819
+Segurar o Botão WPS/Reset por 10 segundos
+Após soltar, todos os LED´s deve piscar e
+os LED´s de rede ficar ligados e depois apagar
+Manual: https://www.dlink.com.br/wp-content/uploads/2018/10/DIR-819_A1_PPPoE.pdf
+
+OBSERVAÇÃO: DESATIVAR O SERVIÇO DE DHCP SERVER DO ROUTER ACCESS POINT TP-LINK, CONECTAR O CABO
+DE REDE NA PORTA 6 DO SEU SWITCH DIRETAMENTE NA PORTA DO SWITCH DO ROUTER TP-LINK, O ENDEREÇO 
+IPv4 SERÁ FORNECIDO PELO ROUTER 2911.
+
+Endereço IPv4 de cada Switch
+Grupo-01	IPv4: 172.16.15.250 - Máscara: 255.255.255.0
+Grupo-02 	IPv4: 172.16.25.250 - Máscara: 255.255.255.0
+Grupo-03	IPv4: 172.16.35.250 - Máscara: 255.255.255.0
+Grupo-04	IPv4: 172.16.45.250 - Máscara: 255.255.255.0
+Grupo-05	IPv4: 172.16.55.250 - Máscara: 255.255.255.0
+Grupo-06	IPv4: 172.16.65.250 - Máscara: 255.255.255.0
+
+Configuração da Rede Sem-Fio (cuidado com roteador Dual Band 2.4 e 5.0Ghz)
+Grupo-01    SSID: G-01 - Senha: 123@senac
+Grupo-02    SSID: G-02 - Senha: 123@senac
+Grupo-03    SSID: G-03 - Senha: 123@senac
+Grupo-04    SSID: G-04 - Senha: 123@senac
+Grupo-05    SSID: G-05 - Senha: 123@senac
+Grupo-06    SSID: G-06 - Senha: 123@senac
+
+Baixar os Softwares de Análise de Rede Sem-Fio no seu Smartphone
+WiFiMan: https://play.google.com/store/apps/details?id=com.ubnt.usurvey&hl=pt_BR&gl=US
+SIMET Mobile: https://play.google.com/store/apps/details?id=br.ceptro.simet.client.android&hl=pt_BR&gl=US
