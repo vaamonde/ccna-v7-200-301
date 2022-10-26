@@ -1,11 +1,80 @@
+!Configuração do Switch Cisco WS-C2960XR-24PD-I - Professor
 !
-501	Grupo-01	active	Gi1/0/1
-502	Grupo-02	active	Gi1/0/2
-503	Grupo-03	active	Gi1/0/3
-504	Grupo-04	active	Gi1/0/4
-505	Grupo-05	active	Gi1/0/5
+! Last configuration change at 05:54:09 UTC Sun Feb 17 2002
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
 !
 hostname sw-vaamonde
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+switch 1 provision ws-c2960xr-24pd-i
+system mtu routing 1500
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3010021760
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3010021760
+ revocation-check none
+ rsakeypair TP-self-signed-3010021760
+!
+!
+crypto pki certificate chain TP-self-signed-3010021760
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33303130 30323137 3630301E 170D3130 30383231 30333138
+  33305A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 30313030
+  32313736 3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  810093D3 3B2257EC EEB6632D 16D7B754 8C1FDBFD B1EDCD09 4F5BFF8B 350C30ED
+  820501E8 FD6D9830 C385C14F 1D9D746C ACFF5C7E C046FE39 938BC52A 74C2B6BF
+  8A6697F6 E90FB3E6 CC2E046C 9C57173D AC5624DD AA2E2C63 0C544C25 6AA6DF82
+  AC2FA67D C3B68D8E F562F47D 78D5AB68 0288C968 924A5FA7 E6097DBA C7A26851
+  F1A30203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603
+  551D2304 18301680 143DE5C8 9A370A7B A18E5ECD 21D21D7F C369F184 BF301D06
+  03551D0E 04160414 3DE5C89A 370A7BA1 8E5ECD21 D21D7FC3 69F184BF 300D0609
+  2A864886 F70D0101 05050003 81810081 27318E89 D492E122 F7EED39B D723822D
+  14E8C39F 9224C8DD 844AE09D E7F7EAB2 3B46EE45 0518DCC4 B55CA687 AEA89C0F
+  564479FB 8A69BB7B 02948F20 4B6F0069 A35159BE E70AEF69 AA574053 167DC4E7
+  15A95EC4 DF1B9674 567F3C3D 7098E954 941FB033 4EF45B3B 28A13A69 49273333
+  A8E731B4 65F9324A 5CCE1DFA CD7AA6
+        quit
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0
+ no ip address
+ shutdown
 !
 interface GigabitEthernet1/0/1
  description Link de Internet Grupo-01
@@ -37,7 +106,68 @@ interface GigabitEthernet1/0/6
  switchport access vlan 506
  switchport mode access
 !
+interface GigabitEthernet1/0/7
+!
+interface GigabitEthernet1/0/8
+!
+interface GigabitEthernet1/0/9
+!
+interface GigabitEthernet1/0/10
+!
+interface GigabitEthernet1/0/11
+!
+interface GigabitEthernet1/0/12
+!
+interface GigabitEthernet1/0/13
+!
+interface GigabitEthernet1/0/14
+!
+interface GigabitEthernet1/0/15
+!
+interface GigabitEthernet1/0/16
+!
+interface GigabitEthernet1/0/17
+!
+interface GigabitEthernet1/0/18
+!
+interface GigabitEthernet1/0/19
+!
+interface GigabitEthernet1/0/20
+!
+interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
 interface GigabitEthernet1/0/24
  switchport mode trunk
+!
+interface GigabitEthernet1/0/25
+!
+interface GigabitEthernet1/0/26
+!
+interface TenGigabitEthernet1/0/1
+!
+interface TenGigabitEthernet1/0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip forward-protocol nd
+ip http server
+ip http secure-server
+!
+!
+!
+!
+no vstack
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
 !
 end
