@@ -5,6 +5,7 @@ enable
 	configure terminal
 		
 	!Configuração da interface GigabitEthernet 0/1 para acesso a Internet
+	!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
 	interface gigabitEthernet 0/1
 	
 		!Descrição da Interface
