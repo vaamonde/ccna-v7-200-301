@@ -22,7 +22,7 @@ enable
 
 !Salvando as informações
 copy running-config startup-config
-	
+
 !Comandos para visualização das informações:
 show running-config
 show ip interface brief
@@ -33,3 +33,7 @@ ping 10.26.40.190
 
 !Pingar o Endereço IPv4 do Google
 ping 8.8.8.8
+
+!Desktops Linux Mint deverá pingar
+ping 8.8.8.8
+ping google.com

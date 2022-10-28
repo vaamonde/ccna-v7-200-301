@@ -38,8 +38,8 @@ enable
     description Interface de Loopback para ID do OSPF
 
     !Endereço IPv4 para o ID do OSPF
-    !Verificar o endereçamento IP de Loopback do seu grupo
-    !Endereço IP utilizado para o gerenciamento e métrica do OSPF
+    !Verificar o endereçamento IPv4 de Loopback do seu grupo
+    !Endereço IPv4 utilizado para o gerenciamento e métrica do OSPF
     !OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
     ip address ???.???.???.??? 255.255.255.255
     
@@ -56,7 +56,7 @@ enable
   router ospf ??
   
     !Identificação do Roteador
-    !Verificar o endereço IP de Loopback do seu grupo
+    !Verificar o endereço IPv4 de Loopback do seu grupo
     !OSPF utiliza o endereço de Loopback para gerenciar o processo local
     router-id ???.???.???.???
       
@@ -69,8 +69,8 @@ enable
     passive-interface gigabitEthernet 0/1
 
     !Configuração da referência de largura de banda (Métrica)
-    !Para o cálculo de custo dos links, padrão 10^8 = 100000000 bps
-    !Link tabela padrão de métrica do custo dos links do OSPF: 
+    !Utilizado para o cálculo de custo dos links, padrão 10^8 = 100000000 bps
+    !Link da tabela padrão de métrica do custo dos links do OSPF: 
     !http://nomundodasredes.blogspot.com.br/2012/03/metrica-do-ospf.html
     !https://ciscoredes.com.br/wp-content/uploads/2012/06/Cost_Interface.png
     auto-cost reference-bandwidth 10000
@@ -113,5 +113,5 @@ show ip ospf database router
 show ip ospf ?? (ID)
 show ip ospf interface
 
-!A PARTIR DESSE MOMENTO TODO OS GRUPOS DEVERÃO SE PINGAR, PINGAR O ENDEREÇO IPV4
+!A PARTIR DESSE MOMENTO TODO OS GRUPOS DEVERÃO SE PINGAR, PINGAR O ENDEREÇO IPv4
 !DE CADA SWITCH DOS GRUPOS E TAMBÉM OS DESKTOPS.

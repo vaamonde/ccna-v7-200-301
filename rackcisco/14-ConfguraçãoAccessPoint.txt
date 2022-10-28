@@ -2,14 +2,12 @@
 
 Modelo D-Link DIR-809
 Segurar o Botão WPS/Reset por 10 segundos
-Após soltar, todos os LED´s deve piscar e
-os LED´s de rede ficar ligados e depois apagar
+Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
 Manual: https://www.dlink.com.br/wp-content/uploads/2018/10/DIR-809_A2_Manual_v1.00DI.pdf
 
 Modelo D-Link DIR-819
 Segurar o Botão WPS/Reset por 10 segundos
-Após soltar, todos os LED´s deve piscar e
-os LED´s de rede ficar ligados e depois apagar
+Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
 Manual: https://www.dlink.com.br/wp-content/uploads/2018/10/DIR-819_A1_PPPoE.pdf
 
 OBSERVAÇÃO: DESATIVAR O SERVIÇO DE DHCP SERVER DO ROUTER ACCESS POINT TP-LINK, CONECTAR O CABO
