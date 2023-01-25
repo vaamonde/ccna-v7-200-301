@@ -74,7 +74,7 @@ clock set 14:00:00 29 November 2021
 	!DICA: para desbloquear o terminal, você pressiona: Ctrl+Shift+6 ou espera a 
 	!liberação do terminal
 	!DICA: o comando: no é usado para desabilitar ou remover configurações feitas no 
-	!switch ou router
+	!switch ou router da Cisco
 	no ip domain-lookup
   
 	!Configuração do banner da mensagem do dia no Cisco IOS
