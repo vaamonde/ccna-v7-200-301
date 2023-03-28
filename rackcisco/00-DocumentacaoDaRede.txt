@@ -48,10 +48,10 @@ Essas linhas precisa ser alterada antes de executar o comando no Switch ou Route
 
 Grupo-01: 	Hostname Switch 3560: sw-g01	Hostname Router 2911: rt-01	  Access Point: ap-01
 Grupo-02: 	Hostname Switch 3560: sw-g02	Hostname Router 2911: rt-02	  Access Point: ap-02
-Grupo-03: 	Hostname Switch 3560: sw-g02	Hostname Router 2911: rt-03	  Access Point: ap-03
-Grupo-04: 	Hostname Switch 3560: sw-g02	Hostname Router 2911: rt-04	  Access Point: ap-04
-Grupo-05: 	Hostname Switch 3560: sw-g03	Hostname Router 2911: rt-05	  Access Point: ap-05
-Grupo-06: 	Hostname Switch 3560: sw-g04	Hostname Router 2911: rt-06	  Access Point: ap-06
+Grupo-03: 	Hostname Switch 3560: sw-g03	Hostname Router 2911: rt-03	  Access Point: ap-03
+Grupo-04: 	Hostname Switch 3560: sw-g04	Hostname Router 2911: rt-04	  Access Point: ap-04
+Grupo-05: 	Hostname Switch 3560: sw-g05	Hostname Router 2911: rt-05	  Access Point: ap-05
+Grupo-06: 	Hostname Switch 3560: sw-g06	Hostname Router 2911: rt-06	  Access Point: ap-06
 
 ==============================================================================================
 
