@@ -9,7 +9,7 @@ enable
 	
 		!Criação da chave de criptografia e habilitação do serviço de SSH
 		!Utilizar módulo de criptografia de 1024 bits
-		crypto key generate rsa generate-keys modulus 1024
+		crypto key generate rsa general-keys modulus 1024
 		
 		!Habilitando a versão 2 do serviço do SSH
 		ip ssh version 2
