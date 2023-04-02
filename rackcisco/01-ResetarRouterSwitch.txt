@@ -12,10 +12,10 @@ _03# Após a inicialização digitar: no <Enter>
 =====================================================================================
 Caso o Switch não volte para o estado de fábrica, utilizar os procedimentos abaixo:
 
-1. Pressionar o botão MODE até o switch reinicializar
+1. Pressionar o botão MODE até o switch reinicializar;
 2. Na tela de inicialização, na mensagem de hardware, pressionar o botão MODE para abortar 
-o carregamento do IOS
-3. Digitar o comando: flash_init
+   o carregamento do IOS;
+3. Digitar o comando: flash_init;
 4. Listar o conteúdo da Flash: dir flash:
 5. Renomear o arquivo: rename flash:config.text flash:config.old
 6. Inicializar o sistema: boot
@@ -24,8 +24,8 @@ o carregamento do IOS
 9. Reinicializar o Switch: reload
 
 =====================================================================================
-
 Reset do Roteador (Router) 2911
+
 Utilizar o Putty para acessar o Router via Cabo Console.
 
 _01# Parar a inicialização do IOS utilizando Ctrl + Break (No Putty utilizar Botão direito do 
@@ -56,5 +56,3 @@ teste mudando as velocidades para: 1200, 2400, 4800, 9600, 19200, 38400, 57600 e
 Obs2: será necessário alterar novamente a chave de registro para: config-register 0x2102 <Enter>
 configurar a velocidade do console: line console 0 <Enter>, speed 9600 <Enter>, salvar as
 configurações: copy running-config startup e reinicializar o router: reload <Enter>
-
-

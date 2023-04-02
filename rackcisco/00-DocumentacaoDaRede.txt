@@ -1,17 +1,19 @@
-!PRIMEIRA ETAPA: Documentação dos Pontos de Redes do Rack Cisco
+!PRIMEIRA ETAPA: Documentação dos Pontos de Rede do Rack Cisco.
 
 #01_ Todos os pontos de Rede do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
 
 #02_ Todos os pontos de Rede do Rack Cisco estão conectados nos 2 (dois) primeiros Patch Panel.
+
      Primeiro Patch Panel: Pontos de 01 até 24
      Segundo Patch Panel.: Pontos de 25 até 30
 
 #03_ Todos os Patch Cords do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
 
-#04_ No Rack Cisco existe 2 (dois) Patch Panel que serão utilizados para o espelhamento das 
-portas dos Switch Cisco Layer 3 3560.
+#04_ No Rack Cisco existe 2 (dois) Patch Panel que serão utilizados para o Espelhamento das 
+portas dos Switches Cisco Layer 3 3560.
 
 #05_ Os Kits do Rack Cisco são divididos em 6 (seis) Grupos:
+
      Grupo-01: 1 (um) Switch Layer 3 3560 e 1 (um) Router 2911
      Grupo-02: 1 (um) Switch Layer 3 3560 e 1 (um) Router 2911
      Grupo-03: 1 (um) Switch Layer 3 3560 e 1 (um) Router 2911
@@ -31,20 +33,24 @@ grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto para a Rede S
 
 #01_ Nos scripts de configuração Base do Switch e Router existe as linhas de configuração dos
 usuários e senhas conforme abaixo:
+
     Senha padrão: 123@senac
     Usuário: seguir o padrão da documentação dos scripts alterando o seu valor.
+ 
     username ??nomealuno?? privilege 15 secret 123@senac
+
     OBSERVAÇÃO IMPORTANTE: sempre que aparecer o carácter: ? (interrogação), alterar o seu valor
 
-#02_ Nos scripts do Switch e Router você precisa prestar atenção nas linhas de configuração.
-Essas linhas precisa ser alterada antes de executar o comando no Switch ou Router.
+#02_ Nos scripts do Switch e Router você precisa prestar atenção nas linhas de configuração. Essas 
+linhas precisam ser alteradas antes de executar o comando no Switch ou Router.
+
     clock set
     hostname
     enable secret
     username
     password
 
-#03_ No dos Switches, Routers e Access Point de Cada Grupo
+#03_ Nome dos Switches, Routers e Access Point de Cada Grupo:
 
 Grupo-01: 	Hostname Switch 3560: sw-g01	Hostname Router 2911: rt-01	  Access Point: ap-01
 Grupo-02: 	Hostname Switch 3560: sw-g02	Hostname Router 2911: rt-02	  Access Point: ap-02
@@ -59,11 +65,13 @@ Grupo-06: 	Hostname Switch 3560: sw-g06	Hostname Router 2911: rt-06	  Access Poi
 
 #01_ Todo o cenário será configurado utilizando VLAN (Virtual-LAN), será determinado 6 (seis)
 VLAN's por Grupo, sendo elas
+
     01_ 01 (uma) VLAN de SVI (Switch Virtual Interface)
     02_ 04 (Quatro) VLAN's para cada usuário na rede (4 integrantes)
     03_ 01 (uma) VLAN de Rede Sem-Fio (Wi-Fi/Wireless)
 
 #02_ Determinação das Sub-Redes e VLAN de cada Grupo.
+
     Grupo-01:   Subredes:   172.16.10.0/24   VLAN:  10  -   utilizada no SVI do Switch Layer 3
                 Subredes:   172.16.11.0/24   VLAN:  11  -   utilizada pelo primeiro usuário da rede
                 Subredes:   172.16.12.0/24   VLAN:  12  -   utilizada pelo segundo usuário da rede
@@ -111,6 +119,7 @@ VLAN's por Grupo, sendo elas
 !QUARTA ETAPA: Determinação dos Endereços de SVI (Switch Virtual Interface) e Gateway de cada Grupo
 
 #01_ Determinação do endereço IPv4 da VLAN de SVI e Gateway do Switch Layer 3
+
     Grupo-01:  SVI:    172.16.10.253/24    -   Gateway: 172.16.10.254/24
     Grupo-02:  SVI:    172.16.20.253/24    -   Gateway: 172.16.20.254/24
     Grupo-03:  SVI:    172.16.30.253/24    -   Gateway: 172.16.30.254/24
@@ -125,6 +134,7 @@ VLAN's por Grupo, sendo elas
 OBSERVAÇÃO IMPORTANTE: a porta de rede FastEthernet 0/1 não será utilizada nas configurações.
 
 #01_ Determinação das Portas de Rede das VLAN do Switch 3560
+
     Grupo-01:   Porta: 2    VLAN: 11    Nome: ??nomealuno??
                 Porta: 3    VLAN: 12    Nome: ??nomealuno??
                 Porta: 4    VLAN: 13    Nome: ??nomealuno??
@@ -166,6 +176,7 @@ OBSERVAÇÃO IMPORTANTE: a porta de rede FastEthernet 0/1 não será utilizada n
 !SEXTA ETAPA: Determinação da Sub-Interfaces de Gateway de cada VLAN dos Grupos
 
 #01_ Determinação do endereço IPv4 de Gateway do Router 2911
+
     Grupo-01:   Subinterface: 10    IPv4: 172.16.10.254/24
                 Subinterface: 11    IPv4: 172.16.11.254/24
                 Subinterface: 12    IPv4: 172.16.12.254/24
@@ -249,6 +260,7 @@ Grupo-06 - Porta do Switch: 06
 !NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF
 
 #01_ Configuração do OSPF e Endereçamento IPv4 da Interface Loopback 0 dos Grupos
+
 Grupo-01    Endereço IPv4 Loopback: 1.1.1.1 255.255.255.255
 Grupo-02	Endereço IPv4 Loopback: 2.2.2.2 255.255.255.255
 Grupo-03	Endereço IPv4 Loopback: 3.3.3.3 255.255.255.255
@@ -257,6 +269,7 @@ Grupo-05	Endereço IPv4 Loopback: 5.5.5.5 255.255.255.255
 Grupo-06	Endereço IPv4 Loopback: 6.6.6.6 255.255.255.255
 
 #02_ Configuração do ID Local do Processo do OSPF
+
 Grupo-01	ID do Processo: 1
 Grupo-02	ID do Processo: 2
 Grupo-03	ID do Processo: 3
@@ -265,6 +278,7 @@ Grupo-05	ID do Processo: 5
 Grupo-06	ID do Processo: 6
 
 #03_ Configuração do Router-ID do Processo do OSPF (Loopback)
+
 Grupo-01	Router ID: 1.1.1.1
 Grupo-02	Router ID: 2.2.2.2
 Grupo-03	Router ID: 3.3.3.3
@@ -273,6 +287,7 @@ Grupo-05	Router ID: 5.5.5.5
 Grupo-06	Router ID: 6.6.6.6
 
 #04_ Declaração das Redes OSPF entre os Grupos
+
 Grupo-01
 172.16.10.0 0.0.0.255    (SVI do Switch Layer 3)
 172.16.11.0 0.0.0.255    (Primeiro Integrante do Grupo)
