@@ -14,11 +14,11 @@
 !Primeiro acesso ao modo EXEC de Comandos de usuário (> sinal de Maior - user EXEC commands
 !mode) Use o modo EXEC para definir, visualizar e testar as operações do sistema. 
 
-!Em geral, os comandos EXEC do usuário permitem que você se conecte a dispositivos remotos, 
-!altere as configurações da linha do terminal temporariamente, executar os testes básicos e 
-!listar as informações do Cisco IOS.
+!Em geral, os comandos EXEC de usuário permitem que você se conecte a dispositivos remotos, 
+!altere as configurações da linha do terminal temporariamente, utilizado para executar os 
+!testes básicos e listar as informações do Cisco IOS.
 
-!O modo EXEC é dividido em dois níveis de acesso: usuário e privilegiado.
+!O modo EXEC é dividido em dois níveis de acesso: Usuário e Privilegiado.
 
 !OBSERVAÇÃO: sempre que você acessar o modo EXEC pela primeira vez no Switch ou Router será 
 !mostrado o nome (hostname) padrão dos equipamentos: Switch = switch> e Router = router>
@@ -28,7 +28,7 @@ switch>
 
 !DICA: utilizar sempre a tecla TAB para auto-completar os comandos no Cisco IOS
 !DICA: se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto 
-!com o comando
+!com o comando para mostrar as opções e informações reduzidas do comando.
 
 !EXEMPLO: show? | enable? | copy? | disable? | clock? | service?
 
@@ -43,23 +43,23 @@ enable
 !Configuração de Data/Hora em Inglês, você pode usar o Mês abreviado ou completo na configuração
 
 !EXEMPLO: March ou Mar | April ou Apr | November ou Nov | December ou Dec
-!EXEMPLO: Hora no formato universal: Hora:Minutos:Segundos 00:00:00 - Data no formato: Dia Mês 
+!EXEMPLO: Hora no formato Universal: Hora:Minutos:Segundos 00:00:00 - Data no formato: Dia Mês 
 !Completo ou Abreviado e Ano Completo: 01 March 2023
 
-!DICA: é recomendado utilizar o Protocolo NTP (Network Time Protocol) para sincroniza a Data e 
-!Hora no Switch ou Router
+!DICA: é recomendado utilizar o Protocolo NTP (Network Time Protocol) para manter sincronizado a 
+!Data e Hora no Switch ou Router
 clock set 14:00:00 29 March 2023
 
 	!Acessando o modo de Configuração Global de comandos do Cisco IOS
 	
-	!DICA: nesse modo que e feita a maioria das configurações do Cisco IOS tanto no Switch como 
+	!DICA: nesse modo que é feita a maioria das configurações do Cisco IOS tanto no Switch como 
 	!no Router
 	configure terminal
 
-	!Configuração do nome do Switch (configuração principal é a mais importante)
+	!Configuração do nome do Switch (configuração principal)
 	
 	!OBSERVAÇÃO: essa configuração é obrigatória para o serviço de acesso remoto SSH e demais 
-	!serviços de rede
+	!serviços de rede que utiliza nomes para o seu acesso.
 	
 	!DICA: utilizar nomes curtos e objetivos, não usar caracteres especiais, espaço, acentuação, 
 	!nomes complexo, etc...
@@ -67,10 +67,11 @@ clock set 14:00:00 29 March 2023
   
 	!Habilitando o serviço de criptografia de senha do Tipo-7 Password do Cisco IOS
 	
-	!DICA: senhas do Tipo-7 por padrão não são criptografadas no Cisco IOS (serviço desabilitado)
+	!DICA: senhas do Tipo-7 por padrão não são criptografadas no Cisco IOS (serviço está desabilitado
+	!por padrão no Cisco IOS)
 	
 	!OBSERVAÇÃO: senhas do Tipo-7 são fáceis de serem quebradas e não são mais usadas nos equipamentos 
-	!da Cisco
+	!da Cisco, nesse caso é recomendado utilizar senhas do Tipo-5 Secret
 	
 	!DESAFIO: site para quebrar senhas do Tipo-7 https://packetlife.net/toolbox/type7/
 	service password-encryption
@@ -78,15 +79,15 @@ clock set 14:00:00 29 March 2023
 	!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Cisco IOS
 	
 	!DICA: esse recurso é utilizado nos sistemas de monitoramento, desempenho e consumo de rede, 
-	!principalmente no sistemas de auditoria de acesso ou recursos/serviços de rede e protocolos 
+	!principalmente nos sistemas de auditoria de acesso ou recursos/serviços de rede e protocolos 
 	!de geração de logs nos equipamentos da Cisco
 	service timestamps log datetime msec
   
 	!Desativando o serviço de resolução de nomes de domínio (serviço habilitado por padrão) no 
 	!Cisco IOS
 	
-	!DICA: se você desabilitar esse recurso, ele resolve o problema de travamento de comandos no 
-	!Cisco IOS
+	!DICA: se você desabilitar esse recurso o problema de travamento de comandos no Cisco IOS é 
+	!resolvido.
 	
 	!EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255))
 	
