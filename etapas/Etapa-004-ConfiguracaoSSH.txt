@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 18/04/2020
-!Data de atualização: 07/12/2021
-!Versão: 0.03
-!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
+!Data de atualização: 09/08/2023
+!Versão: 0.04
+!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilegiado
 enable
@@ -17,20 +17,20 @@ enable
 	!Acessando o modo de Configuração Global de comandos
 	configure terminal
 	
-		!Configuração do nome de Domínio FQDN (Nome de Domínio Totalmente Qualificado)
+		!Configuração do nome de Domínio FQDN (Fully Qualified Domain Name)
 		!DICA: o nome de Domínio é utilizado pelo Serviço do SSH e outros serviços de rede, como o serviço de 
-		!autenticação remota ou monitoramento do Switch ou Router utilizando os protocolos RADIUS ou TACACS
+		!autenticação remota ou monitoramento de Switch ou Router utilizando os protocolos RADIUS ou TACACS
 		ip domain-name vaamonde.pti
 
-		!Criação/Geração da chave de criptografia do serviço do SSH Server local
+		!Criação/Geração da chave de criptografia do serviço do SSH (Secure Socket Shell) Server local
 		!DICA: por padrão o serviço do SSH Server está desabilitado no Switch ou Router
 		!DICA: por padrão todas as conexões remotas utilizando o protocolo SSH são criptografadas
 		!OBSERVAÇÃO: é recomendado utilizar módulos de criptografia de 1024 bits (opções de 360 até 2048)
-		!OBSERVAÇÃO: no Switch ou Router Real utilizamos o comando: crypto key generate rsa usage-keys modulus 1024
+		!OBSERVAÇÃO: no Switch ou Router Real utilizamos o comando: crypto key generate rsa general-keys modulus 1024
 		!OBSERVAÇÃO: existe vários modos de geração das chaves públicas criptografadas, o padrão é utilizar o RSA
 		!OBSERVAÇÃO: a porta padrão de conexão do serviço de SSH é a: 22 utilizando o Protocolo TCP
 		!ADENDO: versões do Cisco Packet Tracer >=7.3 possui o suporte para o comando completo de geração das chaves SSH
-		!RSA nos Switches ou Router, utilizando o comando: crypto key generate rsa usage-keys modulus 1024
+		!RSA nos Switches ou Router, utilizando o comando: crypto key generate rsa general-keys modulus 1024
 		!OBSERVAÇÃO IMPORTANTE: caso queira desativar o serviço do SSH ou remover os Módulos RSA, digite o comando:
 		!crypto key zeroize rsa, caso você digite novamente o comando: crypto key generate rsa ele vai solicitar se
 		!você quer substituir os Módulos atuais (Do you really want to replace them? [yes/no])
@@ -54,7 +54,7 @@ enable
 		!Acessando as linhas virtuais de acesso remoto do Switch
 		line vty 0 4
 		
-			!Configuração do protocolo de transporte de entrada para aceitar somente o SSH
+			!Configuração do protocolo de transporte de entrada para aceitar somente o protocolo SSH
 			transport input ssh
 
 			!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado

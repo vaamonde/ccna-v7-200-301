@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 18/04/2020
-!Data de atualização: 06/03/2023
-!Versão: 0.05
-!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
+!Data de atualização: 09/08/2023
+!Versão: 0.06
+!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
 
 !Acessando o modo EXEC Privilegiado
 enable
@@ -26,7 +26,7 @@ enable
 		
 		!OBSERVAÇÃO: linhas virtuais não são utilizadas para monitoramento, para isso usamos o 
 		!Protocolo SNMP (Simple Network Management Protocol) com as configurações do SVI (Switch 
-		!Virtual Interface)
+		!Virtual Interface) que será vista mais para frente.
 		
 		!DICA: não é recomendado habilitar poucas linhas ou todas as linhas virtuais no Cisco IOS
 		
@@ -37,7 +37,7 @@ enable
 		!configuração do SVI para funcionar.
 		line vty 0 4
 
-			!Forçando fazer login local utilizando os usuários é senha local criado no Switch
+			!Forçando fazer login local utilizando os usuários e senhas locais criados no Switch
 			login local
 
 			!Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
@@ -57,9 +57,8 @@ enable
 			!DICA: na linha virtual você pode controlar o tipo de acesso remoto de entrada ou saída
 			
 			!OBSERVAÇÃO: existe vários protocolos de acesso remoto, os mais utilizados são: Telnet 
-			!(não seguro) ou SSH (seguro)
-			!OBSERVAÇÃO: por motivo de segurança, acesso remoto utilizando o protocolo Telnet não é 
-			!mais recomendado
+			!(não seguro) ou SSH (seguro), por motivo de segurança, acesso remoto utilizando o protocolo 
+			!Telnet não é mais recomendado
 			
 			!DICA: existe várias opções de configuração do protocolo de transporte, a opção: all 
 			!permite todos os protocolos
