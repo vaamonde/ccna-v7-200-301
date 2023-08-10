@@ -7,14 +7,14 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 26/04/2020
-!Data de atualização: 07/12/2021
-!Versão: 0.03
-!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
+!Data de atualização: 09/08/2023
+!Versão: 0.04
+!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
 
 !ADENDO: No vídeo não foi comentando sobre a inicialização do serviço do SSH Server depois que o Router ou Switch
 !é resetado. Para resolver essa falha, recomendo digitar os comandos: crypto key zeroize rsa (zerar as chaves) e
 !depois o comando: crypto key generate rsa (gerar as chaves novamente), você pode digitar o comando completo
-!crypto key generate rsa usage-keys modulus 1024 que hoje e suporte na versão mais nova do Cisco IOS do Packet Tracer
+!crypto key generate rsa general-keys modulus 1024 que hoje e suporte na versão mais nova do Cisco IOS do Packet Tracer
 
 !ADENDO: No vídeo não foi comentando sobre a inicialização das Interfaces, por padrão nos arquivos running-config ou
 !startup-config o comando: no shutdown não está presente, quando você retorna um backup das configurações do Router
@@ -24,10 +24,10 @@
 !PRIMEIRA ETAPA: parar a inicialização do Cisco IOS do Router 1941
 !DICA: no Cisco Packet Tracer utilizamos a combinação de teclas: Ctrl+C
 !OBSERVAÇÃO: em equipamento reais, podemos utilizar as combinações de teclas: Ctrl+C, Ctrl+Break ou Ctrl+Backspace
-!OBSERVAÇÃO: no aplicativo PuTTY você deve usar o Botão direito do Mouse na Barra de Título é utilizar a opção:
-!Send Command: Break)
+!OBSERVAÇÃO: no aplicativo PuTTY você deve usar o Botão direito do Mouse na Barra de Título e utilizar a opção:
+!Send Command: Break
 
-!Visualizando as opções de comandos do Modo ROMMON
+!Visualizando as opções de comandos do Modo ROMMON (ROM (read-only memory) monitor)
 rommon 1 >?
 
 !Alterando o modo de inicialização do Cisco IOS do Router 1941
@@ -37,7 +37,7 @@ rommon 1 >?
 !OBSERVAÇÃO: chave de registro em hexadecimal: 0x2142 (não ler as configurações do startup-config)
 !OBSERVAÇÃO: chave de registro em hexadecimal: 0x2102 (ler as configurações do startup-config - padrão)
 !CUIDADO: existe várias chaves de registro do Cisco IOS, se você errar a chave pode acontecer do Cisco IOS 
-!inicializar de forma incorreta ou com caracteres irreconhecível.
+!inicializar de forma incorreta ou com caracteres irreconhecível na Linha Console ou na Linha Virtual.
 rommon 2 >confreg 0x2142
 
 !Reinicializando o Router 1941 do Modo ROMMON

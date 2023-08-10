@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 24/04/2020
-!Data de atualização: 07/12/2021
-!Versão: 0.03
-!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
+!Data de atualização: 09/08/2023
+!Versão: 0.04
+!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
 
 !PRIMEIRA ETAPA: Backup das Configurações e Cisco IOS do Switch Layer 2 2960
 !Acessando o modo EXEC Privilegiado
@@ -57,7 +57,8 @@ enable
 	!DICA: as imagens do Cisco IOS estão no formato BIN (binário) e compactadas (m=RAM | z=zip)
 	!OBSERVAÇÃO: não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura
 	!EXEMPLO: c2960-lanbase-mz.122-25.FX.bin (Primeira parte: c2960 plataforma/família do equipamento, Segunda 
-	!parte: lanbase-mz indicação do package/funcionalidade do IOS, Terceira parte: 122-25.FX.bin versão do IOS)
+	!parte: lanbase indicação do package/funcionalidade do IOS, Terceira parte: compactação da Imagem m=RAM | z=zip
+	!Quarta parte: 122-25.FX.bin versão do IOS)
 	!CUIDADO: como o Cisco IOS é uma sub-derivação do Unix/BSD, ele também é Case Sensitive (Maiúscula/Minúscula)
 	copy flash: tftp:
 		c2960-lanbase-mz.122-25.FX.bin
@@ -67,6 +68,7 @@ enable
 	!DICA: esse é o método mais simples de backup das configurações do Switch ou Router 
 	!OBSERVAÇÃO: utilizar sempre um editor de texto profissional para não modificar a estrutura do arquivo
 	!DICA: copiar as informações a partir da primeira: ! (exclamação) do running-config ou startup-config
+	!até a última opção: end
 	show running-config
 	
 	!Saindo do modo EXEC Privilegiado

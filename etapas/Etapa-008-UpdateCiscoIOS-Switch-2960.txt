@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 24/04/2020
-!Data de atualização: 07/12/2021
-!Versão: 0.03
-!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
+!Data de atualização: 09/08/2023
+!Versão: 0.04
+!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
 
 !OBSERVAÇÃO IMPORTANTE: NA NOVA CERTIFICAÇÃO DA CISCO CCNAv7 EXAME 200-301 NÃO É MAIS COBRADO 
 !CONHECIMENTOS EM LICENCIAMENTO DO CISCO IOS OU UPGRADES DE CISCO IOS NO SWITCH OU ROUTERS
