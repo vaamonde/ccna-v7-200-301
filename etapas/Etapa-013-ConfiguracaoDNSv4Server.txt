@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 30/04/2020
-!Data de atualização: 07/12/2021
-!Versão: 0.03
-!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
+!Data de atualização: 10/08/2023
+!Versão: 0.04
+!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
 
 !DNSv4 (Domain Name System) é um sistema hierárquico e distribuído de gestão de nomes para computadores, 
 !serviços ou qualquer máquina conectada à Internet ou a uma rede privada. Utilizado principalmente para 
@@ -17,6 +17,7 @@
 
 !O protocolo padrão utilizado pelo DNS Server é o UDP (User Datagram Protocol) na porta padrão: 53
 !utilizada principalmente pelo cliente para fazer as consultas de Nomes para IP ou IP para Nomes
+
 !OBSERVAÇÃO: O DNS Server também utiliza o TCP (Transmission Control Protocol) na porta padrão: 53
 !utilizada para receber a transferência de Zonas entre o Servidor Master (Mestre) é o Slaver (Escravo) 
 !OBSERVAÇÃO: O DNS Server também utiliza o TCP (Transmission Control Protocol) na porta padrão: 953 
@@ -46,27 +47,27 @@
 !ERRATA: correção do nome do SOA do Server Name para: ns1.vaamonde.pti
 !ERRATA: no vídeo os registros dos Switch e Router foram criados com o Tipo: CNAME, correto é: A Record
 
-!DNS Service:		On
-!Resource Records:	Name = server-02			Type = A Record		Address = 192.168.3.1
-!Resource Records:	Name = ns1.vaamonde.pti		Type = NS			Server Name = server-02
-!Resource Records:	Name = vaamonde.pti			Type = SOA			Primary Server Name = ns1.vaamonde.pti
-															 		Mail Box = vaamonde@vaamonde.pti
-															 		Minimum TTL = 3600
-															 		Refresh Time = 3600
-															 		Retry Time = 600
-															 		Expiry Time = 86400
-!Resource Records:	Name = vaamonde.pti			Type = CNAME		Host Name = server-02
-!Resource Records:	Name = www.vaamonde.pti		Type = CNAME		Host Name = server-02
-!Resource Records:	Name = pop3.vaamonde.pti	Type = CNAME		Host Name = server-02
-!Resource Records:	Name = smtp.vaamonde.pti	Type = CNAME		Host Name = server-02
-!Resource Records:	Name = ftp.vaamonde.pti		Type = CNAME		Host Name = server-02
-!Resource Records:	Name = tftp.vaamonde.pti	Type = CNAME		Host Name = server-02
-!Resource Records:	Name = ntp.vaamonde.pti		Type = CNAME		Host Name = server-02
-!Resource Records:	Name = log.vaamonde.pti		Type = CNAME		Host Name = server-02
-!Resource Records:	Name = sw-l2-2960-3			Type = A Record		Address = 192.168.3.250
-!Resource Records:	Name = sw-l2-2960-4			Type = A Record		Address = 192.168.3.251
-!Resource Records:	Name = sw-l3-3560-1			Type = A Record		Address = 192.168.3.252
-!Resource Records:	Name = rt-1941-2			Type = A Record		Address = 192.168.2.254
+DNS Service:       On
+Resource Records:  Name = server-02            Type = A Record     Address = 192.168.3.1
+Resource Records:  Name = ns1.vaamonde.pti     Type = NS           Server Name = server-02
+Resource Records:  Name = vaamonde.pti         Type = SOA          Primary Server Name = ns1.vaamonde.pti
+                                                                   Mail Box = vaamonde@vaamonde.pti
+                                                                   Minimum TTL = 3600
+                                                                   Refresh Time = 3600
+                                                                   Retry Time = 600
+                                                                   Expiry Time = 86400
+Resource Records:  Name = vaamonde.pti         Type = CNAME        Host Name = server-02
+Resource Records:  Name = www.vaamonde.pti     Type = CNAME        Host Name = server-02
+Resource Records:  Name = pop3.vaamonde.pti    Type = CNAME        Host Name = server-02
+Resource Records:  Name = smtp.vaamonde.pti    Type = CNAME        Host Name = server-02
+Resource Records:  Name = ftp.vaamonde.pti     Type = CNAME        Host Name = server-02
+Resource Records:  Name = tftp.vaamonde.pti    Type = CNAME        Host Name = server-02
+Resource Records:  Name = ntp.vaamonde.pti     Type = CNAME        Host Name = server-02
+Resource Records:  Name = log.vaamonde.pti     Type = CNAME        Host Name = server-02
+Resource Records:  Name = sw-l2-2960-3         Type = A Record     Address = 192.168.3.250
+Resource Records:  Name = sw-l2-2960-4         Type = A Record     Address = 192.168.3.251
+Resource Records:  Name = sw-l3-3560-1         Type = A Record     Address = 192.168.3.252
+Resource Records:  Name = rt-1941-2            Type = A Record     Address = 192.168.2.254
 
 !Comandos básicos de consulta de resoluções de nomes DNS no Microsoft Windows
 ipconfig

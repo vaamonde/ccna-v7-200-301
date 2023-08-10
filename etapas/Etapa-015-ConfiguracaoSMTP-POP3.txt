@@ -7,9 +7,9 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 30/04/2020
-!Data de atualização: 07/12/2021
-!Versão: 0.03
-!Testado e homologado no Cisco Packet Tracer 7.3.x e 8.0.x e GNS3 2.2.x
+!Data de atualização: 10/08/2023
+!Versão: 0.04
+!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
 
 !SMTP (Simple Mail Transfer Protocol) é o protocolo padrão de envio de mensagens de correio eletrônico (e-mail)
 !através da Internet entre dois dispositivos computacionais (computadores, smartphone, etc), definido na RFC 821.
@@ -46,17 +46,17 @@
 !DICA: nesse servidor também é criado os arquivos do Tipo TXT com informações de Black List (Sender Policy Framework)
 !OBSERVAÇÃO: esses recursos de e-mail avançado são limitados no Cisco Packet Tracer. 
 
-SMTP Service		On
-POP3 Service		On
-Domain Name			vaamonde.pti 	SET
-User Setup			User: robsonvaamonde	Password: 123456	(+)		Email: robsonvaamonde@vaamonde.pti
-					User: leandroramos		Password: 123456	(+)		Email: leandroramos@vaamonde.pti
-					User: josedeassis		Password: 123456	(+)		Email: josedeassis@vaamonde.pti
-					User: jeffersoncosta	Password: 123456	(+)		Email: jeffersoncosta@vaamonde.pti
-					User: rogeriosampaio	Password: 123456	(+)		Email: rogeriosampaio@vaamonde.pti
-					User: sirlenesanches	Password: 123456	(+)		Email: sirlenesanches@vaamonde.pti
-					User: denisnovais		Password: 123456	(+)		Email: denisnovais@vaamonde.pti
-					User: vaamonde			Password: 123456	(+)		Email: vaamonde@vaamonde.pti
+SMTP Service        On
+POP3 Service        On
+Domain Name         vaamonde.pti     SET
+User Setup          User: robsonvaamonde    Password: 123456    (+)     Email: robsonvaamonde@vaamonde.pti
+                    User: leandroramos      Password: 123456    (+)     Email: leandroramos@vaamonde.pti
+                    User: josedeassis       Password: 123456    (+)     Email: josedeassis@vaamonde.pti
+                    User: jeffersoncosta    Password: 123456    (+)     Email: jeffersoncosta@vaamonde.pti
+                    User: rogeriosampaio    Password: 123456    (+)     Email: rogeriosampaio@vaamonde.pti
+                    User: sirlenesanches    Password: 123456    (+)     Email: sirlenesanches@vaamonde.pti
+                    User: denisnovais       Password: 123456    (+)     Email: denisnovais@vaamonde.pti
+                    User: vaamonde          Password: 123456    (+)     Email: vaamonde@vaamonde.pti
 
 !SEGUNDA ETAPA: Configurações do Clientes de SMTP e POP3 no Cisco Packet Tracer
 !DICA: o principal cliente de e-mail utilizado hoje em dia no mercado corporativo é o: Microsoft Outlook
@@ -69,14 +69,14 @@ nsllokup pop3.vaamonde.pti
 
 !Configurando o cliente de email
 Configure Mail
-Your Name				Admin SOA
-Email Address			vaamonde@vaamonde.pti
+Your Name               Admin SOA
+Email Address           vaamonde@vaamonde.pti
 
 Server Information
-Incoming Mail Server	pop3.vaamonde.pti
-Outgoing Mail Server	smtp.vaamonde.pti
+Incoming Mail Server    pop3.vaamonde.pti
+Outgoing Mail Server    smtp.vaamonde.pti
 
 Logon Information
-User Name				vaamonde
-Password				123456
+User Name               vaamonde
+Password                123456
 (SAVE)
