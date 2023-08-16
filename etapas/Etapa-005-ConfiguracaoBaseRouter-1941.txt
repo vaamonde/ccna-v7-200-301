@@ -41,7 +41,7 @@ clock set 19:54:00 05 May 2021
 		!Habilitando o comprimento mínimo da criação das senhas do Tipo-5 ou Tipo-7
 		!DICA: esse recurso aumenta o nível de segurança na criação de senhas no roteador
 		!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 ou Switch Layer 3 3560 
-		security passwords min-length 10
+		security passwords min-length 8
 
 		!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado
 		enable secret vaamonde@pti
