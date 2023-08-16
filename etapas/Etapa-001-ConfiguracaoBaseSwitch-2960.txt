@@ -48,7 +48,7 @@ enable
 
 !DICA: é recomendado utilizar o Protocolo NTP (Network Time Protocol) para manter sincronizado a 
 !Data e Hora no Switch ou Router
-clock set 14:00:00 29 March 2023
+clock set 14:00:00 29 August 2023
 
 	!Acessando o modo de Configuração Global de comandos do Cisco IOS
 	
