@@ -142,7 +142,7 @@ clock set 14:00:00 30 April 2020
 		service timestamps debug datetime msec
 		no ip domain-lookup
 		banner motd #AVISO: acesso autorizado somente a funcionarios#
-		security passwords min-length 10
+		security passwords min-length 8
 		enable secret vaamonde@pti
 		username robson secret vaamonde@pti
 		username vaamonde password vaamonde@pti
