@@ -7,8 +7,8 @@
 !Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 !YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 !Data de criação: 30/04/2020
-!Data de atualização: 09/08/2023
-!Versão: 0.04
+!Data de atualização: 21/08/2023
+!Versão: 0.05
 !Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
 
 !PRIMEIRA ETAPA: Configuração Base Switch Layer 2 2960
@@ -26,7 +26,7 @@ clock set 14:00:00 30 April 2020
 		username admin privilege 15 secret vaamonde@pti
 		ip default-gateway 192.168.3.254
 		ip domain-name vaamonde.pti
-		crypto key generate rsa
+		crypto key generate rsa general-keys modulus 1024
 		ip ssh version 2
 		ip ssh time-out 60
 		ip ssh authentication-retries 2
@@ -66,7 +66,7 @@ clock set 14:00:00 30 April 2020
 		username admin privilege 15 secret vaamonde@pti
 		ip default-gateway 192.168.3.254
 		ip domain-name vaamonde.pti
-		crypto key generate rsa
+		crypto key generate rsa general-keys modulus 1024
 		ip ssh version 2
 		ip ssh time-out 60
 		ip ssh authentication-retries 2
@@ -106,7 +106,7 @@ clock set 14:00:00 30 April 2020
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
 		ip domain-name vaamonde.pti
-		crypto key generate rsa
+		crypto key generate rsa general-keys modulus 1024
 		ip ssh version 2
 		ip ssh time-out 60
 		ip ssh authentication-retries 2
@@ -148,7 +148,7 @@ clock set 14:00:00 30 April 2020
 		username vaamonde password vaamonde@pti
 		username admin privilege 15 secret vaamonde@pti
 		ip domain-name vaamonde.pti
-		crypto key generate rsa
+		crypto key generate rsa general-keys modulus 1024
 		ip ssh version 2
 		ip ssh time-out 60
 		ip ssh authentication-retries 2
