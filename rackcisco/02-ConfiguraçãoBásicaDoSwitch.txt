@@ -30,6 +30,7 @@ clock set ??:??:?? ?? ???????? ????
   
 	!Configuração do Banner da mensagem do dia
 	!Desafio: Buscar na Internet imagens ASCII para o Banner
+	!Dica de site: https://manytools.org/hacker-tools/ascii-banner/
 	banner motd #AVISO: acesso autorizado somente a funcionarios#
   
 	!Habilitar a senha do tipo secret Tipo-5 para o modo enable privilegiado

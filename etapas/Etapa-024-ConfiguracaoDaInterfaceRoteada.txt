@@ -41,6 +41,9 @@ enable
 			!adicionar um endereço IPv4 ou IPv6 é utilizar como uma Interface Roteada ou como uma Porta de Gateway
 			no switchport
 			
+			!Configurando a Descrição da Interface de No Switchport
+			description Interface de conexão com o Router 1941-2
+			
 			!Configurando o endereço de IPv4 de conexão com a Rede do Router 1941-2
 			ip address 192.168.2.1 255.255.255.0
 			exit
