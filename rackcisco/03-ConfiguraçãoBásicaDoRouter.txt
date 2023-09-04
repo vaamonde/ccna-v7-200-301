@@ -12,7 +12,8 @@ clock set ??:??:?? ?? ???????? ????
 	!Configuração do nome do equipamento
 	!Obrigatório para a configuração do SSH e demais serviços de redes
 	!Mudar o nome do router para cada equipamento do seu grupo
-	!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
+	!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a 
+	!partir da linha: 53 (#03_ Nome dos Switches, Routers e Access Point de Cada Grupo:)
 	hostname rt-g??
 
 	!Habilitar o serviço de Criptografia de Senhas do tipo Password Tipo-7

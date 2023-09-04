@@ -11,7 +11,8 @@ enable
 			no shutdown
 			exit
 
-		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
+		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a 
+		!partir da linha: 73 (Determinação das Sub-Redes e VLAN de cada Grupo)
 		interface gigabitEthernet 0/0.??
 			description Subinterface da VLAN de SVI do Switch Layer 3 3560
 			encapsulation dot1Q ??
