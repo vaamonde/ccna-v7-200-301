@@ -5,7 +5,8 @@ enable
 	configure terminal
 
 		!Criando as VLANs Standard (Padrão) no Switch Layer 3 3560
-		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
+		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a 
+		!partir da linha: 73 (Determinação das Sub-Redes e VLAN de cada Grupo)
 
 		!Criação da VLAN padrão
 		vlan ??
@@ -93,3 +94,8 @@ show interface trunk
 show ip interface brief
 show interfaces fastEthernet 0/24 status
 show interfaces fastEthernet 0/24 switchport
+
+!Comandos para testar a conexão com o Router
+ping 172.16.??.253
+ping 172.16.??.254
+ssh -l ??seu_usuário?? 172.16.??.254
