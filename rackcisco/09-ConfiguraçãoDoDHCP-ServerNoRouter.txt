@@ -5,7 +5,8 @@ enable
 	configure terminal
 
 		!Configurando o Pool do DHCP Server da VLAN do Primeiro Usuário
-		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
+		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a 
+		!partir da linha: 178 (Determinação do endereço IPv4 de Gateway do Router 2911)
 		ip dhcp excluded-address 172.16.??.1 172.16.??.100
 		ip dhcp excluded-address 172.16.??.200 172.16.??.254
 		ip dhcp pool vlan-??
