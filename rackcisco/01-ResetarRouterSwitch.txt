@@ -9,6 +9,11 @@ entrar no modo de ROMmon e o Switch ser reinicializado.
 
 _03# Após a inicialização digitar: no <Enter>
 
+_04# Limpando as configurações do Switch.
+	_04.1. Acessar o modo privilegiado: enable <Enter>
+	_04.2. Remover o banco de dados de VLAN: delete flash:vlan.dat <Enter>
+	_04.3. Remover os backups anteriores: delete flash:startup-config <Enter>
+
 =====================================================================================
 Caso o Switch não volte para o estado de fábrica, utilizar os procedimentos abaixo:
 
@@ -42,12 +47,13 @@ _04# O Router vai inicializar sem ler o arquivo de configuração startup-config
 _05# Limpando as configurações do router e voltar a ler o arquivo startup-config da NVRAM.
 	_05.1. Acessar o modo privilegiado: enable <Enter>
 	_05.2. Limpar a NVRAM: erase startup-config <Enter>
-	_05.3. Acessar o modo de configuração global: configure terminal <Enter>
-	_05.4. Mudar o registro de inicialização: config-register 0x2102 <Enter>
-	_05.5. Sair de todos os modos: end <Enter>
-	_05.6. Salvar as configurações: copy running-config startup-config <Enter>
-	_05.7. Reinicializar o router: reload <Enter>
-	_05.8. Verificar a chave de registro: enable <Enter>, show version <Enter>
+	_05.3. Limpar as configurações de backup anteriores: delete flash:startup-config <Enter>
+	_05.4. Acessar o modo de configuração global: configure terminal <Enter>
+	_05.5. Mudar o registro de inicialização: config-register 0x2102 <Enter>
+	_05.6. Sair de todos os modos: end <Enter>
+	_05.7. Salvar as configurações: copy running-config startup-config <Enter>
+	_05.8. Reinicializar o router: reload <Enter>
+	_05.9. Verificar a chave de registro: enable <Enter>, show version <Enter>
 
 Obs1: caso você digite chaves diferentes no ROMmon o sistema pode inicializar com caracteres 
 estranhos, isso está muitas vezes associado a velocidade da porta (Padrão 9600), fazer o 
@@ -55,4 +61,4 @@ teste mudando as velocidades para: 1200, 2400, 4800, 9600, 19200, 38400, 57600 e
 
 Obs2: será necessário alterar novamente a chave de registro para: config-register 0x2102 <Enter>
 configurar a velocidade do console: line console 0 <Enter>, speed 9600 <Enter>, salvar as
-configurações: copy running-config startup e reinicializar o router: reload <Enter>
+configurações: copy running-config startup-config e reinicializar o router: reload <Enter>

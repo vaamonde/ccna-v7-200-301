@@ -28,3 +28,15 @@ copy running-config startup-config
 	
 !Visualizando as configurações
 show running-config
+
+!Visualizando as configurações do SSH Server
+show ip ssh
+
+!Visualizando das chaves públicas RSA
+show crypto key mypubkey rsa
+
+!Visualizando as conexões ativas do SSH Server
+show ssh
+
+!Visualizando as conexões remotas estabelecidas no Switch
+show users

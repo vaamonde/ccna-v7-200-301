@@ -12,6 +12,9 @@
 #04_ No Rack Cisco existe 2 (dois) Patch Panel que serão utilizados para o Espelhamento das 
 portas dos Switches Cisco Layer 3 3560.
 
+OBSERVAÇÃO IMPORTANTE: UTILIZAR O FLUKE DTX-1800 PARA CERTIFICAR TODOS OS PONTOS DE REDE DO 
+MV8 ATÉ O PATCH PANEL.
+ 
 #05_ Os Kits do Rack Cisco são divididos em 6 (seis) Grupos:
 
      Grupo-01: 1 (um) Switch Layer 3 3560 e 1 (um) Router 2911
@@ -139,37 +142,37 @@ OBSERVAÇÃO IMPORTANTE: a porta de rede FastEthernet 0/1 não será utilizada n
                 Porta: 3    VLAN: 12    Nome: ??nomealuno??
                 Porta: 4    VLAN: 13    Nome: ??nomealuno??
                 Porta: 5    VLAN: 14    Nome: ??nomealuno??
-                Porta: 6    VLAN: 15    Nome: wifi
+                Porta: 6    VLAN: 15    Nome: wifi01
 
     Grupo-02:   Porta: 2    VLAN: 21    Nome: ??nomealuno??
                 Porta: 3    VLAN: 22    Nome: ??nomealuno??
                 Porta: 4    VLAN: 23    Nome: ??nomealuno??
                 Porta: 5    VLAN: 24    Nome: ??nomealuno??
-                Porta: 6    VLAN: 25    Nome: wifi
+                Porta: 6    VLAN: 25    Nome: wifi02
 
     Grupo-03:   Porta: 2    VLAN: 31    Nome: ??nomealuno??
                 Porta: 3    VLAN: 32    Nome: ??nomealuno??
                 Porta: 4    VLAN: 33    Nome: ??nomealuno??
                 Porta: 5    VLAN: 34    Nome: ??nomealuno??
-                Porta: 6    VLAN: 35    Nome: wifi
+                Porta: 6    VLAN: 35    Nome: wifi03
 
     Grupo-04:   Porta: 2    VLAN: 41    Nome: ??nomealuno??
                 Porta: 3    VLAN: 42    Nome: ??nomealuno??
                 Porta: 4    VLAN: 43    Nome: ??nomealuno??
                 Porta: 5    VLAN: 44    Nome: ??nomealuno??
-                Porta: 6    VLAN: 45    Nome: wifi
+                Porta: 6    VLAN: 45    Nome: wifi04
 
     Grupo-05:   Porta: 2    VLAN: 51    Nome: ??nomealuno??
                 Porta: 3    VLAN: 52    Nome: ??nomealuno??
                 Porta: 4    VLAN: 53    Nome: ??nomealuno??
                 Porta: 5    VLAN: 54    Nome: ??nomealuno??
-                Porta: 6    VLAN: 55    Nome: wifi
+                Porta: 6    VLAN: 55    Nome: wifi05
 
     Grupo-06:   Porta: 2    VLAN: 61    Nome: ??nomealuno??
                 Porta: 3    VLAN: 62    Nome: ??nomealuno??
                 Porta: 4    VLAN: 63    Nome: ??nomealuno??
                 Porta: 5    VLAN: 64    Nome: ??nomealuno??
-                Porta: 6    VLAN: 65    Nome: wifi
+                Porta: 6    VLAN: 65    Nome: wifi06
 
 ==============================================================================================
 
