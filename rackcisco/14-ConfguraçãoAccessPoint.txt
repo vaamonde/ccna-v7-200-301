@@ -10,6 +10,21 @@ Segurar o Botão WPS/Reset por 15 segundos
 Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
 Manual: https://www.dlink.com.br/wp-content/uploads/2018/10/DIR-819_A1_PPPoE.pdf
 
+Modelo D-Link DIR-846
+Segurar o Botão WPS/Reset por 15 segundos
+Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
+Manual: https://www.dlink.com.br/wp-content/uploads/2020/02/DIR-846_MANUAL_10072020_v1.03_EN.pdf
+
+Modelo D-Link DIR-853
+Segurar o Botão WPS/Reset por 15 segundos
+Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
+Manual: https://www.dlink.com.br/wp-content/uploads/2019/03/DIR-853_A2_WiFi.pdf
+
+Modelo TP-Link AX3000
+Segurar o Botão WPS/Reset por 15 segundos
+Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
+Manual: https://static.tp-link.com/upload/manual/2022/202206/20220621/1910013193_Archer%20AX3000%20Pro(US)1.0_UG_V1.pdf
+
 Modelo Linksys AC-1900
 Segurar o Reset por 15 segundos
 Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.
@@ -20,8 +35,8 @@ Segurar o Reset por 15 segundos
 Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.
 Manual: https://downloads.linksys.com/downloads/userguide/EA-Series_UG_Full_3425-00125D_EN_FR-CA_Web.pdf
 
-OBSERVAÇÃO: DESATIVAR O SERVIÇO DE DHCP SERVER DO ROUTER ACCESS POINT TP-LINK, CONECTAR O CABO
-DE REDE NA PORTA 6 DO SEU SWITCH DIRETAMENTE NA PORTA DO SWITCH DO ROUTER TP-LINK, O ENDEREÇO 
+OBSERVAÇÃO: DESATIVAR O SERVIÇO DE DHCP SERVER DO ROUTER ACCESS POINT D-LINK, TP-LINK OU LINKSSYS,
+CONECTAR O CABO DE REDE NA PORTA 6 DO SEU SWITCH DIRETAMENTE NA PORTA DO SWITCH DO ROUTER, O ENDEREÇO 
 IPv4 SERÁ FORNECIDO PELO ROUTER 2911.
 
 Endereço IPv4 de cada Access Point para o Gerenciamento
