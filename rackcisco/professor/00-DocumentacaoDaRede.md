@@ -19,7 +19,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 02. Todos os pontos de Rede do Rack Cisco estão conectados nos 2 (dois) primeiros Patch Panel.
 
-	a) Primeiro Patch Panel: Pontos de Rede de: 01 até 24;
+	a) Primeiro Patch Panel: Pontos de Rede de: 01 até 24;<br>
 	b) Segundo Patch Panel.: Pontos de Rede de: 25 até 30.
 
 03. Todos os Patch Cords do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
@@ -30,12 +30,12 @@ OBSERVAÇÃO IMPORTANTE: UTILIZAR O FLUKE DTX-1800 PARA CERTIFICAR TODOS OS PONT
 
 05. Os Kits do Rack Cisco são divididos em 6 (seis) Grupos:
 
-	Grupo-01: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-02: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-03: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-04: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-05: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-06: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
+	Grupo-01: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911<br>
+	Grupo-02: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911<br>
+	Grupo-03: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911<br>
+	Grupo-04: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911<br>
+	Grupo-05: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911<br>
+	Grupo-06: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911.
 
 OBSERVAÇÃO IMPORTANTE: Os equipamentos abaixo serão utilizados pelo Docente em aula.<br>
 PROFESSOR: 1 (um) Router Cisco 4321, 1 (um) Router Cisco 2811 e 1 (um) Switch 2960-XR<br>
