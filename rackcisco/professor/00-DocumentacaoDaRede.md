@@ -35,15 +35,15 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 		Grupo-03: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 		Grupo-04: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 		Grupo-05: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-		Grupo-06: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911.
+		Grupo-06: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 
 06. Cada Grupo deverá ser composto no máximo de: 4 (quatro) integrantes, cada integrante
 do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador Sem-Fio.
 
 **OBSERVAÇÃO IMPORTANTE: Os equipamentos abaixo serão utilizados pelo Docente em aula.**
 
-		PROFESSOR: 1 (um) Router Cisco 4321, 1 (um) Router Cisco 2811 e 1 (um) Switch 2960-XR
-		ESSES EQUIPAMENTO VÃO FAZER A FUNÇÃO DE SIMULAÇÃO DO ISP (INTERNET SERVICE PROVIDER).
+	PROFESSOR: 1 (um) Router Cisco 4321, 1 (um) Router Cisco 2811 e 1 (um) Switch 2960-XR
+	ESSES EQUIPAMENTO VÃO FAZER A FUNÇÃO DE SIMULAÇÃO DO ISP (INTERNET SERVICE PROVIDER).
 
 ## SEGUNDA ETAPA: Usuário e Senha padrão dos Switches e Routers Cisco de cada Grupo.
 
@@ -53,9 +53,9 @@ do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador
 		b) Usuário: seguir o padrão da documentação dos scripts alterando o seu valor dentro de ??.
 			Exemplo: username ??Primeiro_Nome_do_Aluno?? privilege 15 secret 123@senac
 
-## OBSERVAÇÃO IMPORTANTE: sempre que aparecer o carácter: ? (interrogação), você deverá retirar o carácter e alterar o seu valor, o uso de ? (interrogação) não é permitido nas configurações do Cisco IOS.
+**OBSERVAÇÃO IMPORTANTE: sempre que aparecer o carácter: ? (interrogação), você deverá retirar o carácter e alterar o seu valor, o uso de ? (interrogação) não é permitido nas configurações do Cisco IOS.**
 
-02. Nos scripts do Switch e Router você precisa prestar atenção nas linhas de configuração. Essas linhas precisam ser alteradas antes de executar o comando no Switch ou Router.
+02. Nos scripts do Switch e Router você precisa prestar muita atenção nas linhas de configuração abaixo, essas linhas precisam ser alteradas seu valor antes de executar o comando no Switch ou Router.
 
 		Exemplo:
 			clock set      (configuração da data e hora)
@@ -63,6 +63,7 @@ do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador
 			enable secret  (habilitando a senha no modo Exec Privilegiado)
 			username       (criando dos usuários)
 			password       (configuração da senha de acesso)
+			ip address     (endereçamento IPv4)
 
 03. Nome dos Switches, Routers e Access Point de Cada Grupo:
 
@@ -228,41 +229,41 @@ do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador
 
 ## SÉTIMA ETAPA: Determinação da Interface Serial de WAN dos Grupos e seu Endereçamento IPv4
 
-Endereçamento IP para Rede de Interligação (WAN) - (GP=Grupo | PI=Primeiro IP | UP=Último IP)<br>
-Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull: 192.168.1.0/24 - 255.255.255.0
-
 **OBSERVAÇÃO IMPORTANTE: a rede Classfull 192.168.1.0/24 será segmentada em: 64 Sub-Redes.**
 
 **PRESTE MUITA ATENÇÃO DA TABELA DE ALOCAÇÃO DE ENDEREÇAMENTO IPV4 PARA CADA GRUPO, EXEMPLO: O GRUPO 01 VAI SE CONECTAR COM OS GRUPOS 02 E 06, VOCÊ DEVERÁ MAPEAR OS ENDEREÇOS UTILIZADOS NAS INTERFACES SERIAIS 0/0/0 E 0/0/1 ANALISANDO SEMPRE A CONEXÃO COM O SEUS VIZINHOS E QUAL REDE ELA PERTENCE.**
 
 **DICA: NESSA ETAPA VOCÊS PRECISAM CONVERSAR COM OS OUTROS GRUPOS, NÃO ADIANTA VOCÊ FAZER A SUA PARTE SE O OUTRO GRUPO NÃO FAZER A DELE E SE OS DOIS ERRAREM TUDO ESTARÁ ERRADO, POIS TODOS OS GRUPOS DEPENDEM DESSA CONFIGURAÇÃO.**
 
-		Grupo-01:	Rede: 192.168.1.0	 PI: 192.168.1.1 - UP: 192.168.1.2    Broadcast: 192.168.1.3
-		Grupo-01:	Serial0/0/0 IP: 192.168.1.1/30 --> Grupo-02 Serial0/0/1 IP: 192.168.1.2/30
+Endereçamento IP para Rede de Interligação (WAN) - (GP=Grupo | PI=Primeiro IP | UP=Último IP)<br>
+Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull: 192.168.1.0/24 - 255.255.255.0
 
-		Grupo-02:	Rede: 192.168.1.4	 PI: 192.168.1.5 - UP: 192.168.1.6    Broadcast: 192.168.1.7
-		Grupo-02:	Serial0/0/0 IP: 192.168.1.5/30 --> Grupo-03 Serial0/0/1 IP: 192.168.1.6/30
+	Grupo-01:	Rede: 192.168.1.0	 PI: 192.168.1.1 - UP: 192.168.1.2    Broadcast: 192.168.1.3
+	Grupo-01:	Serial0/0/0 IP: 192.168.1.1/30 --> Grupo-02 Serial0/0/1 IP: 192.168.1.2/30
 
-		Grupo-03:	Rede: 192.168.1.8	 PI: 192.168.1.9 - UP: 192.168.1.10   Broadcast: 192.168.1.11
-		Grupo-03:	Serial0/0/0 IP: 192.168.1.9/30 --> Grupo-04 Serial0/0/1 IP: 192.168.1.10/30
+	Grupo-02:	Rede: 192.168.1.4	 PI: 192.168.1.5 - UP: 192.168.1.6    Broadcast: 192.168.1.7
+	Grupo-02:	Serial0/0/0 IP: 192.168.1.5/30 --> Grupo-03 Serial0/0/1 IP: 192.168.1.6/30
 
-		Grupo-04:	Rede: 192.168.1.12	PI: 192.168.1.13 - UP: 192.168.1.14 Broadcast: 192.168.1.15
-		Grupo-04:	Serial0/0/0 IP: 192.168.1.13/30 --> Grupo-05 Serial0/0/1 IP: 192.168.1.14/30
+	Grupo-03:	Rede: 192.168.1.8	 PI: 192.168.1.9 - UP: 192.168.1.10   Broadcast: 192.168.1.11
+	Grupo-03:	Serial0/0/0 IP: 192.168.1.9/30 --> Grupo-04 Serial0/0/1 IP: 192.168.1.10/30
 
-		Grupo-05:	Rede: 192.168.1.16	PI: 192.168.1.17 - UP: 192.168.1.18 Broadcast: 192.168.1.19
-		Grupo-05:	Serial0/0/0 IP: 192.168.1.17/30 --> Grupo-06 Serial0/0/1 IP: 192.168.1.18/30
+	Grupo-04:	Rede: 192.168.1.12	PI: 192.168.1.13 - UP: 192.168.1.14 Broadcast: 192.168.1.15
+	Grupo-04:	Serial0/0/0 IP: 192.168.1.13/30 --> Grupo-05 Serial0/0/1 IP: 192.168.1.14/30
 
-		Grupo-06:	Rede: 192.168.1.20	PI: 192.168.1.21 - UP: 192.168.1.22 Broadcast: 192.168.1.23
-		Grupo-06:	Serial0/0/0 IP: 192.168.1.21/30 --> Grupo-01 Serial0/0/1 IP: 192.168.1.22/30
+	Grupo-05:	Rede: 192.168.1.16	PI: 192.168.1.17 - UP: 192.168.1.18 Broadcast: 192.168.1.19
+	Grupo-05:	Serial0/0/0 IP: 192.168.1.17/30 --> Grupo-06 Serial0/0/1 IP: 192.168.1.18/30
+
+	Grupo-06:	Rede: 192.168.1.20	PI: 192.168.1.21 - UP: 192.168.1.22 Broadcast: 192.168.1.23
+	Grupo-06:	Serial0/0/0 IP: 192.168.1.21/30 --> Grupo-01 Serial0/0/1 IP: 192.168.1.22/30
 
 ## OITAVA ETAPA: Determinação da Interface do Switch do Professor para a Conexão com a Internet
 
-		Grupo-01 - Porta do Switch: 01
-		Grupo-02 - Porta do Switch: 02
-		Grupo-03 - Porta do Switch: 03
-		Grupo-04 - Porta do Switch: 04
-		Grupo-05 - Porta do Switch: 05
-		Grupo-06 - Porta do Switch: 06
+	Grupo-01 - Porta do Switch: 01
+	Grupo-02 - Porta do Switch: 02
+	Grupo-03 - Porta do Switch: 03
+	Grupo-04 - Porta do Switch: 04
+	Grupo-05 - Porta do Switch: 05
+	Grupo-06 - Porta do Switch: 06
 
 ## NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF
 
