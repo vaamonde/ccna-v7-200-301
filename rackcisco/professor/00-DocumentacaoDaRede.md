@@ -15,37 +15,35 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 ## PRIMEIRA ETAPA: Documentação dos Pontos de Rede do Rack Cisco.
 
-	01. Todos os pontos de Rede do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
-	
-	02. Todos os pontos de Rede do Rack Cisco estão conectados nos 2 (dois) primeiros Patch Panel.
-		a) Primeiro Patch Panel: Pontos de Rede de: 01 até 24
-		b) Segundo Patch Panel.: Pontos de Rede de: 25 até 30
+01. Todos os pontos de Rede do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
 
-	03. Todos os Patch Cords do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
+02. Todos os pontos de Rede do Rack Cisco estão conectados nos 2 (dois) primeiros Patch Panel.
+	a) Primeiro Patch Panel: Pontos de Rede de: 01 até 24
+	b) Segundo Patch Panel.: Pontos de Rede de: 25 até 30
 
-	04. No Rack Cisco existe 2 (dois) Patch Panel que serão utilizados para o Espelhamento das 
-	portas dos Switches Cisco Catalyst Layer-3 3560.
+03. Todos os Patch Cords do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
 
-	OBSERVAÇÃO IMPORTANTE: UTILIZAR O FLUKE DTX-1800 PARA CERTIFICAR TODOS OS PONTOS DE REDE DO 
-	MV8 (KEYSTONE) LOCALIZADOS DEBAIXO DAS MESAS OU NAS CANALETAS APARENTES ATÉ O PATCH PANEL.
- 
-	05. Os Kits do Rack Cisco são divididos em 6 (seis) Grupos:
+04. No Rack Cisco existe 2 (dois) Patch Panel que serão utilizados para o Espelhamento das 
+portas dos Switches Cisco Catalyst Layer-3 3560.
 
-	Grupo-01: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-02: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-03: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-04: 1 (um) SSwitch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-05: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
-	Grupo-06: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
+OBSERVAÇÃO IMPORTANTE: UTILIZAR O FLUKE DTX-1800 PARA CERTIFICAR TODOS OS PONTOS DE REDE DO 
+MV8 (KEYSTONE) LOCALIZADOS DEBAIXO DAS MESAS OU NAS CANALETAS APARENTES ATÉ O PATCH PANEL.
 
-	OBSERVAÇÃO IMPORTANTE: Os equipamentos abaixo serão utilizados pelo Docente em aula.
-	PROFESSOR: 1 (um) Router Cisco 4321, 1 (um) Router Cisco 2811 e 1 (um) Switch 2960-XR
-	ESSES EQUIPAMENTO VÃO FAZER A FUNÇÃO DE SIMULAÇÃO DO ISP (INTERNET SERVICE PROVIDER)
+05. Os Kits do Rack Cisco são divididos em 6 (seis) Grupos:
 
-	06. Cada Grupo deverá ser composto no máximo de: 4 (quatro) integrantes, cada integrante
-	do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador Sem-Fio.
+Grupo-01: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
+Grupo-02: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
+Grupo-03: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
+Grupo-04: 1 (um) SSwitch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
+Grupo-05: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
+Grupo-06: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 
-==============================================================================================
+OBSERVAÇÃO IMPORTANTE: Os equipamentos abaixo serão utilizados pelo Docente em aula.
+PROFESSOR: 1 (um) Router Cisco 4321, 1 (um) Router Cisco 2811 e 1 (um) Switch 2960-XR
+ESSES EQUIPAMENTO VÃO FAZER A FUNÇÃO DE SIMULAÇÃO DO ISP (INTERNET SERVICE PROVIDER)
+
+06. Cada Grupo deverá ser composto no máximo de: 4 (quatro) integrantes, cada integrante
+do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador Sem-Fio.
 
 ## SEGUNDA ETAPA: Usuário e Senha padrão dos Switches e Routers Cisco de cada Grupo.
 
