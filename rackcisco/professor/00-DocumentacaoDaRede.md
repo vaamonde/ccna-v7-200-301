@@ -19,8 +19,8 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 02. Todos os pontos de Rede do Rack Cisco estão conectados nos 2 (dois) primeiros Patch Panel.
 
-	a) Primeiro Patch Panel: Pontos de Rede de: 01 até 24;<br>
-	b) Segundo Patch Panel.: Pontos de Rede de: 25 até 30.
+		a) Primeiro Patch Panel: Pontos de Rede de: 01 até 24;<br>
+		b) Segundo Patch Panel.: Pontos de Rede de: 25 até 30.
 
 03. Todos os Patch Cords do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
 
