@@ -16,10 +16,10 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 ## Protocolos de Roteamento utilizados no Cisco (APROFUNDAMENTO DE ESTUDO)
 
 **==== TCP e IP ====**
-	a) TCP (Transmission Control Protocol - Protocolo de Controle de Transmissão - Confiabilidade)
-	b) UDP (User Datagram Protocol - Protocolo de Datagrama do Usuário - Sem Confiabilidade)
-	c) IPv4 (Internet Protocol - Protocolo de Internet versão 4 - Decimal)
-	d) IPv6 (Internet Protocol - Protocolo de Internet versão 6 - Hexadecimal)
+		a) TCP (Transmission Control Protocol - Protocolo de Controle de Transmissão - Confiabilidade)
+		b) UDP (User Datagram Protocol - Protocolo de Datagrama do Usuário - Sem Confiabilidade)
+		c) IPv4 (Internet Protocol - Protocolo de Internet versão 4 - Decimal)
+		d) IPv6 (Internet Protocol - Protocolo de Internet versão 6 - Hexadecimal)
 
 **==== Protocolos IGP, EGP e BGP ====**
 	a) IGP (Interior Gateway Protocol - Protocolo de Gateway Interior)
