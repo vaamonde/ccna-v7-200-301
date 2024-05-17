@@ -16,17 +16,20 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 ## Protocolos de Roteamento utilizados no Cisco (APROFUNDAMENTO DE ESTUDO)
 
 **==== TCP e IP ====**
-		a) TCP (Transmission Control Protocol - Protocolo de Controle de Transmissão - Confiabilidade)
-		b) UDP (User Datagram Protocol - Protocolo de Datagrama do Usuário - Sem Confiabilidade)
-		c) IPv4 (Internet Protocol - Protocolo de Internet versão 4 - Decimal)
-		d) IPv6 (Internet Protocol - Protocolo de Internet versão 6 - Hexadecimal)
+
+	a) TCP (Transmission Control Protocol - Protocolo de Controle de Transmissão - Confiabilidade)
+	b) UDP (User Datagram Protocol - Protocolo de Datagrama do Usuário - Sem Confiabilidade)
+	c) IPv4 (Internet Protocol - Protocolo de Internet versão 4 - Decimal)
+	d) IPv6 (Internet Protocol - Protocolo de Internet versão 6 - Hexadecimal)
 
 **==== Protocolos IGP, EGP e BGP ====**
+
 	a) IGP (Interior Gateway Protocol - Protocolo de Gateway Interior)
 	b) EGP (Exterior Gateway Protocol - Protocolo de Gateway Externo)
 	c) BGP (Border Gateway Protocol - Protocolo de Gateway de Borda)
 
 **==== Distância Administrativa (Escolha do Melhor Caminho e Confiabilidade do Link) ====**
+
 	a) AD   0 --> Interface Diretamente Conectada
 	b) AD   1 --> Rota Estática, Rota Flutuante ou Gateway Padrão
 	c) AD  90 --> EIGRP (Enhanced Interior Gateway Routing Protocol - Protocolo de Roteamento de Gateway Interno Aprimorado)
@@ -34,6 +37,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 	e) AD 120 --> RIP (Routing Information Protocol - Protocolo de Informações de Roteamento)
 
 **==== Métrica (Custo do Link) ====**
+
 	a) Rota Estática --> Custo 0
 	b) EIGRP         --> Largura de Banda, Atraso, Confiabilidade, Utilização, MTU (Maximum Transmission Unit) e Contagem de Saltos
 	c) OSPF          --> Largura de Banda Acumulativa, Menor Custo e Menor Distância
