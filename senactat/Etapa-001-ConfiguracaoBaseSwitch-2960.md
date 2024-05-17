@@ -21,9 +21,9 @@ Em geral, os comandos EXEC de usuário permitem que você se conecte a dispositi
 
 O modo EXEC é dividido em dois níveis de acesso: **Usuário (>) e Privilegiado (#).**
 
-**OBSERVAÇÃO-01:** sempre que você acessar o modo EXEC pela primeira vez no Switch ou Router será mostrado o nome (hostname) padrão dos equipamentos: **Switch = switch> e Router = router>**
+**OBSERVAÇÃO-01:** sempre que você acessar o modo EXEC pela primeira vez no Switch ou Router será mostrado o nome (hostname) padrão dos equipamentos: **Switch = Switch> e Router = Router>**
 
-	switch>
+	Switch>
 
 ## SEGUNDA ETAPA: Acessando o Modo EXEC Privilegiado
 
@@ -40,7 +40,10 @@ O modo EXEC é dividido em dois níveis de acesso: **Usuário (>) e Privilegiado
 
 Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *exit*
 
-	switch> enable
+	Switch> enable
+	Switch#
+
+	Switch# disable
 
 ## TERCEIRA ETAPA: Configuração da Data e Hora
 
@@ -52,14 +55,15 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 
 **DICA-04:** é recomendado utilizar o Protocolo NTP (Network Time Protocol) para manter sincronizado a Data e Hora no Switch ou Router
 
-	switch> clock set 14:00:00 17 May 2024
+	Switch# clock set 14:00:00 17 May 2024
 
 ## QUARTA ETAPA: Acessando o Modo de Configuração Global
 
 01. Acessando o modo de Configuração Global de comandos do Cisco IOS
 	
 **DICA-05:** nesse modo que é feita a maioria das configurações do Cisco IOS tanto no Switch como no Router
-	configure terminal
+
+	Switch# configure terminal
 
 ## QUINTA ETAPA: Configurações Básicas (Base) do Switch
 
@@ -68,7 +72,9 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 **OBSERVAÇÃO-02:** essa configuração é obrigatória para o serviço de acesso remoto SSH e demais serviços de rede que utiliza nomes para o seu acesso.
 
 **DICA-06:** utilizar nomes curtos e objetivos, não usar caracteres especiais, espaço, acentuação, nomes complexo, etc...
-	hostname sw-01
+	
+	switch(config)# hostname sw-01
+	sw-01(config)#
 
 02. Habilitando o serviço de criptografia de senha do Tipo-7 Password do Cisco IOS.
 
@@ -77,12 +83,14 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 **OBSERVAÇÃO-03:** senhas do Tipo-7 são fáceis de serem quebradas e não são mais usadas nos equipamentos da Cisco, nesse caso é recomendado utilizar senhas do Tipo-5 Secret.
 
 **DESAFIO-01:** site para quebrar senhas do Tipo-7 https://packetlife.net/toolbox/type7/
-	service password-encryption
+
+	sw-01(config)# service password-encryption
 
 03. Habilitando o serviço de marcação de Data/Hora detalhado nos Logs do Cisco IOS
 
 **DICA-08:** esse recurso é utilizado nos sistemas de monitoramento, desempenho e consumo de rede, principalmente nos sistemas de auditoria de acesso ou recursos/serviços de rede e protocolos de geração de logs nos equipamentos da Cisco
-	service timestamps log datetime msec
+
+	sw-01(config)# service timestamps log datetime msec
 
 04. Desativando o serviço de resolução de nomes de domínio (serviço habilitado por padrão) no Cisco IOS
 
@@ -93,7 +101,8 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 **DICA-10:** para desbloquear o terminal, você pressiona: Ctrl+Shift+6 ou espera a liberação do terminal que demora cerca de 60 segundos.
 
 **DICA-11:** o comando: *no* é usado para desabilitar ou remover configurações feitas no switch ou router da Cisco
-	no ip domain-lookup
+
+	sw-01(config)# no ip domain-lookup
 
 05. Configuração do banner da mensagem do dia no Cisco IOS
 
@@ -108,14 +117,16 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 **OBSERVAÇÃO-04:** imagens ASCII Art no Banner *não pode ser muito grande*, recomendado ser **<= 1024 pixels**
 
 **CUIDADO:** utilizar o mesmo *sinal de delimitador de Início e Fim* do Banner na imagem ASCII (# Sustenido/Hashtag) ou outro carácter que não apareça na imagem.
-	banner motd #AVISO: acesso autorizado somente a funcionarios#
+
+	sw-01(config)# banner motd #AVISO: acesso autorizado somente a funcionarios#
 
 06. Habilitando o uso de senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado do Cisco IOS
 
 **DICA-13:** senhas do Tipo-5 por padrão utilizam criptografia forte (Algorítimo MD5) e não precisa do serviços de criptografia de senha habilitado para funcionar.
 
 **OBSERVAÇÃO-05:** por padrão o acesso ao modo EXEC Privilegiado é liberado sem segurança
-	enable secret 123@senac
+
+	sw-01(config)# enable secret 123@senac
 
 07. Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 e privilégios diferenciados
 
@@ -125,9 +136,10 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 **DICA-17:** usuários com Privilégio 15 não precisa digitar o comando enable após se logar no Switch ou Router.
 
 **OBSERVAÇÃO-06:** criação de usuários comuns para administrar o Switch, privilégio padrão recomendado: 1
-	username senac secret 123@senac
-	username vaamonde password 123@senac
-	username admin privilege 15 secret 123@senac
+
+	sw-01(config)# username senac secret 123@senac
+	sw-01(config)# username vaamonde password 123@senac
+	sw-01(config)# username admin privilege 15 secret 123@senac
 
 ## SEXTA ETAPA: Configuração da Linha Console
 
@@ -135,12 +147,14 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 	
 **DICA-18:** conexão feita utilizando o Cabo Console RS232/DB9 ou USB e software de Acesso Remoto ao Console (PuTTY, Minicom, etc...).
 **DICA-19:** nos Switch Cisco Catalyst temos apenas uma porta console RS232/DB9 ou USB (novos modelos).
-	line console 0
+
+	sw-01(config)# line console 0
 	
 a) Forçando fazer login local utilizando os usuários e senhas locais criados no Switch
 
 **DICA-20:** por padrão a configuração da Linha Console é permitir o acesso físico sem autenticação
-	login local
+	
+	sw-01(config-line)# login local
 
 b) Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
 
@@ -149,21 +163,24 @@ b) Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
 **OBSERVAÇÃO-07:** a porta console é considerada uma porta/interface física não remota ou virtual, por esse motivo ela não tem suporte a senhas do Tipo-5 Secret, pois o acesso é feito fisicamente no Switch ou Router (se você tem a possibilidade de acessar fisicamente um equipamento, o nível de segurança da criptografia não importa mais, pois é uma invasão física e não lógica).
 
 **OBSERVAÇÃO-08:** essa configuração só será utilizada caso não exista usuários locais criados e se a opção do comando: login local não for configurada.
-	password 123@senac
+	
+	sw-01(config-line)# password 123@senac
 
 c) Habilitando o sincronismo das mensagens de Logs na tela da linha de console do Cisco IOS
 
 **DICA-22:** esse recurso ajuda bastante no dia-a-dia em administrar o Cisco IOS, por padrão todas as mensagens de Log tem sua saída padrão na tela, que muitas vezes atrapalha na digitação, esse recurso permite o sincronismos entre as mensagens e a digitação dos comandos.
 
 **OBSERVAÇÃO-09:** por padrão todas as mensagens de status ou logs do Switch são mostradas na tela
-	logging synchronous
+	
+	sw-01(config-line)# logging synchronous
 
 d) Habilitando o tempo de inatividade de uso da linha de console do Cisco IOS
 
 **DICA-22:** configuração do tempo de inatividade em minutos e segundos da linha console, utilizado principalmente quando você está conectado no console e não está interagindo nas configurações, após o tempo de inatividade a seção (logoff) será finalizada, garantindo assim a segurança do acesso aos equipamentos.
 
 **OBSERVAÇÃO-10:** não é recomendado deixar o tempo de inatividade muito curto e nem muito longo
-	exec-timeout 5 30
+	
+	sw-01(config-line)# exec-timeout 5 30
 
 e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 
@@ -171,7 +188,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 **DICA-24:** o comando: *exit* sai nível por nível, o comando: *end* sai de todos os níveis.
 
 **OBSERVAÇÃO-11:** os dois comandos são utilizados principalmente em scripts de automação
-	end
+	sw-01(config-line)# end
 
 ## SÉTIMA ETAPA: Salvando as Configuração Básica (Base) do Switch
 
@@ -179,14 +196,16 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 
 **DICA-25:** no Cisco IOS temos vários tipos de memórias: RAM (Random Access Memory), NVRAM (Non-Volatile Random Access Memory), Flash EEPROM (Electrically-Erasable Programmable Read-Only Memory), etc.
 **DICA-26:** você pode utilizar o comando: *write*, indicado para criação de scripts e considerado obsoleto pela Cisco para salvar as configurações da RAM para a NVRAM.
-	copy running-config startup-config
+	
+	sw-01# copy running-config startup-config
 
 ## OITAVA ETAPA: Visualizando as Configuração do Switch
 
 01. Visualizando as configurações da memória RAM (Running-Config)
 
 **DICA-26:** no Cisco IOS temos várias opções de visualização das configurações utilizando o comando: *show*, o principal comando utilizado em todos os equipamentos da cisco para verificar as configurações que estão rodando no momento é o: *show ruunning-config* (configuração que está rodando na RAM).
-	show running-config
+	
+	sw-01# show running-config
 
 ## OITAVA ETAPA: Automatizando a Configuração do Segundo Switch
 
