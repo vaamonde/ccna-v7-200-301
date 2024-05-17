@@ -22,6 +22,7 @@ Em geral, os comandos EXEC de usuário permitem que você se conecte a dispositi
 O modo EXEC é dividido em dois níveis de acesso: **Usuário (>) e Privilegiado (#).**
 
 **OBSERVAÇÃO-01:** sempre que você acessar o modo EXEC pela primeira vez no Switch ou Router será mostrado o nome (hostname) padrão dos equipamentos: **Switch = switch> e Router = router>**
+
 	switch>
 
 ## SEGUNDA ETAPA: Acessando o Modo EXEC Privilegiado
@@ -37,8 +38,9 @@ O modo EXEC é dividido em dois níveis de acesso: **Usuário (>) e Privilegiado
 
 **EXEMPLO: enable = en | show running-config = sh runn | interface FastEthernet0/0 = int fa0/0**
 
-Para sair do modo EXEC Privilegiado você pode digitar o comando: disable ou exit
-	enable
+Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *exit*
+
+	switch> enable
 
 ## TERCEIRA ETAPA: Configuração da Data e Hora
 
@@ -49,7 +51,8 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: disable ou exi
 **EXEMPLO: Hora no formato Universal: Hora:Minutos:Segundos 00:00:00 - Data no formato: Dia Mês Completo ou Abreviado e Ano Completo: 01 March 2024**
 
 **DICA-04:** é recomendado utilizar o Protocolo NTP (Network Time Protocol) para manter sincronizado a Data e Hora no Switch ou Router
-	clock set 14:00:00 17 May 2024
+
+	switch> clock set 14:00:00 17 May 2024
 
 ## QUARTA ETAPA: Acessando o Modo de Configuração Global
 
