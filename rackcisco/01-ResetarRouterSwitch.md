@@ -25,9 +25,9 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 04. Limpando as configurações residuais dos outros grupos do Switch 3560.
 
-	a) Acessar o modo privilegiado: enable <Enter>
-	b) Remover o banco de dados de VLAN: delete flash:vlan.dat <Enter>
-	c) Remover os backups anteriores: delete flash:startup-config <Enter>
+		a) Acessar o modo privilegiado: enable <Enter>
+		b) Remover o banco de dados de VLAN: delete flash:vlan.dat <Enter>
+		c) Remover os backups anteriores: delete flash:startup-config <Enter>
 
 ## OBSERVAÇÃO IMPORTANTE: Caso o Switch não volte para o estado de fábrica, será necessário utilizar os procedimentos abaixo: (SÓ USAR ESSA OPÇÃO SE FOR REALMENTE NECESSÁRIO, NÃO EXECUTAR ESSES PROCEDIMENTOS NOS EQUIPAMENTOS ANTES DE INFORMAR AO DOCENTE)
 
@@ -57,15 +57,15 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 05. Limpando as configurações do Router 2911 e voltando a ler o arquivo de configuração startup-config da NVRAM.
 
-	a) Acessar o modo Exec Privilegiado: enable <Enter>
-	b) Limpar a NVRAM: erase startup-config <Enter>
-	c) Limpar as configurações de backup anteriores: delete flash:startup-config <Enter>
-	d) Acessar o modo de configuração global: configure terminal <Enter>
-	e) Mudar o registro de inicialização: config-register 0x2102 <Enter>
-	f) Sair de todos os modos: end <Enter>
-	g) Salvar as configurações: copy running-config startup-config <Enter>
-	h) Reinicializar o router: reload <Enter>
-	i) Verificar a chave de registro: enable <Enter>, show version <Enter>
+		a) Acessar o modo Exec Privilegiado: enable <Enter>
+		b) Limpar a NVRAM: erase startup-config <Enter>
+		c) Limpar as configurações de backup anteriores: delete flash:startup-config <Enter>
+		d) Acessar o modo de configuração global: configure terminal <Enter>
+		e) Mudar o registro de inicialização: config-register 0x2102 <Enter>
+		f) Sair de todos os modos: end <Enter>
+		g) Salvar as configurações: copy running-config startup-config <Enter>
+		h) Reinicializar o router: reload <Enter>
+		i) Verificar a chave de registro: enable <Enter>, show version <Enter>
 
 **Obs1: caso você digite chaves diferentes no ROMmon o sistema pode inicializar com caracteres estranhos, isso está muitas vezes associado a velocidade da porta (Padrão 9600), será necessário fazer os testes mudando as velocidades de conexão da porta no PuTTY para: 1200,2400, 4800, 9600, 19200, 38400, 57600 e 115200.** 
 
