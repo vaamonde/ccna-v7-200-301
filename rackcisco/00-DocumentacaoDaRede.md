@@ -37,13 +37,12 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 		Grupo-05: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 		Grupo-06: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 
-06. Cada Grupo deverá ser composto no máximo de: 4 (quatro) integrantes, cada integrante
-do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador Sem-Fio.
+06. Cada Grupo deverá ser composto no máximo de: 4 (quatro) integrantes, cada integrante do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto de rede para o Roteador Sem-Fio.
 
 **OBSERVAÇÃO IMPORTANTE: Os equipamentos abaixo serão utilizados pelo Docente em aula.**
 
 	PROFESSOR: 1 (um) Router Cisco 4321, 1 (um) Router Cisco 2811 e 1 (um) Switch 2960-XR
-	ESSES EQUIPAMENTO VÃO FAZER A FUNÇÃO DE SIMULAÇÃO DO ISP (INTERNET SERVICE PROVIDER).
+	ESSES EQUIPAMENTOs VÃO FAZER A FUNÇÃO DE SIMULAÇÃO DO ISP (INTERNET SERVICE PROVIDER).
 
 ## SEGUNDA ETAPA: Usuário e Senha padrão dos Switches e Routers Cisco de cada Grupo.
 
@@ -143,7 +142,7 @@ do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador
 
 **OBSERVAÇÃO IMPORTANTE: O nome da VLAN deverá ser o Primeiro Nome dos Integrantes do Grupo, exemplo: Robson Vaamonde - nome da VLAN 11: robson (sempre em minúsculo), Leandro Ramos - nome da VLAN 12: leandro, etc...**
 
-**OBSERVAÇÃO: CASO O GRUPO TENHO MENOS INTEGRATES, DESCONSIDERAR A CRIAÇÃO DAS VLAN'S CORRESPONDENTE, EXEMPLO: GRUPO COM 3 (TRÊS) INTEGRANTES DESCONSIDERAR A QUARTA VLAN DO GRUPO.**
+**OBSERVAÇÃO: CASO O GRUPO TENHO MENOS INTEGRATES, DESCONSIDERAR A CRIAÇÃO DAS VLAN'S CORRESPONDENTE, EXEMPLO: GRUPO COM 3 (TRÊS) INTEGRANTES DESCONSIDERAR A QUARTA VLAN DO GRUPO MAIS MANTER A VLAN DA REDE SEM-FIO**
 
 01. Determinação das Portas de Rede das VLAN do Switch 3560
 
@@ -231,14 +230,16 @@ do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto o Roteador
 
 ## SÉTIMA ETAPA: Determinação da Interface Serial de WAN dos Grupos e seu Endereçamento IPv4
 
-**OBSERVAÇÃO IMPORTANTE: a rede Classfull 192.168.1.0/24 será segmentada em: 64 Sub-Redes.**
+**OBSERVAÇÃO IMPORTANTE: a rede Classfull Classe C: 192.168.1.0/24 será segmentada em: 64 Sub-Redes.**
 
 **PRESTE MUITA ATENÇÃO DA TABELA DE ALOCAÇÃO DE ENDEREÇAMENTO IPV4 PARA CADA GRUPO, EXEMPLO: O GRUPO 01 VAI SE CONECTAR COM OS GRUPOS 02 E 06, VOCÊ DEVERÁ MAPEAR OS ENDEREÇOS UTILIZADOS NAS INTERFACES SERIAIS 0/0/0 E 0/0/1 ANALISANDO SEMPRE A CONEXÃO COM O SEUS VIZINHOS E QUAL REDE ELA PERTENCE.**
 
-**DICA: NESSA ETAPA VOCÊS PRECISAM CONVERSAR COM OS OUTROS GRUPOS, NÃO ADIANTA VOCÊ FAZER A SUA PARTE SE O OUTRO GRUPO NÃO FAZER A DELE E SE OS DOIS ERRAREM TUDO ESTARÁ ERRADO, POIS TODOS OS GRUPOS DEPENDEM DESSA CONFIGURAÇÃO.**
+**EXEMPLO: ROUTER VIZINHO-DCE <-------> DTE-0/0/1_SEU ROUTER_DCE-0/0/0 <-------> DTE-ROUTER VIZINHO**
+
+**DICA: NESSA ETAPA VOCÊS PRECISAM CONVERSAR COM OS OUTROS GRUPOS, NÃO ADIANTA VOCÊ FAZER A SUA PARTE SE O OUTRO GRUPO NÃO FAZER A DELE E SE OS DOIS ERRAREM TUDO ESTARÁ ERRADO, TODOS OS GRUPOS DEPENDEM DESSA CONFIGURAÇÃO PARA FUNCIONAR.**
 
 Endereçamento IP para Rede de Interligação (WAN) - (GP=Grupo | PI=Primeiro IP | UP=Último IP)<br>
-Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull: 192.168.1.0/24 - 255.255.255.0
+Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull C: 192.168.1.0/24 - 255.255.255.0
 
 	Grupo-01:	Rede: 192.168.1.0    PI: 192.168.1.1 - UP: 192.168.1.2    Broadcast: 192.168.1.3
 	Grupo-01:	Serial0/0/0 IP: 192.168.1.1/30 --> Grupo-02 Serial0/0/1 IP: 192.168.1.2/30
@@ -296,7 +297,7 @@ Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull: 192.168.1.0/24 - 255.255
 		Grupo-05	Router ID: 5.5.5.5
 		Grupo-06	Router ID: 6.6.6.6
 
-03. Declaração das Redes OSPF entre os Grupos
+04. Declaração das Redes OSPF entre os Grupos
 
 		Grupo-01
 			172.16.10.0 0.0.0.255    (SVI do Switch Layer 3)
@@ -357,3 +358,23 @@ Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull: 192.168.1.0/24 - 255.255
 			172.16.65.0 0.0.0.255    (Rede Sem-Fio do Grupo)
 			192.168.1.20 0.0.0.3     (Grupo 05 para Grupo 06)
 			192.168.1.16 0.0.0.3     (Grupo 06 para Grupo 01)
+
+## DÉCIMA ETAPA: Configuração dos Routers e Access Point D-Link, TP-Link ou Linksys 
+
+01. Endereço IPv4 de cada Access Point para o Gerenciamento dos Grupos
+
+	Grupo-01	IPv4: 172.16.15.250 - Máscara: 255.255.255.0
+	Grupo-02	IPv4: 172.16.25.250 - Máscara: 255.255.255.0
+	Grupo-03	IPv4: 172.16.35.250 - Máscara: 255.255.255.0
+	Grupo-04	IPv4: 172.16.45.250 - Máscara: 255.255.255.0
+	Grupo-05	IPv4: 172.16.55.250 - Máscara: 255.255.255.0
+	Grupo-06	IPv4: 172.16.65.250 - Máscara: 255.255.255.0
+
+02. Configuração da Rede Sem-Fio (cuidado com roteador Dual Band 2.4 e 5.0Ghz)
+
+	Grupo-01    SSID: G-01 (G-01-2.4 E G-01-5.0) - Senha: 123@senac
+	Grupo-02    SSID: G-02 (G-02-2.4 E G-02-5.0) - Senha: 123@senac
+	Grupo-03    SSID: G-03 (G-03-2.4 E G-03-5.0) - Senha: 123@senac
+	Grupo-04    SSID: G-04 (G-04-2.4 E G-04-5.0) - Senha: 123@senac
+	Grupo-05    SSID: G-05 (G-05-2.4 E G-05-5.0) - Senha: 123@senac
+	Grupo-06    SSID: G-06 (G-06-2.4 E G-06-5.0) - Senha: 123@senac
