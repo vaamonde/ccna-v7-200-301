@@ -13,11 +13,21 @@ Data de atualização: 16/05/2024<br>
 Versão: 0.01<br>
 Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
+## INFORMAÇÕES IMPORTANTES SOBRE ESSA DOCUMENTAÇÃO
+
+A) **ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dicas de alunos;
+B) **DESAFIO:** desafio proposto para o aluno, com o objetivo de estimular o raciocínio lógico para a resolução de problemas de rede ou mudanças nas configurações;
+C) **DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração no exame;
+D) **ERRATA:** correções dos scripts, correções de falas, correções de configurações, etc...;
+E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou OBSERVAÇÃO;
+F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;
+G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
+
 ## PRIMEIRA ETAPA: Acessando o Modo EXEC de Comandos de Usuário
 
-Primeiro acesso ao modo EXEC de Comandos de usuário (> sinal de Maior - user EXEC commands mode). Use o modo EXEC para definir, visualizar e testar as operações do sistema. 
+Primeiro acesso ao modo EXEC de Comandos de usuário *(> sinal de Maior - user EXEC commands mode)*. Use o modo EXEC para definir, visualizar e testar as operações do sistema. 
 
-Em geral, os comandos EXEC de usuário permitem que você se conecte a dispositivos remotos, altere as configurações da linha do terminal temporariamente, utilizado para executar os testes básicos e listar as informações do Cisco IOS (Internetwork Operating System).
+Em geral, os comandos EXEC de usuário permitem que você se conecte a dispositivos remotos, altere as configurações da linha do terminal temporariamente, etc..., utilizado para executar os testes básicos e listar as informações do Cisco IOS (Internetwork Operating System).
 
 O modo EXEC é dividido em dois níveis de acesso: **Usuário (>) e Privilegiado (#).**
 
