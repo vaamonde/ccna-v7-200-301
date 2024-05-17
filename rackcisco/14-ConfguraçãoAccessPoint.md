@@ -17,9 +17,9 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 01. Procedimento de Reset dos Routers e Access Point D-Link, TP-Link ou Linksys
 
-	Modelo D-Link DIR-809
-	Segurar o Botão WPS/Reset por 15 segundos
-	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
+	Modelo D-Link DIR-809<br>
+	Segurar o Botão WPS/Reset por 15 segundos<br>
+	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar<br>
 	Manual: https://www.dlink.com.br/wp-content/uploads/2018/10/DIR-809_A2_Manual_v1.00DI.pdf
 
 	Modelo D-Link DIR-819
