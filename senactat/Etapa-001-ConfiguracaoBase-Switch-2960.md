@@ -40,6 +40,7 @@ O modo EXEC é dividido em dois níveis de acesso: **Usuário (>) e Privilegiado
 01. Acessando o modo EXEC Privilegiado (# sinal de Sustenido/Hashtag - privileged EXEC mode)
 
 **DICA-01:** utilizar sempre a tecla TAB para auto-completar os comandos no Cisco IOS;
+
 **DICA-02:** se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto com o comando para mostrar as opções e informações reduzidas do comando.
 
 **EXEMPLO: show? | enable? | copy? | disable? | clock? | service?**
@@ -143,8 +144,11 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 07. Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 e privilégios diferenciados
 
 **DICA-14:** existe 16 níveis de privilégios no Cisco IOS (0 mais baixo até 15 mais alto);
+
 **DICA-15:** não é recomendado criar usuários utilizando senhas do Tipo-7 (senhas fracas, fácil de quebrar);
+
 **DICA-16:** existe a possibilidade de se autenticar no Switch utilizando os protocolos RADIUS ou TACACS;
+
 **DICA-17:** usuários com Privilégio 15 não precisa digitar o comando enable após se logar no Switch ou Router.
 
 **OBSERVAÇÃO-06:** criação de usuários comuns para administrar o Switch, privilégio padrão recomendado: 1
@@ -197,6 +201,7 @@ d) Habilitando o tempo de inatividade de uso da linha de console do Cisco IOS
 e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 
 **DICA-23:** você pode utilizar a tecla de atalho: *Ctrl+Z* para sair de todos os níveis;
+
 **DICA-24:** o comando: *exit* sai nível por nível, o comando: *end* sai de todos os níveis.
 
 **OBSERVAÇÃO-11:** os dois comandos são utilizados principalmente em scripts de automação
@@ -208,6 +213,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 01. Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
 
 **DICA-25:** no Cisco IOS temos vários tipos de memórias: RAM (Random Access Memory), NVRAM (Non-Volatile Random Access Memory), Flash EEPROM (Electrically-Erasable Programmable Read-Only Memory), etc.
+
 **DICA-26:** você pode utilizar o comando: *write*, indicado para criação de scripts e considerado obsoleto pela Cisco para salvar as configurações da RAM para a NVRAM.
 	
 	sw-01# copy running-config startup-config
