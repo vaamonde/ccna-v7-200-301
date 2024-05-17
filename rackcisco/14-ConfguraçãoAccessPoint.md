@@ -19,37 +19,37 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 	Modelo D-Link DIR-809<br>
 	Segurar o Botão WPS/Reset por 15 segundos<br>
-	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar<br>
+	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.<br>
 	Manual: https://www.dlink.com.br/wp-content/uploads/2018/10/DIR-809_A2_Manual_v1.00DI.pdf
 
-	Modelo D-Link DIR-819
-	Segurar o Botão WPS/Reset por 15 segundos
-	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
+	Modelo D-Link DIR-819<br>
+	Segurar o Botão WPS/Reset por 15 segundos<br>
+	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.<br>
 	Manual: https://www.dlink.com.br/wp-content/uploads/2018/10/DIR-819_A1_PPPoE.pdf
 
-	Modelo D-Link DIR-846
-	Segurar o Botão WPS/Reset por 15 segundos
-	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
+	Modelo D-Link DIR-846<br>
+	Segurar o Botão WPS/Reset por 15 segundos<br>
+	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.<br>
 	Manual: https://www.dlink.com.br/wp-content/uploads/2020/02/DIR-846_MANUAL_10072020_v1.03_EN.pdf
 
-	Modelo D-Link DIR-853
-	Segurar o Botão WPS/Reset por 15 segundos
-	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
+	Modelo D-Link DIR-853<br>
+	Segurar o Botão WPS/Reset por 15 segundos<br>
+	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.<br>
 	Manual: https://www.dlink.com.br/wp-content/uploads/2019/03/DIR-853_A2_WiFi.pdf
 
-	Modelo TP-Link AX3000
-	Segurar o Botão WPS/Reset por 15 segundos
-	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar
+	Modelo TP-Link AX3000<br>
+	Segurar o Botão WPS/Reset por 15 segundos<br>
+	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.<br>
 	Manual: https://static.tp-link.com/upload/manual/2022/202206/20220621/1910013193_Archer%20AX3000%20Pro(US)1.0_UG_V1.pdf
 
-	Modelo Linksys AC-1900
-	Segurar o Reset por 15 segundos
-	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.
+	Modelo Linksys AC-1900<br>
+	Segurar o Reset por 15 segundos<br>
+	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.<br>
 	Manual: https://downloads.linksys.com/downloads/userguide/1224699372213/MAN_EA6900_8220_01617A00_Userguide_EN.pdf
 
-	Modelo Linksys EA4500
-	Segurar o Reset por 15 segundos
-	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.
+	Modelo Linksys EA4500<br>
+	Segurar o Reset por 15 segundos<br>
+	Após soltar, todos os LED´s deve piscar e os LED´s de rede ficar ligados e depois apagar.<br>
 	Manual: https://downloads.linksys.com/downloads/userguide/EA-Series_UG_Full_3425-00125D_EN_FR-CA_Web.pdf
 
 **OBSERVAÇÃO: DESATIVAR O SERVIÇO DE DHCP SERVER DO ROUTER ACCESS POINT D-LINK, TP-LINK OU LINKSSYS, CONECTAR O CABO DE REDE NA PORTA 6 DO SEU SWITCH DIRETAMENTE NA PORTA DO SWITCH DO ROUTER ACCESS POINT D-LINK, TP-LINK OU LINKSSYS, O ENDEREÇO IPv4 SERÁ FORNECIDO PELO ROUTER 2911.**
@@ -74,5 +74,5 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 04. Baixar os Softwares de Análise de Rede Sem-Fio no seu Smartphone
 
-	a) WiFiMan: https://play.google.com/store/apps/details?id=com.ubnt.usurvey&hl=pt_BR&gl=US
+	a) WiFiMan: https://play.google.com/store/apps/details?id=com.ubnt.usurvey&hl=pt_BR&gl=US<br>
 	b) SIMET Mobile: https://play.google.com/store/apps/details?id=br.ceptro.simet.client.android&hl=pt_BR&gl=US
