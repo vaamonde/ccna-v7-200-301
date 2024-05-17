@@ -365,18 +365,18 @@ Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull C: 192.168.1.0/24 - 255.2
 
 01. Endereço IPv4 de cada Access Point para o Gerenciamento dos Grupos
 
-	Grupo-01	IPv4: 172.16.15.250 - Máscara: 255.255.255.0
-	Grupo-02	IPv4: 172.16.25.250 - Máscara: 255.255.255.0
-	Grupo-03	IPv4: 172.16.35.250 - Máscara: 255.255.255.0
-	Grupo-04	IPv4: 172.16.45.250 - Máscara: 255.255.255.0
-	Grupo-05	IPv4: 172.16.55.250 - Máscara: 255.255.255.0
-	Grupo-06	IPv4: 172.16.65.250 - Máscara: 255.255.255.0
+		Grupo-01	IPv4: 172.16.15.250 - Máscara: 255.255.255.0
+		Grupo-02	IPv4: 172.16.25.250 - Máscara: 255.255.255.0
+		Grupo-03	IPv4: 172.16.35.250 - Máscara: 255.255.255.0
+		Grupo-04	IPv4: 172.16.45.250 - Máscara: 255.255.255.0
+		Grupo-05	IPv4: 172.16.55.250 - Máscara: 255.255.255.0
+		Grupo-06	IPv4: 172.16.65.250 - Máscara: 255.255.255.0
 
 02. Configuração da Rede Sem-Fio (cuidado com roteador Dual Band 2.4 e 5.0Ghz)
 
-	Grupo-01    SSID: G-01 (G-01-2.4 e G-01-5.0) - Senha: 123@senac
-	Grupo-02    SSID: G-02 (G-02-2.4 e G-02-5.0) - Senha: 123@senac
-	Grupo-03    SSID: G-03 (G-03-2.4 e G-03-5.0) - Senha: 123@senac
-	Grupo-04    SSID: G-04 (G-04-2.4 e G-04-5.0) - Senha: 123@senac
-	Grupo-05    SSID: G-05 (G-05-2.4 e G-05-5.0) - Senha: 123@senac
-	Grupo-06    SSID: G-06 (G-06-2.4 e G-06-5.0) - Senha: 123@senac
+		Grupo-01    SSID: G-01 (G-01-2.4 e G-01-5.0) - Senha: 123@senac
+		Grupo-02    SSID: G-02 (G-02-2.4 e G-02-5.0) - Senha: 123@senac
+		Grupo-03    SSID: G-03 (G-03-2.4 e G-03-5.0) - Senha: 123@senac
+		Grupo-04    SSID: G-04 (G-04-2.4 e G-04-5.0) - Senha: 123@senac
+		Grupo-05    SSID: G-05 (G-05-2.4 e G-05-5.0) - Senha: 123@senac
+		Grupo-06    SSID: G-06 (G-06-2.4 e G-06-5.0) - Senha: 123@senac
