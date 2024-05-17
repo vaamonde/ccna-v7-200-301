@@ -59,26 +59,26 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 		Exemplo:
 			clock set      (configuração da data e hora)
 			hostname       (configuração do nome do equipamento)
-			enable secret  (habilitando a senha no modo Exec Privilegiado)
-			username       (criando dos usuários)
+			enable secret  (habilitando a senha do modo Exec Privilegiado)
+			username       (criação dos usuários)
 			password       (configuração da senha de acesso)
 			ip address     (endereçamento IPv4)
 
 03. Nome dos Switches, Routers e Access Point de Cada Grupo:
 
-		Grupo-01:   Hostname Switch 3560: sw-g01   Hostname Router 2911: rt-01   Access Point: ap-01
-		Grupo-02:   Hostname Switch 3560: sw-g02   Hostname Router 2911: rt-02   Access Point: ap-02
-		Grupo-03:   Hostname Switch 3560: sw-g03   Hostname Router 2911: rt-03   Access Point: ap-03
-		Grupo-04:   Hostname Switch 3560: sw-g04   Hostname Router 2911: rt-04   Access Point: ap-04
-		Grupo-05:   Hostname Switch 3560: sw-g05   Hostname Router 2911: rt-05   Access Point: ap-05
-		Grupo-06:   Hostname Switch 3560: sw-g06   Hostname Router 2911: rt-06   Access Point: ap-06
+		Grupo-01:   Hostname Switch 3560: sw-g01   Hostname Router 2911: rt-g01   Access Point: ap-g01
+		Grupo-02:   Hostname Switch 3560: sw-g02   Hostname Router 2911: rt-g02   Access Point: ap-g02
+		Grupo-03:   Hostname Switch 3560: sw-g03   Hostname Router 2911: rt-g03   Access Point: ap-g03
+		Grupo-04:   Hostname Switch 3560: sw-g04   Hostname Router 2911: rt-g04   Access Point: ap-g04
+		Grupo-05:   Hostname Switch 3560: sw-g05   Hostname Router 2911: rt-g05   Access Point: ap-g05
+		Grupo-06:   Hostname Switch 3560: sw-g06   Hostname Router 2911: rt-g06   Access Point: ap-g06
 
 ## TERCEIRA ETAPA: Determinação das Redes (Sub-Redes) e VLAN (Virtual-LAN) de Cada Grupo
 
 01. Todo o cenário será configurado utilizando VLAN (Virtual-LAN), será determinado 6 (seis) VLAN's por Grupo, sendo elas
 
-		a) 01 (uma)    VLAN de SVI (Switch Virtual Interface)
-		b) 04 (quatro) VLAN's para cada usuário na rede (4 integrantes)
+		a) 01 (uma)    VLAN de SVI (Switch Virtual Interface - Gerenciamento da Switch 3560)
+		b) 04 (quatro) VLAN's para cada usuário na rede (4 integrantes do grupo - Desktops)
 		c) 01 (uma)    VLAN de Rede Sem-Fio (Wi-Fi/Wireless)
 
 02. Determinação das Sub-Redes e VLAN de cada Grupo.
@@ -129,20 +129,20 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 01. Determinação do endereço IPv4 da VLAN de SVI e Gateway do Switch Layer 3
 
-		Grupo-01:  SVI:  172.16.10.253/24  -  Gateway: 172.16.10.254/24
-		Grupo-02:  SVI:  172.16.20.253/24  -  Gateway: 172.16.20.254/24
-		Grupo-03:  SVI:  172.16.30.253/24  -  Gateway: 172.16.30.254/24
-		Grupo-04:  SVI:  172.16.40.253/24  -  Gateway: 172.16.40.254/24
-		Grupo-05:  SVI:  172.16.50.253/24  -  Gateway: 172.16.50.254/24
-		Grupo-06:  SVI:  172.16.60.253/24  -  Gateway: 172.16.60.254/24
+		Grupo-01:  SVI:  172.16.10.253/24  -  Gateway: 172.16.10.254
+		Grupo-02:  SVI:  172.16.20.253/24  -  Gateway: 172.16.20.254
+		Grupo-03:  SVI:  172.16.30.253/24  -  Gateway: 172.16.30.254
+		Grupo-04:  SVI:  172.16.40.253/24  -  Gateway: 172.16.40.254
+		Grupo-05:  SVI:  172.16.50.253/24  -  Gateway: 172.16.50.254
+		Grupo-06:  SVI:  172.16.60.253/24  -  Gateway: 172.16.60.254
 
 ## QUINTA ETAPA: Determinação das Portas de Rede de cada VLAN dos Usuários dos Grupos
 
 **OBSERVAÇÃO IMPORTANTE: a Porta de Rede: FastEthernet 0/1 não será utilizada nas configurações.**
 
-**OBSERVAÇÃO IMPORTANTE: O nome da VLAN deverá ser o Primeiro Nome dos Integrantes do Grupo, exemplo: Robson Vaamonde - nome da VLAN 11: robson (sempre em minúsculo), Leandro Ramos - nome da VLAN 12: leandro, etc...**
+**OBSERVAÇÃO IMPORTANTE: O nome da VLAN deverá ser o Primeiro Nome dos Alunos do Grupo, exemplo: Robson Vaamonde - nome da VLAN 11: robson (sempre em minúsculo), Leandro Ramos - nome da VLAN 12: leandro, etc...**
 
-**OBSERVAÇÃO: CASO O GRUPO TENHO MENOS INTEGRATES, DESCONSIDERAR A CRIAÇÃO DAS VLAN'S CORRESPONDENTE, EXEMPLO: GRUPO COM 3 (TRÊS) INTEGRANTES DESCONSIDERAR A QUARTA VLAN DO GRUPO MAIS MANTER A VLAN DA REDE SEM-FIO**
+**OBSERVAÇÃO: CASO O GRUPO NÃO TENHA 04 (QUATRO) ALUNOS, DESCONSIDERAR A CRIAÇÃO DAS VLAN'S CORRESPONDENTE, EXEMPLO: GRUPO COM 3 (TRÊS) ALUNOS DESCONSIDERAR A QUARTA VLAN DO GRUPO MAIS MANTER A VLAN DA REDE SEM-FIO COM O SEU NÚMERO E NOME**
 
 01. Determinação das Portas de Rede das VLAN do Switch 3560
 
@@ -232,6 +232,8 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 **OBSERVAÇÃO IMPORTANTE: a rede Classfull Classe C: 192.168.1.0/24 será segmentada em: 64 Sub-Redes.**
 
+**Bits de Rede: 2^6=64 - Bits de Host: 2^2=4 - 2 (ID e Broadcast)=2 - Máscara: 255.255.255.252**
+
 **PRESTE MUITA ATENÇÃO DA TABELA DE ALOCAÇÃO DE ENDEREÇAMENTO IPV4 PARA CADA GRUPO, EXEMPLO: O GRUPO 01 VAI SE CONECTAR COM OS GRUPOS 02 E 06, VOCÊ DEVERÁ MAPEAR OS ENDEREÇOS UTILIZADOS NAS INTERFACES SERIAIS 0/0/0 E 0/0/1 ANALISANDO SEMPRE A CONEXÃO COM O SEUS VIZINHOS E QUAL REDE ELA PERTENCE.**
 
 **EXEMPLO: ROUTER VIZINHO-DCE <-------> DTE-0/0/1_SEU ROUTER_DCE-0/0/0 <-------> DTE-ROUTER VIZINHO**
@@ -261,23 +263,23 @@ Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull C: 192.168.1.0/24 - 255.2
 
 ## OITAVA ETAPA: Determinação da Interface do Switch do Professor para a Conexão com a Internet
 
-	Grupo-01 - Porta do Switch: 01
-	Grupo-02 - Porta do Switch: 02
-	Grupo-03 - Porta do Switch: 03
-	Grupo-04 - Porta do Switch: 04
-	Grupo-05 - Porta do Switch: 05
-	Grupo-06 - Porta do Switch: 06
+	Grupo-01 - Porta do Switch: 01	(VLAN: 501 - Rede: 200.200.200.0/27)
+	Grupo-02 - Porta do Switch: 02	(VLAN: 502 - Rede: 200.200.200.32/27)
+	Grupo-03 - Porta do Switch: 03	(VLAN: 503 - Rede: 200.200.200.64/27)
+	Grupo-04 - Porta do Switch: 04	(VLAN: 504 - Rede: 200.200.200.96/27)
+	Grupo-05 - Porta do Switch: 05	(VLAN: 505 - Rede: 200.200.200.128/27)
+	Grupo-06 - Porta do Switch: 06	(VLAN: 506 - Rede: 200.200.200.160/27)
 
 ## NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF
 
 01. Configuração do OSPF e Endereçamento IPv4 da Interface de Loopback 0 dos Grupos
 
-		Grupo-01	Endereço IPv4 Loopback: 1.1.1.1 255.255.255.255
-		Grupo-02	Endereço IPv4 Loopback: 2.2.2.2 255.255.255.255
-		Grupo-03	Endereço IPv4 Loopback: 3.3.3.3 255.255.255.255
-		Grupo-04	Endereço IPv4 Loopback: 4.4.4.4 255.255.255.255
-		Grupo-05	Endereço IPv4 Loopback: 5.5.5.5 255.255.255.255
-		Grupo-06	Endereço IPv4 Loopback: 6.6.6.6 255.255.255.255
+		Grupo-01	Endereço IPv4 Loopback: 1.1.1.1 255.255.255.255 (Máscara /32 RFC-3021 host subnet)
+		Grupo-02	Endereço IPv4 Loopback: 2.2.2.2 255.255.255.255 (Máscara /32 RFC-3021 host subnet)
+		Grupo-03	Endereço IPv4 Loopback: 3.3.3.3 255.255.255.255 (Máscara /32 RFC-3021 host subnet)
+		Grupo-04	Endereço IPv4 Loopback: 4.4.4.4 255.255.255.255 (Máscara /32 RFC-3021 host subnet)
+		Grupo-05	Endereço IPv4 Loopback: 5.5.5.5 255.255.255.255 (Máscara /32 RFC-3021 host subnet)
+		Grupo-06	Endereço IPv4 Loopback: 6.6.6.6 255.255.255.255 (Máscara /32 RFC-3021 host subnet)
 
 02. Configuração do ID Local do Processo do OSPF dos Grupos
 
@@ -290,12 +292,12 @@ Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull C: 192.168.1.0/24 - 255.2
 
 03. Configuração do Router-ID do Processo do OSPF (Loopback) dos Grupos
 
-		Grupo-01	Router ID: 1.1.1.1
-		Grupo-02	Router ID: 2.2.2.2
-		Grupo-03	Router ID: 3.3.3.3
-		Grupo-04	Router ID: 4.4.4.4
-		Grupo-05	Router ID: 5.5.5.5
-		Grupo-06	Router ID: 6.6.6.6
+		Grupo-01	Router ID: 1.1.1.1	(mesmo endereço IPv4 da Loopback)
+		Grupo-02	Router ID: 2.2.2.2	(mesmo endereço IPv4 da Loopback)
+		Grupo-03	Router ID: 3.3.3.3	(mesmo endereço IPv4 da Loopback)
+		Grupo-04	Router ID: 4.4.4.4	(mesmo endereço IPv4 da Loopback)
+		Grupo-05	Router ID: 5.5.5.5	(mesmo endereço IPv4 da Loopback)
+		Grupo-06	Router ID: 6.6.6.6	(mesmo endereço IPv4 da Loopback)
 
 04. Declaração das Redes OSPF entre os Grupos
 
@@ -372,9 +374,9 @@ Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull C: 192.168.1.0/24 - 255.2
 
 02. Configuração da Rede Sem-Fio (cuidado com roteador Dual Band 2.4 e 5.0Ghz)
 
-	Grupo-01    SSID: G-01 (G-01-2.4 E G-01-5.0) - Senha: 123@senac
-	Grupo-02    SSID: G-02 (G-02-2.4 E G-02-5.0) - Senha: 123@senac
-	Grupo-03    SSID: G-03 (G-03-2.4 E G-03-5.0) - Senha: 123@senac
-	Grupo-04    SSID: G-04 (G-04-2.4 E G-04-5.0) - Senha: 123@senac
-	Grupo-05    SSID: G-05 (G-05-2.4 E G-05-5.0) - Senha: 123@senac
-	Grupo-06    SSID: G-06 (G-06-2.4 E G-06-5.0) - Senha: 123@senac
+	Grupo-01    SSID: G-01 (G-01-2.4 e G-01-5.0) - Senha: 123@senac
+	Grupo-02    SSID: G-02 (G-02-2.4 e G-02-5.0) - Senha: 123@senac
+	Grupo-03    SSID: G-03 (G-03-2.4 e G-03-5.0) - Senha: 123@senac
+	Grupo-04    SSID: G-04 (G-04-2.4 e G-04-5.0) - Senha: 123@senac
+	Grupo-05    SSID: G-05 (G-05-2.4 e G-05-5.0) - Senha: 123@senac
+	Grupo-06    SSID: G-06 (G-06-2.4 e G-06-5.0) - Senha: 123@senac
