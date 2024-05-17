@@ -40,7 +40,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 		a) Conectar o cabo de rede na placa de rede off-board;
 		b) Conectar o cabo de rede no ponto de rede do rack cisco do seu usuário;
 		c) Verificar se os LED's da Placa de Rede e Switch estão ligados;
-		d)Desativar e Ativar novamente a Placa de Rede no Linux Mint.
+		d) Desativar e Ativar novamente a Placa de Rede no Linux Mint.
 
 03. Ligar as Máquinas Virtuais e verificar se obteve os endereços IPv4
 	
@@ -65,11 +65,15 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 05. Acessar remotamente o Switch 3560 e Router 2911 utilizando o SSH
 
 		Linux Mint
-			Terminal: Ctrl + Alt + T 
-				#Linha do SSH para acessar o Switch
-				#OBSERVAÇÃO IMPORTANTE: existe somente a Primeira Sub-Rede para acessar o Switch
-				ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.253
-				
-				#Linha do SSH para acessar o Router
-				#OBSERVAÇÃO IMPORTANTE: alterar a Sub-Rede para cada usuário a Rede
-				ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.254
+		Terminal: Ctrl + Alt + T 
+			#Linha do SSH para acessar o Switch
+			#OBSERVAÇÃO IMPORTANTE: existe somente a Primeira Sub-Rede para acessar o Switch
+			ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.253
+			
+			#Linha do SSH para acessar o Router
+			#OBSERVAÇÃO IMPORTANTE: alterar a Sub-Rede para cada usuário a Rede
+			ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.254
+		
+		Windows 10
+		Powershell
+			

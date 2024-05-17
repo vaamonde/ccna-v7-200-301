@@ -28,7 +28,7 @@ enable
 		!Descrição da Interface
 		description Interface de acesso a Internet do Grupo-??
 		
-		!Configuração do endereçamento IP Dinâmico via DHCP
+		!Configuração do endereçamento IP Dinâmico via DHCP Client
 		ip address dhcp
 		
 		!Inicializando a Interface
