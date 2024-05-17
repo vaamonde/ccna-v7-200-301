@@ -44,6 +44,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 	Switch#
 
 	Switch# disable
+	Switch>
 
 ## TERCEIRA ETAPA: Configuração da Data e Hora
 
@@ -64,6 +65,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 **DICA-05:** nesse modo que é feita a maioria das configurações do Cisco IOS tanto no Switch como no Router
 
 	Switch# configure terminal
+	Switch(config)#
 
 ## QUINTA ETAPA: Configurações Básicas (Base) do Switch
 
@@ -73,7 +75,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 
 **DICA-06:** utilizar nomes curtos e objetivos, não usar caracteres especiais, espaço, acentuação, nomes complexo, etc...
 	
-	switch(config)# hostname sw-01
+	Switch(config)# hostname sw-01
 	sw-01(config)#
 
 02. Habilitando o serviço de criptografia de senha do Tipo-7 Password do Cisco IOS.
@@ -188,6 +190,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 **DICA-24:** o comando: *exit* sai nível por nível, o comando: *end* sai de todos os níveis.
 
 **OBSERVAÇÃO-11:** os dois comandos são utilizados principalmente em scripts de automação
+	
 	sw-01(config-line)# end
 
 ## SÉTIMA ETAPA: Salvando as Configuração Básica (Base) do Switch
@@ -199,7 +202,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 	
 	sw-01# copy running-config startup-config
 
-## OITAVA ETAPA: Visualizando as Configuração do Switch
+## OITAVA ETAPA: Visualizando as Configurações do Switch
 
 01. Visualizando as configurações da memória RAM (Running-Config)
 
@@ -215,7 +218,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
 
 **DICA-27:** o caractere ! (exclamação) é utilizado como um recurso de *Comentário*, sua utilização server para comentar o código de automação do Cisco IOS ou para desativar um comando para não ser executado, *RECOMENDO FORTEMENTE DOCUMENTAR TODOS OS COMANDOS E PROCEDIMENTOS DE CONFIGURAÇÃO PARA FACILITAR O ENTENDIMENTO.*
 
-**DICA-28:** para facilitar a leitura do código, recomendo utilizar o recurso de Indentação de Código usando a Tecla TAB (Tabular) para cada nível que você está configurando o Cisco IOS, isso facilitada a análise de erros (Debug) do código.
+**DICA-28:** para facilitar a leitura do código, recomendo utilizar o recurso de Indentação de Código usando a Tecla TAB (Tabulador/Tabulação) para cada nível que você está configurando o Cisco IOS, isso facilitada a análise de erros (Debug) do código.
 
 ```python
 !Automação da configuração do Switch 2
