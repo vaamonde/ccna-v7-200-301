@@ -19,57 +19,57 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 01. Alterar a Porta de Rede da Máquina VirtualBOX
 
-	LinuxMint
-		Propriedades
-			Rede
-				Adaptador 1
-					Conectado a: Placa em mode Bridge (Alterar)
-					Nome: Realtek PCI GbE Family Controller (Alterar)
-		<OK>
+		LinuxMint
+			Propriedades
+				Rede
+					Adaptador 1
+						Conectado a: Placa em mode Bridge (Alterar)
+						Nome: Realtek PCI GbE Family Controller (Alterar)
+			<OK>
 
-	Windows10
-		Propriedades
-			Rede
-				Adaptador 1
-					Conectado a: Placa em mode Bridge (Alterar)
-					Nome: Realtek PCI GbE Family Controller (Alterar)
-		<OK>
+		Windows10
+			Propriedades
+				Rede
+					Adaptador 1
+						Conectado a: Placa em mode Bridge (Alterar)
+						Nome: Realtek PCI GbE Family Controller (Alterar)
+			<OK>
 
 02. Conectar o Cabo de Rede na Placa de Rede Off-Board do Desktop
 
-	a) Conectar o cabo de rede na placa de rede off-board;
-	b) Conectar o cabo de rede no ponto de rede do rack cisco do seu usuário;
-	c) Verificar se os LED's da Placa de Rede e Switch estão ligados;
-	d)Desativar e Ativar novamente a Placa de Rede no Linux Mint.
+		a) Conectar o cabo de rede na placa de rede off-board;
+		b) Conectar o cabo de rede no ponto de rede do rack cisco do seu usuário;
+		c) Verificar se os LED's da Placa de Rede e Switch estão ligados;
+		d)Desativar e Ativar novamente a Placa de Rede no Linux Mint.
 
 03. Ligar as Máquinas Virtuais e verificar se obteve os endereços IPv4
 	
-	Linux Mint
-		Terminal: Ctrl + Alt + T 
-			ifconfig (verificar a linha: inet 172.16.???.??? da sua Sub-Rede)
-			route -n (verificar a linha: 0.0.0.0 172.16.???.254 da sua Sub-Rede)
-			resolvectl (verificar a linha: DNS Servers 8.8.8.8)
+		Linux Mint
+			Terminal: Ctrl + Alt + T 
+				ifconfig (verificar a linha: inet 172.16.???.??? da sua Sub-Rede)
+				route -n (verificar a linha: 0.0.0.0 172.16.???.254 da sua Sub-Rede)
+				resolvectl (verificar a linha: DNS Servers 8.8.8.8)
 
-	Windows 10
-		Powershell
-			ipconfig /all (verificar a linha: da sua Sub-Rede)
-			ipconfig /all (verificar a linha: da sua Sub-Rede)
-			ipconfig /all (verificar a linha: da sua Sub-Rede)
+		Windows 10
+			Powershell
+				ipconfig /all (verificar a linha: da sua Sub-Rede)
+				ipconfig /all (verificar a linha: da sua Sub-Rede)
+				ipconfig /all (verificar a linha: da sua Sub-Rede)
 
 04. Testar o ping no Router e Switch
 
-	Linux Mint ou Windows 10 
-		ping 172.16.???.253
-		ping 172.16.???.254
+		Linux Mint ou Windows 10 
+			ping 172.16.???.253
+			ping 172.16.???.254
 
 05. Acessar remotamente o Switch 3560 e Router 2911 utilizando o SSH
 
-	Linux Mint
-		Terminal: Ctrl + Alt + T 
-			#Linha do SSH para acessar o Switch
-			#OBSERVAÇÃO IMPORTANTE: existe somente a Primeira Sub-Rede para acessar o Switch
-			ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.253
-			
-			#Linha do SSH para acessar o Router
-			#OBSERVAÇÃO IMPORTANTE: alterar a Sub-Rede para cada usuário a Rede
-			ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.254
+		Linux Mint
+			Terminal: Ctrl + Alt + T 
+				#Linha do SSH para acessar o Switch
+				#OBSERVAÇÃO IMPORTANTE: existe somente a Primeira Sub-Rede para acessar o Switch
+				ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.253
+				
+				#Linha do SSH para acessar o Router
+				#OBSERVAÇÃO IMPORTANTE: alterar a Sub-Rede para cada usuário a Rede
+				ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.254
