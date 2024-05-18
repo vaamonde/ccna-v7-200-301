@@ -27,16 +27,16 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 
-	AVISO: acesso autorizado somente a funcionarios
-	User Access Verification
-	Username: senac
-	Password: 123@senac
+		AVISO: acesso autorizado somente a funcionarios
+		User Access Verification
+		Username: senac
+		Password: 123@senac
 
-	sw-01> enable
-	Password: 123@senac
+		sw-01> enable
+		Password: 123@senac
 
-	sw-01# configure terminal
-	sw-01(config)#
+		sw-01# configure terminal
+		sw-01(config)#
 
 ## SEGUNDA ETAPA: Configuração das Linhas Virtuais (VTY) do Switch.
 
@@ -58,7 +58,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 02. Forçando fazer login local utilizando os usuários e senhas locais criados no Switch (usuários criados na etapa de configuração básica do Switch).
 	
-	sw-01(config-line)# login local
+		sw-01(config-line)# login local
 
 03. Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
 	
@@ -68,11 +68,11 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 04. Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco IOS.
 	
-	sw-01(config-line)# logging synchronous
+		sw-01(config-line)# logging synchronous
 
 05. Habilitando o tempo de inatividade de uso do linha virtual.
 	
-	sw-01(config-line)# exec-timeout 5 30
+		sw-01(config-line)# exec-timeout 5 30
 
 06. Configuração do tipo de Protocolo de Transporte de entrada ou saída da linha virtual.
 	
@@ -92,15 +92,15 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 07. Saindo de todos os níveis e voltando para o modo EXEC Privilegiado.
 	
-	sw-01(config-line)# end
+		sw-01(config-line)# end
 
 08. Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
 
-	sw-01# copy running-config startup-config
+		sw-01# copy running-config startup-config
 
 09. Visualizando as configurações da memória RAM (Running-Config)
 
-	sw-01(config-line)# show running-config
+		sw-01(config-line)# show running-config
 
 ## TERCEIRA ETAPA: Automatizando a Configuração do Segundo Switch.
 
