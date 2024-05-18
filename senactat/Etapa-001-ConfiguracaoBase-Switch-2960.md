@@ -223,7 +223,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado.
 
 01. Visualizando as configurações da memória RAM (Running-Config).
 
-**DICA-29:** no Cisco IOS temos várias opções de visualização das configurações utilizando o comando: *show*, o principal comando utilizado em todos os equipamentos da Cisco para verificar as configurações que estão rodando no momento é o: *show ruunning-config* (configuração que está rodando na RAM).
+**DICA-29:** no Cisco IOS temos várias opções de visualização das configurações utilizando o comando: *show*, o principal comando utilizado em todos os equipamentos da Cisco para verificar as configurações que estão rodando no momento é o: *show running-config* (configuração que está rodando na RAM).
 	
 	sw-01# show running-config
 

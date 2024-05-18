@@ -56,31 +56,37 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 	sw-01(config)# line vty 0 4
 
-02. Forçando fazer login local utilizando os usuários e senhas locais criados no Switch (usuários criados na etapa de configuração básica do Switch).
-	
-		sw-01(config-line)# login local
+a) Forçando fazer login local utilizando os usuários e senhas locais criados no Switch (usuários criados na etapa de configuração básica do Switch).
 
-03. Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
+**DICA-04:** por padrão a configuração da Linha Virtual é não permitir nenhuma conexão,
+
+	sw-01(config-line)# login local
+
+b) Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
 	
-**DICA-04:** igual na configuração da Line Console, essa regra só irá funcionar se não existir usuários no Switch e se você não configurou o login local.
+**DICA-05:** igual na configuração da Line Console, essa regra só irá funcionar se não existir usuários no Switch e se você não configurou o login local.
 
 	sw-01(config-line)# password 123@senac
 
-04. Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco IOS.
-	
-		sw-01(config-line)# logging synchronous
+c) Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco IOS.
+
+**DICA-06:** essa configuração é fundamental na Line VTY, igual a Line Console o sincronismos dos Logs e comandos precisa ser configurado para facilitar a administração do Switch ou Router.
+
+	sw-01(config-line)# logging synchronous
 
 05. Habilitando o tempo de inatividade de uso do linha virtual.
-	
-		sw-01(config-line)# exec-timeout 5 30
+
+**DICA-07:** na Line Virtual a desconexão por falta de interatividade e obrigatório mais minimizar falhas de segurança de acesso ao Switch ou Router.
+
+	sw-01(config-line)# exec-timeout 5 30
 
 06. Configuração do tipo de Protocolo de Transporte de entrada ou saída da linha virtual.
 	
-**DICA-05:** na linha virtual você pode controlar o tipo de acesso remoto de entrada ou saída.
+**DICA-08:** na linha virtual você pode controlar o tipo de acesso remoto de entrada ou saída.
 	
 **OBSERVAÇÃO-04:** existe vários protocolos de acesso remoto no Cisco IOS, os mais utilizados são: Telnet (não seguro) ou SSH (seguro), por motivo de segurança, acesso remoto utilizando o protocolo Telnet não é mais recomendado e será descontinuado nas próximas versões do Cisco IOS.
 	
-**DICA-06:** existe várias opções de configuração do Protocolo de Transporte, a opção: all permite todos os protocolos de entrada ou saída, essa é a configuração padrão do Cisco IOS (não indicado deixar essa opção).
+**DICA-09:** existe várias opções de configuração do Protocolo de Transporte, a opção: all permite todos os protocolos de entrada ou saída, essa é a configuração padrão do Cisco IOS (não indicado deixar essa opção).
 	
 **EXEMPLO DE ENTRADA:** transport input {lat | mop | nasi | none | pad | rlogin | ssh | telnet | v120} 
 
@@ -91,16 +97,26 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 	sw-01(config-line)# transport input ssh
 
 07. Saindo de todos os níveis e voltando para o modo EXEC Privilegiado.
-	
-		sw-01(config-line)# end
+
+**DICA-10:** lembre-se sempre de sair de todos os níveis para salvar as configurações.
+
+	sw-01(config-line)# end
 
 08. Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
 
-		sw-01# copy running-config startup-config
+**DICA-11:** nunca esqueça de salvar as configurações.
+	
+	sw-01# copy running-config startup-config
 
 09. Visualizando as configurações da memória RAM (Running-Config)
 
-		sw-01(config-line)# show running-config
+**DICA-12** após a configuração da Line Virtual verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
+	
+	!Visualizando as Configurações do Running-Config (RAM)
+	sw-01#  show running-config
+
+	!Fazendo um Filtro na Visualização do Running-Config somente da Sessão Line VTY
+	sw-01# show running-config | section include line vty
 
 ## TERCEIRA ETAPA: Automatizando a Configuração do Segundo Switch.
 
@@ -108,9 +124,9 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **OBSERVAÇÃO-05:** recomendamos sempre utilizar um *Editor de Texto Profissional* para criar os scripts e automatizar as tarefas de configuração do Cisco IOS, hoje em dia é indicado utilizar o Visual Studio Code (VSCode) junto com as Extensões: *Cisco IOS Syntax e Cisco Config Highlight* para facilitar essa configuração.
 
-**DICA-07:** o caractere: *! (exclamação)* é utilizado como um recurso de *Comentário*, sua utilização server para comentar o código de automação do Cisco IOS ou para desativar um comando para não ser executado, *RECOMENDO FORTEMENTE DOCUMENTAR TODOS OS COMANDOS E PROCEDIMENTOS DE CONFIGURAÇÃO PARA FACILITAR O ENTENDIMENTO.*
+**DICA-13:** o caractere: *! (exclamação)* é utilizado como um recurso de *Comentário*, sua utilização server para comentar o código de automação do Cisco IOS ou para desativar um comando para não ser executado, *RECOMENDO FORTEMENTE DOCUMENTAR TODOS OS COMANDOS E PROCEDIMENTOS DE CONFIGURAÇÃO PARA FACILITAR O ENTENDIMENTO.*
 
-**DICA-08:** para facilitar a leitura do código, recomendo utilizar o recurso de **Indentação de Código** usando a Tecla TAB (Tabulador/Tabulação) para cada nível que você está configurando o Cisco IOS, isso facilitada a análise de erros (Debug) do código.
+**DICA-14:** para facilitar a leitura do código, recomendo utilizar o recurso de **Indentação de Código** usando a Tecla TAB (Tabulador/Tabulação) para cada nível que você está configurando o Cisco IOS, isso facilitada a análise de erros (Debug) do código.
 
 ```python
 !Acessando o modo EXEC Privilegiado
