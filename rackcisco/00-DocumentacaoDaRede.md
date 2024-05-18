@@ -15,20 +15,20 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 ## PRIMEIRA ETAPA: Documentação dos Pontos de Rede do Rack Cisco.
 
-01. Todos os pontos de Rede do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
+01. Todos os pontos de Rede do Rack Cisco estão identificados pela sigla: **R.Cisco - Ponto 0x.**
 
-02. Todos os pontos de Rede do Rack Cisco estão conectados nos 2 (dois) primeiros Patch Panel.
+02. Todos os pontos de Rede do Rack Cisco estão conectados nos: **2 (dois) primeiros Patch Panel.**
 
 		a) Primeiro Patch Panel: Pontos de Rede de: 01 até 24;
 		b) Segundo Patch Panel.: Pontos de Rede de: 25 até 30.
 
-03. Todos os Patch Cords do Rack Cisco estão identificados pela sigla: R.Cisco - Ponto 0x.
+03. Todos os Patch Cords do Rack Cisco estão identificados pela sigla: **R.Cisco - Ponto 0x.**
 
-04. No Rack Cisco existe 2 (dois) Patch Panel que serão utilizados para o Espelhamento das portas dos Switches Cisco Catalyst Layer-3 3560.
+04. No Rack Cisco existe: **2 (dois) Patch Panel** que serão utilizados para o *Espelhamento das Portas dos Switches Cisco Catalyst Layer-3 3560.*
 
-**OBSERVAÇÃO IMPORTANTE: UTILIZAR O FLUKE DTX-1800 PARA CERTIFICAR TODOS OS PONTOS DE REDE DO MV8 (KEYSTONE) LOCALIZADOS DEBAIXO DAS MESAS OU NAS CANALETAS APARENTES ATÉ O PATCH PANEL.**
+**OBSERVAÇÃO IMPORTANTE: UTILIZAR O FLUKE DTX-1800 PARA CERTIFICAR TODOS OS PONTOS DE REDE DO MV8 (KEYSTONE) LOCALIZADOS DEBAIXO DAS MESAS OU NAS CANALETAS APARENTES NAS JANELAS ATÉ O PATCH PANEL NO RACK CISCO.**
 
-05. Os Kits do Rack Cisco são divididos em 6 (seis) Grupos:
+05. Os Kits do Rack Cisco serão divididos em: **6 (seis) Grupos:**
 
 		Grupo-01: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 		Grupo-02: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
@@ -37,7 +37,15 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 		Grupo-05: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 		Grupo-06: 1 (um) Switch Cisco Catalyst Layer-3 3560 e 1 (um) Router Cisco 2911
 
-06. Cada Grupo deverá ser composto no máximo de: 4 (quatro) integrantes, cada integrante do grupo vai utilizar seu Ponto de Rede e deverá sobrar 1 (um) ponto de rede para o Roteador Sem-Fio.
+06. Cada Grupo deverá ser composto no máximo de: **4 (quatro) integrantes**, cada integrante do grupo vai utilizar seu Ponto de Rede e deverá sobrar: **1 (um) ponto de rede** para o *Roteador Sem-Fio.*
+
+7. Cada Integrante do Grupo terá as seguintes funções:
+
+		a) 1 (um) Integrante Responsável pelo Cabeamento Estruturado;
+		b) 1 (um) Integrante Responsável pelo Switch Cisco Catalyst 3560;
+		c) 1 (um) Integrante Responsável pelo Router Cisco 2911;
+		d) 1 (um) Integrante Responsável pelo Link WAN, Internet e Documentação;
+		e) TODOS OS INTEGRANTES SERÃO RESPONSÁVEIS PELOS DESKTOPS LINUX MINT E WINDOWS 10.
 
 **OBSERVAÇÃO IMPORTANTE: Os equipamentos abaixo serão utilizados pelo Docente em aula.**
 
@@ -232,7 +240,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 **OBSERVAÇÃO IMPORTANTE: a rede Classfull Classe C: 192.168.1.0/24 será segmentada em: 64 Sub-Redes.**
 
-**Bits de Rede: 2^6=64 - Bits de Host: 2^2=4 - 2 (ID e Broadcast)=2 - Máscara: 255.255.255.252**
+**Bits de Rede: 2^6=64 - Bits de Host: 2^2=4-2(ID e Broadcast)=2 - Máscara: 255.255.255.252**
 
 **PRESTE MUITA ATENÇÃO DA TABELA DE ALOCAÇÃO DE ENDEREÇAMENTO IPV4 PARA CADA GRUPO, EXEMPLO: O GRUPO 01 VAI SE CONECTAR COM OS GRUPOS 02 E 06, VOCÊ DEVERÁ MAPEAR OS ENDEREÇOS UTILIZADOS NAS INTERFACES SERIAIS 0/0/0 E 0/0/1 ANALISANDO SEMPRE A CONEXÃO COM O SEUS VIZINHOS E QUAL REDE ELA PERTENCE.**
 
@@ -241,7 +249,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 **DICA: NESSA ETAPA VOCÊS PRECISAM CONVERSAR COM OS OUTROS GRUPOS, NÃO ADIANTA VOCÊ FAZER A SUA PARTE SE O OUTRO GRUPO NÃO FAZER A DELE E SE OS DOIS ERRAREM TUDO ESTARÁ ERRADO, TODOS OS GRUPOS DEPENDEM DESSA CONFIGURAÇÃO PARA FUNCIONAR.**
 
 Endereçamento IP para Rede de Interligação (WAN) - (GP=Grupo | PI=Primeiro IP | UP=Último IP)<br>
-Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull C: 192.168.1.0/24 - 255.255.255.0
+Interface Serial 0/0/0 e Serial 0/0/1 - Rede Classfull C: 192.168.1.0/24 - 255.255.255.0 - Segmentada em: 64 Sub-Redes.
 
 	Grupo-01:	Rede: 192.168.1.0    PI: 192.168.1.1 - UP: 192.168.1.2    Broadcast: 192.168.1.3
 	Grupo-01:	Serial0/0/0 IP: 192.168.1.1/30 --> Grupo-02 Serial0/0/1 IP: 192.168.1.2/30
