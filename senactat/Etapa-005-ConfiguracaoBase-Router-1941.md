@@ -1,34 +1,87 @@
-!Autor: Robson Vaamonde
-!Procedimentos em TI: http://procedimentosemti.com.br
-!Bora para Prática: http://boraparapratica.com.br
-!Robson Vaamonde: http://vaamonde.com.br
-!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
-!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
-!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
-!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
-!Data de criação: 21/04/2020
-!Data de atualização: 09/08/2023
-!Versão: 0.04
-!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
+Autor: Robson Vaamonde<br>
+Procedimentos em TI: http://procedimentosemti.com.br<br>
+Bora para Prática: http://boraparapratica.com.br<br>
+Robson Vaamonde: http://vaamonde.com.br<br>
+Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi<br>
+Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica<br>
+Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
+YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
+LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
+Github Procedimentos em TI: https://github.com/vaamonde<br>
+Data de criação: 16/05/2024<br>
+Data de atualização: 18/05/2024<br>
+Versão: 0.02<br>
+Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
+## INFORMAÇÕES IMPORTANTES SOBRE ESSA DOCUMENTAÇÃO:
+
+A) **ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dicas de alunos;<br>
+B) **DESAFIO:** desafio proposto para o aluno, com o objetivo de estimular o raciocínio lógico para a resolução de problemas de rede ou mudanças nas configurações;<br>
+C) **DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração no exame;<br>
+D) **ERRATA:** correções dos scripts, correções de falas, correções de configurações, etc...;<br>
+E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou OBSERVAÇÃO;<br>
+F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
+G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
+
+### PRIMEIRA ETAPA: Conhecendo os Novos Recursos de Configuração do Router
+
+01. Habilitando o Log de Debug no Router
+
+**DICA-01:** recomendado habilitar o recurso de marcação de Data/Hora detalhado no Debug (Depurar)
+
+**OBSERVAÇÃO-01:** esse recurso é utilizado para análise detalhada de logs de protocolos de roteamento no Router, esse recurso não está disponível em Switch Cisco Catalyst Layer 2 2960 ou Layer 3 3560.
+
+	service timestamps debug datetime msec
+
+02. Habilitando o Tamanho Mínimo da Senha de Usuários e Serviços.
+
+**DICA-02:** recomendo habilitar o recurso de tamanho mínimo da senha, isso aumenta o nível de segurança na criação de senhas de usuários ou serviços no roteador.
+
+**OBSERVAÇÃO-02:** esse recurso não está disponível em Switch Cisco Catalyst Layer 2 2960 ou Layer 3 3560.
+
+	security passwords min-length 8
+
+03. Aumentando o Nível de Segurança contra Brute Force no Acesso Remoto.
+
+**DICA-03:** esse recurso é recomendado para aumentar o nível de segurança junto com o serviço do SSH para proteger o Router com Ataque de Força Bruta.
+
+**OBSERVAÇÃO-03:** período de tempo de bloqueio configurado em segundos (block-for 1 até 65535s = 1092m ou 18h)
+
+**OBSERVAÇÃO-04:** tentativas de falhas de conexões em quantidade (attempts 1 até 65535)
+
+**OBSERVAÇÃO-05:** dentro do período de tempo configurado em segundos (within 1 até 65535s = 1092m ou 18h)
+
+**OBSERVAÇÃO-06:** esse recurso não está disponível em Switch Cisco Catalyst Layer 2 2960 mais está disponível no Switch Cisco Catalyst Layer 3 3560.
+
+	login block-for 120 attempts 2 within 60
+
+## SEGUNDA ETAPA: Automatizando a Configuração do Primeiro Router.
+
+01. Utilizando o Visual Studio Code (VSCode) para automatizar as configurações do Cisco IOS.
+
+**OBSERVAÇÃO-07:** recomendamos sempre utilizar um *Editor de Texto Profissional* para criar os scripts e automatizar as tarefas de configuração do Cisco IOS, hoje em dia é indicado utilizar o Visual Studio Code (VSCode) junto com as Extensões: *Cisco IOS Syntax e Cisco Config Highlight* para facilitar essa configuração.
+
+**DICA-04:** o caractere: *! (exclamação)* é utilizado como um recurso de *Comentário*, sua utilização server para comentar o código de automação do Cisco IOS ou para desativar um comando para não ser executado, *RECOMENDO FORTEMENTE DOCUMENTAR TODOS OS COMANDOS E PROCEDIMENTOS DE CONFIGURAÇÃO PARA FACILITAR O ENTENDIMENTO.*
+
+**DICA-05:** para facilitar a leitura do código, recomendo utilizar o recurso de **Indentação de Código** usando a Tecla TAB (Tabulador/Tabulação) para cada nível que você está configurando o Cisco IOS, isso facilitada a análise de erros (Debug) do código.
+
+```python
 !Acessando o modo EXEC Privilegiado
 enable
 
-!Configuração de Data/Hora em Inglês, você pode usar o Mês abreviado ou completo na configuração
-clock set 19:54:00 05 May 2021
+!Configuração de Data/Hora Router
+clock set 19:54:00 05 May 2024
 
 	!Acessando o modo de Configuração Global de comandos
 	configure terminal
-  
+
 		!Configuração do nome do router
-		hostname rt-1941-1
+		hostname rt-01
 
 		!Habilitando o serviço de criptografia de senhas do Tipo-7 Password 
 		service password-encryption
 
 		!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs
-		!DICA: habilitar o recurso de marcação de Data/Hora detalhado no Debug (Depurar)
-		!OBSERVAÇÃO: esse recurso é utilizado para análise detalhada de logs de protocolos de roteamento
 		service timestamps log datetime msec
 		service timestamps debug datetime msec
 
@@ -39,24 +92,20 @@ clock set 19:54:00 05 May 2021
 		banner motd #AVISO: acesso autorizado somente a funcionarios#
 		
 		!Habilitando o comprimento mínimo da criação das senhas do Tipo-5 ou Tipo-7
-		!DICA: esse recurso aumenta o nível de segurança na criação de senhas no roteador
-		!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 ou Switch Layer 3 3560 
 		security passwords min-length 8
 
 		!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado
-		enable secret vaamonde@pti
+		enable secret 123@senac
 
 		!Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 e privilégios diferenciados
-		username robson secret vaamonde@pti
-		username vaamonde password vaamonde@pti
-		username admin privilege 15 secret vaamonde@pti
+		username senac secret 123@senac
+		username vaamonde password 123@senac
+		username admin privilege 15 secret 123@senac
 		
 		!Configuração do nome de domínio FQDN (Fully Qualified Domain Name)
-		ip domain-name vaamonde.pti
+		ip domain-name senac.br
 
 		!Criação da chave de criptografia e habilitando o serviço do SSH Server local
-		!ADENDO IMPORTANTE: você pode substituir a linha pelo comando completo que hoje e suportado no
-		!Cisco PAcket Tracer: crypto key generate rsa general-keys modulus 1024
 		crypto key generate rsa general-keys modulus 1024
 
 		!Habilitando a versão 2 do serviço de SSH Server
@@ -69,11 +118,6 @@ clock set 19:54:00 05 May 2021
 		ip ssh authentication-retries 2
 		
 		!Bloqueando tentativas de conexões simultâneas com falha de autenticação no Router
-		!DICA: esse recurso é recomendado para aumentar o nível de segurança junto com o serviço do SSH
-		!OBSERVAÇÃO: períodos de tempo de bloqueio configurados em segundos (block-for 1 até 65535)
-		!OBSERVAÇÃO: tentativas de falhas de conexões em quantidade (attempts 1 até 65535)
-		!OBSERVAÇÃO: dentro do período de tempo configurado em segundos (within 1 até 65535)
-		!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 mais está disponível no Switch Layer 3 3560
 		login block-for 120 attempts 2 within 60
 
 		!Acessando a linha console, porta padrão de acesso Out-of-Band (Fora da Banda)
@@ -83,51 +127,13 @@ clock set 19:54:00 05 May 2021
 			login local
 
 			!Habilitando senha de acesso do Tipo-7 Password
-			password vaamonde@pti
+			password 123@senac
 
 			!Sincronizando as mensagens de logs na tela
 			logging synchronous
 
 			!Habilitando o tempo de inatividade de uso do console
 			exec-timeout 5 30
-			
-			!Saindo da configuração da linha console
-			exit
-
-		!Acessando a linha auxiliar, acesso remoto feito utilizando o Fax-Modem
-		!DICA: a porta auxiliar permite configurações do suporte a discagem (Fax-Modem)
-		!OBSERVAÇÃO: no simulador Cisco Packet Tracer as configurações são limitadas na porta auxiliar
-		!OBSERVAÇÃO: essa configuração não é cobrada no CCNAv7, hoje em dia não é mais utilizada
-		line aux 0
-
-			!Forçando fazer login local utilizando usuário e senha locais do switch
-			login local
-
-			!Habilitando senha de acesso do Tipo-7 Password
-			password vaamonde@pti
-
-			!Sincronizando as mensagens de logs na tela
-			logging synchronous
-
-			!Habilitando o tempo de inatividade de uso do console
-			exec-timeout 5 30
-			
-			!Habilitando a velocidade de envio e recebimento de dados
-			!DICA: geralmente quando utilizamos modem, a velocidade precisa ser configurada
-			!DICA: essa velocidade de transmissão vária de equipamento para equipamento
-			!OBSERVAÇÃO: configuração feita em bits por segundos (0 até 4294967295)
-			speed 115200
-			
-			!Habilitando o controle de fluxo de dados
-			!DICA: o controle de fluxo de dados mantém a estabilidade da transmissão
-			!OBSERVAÇÃO: a configuração de fluxo de dados pode ser controlada por hardware ou software
-			flowcontrol hardware
-			
-			!Recursos que não estão disponíveis no Cisco Packet Tracer
-			!DICA: a porta auxiliar e bem parecidas com as portas Virtuais VTY
-			!modem inout <-- configuração da entrada/saída do modem
-			!transport input all <-- protocolo de entrada
-			!transport output all <-- protocolo de saída
 			
 			!Saindo da configuração da linha console
 			exit
@@ -139,7 +145,7 @@ clock set 19:54:00 05 May 2021
 			login local
 
 			!Habilitando senha de acesso do Tipo-7 Password
-			password vaamonde@pti
+			password 123@senac
 
 			!Sincronizando as mensagens de logs na tela
 			logging synchronous
@@ -155,9 +161,34 @@ clock set 19:54:00 05 May 2021
 
 !Salvando as configurações da memória RAM para a memória NVRAM
 write
-	
-!Visualizando as configurações da memória RAM
-show running-config
+```
 
-!Visualizando as configuração das linhas Virtuais ou Físicas
-show line
+## TERCEIRA ETAPA: Verificando as Configurações do Primeiro Router.
+
+	!Visualizando as Configurações do Running-Config (RAM)
+	!OBSERVAÇÃO: ÚNICA LINHA QUE NÃO APARECE NAS CONFIGURAÇÃO É A: crypto key generate rsa
+	rt-01# show running-config
+
+	!Fazendo um Filtro na Visualização do Running-Config somente da Sessão Line Console 0
+	rt-01# show running-config | section include con 0
+
+	!Fazendo um Filtro na Visualização do Running-Config somente da Sessão Line VTY
+	rt-01# show running-config | section include line vty
+
+	!Fazendo um Filtro na Visualização do Running-Config somente do SSH
+	!OBSERVAÇÃO: ÚNICA LINHA QUE NÃO APARECE NAS CONFIGURAÇÃO É A: crypto key generate rsa
+	rt-01# show running-config | section include ssh
+
+	!Visualizando as configurações do SSH Server e Versão
+	rt-01# show ip ssh
+
+	!Visualizando das chaves públicas RSA do SSH Server
+	rt-01# show crypto key mypubkey rsa
+
+	!Visualizando as conexões ativas do SSH Server.
+	!OBSERVAÇÃO: ESSA OPÇÃO SÓ VAI FUNCIONAR QUANDO VOCÊ SE CONECTAR REMOTAMENTE NO SWITCH OU ROUTER.
+	rt-01# show ssh
+
+	!Visualizando os Usuários Conectados no Switch
+	!OBSERVAÇÃO: ESSA OPÇÃO VAI MOSTRAR O USUÁRIO LOGADO NO CONSOLE: con 0 OU NO VTY: vty 0
+	rt-01# show users

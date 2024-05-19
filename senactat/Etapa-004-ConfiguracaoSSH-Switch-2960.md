@@ -112,6 +112,9 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 	!OBSERVAÇÃO: ÚNICA LINHA QUE NÃO APARECE NAS CONFIGURAÇÃO É A: crypto key generate rsa
 	sw-01# show running-config
 
+	!Fazendo um Filtro na Visualização do Running-Config somente da Sessão Line VTY
+	sw-01# show running-config | section include line vty
+
 	!Fazendo um Filtro na Visualização do Running-Config somente do SSH
 	!OBSERVAÇÃO: ÚNICA LINHA QUE NÃO APARECE NAS CONFIGURAÇÃO É A: crypto key generate rsa
 	sw-01# show running-config | section include ssh
