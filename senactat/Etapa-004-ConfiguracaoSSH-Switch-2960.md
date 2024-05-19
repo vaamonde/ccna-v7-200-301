@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-### PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch.
+## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch.
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 
@@ -133,7 +133,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 	!OBSERVAÇÃO: ESSA OPÇÃO VAI MOSTRAR O USUÁRIO LOGADO NO CONSOLE: con 0 OU NO VTY: vty 0
 	sw-01# show users
 
-## TERCEIRA ETAPA: Testando e Acessando Remotamente o Switch
+## TERCEIRA ETAPA: Testando e Acessando Remotamente do Switch
 
 01. Testando as Conexão do Desktop no Switch e Acessando Remoto via SSH.
 
@@ -151,7 +151,7 @@ a) Abrindo o Prompt de Comando do Desktop;
 	C:\> ping 192.168.1.250   (Switch SW-01)
 	C:\> ping 192.168.1.251   (Switch SW-02)
 
-	!Tetando o acesso remoto no Switch utilizando o protocolo Telnet (Teletype Network)
+	!Testando o acesso remoto no Switch utilizando o protocolo Telnet (Teletype Network)
 	C:\> telnet 192.168.1.250   (Switch SW-01)
 	C:\> telnet 192.168.1.251   (Switch SW-02)
 

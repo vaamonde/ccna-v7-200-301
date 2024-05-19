@@ -68,13 +68,13 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		
 a) Configuração da Descrição da Interface Virtual VLAN-1.
 
-**DICA-05:** sempre utilizar o comando: description nas Interfaces para efeito de documentação.
+**DICA-05:** sempre utilizar o comando: *description* nas Interfaces para efeito de documentação.
 
 **OBSERVAÇÃO-05:** documentação de Interface facilita o processo de identificação e função dela na topologia de rede, configuração obrigatório em Switch ou Router.
 
 	sw-01(config-if)# description Interface de Gerenciamento do Switch SW-01
 
-b) Configuração do Endereçamento IPv4 da Interface Virtual VLAN-1
+b) Configuração do Endereçamento IPv4 da Interface Virtual VLAN-1.
 
 **DICA-06:** o endereço IPv4 deve ser da mesma faixa de Rede ou Sub-Rede do Gateway Padrão utilizado do Switch na Segunda Etapa.
 

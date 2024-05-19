@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-### PRIMEIRA ETAPA: Conhecendo os Novos Recursos de Configuração do Router
+## PRIMEIRA ETAPA: Conhecendo os Novos Recursos de Configuração do Router
 
 01. Habilitando o Log de Debug no Router
 
@@ -43,7 +43,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 03. Aumentando o Nível de Segurança contra Brute Force no Acesso Remoto.
 
-**DICA-03:** esse recurso é recomendado para aumentar o nível de segurança junto com o serviço do SSH para proteger o Router com Ataque de Força Bruta.
+**DICA-03:** esse recurso é recomendado para aumentar o nível de segurança junto com o serviço do SSH para proteger o Router contra Ataque de Força Bruta.
 
 **OBSERVAÇÃO-03:** período de tempo de bloqueio configurado em segundos (block-for 1 até 65535s = 1092m ou 18h)
 

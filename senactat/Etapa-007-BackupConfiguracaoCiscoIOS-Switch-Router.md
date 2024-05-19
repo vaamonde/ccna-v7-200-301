@@ -1,17 +1,30 @@
-!Autor: Robson Vaamonde
-!Procedimentos em TI: http://procedimentosemti.com.br
-!Bora para Prática: http://boraparapratica.com.br
-!Robson Vaamonde: http://vaamonde.com.br
-!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
-!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
-!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
-!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
-!Data de criação: 24/04/2020
-!Data de atualização: 09/08/2023
-!Versão: 0.04
-!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
+Autor: Robson Vaamonde<br>
+Procedimentos em TI: http://procedimentosemti.com.br<br>
+Bora para Prática: http://boraparapratica.com.br<br>
+Robson Vaamonde: http://vaamonde.com.br<br>
+Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi<br>
+Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica<br>
+Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
+YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
+LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
+Github Procedimentos em TI: https://github.com/vaamonde<br>
+Data de criação: 16/05/2024<br>
+Data de atualização: 18/05/2024<br>
+Versão: 0.02<br>
+Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
-!PRIMEIRA ETAPA: Backup das Configurações e Cisco IOS do Switch Layer 2 2960
+## INFORMAÇÕES IMPORTANTES SOBRE ESSA DOCUMENTAÇÃO:
+
+A) **ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dicas de alunos;<br>
+B) **DESAFIO:** desafio proposto para o aluno, com o objetivo de estimular o raciocínio lógico para a resolução de problemas de rede ou mudanças nas configurações;<br>
+C) **DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração no exame;<br>
+D) **ERRATA:** correções dos scripts, correções de falas, correções de configurações, etc...;<br>
+E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou OBSERVAÇÃO;<br>
+F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
+G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
+
+## PRIMEIRA ETAPA: Backup das Configurações do Cisco IOS do Primeiro Switch Layer 2 2960
+
 !Acessando o modo EXEC Privilegiado
 enable
 	
