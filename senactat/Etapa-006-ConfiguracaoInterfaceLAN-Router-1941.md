@@ -32,9 +32,11 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		Username: senac
 		Password: 123@senac
 
+		!Alterando para o Modo EXEC Privilegiado
 		rt-01> enable
 		Password: 123@senac
 
+		!Acessando o Modo de Configuração Global
 		rt-01# configure terminal
 		rt-01(config)#
 
