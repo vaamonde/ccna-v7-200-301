@@ -113,7 +113,7 @@ c) Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco 
 **DICA-12** após a configuração da Line Virtual verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
 	
 	!Visualizando as Configurações do Running-Config (RAM)
-	sw-01#  show running-config
+	sw-01# show running-config
 
 	!Fazendo um Filtro na Visualização do Running-Config somente da Sessão Line VTY
 	sw-01# show running-config | section include line vty
