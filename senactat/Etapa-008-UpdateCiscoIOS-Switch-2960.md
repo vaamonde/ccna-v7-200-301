@@ -92,6 +92,8 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 	!Reiniciando o Switch Cisco Catalyst Layer 2 2960
 	sw-01# reload
+		System configuration has been modified. Save? [yes/no]: yes
+		Proceed with reload? [confirm]
 
 	AVISO: acesso autorizado somente a funcionarios
 	User Access Verification

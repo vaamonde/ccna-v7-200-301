@@ -1,136 +1,189 @@
-!Autor: Robson Vaamonde
-!Procedimentos em TI: http://procedimentosemti.com.br
-!Bora para Prática: http://boraparapratica.com.br
-!Robson Vaamonde: http://vaamonde.com.br
-!Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
-!Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
-!Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
-!YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
-!Data de criação: 26/04/2020
-!Data de atualização: 09/08/2023
-!Versão: 0.04
-!Testado e homologado no Cisco Packet Tracer 7.3.x, 8.0.x, 8.1.x, 8.2.x e GNS3 2.2.x
+Autor: Robson Vaamonde<br>
+Procedimentos em TI: http://procedimentosemti.com.br<br>
+Bora para Prática: http://boraparapratica.com.br<br>
+Robson Vaamonde: http://vaamonde.com.br<br>
+Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi<br>
+Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica<br>
+Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
+YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
+LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
+Github Procedimentos em TI: https://github.com/vaamonde<br>
+Data de criação: 16/05/2024<br>
+Data de atualização: 18/05/2024<br>
+Versão: 0.02<br>
+Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
-!ADENDO: No vídeo não foi comentando sobre a inicialização do serviço do SSH Server depois que o Router ou Switch
-!é resetado. Para resolver essa falha, recomendo digitar os comandos: crypto key zeroize rsa (zerar as chaves) e
-!depois o comando: crypto key generate rsa (gerar as chaves novamente), você pode digitar o comando completo
-!crypto key generate rsa general-keys modulus 1024 que hoje e suporte na versão mais nova do Cisco IOS do Packet Tracer
+## INFORMAÇÕES IMPORTANTES SOBRE ESSA DOCUMENTAÇÃO:
 
-!ADENDO: No vídeo não foi comentando sobre a inicialização das Interfaces, por padrão nos arquivos running-config ou
-!startup-config o comando: no shutdown não está presente, quando você retorna um backup das configurações do Router
-!as Interfaces vão está no Status Shutdown, você pode adicionar nos arquivos de configurações o comando para inicializar
-!as Interfaces: no shutdown
+A) **ACRÉSCIMO:** informações ou comandos que não estava no script original e nem comentado no vídeo, algo importante para o cenário ou dicas de alunos;<br>
+B) **DESAFIO:** desafio proposto para o aluno, com o objetivo de estimular o raciocínio lógico para a resolução de problemas de rede ou mudanças nas configurações;<br>
+C) **DICA:** informações importantes da tecnologia ou da prova de certificação, dica para configurar ou lembrar os recursos para sua configuração no exame;<br>
+D) **ERRATA:** correções dos scripts, correções de falas, correções de configurações, etc...;<br>
+E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou OBSERVAÇÃO;<br>
+F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
+G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-!PRIMEIRA ETAPA: parar a inicialização do Cisco IOS do Router 1941
-!DICA: no Cisco Packet Tracer utilizamos a combinação de teclas: Ctrl+C
-!OBSERVAÇÃO: em equipamento reais, podemos utilizar as combinações de teclas: Ctrl+C, Ctrl+Break ou Ctrl+Backspace
-!OBSERVAÇÃO: no aplicativo PuTTY você deve usar o Botão direito do Mouse na Barra de Título e utilizar a opção:
-!Send Command: Break
+## PRIMEIRA ETAPA: Parando a Inicialização do Cisco IOS do Router 1941
 
-!Visualizando as opções de comandos do Modo ROMMON (ROM (read-only memory) monitor)
-rommon 1 >?
+01. Parando a inicialização do Cisco IOS do Router 1941 para acessar o ROMMon.
 
-!Alterando o modo de inicialização do Cisco IOS do Router 1941
-!DICA: o comando confreg altera a forma como a inicialização do Cisco IOS ler os arquivos de configuração
-!DICA: no modo ROMMON a opção do TAB não funciona, precisando digitar o comando completo
-!OBSERVAÇÃO: essa opção força o Router a não ler as configurações do startup-config na inicialização
-!OBSERVAÇÃO: chave de registro em hexadecimal: 0x2142 (não ler as configurações do startup-config)
-!OBSERVAÇÃO: chave de registro em hexadecimal: 0x2102 (ler as configurações do startup-config - padrão)
-!CUIDADO: existe várias chaves de registro do Cisco IOS, se você errar a chave pode acontecer do Cisco IOS 
-!inicializar de forma incorreta ou com caracteres irreconhecível na Linha Console ou na Linha Virtual.
-rommon 2 >confreg 0x2142
+**DICA-01:** no Cisco Packet Tracer utilizamos a combinação de teclas: Ctrl + C para abortar a inicialização do Cisco IOS;
 
-!Reinicializando o Router 1941 do Modo ROMMON
-rommon 3 >reset
+**OBSERVAÇÃO-01:** em equipamento reais, podemos utilizar as combinações de teclas: Ctrl + C, Ctrl + Break ou Ctrl + Backspace para abortar a inicialização do Cisco IOS dependendo do sistema de acesso Remoto que você está utilizando;
 
-!Acessando o modo EXEC Privilegiado
-enable
+**OBSERVAÇÃO-02:** no aplicativo PuTTY você deve usar o Botão direito do Mouse na Barra de Título e escolher as opções: Send Command: depois: Break (somente quando começar a descompactação do Cisco IOS para a memória RAM #####).
+
+A) Desligar o Router 1941 no Botão Power e aguardar 10 segundos;<br>
+B) Ligar o Bota Power do Router 1941 (no Cisco Packet Tracer esse processo e muito rápido);<br>
+C) Na tela de IOS Image Load Test, quando começar a descompactação da imagem em: Self decompressing the image, pressionar: Ctrl + C para acessar o ROMMon.
+
+	IOS Image Load Test
+	___________________
+	Digitally Signed Release Software
+	program load complete, entry point: 0x81000000, size: 0x2bb1c58
+	Self decompressing the image :
+	#########
+	monitor: command "boot" aborted due to user interrupt
+	rommon 1 > 
+
+## SEGUNDA ETAPA: Alterando a Modo de Inicialização do Cisco IOS do Router 1941
+
+01. Visualizando as opções de comandos do Modo ROMMON (ROM (read-only memory) monitor)
+
+**DICA-02:** diferente do Cisco IOS o Modo ROMMon é bem limitado em configurações, o recurso de Auto-Complemento não funciona nesse modo, sendo necessário digitar os comandos manualmente, existe a opção: *? (Interrogação)* para ver a lista de comandos disponíveis no ROMMon.
+
+	rommon 1 >?
+
+02. Alterando o modo de inicialização do Cisco IOS do Router 1941.
+
+**DICA-03:** o comando: *confreg* altera a forma como a inicialização do Cisco IOS ler os arquivos de configuração no momento da inicialização;
+
+**DICA-04:** no modo ROMMON a opção do TAB não funciona, precisando digitar o comando completo, as opções abreviadas também não funcionar nesse modo.
+
+**OBSERVAÇÃO-03:** essa opção força o Router a não ler as configurações do: *startup-config* no momento da inicialização do Cisco IOS.
+
+**OBSERVAÇÃO-04:** chave de registro em hexadecimal: *0x2142* (não ler as configurações do startup-config);
+
+**OBSERVAÇÃO-05:** chave de registro em hexadecimal: *0x2102* (ler as configurações do startup-config - padrão);
+
+**CUIDADO-01:** existe várias chaves de registro no Cisco IOS, se você errar a chave pode acontecer do Cisco IOS inicializar de forma incorreta ou com caracteres irreconhecível na Linha Console ou na Linha Virtual, CUIDADO!!!!! nessa configuração.
+
+	!Alterando a chave de registro para 0x2142
+	rommon 2 > confreg 0x2142
+
+	!Reinicializando o Router 1941 no Modo ROMMON
+	rommon 3 > reset
+
+	!Aguardar a inicialização do Cisco IOS
+	Press RETURN to get started!
+
+	AVISO: acesso autorizado somente a funcionarios
+	User Access Verification
+	Username:
+
+## TERCEIRA ETAPA: Limpando as Configurações Residuais do Router 1941
+
+01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
+
+**DICA-05** para voltar as configurações do modo de inicialização do Cisco IOS e necessário fazer a limpeza das configurações do: startup-config e depois alterar a chave de registro e salvar as configurações novas.
+
+	AVISO: acesso autorizado somente a funcionarios
+	User Access Verification
+	Username: senac
+	Password: 123@senac
+
+	!Alterando do Modo EXEC de Usuário para o Modo EXEC Privilegiado
+	rt-01> enable
+	Password: 123@senac
+	rt-01#
 
 	!Visualizando as configurações de inicialização do Router 1941
-	show version
+	rt-01# show version
 	
 	!Visualizando as configurações do startup-config
-	show startup-config
+	rt-01# show startup-config
 	
 	!Limpando as configurações do startup-config
-	erase startup-config
-	show startup-config
+	rt-01# erase startup-config
+	rt-01# show startup-config
 	
 	!Acessando o modo de Configuração Global de comandos
-	configure terminal
+	rt-01# configure terminal
 	
 		!Alterando o modo de inicialização do Cisco IOS do Router 1941
-		config-register 0x2102
+		rt-01(config)# config-register 0x2102
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
-		end
-	
-!Salvando as configurações da memória RAM para a memória NVRAM
-write
-	
-!Reinicializando o Router 1941
-reload
-
-!Acessando o modo EXEC Privilegiado
-enable
-
-	!Visualizando as configurações de inicialização do Router 1941
-	show version
-	
-	!Visualizando os arquivos no Flash Card
-	show flash:
-	
-	!Copiando o arquivos do Flash Card startup-config para NVRAM
-	copy flash: startup-config 
-		startup-config 
-	
-	!Visualizando as configurações do startup-config
-	show startup-config
-	
-	!Aplicando as configurações da NVRAM (startup-config) para a RAM (running-config)
-	!OBSERVAÇÃO: no vídeo após a cópia da configuração da NVRAM para RAM, por padrão as Interfaces não estão 
-	!inicializadas sendo necessário inicializar manualmente cada Interface, no arquivo running-config por 
-	!padrão não tem o comando: no shutdown
-	!ERRATA: no vídeo não foi falado ou comentado sobre isso, não esqueça de inicializar as Interfaces após o Backup
-	copy startup-config running-config
+		rt-01(config)# end
 	
 	!Salvando as configurações da memória RAM para a memória NVRAM
-	write
+	rt-01# write
+		
+	!Reinicializando o Router 1941
+	rt-01# reload
+		System configuration has been modified. Save? [yes/no]:yes
+		Proceed with reload? [confirm]
+
+02. Visualizando as Mudanças da Chave de Registro do Cisco IOS e Restaurando o Backup da Flash
+
+**DICA-06** após o reset do Router 1941 todas as configurações iniciais são perdidas, mesmo restaurando o Backup alguns ajustes são necessários para o Router voltar a funcionar.
+
+	AVISO: acesso autorizado somente a funcionarios
+	User Access Verification
+	Username: senac
+	Password: 123@senac
+
+	!Alterando do Modo EXEC de Usuário para o Modo EXEC Privilegiado
+	rt-01> enable
+	Password: 123@senac
+	rt-01#
+
+	!Visualizando as configurações de inicialização do Router 1941
+	rt-01# show version
+	
+	!Visualizando os arquivos no Flash Card
+	rt-01# show flash:
+	
+	!Copiando o arquivo do Flash Card startup-config para NVRAM
+	rt-01# copy flash: startup-config 
+		Source filename []? startup-config
+		Destination filename [startup-config]? 
+
+	!Visualizando as configurações do startup-config
+	rt-01# show startup-config
+
+03. Aplicando as configurações da NVRAM (startup-config) para a RAM (running-config)
+
+**OBSERVAÇÃO-06:** após a cópia da configuração da NVRAM para RAM, as Interfaces não serão inicializadas automaticamente sendo necessário iniciar cada Interface no seu modo de configuração utilizando o comando: *no shutdown*, no arquivo: *running-config* ou *startup-config* por padrão não tem o comando: *no shutdown* nas configurações das Interfaces;
+
+**OBSERVAÇÃO-07:** o serviço do SSH Server depois que o Router ou Switch é resetado ele também não volta a funcionar, no arquivo: **running-config* ou *startup-config* por padrão não tem o comando: *crypto key*, para resolver essa falha, recomendo digitar os comandos: *crypto key zeroize rsa* (zerar todas as chaves primeiro) e depois o comando: *crypto key generate rsa general-keys modulus 1024* (gerar as chaves novamente).
+
+	!Salvando as Configurações do NVRAM para a RAM
+	rt-01# copy startup-config running-config
+		Destination filename [running-config]? 
+
+	!Acessando o Modo de Configuração Global
+	rt-01# configure terminal
+	rt-01(config)#
+
+	!Limpando as Chaves RSA do SSH
+	rt-01(config)# crypto key zeroize rsa
+		Do you really want to remove these keys? [yes/no]: yes
+	
+	!Gerando novamente as Chaves RSA do SSH
+	rt-01(config)# crypto key generate rsa general-keys modulus 1024
+
+	!Inicializando a Interface GigabitEthernet 0/0
+	rt-01(config)# interface gigabitEthernet 0/0
+	rt-01(config-if)# no shutdown
+
+	!Saindo de todos os níveis do Cisco IOS
+	rt-01(config-if)# end
+
+	!Salvando as configurações da memória RAM para a memória NVRAM
+	rt-01# write
 	
 	!Reinicializando o Router 1941
-	reload
-	
-!SEGUNDA ETAPA: parar a inicialização do Cisco IOS do Switch Layer 2 2960 ou Layer 3 3560
-!OBSERVAÇÃO: no Cisco Packet Tracer esse procedimento é limitado, não sendo possível demonstrar, somente em equipamentos reais.
-
-_01# Deixar o Switch 2960 ou 3560 inicializar normalmente;
-_02# Após a inicialização, pressionar o Botão MODE por aproximadamente 15/20 segundos;
-_03# Os LED's do Switch vai piscar e entrar no modo de ROMMON, o Switch será reinicializado automaticamente;
-_04# Após a reinicialização o Switch será resetado para o modo de fábrica (fabric mode).
-
-!Caso o Switch 2960 ou 3560 não volte para o modo de Fábrica (Reset), utilizar os procedimentos abaixo:
-!CUIDADO: só utilizar esse procedimento se for realmente necessário ou se os equipamentos não voltar
-
-1. Pressionar o botão MODE até o Switch ser reinicializado;
-2. Na tela de inicialização, na mensagem de hardware, pressionar o botão MODE para cancelar o carregamento do IOS;
-3. No modo ROMMON, digitar o comando: flash_init
-4. Listar o conteúdo da Flash: dir flash:
-5. Renomear o arquivo config: rename flash:config.text flash:config.old
-6. Reinicializar o Switch: boot
-7. Limpar o arquivo statup-config: erase startup-config
-8. Limpar as configurações de VLAN: delete flash:vlan.dat
-9. Reinicializar o Switch: reload
-
-!ADENDO: NÃO ESTÁ NO VÍDEO: Atualização do Cisco IOS via TFTPDNLD ROMMON
-!OBSERVAÇÃO: esse recurso é utilizado em caso de corrompimento do Cisco ISO da Flash
-
-rommon 1 > IP_ADDRESS=192.168.10.20 
-rommon 2 > IP_SUBNET_MASK=255.255.255.0 
-rommon 3 > DEFAULT_GATEWAY=192.168.10.1
-rommon 4 > TFTP_SERVER=192.168.10.10
-rommon 5 > TFTP_FILE=c2960-lanbasek9-mz.150-2.SE4.bin
-rommon 6 > TFTP_CHECKSUM=0
-rommon 7 > set
-rommon 8 > tftpdnld
-rommon 9 > confreg 0x2102
-rommon 10 > reset
+	rt-01# reload
+		System configuration has been modified. Save? [yes/no]:yes
+		Proceed with reload? [confirm]

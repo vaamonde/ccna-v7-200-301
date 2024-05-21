@@ -71,7 +71,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 **OBSERVAÇÃO-04:** diferente do Router, a memória Flash em Switch não pode ser acessada sem desmontar o equipamento.
 
 	sw-01# show flash:
-		64016384 bytes total (54927410 bytes free
+		64016384 bytes total (59599664 bytes free)
 	
 	sw-01# dir flash:
 		64016384 bytes total (54927410 bytes free
@@ -154,17 +154,18 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 	!Visualizando as Configuração da RAM
 	sw-01# show running-config
-		!Utilize o TAB para descer até a última linha do arquivo de configuração (MORE)
-		!Selecione a partir da primeira ! (exclamação)
-		!Não Selecionar a linha: Current configuration : 1799 bytes
-		
-		!
-		version 15.0
-		...
-		end
 
-		!Copiar o conteúdo com o botão direito do mouse e selecionar: Copy
-		!Salvar o Conteúdo no VSCode.
+	!Utilize o TAB para descer até a última linha do arquivo de configuração (MORE)
+	!Selecione a partir da primeira ! (exclamação) do Running-Config
+	!Não Selecione a linha: Current configuration : 1799 bytes
+	
+	!
+	version 15.0
+	...
+	end
+
+	!Copiar o conteúdo com o botão direito do mouse e selecionar: Copy
+	!Salvar o Conteúdo no VSCode: Ctrl + V.
 
 	!Saindo do modo EXEC Privilegiado
 	sw-01# disable
