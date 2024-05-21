@@ -63,6 +63,9 @@ User Setup          User: robsonvaamonde    Password: 123456    (+)     Email: r
 !OBSERVAÇÃO: existe outros clientes de e-mail como: Thunderbid, Evolution, SeaMonkey, eM Client, etc
 !OBSERVAÇÃO: não confundir Cliente de Email com Webmail, nesse caso o acesso e feito via Navegador
 
+!CUIDADO? NÃO UTILIZAR DOMÍNIO COM MAIS DE 3 CARACTERES POIS O EMAIL NÃO FUNCIONA.
+!BUGS NO SMTP DO CISCO PACKET TRACER VERSÃO 8.2.x NO REPLY: ERRO PARA RESPONDER.
+
 !Testando as resoluções de nome do SMTP e POP3
 nslookup smtp.vaamonde.pti
 nsllokup pop3.vaamonde.pti
