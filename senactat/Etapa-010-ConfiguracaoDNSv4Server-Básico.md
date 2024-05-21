@@ -41,11 +41,11 @@ O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol
 
 **Sintaxe DNS:** Diferentes sequências de letras são usadas para ditar as ações do servidor DNS. Essas letras são chamadas de sintaxe DNS (Exemplo: A, AAAA, CNAME, MX, PTR, NS, SOA, SRV, TXT, etc).
 
-**Registro Tipo A:** Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio;<br>
-**Registro Tipo AAAA:** Igual ao Tipo A mais utilizado nas configurações do IPv6;<br>
+**Registro Tipo A....:** Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio;<br>
+**Registro Tipo AAAA.:** Igual ao Tipo A mais utilizado nas configurações do IPv6;<br>
 **Registro Tipo CNAME:** Significa o Nome Canônico e seu papel é fazer que um domínio use um alias de outro domínio;<br>
-**Registro Tipo SOA:** Significa Início de Autoridade. Obviamente é um dos registros de DNS mais importantes;<br>
-**Registro Tipo NS:** Significa Name Server ele indica qual nome de servidor é autoritativo para o domínio.
+**Registro Tipo SOA..:** Significa Início de Autoridade. Obviamente é um dos registros de DNS mais importantes;<br>
+**Registro Tipo NS...:** Significa Name Server ele indica qual nome de servidor é autoritativo para o domínio.
 
 01. Configurações do Serviço de DNS Server no Cisco Packet Tracer:
 
