@@ -62,7 +62,7 @@ a) Forçando fazer login local utilizando os usuários e senhas locais criados n
 
 	sw-01(config-line)# login local
 
-b) Habilitando a senha de acesso do Tipo-7 Password (senha fraca)
+b) Habilitando a senha de acesso do Tipo-7 Password (senha fraca).
 	
 **DICA-05:** igual na configuração da Line Console, essa regra só irá funcionar se não existir usuários no Switch e se você não configurou o login local.
 
@@ -76,7 +76,7 @@ c) Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco 
 
 05. Habilitando o tempo de inatividade de uso do linha virtual.
 
-**DICA-07:** na Line Virtual a desconexão por falta de interatividade e obrigatório mais minimizar falhas de segurança de acesso ao Switch ou Router.
+**DICA-07:** na Line Virtual a desconexão por falta de interatividade é obrigatório, esse opção minimizar as falhas de segurança de acesso Remoto ao Switch ou Router.
 
 	sw-01(config-line)# exec-timeout 5 30
 
@@ -84,9 +84,9 @@ c) Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco 
 	
 **DICA-08:** na linha virtual você pode controlar o tipo de acesso remoto de entrada ou saída.
 	
-**OBSERVAÇÃO-04:** existe vários protocolos de acesso remoto no Cisco IOS, os mais utilizados são: Telnet (não seguro) ou SSH (seguro), por motivo de segurança, acesso remoto utilizando o protocolo Telnet não é mais recomendado e será descontinuado nas próximas versões do Cisco IOS.
+**OBSERVAÇÃO-04:** existe vários protocolos de acesso remoto no Cisco IOS, os mais utilizados são: *Telnet (não seguro)* ou *SSH (seguro)*, por motivo de segurança, acesso remoto utilizando o protocolo Telnet não é mais recomendado e será descontinuado nas próximas versões do Cisco IOS.
 	
-**DICA-09:** existe várias opções de configuração do Protocolo de Transporte, a opção: all permite todos os protocolos de entrada ou saída, essa é a configuração padrão do Cisco IOS (não indicado deixar essa opção).
+**DICA-09:** existe várias opções de configuração do Protocolo de Transporte, a opção: *all* permite todos os protocolos de entrada ou saída, essa é a configuração padrão do Cisco IOS (não indicado deixar essa opção).
 	
 **EXEMPLO DE ENTRADA:** transport input {lat | mop | nasi | none | pad | rlogin | ssh | telnet | v120} 
 
@@ -102,13 +102,13 @@ c) Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco 
 
 	sw-01(config-line)# end
 
-08. Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
+08. Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config).
 
 **DICA-11:** nunca esqueça de salvar as configurações.
 	
 	sw-01# copy running-config startup-config
 
-09. Visualizando as configurações da memória RAM (Running-Config)
+09. Visualizando as configurações da memória RAM (Running-Config).
 
 **DICA-12** após a configuração da Line Virtual verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
 	

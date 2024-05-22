@@ -68,15 +68,15 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 	sw-01(config)# crypto key generate rsa general-keys modulus 1024
 
-03. Habilitando a versão 2 do serviço de SSH Server
+03. Habilitando a versão 2 do serviço de SSH Server.
 
-**DICA-04:** a versão 2 do serviço do SSH Server corrigiu várias falhas de segurança existe na versão 1.99, recomendo sempre habilitar essa versão.
+**DICA-04:** a versão: *2* do serviço do SSH Server corrigiu várias falhas de segurança existe na versão: *1.99*, recomendo sempre habilitar essa versão.
 
-**OBSERVAÇÃO-05:** após a criação da chave RSA do SSH o serviço habilita a versão 1.99 por padrão.
+**OBSERVAÇÃO-05:** após a criação da chave RSA do SSH o serviço habilita por padrão a versão 1.99.
 
 	sw-01(config)# ip ssh version 2
 
-04. Habilitando o tempo de inatividade para novas conexões do SSH Server
+04. Habilitando o tempo de inatividade para novas conexões do SSH Server.
 
 **DICA-05:** configuração de inatividade é feita somente em segundos (1 até 120 segundos = 2 minutos).
 
@@ -98,13 +98,13 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 	sw-01(config)# end
 
-07. Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config)
+07. Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config).
 
 **DICA-08:** nunca esqueça de salvar as configurações.
 
 	sw-01# copy running-config startup-config
 
-08. Visualizando as configurações da memória RAM (Running-Config)
+08. Visualizando as configurações da memória RAM (Running-Config).
 
 **DICA-09** após a configuração do SSH verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
 	
@@ -133,7 +133,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 	!OBSERVAÇÃO: ESSA OPÇÃO VAI MOSTRAR O USUÁRIO LOGADO NO CONSOLE: con 0 OU NO VTY: vty 0
 	sw-01# show users
 
-## TERCEIRA ETAPA: Testando e Acessando Remotamente do Switch
+## TERCEIRA ETAPA: Testando e Acessando Remotamente do Switch.
 
 01. Testando as Conexão do Desktop no Switch e Acessando Remoto via SSH.
 

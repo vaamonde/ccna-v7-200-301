@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Conhecendo o Serviço do DNS Server no Cisco Packet Tracer
+## PRIMEIRA ETAPA: Conhecendo o Serviço do DNS Server no Cisco Packet Tracer.
 
 **DNSv4 (Domain Name System)** é um sistema hierárquico e distribuído de gestão de nomes para computadores, serviços ou qualquer máquina conectada à Internet ou a uma rede privada. Utilizado principalmente para fazer as resoluções de nomes para endereços IPv4 ou IPv6.
 
@@ -41,15 +41,15 @@ O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol
 
 **Sintaxe DNS:** Diferentes sequências de letras são usadas para ditar as ações do servidor DNS. Essas letras são chamadas de sintaxe DNS (Exemplo: A, AAAA, CNAME, MX, PTR, NS, SOA, SRV, TXT, etc).
 
-**Registro Tipo A....:** Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio;<br>
+**Registro Tipo A....:** Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio ou computador;<br>
 **Registro Tipo AAAA.:** Igual ao Tipo A mais utilizado nas configurações do IPv6;<br>
-**Registro Tipo CNAME:** Significa o Nome Canônico e seu papel é fazer que um domínio use um alias de outro domínio;<br>
+**Registro Tipo CNAME:** Significa o Nome Canônico (Apelido) e seu papel é fazer que um domínio use um alias de outro domínio;<br>
 **Registro Tipo SOA..:** Significa Início de Autoridade. Obviamente é um dos registros de DNS mais importantes;<br>
 **Registro Tipo NS...:** Significa Name Server ele indica qual nome de servidor é autoritativo para o domínio.
 
-01. Configurações do Serviço de DNS Server no Cisco Packet Tracer:
+01. Configurações do Serviço de DNS Server no Cisco Packet Tracer.
 
-**OBSERVAÇÃO-03:** por padrão o Serviço de DNS Server no Cisco Packet Tracer está desligado.
+**OBSERVAÇÃO-03:** por padrão o Serviço de DNS Server no Cisco Packet Tracer está: *desligado*.
 
 **OBSERVAÇÃO-04:** no Cisco Packet Tracer as configuração de Sintaxe são limitadas somente ao tipos: *A, AAA, CNAME, SOA e NS* estão disponíveis para configuração.
 
@@ -70,7 +70,7 @@ O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol
 	Resource Records:  Name = desktop-03      Type = A Record     Address = 192.168.1.12
 	Resource Records:  Name = desktop-04      Type = A Record     Address = 192.168.1.13
 
-a) Abrindo o Prompt de Comando do Desktop;
+a) Abrindo o Prompt de Comando do Desktop.
 
 **DICA-03** não confunda Terminal com Command Prompt, Terminal é utilizado para se conectar no Switch ou Router utilizando o Cabo Console, já o Command Prompt (Prompt de Comando) é utilizado para testar as configurações de rede e acessar remotamente o Switch ou Router.
 

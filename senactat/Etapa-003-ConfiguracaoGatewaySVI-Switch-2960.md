@@ -38,7 +38,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		sw-01# configure terminal
 		sw-01(config)#
 
-## SEGUNDA ETAPA: Configuração do Gateway padrão IPv4 no Switch
+## SEGUNDA ETAPA: Configuração do Gateway padrão IPv4 no Switch.
 
 01. Configuração do Gateway Padrão IPv4 no Switch para Acesso Remoto.
 
@@ -48,17 +48,17 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **OBSERVAÇÃO-01:** esse recurso é necessário para administração remota ou monitoramento do Switch Cisco Catalyst Layer 2 ou Layer 3.
 
-**OBSERVAÇÃO-02:** existe a possibilidade da configuração do Gateway utilizando o endereço IPv6 em Switch Cisco Catalyst Layer 2 ou Layer 3, para essa configuração e recomendo atualizar o Cisco IOS para a versão no mínimo 15.x.
+**OBSERVAÇÃO-02:** existe a possibilidade da configuração do Gateway utilizar o endereço IPv6 em Switch Cisco Catalyst Layer 2 ou Layer 3, para essa configuração é recomendo atualizar o Cisco IOS para a versão no mínimo 15.x (versão padrão no Cisco Packet Tracer 12.x).
 
 	sw-01(config)# ip default-gateway 192.168.1.254
 
-## TERCEIRA ETAPA: Configuração da Interface SVI no Switch
+## TERCEIRA ETAPA: Configuração da Interface SVI no Switch.
 
-01. Configuração da Interface Virtual do Switch SVI (Switch Virtual Interface) no Switch
+01. Configuração da Interface Virtual do Switch SVI (Switch Virtual Interface) no Switch.
 
 **DICA-03:** interfaces virtuais são criadas utilizando o recurso de VLAN (Virtual-LAN) disponível nos Switch Cisco Catalyst Layer 2 ou Layer 3.
 
-**DICA-04:** é recomendado utilizar outra VLAN para o SVI, não é recomendado utilizar a VLAN padrão 1 para essa finalidade, pois a VLAN 1 (VLAN Default) existe em todos os Switch e é por causa disso que Switch de Fabricantes Diferente se comunicam, utilizando sempre a VLAN 1 como padrão.
+**DICA-04:** é recomendado utilizar outra VLAN para o SVI, não é recomendado utilizar a VLAN padrão 1 para essa finalidade, a VLAN 1 (VLAN Default) existe em todos os Switch e é por causa disso que Switches de Fabricantes Diferente se comunicam entre si, todos utilizam sempre a VLAN 1 como padrão para a comunicação.
 
 **OBSERVAÇÃO-03:** em Switch Cisco Catalyst Layer 2 utilizamos o SVI somente para administração remota ou monitoramento do equipamento, ela não será utilizada para Gateway da Rede Local ou para integração com Protocolos de Roteamento.
 
@@ -70,25 +70,25 @@ a) Configuração da Descrição da Interface Virtual VLAN-1.
 
 **DICA-05:** sempre utilizar o comando: *description* nas Interfaces para efeito de documentação.
 
-**OBSERVAÇÃO-05:** documentação de Interface facilita o processo de identificação e função dela na topologia de rede, configuração obrigatório em Switch ou Router.
+**OBSERVAÇÃO-05:** documentação de Interface facilita o processo de identificação e função dela na topologia de rede, configuração obrigatória em Switch ou Router.
 
 	sw-01(config-if)# description Interface de Gerenciamento do Switch SW-01
 
 b) Configuração do Endereçamento IPv4 da Interface Virtual VLAN-1.
 
-**DICA-06:** o endereço IPv4 deve ser da mesma faixa de Rede ou Sub-Rede do Gateway Padrão utilizado do Switch na Segunda Etapa.
+**DICA-06:** o endereço IPv4 deve ser da mesma faixa de Rede ou Sub-Rede do Gateway Padrão utilizado no Switch na Segunda Etapa.
 
 **DICA-07:** é recomendado que os endereços de Rede ou Sub-Redes dos Switches sejam diferentes das Redes dos Desktops, Notebook, Wi-Fi, CFTV, etc... para garantir a segurança de acesso ao equipamentos somente para a equipe/profissionais de TI que esteja nessa mesma Rede/Sub-Rede.
 
-**OBSERVAÇÃO-06:** configuração do endereço IPv4 deve ser: IPv4 + Máscara de Rede Completa (ClassFull), não utilizar CIDR (Classes Inter-Domain Routing) nas configurações.
+**OBSERVAÇÃO-06:** configuração do endereço IPv4 deve ser: *IPv4 + Máscara de Rede Completa (ClassFull)*, não utilizar CIDR (Classes Inter-Domain Routing) nas configurações.
 
 	sw-01(config-if)# ip address 192.168.1.250 255.255.255.0
 
-c) Inicializando a Interface Virtual da VLAN-1
+c) Inicializando a Interface Virtual da VLAN-1.
 
-**DICA-08:** por padrão todas as Interfaces estão no status desligada (Shutdown) no Switch ou Router.
+**DICA-08:** por padrão todas as Interfaces estão no status: *desligada (Shutdown)* no Switch ou Router.
 
-**DICA-09:** por padrão todas as Portas de Rede estão no status ligada (No-Shutdown) no Switch.
+**DICA-09:** por padrão todas as Portas de Rede estão no status: *ligada (No-Shutdown)* no Switch.
 
 **OBSERVAÇÃO-07:** o comando: *no* também é utilizado para ligar as Interfaces tirando do status: *shutdown (Desligada)* e mudando o seu status para: *no shutdown (Ligada)*.
 
@@ -100,7 +100,7 @@ d) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado.
 
 **DICA-11:** existe também o comando: *do*, esse comando permite executar qualquer comando fora do seu nível padrão.
 
-**EXEMPLO: sw-l2-2960-1(config-line)# do copy running-config startup-config - sw-l2-2960-1(config-line)# do show running-config - sw-l2-2960-1(config-line)# do write**
+**EXEMPLO: sw-01(config-line)# do copy running-config startup-config | sw-01(config-line)# do show running-config | sw-01(config-line)# do write**
 
 	sw-01(config-if)# end
 
@@ -110,7 +110,7 @@ e) Salvando as configurações da memória RAM (Running-Config) para a memória 
 
 	sw-01# copy running-config startup-config
 
-09. Visualizando as configurações da memória RAM (Running-Config)
+09. Visualizando as configurações da memória RAM (Running-Config).
 
 **DICA-12** após a configuração da SVI verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
 	

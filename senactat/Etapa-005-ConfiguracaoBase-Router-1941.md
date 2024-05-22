@@ -25,9 +25,9 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 ## PRIMEIRA ETAPA: Conhecendo os Novos Recursos de Configuração do Router
 
-01. Habilitando o Log de Debug no Router
+01. Habilitando o Log de Debug no Router.
 
-**DICA-01:** recomendado habilitar o recurso de marcação de Data/Hora detalhado no Debug (Depurar)
+**DICA-01:** recomendado habilitar o recurso de marcação de Data/Hora detalhado no Debug (Depurar).
 
 **OBSERVAÇÃO-01:** esse recurso é utilizado para análise detalhada de logs de protocolos de roteamento no Router, esse recurso não está disponível em Switch Cisco Catalyst Layer 2 2960 ou Layer 3 3560.
 

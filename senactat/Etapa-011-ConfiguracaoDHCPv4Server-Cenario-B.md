@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Conhecendo o Serviço do DHCP Server no Cisco Packet Tracer
+## PRIMEIRA ETAPA: Conhecendo o Serviço do DHCP Server no Cisco Packet Tracer.
 
 **DHCPv4 (Dynamic Host Configuration Protocol)** é um protocolo de serviço TCP/IP (Transmission Control Protocol/Internet Protocol) que oferece configuração dinâmica de dispositivos finais, com concessão de endereços IP de host, máscara de sub-rede, gateway padrão, servidores DNS, sufixos de pesquisa do DNS, servidores WINS, servidores NTP é muito mais.
 
@@ -50,6 +50,7 @@ a) Configurações do Serviço de DHCP Server no Cisco Packet Tracer:
 		Services
 			DNS
 
+	!Configurando o Escopo padrão da Rede 192.68.3.0/24
 	Interface:                 FastEthernet0
 	Service:                   On
 	Pool Name:                 serverPool

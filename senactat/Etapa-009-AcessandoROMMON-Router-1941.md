@@ -23,19 +23,19 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Parando a Inicialização do Cisco IOS do Router 1941
+## PRIMEIRA ETAPA: Parando a Inicialização do Cisco IOS do Router 1941.
 
 01. Parando a inicialização do Cisco IOS do Router 1941 para acessar o ROMMon.
 
-**DICA-01:** no Cisco Packet Tracer utilizamos a combinação de teclas: Ctrl + C para abortar a inicialização do Cisco IOS;
+**DICA-01:** no Cisco Packet Tracer utilizamos a combinação de teclas: *Ctrl + C* para abortar a inicialização do Cisco IOS;
 
-**OBSERVAÇÃO-01:** em equipamento reais, podemos utilizar as combinações de teclas: Ctrl + C, Ctrl + Break ou Ctrl + Backspace para abortar a inicialização do Cisco IOS dependendo do sistema de acesso Remoto que você está utilizando;
+**OBSERVAÇÃO-01:** em equipamentos reais, podemos utilizar as combinações de teclas: *Ctrl + C*, *Ctrl + Break* ou *Ctrl + Backspace* para abortar a inicialização do Cisco IOS dependendo do sistema de acesso Remoto que você está utilizando;
 
-**OBSERVAÇÃO-02:** no aplicativo PuTTY você deve usar o Botão direito do Mouse na Barra de Título e escolher as opções: Send Command: depois: Break (somente quando começar a descompactação do Cisco IOS para a memória RAM #####).
+**OBSERVAÇÃO-02:** no aplicativo: *PuTTY* você deve usar o Botão direito do Mouse na Barra de Título e escolher as opções: Send Command: depois: Break (somente quando começar a descompactação do Cisco IOS para a memória RAM - caracteres: #####).
 
 A) Desligar o Router 1941 no Botão Power e aguardar 10 segundos;<br>
-B) Ligar o Bota Power do Router 1941 (no Cisco Packet Tracer esse processo e muito rápido);<br>
-C) Na tela de IOS Image Load Test, quando começar a descompactação da imagem em: Self decompressing the image, pressionar: Ctrl + C para acessar o ROMMon.
+B) Ligar o Botão Power do Router 1941 (no Cisco Packet Tracer esse processo e muito rápido);<br>
+C) Na tela do Cisco IOS Image Load Test, quando começar a descompactação da imagem em: Self decompressing the image, pressionar: Ctrl + C para acessar o ROMMon e abortar a inicialização do Cisco IOS no Router.
 
 	IOS Image Load Test
 	___________________
@@ -46,9 +46,9 @@ C) Na tela de IOS Image Load Test, quando começar a descompactação da imagem 
 	monitor: command "boot" aborted due to user interrupt
 	rommon 1 > 
 
-## SEGUNDA ETAPA: Alterando a Modo de Inicialização do Cisco IOS do Router 1941
+## SEGUNDA ETAPA: Alterando a Modo de Inicialização do Cisco IOS do Router 1941.
 
-01. Visualizando as opções de comandos do Modo ROMMON (ROM (read-only memory) monitor)
+01. Visualizando as opções de comandos do Modo ROMMON (ROM (read-only memory) monitor).
 
 **DICA-02:** diferente do Cisco IOS o Modo ROMMon é bem limitado em configurações, o recurso de Auto-Complemento não funciona nesse modo, sendo necessário digitar os comandos manualmente, existe a opção: *? (Interrogação)* para ver a lista de comandos disponíveis no ROMMon.
 
@@ -56,9 +56,9 @@ C) Na tela de IOS Image Load Test, quando começar a descompactação da imagem 
 
 02. Alterando o modo de inicialização do Cisco IOS do Router 1941.
 
-**DICA-03:** o comando: *confreg* altera a forma como a inicialização do Cisco IOS ler os arquivos de configuração no momento da inicialização;
+**DICA-03:** o comando: *confreg* altera a forma como o Cisco IOS ler os arquivos de configuração no momento da inicialização;
 
-**DICA-04:** no modo ROMMON a opção do TAB não funciona, precisando digitar o comando completo, as opções abreviadas também não funcionar nesse modo.
+**DICA-04:** no modo ROMMON a opção do TAB não funciona, precisando digitar o comando completo, as opções abreviadas também não funciona nesse modo.
 
 **OBSERVAÇÃO-03:** essa opção força o Router a não ler as configurações do: *startup-config* no momento da inicialização do Cisco IOS.
 
@@ -66,7 +66,7 @@ C) Na tela de IOS Image Load Test, quando começar a descompactação da imagem 
 
 **OBSERVAÇÃO-05:** chave de registro em hexadecimal: *0x2102* (ler as configurações do startup-config - padrão);
 
-**CUIDADO-01:** existe várias chaves de registro no Cisco IOS, se você errar a chave pode acontecer do Cisco IOS inicializar de forma incorreta ou com caracteres irreconhecível na Linha Console ou na Linha Virtual, CUIDADO!!!!! nessa configuração.
+**CUIDADO-01:** existe várias chaves de registro no Cisco IOS, se você errar a chave pode acontecer do Cisco IOS inicializar de forma incorreta ou com caracteres irreconhecíveis na Linha Console ou na Linha Virtual, CUIDADO!!!!! nessa configuração.
 
 	!Alterando a chave de registro para 0x2142
 	rommon 2 > confreg 0x2142
@@ -81,7 +81,7 @@ C) Na tela de IOS Image Load Test, quando começar a descompactação da imagem 
 	User Access Verification
 	Username:
 
-## TERCEIRA ETAPA: Limpando as Configurações Residuais do Router 1941
+## TERCEIRA ETAPA: Limpando as Configurações Residuais do Router 1941.
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 

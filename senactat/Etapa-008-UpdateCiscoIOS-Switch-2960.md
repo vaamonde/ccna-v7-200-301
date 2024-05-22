@@ -47,7 +47,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **OBSERVAÇÃO-01:** só executar esse procedimento depois de fazer os Backups do IOS é das Configurações no Servidor TFTP para diminuir o risco de perda ou falha de inicialização.
 
-**OBSERVAÇÃO-02:** não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura que a Cisco já utiliza a bastante tempo e o Switch ou Router sempre procura esse padrão para iniciar o Binário do IOS.
+**OBSERVAÇÃO-02:** não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura que a Cisco já utiliza a bastante tempo e o Switch ou Router sempre procura esse padrão para iniciar o Binário do Cisco IOS.
 
 **CUIDADO-01:** como o Cisco IOS é uma sub-derivação do Unix/BSD, ele é Case Sensitive (faz diferença de Maiúscula/Minúscula).
 

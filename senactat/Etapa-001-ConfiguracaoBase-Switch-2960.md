@@ -43,7 +43,7 @@ O modo EXEC do Cisco IOS é dividido em dois níveis de acesso: **Usuário (> s�
 
 **DICA-02:** se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto com o comando para mostrar as opções e informações reduzidas do comando.
 
-**EXEMPLO: show? | enable? | copy? | disable? | clock? | service?**
+**EXEMPLO: Switch> show? | Switch> enable? | Switch# copy? | Switch#disable? | Switch# clock? | Switch(config)# service?**
 
 **DICA-03** se você está estudando para a Certificação Cisco CCNAv7, é recomendado digitar os comandos completos, utilize comandos abreviados somente quando você já domina o Cisco IOS.
 

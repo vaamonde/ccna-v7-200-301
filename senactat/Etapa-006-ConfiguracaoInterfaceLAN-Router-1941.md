@@ -52,23 +52,23 @@ a) Configuração da Descrição da Interface GigabitEthernet 0/0 da LAN.
 
 **DICA-02:** sempre utilizar o comando: *description* nas Interfaces para efeito de documentação.
 
-**OBSERVAÇÃO-01:** documentação de Interface facilita o processo de identificação e função dela na topologia de rede, configuração obrigatório em Switch ou Router.
+**OBSERVAÇÃO-01:** documentação de Interface facilita o processo de identificação e função dela na topologia de rede, configuração obrigatória em Switch ou Router.
 
 	rt-01(config-if)# description Interface de Gateway da Rede LAN
 
 b) Configuração do Endereçamento IPv4 da Interface GigabitEthernet 0/0 da LAN.
 
-**OBSERVAÇÃO-02:** configuração do endereço IPv4 deve ser: IPv4 + Máscara de Rede Completa (ClassFull), não utilizar CIDR (Classes Inter-Domain Routing) nas configurações.
+**OBSERVAÇÃO-02:** configuração do endereço IPv4 deve ser: *IPv4 + Máscara de Rede Completa (ClassFull)*, não utilizar CIDR (Classes Inter-Domain Routing) nas configurações.
 
-**OBSERVAÇÃO-03:** essa interface será o endereço de Gateway da Topologia da Rede LAN.
+**OBSERVAÇÃO-03:** essa Interface será o endereço de Gateway da Topologia da Rede LAN.
 
 	rt-01(config-if)# ip address 192.168.1.254 255.255.255.0
 
 c) Inicializando a Interface GigabitEthernet 0/0 da LAN.
 
-**DICA-03:** por padrão todas as Interfaces dos Roteadores estão no status desligada (Shutdown)
+**DICA-03:** por padrão todas as Interfaces dos Roteadores estão no status: *desligada (Shutdown)*.
 
-**OBSERVAÇÃO-04:** por padrão todas as Interfaces do roteador estão com o status Administratively Down (Desligada Administrativamente).
+**OBSERVAÇÃO-04:** por padrão todas as Interfaces dos Roteadores estão com o status: *Administratively Down (Desligada Administrativamente)*.
 
 	rt-01(config-if)# no shutdown
 
@@ -84,9 +84,9 @@ e) Salvando as configurações da memória RAM (Running-Config) para a memória 
 
 	sw-01# copy running-config startup-config
 
-02. Visualizando as configurações da memória RAM (Running-Config)
+02. Visualizando as configurações da memória RAM (Running-Config).
 
-**DICA-06** após a configuração Interface GigabitEthernet 0/0 da LAN verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
+**DICA-06** após a configuração da Interface GigabitEthernet 0/0 da LAN, verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
 	
 	!Visualizando as Configurações do Running-Config (RAM)
 	rt-01# show running-config
@@ -103,7 +103,7 @@ e) Salvando as configurações da memória RAM (Running-Config) para a memória 
 	!Visualizando informações de roteamento
 	rt-01# show ip route
 
-## TERCEIRA ETAPA: Testando e Acessando Remotamente do Router
+## TERCEIRA ETAPA: Testando e Acessando Remotamente do Router.
 
 01. Testando as Conexão do Desktop no Router e Acessando Remoto via SSH.
 
