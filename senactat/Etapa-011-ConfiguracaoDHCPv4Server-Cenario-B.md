@@ -25,7 +25,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 ## PRIMEIRA ETAPA: Conhecendo o Serviço do DHCP Server no Cisco Packet Tracer.
 
-**DHCPv4 (Dynamic Host Configuration Protocol)** é um protocolo de serviço TCP/IP (Transmission Control Protocol/Internet Protocol) que oferece configuração dinâmica de dispositivos finais, com concessão de endereços IP de host, máscara de sub-rede, gateway padrão, servidores DNS, sufixos de pesquisa do DNS, servidores WINS, servidores NTP é muito mais.
+**DHCPv4 (Dynamic Host Configuration Protocol)** é um protocolo de serviço *TCP/IP (Transmission Control Protocol/Internet Protocol)* que oferece configuração dinâmica de dispositivos finais, com concessão de endereços IP de Host (Computador), máscara de sub-rede, gateway padrão, servidores DNS (Domain Name Service), sufixos de pesquisa do DNS, servidores WINS (Windows Internet Name Service), servidores NTP (Network Time Protocol) é muito mais.
 
 O protocolo padrão utilizado pelo DHCP Server é o: *UDP (User Datagram Protocol)* na porta padrão: *67*.
 
@@ -43,10 +43,10 @@ a) Configurações do Serviço de DHCP Server no Cisco Packet Tracer:
 
 **CUIDADO-01:** é recomendado ter apenas: *1 (um) Servidor DHCP* na rede, em redes mais complexas existe a possibilidade de mais servidores para prover redundância.
 
-**OBSERVAÇÃO-03:** o Switch Layer 3 ou Router possui os recursos para a configuração do DHCP Server, para redes pequenas e de médio porte e recomendado o seu uso, pois o mesmo e limitado em alguns recursos, principalmente de monitoramento e relatórios.
+**OBSERVAÇÃO-03:** o Switch Cisco Catalyst Layer 3 ou Router possui os recursos para a configuração do DHCP Server, para redes pequenas e de médio porte é recomendado o seu uso, para redes grandes ou complexas o seu uso é limitado em alguns recursos, principalmente de monitoramento, relatórios e integrações de serviços.
 
 	!Habilitando o Serviço do DHCP Server no Servidor 02
-	Server-01
+	Server-02
 		Services
 			DNS
 
@@ -81,3 +81,6 @@ b) Abrindo o Prompt de Comando do Desktop;
 
 	!Verificando o endereço detalhado IPv4 configurado no Desktop
 	C:\> ipconfig /all
+
+	!Testando a comunicação com o Server 01 utilizando o pacote ICMP (Internet Control Message Protocol)
+	C:\> ping 192.168.3.1

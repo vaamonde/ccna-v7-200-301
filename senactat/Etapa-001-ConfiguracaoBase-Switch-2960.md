@@ -25,7 +25,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 ## PRIMEIRA ETAPA: Acessando o Modo EXEC de Comandos de Usuário.
 
-Primeiro acesso ao modo EXEC de Comandos de Usuário *(> sinal de Maior - user EXEC commands mode)*. Use o modo EXEC de Usuário para definir, visualizar e testar as operações do sistema do Cisco IOS. 
+Primeiro acesso ao modo EXEC de Comandos de Usuário *(> sinal de Maior - user EXEC commands mode)*, utilize o modo EXEC de Usuário para definir, visualizar e testar as operações do sistema do Cisco IOS. 
 
 Em geral, os comandos EXEC de Usuário permitem que você se conecte a dispositivos remotos, altere as configurações da linha do terminal temporariamente, etc..., utilizado para executar os testes básicos e listar as informações do Cisco IOS (Internetwork Operating System).
 
@@ -41,9 +41,20 @@ O modo EXEC do Cisco IOS é dividido em dois níveis de acesso: **Usuário (> s�
 
 **DICA-01:** utilizar sempre a tecla TAB para auto-completar os comandos no Cisco IOS;
 
-**DICA-02:** se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto com o comando para mostrar as opções e informações reduzidas do comando.
+**DICA-02:** se você estiver com dúvida do comando, utilizar o sinal de: ? (Interrogação) junto com o comando para mostrar as opções e informações reduzidas do comando (ajuda básica), ou para mostrar oas opções ambígua (Ambiguidade) muito comum nos comandos abreviados.
 
-**EXEMPLO: Switch> show? | Switch> enable? | Switch# copy? | Switch#disable? | Switch# clock? | Switch(config)# service?**
+**EXEMPLO: Switch> show? | Switch> enable? | Switch# copy? | Switch# disable? | Switch# clock? | Switch(config)# service?**
+
+	!Verificando as ajuda básica dos comandos
+	Switch> show ?
+	Switch# copy ?
+	Switch# disable ?
+	Switch# clock ?
+	Switch(config)# service ?
+
+	!Verificando a ambiguidade de comandos
+	Switch# c?
+	clear  clock  configure  connect  copy 
 
 **DICA-03** se você está estudando para a Certificação Cisco CCNAv7, é recomendado digitar os comandos completos, utilize comandos abreviados somente quando você já domina o Cisco IOS.
 
@@ -55,6 +66,10 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 	Switch#
 
 	Switch# disable
+	Switch>
+
+	Switch> enable
+	Switch# exit
 	Switch>
 
 ## TERCEIRA ETAPA: Configuração da Data e Hora no Cisco IOS.
@@ -78,7 +93,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 	Switch# configure terminal
 	Switch(config)#
 
-## QUINTA ETAPA: Configurações Básicas (Base) do Switch 3560.
+## QUINTA ETAPA: Configurações Básicas (Base) do Switch 2960.
 
 01. Configuração do nome do Switch (configuração principal do equipamento).
 
@@ -91,7 +106,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 
 02. Habilitando o serviço de criptografia de senha do Tipo-7 Password do Cisco IOS.
 
-**DICA-07:** senhas do Tipo-7 por padrão não são criptografadas no Cisco IOS (serviço está desabilitado por padrão no Cisco IOS sendo necessário habilitar para criptografar as senhas, caso você não habilite o serviço as senhas serão mostradas em Texto Plano no comando: *show ruuning-config*).
+**DICA-07:** senhas do Tipo-7 por padrão não são criptografadas no Cisco IOS (serviço está desabilitado por padrão no Cisco IOS sendo necessário habilitar para criptografar as senhas, caso você não habilite o serviço as senhas serão mostradas em Texto Plano no comando: *show running-config*).
 
 **OBSERVAÇÃO-03:** senhas do Tipo-7 são fáceis de serem quebradas e não são mais usadas nos equipamentos da Cisco, nesse caso é recomendado utilizar senhas do Tipo-5 Secret.
 
@@ -179,7 +194,7 @@ b) Habilitando a senha de acesso do Tipo-7 Password (senha fraca).
 
 **OBSERVAÇÃO-07:** a porta console é considerada uma porta/interface física não remota ou virtual, por esse motivo ela não tem suporte a senhas do Tipo-5 Secret, pois o acesso é feito fisicamente no Switch ou Router (se você tem a possibilidade de acessar fisicamente um equipamento, o nível de segurança da criptografia não importa mais, pois é uma invasão física e não lógica).
 
-**OBSERVAÇÃO-08:** essa configuração só será utilizada caso não exista usuários locais criados e se a opção do comando: *login local* não for configurada.
+**OBSERVAÇÃO-08:** essa configuração só será utilizada caso não exista usuários locais criados e se a opção do comando: *login local* não for configurada, nesse caso se utiliza o comando: *login*.
 	
 	sw-01(config-line)# password 123@senac
 
@@ -246,7 +261,7 @@ clock set 14:00:00 17 May 2024
 
 	!Acessando o modo de configuração global de comandos
 	configure terminal
-  
+
 	!Configuração do nome do switch
 	hostname sw-02
 
@@ -255,16 +270,16 @@ clock set 14:00:00 17 May 2024
 	
 	!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs
 	service timestamps log datetime msec
-  
+
 	!Desativando a resolução de nomes de domínio
 	no ip domain-lookup
-  
+
 	!Configuração do banner da mensagem do dia
 	banner motd #AVISO: acesso autorizado somente a funcionarios#
-  
+
 	!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado
 	enable secret 123@senac
-  
+
 	!Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 e privilégios diferenciados
 	username senac secret 123@senac
 	username vaamonde password 123@senac

@@ -38,29 +38,29 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		sw-01# configure terminal
 		sw-01(config)#
 
-## SEGUNDA ETAPA: Configuração do Serviços de Acesso Remoto SSH
+## SEGUNDA ETAPA: Configuração do Serviço de Acesso Remoto SSH
 
 01. Configuração do Nome de Domínio FQDN (Fully Qualified Domain Name).
 
-**DICA-01:** o nome de Domínio FQDN (Fully Qualified Domain Name) é utilizado pelo Serviço do SSH (Secure Shell) e outros serviços de rede como o Servidor de Autenticação Remota e Monitoramento de Switch ou Router utilizando os protocolos RADIUS (Remote Authentication Dial In User Service) ou TACACS (Terminal Access Controller Access-Control System).
+**DICA-01:** o nome de Domínio FQDN (Fully Qualified Domain Name) é utilizado pelo Serviço do SSH (Secure Shell) e outros serviços de rede como o Servidor de Autenticação Remota e Monitoramento de Switch ou Router utilizando os protocolos RADIUS (Remote Authentication Dial In User Service, TACACS (Terminal Access Controller Access-Control System) ou DNS (Domain Name Service).
 
-**ADENDO-01** um nome de domínio, muitas vezes chamado apenas de domínio, é um nome fácil de lembrar, associado sempre a um endereço IPv4 ou IPv6 físico na Internet ou na Rede Local separado sempre por um: . (ponto).
+**ADENDO-01** um nome de domínio, muitas vezes chamado apenas de domínio, é um nome fácil de lembrar, associado sempre a um endereço IPv4 ou IPv6 físico na Internet ou na Rede Local separado sempre por um: *. (ponto)*.
 
 	sw-01(config)# ip domain-name senac.br
 
-02. Criação/Geração da chave de criptografia do serviço do SSH (Secure Socket Shell) Server local
+02. Criação/Geração da chave de criptografia do Serviço do SSH (Secure Socket Shell) Server local.
 
 **DICA-02:** por padrão o serviço do SSH Server está desabilitado no Switch ou Router;
 
 **DICA-03:** por padrão todas as conexões remotas utilizando o protocolo SSH são criptografadas (segura);
 
-**OBSERVAÇÃO-01:** é recomendado utilizar módulos de criptografia de: *1024 bits* (opções de 360 até 2048);
+**OBSERVAÇÃO-01:** é recomendado utilizar módulos de criptografia de no mínimo: *1024 bits* (opções de 360 até 2048);
 
 **OBSERVAÇÃO-02:** no Switch ou Router *Real* utilizamos o comando: *crypto key generate rsa general-keys modulus 1024* para fazer a geração da chave e inicialização do Serviço;
 
-**OBSERVAÇÃO-03:** existe vários modos de geração das chaves públicas criptografadas no SSH, o padrão é utilizar o RSA (Rivest-Shamir-Adleman);
+**OBSERVAÇÃO-03:** existe vários algorítimos de geração das chaves públicas criptografadas no SSH, o padrão é utilizar o RSA (Rivest-Shamir-Adleman);
 
-**OBSERVAÇÃO-04:** a porta padrão de conexão do serviço de SSH é a: *22* utilizando o Protocolo: *TCP*;
+**OBSERVAÇÃO-04:** a porta padrão de conexão do Serviço de SSH é a: *22* utilizando o Protocolo: *TCP*;
 
 **ADENDO-01:** versões do Cisco Packet Tracer >=7.3 possui o suporte para o comando completo de geração das chaves SSH RSA nos Switches ou Router em um único comando igual as equipamentos reais, utilizando o comando: *crypto key generate rsa general-keys modulus 1024*;
 
@@ -68,7 +68,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 	sw-01(config)# crypto key generate rsa general-keys modulus 1024
 
-03. Habilitando a versão 2 do serviço de SSH Server.
+03. Habilitando a versão 2 do Serviço de SSH Server.
 
 **DICA-04:** a versão: *2* do serviço do SSH Server corrigiu várias falhas de segurança existe na versão: *1.99*, recomendo sempre habilitar essa versão.
 
@@ -80,13 +80,13 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **DICA-05:** configuração de inatividade é feita somente em segundos (1 até 120 segundos = 2 minutos).
 
-**OBSERVAÇÃO-06:** essa configuração está relacionada ao tempo para se autenticar no serviço do SSH no Switch ou Router, diferente do tempo de inatividades de acesso remoto que é controlado pelas Lines VTY.
+**OBSERVAÇÃO-06:** essa configuração está relacionada ao tempo para se autenticar no serviço do SSH no Switch ou Router, diferente do tempo de inatividades de acesso remoto que é controlado pelas Lines VTY ou Console.
 
 	sw-01(config)# ip ssh time-out 60
 
 05. Habilitando o número máximo de tentativas de conexões simultâneas no SSH Server.
 
-**DICA-06:** essa opção aumenta o nível de segurança contra ataques de Força Bruta (Brute-Force) utilizando dicionários de usuários e senhas e várias autenticações simultâneas com falhas.
+**DICA-06:** essa opção aumenta o nível de segurança contra ataques de Força Bruta (Brute-Force) utilizando dicionários de usuários e senhas e várias autenticações simultâneas com falhas (Exemplo o software Hydra).
 
 **OBSERVAÇÃO-07:** limites de conexões simultâneas vai de: 0 até 5, por padrão várias conexão simultâneas são liberadas.
 
@@ -106,7 +106,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 08. Visualizando as configurações da memória RAM (Running-Config).
 
-**DICA-09** após a configuração do SSH verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
+**DICA-09** após a configuração do Serviço do SSH verifique se tudo está configurado de forma correta utilizando os comandos: *show*.
 	
 	!Visualizando as Configurações do Running-Config (RAM)
 	!OBSERVAÇÃO: ÚNICA LINHA QUE NÃO APARECE NAS CONFIGURAÇÃO É A: crypto key generate rsa

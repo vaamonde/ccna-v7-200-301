@@ -49,7 +49,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **OBSERVAÇÃO-02:** não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura que a Cisco já utiliza a bastante tempo e o Switch ou Router sempre procura esse padrão para iniciar o Binário do Cisco IOS.
 
-**CUIDADO-01:** como o Cisco IOS é uma sub-derivação do Unix/BSD, ele é Case Sensitive (faz diferença de Maiúscula/Minúscula).
+**CUIDADO-01:** como o Cisco IOS é uma sub-derivação do *Unix/BSD*, ele é Case Sensitive (faz diferença de Maiúscula/Minúscula).
 
 **CUIDADO-02:** por padrão, caso não tenha espaço suficiente na Flash para a nova imagem, o Cisco IOS irá remover a imagem anterior para liberar espaço para a nova imagem (por causa desse comportamento padrão do Cisco IOS e indicado sempre fazer o Backup antes de atualizar).
 

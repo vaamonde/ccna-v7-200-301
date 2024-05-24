@@ -44,7 +44,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **DICA-01:** configuração do Gateway IPv4 em Switch Cisco Catalyst Layer 2 serve somente para acesso remoto com finalidade de monitoramento/gerenciamento do Switch;
 
-**DICA-02:** em Switch Cisco Catalyst Layer 3 o recurso de Gateway é utilizado tanto para acesso remoto ou para roteamento de Redes/Gateways utilizando principalmente VLAN (Virtual-LAN) ou Protocolos de Roteamento.
+**DICA-02:** em Switch Cisco Catalyst Layer 3 o recurso de Gateway é utilizado tanto para acesso remoto ou para roteamento de Redes/Sub-Redes utilizando principalmente VLAN (Virtual-LAN) ou Protocolos de Roteamento.
 
 **OBSERVAÇÃO-01:** esse recurso é necessário para administração remota ou monitoramento do Switch Cisco Catalyst Layer 2 ou Layer 3.
 
@@ -78,7 +78,7 @@ b) Configuração do Endereçamento IPv4 da Interface Virtual VLAN-1.
 
 **DICA-06:** o endereço IPv4 deve ser da mesma faixa de Rede ou Sub-Rede do Gateway Padrão utilizado no Switch na Segunda Etapa.
 
-**DICA-07:** é recomendado que os endereços de Rede ou Sub-Redes dos Switches sejam diferentes das Redes dos Desktops, Notebook, Wi-Fi, CFTV, etc... para garantir a segurança de acesso ao equipamentos somente para a equipe/profissionais de TI que esteja nessa mesma Rede/Sub-Rede.
+**DICA-07:** é recomendado que os endereços de Rede ou Sub-Redes dos Switches sejam diferentes das Redes dos Desktops, Notebook, Wi-Fi, CFTV, etc... para garantir a segurança de acesso dos equipamentos somente para a equipe/profissionais de TI que esteja nessa mesma Rede/Sub-Rede.
 
 **OBSERVAÇÃO-06:** configuração do endereço IPv4 deve ser: *IPv4 + Máscara de Rede Completa (ClassFull)*, não utilizar CIDR (Classes Inter-Domain Routing) nas configurações.
 
@@ -126,15 +126,31 @@ e) Salvando as configurações da memória RAM (Running-Config) para a memória 
 	!Visualizando as configurações das VLAN's padrão do Switch
 	sw-01# show vlan brief
 
+f) Testando a conectividade entre o Switch e os Desktops da Rede
+
+**DICA-13** depois da configuração da SVI no Switch Cisco Catalyst Layer 2 você consegue agora pingar os Desktops da Rede utilizado o Protocolo ICMP (Internet Control Message Protocol) como comando: *ping* para testar a interconectividade de rede.
+
+**OBSERVAÇÃO-05** o carácter: *! (exclamação)* utilizado no comando: ping significa que os pacotes ICMP enviado para o destino foi recebido com sucesso, parão é enviar: *5 Pacotes (Sending 5)* já o carácter: *. (ponto)* significa que os pacotes ICMP foram perdidos ou o destino não recebeu os pacotes.
+
+	!Pingando a SVI do Switch Layer 2
+	sw-01# ping 192.168.1.250
+		Type escape sequence to abort.
+		Sending 5, 100-byte ICMP Echos to 192.168.1.250, timeout is 2 seconds:
+		!!!!!
+		Success rate is 100 percent (5/5), round-trip min/avg/max = 8/10/15 ms
+
+	!Pingando o Servidor
+	sw-01# ping 192.168.1.1
+
 ## TERCEIRA ETAPA: Automatizando a Configuração do Segundo Switch.
 
 01. Utilizando o Visual Studio Code (VSCode) para automatizar as configurações do Cisco IOS.
 
-**OBSERVAÇÃO-05:** recomendamos sempre utilizar um *Editor de Texto Profissional* para criar os scripts e automatizar as tarefas de configuração do Cisco IOS, hoje em dia é indicado utilizar o Visual Studio Code (VSCode) junto com as Extensões: *Cisco IOS Syntax e Cisco Config Highlight* para facilitar essa configuração.
+**OBSERVAÇÃO-06:** recomendamos sempre utilizar um *Editor de Texto Profissional* para criar os scripts e automatizar as tarefas de configuração do Cisco IOS, hoje em dia é indicado utilizar o Visual Studio Code (VSCode) junto com as Extensões: *Cisco IOS Syntax e Cisco Config Highlight* para facilitar essa configuração.
 
-**DICA-13:** o caractere: *! (exclamação)* é utilizado como um recurso de *Comentário*, sua utilização server para comentar o código de automação do Cisco IOS ou para desativar um comando para não ser executado, *RECOMENDO FORTEMENTE DOCUMENTAR TODOS OS COMANDOS E PROCEDIMENTOS DE CONFIGURAÇÃO PARA FACILITAR O ENTENDIMENTO.*
+**DICA-14:** o caractere: *! (exclamação)* é utilizado como um recurso de *Comentário*, sua utilização server para comentar o código de automação do Cisco IOS ou para desativar um comando para não ser executado, *RECOMENDO FORTEMENTE DOCUMENTAR TODOS OS COMANDOS E PROCEDIMENTOS DE CONFIGURAÇÃO PARA FACILITAR O ENTENDIMENTO.*
 
-**DICA-14:** para facilitar a leitura do código, recomendo utilizar o recurso de **Indentação de Código** usando a Tecla TAB (Tabulador/Tabulação) para cada nível que você está configurando o Cisco IOS, isso facilitada a análise de erros (Debug) do código.
+**DICA-15:** para facilitar a leitura do código, recomendo utilizar o recurso de **Indentação de Código** usando a Tecla TAB (Tabulador/Tabulação) para cada nível que você está configurando o Cisco IOS, isso facilitada a análise de erros (Debug) do código.
 
 ```python
 !Acessando o modo EXEC Privilegiado

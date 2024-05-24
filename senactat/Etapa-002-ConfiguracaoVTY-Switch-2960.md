@@ -44,13 +44,13 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **DICA-01:** por padrão o Switch Cisco possui *16 (0 até 15)* linhas virtuais de acesso remoto.
 
-**OBSERVAÇÃO-01:** as linhas virtuais são utilizadas para acessar remotamente o terminal do Switch ou Router para facilitar a sua configuração ou administração em locais onde o acesso físico e complicado ou unidades remotas, exemplo: Switch em outro Andar do Prédio, Switch em outra Unidade da Empresa, Switch Remotos em Cidades/Estados diferentes.
+**OBSERVAÇÃO-01:** as linhas virtuais são utilizadas para acessar remotamente o terminal do Switch ou Router para facilitar a sua configuração ou administração em locais onde o acesso físico e complicado ou unidades remotas, **exemplo:** *Switch em outro Andar do Prédio, Switch em outra Unidade da Empresa, Switch Remotos em Cidades/Estados diferentes*.
 
-**OBSERVAÇÃO-02:** linhas virtuais não são utilizadas para monitoramento, para isso usamos o Protocolo SNMP (Simple Network Management Protocol) com as configurações do SVI (Switch Virtual Interface).
+**OBSERVAÇÃO-02:** linhas virtuais não são utilizadas para monitoramento, para isso usamos o Protocolo SNMP (Simple Network Management Protocol), Netflow (Network Traffic Analyzer), Syslog (System Log Analyzer), etc... com as configurações do SVI (Switch Virtual Interface).
 
 **DICA-02:** não é recomendado habilitar poucas linhas ou todas as linhas virtuais no Cisco IOS.
 
-**OBSERVAÇÃO-03:** as linhas virtuais é bem parecida com a linha console, a diferença é que o acesso e feito remotamente utilizando Protocolo TCP e Endereçamento IPv4 ou IPv6.
+**OBSERVAÇÃO-03:** as linhas virtuais é bem parecida com a linha console, a diferença é que o acesso e feito remotamente utilizando Protocolo TCP (Transmission Control Protocol) e Endereçamento IPv4 ou IPv6.
 
 **DICA-03:** por padrão as linhas virtuais estão desabilitadas no Cisco IOS, elas dependem da configuração do SVI (Switch Virtual Interface) para funcionar.
 
@@ -58,7 +58,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 a) Forçando fazer login local utilizando os usuários e senhas locais criados no Switch (usuários criados na etapa de configuração básica do Switch).
 
-**DICA-04:** por padrão a configuração da Linha Virtual é não permitir nenhuma conexão,
+**DICA-04:** por padrão a configuração da Linha Virtual é não permitir nenhuma conexão, se você utilizar a opção do comando: *login* o acesso será feito sem autenticação, sendo necessário no mínimo configurar a opção do comando: *password*.
 
 	sw-01(config-line)# login local
 
@@ -76,7 +76,7 @@ c) Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco 
 
 05. Habilitando o tempo de inatividade de uso do linha virtual.
 
-**DICA-07:** na Line Virtual a desconexão por falta de interatividade é obrigatório, esse opção minimizar as falhas de segurança de acesso Remoto ao Switch ou Router.
+**DICA-07:** na Line Virtual a desconexão por falta de interatividade é obrigatória, esse opção minimizar as falhas de segurança de acesso Remoto não Autorizado ao Switch ou Router.
 
 	sw-01(config-line)# exec-timeout 5 30
 

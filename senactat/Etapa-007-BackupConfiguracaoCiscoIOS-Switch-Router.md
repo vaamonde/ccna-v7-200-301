@@ -44,9 +44,9 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **DICA-02:** atualmente a versão utilizada nos hardware da Cisco é a 15.x (ou superior, dependendo do modelo)
 
-**OBSERVAÇÃO-01:** as informações de memórias em equipamentos da Cisco estão em: *Kbytes* ou em: *Bytes*, sendo necessário fazer a conversão para: *MBytes* para facilitar a leitura.
+**OBSERVAÇÃO-01:** as informações de Memória RAM em equipamentos da Cisco estão em: *Kbytes* ou em: *Bytes*, sendo necessário fazer a conversão para: *MBytes* para facilitar a leitura.
 
-**OBSERVAÇÃO-02:** nesse comando temos também informações referente a Configuração do Registro de Inicialização do equipamento para efeito de manutenção ou Reset.
+**OBSERVAÇÃO-02:** esse comando também mostrar as informações referente a *Configuração do Registro de Inicialização* do equipamento para efeito de manutenção ou Reset.
 
 	sw-01# show version
 		63488K bytes of flash-simulated non-volatile configuration memory.
@@ -83,7 +83,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 **DICA-05:** nunca esqueça de salvar as configurações.
 	
 	sw-01# copy running-config startup-config
-		Destination filename [startup-config]? 
+		Destination filename [startup-config]?
 
 06. Salvando as configurações da memória NVRAM para a memória FLASH.
 	
@@ -99,7 +99,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **DICA-07:** o serviço de TFTP (Trivial File Transfer Protocol) utiliza o Protocolo: *UDP* na Porta Padrão: *69* e por padrão está ativo no Servidor no Cisco Packet Tracer, precisando apenas habilitar o endereço IPv4 ou IPv6.
 
-**OBSERVAÇÃO-05:** o protocolo UDP (User Datagram Protocol) não é confiável, porque ele não exige confirmação.
+**OBSERVAÇÃO-05:** o protocolo UDP (User Datagram Protocol) não é confiável, porque ele não exige confirmação de recebimento.
 
 **OBSERVAÇÃO-06:** o protocolo TFTP foi escolhido pela Cisco para ser o sistema padrão de Atualização e Backup dos Switch e Router.
 
@@ -155,7 +155,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 	!Visualizando as Configuração da RAM
 	sw-01# show running-config
 
-	!Utilize o *BARRA DE ESPAÇO* para descer até a última linha do arquivo de configuração (MORE)
+	!Utilize *BARRA DE ESPAÇO* para descer até a última linha do arquivo de configuração (MORE)
 	!Selecione a partir da primeira ! (exclamação) do Running-Config
 	!Não Selecione a linha: Current configuration : 1799 bytes
 	
@@ -165,7 +165,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 	end
 
 	!Copiar o conteúdo com o botão direito do mouse e selecionar: Copy
-	!Salvar o Conteúdo no VSCode: Ctrl + V.
+	!Salvar o Conteúdo no VSCode: Ctrl + V (ou botão direito colar).
 
 	!Saindo do modo EXEC Privilegiado
 	sw-01# disable
@@ -176,7 +176,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **DICA-11:** em roteadores esse comando fornece informações de licenciamento do hardware.
 
-**OBSERVAÇÃO-09:** igual no Switch, esse comando fornece informações de inicialização do IOS do Router utilizado principalmente para manutenção ou Quebra de Senha do equipamento.
+**OBSERVAÇÃO-09:** igual no Switch, esse comando fornece informações de inicialização do IOS do Router, utilizado principalmente para manutenção ou Quebra de Senha do equipamento.
 
 **OBSERVAÇÃO-10:** em roteadores não temos o comando: *show boot*, essa opção só existe no Switch Catalyst Layer 2 ou 3.
 
@@ -188,7 +188,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **DICA-12:** em roteadores temos vários módulos de memória Flash Card, utilizado principalmente como Redundância caso algum Flash Card tenha problema.
 
-**OBSERVAÇÃO-11:** o acesso a memória Flash em roteadores é feito utilizando módulos externos, geralmente não são soldados nos modelos antigos, modelos atuais está vendo chipado (soldado).
+**OBSERVAÇÃO-11:** o acesso a memória Flash em roteadores é feita utilizando módulos externos, geralmente não são soldados nos modelos antigos, modelos atuais está vindo chipado (soldado).
 
 	rt-01# show flash:
 		[33849219 bytes used, 221894781 available, 255744000 total]

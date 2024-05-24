@@ -40,11 +40,11 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		rt-01# configure terminal
 		rt-01(config)#
 
-## SEGUNDA ETAPA: Configuração a Interface LAN do Router.
+## SEGUNDA ETAPA: Configuração da Interface LAN do Router.
 
 01. Acessando a Interface GigabitEthernet 0/0 da LAN.
 
-**DICA-01:** é recomendado utilizar a Interface GigabitEthernet 0/0 ou outra Interface para as Configurações da Rede Local LAN.
+**DICA-01:** é recomendado utilizar a Interface GigabitEthernet 0/0 ou outra Interface para as Configurações da Rede Local LAN (Local Area Network).
 
 	rt-01(config)# interface gigabitEthernet 0/0
 

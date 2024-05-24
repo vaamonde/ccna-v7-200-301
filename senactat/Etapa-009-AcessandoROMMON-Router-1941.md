@@ -31,7 +31,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **OBSERVAÇÃO-01:** em equipamentos reais, podemos utilizar as combinações de teclas: *Ctrl + C*, *Ctrl + Break* ou *Ctrl + Backspace* para abortar a inicialização do Cisco IOS dependendo do sistema de acesso Remoto que você está utilizando;
 
-**OBSERVAÇÃO-02:** no aplicativo: *PuTTY* você deve usar o Botão direito do Mouse na Barra de Título e escolher as opções: Send Command: depois: Break (somente quando começar a descompactação do Cisco IOS para a memória RAM - caracteres: #####).
+**OBSERVAÇÃO-02:** no aplicativo: *PuTTY* você deve usar o Botão direito do Mouse na Barra de Título e escolher as opções: *Send Command: depois: Break* (somente quando começar a descompactação do Cisco IOS para a memória RAM - caracteres: #####).
 
 A) Desligar o Router 1941 no Botão Power e aguardar 10 segundos;<br>
 B) Ligar o Botão Power do Router 1941 (no Cisco Packet Tracer esse processo e muito rápido);<br>
@@ -60,13 +60,13 @@ C) Na tela do Cisco IOS Image Load Test, quando começar a descompactação da i
 
 **DICA-04:** no modo ROMMON a opção do TAB não funciona, precisando digitar o comando completo, as opções abreviadas também não funciona nesse modo.
 
-**OBSERVAÇÃO-03:** essa opção força o Router a não ler as configurações do: *startup-config* no momento da inicialização do Cisco IOS.
+**CUIDADO-01:** existe várias chaves de registro no Cisco IOS, se você errar a chave pode acontecer do Cisco IOS inicializar de forma incorreta ou com caracteres irreconhecíveis na Linha Console ou na Linha Virtual, CUIDADO!!!!! nessa configuração.
 
-**OBSERVAÇÃO-04:** chave de registro em hexadecimal: *0x2142* (não ler as configurações do startup-config);
+**OBSERVAÇÃO-03:** chave de registro em hexadecimal: *0x2142* (não ler as configurações do startup-config);
+
+**OBSERVAÇÃO-04:** essa opção força o Router a não ler as configurações do: *startup-config* no momento da inicialização do Cisco IOS.
 
 **OBSERVAÇÃO-05:** chave de registro em hexadecimal: *0x2102* (ler as configurações do startup-config - padrão);
-
-**CUIDADO-01:** existe várias chaves de registro no Cisco IOS, se você errar a chave pode acontecer do Cisco IOS inicializar de forma incorreta ou com caracteres irreconhecíveis na Linha Console ou na Linha Virtual, CUIDADO!!!!! nessa configuração.
 
 	!Alterando a chave de registro para 0x2142
 	rommon 2 > confreg 0x2142
@@ -75,52 +75,50 @@ C) Na tela do Cisco IOS Image Load Test, quando começar a descompactação da i
 	rommon 3 > reset
 
 	!Aguardar a inicialização do Cisco IOS
+	!Após a inicialização novamente aparece a tela do Wizard
+	--- System Configuration Dialog ---
+	Would you like to enter the initial configuration dialog? [yes/no]:
+
+	!Pressionar Enter para continuar com o Router zerado
 	Press RETURN to get started!
 
-	AVISO: acesso autorizado somente a funcionarios
-	User Access Verification
-	Username:
+	!Roteador vai iniciar no modo Fabric
+	Router>
 
 ## TERCEIRA ETAPA: Limpando as Configurações Residuais do Router 1941.
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 
-**DICA-05** para voltar as configurações do modo de inicialização do Cisco IOS e necessário fazer a limpeza das configurações do: startup-config e depois alterar a chave de registro e salvar as configurações novas.
-
-	AVISO: acesso autorizado somente a funcionarios
-	User Access Verification
-	Username: senac
-	Password: 123@senac
+**DICA-05** para voltar as configurações do modo de inicialização do Cisco IOS é necessário fazer a limpeza das configurações do: *startup-config* e depois alterar a chave de registro e salvar as configurações novas.
 
 	!Alterando do Modo EXEC de Usuário para o Modo EXEC Privilegiado
-	rt-01> enable
-	Password: 123@senac
-	rt-01#
+	Router> enable
+	Router#
 
 	!Visualizando as configurações de inicialização do Router 1941
-	rt-01# show version
+	Router# show version
 	
 	!Visualizando as configurações do startup-config
-	rt-01# show startup-config
+	Router# show startup-config
 	
 	!Limpando as configurações do startup-config
-	rt-01# erase startup-config
-	rt-01# show startup-config
+	Router# erase startup-config
+	Router# show startup-config
 	
 	!Acessando o modo de Configuração Global de comandos
-	rt-01# configure terminal
+	Router# configure terminal
 	
 		!Alterando o modo de inicialização do Cisco IOS do Router 1941
-		rt-01(config)# config-register 0x2102
+		Router(config)# config-register 0x2102
 		
 		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
-		rt-01(config)# end
+		Router(config)# end
 	
 	!Salvando as configurações da memória RAM para a memória NVRAM
-	rt-01# write
+	Router# write
 		
 	!Reinicializando o Router 1941
-	rt-01# reload
+	Router# reload
 		System configuration has been modified. Save? [yes/no]:yes
 		Proceed with reload? [confirm]
 
@@ -128,45 +126,39 @@ C) Na tela do Cisco IOS Image Load Test, quando começar a descompactação da i
 
 **DICA-06** após o reset do Router 1941 todas as configurações iniciais são perdidas, mesmo restaurando o Backup alguns ajustes são necessários para o Router voltar a funcionar.
 
-	AVISO: acesso autorizado somente a funcionarios
-	User Access Verification
-	Username: senac
-	Password: 123@senac
-
 	!Alterando do Modo EXEC de Usuário para o Modo EXEC Privilegiado
-	rt-01> enable
-	Password: 123@senac
-	rt-01#
+	Router> enable
+	Router#
 
 	!Visualizando as configurações de inicialização do Router 1941
-	rt-01# show version
+	Router# show version
 	
 	!Visualizando os arquivos no Flash Card
-	rt-01# show flash:
+	Router# show flash:
 	
 	!Copiando o arquivo do Flash Card startup-config para NVRAM
-	rt-01# copy flash: startup-config 
+	Router# copy flash: startup-config 
 		Source filename []? startup-config
 		Destination filename [startup-config]? 
 
 	!Visualizando as configurações do startup-config
-	rt-01# show startup-config
+	Router# show startup-config
 
 03. Aplicando as configurações da NVRAM (startup-config) para a RAM (running-config)
 
 **OBSERVAÇÃO-06:** após a cópia da configuração da NVRAM para RAM, as Interfaces não serão inicializadas automaticamente sendo necessário iniciar cada Interface no seu modo de configuração utilizando o comando: *no shutdown*, no arquivo: *running-config* ou *startup-config* por padrão não tem o comando: *no shutdown* nas configurações das Interfaces;
 
-**OBSERVAÇÃO-07:** o serviço do SSH Server depois que o Router ou Switch é resetado ele também não volta a funcionar, no arquivo: **running-config* ou *startup-config* por padrão não tem o comando: *crypto key*, para resolver essa falha, recomendo digitar os comandos: *crypto key zeroize rsa* (zerar todas as chaves primeiro) e depois o comando: *crypto key generate rsa general-keys modulus 1024* (gerar as chaves novamente).
+**OBSERVAÇÃO-07:** o serviço do SSH Server depois que o Router ou Switch é resetado também não volta a funcionar, no arquivo: *running-config* ou *startup-config* por padrão não tem o comando: *crypto key*, para resolver essa falha, recomendo digitar os comandos: *crypto key zeroize rsa* (zerar todas as chaves primeiro) e depois o comando: *crypto key generate rsa general-keys modulus 1024* (gerar as chaves novamente).
 
 	!Salvando as Configurações do NVRAM para a RAM
-	rt-01# copy startup-config running-config
+	Router# copy startup-config running-config
 		Destination filename [running-config]? 
 
 	!Acessando o Modo de Configuração Global
 	rt-01# configure terminal
 	rt-01(config)#
 
-	!Limpando as Chaves RSA do SSH
+	!Limpando as Chaves RSA do Servidor SSH
 	rt-01(config)# crypto key zeroize rsa
 		Do you really want to remove these keys? [yes/no]: yes
 	
