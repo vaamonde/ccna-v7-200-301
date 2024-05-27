@@ -29,7 +29,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol)* na porta padrão: *53*, utilizada principalmente pelo cliente para fazer as consultas de Nomes para IP ou IP para Nomes.
 
-**OBSERVAÇÃO-01:** O DNS Server também utiliza o: *TCP (Transmission Control Protocol)* na porta padrão: *53*,utilizado para receber a transferência de Zonas entre o Servidores: *Master (Mestre)* e: *Slaver (Escravo)*.
+**OBSERVAÇÃO-01:** O DNS Server também utiliza o: *TCP (Transmission Control Protocol)* na porta padrão: *53*,utilizado para receber a transferência de Zonas entre o Servidores: *Master (Mestre - Preferencial)* e: *Slaver (Escravo - Alternativo)*.
 
 **OBSERVAÇÃO-02:** O DNS Server também utiliza o: *TCP (Transmission Control Protocol)* na porta padrão: *953*, utilizado pelo serviço do RNDC (Remote Name Daemon Control).
 
@@ -43,7 +43,7 @@ O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol
 
 **Registro Tipo A....:** Significa Endereço e é o tipo mais básico de sintaxe DNS. Indica o endereço IP real para um domínio ou computador;<br>
 **Registro Tipo AAAA.:** Igual ao Tipo A mais utilizado nas configurações do IPv6;<br>
-**Registro Tipo CNAME:** Significa o Nome Canônico (Apelido) e seu papel é fazer que um domínio use um alias de outro domínio;<br>
+**Registro Tipo CNAME:** Significa o Nome Canônico (Canonical Name Record) e seu papel é fazer que um domínio use um alias (Pseudônimo - Apelido) de outro domínio;<br>
 **Registro Tipo SOA..:** Significa Início de Autoridade. Obviamente é um dos registros de DNS mais importantes;<br>
 **Registro Tipo NS...:** Significa Name Server ele indica qual nome de servidor é autoritativo para o domínio.
 
@@ -51,12 +51,12 @@ O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol
 
 **OBSERVAÇÃO-03:** por padrão o Serviço de DNS Server no Cisco Packet Tracer está: *desligado*.
 
-**OBSERVAÇÃO-04:** no Cisco Packet Tracer as configuração de Sintaxe são limitadas somente ao tipos: *A, AAA, CNAME, SOA e NS* estão disponíveis para configuração.
+**OBSERVAÇÃO-04:** no Cisco Packet Tracer as configuração de Sintaxe DNS são limitadas somente ao tipos: *A, AAA, CNAME, SOA e NS* estão disponíveis para configuração.
 
-**OBSERVAÇÃO-05:** no Cisco Packet Tracer temos apenas a configuração da Zona de Pesquisa Direta, não está disponível a opção de configuração de Zona de Pesquisa Reversa.
+**OBSERVAÇÃO-05:** no Cisco Packet Tracer temos apenas a configuração da Zona de Pesquisa Direta, não está disponível a opção para configurar a Zona de Pesquisa Reversa.
 
-	!Habilitando o Serviço do DNS Server no Servidor 01
-	Server-01
+	!Habilitando o Serviço do DNS Server no Servidor 02
+	Server-02
 		Services
 			DNS
 
@@ -74,9 +74,6 @@ O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol
 	Resource Records:  Name = pop3.senac.br    Type = CNAME        Host Name = server-02
 	Resource Records:  Name = smtp.senac.br    Type = CNAME        Host Name = server-02
 	Resource Records:  Name = ftp.senac.br     Type = CNAME        Host Name = server-02
-	Resource Records:  Name = tftp.senac.br    Type = CNAME        Host Name = server-02
-	Resource Records:  Name = ntp.senac.br     Type = CNAME        Host Name = server-02
-	Resource Records:  Name = log.senac.br     Type = CNAME        Host Name = server-02
 	Resource Records:  Name = sw-03            Type = A Record     Address = 192.168.3.250
 	Resource Records:  Name = sw-04            Type = A Record     Address = 192.168.3.251
 	Resource Records:  Name = sw-05            Type = A Record     Address = 192.168.3.252
