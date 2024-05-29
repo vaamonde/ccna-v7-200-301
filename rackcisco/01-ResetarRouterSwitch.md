@@ -17,17 +17,29 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 **OBSERVAÇÃO IMPORTANTE: Utilizar o PuTTY para acessar o Switch utilizando o Cabo Console.**
 
-01. Deixar o Switch 3560 inicializar normalmente (esse processo demora cerca de 5 minutos)
+01. Deixar o Switch Cisco Catalyst Layer 3 3560 inicializar normalmente (esse processo demora cerca de 5 minutos)
 
-02. Após a inicialização do Switch 3560, pressionar o Botão **Mode** por aproximadamente **15/20 segundos** até entrar os LED's piscarem e o Switch entrar no modo de ROMmon e ser reinicializado.
+02. Após a inicialização do Switch 3560, pressionar e segurar o Botão: **Mode** por aproximadamente: **15/20 segundos** até os LED's piscarem em: **Ambar (Laranja)** e o Switch entrar no modo de ROMmon e ser reinicializado, no Terminal será mostrado a mensagem que o equipamento será reiniciado.
 
-03. Após a reinicialização do Switch 3560 será apresentado o Wizard de Configuração, digite: no <Enter>
+03. Após a reinicialização do Switch 3560 será apresentado o **Wizard de Configuração**, digite: *no* <Enter>
 
 04. Limpando as configurações residuais dos outros grupos do Switch 3560.
 
-		a) Acessar o modo privilegiado: enable <Enter>
-		b) Remover o banco de dados de VLAN: delete flash:vlan.dat <Enter>
-		c) Remover os backups anteriores: delete flash:startup-config <Enter>
+```python
+	Switch>
+		
+		!Acessar o modo privilegiado de comandos 
+		Switch> enable
+
+		!Remover o banco de dados de VLAN da Flash: 
+		Switch# delete flash:vlan.dat
+
+		!Remover os backups anteriores das turmas: 
+		Switch# delete flash:startup-config
+
+		!Reiniciar o Switch para testar as configurações
+		Switch# reload
+```
 
 ## OBSERVAÇÃO IMPORTANTE: Caso o Switch não volte para o estado de fábrica, será necessário utilizar os procedimentos abaixo: (SÓ USAR ESSA OPÇÃO SE FOR REALMENTE NECESSÁRIO, NÃO EXECUTAR ESSES PROCEDIMENTOS NOS EQUIPAMENTOS ANTES DE INFORMAR AO DOCENTE)
 
@@ -45,27 +57,56 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 **OBSERVAÇÃO IMPORTANTE: Utilizar o PuTTY para acessar o Switch utilizando o Cabo Console.**
 
-01. Parar a inicialização do IOS do Router 2911 utilizando as teclas de atalho: Ctrl + Break (No PuTTY utilizar o Botão direito do Mouse na Barra de Título e selecionar as opções: Send Command: Break)
+01. Parar a inicialização do IOS do Router Cisco 2911 utilizando as teclas de atalho: **Ctrl + Break** (No PuTTY utilizar o Botão direito do Mouse na Barra de Título e selecionar as opções: **Send Command: Break**)
 
-**CUIDADO!!!!!! com a Chave de Registro que você vai digitar no ROMmon (veja o tópico das Obs: 1 e 2)**
+**CUIDADO!!!!!! com a Chave de Registro que você vai digitar no ROMmon (veja os tópicos das Obs: 1 e 2)**
 
 02. Nas configurações do Cisco ROMmon digite a chave em hexadecimal: confreg 0x2142 <Enter>
+```python
+	rommon 1> confreg 0x2142 
+```
 
-03. Após a mudança da chave, digite: reset <Enter> para reiniciar o Router 2911.
+03. Após a mudança da chave, digite: reset <Enter> para reiniciar o Router Cisco 2911.
+```python
+	rommon 2> reset
+```
 
-04. O Router 2911 vai inicializar sem ler o arquivo de configuração: startup-config da NVRAM.
+04. O Router 2911 vai inicializar sem ler o arquivo de configuração: **startup-config** da NVRAM.
 
 05. Limpando as configurações do Router 2911 e voltando a ler o arquivo de configuração startup-config da NVRAM.
 
-		a) Acessar o modo Exec Privilegiado: enable <Enter>
-		b) Limpar a NVRAM: erase startup-config <Enter>
-		c) Limpar as configurações de backup anteriores: delete flash:startup-config <Enter>
-		d) Acessar o modo de configuração global: configure terminal <Enter>
-		e) Mudar o registro de inicialização: config-register 0x2102 <Enter>
-		f) Sair de todos os modos: end <Enter>
-		g) Salvar as configurações: copy running-config startup-config <Enter>
-		h) Reinicializar o router: reload <Enter>
-		i) Verificar a chave de registro: enable <Enter>, show version <Enter>
+```python
+	Router>
+		
+		!Acessar o modo privilegiado de comandos 
+		Router> enable
+
+		!Limpando as configuração da NVRAM
+		Router# erase startup-config
+
+		!Remover os backups anteriores das turmas: 
+		Router# delete flash:startup-config
+
+		!Entrar no modo de configuração global
+		Router# configure terminal
+
+			!Alterar o registro de inicialização do Router
+			Router (config)# config-register 0x2102 
+
+			!Saindo de dos os modos de configuração
+			Router (config)# end
+
+		!Salvando as configurações da RAM para a NVRAM
+		Router# copy running-config startup-config 
+
+		!Reiniciar o Router para testar as configurações
+		Router# reload
+
+		!Após a reiniciar o Router Cisco 2911 verificar a chave de registro
+		!Verificar a última linha referente ao cofreg 0x2102
+		Router> enable
+		Router# show version 
+```
 
 **Obs1: caso você digite chaves diferentes no ROMmon o sistema pode inicializar com caracteres estranhos, isso está muitas vezes associado a velocidade da porta (Padrão 9600), será necessário fazer os testes mudando as velocidades de conexão da porta no PuTTY para: 1200,2400, 4800, 9600, 19200, 38400, 57600 e 115200.** 
 
