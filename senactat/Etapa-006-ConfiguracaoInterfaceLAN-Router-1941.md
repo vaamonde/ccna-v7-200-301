@@ -82,7 +82,7 @@ e) Salvando as configurações da memória RAM (Running-Config) para a memória 
 
 **DICA-05:** nunca esqueça de salvar as configurações.
 
-	sw-01# copy running-config startup-config
+	rt-01# copy running-config startup-config
 
 02. Visualizando as configurações da memória RAM (Running-Config).
 
