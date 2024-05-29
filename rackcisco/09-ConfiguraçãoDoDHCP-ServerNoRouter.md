@@ -25,51 +25,51 @@ enable
 		!Configurando o Pool do DHCP Server da VLAN do Primeiro Usuário
 		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 186 
 		!(SEXTA ETAPA: Determinação das Sub-Interfaces de Gateway de cada VLAN dos Grupos)
-		ip dhcp excluded-address 172.16.??.1 172.16.??.100
-		ip dhcp excluded-address 172.16.??.200 172.16.??.254
-		ip dhcp pool vlan-??
-			network 172.16.??.0 255.255.255.0
-			default-router 172.16.??.254
+		ip dhcp excluded-address 172.16.???.1 172.16.???.100
+		ip dhcp excluded-address 172.16.???.200 172.16.???.254
+		ip dhcp pool vlan-???
+			network 172.16.???.0 255.255.255.0
+			default-router 172.16.???.254
 			dns-server 8.8.8.8 8.8.4.4
 			domain-name senac.br
 			exit
 
 		!Configurando o Pool do DHCP Server da VLAN do Segundo Usuário	
-		ip dhcp excluded-address 172.16.??.1 172.16.??.100
-		ip dhcp excluded-address 172.16.??.200 172.16.??.254
-		ip dhcp pool vlan-??
-			network 172.16.??.0 255.255.255.0
-			default-router 172.16.??.254
+		ip dhcp excluded-address 172.16.???.1 172.16.???.100
+		ip dhcp excluded-address 172.16.???.200 172.16.???.254
+		ip dhcp pool vlan-???
+			network 172.16.???.0 255.255.255.0
+			default-router 172.16.???.254
 			dns-server 8.8.8.8 8.8.4.4
 			domain-name senac.br
 			exit
 
 		!Configurando o Pool do DHCP Server da VLAN do Terceiro Usuário	
-		ip dhcp excluded-address 172.16.??.1 172.16.??.100
-		ip dhcp excluded-address 172.16.??.200 172.16.??.254
-		ip dhcp pool vlan-??
-			network 172.16.??.0 255.255.255.0
-			default-router 172.16.??.254
+		ip dhcp excluded-address 172.16.???.1 172.16.???.100
+		ip dhcp excluded-address 172.16.???.200 172.16.???.254
+		ip dhcp pool vlan-???
+			network 172.16.???.0 255.255.255.0
+			default-router 172.16.???.254
 			dns-server 8.8.8.8 8.8.4.4
 			domain-name senac.br
 			exit
 
 		!Configurando o Pool do DHCP Server da VLAN do Quarto Usuário	
-		ip dhcp excluded-address 172.16.??.1 172.16.??.100
-		ip dhcp excluded-address 172.16.??.200 172.16.??.254
-		ip dhcp pool vlan-??
-			network 172.16.??.0 255.255.255.0
-			default-router 172.16.??.254
+		ip dhcp excluded-address 172.16.???.1 172.16.???.100
+		ip dhcp excluded-address 172.16.???.200 172.16.???.254
+		ip dhcp pool vlan-???
+			network 172.16.???.0 255.255.255.0
+			default-router 172.16.???.254
 			dns-server 8.8.8.8 8.8.4.4
 			domain-name senac.br
 			exit
 
 		!Configurando o Pool do DHCP Server da VLAN Wireless
-		ip dhcp excluded-address 172.16.??.1 172.16.??.100
-		ip dhcp excluded-address 172.16.??.200 172.16.??.254
-		ip dhcp pool vlan-??
-			network 172.16.??.0 255.255.255.0
-			default-router 172.16.??.254
+		ip dhcp excluded-address 172.16.???.1 172.16.???.100
+		ip dhcp excluded-address 172.16.???.200 172.16.???.254
+		ip dhcp pool vlan-???
+			network 172.16.???.0 255.255.255.0
+			default-router 172.16.???.254
 			dns-server 8.8.8.8 8.8.4.4
 			domain-name senac.br
 			end
@@ -81,5 +81,5 @@ copy running-config startup-config
 show ip dhcp pool
 
 !Visualizando os Leasing dos IP ofertados na REde
-show ip dhcp binding (essa informações só estará disponível depois que configurar os clientes)
+show ip dhcp binding (essas informações só estará disponível depois que configurar os clientes)
 ```

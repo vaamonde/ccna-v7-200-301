@@ -34,35 +34,35 @@ enable
 		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 77 
 		!(TERCEIRA ETAPA: Determinação das Redes (Sub-Redes) e VLAN (Virtual-LAN) de Cada Grupo)
 		interface gigabitEthernet 0/0.???
-			description Subinterface da VLAN de SVI do Switch Layer 3 3560
+			description Subinterface da VLAN de SVI do Switch Layer 3 3560 do Grupo-0???
 			encapsulation dot1Q ???
 			ip address 172.16.???.254 255.255.255.0
 			exit
 
 		!Configurando a Subinterface da VLAN do Primeiro Usuário
 		interface gigabitEthernet 0/0.???
-			description Subinterface da VLAN do Primeiro Usuário
+			description Subinterface da VLAN do ???Primeiro_Nome_do_Primeiro_Aluno???
 			encapsulation dot1Q ???
 			ip address 172.16.???.254 255.255.255.0
 			exit
 
 		!Configurando a Subinterface da VLAN do Segundo Usuário
 		interface gigabitEthernet 0/0.???
-			description Subinterface da VLAN do Segundo Usuário
+			description Subinterface da VLAN do ???Primeiro_Nome_do_Segundo_Aluno???
 			encapsulation dot1Q ???
 			ip address 172.16.???.254 255.255.255.0
 			exit
 
 		!Configurando a Subinterface da VLAN do Terceiro Usuário
 		interface gigabitEthernet 0/0.???
-			description Subinterface da VLAN do Terceiro Usuário
+			description Subinterface da VLAN do ???Primeiro_Nome_do_Terceiro_Aluno???
 			encapsulation dot1Q ???
 			ip address 172.16.???.254 255.255.255.0
 			exit
 
 		!Configurando a Subinterface da VLAN do Quarto Usuário
 		interface gigabitEthernet 0/0.???
-			description Subinterface da VLAN do Quarto Usuário
+			description Subinterface da VLAN do ???Primeiro_Nome_do_Quarto_Aluno???
 			encapsulation dot1Q ???
 			ip address 172.16.???.254 255.255.255.0
 			exit

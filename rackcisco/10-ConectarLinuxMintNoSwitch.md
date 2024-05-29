@@ -38,7 +38,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 02. Conectar o Cabo de Rede na Placa de Rede Off-Board do Desktop
 
 		a) Conectar o cabo de rede na placa de rede off-board;
-		b) Conectar o cabo de rede no ponto de rede do rack cisco do seu usuário;
+		b) Conectar o cabo de rede no ponto de rede do Rack Cisco do seu usuário;
 		c) Verificar se os LED's da Placa de Rede e Switch estão ligados;
 		d) Desativar e Ativar novamente a Placa de Rede no Linux Mint.
 
@@ -76,4 +76,8 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 		
 		Windows 10
 		Powershell
-			
+			#Linha do SSH para acessar o Switch
+			ssh seu_usuario@172.16.???.253
+
+			#Linha do SSH para acessar o Router
+			ssh eu_usuario@172.16.???.254

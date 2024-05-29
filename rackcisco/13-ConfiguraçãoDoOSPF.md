@@ -71,12 +71,12 @@ enable
 		!Saindo das configurações da Interface
 		exit
 
-		!Configurando o Roteamento de OSPF (?? = número de processo local)
+		!Configurando o Roteamento de OSPF (??? = número de processo local)
 		!Verificar a tabela de Endereçamento para ver o seu número de Processo Local
 		!Pode existir vários processo locais do OSPF, cada um com uma finalidade diferente
 		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 270 
 		!(NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF)
-		router ospf ??
+		router ospf ???
 
 		!Identificação do Roteador
 		!Verificar o endereço IPv4 de Loopback do seu grupo
@@ -130,11 +130,11 @@ show ip protocols
 show ip interface brief
 show ip route
 show ip route ospf 
-show ip route ospf ?? (ID)
+show ip route ospf ??? (ID)
 show ip ospf neighbor
 show ip ospf database
 show ip ospf database router
-show ip ospf ?? (ID)
+show ip ospf ??? (ID)
 show ip ospf interface
 ```
 

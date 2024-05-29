@@ -15,7 +15,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 ## PRIMEIRA ETAPA: Configuração do Backup das Configurações do Switch e Router
 
-01. Backup das configurações do Router 2911
+01. Backup das configurações do Router Cisco 2911
 
 ```python
 !Acessando o modo exec privilegiado
@@ -26,6 +26,8 @@ enable
 	
 	!Salvando uma cópia das configurações da NVRAM para FLASH
 	copy startup-config flash:
+	
+	!Visualizando o conteúdo da Flash
 	dir flash:
 	
 	!Salvando as configurações para NOTEPAD++ ou VSCode
@@ -33,7 +35,7 @@ enable
 	show running-config
 ```
 
-01. Backup das configurações do Switch 3560
+01. Backup das configurações do Switch Cisco Catalyst 3560
 
 ```python
 !Acessando o modo exec privilegiado
@@ -44,6 +46,8 @@ enable
 	
 	!Salvando uma cópia das configurações da NVRAM para FLASH
 	copy startup-config flash:
+	
+	!Visualizando o conteúdo da Flash
 	dir flash:
 	
 	!Salvando as configurações para NOTEPAD++ ou VSCode

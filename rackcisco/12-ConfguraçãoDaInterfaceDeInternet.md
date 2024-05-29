@@ -26,7 +26,7 @@ enable
 	interface gigabitEthernet 0/1
 	
 		!Descrição da Interface
-		description Interface de acesso a Internet do Grupo-??
+		description Interface de acesso a Internet do Grupo-???
 		
 		!Configuração do endereçamento IP Dinâmico via DHCP Client
 		ip address dhcp

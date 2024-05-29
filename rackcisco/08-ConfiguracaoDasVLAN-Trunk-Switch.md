@@ -31,13 +31,13 @@ enable
 			!Nome da VLAN padrão
 			name svig0???
 		vlan ???
-			name ??Primeiro_Nome_do_Primeiro_Aluno?? 
+			name ???Primeiro_Nome_do_Primeiro_Aluno??? 
 		vlan ???
-			name ??Primeiro_Nome_do_Segundo_Aluno?? 
+			name ???Primeiro_Nome_do_Segundo_Aluno???
 		vlan ???
-			name ??Primeiro_Nome_do_Terceiro_Aluno??
+			name ???Primeiro_Nome_do_Terceiro_Aluno???
 		vlan ???
-			name ??Primeiro_Nome_do_Quarto_Aluno??
+			name ???Primeiro_Nome_do_Quarto_Aluno???
 		vlan ???
 			name wifi
 			exit
@@ -48,43 +48,43 @@ enable
 		interface fastEthernet 0/2
 			
 			!Configurando a Interface de Acesso a VLAN
-			description Interface de Acesso da VLAN ?? do ??Nome_E_Sobrenome_Primeiro_Usuário??
+			description Interface de Acesso da VLAN ??? do ???Nome_E_Sobrenome_Primeiro_Usuário???
 			
 			!Configurando o Modo de Acesso da Interface
 			switchport mode access
 			
 			!Configurando o Acesso a VLAN
-			switchport access vlan ??
+			switchport access vlan ???
 			
 			!Saindo da configuração da Interface
 			exit
 		
 		!Configurando a Interface de Acesso a VLAN do Segundo Usuário
 		interface fastEthernet 0/3
-			description Interface de Acesso da VLAN ?? do ??Nome_E_Sobrenome_Segundo_Usuário??
+			description Interface de Acesso da VLAN ??? do ???Nome_E_Sobrenome_Segundo_Usuário???
 			switchport mode access
-			switchport access vlan ??
+			switchport access vlan ???
 			exit
 
 		!Configurando a Interface de Acesso a VLAN do Terceiro Usuário
 		interface fastEthernet 0/4
-			description Interface de Acesso da VLAN ?? do ??Nome_E_Sobrenome_Terceiro_Usuário??
+			description Interface de Acesso da VLAN ??? do ???Nome_E_Sobrenome_Terceiro_Usuário???
 			switchport mode access
-			switchport access vlan ??
+			switchport access vlan ???
 			exit
 
 		!Configurando a Interface de Acesso a VLAN do Quarto Usuário
 		interface fastEthernet 0/5
-			description Interface de Acesso da VLAN ?? do ??Nome_E_Sobrenome_Quarto_Usuário??
+			description Interface de Acesso da VLAN ??? do ???Nome_E_Sobrenome_Quarto_Usuário???
 			switchport mode access
-			switchport access vlan ??
+			switchport access vlan ???
 			exit
 
 		!Configurando a Interface de Acesso a VLAN da Rede Sem-Fio (Wi-Fi/Wireless)
 		interface fastEthernet 0/6
-			description Interface de Acesso da VLAN ?? Wireless do Grupo-0???
+			description Interface de Acesso da VLAN ???Wireless do Grupo-0???
 			switchport mode access
-			switchport access vlan ??
+			switchport access vlan ???
 			exit
 		
 		!Desativando as Interfaces que não serão utilizadas no Switch Layer 3 3560
@@ -112,10 +112,10 @@ show ip interface brief
 show vlan brief
 
 !Visualizando informações de uma VLAN utilizando o ID
-show vlan id ??
+show vlan id ???
 
 !Visualizando informações de uma VLAN utilizando o Nome
-show vlan name ??
+show vlan name ???
 
 !Visualizando as informações de Status das Interfaces
 show interface status
@@ -130,11 +130,11 @@ show interfaces fastEthernet 0/24 switchport
 !Comandos para testar a conexão com o Router
 
 !Pingando o endereço de SVI do Switch
-ping 172.16.??.253
+ping 172.16.???.253
 
 !Pingando o endereço de Gateway do Router
-ping 172.16.??.254
+ping 172.16.???.254
 
 !Acessando via SSH o Router do Switch
-ssh -l ??seu_usuário?? 172.16.??.254
+ssh -l ???seu_usuário??? 172.16.???.254
 ```

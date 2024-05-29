@@ -32,7 +32,7 @@ clock set ??:??:?? ?? ???????? ????
 	!Mudar o nome do Router 2911 para cada equipamento do seu grupo
 	!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 68 
 	!(#03_ Nome dos Switches, Routers e Access Point de Cada Grupo:)
-	hostname rt-g??
+	hostname rt-g???
 
 	!Habilitar o serviço de Criptografia de Senhas do Tipo-7 Password 
 	service password-encryption

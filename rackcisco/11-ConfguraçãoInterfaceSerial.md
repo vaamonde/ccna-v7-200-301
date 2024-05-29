@@ -28,7 +28,7 @@ enable
 		!Descrição da Interface Serial
 		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 232
 		!(SÉTIMA ETAPA: Determinação da Interface Serial de WAN dos Grupos e seu Endereçamento IPv4)
-		description Interface Serial do Grupo-?? para Grupo-??
+		description Interface Serial do Grupo-??? para Grupo-???
 		
 		!Configuração do endereçamento IPv4
 		!Verificar a tabela de endereçamento IP dos Grupos
@@ -53,7 +53,7 @@ enable
 		!Descrição da Interface
 		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 232
 		!(SÉTIMA ETAPA: Determinação da Interface Serial de WAN dos Grupos e seu Endereçamento IPv4)
-		description Interface Serial do Grupo-?? para Grupo-??
+		description Interface Serial do Grupo-??? para Grupo-???
 		
 		!Configuração do endereçamento IP
 		!Verificar a tabela de endereçamento IP dos Grupos
