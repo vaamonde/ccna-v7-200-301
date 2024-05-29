@@ -26,19 +26,19 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 04. Limpando as configurações residuais dos outros grupos do Switch 3560.
 
 ```python
-	Switch>
-		
-		!Acessar o modo privilegiado de comandos 
-		Switch> enable
+Switch>
+	
+	!Acessar o modo privilegiado de comandos 
+	Switch> enable
 
-		!Remover o banco de dados de VLAN da Flash: 
-		Switch# delete flash:vlan.dat
+	!Remover o banco de dados de VLAN da Flash: 
+	Switch# delete flash:vlan.dat
 
-		!Remover os backups anteriores das turmas: 
-		Switch# delete flash:startup-config
+	!Remover os backups anteriores das turmas: 
+	Switch# delete flash:startup-config
 
-		!Reiniciar o Switch para testar as configurações
-		Switch# reload
+	!Reiniciar o Switch para testar as configurações
+	Switch# reload
 ```
 
 ## OBSERVAÇÃO IMPORTANTE: Caso o Switch não volte para o estado de fábrica, será necessário utilizar os procedimentos abaixo: (SÓ USAR ESSA OPÇÃO SE FOR REALMENTE NECESSÁRIO, NÃO EXECUTAR ESSES PROCEDIMENTOS NOS EQUIPAMENTOS ANTES DE INFORMAR AO DOCENTE)
@@ -63,12 +63,12 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 02. Nas configurações do Cisco ROMmon digite a chave em hexadecimal: confreg 0x2142 <Enter>
 ```python
-	rommon 1> confreg 0x2142 
+rommon 1> confreg 0x2142 
 ```
 
 03. Após a mudança da chave, digite: reset <Enter> para reiniciar o Router Cisco 2911.
 ```python
-	rommon 2> reset
+rommon 2> reset
 ```
 
 04. O Router 2911 vai inicializar sem ler o arquivo de configuração: **startup-config** da NVRAM.
@@ -76,36 +76,36 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 05. Limpando as configurações do Router 2911 e voltando a ler o arquivo de configuração startup-config da NVRAM.
 
 ```python
-	Router>
-		
-		!Acessar o modo privilegiado de comandos 
-		Router> enable
+Router>
+	
+	!Acessar o modo privilegiado de comandos 
+	Router> enable
 
-		!Limpando as configuração da NVRAM
-		Router# erase startup-config
+	!Limpando as configuração da NVRAM
+	Router# erase startup-config
 
-		!Remover os backups anteriores das turmas: 
-		Router# delete flash:startup-config
+	!Remover os backups anteriores das turmas: 
+	Router# delete flash:startup-config
 
-		!Entrar no modo de configuração global
-		Router# configure terminal
+	!Entrar no modo de configuração global
+	Router# configure terminal
 
-			!Alterar o registro de inicialização do Router
-			Router (config)# config-register 0x2102 
+		!Alterar o registro de inicialização do Router
+		Router (config)# config-register 0x2102 
 
-			!Saindo de dos os modos de configuração
-			Router (config)# end
+		!Saindo de dos os modos de configuração
+		Router (config)# end
 
-		!Salvando as configurações da RAM para a NVRAM
-		Router# copy running-config startup-config 
+	!Salvando as configurações da RAM para a NVRAM
+	Router# copy running-config startup-config 
 
-		!Reiniciar o Router para testar as configurações
-		Router# reload
+	!Reiniciar o Router para testar as configurações
+	Router# reload
 
-		!Após a reiniciar o Router Cisco 2911 verificar a chave de registro
-		!Verificar a última linha referente ao cofreg 0x2102
-		Router> enable
-		Router# show version 
+	!Após a reiniciar o Router Cisco 2911 verificar a chave de registro
+	!Verificar a última linha referente ao cofreg 0x2102
+	Router> enable
+	Router# show version 
 ```
 
 **Obs1: caso você digite chaves diferentes no ROMmon o sistema pode inicializar com caracteres estranhos, isso está muitas vezes associado a velocidade da porta (Padrão 9600), será necessário fazer os testes mudando as velocidades de conexão da porta no PuTTY para: 1200,2400, 4800, 9600, 19200, 38400, 57600 e 115200.** 
