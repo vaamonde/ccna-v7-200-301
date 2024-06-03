@@ -71,7 +71,7 @@ enable
 
 !Salvando as configurações
 copy running-config startup-config
-	
+
 !Visualizando as configurações
 show running-config
 

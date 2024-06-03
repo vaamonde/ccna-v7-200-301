@@ -124,17 +124,39 @@ enable
 !Salvando todas as configurações
 copy running-config startup-config
 
-!Comandos de Verificação do OSPF
+!Comandos de Verificação do OSPF e da última etapa
+
+!Visualizando as configurações
 show running-config
+
+!Visualizando parâmetros e estatísticas do processo do protocolo de roteamento IP
 show ip protocols
+
+!Visualizando as configurações de endereçamento IPv4
 show ip interface brief
+
+!Visualizando as informações de Roteamento
 show ip route
+
+!Visualizando as informações de Roteamento do Open Shortest Path First (OSPF)
 show ip route ospf 
+
+!Visualizando as informações do Processo do OSPF
 show ip route ospf ??? (ID)
+
+!Visualizando as informações das listas das vizinhanças do OSPF
 show ip ospf neighbor
+
+!Visualizando as informações sumarizadas do banco de dados do OSPF
 show ip ospf database
+
+!Visualizando as informações dos statos dos links do OSPF
 show ip ospf database router
+
+!Visualizando as informações do processo do OSPF
 show ip ospf ??? (ID)
+
+!Visualizando as informações de interfaces do OSPF
 show ip ospf interface
 ```
 

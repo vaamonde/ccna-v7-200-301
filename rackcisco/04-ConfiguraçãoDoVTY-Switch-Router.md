@@ -21,7 +21,7 @@ enable
 
 	!Acessar modo de configuração global
 	configure terminal
-  
+
 	!Acessando as linhas virtuais
 	line vty 0 4
 		

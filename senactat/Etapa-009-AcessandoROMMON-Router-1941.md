@@ -124,7 +124,7 @@ C) Na tela do Cisco IOS Image Load Test, quando começar a descompactação da i
 
 02. Visualizando as Mudanças da Chave de Registro do Cisco IOS e Restaurando o Backup da Flash
 
-**DICA-06** após o reset do Router 1941 todas as configurações iniciais são perdidas, mesmo restaurando o Backup alguns ajustes são necessários para o Router voltar a funcionar.
+**DICA-06** após o reset do Router Cisco 1941 todas as configurações iniciais são perdidas, mesmo restaurando o Backup alguns ajustes são necessários para o Router voltar a funcionar.
 
 	!Alterando do Modo EXEC de Usuário para o Modo EXEC Privilegiado
 	Router> enable

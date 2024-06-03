@@ -15,7 +15,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 ## PRIMEIRA ETAPA: Instalação e Configuração do GNU/Linux Mint e Windows 10
 
-**OBSERVAÇÃO IMPORTANTE: Utilizar as máquinas virtuais do Linux Mint e Windows 10 no VirtualBOX, nesse cenário as máquinas virtuais estarão conectadas na Rede do Switch 3560 e vai obter os endereços IPv4 fornecidos pelo Router 2911**
+**OBSERVAÇÃO IMPORTANTE: Utilizar as máquinas virtuais do Linux Mint e Windows 10 no VirtualBOX, nesse cenário as máquinas virtuais estarão conectadas na Rede do Switch Cisco Catalyst 3560 e vai obter os endereços IPv4 fornecidos pelo Router Cisco 2911**
 
 01. Alterar a Porta de Rede da Máquina VirtualBOX
 
