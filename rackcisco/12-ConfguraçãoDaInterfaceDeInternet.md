@@ -13,7 +13,7 @@ Data de atualização: 16/05/2024<br>
 Versão: 0.01<br>
 Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
-## PRIMEIRA ETAPA: Configuração da Interface de Internet no Router 2911
+## PRIMEIRA ETAPA: Configuração da Interface de Internet no Router Cisco 2911
 
 ```python
 !Acessando o modo Exec Privilegiado
@@ -53,7 +53,7 @@ show ip route
 ping 10.26.40.191
 ping 10.26.40.190
 
-!Pingar o Endereço IPv4 do Google
+!Pingar o Endereço IPv4 do Google no Router
 ping 8.8.8.8
 
 !Desktops Linux Mint ou Windows 10 deverá pingar via DNS

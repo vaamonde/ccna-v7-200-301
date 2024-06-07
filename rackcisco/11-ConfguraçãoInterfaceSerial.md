@@ -13,7 +13,7 @@ Data de atualização: 16/05/2024<br>
 Versão: 0.01<br>
 Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
-## PRIMEIRA ETAPA: Configuração da Interface Serial no Router 2911
+## PRIMEIRA ETAPA: Configuração da Interface Serial no Router Cisco 2911
 
 ```python
 !Acessando o modo Exec Privilegiado

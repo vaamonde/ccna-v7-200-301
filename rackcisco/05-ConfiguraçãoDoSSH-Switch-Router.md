@@ -13,7 +13,7 @@ Data de atualização: 16/05/2024<br>
 Versão: 0.01<br>
 Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
-## PRIMEIRA ETAPA: Configuração do SSH Server no Switch 3560 
+## PRIMEIRA ETAPA: Configuração do SSH Server no Switch Cisco Catalyst 3560 
 
 ```python
 !Acessando o modo Exec Privilegiado
@@ -60,7 +60,7 @@ show ssh (só vai funcionar quando você se conectar remoto no Switch)
 show users (só vai funcionar quando você se conectar remoto no Switch)
 ```
 
-## SEGUNDA ETAPA: Configuração do SSH Server no Router 2911 
+## SEGUNDA ETAPA: Configuração do SSH Server no Router Cisco 2911 
 
 ```python
 !Acessando o modo Exec Privilegiado

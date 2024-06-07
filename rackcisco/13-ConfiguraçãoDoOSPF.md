@@ -43,7 +43,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 	c) OSPF          --> Largura de Banda Acumulativa, Menor Custo e Menor Distância
 	d) RIP           --> Contagem de Saltos no Máximo de 15 (routes)
 
-## PRIMEIRA ETAPA: Configuração do Protocolo OSPF Router 2911
+## PRIMEIRA ETAPA: Configuração do Protocolo OSPF Router Cisco 2911
 
 ```python
 !Acessando o modo Exec Privilegiado

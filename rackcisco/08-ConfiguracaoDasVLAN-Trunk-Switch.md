@@ -13,7 +13,7 @@ Data de atualização: 16/05/2024<br>
 Versão: 0.01<br>
 Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
-## PRIMEIRA ETAPA: Configuração das VLAN's e Trunk no Switch 3560 
+## PRIMEIRA ETAPA: Configuração das VLAN's e Trunk no Switch Cisco Catalyst 3560 
 
 ```python
 !Acessando o modo Exec Privilegiado
@@ -136,5 +136,6 @@ ping 172.16.???.253
 ping 172.16.???.254
 
 !Acessando via SSH o Router do Switch
+!OBSERVAÇÃO: -l (éli não é o número "1" (um) e sim "l" (éli) em minúsculo)
 ssh -l ???seu_usuário??? 172.16.???.254
 ```
