@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch.
+## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch Cisco Catalyst 2960.
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 
@@ -36,7 +36,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		Password: 123@senac
 		sw-01#
 
-## SEGUNDA ETAPA: Backup das Configurações do Cisco IOS do Primeiro Switch Layer 2 2960
+## SEGUNDA ETAPA: Backup das Configurações do Cisco IOS do Primeiro Switch Cisco Catalyst Layer 2 2960
 
 02. Visualizando a versão do Cisco IOS e informações do Hardware do Switch Layer 2 2960.
 
@@ -49,8 +49,9 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 **OBSERVAÇÃO-02:** esse comando também mostrar as informações referente a *Configuração do Registro de Inicialização* do equipamento para efeito de manutenção ou Reset.
 
 	sw-01# show version
-		63488K bytes of flash-simulated non-volatile configuration memory.
-			63488KB / 1000 = 64MB (64MB de Memória RAM)
+		cisco WS-C2960-24TT-L (PowerPC405) processor (revision B0) with 65536K bytes of memory.
+			65536KB / 1000 = 65MB (65MB de Memória RAM)
+		64K bytes of flash-simulated non-volatile configuration memory.
 		Configuration register is 0xF
 
 03. Visualizando as informações da inicialização do Switch Layer 2 2960.
@@ -60,7 +61,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 **OBSERVAÇÃO-03:** essas informações são importante para o processo de quebra de senha do Switch se necessário.
 
 	sw-01# show boot
-		BOOT path-list      : c2960-lanbasek9-mz.150-2.SE4.bin   (Binário do Cisco IOS)
+		BOOT path-list      : 2960-lanbasek9-mz.150-2.SE4.bin    (Binário do Cisco IOS)
 		Config file         : flash:/config.text                 (Arquivo de Inicialização do Cisco IOS)
 		Private Config file : flash:/private-config.text         (Arquivo de Segurança da Inicialização)
 
@@ -126,18 +127,18 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **OBSERVAÇÃO-07:** não é aconselhável alterar o nome da imagem, ela segue um padrão de nomenclatura que é recomendado pela Cisco.
 
-**EXEMPLO: c2960-lanbase-mz.122-25.FX.bin (Primeira parte: c2960 plataforma/família do equipamento, Segunda parte: lanbase indicação do package/funcionalidade do IOS, Terceira parte: compactação da Imagem m=RAM | z=zip, Quarta parte: 122-25.FX.bin versão do IOS).**
+**EXEMPLO: 2960-lanbasek9-mz.150-2.SE4.bin (Primeira parte: 2960 plataforma/família do equipamento, Segunda parte: lanbasek9 indicação do package/funcionalidade do IOS, Terceira parte: compactação da Imagem m=RAM | z=zip, Quarta parte: 150-2.SE4 versão do IOS).**
 
 **CUIDADO:** como o Cisco IOS é uma sub-derivação do *Unix/BSD* (Berkeley Software Distribution), ele também é Case Sensitive (faz diferença de Maiúscula/Minúscula).
 
 	!Verificando o Binário do Cisco IOS do Switch
 	sw-01# dir flash:
-		1  -rw-     4414921          <no date>  c2960-lanbase-mz.122-25.FX.bin
+		1  -rw-     4414921          <no date>  2960-lanbasek9-mz.150-2.SE4.bin
 
 	sw-01# copy flash: tftp:
-		Source filename []? c2960-lanbase-mz.122-25.FX.bin
+		Source filename []? c2960-lanbasek9-mz.150-2.SE4.bin
 		Address or name of remote host []? 192.168.1.1
-		Destination filename [c2960-lanbase-mz.122-25.FX.bin]?
+		Destination filename [2960-lanbasek9-mz.150-2.SE4.bin]?
 
 	!Verificando o Backup no Servidor TFTP
 	Server-01
@@ -170,7 +171,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 	!Saindo do modo EXEC Privilegiado
 	sw-01# disable
 	
-## TERCEIRA ETAPA: Backup das Configurações do Cisco IOS do Primeiro Router 1941.
+## TERCEIRA ETAPA: Backup das Configurações do Cisco IOS do Primeiro Router Cisco 1941.
 
 01. Visualizando a versão do Cisco IOS e informações do Hardware do Router.
 
@@ -178,7 +179,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 **OBSERVAÇÃO-09:** igual no Switch, esse comando fornece informações de inicialização do IOS do Router, utilizado principalmente para manutenção ou Quebra de Senha do equipamento.
 
-**OBSERVAÇÃO-10:** em roteadores não temos o comando: *show boot*, essa opção só existe no Switch Catalyst Layer 2 ou 3.
+**OBSERVAÇÃO-10:** em roteadores não temos o comando: *show boot*, essa opção só existe no Switch Cisco Catalyst Layer 2 ou 3.
 
 	rt-01# show version
 		249856K bytes of ATA System CompactFlash 0 (Read/Write)

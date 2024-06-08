@@ -75,7 +75,8 @@ C) Na tela do Cisco IOS Image Load Test, quando começar a descompactação da i
 	rommon 3 > reset
 
 	!Aguardar a inicialização do Cisco IOS
-	!Após a inicialização novamente aparece a tela do Wizard
+	!Após a inicialização será apresentado novamente a tela do Wizard
+	
 	--- System Configuration Dialog ---
 	Would you like to enter the initial configuration dialog? [yes/no]:
 

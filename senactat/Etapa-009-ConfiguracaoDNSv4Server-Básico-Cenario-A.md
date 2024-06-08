@@ -69,6 +69,10 @@ O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol
 	Resource Records:  Name = desktop-02      Type = A Record     Address = 192.168.1.11
 	Resource Records:  Name = desktop-03      Type = A Record     Address = 192.168.1.12
 	Resource Records:  Name = desktop-04      Type = A Record     Address = 192.168.1.13
+	Resource Records:  Name = notebook-01     Type = A Record     Address = 192.168.1.
+	Resource Records:  Name = notebook-02     Type = A Record     Address = 192.168.1.
+	Resource Records:  Name = celular-01      Type = A Record     Address = 192.168.1.
+	Resource Records:  Name = celular-02      Type = A Record     Address = 192.168.1.
 
 a) Abrindo o Prompt de Comando do Desktop.
 
