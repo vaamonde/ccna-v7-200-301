@@ -64,7 +64,7 @@ O protocolo padrão utilizado pelo DNS Server é o: *UDP (User Datagram Protocol
 	Resource Records:  Name = server-02        Type = A Record     Address = 192.168.3.1
 	Resource Records:  Name = ns1.senac.br     Type = NS           Server Name = server-02
 	Resource Records:  Name = senac.br         Type = SOA          Primary Server Name = ns1.senac.br
-	                                                               Mail Box = vaamonde@vsenac.br
+	                                                               Mail Box = vaamonde@senac.br
 	                                                               Minimum TTL = 3600 (1h ou 60 minutos)
 	                                                               Refresh Time = 3600 (1h ou 60 minutos)
 	                                                               Retry Time = 600 (10 minutos)

@@ -29,7 +29,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 O protocolo padrão utilizado pelo DHCP Server é o: *UDP (User Datagram Protocol)* na porta padrão: *67*.
 
-**Escopo DHCP:** Trata-se do intervalo completo dos possíveis endereços IP de uma rede. Os escopos definem a sub-rede  física da rede que vai oferecer os serviços do DHCP.
+**Escopo DHCP:** Trata-se do intervalo completo dos possíveis endereços IP de uma rede. Os escopos definem a sub-rede física da rede que vai oferecer os serviços do DHCP.
 
 a) Configurações do Serviço de DHCP Server no Cisco Packet Tracer:
 
@@ -39,11 +39,11 @@ a) Configurações do Serviço de DHCP Server no Cisco Packet Tracer:
 
 **DICA-01:** o escopo inicial está sempre relacionado a Placa de Rede e sua Configuração do Endereçamento IPv4, com base nesse endereço que é ofertado o escopo de rede.
 
-**DICA-02:** geralmente em Servidores Microsoft ou GNU/Linux, após a instalação do Serviço do DHCP ele está desligado por padrão para não entrar em conflito com outros servidores na rede.
+**DICA-02:** geralmente em Servidores Microsoft ou GNU/Linux, após a instalação do Serviço do DHCP Server ele está desligado por padrão para não entrar em conflito com outros servidores na rede.
 
 **CUIDADO-01:** é recomendado ter apenas: *1 (um) Servidor DHCP* na rede, em redes mais complexas existe a possibilidade de mais servidores para prover redundância.
 
-**OBSERVAÇÃO-03:** o Switch Cisco Catalyst Layer 3 ou Router possui os recursos para a configuração do DHCP Server, para redes pequenas e de médio porte é recomendado o seu uso, para redes grandes ou complexas o seu uso é limitado em alguns recursos, principalmente de monitoramento, relatórios e integrações de serviços.
+**OBSERVAÇÃO-03:** o Switch Cisco Catalyst Layer 3 3560 ou Router possui os recursos para a configuração do DHCP Server, para redes pequenas e de médio porte é recomendado o seu uso, para redes grandes ou complexas o seu uso é limitado em alguns recursos, principalmente de monitoramento, relatórios e integrações de serviços.
 
 	!Habilitando o Serviço do DHCP Server no Servidor 02
 	Server-02
