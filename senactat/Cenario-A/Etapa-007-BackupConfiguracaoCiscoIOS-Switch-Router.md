@@ -72,12 +72,12 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 **OBSERVAÇÃO-04:** diferente do Router, a memória Flash em Switch não pode ser acessada sem desmontar o equipamento.
 
 	sw-01# show flash:
-		64016384 bytes total (59599664 bytes free)
+		64016384 bytes total (59344187 bytes free)
 	
 	sw-01# dir flash:
-		64016384 bytes total (54927410 bytes free
+		64016384 bytes total (59344187 bytes free)
 		64016384 Bytes Total / 1000 = 64 MB
-		59599664 Bytes Free  / 1000 = 60 MB
+		59344187 Bytes Free  / 1000 = 60 MB
 
 05. Salvando as configurações da memória RAM para a memória NVRAM.
 
