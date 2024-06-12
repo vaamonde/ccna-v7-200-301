@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Router.
+## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Router Cisco 1941.
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 
@@ -40,7 +40,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		rt-01# configure terminal
 		rt-01(config)#
 
-## SEGUNDA ETAPA: Configuração da Interface LAN do Router.
+## SEGUNDA ETAPA: Configuração da Interface LAN do Router no Cisco IOS.
 
 01. Acessando a Interface GigabitEthernet 0/0 da LAN.
 
@@ -103,7 +103,7 @@ e) Salvando as configurações da memória RAM (Running-Config) para a memória 
 	!Visualizando informações de roteamento
 	rt-01# show ip route
 
-## TERCEIRA ETAPA: Testando e Acessando Remotamente do Router.
+## TERCEIRA ETAPA: Testando e Acessando Remotamente do Router Cisco 1941.
 
 01. Testando as Conexão do Desktop no Router e Acessando Remoto via SSH.
 

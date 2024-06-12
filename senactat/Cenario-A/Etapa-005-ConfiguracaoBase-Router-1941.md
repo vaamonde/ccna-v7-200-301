@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Conhecendo os Novos Recursos de Configuração do Router
+## PRIMEIRA ETAPA: Conhecendo os Novos Recursos de Configuração do Router Cisco 1941
 
 01. Habilitando o Log de Debug no Router.
 
@@ -55,7 +55,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 	login block-for 120 attempts 2 within 60
 
-## SEGUNDA ETAPA: Automatizando a Configuração do Primeiro Router.
+## SEGUNDA ETAPA: Automatizando a Configuração do Primeiro Router Cisco 1941.
 
 01. Utilizando o Visual Studio Code (VSCode) para automatizar as configurações do Cisco IOS.
 
@@ -163,7 +163,7 @@ clock set 19:54:00 05 May 2024
 write
 ```
 
-## TERCEIRA ETAPA: Verificando as Configurações do Primeiro Router.
+## TERCEIRA ETAPA: Verificando as Configurações do Primeiro Router Cisco 1941.
 
 	!Visualizando as Configurações do Running-Config (RAM)
 	!OBSERVAÇÃO: ÚNICA LINHA QUE NÃO APARECE NAS CONFIGURAÇÃO É A: crypto key generate rsa

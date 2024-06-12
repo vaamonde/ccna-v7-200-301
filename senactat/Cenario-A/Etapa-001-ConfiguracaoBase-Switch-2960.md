@@ -9,8 +9,8 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
 Github Procedimentos em TI: https://github.com/vaamonde<br>
 Data de criação: 16/05/2024<br>
-Data de atualização: 18/05/2024<br>
-Versão: 0.02<br>
+Data de atualização: 12/06/2024<br>
+Versão: 0.03<br>
 Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 
 ## INFORMAÇÕES IMPORTANTES SOBRE ESSA DOCUMENTAÇÃO:
@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Acessando o Modo EXEC de Comandos de Usuário.
+## PRIMEIRA ETAPA: Acessando o Modo EXEC de Comandos de Usuário no Cisco IOS.
 
 Primeiro acesso ao modo EXEC de Comandos de Usuário *(> sinal de Maior - user EXEC commands mode)*, utilize o modo EXEC de Usuário para definir, visualizar e testar as operações do sistema do Cisco IOS. 
 
@@ -35,7 +35,7 @@ O modo EXEC do Cisco IOS é dividido em dois níveis de acesso: **Usuário (> s�
 
 	Switch>
 
-## SEGUNDA ETAPA: Acessando o Modo EXEC Privilegiado.
+## SEGUNDA ETAPA: Acessando o Modo EXEC Privilegiado no Cisco IOS.
 
 01. Acessando o modo EXEC Privilegiado (# sinal de Sustenido/Hashtag - privileged EXEC mode).
 
@@ -45,14 +45,14 @@ O modo EXEC do Cisco IOS é dividido em dois níveis de acesso: **Usuário (> s�
 
 **EXEMPLO: Switch> show? | Switch> enable? | Switch# copy? | Switch# disable? | Switch# clock? | Switch(config)# service?**
 
-	!Verificando as ajuda básica dos comandos
+	!Verificando a ajuda básica dos comandos no Cisco IOS
 	Switch> show ?
 	Switch# copy ?
 	Switch# disable ?
 	Switch# clock ?
 	Switch(config)# service ?
 
-	!Verificando a ambiguidade de comandos
+	!Verificando a ambiguidade de comandos no Cisco IOS
 	Switch# c?
 	clear  clock  configure  connect  copy 
 
@@ -84,7 +84,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 
 	Switch# clock set 14:00:00 17 May 2024
 
-## QUARTA ETAPA: Acessando o Modo de Configuração Global.
+## QUARTA ETAPA: Acessando o Modo de Configuração Global no Cisco IOS.
 
 01. Acessando o modo de Configuração Global de comandos do Cisco IOS.
 	
@@ -93,7 +93,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 	Switch# configure terminal
 	Switch(config)#
 
-## QUINTA ETAPA: Configurações Básicas (Base) do Switch 2960.
+## QUINTA ETAPA: Configurações Básicas (Base Config) do Switch Catalyst Cisco 2960 Layer 2.
 
 01. Configuração do nome do Switch (configuração principal do equipamento).
 
@@ -126,7 +126,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 
 **EXEMPLO: switch# time (Translating "time"...domain server (255.255.255.255))**
 
-**DICA-10:** para desbloquear o terminal, você pressiona: *Ctrl + Shift + 6* ou espera a liberação do terminal que demora cerca de *60 segundos*.
+**DICA-10:** para desbloquear o terminal, você pressiona: *Ctrl + Shift + 6* ou esperar a liberação do terminal que demora cerca de *60 segundos*.
 
 **DICA-11:** o comando: *no* é usado para desabilitar ou remover configurações feitas no Switch ou Router da Cisco.
 
@@ -134,13 +134,13 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 
 05. Configuração do banner da mensagem do dia no Cisco IOS.
 
-**DICA-12:** existe vários tipos de Banners no Cisco IOS, o MOTD (Mensagem do Dia) é o mais utilizado.
+**DICA-12:** existe vários tipos de Banners no Cisco IOS, o MOTD (Message-of-the-Day - Mensagem do Dia) é o mais utilizado.
 
 **EXEMPLO: banner motd (Mensagem do Dia), banner login (Mensagem de Login), banner exec (Mensagem de Modo EXEC), banner incoming (Mensagem de Entrada)**
 
 **DICA-13:** é recomendado não utilizar acentuação, textos longos ou complexos no Banner MOTD e demais Banners, pois o terminal do Cisco IOS não reconhece esses caracteres.
 
-**DESAFIO-02:** pesquisar na Internet *Imagens ASCII Art Cisco* para colocar no Banner MOTD.
+**DESAFIO-02:** pesquisar na Internet *Imagens ASCII Art Cisco* para colocar no Banner MOTD. Site indicado para essa configuração: http://ascii-art.de/ascii/
 
 **OBSERVAÇÃO-04:** imagens ASCII Art no Banner *não pode ser muito grande*, recomendado ser **<= 1024 pixels**
 
@@ -172,7 +172,7 @@ Para sair do modo EXEC Privilegiado você pode digitar o comando: *disable* ou *
 	sw-01(config)# username vaamonde password 123@senac
 	sw-01(config)# username admin privilege 15 secret 123@senac
 
-## SEXTA ETAPA: Configuração da Linha Console.
+## SEXTA ETAPA: Configuração da Linha Console no Cisco IOS.
 
 01. Acessando a Linha (line) Console, porta padrão de acesso *Out-of-Band (Fora da Banda)* do Switch Cisco.
 	
@@ -224,7 +224,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado.
 	
 	sw-01(config-line)# end
 
-## SÉTIMA ETAPA: Salvando as Configurações Básica (Base) do Switch.
+## SÉTIMA ETAPA: Salvando as Configurações Básica (Base) do Switch Cisco Catalyst 2960 Layer 2.
 
 01. Salvando as configurações da memória RAM (Running-Config) para a memória NVRAM (Startup-Config).
 
@@ -234,7 +234,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado.
 	
 	sw-01# copy running-config startup-config
 
-## OITAVA ETAPA: Visualizando as Configurações do Switch.
+## OITAVA ETAPA: Visualizando as Configurações do Switch Cisco Catalyst 2960.
 
 01. Visualizando as configurações da memória RAM (Running-Config).
 
@@ -242,7 +242,7 @@ e) Saindo de todos os níveis e voltando para o modo EXEC Privilegiado.
 	
 	sw-01# show running-config
 
-## OITAVA ETAPA: Automatizando a Configuração do Segundo Switch.
+## OITAVA ETAPA: Automatizando a Configuração do Segundo Switch Cisco Catalyst 2960 Layer 2.
 
 01. Utilizando o Visual Studio Code (VSCode) para automatizar as configurações do Cisco IOS.
 

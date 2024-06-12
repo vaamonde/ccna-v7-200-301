@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch.
+## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch Cisco Catalyst 2960.
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 
@@ -38,7 +38,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		sw-01# configure terminal
 		sw-01(config)#
 
-## SEGUNDA ETAPA: Configuração do Gateway padrão IPv4 no Switch.
+## SEGUNDA ETAPA: Configuração do Gateway padrão IPv4 no Cisco IOS.
 
 01. Configuração do Gateway Padrão IPv4 no Switch para Acesso Remoto.
 
@@ -52,7 +52,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 	sw-01(config)# ip default-gateway 192.168.1.254
 
-## TERCEIRA ETAPA: Configuração da Interface SVI no Switch.
+## TERCEIRA ETAPA: Configuração da Interface SVI no Cisco IOS.
 
 01. Configuração da Interface Virtual do Switch SVI (Switch Virtual Interface) no Switch.
 
@@ -78,7 +78,7 @@ b) Configuração do Endereçamento IPv4 da Interface Virtual VLAN-1.
 
 **DICA-06:** o endereço IPv4 deve ser da mesma faixa de Rede ou Sub-Rede do Gateway Padrão utilizado no Switch na Segunda Etapa.
 
-**DICA-07:** é recomendado que os endereços de Rede ou Sub-Redes dos Switches sejam diferentes das Redes dos Desktops, Notebook, Wi-Fi, CFTV, etc... para garantir a segurança de acesso dos equipamentos somente para a equipe/profissionais de TI que esteja nessa mesma Rede/Sub-Rede.
+**DICA-07:** é recomendado que os endereços de Rede ou Sub-Redes dos Switches sejam diferentes das Redes dos Desktops, Notebook, Wi-Fi (Wireless/Sem-Fio), CFTV (Circuito Fechado de TV), etc... para garantir a segurança de acesso dos equipamentos somente para a equipe/profissionais de TI que esteja nessa mesma Rede/Sub-Rede.
 
 **OBSERVAÇÃO-06:** configuração do endereço IPv4 deve ser: *IPv4 + Máscara de Rede Completa (ClassFull)*, não utilizar CIDR (Classes Inter-Domain Routing) nas configurações.
 
@@ -142,7 +142,7 @@ f) Testando a conectividade entre o Switch e os Desktops da Rede
 	!Pingando o Servidor
 	sw-01# ping 192.168.1.1
 
-## TERCEIRA ETAPA: Automatizando a Configuração do Segundo Switch.
+## TERCEIRA ETAPA: Automatizando a Configuração do Segundo Switch Cisco Catalyst 2960.
 
 01. Utilizando o Visual Studio Code (VSCode) para automatizar as configurações do Cisco IOS.
 

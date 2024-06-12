@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch.
+## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch Cisco Catalyst 2960.
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 
@@ -38,7 +38,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		sw-01# configure terminal
 		sw-01(config)#
 
-## SEGUNDA ETAPA: Configuração das Linhas Virtuais (VTY) do Switch.
+## SEGUNDA ETAPA: Configuração das Linhas Virtuais (VTY) do Cisco IOS.
 
 01. Acessando as Linhas (Lines) Virtuais de Acesso remoto do Switch no Cisco IOS.
 
@@ -118,7 +118,7 @@ c) Habilitando o sincronismo das mensagens de Logs na tela do terminal do Cisco 
 	!Fazendo um Filtro na Visualização do Running-Config somente da Sessão Line VTY
 	sw-01# show running-config | section include line vty
 
-## TERCEIRA ETAPA: Automatizando a Configuração do Segundo Switch.
+## TERCEIRA ETAPA: Automatizando a Configuração do Segundo Switch Cisco Catalyst 2960.
 
 01. Utilizando o Visual Studio Code (VSCode) para automatizar as configurações do Cisco IOS.
 

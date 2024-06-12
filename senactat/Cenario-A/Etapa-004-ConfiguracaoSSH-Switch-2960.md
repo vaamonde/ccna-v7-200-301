@@ -23,7 +23,7 @@ E) **EXEMPLO:** exemplos de comandos ou configurações das opções de DICAS ou
 F) **IMPORTANTE:** informações importantes da tecnologia ou da configuração, com foco em adicionar informações detalhadas da tecnologia ou da certificação;<br>
 G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração, com foco em adicionar informações extras da tecnologia ou da certificação.
 
-## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch.
+## PRIMEIRA ETAPA: Acessando o Modo de Configuração Global do Switch Cisco Catalyst 2960.
 
 01. Acessando o modo EXEC Privilegiado e o modo de Configuração Global de Comandos.
 
@@ -38,7 +38,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 		sw-01# configure terminal
 		sw-01(config)#
 
-## SEGUNDA ETAPA: Configuração do Serviço de Acesso Remoto SSH
+## SEGUNDA ETAPA: Configuração do Serviço de Acesso Remoto SSH (Secure Shell) no Cisco IOS
 
 01. Configuração do Nome de Domínio FQDN (Fully Qualified Domain Name).
 
@@ -133,7 +133,7 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 	!OBSERVAÇÃO: ESSA OPÇÃO VAI MOSTRAR O USUÁRIO LOGADO NO CONSOLE: con 0 OU NO VTY: vty 0
 	sw-01# show users
 
-## TERCEIRA ETAPA: Testando e Acessando Remotamente do Switch.
+## TERCEIRA ETAPA: Testando e Acessando Remotamente do Switch Cisco Catalyst 2960.
 
 01. Testando as Conexão do Desktop no Switch e Acessando Remoto via SSH.
 
@@ -160,7 +160,7 @@ a) Abrindo o Prompt de Comando do Desktop;
 	C:\> ssh -l senac 192.168.1.250   (Switch SW-01)
 	C:\> ssh -l senac 192.168.1.251   (Switch SW-02)
 
-## QUARTA ETAPA: Automatizando a Configuração do Segundo Switch.
+## QUARTA ETAPA: Automatizando a Configuração do Segundo Switch Cisco Catalyst 2960.
 
 01. Utilizando o Visual Studio Code (VSCode) para automatizar as configurações do Cisco IOS.
 
