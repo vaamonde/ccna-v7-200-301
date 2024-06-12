@@ -45,16 +45,16 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 03. Ligar as Máquinas Virtuais e verificar se obteve os endereços IPv4
 	
 		Linux Mint
-			Terminal: Ctrl + Alt + T 
-				ifconfig (verificar a linha: inet 172.16.???.??? da sua Sub-Rede)
-				route -n (verificar a linha: 0.0.0.0 172.16.???.254 da sua Sub-Rede)
-				resolvectl (verificar a linha: DNS Servers 8.8.8.8)
+		Terminal: Ctrl + Alt + T 
+			ifconfig (verificar a linha: inet 172.16.???.??? da sua Sub-Rede)
+			route -n (verificar a linha: 0.0.0.0 172.16.???.254 da sua Sub-Rede)
+			resolvectl (verificar a linha: DNS Servers 8.8.8.8)
 
 		Windows 10
-			Powershell
-				ipconfig /all (verificar a linha: da sua Sub-Rede)
-				ipconfig /all (verificar a linha: da sua Sub-Rede)
-				ipconfig /all (verificar a linha: da sua Sub-Rede)
+		Powershell
+			ipconfig /all (verificar a linha: da sua Sub-Rede)
+			ipconfig /all (verificar a linha: da sua Sub-Rede)
+			ipconfig /all (verificar a linha: da sua Sub-Rede)
 
 04. Testar o ping no Router e Switch
 
@@ -62,7 +62,7 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 			ping 172.16.???.253
 			ping 172.16.???.254
 
-05. Acessar remotamente o Switch 3560 e Router 2911 utilizando o SSH
+05. Acessar remotamente o Switch Cisco Catalyst 3560 e Router Cisco 2911 utilizando o SSH
 
 		Linux Mint
 		Terminal: Ctrl + Alt + T 
@@ -77,7 +77,9 @@ Testado e homologado no Cisco Packet Tracer 8.2.x e Rack Cisco SW-3560 e RT-2911
 		Windows 10
 		Powershell
 			#Linha do SSH para acessar o Switch
-			ssh seu_usuario@172.16.???.253
-
+			#OBSERVAÇÃO IMPORTANTE: existe somente a Primeira Sub-Rede para acessar o Switch
+			ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.253
+			
 			#Linha do SSH para acessar o Router
-			ssh eu_usuario@172.16.???.254
+			#OBSERVAÇÃO IMPORTANTE: alterar a Sub-Rede para cada usuário a Rede
+			ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -oHostKeyAlgorithms=+ssh-rsa -c aes256-cbc seu_usuario@172.16.???.254
