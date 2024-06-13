@@ -81,6 +81,8 @@ show ip interface brief
 !Visualizando as informações de Roteamento
 show ip route
 
+ROUTER VIZINHO-DCE <---> DTE-0/0/1_SEU ROUTER_DCE-0/0/0 <---> DTE-ROUTER VIZINHO
+
 !Pingar a SUA Interface Serial 0/0/0 (SEMPRE SERÁ O IPv4 PAR)
 ping 192.168.1.??? (serial 0/0/0)
 
