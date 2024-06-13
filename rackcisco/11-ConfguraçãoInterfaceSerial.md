@@ -81,9 +81,15 @@ show ip interface brief
 !Visualizando as informações de Roteamento
 show ip route
 
-!Pingando a Interface Serial 0/0/0
+!Pingar a SUA Interface Serial 0/0/0 (SEMPRE SERÁ O IPv4 PAR)
 ping 192.168.1.??? (serial 0/0/0)
 
-!Pingando a Interface Serial 0/0/1
+!Pingar a SUA Interface Serial 0/0/1 (SEMPRE SERÁ O IPv4 IMPAR)
 ping 192.168.1.??? (serial 0/0/1)
+
+!Pingar a Interface Serial 0/0/0 do SEU VIZINHO (SEMPRE SERÁ O IPv4 IMPAR)
+ping 192.168.1.??? (serial 0/0/0)
+
+!Pingar a Interface Serial 0/0/1 do SEU VIZINHO (SEMPRE SERÁ O IPv4 PAR)
+ping 192.168.1.??? (serial 0/0/0)
 ```
