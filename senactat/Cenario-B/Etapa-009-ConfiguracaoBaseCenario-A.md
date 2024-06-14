@@ -428,7 +428,7 @@ write
 
 	!Visualizando as conexões ativas do SSH Server.
 	!OBSERVAÇÃO: ESSA OPÇÃO SÓ VAI FUNCIONAR QUANDO VOCÊ SE CONECTAR REMOTAMENTE NO SWITCH OU ROUTER.
-	rhow ssh
+	show ssh
 
 	!Visualizando os Usuários Conectados no Switch
 	!OBSERVAÇÃO: ESSA OPÇÃO VAI MOSTRAR O USUÁRIO LOGADO NO CONSOLE: con 0 OU NO VTY: vty 0
