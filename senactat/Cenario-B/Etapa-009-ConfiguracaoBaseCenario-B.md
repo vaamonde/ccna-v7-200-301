@@ -305,7 +305,7 @@ clock set 14:00:00 14 June 2024
 write
 ```
 
-## QUARTA ETAPA: Configuração Base do Router Cisco 2911 (CENTRO - NÚCLEO)
+## QUARTA ETAPA: Configuração Base do Router Cisco 1941 (CENTRO - NÚCLEO)
 ```python
 !Acessando o modo EXEC Privilegiado
 enable
