@@ -57,8 +57,6 @@ B) **VLANs Dinâmicas** (Dynamic - são criadas e alteradas dinamicamente via So
 
 Uma Porta de **Acesso (access)**, permite associar uma porta do Switch a uma VLAN, as portas do tipo acesso são usadas para conectar dispositivos finais (Desktop, Notebook, Impressoras, Access Point, etc), por padrão, todas as portas dos Switches estão associadas na *VLAN Padrão/Nativa 1*, que transporta os dados sem marcação (Untagged VLAN).
 
-Uma Porta de **Tronco (trunk)**, normalmente é usada para interligação de Switches ou ligação de Roteadores e Servidores, ela permite a passagem de tráfego de *várias VLANs*, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no Switch podem passar por ela, no entanto o administrador pode limitar o número de VLANs que podem passar pelo Trunk.
-
 ## QUINTA ETAPA: Configurando as VLANs no Switch Multilayer 3650 (CENTRO - DISTRIBUIÇÃO)
 ```python
 !Acessando o modo Exec Privilegiado
