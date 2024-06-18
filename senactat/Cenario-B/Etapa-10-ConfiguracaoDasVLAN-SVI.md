@@ -31,15 +31,27 @@ As VLANs permitem a segmentação das redes físicas, sendo que a comunicação 
 
 As VLANs oferecem vantagens das quais se destacam: *segurança, escalabilidade, flexibilidade, redução de custos, etc.*
 
-Um Switch com a capacidade de criar VLANs suporta dois tipos de configurações de porta: **Access Port (porta de acesso para conexões de dispositivos finais)** e **Trunk Port (porta de tronco para interligação de Switch, Router ou Server)**
+Um Switch com a capacidade de criar VLANs suporta dois tipos de configurações de porta: 
+
+1. **Access Port** (porta de acesso para conexões de dispositivos finais);<br>
+2. **Trunk Port** (porta de tronco para interligação de Switch, Router ou Server).
 
 ## SEGUNDA ETAPA: Conhecendo os Ranges das VLANs no Cisco Packet Tracer.
 
-Os range de VLANs nos Switches Cisco são: **0 e 4095** Reservadas (Reserved - apenas para uso do sistema operacional IOS, você não pode ver ou usar essas VLANs), **1 Padrão/Nativa** (Default/Native - você pode usar essa VLAN, está associada por padrão em todas as Portas do Switch, você não pode deletar essa VLAN), **2 até 1001 Nativas** (Normal - usadas para as VLANs Ethernet, você pode criar, usar e excluir essas VLANs, são armazenadas no arquivo **vlan.dat**), **1002 até 1005 Nativa** (Normal - padrões da Cisco para Redes FDDI (Fiber Distributed Data Interface) e Token Ring, você não pode excluir essas VLANs) e **1006 até 4094 Estendidas** (Extended elas são usadas principalmente em redes de provedores de serviços para permitir o provisionamento do número do assinante).
+Os range de VLANs nos Switches Cisco são divididos em: 
+
+A) **0 e 4095** Reservadas (Reserved - apenas para uso do sistema operacional IOS, você não pode ver ou usar essas VLANs);<br>
+B) **1 Padrão/Nativa** (Default/Native - você pode usar essa VLAN, está associada por padrão em todas as Portas do Switch, você não pode deletar essa VLAN);<br> 
+C) **2 até 1001 Nativas** (Normal - usadas para as VLANs Ethernet, você pode criar, usar e excluir essas VLANs, são armazenadas no arquivo **vlan.dat**);<br> 
+D) **1002 até 1005 Nativa** (Normal - padrões da Cisco para Redes FDDI (Fiber Distributed Data Interface) e Token Ring, você não pode excluir essas VLANs);<br>
+E) **1006 até 4094 Estendidas** (Extended elas são usadas principalmente em redes de provedores de serviços para permitir o provisionamento do número do assinante).
 
 ## TERCEIRA ETAPA: Tipos de VLANs no Cisco Packet Tracer.
 
-Exite também dois tipos de associações de VLANs: **VLANs Estáticas** (Static - configurada manualmente na porta de rede do Switch ou do Router) e **VLANs Dinâmicas** (Dynamic - são criadas e alteradas dinamicamente via Software como por exemplo o VMPS (VLAN Management Policy Server)).
+Exite também dois tipos de associações de VLANs: 
+
+A) **VLANs Estáticas** (Static - configurada manualmente na porta de rede do Switch ou do Router);<br>
+B) **VLANs Dinâmicas** (Dynamic - são criadas e alteradas dinamicamente via Software como por exemplo o VMPS (VLAN Management Policy Server)).
 
 ## QUARTA ETAPA: Conhecendo os Tipos de Portas das VLANs no Cisco Packet Tracer.
 
@@ -130,7 +142,7 @@ enable
 			exit
 
 		!Acessando todas as Interfaces (Porta de Rede) que não estão sendo utilizadas
-		interface range GigabiEthernet 1/0/5 - 9, GigabiEthernet 1/0/13 - 22,  GigabiEthernet 1/1/1 - 4
+		interface range GigabitEthernet 1/0/5 - 9, GigabitEthernet 1/0/13 - 22,  GigabitEthernet 1/1/1 - 4
 			
 			!Desligando as Interfaces
 			shutdown
@@ -285,4 +297,4 @@ write
 	!Verificando as informações das VLAN (Tabela, Id e Name)
 	show vlan brief
 	show vlan id 10
-	show vlan name adm
+	show vlan name svi
