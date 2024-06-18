@@ -25,9 +25,9 @@ G) **OBSERVAÇÃO:** informações relevantes da tecnologia ou da configuração
 
 ## PRIMEIRA ETAPA: Conhecendo as Portas Trunk (Tronco) no Cisco Packet Tracer.
 
-Uma Porta de Tronco (trunk), normalmente é usada para interligação de Switches ou ligação de Roteadores e Servidores, ela permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no Switch podem passar por ela, no entanto o administrador pode limitar o número de VLANs que podem passar pelo Trunk.
+Uma **Porta de Tronco (trunk)**, normalmente é usada para interligação de Switches ou ligação de Roteadores e Servidores, ela permite a passagem de tráfego de várias VLANs, configurando uma porta como Trunk, todo o tráfego de todas as VLANs criadas no Switch podem passar por ela, no entanto o administrador pode limitar o número de VLANs que podem passar pelo Trunk.
 
-## QUINTA ETAPA: Configurando as Portas Trunk no Switch Multilayer 3650 (CENTRO - DISTRIBUIÇÃO)
+## SEGUNDA ETAPA: Configurando as Portas Trunk no Switch Multilayer 3650 (CENTRO - DISTRIBUIÇÃO)
 ```python
 !Acessando o modo Exec Privilegiado
 enable
@@ -35,14 +35,31 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 
-	!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
-	end
+		!Configurando as Interface de Trunk com os Switches Layer 2 2960
+		interface range gigabitEthernet 
+			
+			!Descrição das Interfaces de Trunk
+			description Interface de Trunk com os Switches Layer 2 2960
+			
+			!Configurando o modo de Trunk (Tronco) da Interface do Switch Layer 3
+			!DICA: por padrão o recurso de DTP (Dynamic Trunking Protocol) está habilitado nas portas dos Switches
+			!OBSERVAÇÃO: para configurar a Porta de Trunk em Switch Layer 3 é necessário configurar o protocolo 802.1q
+			switchport trunk encapsulation dot1q 
+			
+			!Configurando o modo de Trunk (Tronco) da Interfaces
+			switchport mode trunk
+
+			!Desabilitando a Auto-negociação da Interface de Trunk
+			switchport nonegotiate
+
+			!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+			end
 
 !Salvando as configurações da memória RAM para a memória NVRAM
 write
 ```
 
-## SEXTA ETAPA: Configurando as Portas Trunk no Switch Cisco Layer 2 2960 (LADO ESQUERDO - ACESSO)
+## TERCEIRA ETAPA: Configurando as Portas Trunk no Switch Cisco Layer 2 2960 (LADO ESQUERDO - ACESSO)
 ```python
 !Acessando o modo Exec Privilegiado
 enable
@@ -50,14 +67,30 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 
-	!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
-	end
+	!Configuração das Interfaces de Trunk do Switch Layer 2
+	interface range gigabitEthernet 0/1 - 2
+		
+		description Interface de Trunk com os Switches Layer 2 e 3 
+		
+		!OBSERVAÇÃO: nos Switches Layer 2 não é necessário configurar o protocolo 802.1q nas portas de Trunk
+		switchport mode trunk
+		switchport nonegotiate
+		exit
+
+	!Configuração das Interfaces de Trunk do Switch Layer 2
+	interface range FastEthernet 0/23 - 24
+		description Interface de Trunk com os Switches Layer 2 e 3 
+		switchport mode trunk
+		switchport nonegotiate
+
+		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+		end
 
 !Salvando as configurações da memória RAM para a memória NVRAM
 write
 ```
 
-## SÉTIMA ETAPA: Configurando as Portas Trunk no Switch Cisco Layer 2 2960 (LADO DIREITO - ACESSO)
+## QUARTA ETAPA: Configurando as Portas Trunk no Switch Cisco Layer 2 2960 (LADO DIREITO - ACESSO)
 ```python
 !Acessando o modo Exec Privilegiado
 enable
@@ -65,14 +98,30 @@ enable
 	!Acessando o modo de Configuração Global de Comandos
 	configure terminal
 
-	!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
-	end
+	!Configuração das Interfaces de Trunk do Switch Layer 2
+	interface range gigabitEthernet 0/1 - 2
+		
+		description Interface de Trunk com os Switches Layer 2 e 3 
+		
+		!OBSERVAÇÃO: nos Switches Layer 2 não é necessário configurar o protocolo 802.1q nas portas de Trunk
+		switchport mode trunk
+		switchport nonegotiate
+		exit
+
+	!Configuração das Interfaces de Trunk do Switch Layer 2
+	interface range FastEthernet 0/23 - 24
+		description Interface de Trunk com os Switches Layer 2 e 3 
+		switchport mode trunk
+		switchport nonegotiate
+
+		!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+		end
 
 !Salvando as configurações da memória RAM para a memória NVRAM
 write
 ```
 
-## OITAVA ETAPA: Verificando as Configurações dos Switches.
+## QUINTA ETAPA: Verificando as Configurações dos Switches.
 
 	!Visualizando as Configurações do Running-Config (RAM)
 	show running-config
@@ -80,7 +129,8 @@ write
 	!Visualizando as configurações da memória RAM
 	show running-config | section interface
 
-	!Verificando as informações das VLAN (Tabela, Id e Name)
-	show vlan brief
-	show vlan id 10
-	show vlan name svi
+	!Verificando as informações das Interfaces de Trunk
+	show interface status
+	show interface trunk
+	show interfaces gigabitEthernet 0/1 status
+	show interfaces gigabitEthernet 0/1 switchport

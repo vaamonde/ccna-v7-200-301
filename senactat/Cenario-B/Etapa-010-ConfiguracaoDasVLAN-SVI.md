@@ -117,7 +117,7 @@ enable
 			switchport mode access
 
 			!Desabilitando o recurso de auto-negociação da Interface (Porta de Rede)
-			!DICA: por padrão todas as Interfaces dos Switches está com o recurso do DTP (Dynacmic Trunk 
+			!DICA: por padrão todas as Interfaces dos Switches está com o recurso do DTP (Dynamic Trunk 
 			!Protocol) habilitado
 			!OBSERVAÇÃO: é recomendado desabilitar o recurso de DTP nas Interfaces que são do tipo Acesso 
 			!(Access) para que servidores ou clientes configure as opção de Trunk nessas portas.
