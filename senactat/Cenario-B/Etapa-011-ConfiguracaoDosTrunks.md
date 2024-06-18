@@ -69,9 +69,7 @@ enable
 
 	!Configuração das Interfaces de Trunk do Switch Layer 2
 	interface range gigabitEthernet 0/1 - 2
-		
 		description Interface de Trunk com os Switches Layer 2 e 3 
-		
 		!OBSERVAÇÃO: nos Switches Layer 2 não é necessário configurar o protocolo 802.1q nas portas de Trunk
 		switchport mode trunk
 		switchport nonegotiate
@@ -100,9 +98,7 @@ enable
 
 	!Configuração das Interfaces de Trunk do Switch Layer 2
 	interface range gigabitEthernet 0/1 - 2
-		
 		description Interface de Trunk com os Switches Layer 2 e 3 
-		
 		!OBSERVAÇÃO: nos Switches Layer 2 não é necessário configurar o protocolo 802.1q nas portas de Trunk
 		switchport mode trunk
 		switchport nonegotiate
