@@ -36,15 +36,10 @@ enable
 	configure terminal
 
 		!Configurando as Interface de Trunk com os Switches Layer 2 2960
-		interface range gigabitEthernet 
+		interface range GigabitEthernet 1/0/1 - 4
 			
 			!Descrição das Interfaces de Trunk
 			description Interface de Trunk com os Switches Layer 2 2960
-			
-			!Configurando o modo de Trunk (Tronco) da Interface do Switch Layer 3
-			!DICA: por padrão o recurso de DTP (Dynamic Trunking Protocol) está habilitado nas portas dos Switches
-			!OBSERVAÇÃO: para configurar a Porta de Trunk em Switch Layer 3 é necessário configurar o protocolo 802.1q
-			switchport trunk encapsulation dot1q 
 			
 			!Configurando o modo de Trunk (Tronco) da Interfaces
 			switchport mode trunk
@@ -68,9 +63,8 @@ enable
 	configure terminal
 
 	!Configuração das Interfaces de Trunk do Switch Layer 2
-	interface range gigabitEthernet 0/1 - 2
+	interface range GigabitEthernet 0/1 - 2
 		description Interface de Trunk com os Switches Layer 2 e 3 
-		!OBSERVAÇÃO: nos Switches Layer 2 não é necessário configurar o protocolo 802.1q nas portas de Trunk
 		switchport mode trunk
 		switchport nonegotiate
 		exit
@@ -97,9 +91,8 @@ enable
 	configure terminal
 
 	!Configuração das Interfaces de Trunk do Switch Layer 2
-	interface range gigabitEthernet 0/1 - 2
+	interface range GigabitEthernet 0/1 - 2
 		description Interface de Trunk com os Switches Layer 2 e 3 
-		!OBSERVAÇÃO: nos Switches Layer 2 não é necessário configurar o protocolo 802.1q nas portas de Trunk
 		switchport mode trunk
 		switchport nonegotiate
 		exit

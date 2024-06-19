@@ -178,7 +178,6 @@ enable
 		!Configurando a Interfaces de SVI do Switch 2960
 		interface vlan 10
 			description Interface de SVI de Gerenciamento Switch Layer 2 2960
-			!OBSERVAÇÃO: alterar o endereço IPv4 do segundo Switch Layer 2 para 250 antes de copiar o script 
 			ip address 192.168.10.250 255.255.255.0
 			no shutdown
 			exit
@@ -192,7 +191,7 @@ enable
 			exit
 
 		!Configurando a Interface da VLAN 50 Financeiro
-		interface fastEthernet 0/1
+		interface fastEthernet 0/2
 			description Interface de Acesso da VLAN 50 Financeiro
 			switchport mode access
 			switchport nonegotiate
@@ -200,7 +199,7 @@ enable
 			exit
 
 		!Configurando a Interface da VLAN 60 Gerencia
-		interface fastEthernet 0/1
+		interface fastEthernet 0/3
 			description Interface de Acesso da VLAN 60 Gerencia
 			switchport mode access
 			switchport nonegotiate
@@ -244,7 +243,6 @@ enable
 		!Configurando a Interfaces de SVI do Switch 2960
 		interface vlan 10
 			description Interface de SVI de Gerenciamento Switch Layer 2 2960
-			!OBSERVAÇÃO: alterar o endereço IPv4 do segundo Switch Layer 2 para 251 antes de copiar o script 
 			ip address 192.168.10.251 255.255.255.0
 			no shutdown
 			exit
