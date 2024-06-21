@@ -93,7 +93,7 @@ enable
 		!OBSERVAÇÃO: as SVIs dos Switches Layer 2 e 3 serão configuradas utilizando a VLAN 10
 		interface vlan 10
 			description Interface de SVI de Gerenciamento Switch Multilayer 3650
-			ip address 192.168.10.252 255.255.255.0
+			ip address 192.168.10.254 255.255.255.0
 			no shutdown
 			exit
 
@@ -102,7 +102,7 @@ enable
 		!OBSERVAÇÃO: existe a possibilidade de utilizar a opção de range para portas não consecutivas, 
 		!utilizando o separador , (vírgula) e adicionando o nome das portas na configuração.
 		!EXEMPLO: interface range fastEthernet 0/1 - 5 , fastEthernet 0/10, fastEthernet 0/15
-		interface range GigabitEthernet 1/0/1 - 3
+		interface range GigabitEthernet 1/0/10 - 12
 			
 			!Descrição das Interfaces dos Servidores
 			description Interface de Acesso da VLAN 20 dos Servidores
@@ -212,7 +212,7 @@ enable
 			exit
 
 		!Configurando o Gateway Padrão do Gerenciamento do Switch Layer 2 2960
-		ip default-gateway 192.168.10.252
+		ip default-gateway 192.168.10.254
 		end
 write
 ```
@@ -277,7 +277,7 @@ enable
 			exit
 
 		!Configurando o Gateway Padrão do Gerenciamento do Switch Layer 2 2960
-		ip default-gateway 192.168.10.252
+		ip default-gateway 192.168.10.254
 		end
 write
 ```
