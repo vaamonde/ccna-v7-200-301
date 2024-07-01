@@ -128,7 +128,7 @@ enable
 			!do EIGRP é necessário Declarar a Máscara Curinga (Wildcard Mask) geralmente chamada de Máscara Invertida, essa máscara
 			!permite uma maior flexibilidade nas configurações de rede, muito utilizada nas configurações de ACL, OSPF e BGP
 			!EXEMPLO: cálculo simples da máscara curinga: Sub-Rede /24 fórmula: 255.255.255.255 - 255.255.255.0 = 0.0.0.255
-			!OBSERVAÇÃO IMPORTANTE: quando declaramos Redes Classful a configuração da Máscara Curinga e removida do Running-Config
+			!OBSERVAÇÃO IMPORTANTE: quando declaramos Redes Classfull a configuração da Máscara Curinga e removida do Running-Config
 			network 192.168.10.0 0.0.0.255
 			network 192.168.20.0 0.0.0.255
 			network 192.168.30.0 0.0.0.255
