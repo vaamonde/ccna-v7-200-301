@@ -41,6 +41,9 @@ Switch>
 	!Acessar o modo privilegiado de comandos 
 	Switch> enable
 
+	!Verificando o conteúdo da Flash
+	Switch# dir flash:
+
 	!Remover o banco de dados de VLAN da Flash: 
 	Switch# delete flash:vlan.dat
 
@@ -96,6 +99,9 @@ Router>
 	!Limpando as configuração da NVRAM
 	Router# erase startup-config
 
+	!Verificando o conteúdo da Flash
+	Router# dir flash:
+
 	!Remover os backups anteriores das turmas: 
 	Router# delete flash:startup-config
 
@@ -114,7 +120,7 @@ Router>
 	!Reiniciar o Router para testar as configurações
 	Router# reload
 
-	!Após a reiniciar o Router Cisco 2911 verifique a chave de registro
+	!Após reiniciar o Router Cisco 2911 verifique a chave de registro
 	!Valor está na última linha referente ao cofreg 0x2102
 	Router> enable
 	Router# show version
