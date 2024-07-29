@@ -55,21 +55,21 @@ enable
 		!Configuração da Interface de Loopback 0 (sempre será a Loopback 0, não mudar o número)
 		interface loopback 0
 
-		!Descrição da Interface
-		description Interface de Loopback para ID do OSPF
+			!Descrição da Interface
+			description Interface de Loopback para ID do OSPF
 
-		!Endereço IPv4 para o ID do OSPF
-		!Verificar o endereçamento IPv4 de Loopback do seu grupo
-		!Endereço IPv4 utilizado para o gerenciamento e métrica do OSPF
-		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 270 
-		!(NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF)
-		ip address ???.???.???.??? 255.255.255.255
+			!Endereço IPv4 para o ID do OSPF
+			!Verificar o endereçamento IPv4 de Loopback do seu grupo
+			!Endereço IPv4 utilizado para o gerenciamento e métrica do OSPF
+			!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 270 
+			!(NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF)
+			ip address ???.???.???.??? 255.255.255.255
 
-		!Inicializando a interface
-		no shutdown
+			!Inicializando a interface
+			no shutdown
 
-		!Saindo das configurações da Interface
-		exit
+			!Saindo das configurações da Interface
+			exit
 
 		!Configurando o Roteamento de OSPF (??? = número de processo local)
 		!Verificar a tabela de Endereçamento para ver o seu número de Processo Local
@@ -78,48 +78,48 @@ enable
 		!(NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF)
 		router ospf ???
 
-		!Identificação do Roteador
-		!Verificar o endereço IPv4 de Loopback do seu grupo
-		!OSPF utiliza o endereço de Loopback para gerenciar o processo local
-		router-id ???.???.???.???
-			
-		!Desativando os anúncios do Protocolo OSPF na Interface da LAN
-		!Essa interface não vai anunciar suas rotas pela interface, mais pode receber anúncios
-		passive-interface gigabitEthernet 0/0
+			!Identificação do Roteador
+			!Verificar o endereço IPv4 de Loopback do seu grupo
+			!OSPF utiliza o endereço de Loopback para gerenciar o processo local
+			router-id ???.???.???.???
+				
+			!Desativando os anúncios do Protocolo OSPF na Interface da LAN
+			!Essa interface não vai anunciar suas rotas pela interface, mais pode receber anúncios
+			passive-interface gigabitEthernet 0/0
 
-		!Desativando os anúncios do Protocolo OSPF na Interface de Internet
-		!Essa interface não vai anunciar suas rotas pela interface, mais pode receber anúncios
-		passive-interface gigabitEthernet 0/1
+			!Desativando os anúncios do Protocolo OSPF na Interface de Internet
+			!Essa interface não vai anunciar suas rotas pela interface, mais pode receber anúncios
+			passive-interface gigabitEthernet 0/1
 
-		!Configuração da referência de largura de banda (Métrica)
-		!Utilizado para o cálculo de custo dos links, padrão 10^8 = 100000000 bps
-		!Link da tabela padrão de métrica do custo dos links do OSPF: 
-		!http://nomundodasredes.blogspot.com.br/2012/03/metrica-do-ospf.html
-		!https://ciscoredes.com.br/wp-content/uploads/2012/06/Cost_Interface.png
-		auto-cost reference-bandwidth 10000
+			!Configuração da referência de largura de banda (Métrica)
+			!Utilizado para o cálculo de custo dos links, padrão 10^8 = 100000000 bps
+			!Link da tabela padrão de métrica do custo dos links do OSPF: 
+			!http://nomundodasredes.blogspot.com.br/2012/03/metrica-do-ospf.html
+			!https://ciscoredes.com.br/wp-content/uploads/2012/06/Cost_Interface.png
+			auto-cost reference-bandwidth 10000
 
-		!Registrar todas as alterações de adjacência e o estado dos links
-		!Esses registros vão ficar armazenados no log do sistema
-		log-adjacency-changes detail
+			!Registrar todas as alterações de adjacência e o estado dos links
+			!Esses registros vão ficar armazenados no log do sistema
+			log-adjacency-changes detail
 
-		!Declarando as redes fisicamente conectadas
-		!Utilizando o recurso de Wildcard Mask (máscara coringa - máscara invertida)
-		!Configuração da Área 0 (Single Area - Backbone, obrigatória existir)
-		!Calculando a máscara coringa: 255.255.255.255 - sua_mascara
-		!Exemplo: 255.255.255.255 - 255.255.255.252 = 0.0.0.3
-		!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 270 
-		!(NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF)
-		network 172.16.???.0 0.0.0.255 area 0
-		network 172.16.???.0 0.0.0.255 area 0
-		network 172.16.???.0 0.0.0.255 area 0
-		network 172.16.???.0 0.0.0.255 area 0
-		network 172.16.???.0 0.0.0.255 area 0
-		network 172.16.???.0 0.0.0.255 area 0
-		network 192.168.1.??? 0.0.0.3 area 0
-		network 192.168.1.??? 0.0.0.3 area 0
+			!Declarando as redes fisicamente conectadas
+			!Utilizando o recurso de Wildcard Mask (máscara coringa - máscara invertida)
+			!Configuração da Área 0 (Single Area - Backbone, obrigatória existir)
+			!Calculando a máscara coringa: 255.255.255.255 - sua_mascara
+			!Exemplo: 255.255.255.255 - 255.255.255.252 = 0.0.0.3
+			!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt a partir da linha: 270 
+			!(NOVA ETAPA: Determinação das Configurações do Protocolo de Roteamento Dinâmico OSPF)
+			network 172.16.???.0 0.0.0.255 area 0
+			network 172.16.???.0 0.0.0.255 area 0
+			network 172.16.???.0 0.0.0.255 area 0
+			network 172.16.???.0 0.0.0.255 area 0
+			network 172.16.???.0 0.0.0.255 area 0
+			network 172.16.???.0 0.0.0.255 area 0
+			network 192.168.1.??? 0.0.0.3 area 0
+			network 192.168.1.??? 0.0.0.3 area 0
 
-		!Saindo de todas as configurações
-		end
+			!Saindo de todas as configurações
+			end
 
 !Salvando todas as configurações
 copy running-config startup-config
@@ -161,3 +161,13 @@ show ip ospf interface
 ```
 
 ## A PARTIR DESSE MOMENTO TODOS OS GRUPOS DEVERÃO SE PINGAR, PINGAR O ENDEREÇO IPv4 DE CADA SWITCH DOS GRUPOS E TAMBÉM OS DESKTOPS.
+
+```python
+!Pingando todos os Grupos o Endereço IPv4 do Switch
+ping 172.16.10.253
+ping 172.16.20.253
+ping 172.16.30.253
+ping 172.16.40.253
+ping 172.16.50.253
+ping 172.16.60.253
+```
